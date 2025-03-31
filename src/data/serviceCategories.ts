@@ -21,7 +21,7 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
   licensing: {
     title: "Licenciamento e Autorizações Ambientais",
     description: "Nossos serviços de licenciamento ambiental abrangem todas as etapas necessárias para obtenção e manutenção das licenças e autorizações exigidas pelos órgãos ambientais.",
-    icon: <Leaf className="h-8 w-8 text-eco-green" />,
+    icon: React.createElement(Leaf, { className: "h-8 w-8 text-eco-green" }),
     image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
@@ -45,7 +45,7 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
   monitoring: {
     title: "Monitoramento e Análises Ambientais",
     description: "Serviços de monitoramento contínuo e análises técnicas para garantir a conformidade ambiental e atendimento às condicionantes estabelecidas nas licenças e autorizações.",
-    icon: <Beaker className="h-8 w-8 text-eco-blue" />,
+    icon: React.createElement(Beaker, { className: "h-8 w-8 text-eco-blue" }),
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
@@ -69,7 +69,7 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
   reports: {
     title: "Planos e Relatórios Ambientais",
     description: "Elaboração de documentos técnicos especializados para atendimento às exigências legais e implementação de boas práticas de gestão ambiental.",
-    icon: <FileText className="h-8 w-8 text-eco-green-dark" />,
+    icon: React.createElement(FileText, { className: "h-8 w-8 text-eco-green-dark" }),
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
@@ -97,7 +97,7 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
   consulting: {
     title: "Acompanhamento e Consultoria",
     description: "Assessoria técnica especializada para questões ambientais, incluindo acompanhamento de projetos, auditorias e elaboração de relatórios técnicos.",
-    icon: <Users className="h-8 w-8 text-eco-blue-dark" />,
+    icon: React.createElement(Users, { className: "h-8 w-8 text-eco-blue-dark" }),
     image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
@@ -121,7 +121,7 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
   training: {
     title: "Treinamentos e Capacitações",
     description: "Programas de treinamento e capacitação para equipes técnicas, visando a implementação de práticas ambientais adequadas e o cumprimento da legislação.",
-    icon: <TreeDeciduous className="h-8 w-8 text-eco-green" />,
+    icon: React.createElement(TreeDeciduous, { className: "h-8 w-8 text-eco-green" }),
     image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
@@ -141,7 +141,7 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
   management: {
     title: "Gestão e Manutenção Ambiental",
     description: "Serviços continuados de gestão ambiental para manutenção da conformidade legal e implementação de melhorias nos processos ambientais da empresa.",
-    icon: <CloudSun className="h-8 w-8 text-eco-blue" />,
+    icon: React.createElement(CloudSun, { className: "h-8 w-8 text-eco-blue" }),
     image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
