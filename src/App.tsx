@@ -12,6 +12,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ServiceCategoryPage from "./pages/ServiceCategoryPage";
 import LegislationPage from "./pages/LegislationPage";
 import LegislationCategoryPage from "./pages/LegislationCategoryPage";
+import RequestQuotePage from "./pages/RequestQuotePage";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/services/:category" element={<ServiceCategoryPage />} />
           <Route path="/legislation" element={<LegislationPage />} />
           <Route path="/legislation/:category" element={<LegislationCategoryPage />} />
+          <Route path="/request-quote" element={<RequestQuotePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
