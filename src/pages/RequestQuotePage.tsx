@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -136,12 +135,35 @@ const RequestQuotePage = () => {
         fileUrls = selectedFiles.map(file => file.name); // Simplificado 
       }
       
-      // Salvar dados no Supabase (implementação real quando as tabelas forem criadas)
-      const { error } = await supabase.from('quote_requests').insert({
-        ...data,
+      // Prepare data for Supabase
+      const quoteData = {
+        full_name: data.fullName,
+        company: data.company,
+        document_id: data.documentId,
+        phone: data.phone,
+        email: data.email,
+        segment: data.segment,
+        location: data.location,
+        size: data.size,
+        description: data.description,
+        service: data.service,
+        service_details: data.serviceDetails,
+        deadline: data.deadline,
+        has_license: data.hasLicense,
+        license_details: data.licenseDetails,
+        has_notifications: data.hasNotifications,
+        notification_details: data.notificationDetails,
+        estimated_budget: data.estimatedBudget,
+        observations: data.observations,
         file_attachments: fileUrls,
+        terms_accepted: data.termsAccepted,
         created_at: new Date().toISOString()
-      });
+      };
+      
+      // Salvar dados no Supabase
+      const { error } = await supabase
+        .from('quote_requests')
+        .insert(quoteData);
       
       if (error) throw error;
       

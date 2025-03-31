@@ -24,6 +24,81 @@ export type Database = {
         }
         Relationships: []
       }
+      quote_requests: {
+        Row: {
+          company: string | null
+          created_at: string
+          deadline: string
+          description: string
+          document_id: string
+          email: string
+          estimated_budget: string | null
+          file_attachments: Json | null
+          full_name: string
+          has_license: string
+          has_notifications: string
+          id: string
+          license_details: string | null
+          location: string
+          notification_details: string | null
+          observations: string | null
+          phone: string
+          segment: string
+          service: string
+          service_details: string
+          size: string
+          terms_accepted: boolean
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          deadline: string
+          description: string
+          document_id: string
+          email: string
+          estimated_budget?: string | null
+          file_attachments?: Json | null
+          full_name: string
+          has_license: string
+          has_notifications: string
+          id?: string
+          license_details?: string | null
+          location: string
+          notification_details?: string | null
+          observations?: string | null
+          phone: string
+          segment: string
+          service: string
+          service_details: string
+          size: string
+          terms_accepted?: boolean
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          deadline?: string
+          description?: string
+          document_id?: string
+          email?: string
+          estimated_budget?: string | null
+          file_attachments?: Json | null
+          full_name?: string
+          has_license?: string
+          has_notifications?: string
+          id?: string
+          license_details?: string | null
+          location?: string
+          notification_details?: string | null
+          observations?: string | null
+          phone?: string
+          segment?: string
+          service?: string
+          service_details?: string
+          size?: string
+          terms_accepted?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
