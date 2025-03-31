@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
@@ -6,7 +5,7 @@ import { CTASection } from "@/components/cta-section";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, CloudSun, FileText, Flask, Leaf, TreeDeciduous, Users } from "lucide-react";
+import { ArrowRight, Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun } from "lucide-react";
 import { useEffect } from "react";
 
 // Service category data
@@ -38,7 +37,7 @@ const serviceCategories = {
   monitoring: {
     title: "Monitoramento e Análises Ambientais",
     description: "Serviços de monitoramento contínuo e análises técnicas para garantir a conformidade ambiental e atendimento às condicionantes estabelecidas nas licenças e autorizações.",
-    icon: <Flask className="h-8 w-8 text-eco-blue" />,
+    icon: <Beaker className="h-8 w-8 text-eco-blue" />,
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {

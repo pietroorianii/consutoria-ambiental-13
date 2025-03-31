@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CloudSun, FileText, Flask, Leaf, TreeDeciduous, Users } from "lucide-react";
+import { ArrowRight, Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -12,7 +12,7 @@ const services = [
     link: "/services/licensing"
   },
   {
-    icon: <Flask className="h-8 w-8 text-eco-blue" />,
+    icon: <Beaker className="h-8 w-8 text-eco-blue" />,
     title: "Monitoramento e Análises",
     description: "Acompanhamento de condicionantes ambientais e análises de conformidade.",
     link: "/services/monitoring"

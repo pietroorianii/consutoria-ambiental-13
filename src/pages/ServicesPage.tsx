@@ -1,10 +1,9 @@
-
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
-import { ArrowRight, CloudSun, FileText, Flask, Leaf, TreeDeciduous, Users } from "lucide-react";
+import { ArrowRight, Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun } from "lucide-react";
 
 const serviceCategories = [
   {
@@ -20,7 +19,7 @@ const serviceCategories = [
     link: "/services/licensing"
   },
   {
-    icon: <Flask className="h-12 w-12 text-eco-blue" />,
+    icon: <Beaker className="h-12 w-12 text-eco-blue" />,
     title: "Monitoramento e Análises",
     description: "Acompanhamento de condicionantes ambientais e análises de conformidade.",
     items: [
