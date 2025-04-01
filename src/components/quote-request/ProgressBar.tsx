@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Leaf, TreeDeciduous, Water, Factory, FilePlus } from "lucide-react";
 
 interface ProgressBarProps {
   currentStep: number;
@@ -9,18 +10,50 @@ interface ProgressBarProps {
 export const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalSteps }) => {
   return (
     <div className="px-6 pt-6">
-      <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+      {/* Barra de progresso */}
+      <div className="w-full bg-gray-100 rounded-full h-3 mb-6 dark:bg-gray-700 overflow-hidden">
         <div 
-          className="bg-eco-green h-2.5 rounded-full transition-all duration-300 ease-in-out" 
+          className="bg-gradient-to-r from-eco-green to-eco-blue h-3 rounded-full transition-all duration-500 ease-in-out" 
           style={{ width: `${(currentStep / totalSteps) * 100}%` }}
         ></div>
       </div>
-      <div className="flex justify-between text-xs text-gray-500 mb-6">
-        <span className={currentStep >= 1 ? "text-eco-green font-medium" : ""}>Dados</span>
-        <span className={currentStep >= 2 ? "text-eco-green font-medium" : ""}>Empreendimento</span>
-        <span className={currentStep >= 3 ? "text-eco-green font-medium" : ""}>Serviço</span>
-        <span className={currentStep >= 4 ? "text-eco-green font-medium" : ""}>Contexto</span>
-        <span className={currentStep >= 5 ? "text-eco-green font-medium" : ""}>Finalizar</span>
+      
+      {/* Indicadores de etapas */}
+      <div className="grid grid-cols-5 gap-1 mb-8">
+        <div className={`flex flex-col items-center ${currentStep >= 1 ? "text-eco-green" : "text-gray-400"}`}>
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${currentStep >= 1 ? "bg-eco-green/10" : "bg-gray-100"}`}>
+            <Leaf className={`h-5 w-5 ${currentStep >= 1 ? "text-eco-green" : "text-gray-400"}`} />
+          </div>
+          <span className="text-xs font-medium text-center">Dados</span>
+        </div>
+        
+        <div className={`flex flex-col items-center ${currentStep >= 2 ? "text-eco-green" : "text-gray-400"}`}>
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${currentStep >= 2 ? "bg-eco-green/10" : "bg-gray-100"}`}>
+            <Factory className={`h-5 w-5 ${currentStep >= 2 ? "text-eco-green" : "text-gray-400"}`} />
+          </div>
+          <span className="text-xs font-medium text-center">Empreendimento</span>
+        </div>
+        
+        <div className={`flex flex-col items-center ${currentStep >= 3 ? "text-eco-green" : "text-gray-400"}`}>
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${currentStep >= 3 ? "bg-eco-green/10" : "bg-gray-100"}`}>
+            <FilePlus className={`h-5 w-5 ${currentStep >= 3 ? "text-eco-green" : "text-gray-400"}`} />
+          </div>
+          <span className="text-xs font-medium text-center">Serviço</span>
+        </div>
+        
+        <div className={`flex flex-col items-center ${currentStep >= 4 ? "text-eco-green" : "text-gray-400"}`}>
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${currentStep >= 4 ? "bg-eco-green/10" : "bg-gray-100"}`}>
+            <Water className={`h-5 w-5 ${currentStep >= 4 ? "text-eco-green" : "text-gray-400"}`} />
+          </div>
+          <span className="text-xs font-medium text-center">Contexto</span>
+        </div>
+        
+        <div className={`flex flex-col items-center ${currentStep >= 5 ? "text-eco-green" : "text-gray-400"}`}>
+          <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${currentStep >= 5 ? "bg-eco-green/10" : "bg-gray-100"}`}>
+            <TreeDeciduous className={`h-5 w-5 ${currentStep >= 5 ? "text-eco-green" : "text-gray-400"}`} />
+          </div>
+          <span className="text-xs font-medium text-center">Finalizar</span>
+        </div>
       </div>
     </div>
   );
