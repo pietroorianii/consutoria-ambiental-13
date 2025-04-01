@@ -185,7 +185,7 @@ export function Navbar() {
           </NavigationMenu>
           
           <Button asChild className="ml-4 bg-eco-green hover:bg-eco-green-dark">
-            <Link to="/contact">Solicitar Orçamento</Link>
+            <Link to="/request-quote">Solicitar Orçamento</Link>
           </Button>
         </div>
 
@@ -241,7 +241,7 @@ export function Navbar() {
                 </Link>
                 
                 <Button asChild className="mt-4 bg-eco-green hover:bg-eco-green-dark">
-                  <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  <Link to="/request-quote" onClick={() => setIsOpen(false)}>
                     Solicitar Orçamento
                   </Link>
                 </Button>

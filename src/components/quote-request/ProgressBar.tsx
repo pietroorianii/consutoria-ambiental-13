@@ -58,4 +58,3 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalStep
     </div>
   );
 };
-
