@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Leaf, TreeDeciduous, Water, Factory, FilePlus } from "lucide-react";
+import { Leaf, TreeDeciduous, Droplet, Factory, FilePlus } from "lucide-react";
 
 interface ProgressBarProps {
   currentStep: number;
@@ -43,7 +43,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalStep
         
         <div className={`flex flex-col items-center ${currentStep >= 4 ? "text-eco-green" : "text-gray-400"}`}>
           <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${currentStep >= 4 ? "bg-eco-green/10" : "bg-gray-100"}`}>
-            <Water className={`h-5 w-5 ${currentStep >= 4 ? "text-eco-green" : "text-gray-400"}`} />
+            <Droplet className={`h-5 w-5 ${currentStep >= 4 ? "text-eco-green" : "text-gray-400"}`} />
           </div>
           <span className="text-xs font-medium text-center">Contexto</span>
         </div>
@@ -58,3 +58,4 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalStep
     </div>
   );
 };
+
