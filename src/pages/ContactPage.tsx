@@ -206,19 +206,6 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
-        
-        {/* Map Section */}
-        <section className="container pb-16">
-          <h2 className="text-2xl font-bold mb-6">Localização</h2>
-          <div className="w-full h-[400px] bg-muted rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1200&h=400"
-              alt="Mapa de localização"
-              className="w-full h-full object-cover"
-            />
-            {/* This would be replaced by an actual Google Maps iframe in a real implementation */}
-          </div>
-        </section>
       </main>
       <Footer />
     </>
