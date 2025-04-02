@@ -23,8 +23,8 @@ const NavListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-medium leading-none" style={{ fontFamily: "'Poppins', sans-serif" }}>{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground" style={{ fontFamily: "'Roboto', sans-serif" }}>
             {children}
           </p>
         </a>

@@ -28,25 +28,28 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="bg-muted py-16 md:py-24">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">O Que Nossos Clientes Dizem</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+    <section className="bg-muted py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-opacity-5 bg-eco-blue-light leaf-pattern"></div>
+      <div className="container relative z-10">
+        <div className="text-center mb-16 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            O Que Nossos Clientes Dizem
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'Roboto', sans-serif" }}>
             Conheça a experiência de empresas que já contam com nossos serviços de consultoria ambiental.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-background border-none shadow-md">
+            <Card key={index} className="bg-background border-none shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
               <CardContent className="pt-6">
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
                     <svg width="45" height="36" className="text-eco-green/30 mb-4" viewBox="0 0 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M13.4 35.2C9 35.2 5.56667 33.9333 3.1 31.4C1.03333 28.8667 0 25.7333 0 22C0 17.2 1.43333 12.9333 4.3 9.2C7.23333 5.46666 11.3333 2.66666 16.6 0.799996L18.1 4.3C13.1 6.1 9.43333 8.36666 7.1 11.1C4.83333 13.7667 3.7 16.8667 3.7 20.4H6.1C8.36667 20.4 10.2333 21.0667 11.7 22.4C13.2333 23.6667 14 25.4 14 27.6C14 30 13.3 31.9333 11.9 33.4C10.5667 34.6 8.86667 35.2 6.8 35.2H13.4ZM38.9 35.2C34.5 35.2 31.0667 33.9333 28.6 31.4C26.5333 28.8667 25.5 25.7333 25.5 22C25.5 17.2 26.9333 12.9333 29.8 9.2C32.7333 5.46666 36.8333 2.66666 42.1 0.799996L43.6 4.3C38.6 6.1 34.9333 8.36666 32.6 11.1C30.3333 13.7667 29.2 16.8667 29.2 20.4H31.6C33.8667 20.4 35.7333 21.0667 37.2 22.4C38.7333 23.6667 39.5 25.4 39.5 27.6C39.5 30 38.8 31.9333 37.4 33.4C36.0667 34.6 34.3667 35.2 32.3 35.2H38.9Z" fill="currentColor"/>
                     </svg>
-                    <p className="text-foreground">{testimonial.quote}</p>
+                    <p className="text-foreground" style={{ fontFamily: "'Lato', sans-serif" }}>{testimonial.quote}</p>
                   </div>
                   
                   <div className="mt-auto flex items-center">

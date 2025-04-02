@@ -16,16 +16,16 @@ export const ServiceBanner = ({ categoryData }: ServiceBannerProps) => {
           backgroundPosition: "center 40%"
         }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
       </div>
       
       <div className="container relative z-10 py-16 md:py-24">
-        <div className="max-w-3xl">
-          <div className="mb-6">{categoryData.icon}</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="max-w-3xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div className="mb-6 text-white/90">{categoryData.icon}</div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>
             {categoryData.title}
           </h1>
-          <p className="text-white/90 text-lg">
+          <p className="text-white/90 text-lg" style={{ fontFamily: "'Roboto', sans-serif" }}>
             {categoryData.description}
           </p>
         </div>

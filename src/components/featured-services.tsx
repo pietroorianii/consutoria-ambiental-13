@@ -45,37 +45,42 @@ const services = [
 
 export function FeaturedServices() {
   return (
-    <section className="container py-16 md:py-24">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Oferecemos soluções ambientais completas para empresas de todos os portes e setores, auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service, index) => (
-          <Card key={index} className="border border-border/70 eco-card h-full flex flex-col">
-            <CardHeader>
-              <div className="mb-4">{service.icon}</div>
-              <CardTitle>{service.title}</CardTitle>
-              <CardDescription>{service.description}</CardDescription>
-            </CardHeader>
-            <CardFooter className="mt-auto pt-4">
-              <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80">
-                <Link to={service.link} className="flex items-center gap-1">
-                  Saiba mais <ArrowRight className="h-4 w-4 ml-1" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-      
-      <div className="text-center mt-12">
-        <Button asChild size="lg" className="bg-eco-green hover:bg-eco-green-dark">
-          <Link to="/services">Ver Todos os Serviços</Link>
-        </Button>
+    <section className="container py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-opacity-5 bg-eco-green-light leaf-pattern"></div>
+      <div className="relative z-10">
+        <div className="text-center mb-16 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            Nossos Serviços
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'Roboto', sans-serif" }}>
+            Oferecemos soluções ambientais completas para empresas de todos os portes e setores, auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <Card key={index} className="border border-border/70 eco-card h-full flex flex-col bg-white backdrop-blur-sm animate-fade-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+              <CardHeader>
+                <div className="mb-4 bg-eco-green/10 p-3 rounded-full w-14 h-14 flex items-center justify-center">{service.icon}</div>
+                <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>{service.title}</CardTitle>
+                <CardDescription style={{ fontFamily: "'Lato', sans-serif" }}>{service.description}</CardDescription>
+              </CardHeader>
+              <CardFooter className="mt-auto pt-4">
+                <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80 group">
+                  <Link to={service.link} className="flex items-center gap-1">
+                    Saiba mais <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12 animate-fade-up" style={{ animationDelay: "0.8s" }}>
+          <Button asChild size="lg" className="btn-gradient text-white">
+            <Link to="/services">Ver Todos os Serviços</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

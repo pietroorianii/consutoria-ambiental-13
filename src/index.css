@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -93,10 +95,12 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Roboto', 'Lato', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
+    font-family: 'Poppins', sans-serif;
   }
 
   h1 {
@@ -131,5 +135,54 @@
 
   .link-hover {
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100;
+  }
+  
+  .btn-gradient {
+    @apply bg-gradient-to-r from-eco-green to-eco-blue hover:from-eco-green-dark hover:to-eco-blue-dark transition-all duration-300;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .leaf-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zm-24.596 0L12.143 6.485l1.415 1.414 7.9-7.9h-2.83zm16.728 0l4.899 4.899-1.415 1.415-2.657-2.657L33.672 0h2.83zm-8.86 0L19.157 7.373 20.57 8.787l8.787-8.787h-2.83zm.857 0l8.857 8.857-1.414 1.414-8.857-8.857h1.414zm-8.858 0L10.43 8.857l1.415 1.414 8.857-8.857H18.57zm-8 0L3.714 8.857l1.414 1.414 7.9-7.9H10.57zM0 9.714l1.414 1.414 8.857-8.857H5.373L0 9.714zm5.714-5.714H3.286l8.857 8.857 1.414-1.414L5.714 4zm52 0h-2.427L64 12.657l-1.414 1.414L57.714 4zM22.857 0h2.828l8.858 8.858-1.414 1.414L22.857 0zm13.715 0h2.827L50.286 10.9l-1.414 1.414L36.572 0zm-8 0H25.7L40.43 14.728l-1.414 1.414L28.57 0zm-8 0h-2.83L30.43 14.01 31.8 12.6 20.57 0zm16 0h-2.83l13.657 13.657 1.414-1.414L36.57 0zM0 5.714L14.01 19.727l1.415-1.414L0 3.302v2.412zm0 8l8.857 8.857 1.415-1.414L0 11.143v2.57zm0 8l2.857 2.857 1.414-1.414L0 19.143v2.57zm0 8l1.143 1.143 1.414-1.414L0 27.143v2.57zM52 0l1.143 1.143L40 14.286l-1.414-1.414L52 0zM0 8.57l14.726 14.728 1.414-1.414L0 6.157v2.412zm8-8h2.83L0 11.43v-2.83L8 .572zm55.715 0h-2.828L48 12.658l1.414 1.414L63.715.572zm-48 0h-2.83L29.9 26.588l1.414-1.414L15.714.57zm40 0h-2.83L40 12.657l1.414 1.414L55.715.57zm-32 0h-2.83L43.9 26.588l1.414-1.414L23.714.57zm24 0h-2.83L29.9 19.756l1.414 1.414L47.714.57zm-16 0h-2.83L13.9 15.756l1.414 1.414L31.714.57z' fill='%2345a827' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
   }
 }
