@@ -15,11 +15,11 @@ export function CompanyIntro() {
     <section className="container py-16 md:py-24 leaf-pattern">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <div className="relative rounded-lg overflow-hidden">
+          <div className="relative rounded-lg overflow-hidden h-full max-h-[500px]">
             <img 
               src="/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png" 
               alt="Consultoria ambiental" 
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           </div>

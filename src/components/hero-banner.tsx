@@ -9,11 +9,11 @@ export function HeroBanner() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('/lovable-uploads/72b5b6b1-ebdf-4ef3-9a2e-7abf5a77c1e7.png')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&q=80&w=1920&h=1080')",
           backgroundPosition: "center center"
         }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
       </div>
       
       {/* Content */}
