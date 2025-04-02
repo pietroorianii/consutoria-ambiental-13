@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -72,7 +71,7 @@ const LegislationPage = () => {
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm">
-                <Earth className="h-12 w-12 text-white" />
+                <Globe className="h-12 w-12 text-white" />
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>Legislação Ambiental</h1>
