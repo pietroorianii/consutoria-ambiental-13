@@ -4,14 +4,14 @@ import { Footer } from "@/components/ui/footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
-import { ArrowRight, Earth, Industry, Water, Construction, TreeDeciduous } from "lucide-react";
+import { ArrowRight, Globe, Factory, Droplets, Building2, Leaf } from "lucide-react";
 
 const legislationCategories = [
   {
     title: "Indústrias",
     description: "Legislações ambientais aplicáveis ao setor industrial, incluindo normas federais, estaduais e municipais.",
     image: "https://images.unsplash.com/photo-1518542442123-4c25cc0f43d4?auto=format&fit=crop&q=80&w=800&h=500",
-    icon: <Industry className="h-10 w-10 text-eco-green" />,
+    icon: <Factory className="h-10 w-10 text-eco-green" />,
     items: [
       "Política Nacional do Meio Ambiente",
       "Limites de emissões atmosféricas",
@@ -24,7 +24,7 @@ const legislationCategories = [
     title: "Construção Civil",
     description: "Normas e leis ambientais específicas para o setor da construção civil, desde o licenciamento até a gestão de resíduos.",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800&h=500",
-    icon: <Construction className="h-10 w-10 text-eco-blue" />,
+    icon: <Building2 className="h-10 w-10 text-eco-blue" />,
     items: [
       "Gestão de resíduos da construção civil",
       "Avaliação de impactos ambientais",
@@ -37,7 +37,7 @@ const legislationCategories = [
     title: "Agricultura",
     description: "Legislações aplicáveis ao setor agrícola, incluindo normas sobre uso do solo, recursos hídricos e agrotóxicos.",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800&h=500",
-    icon: <TreeDeciduous className="h-10 w-10 text-eco-green-dark" />,
+    icon: <Leaf className="h-10 w-10 text-eco-green-dark" />,
     items: [
       "Código Florestal",
       "Legislação de agrotóxicos",
@@ -50,7 +50,7 @@ const legislationCategories = [
     title: "Recursos Hídricos",
     description: "Normas e regulamentações para gestão, uso e preservação dos recursos hídricos, incluindo outorgas e enquadramento.",
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=800&h=500",
-    icon: <Water className="h-10 w-10 text-eco-blue-dark" />,
+    icon: <Droplets className="h-10 w-10 text-eco-blue-dark" />,
     items: [
       "Política Nacional de Recursos Hídricos",
       "Classificação de corpos d'água",
