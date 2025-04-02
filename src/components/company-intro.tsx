@@ -20,8 +20,8 @@ export function CompanyIntro() {
         <div>
           <div className="relative rounded-lg overflow-hidden h-full max-h-[500px]">
             <img 
-              src="/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png" 
-              alt="Consultoria ambiental" 
+              src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" 
+              alt="Sustentabilidade ambiental" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
