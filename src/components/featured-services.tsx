@@ -49,6 +49,11 @@ export function FeaturedServices() {
       <div className="absolute inset-0 bg-opacity-5 bg-eco-green-light leaf-pattern"></div>
       <div className="relative z-10">
         <div className="text-center mb-16 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div className="flex justify-center mb-4">
+            <div className="bg-eco-green/10 p-3 rounded-full inline-flex items-center justify-center">
+              <Leaf className="h-10 w-10 text-eco-green" />
+            </div>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>
             Nossos Serviços
           </h2>
@@ -59,7 +64,7 @@ export function FeaturedServices() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="border border-border/70 eco-card h-full flex flex-col bg-white backdrop-blur-sm animate-fade-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+            <Card key={index} className="border border-border/70 eco-card h-full flex flex-col bg-white/90 backdrop-blur-sm hover:shadow-lg hover:shadow-eco-green/5 hover:border-eco-green/20 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
               <CardHeader>
                 <div className="mb-4 bg-eco-green/10 p-3 rounded-full w-14 h-14 flex items-center justify-center">{service.icon}</div>
                 <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>{service.title}</CardTitle>
@@ -77,8 +82,10 @@ export function FeaturedServices() {
         </div>
         
         <div className="text-center mt-12 animate-fade-up" style={{ animationDelay: "0.8s" }}>
-          <Button asChild size="lg" className="btn-gradient text-white">
-            <Link to="/services">Ver Todos os Serviços</Link>
+          <Button asChild size="lg" className="btn-gradient text-white group overflow-hidden relative">
+            <Link to="/services" className="flex items-center gap-2 relative z-10">
+              Ver Todos os Serviços <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>

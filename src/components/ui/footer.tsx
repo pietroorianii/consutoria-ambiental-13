@@ -1,126 +1,128 @@
 
+import { Facebook, Instagram, Linkedin, Leaf, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-muted mt-20">
-      <div className="container py-12 md:py-16">
+    <footer className="bg-muted relative overflow-hidden">
+      <div className="absolute inset-0 leaf-pattern opacity-5"></div>
+      
+      <div className="container py-12 md:py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-eco-green to-eco-blue">
-                EcoConsult
-              </span>
-            </Link>
-            <p className="text-sm text-muted-foreground max-w-xs">
-              Consultoria ambiental especializada para empresas que buscam sustentabilidade e conformidade legal em seus processos.
+          {/* About */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <Leaf className="h-5 w-5 text-eco-green" />
+              EcoConsult
+            </h3>
+            <p className="text-muted-foreground mb-4" style={{ fontFamily: "'Roboto', sans-serif" }}>
+              Consultoria ambiental especializada para empresas que buscam excelência em sustentabilidade e conformidade legal.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram size={20} />
-                <span className="sr-only">Instagram</span>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-            </div>
           </div>
-          
+
+          {/* Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Serviços</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Links Rápidos</h3>
+            <ul className="space-y-2" style={{ fontFamily: "'Lato', sans-serif" }}>
               <li>
-                <Link to="/services/licensing" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Licenciamento Ambiental
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                  Início
                 </Link>
               </li>
               <li>
-                <Link to="/services/monitoring" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Monitoramento Ambiental
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                  Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link to="/services/reports" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Planos e Relatórios
+                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                  Serviços
                 </Link>
               </li>
               <li>
-                <Link to="/services/consulting" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Consultoria Especializada
+                <Link to="/legislation" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                  Legislação
                 </Link>
               </li>
               <li>
-                <Link to="/services/training" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Treinamentos
+                <Link to="/request-quote" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                  Solicitar Orçamento
                 </Link>
               </li>
               <li>
-                <Link to="/services/management" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Gestão Ambiental
+                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                  Contato
                 </Link>
               </li>
             </ul>
           </div>
-          
+
+          {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Legislação</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/legislation/industry" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Indústrias
-                </Link>
+            <h3 className="text-xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Contato</h3>
+            <ul className="space-y-3" style={{ fontFamily: "'Lato', sans-serif" }}>
+              <li className="flex items-start gap-2 text-muted-foreground">
+                <MapPin className="h-5 w-5 text-eco-green flex-shrink-0 mt-0.5" />
+                <span>Av. Rio Branco, 1500<br />Centro, Rio de Janeiro - RJ<br />CEP: 20040-002</span>
               </li>
-              <li>
-                <Link to="/legislation/construction" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Construção Civil
-                </Link>
+              <li className="flex items-center gap-2 text-muted-foreground">
+                <Phone className="h-5 w-5 text-eco-green flex-shrink-0" />
+                <span>(21) 3333-4444</span>
               </li>
-              <li>
-                <Link to="/legislation/agriculture" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Agricultura
-                </Link>
-              </li>
-              <li>
-                <Link to="/legislation/water" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Recursos Hídricos
-                </Link>
+              <li className="flex items-center gap-2 text-muted-foreground">
+                <Mail className="h-5 w-5 text-eco-green flex-shrink-0" />
+                <span>contato@ecoconsult.com.br</span>
               </li>
             </ul>
           </div>
-          
+
+          {/* Social Media */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contato</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start">
-                <MapPin size={18} className="mr-2 text-primary shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">
-                  Av. Paulista, 1000, São Paulo - SP
-                </span>
+            <h3 className="text-xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Redes Sociais</h3>
+            <ul className="space-y-3" style={{ fontFamily: "'Lato', sans-serif" }}>
+              <li>
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Facebook className="h-5 w-5 text-eco-green" />
+                  <span>EcoConsult Brasil</span>
+                </a>
               </li>
-              <li className="flex items-center">
-                <Phone size={18} className="mr-2 text-primary shrink-0" />
-                <span className="text-muted-foreground">
-                  (11) 5555-5555
-                </span>
+              <li>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Instagram className="h-5 w-5 text-eco-green" />
+                  <span>@ecoconsult_br</span>
+                </a>
               </li>
-              <li className="flex items-center">
-                <Mail size={18} className="mr-2 text-primary shrink-0" />
-                <a href="mailto:contato@ecoconsult.com" className="text-muted-foreground hover:text-foreground transition-colors">
-                  contato@ecoconsult.com
+              <li>
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Linkedin className="h-5 w-5 text-eco-green" />
+                  <span>EcoConsult Consultoria Ambiental</span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        
-        <div className="border-t mt-10 pt-6 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} EcoConsult. Todos os direitos reservados.</p>
+
+        <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground/80">
+          <p style={{ fontFamily: "'Lato', sans-serif" }}>
+            &copy; {currentYear} EcoConsult. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>

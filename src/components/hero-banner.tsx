@@ -9,11 +9,11 @@ export function HeroBanner() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&q=80&w=1920&h=1080')",
+          backgroundImage: "url('/lovable-uploads/5563f466-87b7-464b-96b9-9ded9c83f8c8.png')",
           backgroundPosition: "center center"
         }}
       >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]" />
       </div>
       
       {/* Content */}
@@ -32,7 +32,7 @@ export function HeroBanner() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm">
-            <Link to="/contact">Fale Conosco</Link>
+            <Link to="/request-quote">Solicitar Orçamento</Link>
           </Button>
         </div>
       </div>

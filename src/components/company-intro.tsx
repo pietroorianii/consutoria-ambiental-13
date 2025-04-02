@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Leaf } from "lucide-react";
 
 export function CompanyIntro() {
   const highlights = [
@@ -12,12 +12,15 @@ export function CompanyIntro() {
   ];
 
   return (
-    <section className="container py-16 md:py-24 leaf-pattern">
+    <section className="container py-16 md:py-24 leaf-pattern relative">
+      <div className="absolute top-10 right-10 text-eco-green/10">
+        <Leaf className="h-32 w-32 animate-float" />
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
           <div className="relative rounded-lg overflow-hidden h-full max-h-[500px]">
             <img 
-              src="/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png" 
+              src="/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png" 
               alt="Consultoria ambiental" 
               className="w-full h-full object-cover"
             />
@@ -27,7 +30,10 @@ export function CompanyIntro() {
         
         <div className="space-y-6">
           <div className="animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <h2 className="text-3xl md:text-4xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold flex items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <span className="bg-eco-green/10 p-2 rounded-full">
+                <Leaf className="h-6 w-6 text-eco-green" />
+              </span>
               Consultoria Ambiental Especializada
             </h2>
             <div className="h-1 w-20 bg-eco-green mt-4"></div>

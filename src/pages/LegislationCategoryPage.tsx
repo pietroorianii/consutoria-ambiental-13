@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { useParams } from "react-router-dom";
@@ -12,7 +11,7 @@ const legislationCategories = {
   industry: {
     title: "Legislação para Indústrias",
     description: "Principais legislações ambientais aplicáveis ao setor industrial, incluindo normas federais, estaduais e municipais que regulamentam as atividades industriais.",
-    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+    image: "https://images.unsplash.com/photo-1518542442123-4c25cc0f43d4?auto=format&fit=crop&q=80&w=1000&h=600",
     items: [
       {
         title: "Lei nº 6.938/1981",
@@ -44,7 +43,7 @@ const legislationCategories = {
   construction: {
     title: "Legislação para Construção Civil",
     description: "Normas e leis ambientais específicas para o setor da construção civil, abrangendo desde o licenciamento de obras até a gestão de resíduos da construção civil.",
-    image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&q=80&w=1000&h=600",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000&h=600",
     items: [
       {
         title: "Resolução CONAMA nº 307/2002",
@@ -76,7 +75,7 @@ const legislationCategories = {
   agriculture: {
     title: "Legislação para Agricultura",
     description: "Legislações ambientais aplicáveis ao setor agrícola, incluindo normas sobre uso do solo, recursos hídricos, agrotóxicos e preservação ambiental em áreas rurais.",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=1000&h=600",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000&h=600",
     items: [
       {
         title: "Lei nº 12.651/2012 (Código Florestal)",
@@ -108,7 +107,7 @@ const legislationCategories = {
   water: {
     title: "Legislação para Recursos Hídricos",
     description: "Normas e regulamentações para gestão, uso e preservação dos recursos hídricos, incluindo outorgas, enquadramento de corpos d'água e cobrança pelo uso da água.",
-    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000&h=600",
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1000&h=600",
     items: [
       {
         title: "Lei nº 9.433/1997",
