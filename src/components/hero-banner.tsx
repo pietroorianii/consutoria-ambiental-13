@@ -9,7 +9,7 @@ export function HeroBanner() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('/lovable-uploads/9208812a-ad34-4fb8-a953-ac33642ebe58.png')",
+          backgroundImage: "url('/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png')",
           backgroundPosition: "center center"
         }}
       >
