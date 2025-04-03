@@ -10,7 +10,7 @@ export function CTASection() {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/40 backdrop-blur-[2px]"></div>
         </div>
         
-        <div className="relative z-10 p-8 sm:p-12 md:p-16 text-center">
+        <div className="relative z-10 p-8 sm:p-12 md:p-16 text-center bg-green-600">
           <div className="animate-fade-up" style={{
           animationDelay: "0.1s"
         }}>
