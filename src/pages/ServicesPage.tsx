@@ -90,7 +90,7 @@ const ServicesPage = () => {
                   </p>
                   
                   <ul className="space-y-3">
-                    {category.items.map((item, idx) => <li key={idx} className="flex items-start gap-2">
+                    {category.items.map((item, idx) => <li key={idx} className="flex items-start gap-2 rounded-md">
                         <div className="rounded-full bg-eco-green/20 p-1 mt-0.5">
                           <div className="rounded-full bg-eco-green w-2 h-2"></div>
                         </div>
