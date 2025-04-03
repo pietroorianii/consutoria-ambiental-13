@@ -62,7 +62,7 @@ export function FeaturedServices() {
           animationDelay: `${0.2 + index * 0.1}s`
         }}>
               <CardHeader>
-                <div className="mb-4 bg-eco-green/10 p-3 rounded-full w-14 h-14 flex items-center justify-center py-[15px] px-[15px]">{service.icon}</div>
+                <div className="mb-4 bg-eco-green/10 p-3 rounded-full w-14 h-14 flex items-center justify-center px-[12px] py-[12px]">{service.icon}</div>
                 <CardTitle style={{
               fontFamily: "'Poppins', sans-serif"
             }}>{service.title}</CardTitle>
