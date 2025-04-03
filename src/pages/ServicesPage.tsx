@@ -128,9 +128,7 @@ const ServicesPage = () => {
             }}>Como Trabalhamos</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto" style={{
               fontFamily: "'Lato', sans-serif"
-            }}>
-                Nossa metodologia de trabalho garante resultados eficientes e de qualidade para atender às necessidades específicas de cada cliente.
-              </p>
+            }}>Licenciamentos Ambientais (LP, LI, LO, AA, LAS, DLAE)</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
