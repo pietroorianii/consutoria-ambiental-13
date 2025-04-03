@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
 
 const services = [
   {
@@ -45,53 +44,11 @@ const services = [
 ];
 
 export function FeaturedServices() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Animate section header
-            const header = entry.target.querySelector('.section-header');
-            header?.classList.add('opacity-100', 'translate-y-0');
-            header?.classList.remove('opacity-0', 'translate-y-10');
-
-            // Animate cards
-            cardsRef.current.forEach((card, index) => {
-              if (card) {
-                card.style.transitionDelay = `${0.2 + index * 0.1}s`;
-                card.classList.add('opacity-100', 'translate-y-0');
-                card.classList.remove('opacity-0', 'translate-y-10');
-              }
-            });
-
-            // Animate "View All Services" button
-            const button = entry.target.querySelector('.view-all-btn');
-            button?.classList.add('opacity-100', 'translate-y-0');
-            button?.classList.remove('opacity-0', 'translate-y-10');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      sectionRef.current.classList.add('opacity-0', 'translate-y-10');
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} className="container py-16 md:py-24 relative overflow-hidden transition-all duration-700">
+    <section className="container py-16 md:py-24 relative">
       <div className="absolute inset-0 bg-opacity-5 bg-eco-green-light leaf-pattern"></div>
       <div className="relative z-10">
-        <div className="text-center mb-16 section-header opacity-0 translate-y-10 transition-all duration-700">
+        <div className="text-center mb-16 animate-fade-up" style={{ animationDelay: "0.1s" }}>
           <div className="flex justify-center mb-4">
             <div className="bg-eco-green/10 p-3 rounded-full inline-flex items-center justify-center">
               <Leaf className="h-10 w-10 text-eco-green" />
@@ -107,30 +64,24 @@ export function FeaturedServices() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div 
-              key={index} 
-              ref={el => cardsRef.current[index] = el}
-              className="opacity-0 translate-y-10 transition-all duration-700"
-            >
-              <Card className="border border-border/70 eco-card h-full flex flex-col bg-white/90 backdrop-blur-sm hover:shadow-lg hover:shadow-eco-green/5 hover:border-eco-green/20 transition-all duration-300">
-                <CardHeader>
-                  <div className="mb-4 bg-eco-green/10 p-3 rounded-full w-14 h-14 flex items-center justify-center">{service.icon}</div>
-                  <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>{service.title}</CardTitle>
-                  <CardDescription style={{ fontFamily: "'Lato', sans-serif" }}>{service.description}</CardDescription>
-                </CardHeader>
-                <CardFooter className="mt-auto pt-4">
-                  <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80 group">
-                    <Link to={service.link} className="flex items-center gap-1">
-                      Saiba mais <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
+            <Card key={index} className="border border-border/70 eco-card h-full flex flex-col bg-white/90 backdrop-blur-sm hover:shadow-lg hover:shadow-eco-green/5 hover:border-eco-green/20 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+              <CardHeader>
+                <div className="mb-4 bg-eco-green/10 p-3 rounded-full w-14 h-14 flex items-center justify-center">{service.icon}</div>
+                <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>{service.title}</CardTitle>
+                <CardDescription style={{ fontFamily: "'Lato', sans-serif" }}>{service.description}</CardDescription>
+              </CardHeader>
+              <CardFooter className="mt-auto pt-4">
+                <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80 group">
+                  <Link to={service.link} className="flex items-center gap-1">
+                    Saiba mais <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
           ))}
         </div>
         
-        <div className="text-center mt-12 view-all-btn opacity-0 translate-y-10 transition-all duration-700">
+        <div className="text-center mt-12 animate-fade-up" style={{ animationDelay: "0.8s" }}>
           <Button asChild size="lg" className="btn-gradient text-white group overflow-hidden relative">
             <Link to="/services" className="flex items-center gap-2 relative z-10">
               Ver Todos os Serviços <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
