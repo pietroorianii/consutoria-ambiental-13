@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const backgroundImages = [
