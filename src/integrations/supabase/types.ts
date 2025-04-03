@@ -9,10 +9,25 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      "Banco de Dados": {
+        Row: {
+          created_at: string
+          id: number
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+        }
+        Update: {
+          created_at?: string
+          id?: number
+        }
+        Relationships: []
+      }
       contacts: {
         Row: {
           company: string | null
-          created_at: string
+          created_at: string | null
           email: string
           id: string
           message: string
@@ -22,7 +37,7 @@ export type Database = {
         }
         Insert: {
           company?: string | null
-          created_at?: string
+          created_at?: string | null
           email: string
           id?: string
           message: string
@@ -32,7 +47,7 @@ export type Database = {
         }
         Update: {
           company?: string | null
-          created_at?: string
+          created_at?: string | null
           email?: string
           id?: string
           message?: string
@@ -89,7 +104,7 @@ export type Database = {
           service: string
           service_details: string
           size: string
-          terms_accepted: boolean
+          terms_accepted?: boolean
         }
         Update: {
           company?: string | null
