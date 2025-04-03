@@ -24,9 +24,9 @@ export function CTASection() {
           }}>
               Pronto para transformar sua gestão ambiental?
             </h2>
-            <p className="text-white/80 max-w-2xl mx-auto mb-8" style={{
+            <p style={{
             fontFamily: "'Roboto', sans-serif"
-          }}>
+          }} className="max-w-2xl mx-auto mb-8 text-slate-50">
               Entre em contato com nossa equipe e descubra como podemos ajudar sua empresa a atingir a conformidade ambiental com soluções personalizadas.
             </p>
           </div>
