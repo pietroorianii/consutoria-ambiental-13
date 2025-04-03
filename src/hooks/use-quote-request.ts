@@ -59,44 +59,40 @@ export const useQuoteRequest = () => {
     setIsSubmitting(true);
     
     try {
-      // Process file uploads (simplified for this example)
-      let fileUrls: string[] = [];
+      // Save file attachments as strings for now
+      // In a real implementation, these would be uploaded to Supabase Storage
+      const fileAttachments = selectedFiles.map(file => ({
+        name: file.name,
+        size: file.size,
+        type: file.type
+      }));
       
-      if (selectedFiles.length > 0) {
-        // Here we would implement the real upload to Supabase Storage
-        fileUrls = selectedFiles.map(file => file.name); 
-      }
-      
-      // Prepare data for Supabase
-      const quoteData = {
-        full_name: data.fullName,
-        company: data.company,
-        document_id: data.documentId,
-        phone: data.phone,
-        email: data.email,
-        segment: data.segment,
-        location: data.location,
-        size: data.size,
-        description: data.description,
-        service: data.service,
-        service_details: data.serviceDetails,
-        deadline: data.deadline,
-        has_license: data.hasLicense,
-        license_details: data.licenseDetails,
-        has_notifications: data.hasNotifications,
-        notification_details: data.notificationDetails,
-        estimated_budget: data.estimatedBudget,
-        observations: data.observations,
-        file_attachments: fileUrls,
-        terms_accepted: data.termsAccepted,
-        created_at: new Date().toISOString()
-      };
-      
-      // Save data to Supabase using type assertion to bypass type checking temporarily
-      // This is a workaround until the Supabase types are properly updated
-      const { error } = await (supabase as any)
+      // Insert data into Supabase
+      const { error } = await supabase
         .from('quote_requests')
-        .insert(quoteData);
+        .insert({
+          full_name: data.fullName,
+          company: data.company,
+          document_id: data.documentId,
+          phone: data.phone,
+          email: data.email,
+          segment: data.segment,
+          location: data.location,
+          size: data.size,
+          description: data.description,
+          service: data.service,
+          service_details: data.serviceDetails,
+          deadline: data.deadline,
+          has_license: data.hasLicense,
+          license_details: data.licenseDetails,
+          has_notifications: data.hasNotifications,
+          notification_details: data.notificationDetails,
+          estimated_budget: data.estimatedBudget,
+          observations: data.observations,
+          file_attachments: fileAttachments,
+          terms_accepted: data.termsAccepted,
+          created_at: new Date().toISOString()
+        });
       
       if (error) throw error;
       
@@ -105,8 +101,8 @@ export const useQuoteRequest = () => {
       console.error("Error submitting form:", error);
       toast({
         variant: "destructive",
-        title: "Error submitting request",
-        description: "There was a problem processing your request. Please try again later."
+        title: "Erro ao enviar solicitação",
+        description: "Houve um problema ao processar sua solicitação. Por favor, tente novamente."
       });
     } finally {
       setIsSubmitting(false);
