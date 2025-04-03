@@ -109,7 +109,7 @@ export function Footer() {
               <li>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                   <Linkedin className="h-5 w-5 text-eco-green" />
-                  <span>EcoConsult Consultoria Ambiental</span>
+                  <span> L&amp;P Soluções Ambientais</span>
                 </a>
               </li>
             </ul>
