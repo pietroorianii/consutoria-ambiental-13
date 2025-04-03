@@ -47,8 +47,7 @@ export function ContactForm() {
           phone: formData.phone,
           company: formData.company,
           subject: formData.subject,
-          message: formData.message,
-          created_at: new Date().toISOString()
+          message: formData.message
         });
       
       if (error) throw error;
