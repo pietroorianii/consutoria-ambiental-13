@@ -88,10 +88,10 @@ export function FeaturedServices() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="container py-16 md:py-24 relative overflow-hidden transition-all duration-700">
+    <section ref={sectionRef} className="container py-16 md:py-20 relative overflow-hidden transition-all duration-700">
       <div className="absolute inset-0 bg-opacity-5 bg-eco-green-light leaf-pattern"></div>
       <div className="relative z-10">
-        <div className="text-center mb-16 section-header opacity-0 translate-y-10 transition-all duration-700">
+        <div className="text-center mb-12 section-header opacity-0 translate-y-10 transition-all duration-700">
           <div className="flex justify-center mb-4">
             <div className="bg-eco-green/10 p-3 rounded-full inline-flex items-center justify-center">
               <Leaf className="h-10 w-10 text-eco-green" />
@@ -130,7 +130,7 @@ export function FeaturedServices() {
           ))}
         </div>
         
-        <div className="text-center mt-12 view-all-btn opacity-0 translate-y-10 transition-all duration-700">
+        <div className="text-center mt-10 view-all-btn opacity-0 translate-y-10 transition-all duration-700">
           <Button asChild size="lg" className="btn-gradient text-white group overflow-hidden relative">
             <Link to="/services" className="flex items-center gap-2 relative z-10">
               Ver Todos os Serviços <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

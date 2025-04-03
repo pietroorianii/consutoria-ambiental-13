@@ -61,7 +61,7 @@ export function CompanyIntro() {
   ];
 
   return (
-    <section ref={sectionRef} className="container py-16 md:py-24 leaf-pattern relative overflow-hidden transition-all duration-700">
+    <section ref={sectionRef} className="container py-16 md:py-20 leaf-pattern relative overflow-hidden transition-all duration-700">
       <div className="absolute top-10 right-10 text-eco-green/10">
         <Leaf className="h-32 w-32 animate-float" />
       </div>
