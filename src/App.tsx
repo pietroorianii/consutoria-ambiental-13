@@ -14,6 +14,9 @@ import LegislationPage from "./pages/LegislationPage";
 import LegislationCategoryPage from "./pages/LegislationCategoryPage";
 import RequestQuotePage from "./pages/RequestQuotePage";
 
+// Adicionando estilo para animação pulse-slow
+import "./animations.css";
+
 const queryClient = new QueryClient();
 
 const App = () => (

@@ -71,8 +71,13 @@ const LegislationPage = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-20" 
               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
           </div>
-          <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+          <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
+          
+          {/* Elementos fluidos decorativos */}
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+          
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
@@ -96,8 +101,9 @@ const LegislationPage = () => {
         
         {/* Legislation Categories */}
         <section className="container py-16 relative">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {legislationCategories.map((category, index) => (
@@ -109,6 +115,7 @@ const LegislationPage = () => {
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute inset-0 leaf-pattern opacity-10"></div>
                   <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                     {category.icon}
                   </div>

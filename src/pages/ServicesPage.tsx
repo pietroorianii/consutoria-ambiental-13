@@ -1,4 +1,3 @@
-
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
@@ -53,8 +52,12 @@ const ServicesPage = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-20" 
               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
           </div>
-          <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+          <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
+          
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+          
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
@@ -78,8 +81,9 @@ const ServicesPage = () => {
         
         {/* Service Categories */}
         <section className="container py-16 relative">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           
           <div className="space-y-16">
             {serviceCategories.map((category, index) => <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''} animate-fade-up`} style={{
@@ -87,7 +91,7 @@ const ServicesPage = () => {
           }}>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="bg-eco-green/10 p-4 rounded-full animate-pulse-slow">
+                    <div className="bg-eco-green/10 p-4 rounded-full animate-float">
                       {category.icon}
                     </div>
                     <h2 className="text-3xl font-bold" style={{
@@ -122,6 +126,7 @@ const ServicesPage = () => {
                 <div className="relative rounded-lg overflow-hidden h-[300px] group shadow-lg">
                   <img src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1482938289607-e9573fc25ebb' : '1509316975850-ff9c5deb0cd9'}?auto=format&fit=crop&q=80&w=800&h=500`} alt={category.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 leaf-pattern opacity-10"></div>
                   
                   <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                     {category.icon}
@@ -143,14 +148,14 @@ const ServicesPage = () => {
             }}>Como Trabalhamos</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto" style={{
               fontFamily: "'Lato', sans-serif"
-            }}>Licenciamentos Ambientais (LP, LI, LO, AA, LAS, DLAE)</p>
+            }}>Nossa abordagem para projetos ambientais é estruturada e orientada para resultados</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="relative bg-background/80 backdrop-blur-sm rounded-lg p-8 shadow-md hover:shadow-lg transition-all animate-fade-up" style={{
               animationDelay: "0.2s"
             }}>
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg shadow-lg animate-float">
                   1
                 </div>
                 <h3 className="text-xl font-semibold mb-4 mt-2" style={{

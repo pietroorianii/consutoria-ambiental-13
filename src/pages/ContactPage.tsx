@@ -15,8 +15,12 @@ const ContactPage = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-20" 
               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
           </div>
-          <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+          <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
+          
+          {/* Elementos fluidos decorativos */}
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
           
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
@@ -41,14 +45,15 @@ const ContactPage = () => {
         
         {/* Contact Section */}
         <section className="container py-16 relative">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 shadow-md animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 shadow-md border border-eco-green/10 hover:border-eco-green/20 transition-all animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <ContactForm />
             </div>
-            <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 shadow-md animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 shadow-md border border-eco-blue/10 hover:border-eco-blue/20 transition-all animate-fade-up" style={{ animationDelay: "0.3s" }}>
               <ContactInfo />
             </div>
           </div>

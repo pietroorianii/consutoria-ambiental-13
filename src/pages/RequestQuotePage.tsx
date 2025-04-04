@@ -39,12 +39,16 @@ const RequestQuotePage = () => {
         <div className="absolute inset-0 bg-cover bg-center opacity-20" 
             style={{ backgroundImage: "url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
         </div>
-        <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+        <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
+        
+        {/* Elementos fluidos decorativos */}
+        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+        <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
       </div>
       
       <div className="container mx-auto -mt-8 px-4 md:px-6 pb-16 relative z-10">
-        <div className="max-w-3xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
+        <div className="max-w-3xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border border-eco-green/10 hover:border-eco-green/20 transition-all">
           <div className="bg-gradient-to-r from-eco-green to-eco-blue p-6 text-white">
             <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
               <Leaf className="h-8 w-8 animate-float" />
@@ -61,6 +65,7 @@ const RequestQuotePage = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-6 relative">
               <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10"></div>
               
               {/* Etapa 1: Dados do Solicitante */}
               {currentStep === 1 && <PersonalInfoStep form={form} />}
@@ -130,6 +135,8 @@ const RequestQuotePage = () => {
       {/* Decorative elements */}
       <div className="bg-muted py-16 relative overflow-hidden">
         <div className="absolute inset-0 leaf-pattern opacity-20"></div>
+        <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
       </div>
       
       <Footer />

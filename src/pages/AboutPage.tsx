@@ -41,8 +41,12 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-cover bg-center opacity-20" 
               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
           </div>
-          <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+          <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
+          
+          {/* Elementos fluidos decorativos */}
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
           
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
@@ -67,8 +71,9 @@ const AboutPage = () => {
         
         {/* Company History */}
         <section className="container py-16 relative">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
@@ -97,6 +102,7 @@ const AboutPage = () => {
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-eco-green/30 to-transparent mix-blend-multiply"></div>
+              <div className="absolute inset-0 leaf-pattern opacity-10"></div>
             </div>
           </div>
         </section>
@@ -144,8 +150,9 @@ const AboutPage = () => {
         
         {/* Team */}
         <section className="container py-16 relative">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           
           <div className="text-center mb-12 animate-fade-up">
             <h2 className="text-3xl font-bold" style={{ fontFamily: "'Poppins', sans-serif" }}>Nossa Equipe</h2>
@@ -165,6 +172,7 @@ const AboutPage = () => {
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-eco-green/20 to-transparent mix-blend-multiply"></div>
+                  <div className="absolute inset-0 leaf-pattern opacity-10"></div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold" style={{ fontFamily: "'Poppins', sans-serif" }}>{member.name}</h3>

@@ -19,7 +19,12 @@ export const ServiceBanner = ({ categoryData }: ServiceBannerProps) => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/30 backdrop-blur-[1px]" />
       </div>
       
+      {/* Padrão de folhas para textura */}
       <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-20"></div>
+      
+      {/* Elementos fluidos decorativos */}
+      <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+      <div className="absolute -top-48 -right-48 w-96 h-96 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
       
       <div className="container relative z-10 py-16 md:py-24">
         <div className="max-w-3xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
