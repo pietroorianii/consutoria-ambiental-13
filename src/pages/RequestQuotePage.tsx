@@ -33,14 +33,24 @@ const RequestQuotePage = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto py-10 px-4 md:px-6">
-        <div className="max-w-3xl mx-auto bg-white dark:bg-zinc-900 rounded-lg shadow-lg overflow-hidden">
+      
+      {/* Header background */}
+      <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 pt-12 md:pt-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" 
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
+        </div>
+        <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
+      </div>
+      
+      <div className="container mx-auto -mt-8 px-4 md:px-6 pb-16 relative z-10">
+        <div className="max-w-3xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
           <div className="bg-gradient-to-r from-eco-green to-eco-blue p-6 text-white">
-            <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
-              <Leaf className="h-8 w-8" />
+            <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+              <Leaf className="h-8 w-8 animate-float" />
               Solicitação de Orçamento
             </h1>
-            <p className="mt-2 opacity-90">
+            <p className="mt-2 opacity-90" style={{ fontFamily: "'Roboto', sans-serif" }}>
               Preencha o formulário abaixo para solicitar um orçamento personalizado para seu projeto ambiental.
             </p>
           </div>
@@ -48,7 +58,10 @@ const RequestQuotePage = () => {
           <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-6 relative">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+              
               {/* Etapa 1: Dados do Solicitante */}
               {currentStep === 1 && <PersonalInfoStep form={form} />}
 
@@ -77,7 +90,7 @@ const RequestQuotePage = () => {
                     type="button" 
                     variant="outline" 
                     onClick={prevStep}
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 hover:bg-muted/80"
                   >
                     <span>Voltar</span>
                   </Button>
@@ -89,14 +102,14 @@ const RequestQuotePage = () => {
                   <Button 
                     type="button" 
                     onClick={nextStep}
-                    className="bg-eco-green hover:bg-eco-green/90 flex items-center gap-2"
+                    className="bg-eco-green hover:bg-eco-green/90 flex items-center gap-2 shimmer-button"
                   >
                     <span>Próximo</span>
                   </Button>
                 ) : (
                   <Button 
                     type="submit" 
-                    className="bg-eco-green hover:bg-eco-green/90 flex items-center gap-2"
+                    className="bg-eco-green hover:bg-eco-green/90 flex items-center gap-2 shimmer-button"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Enviando..." : "Enviar Solicitação"}
@@ -113,6 +126,12 @@ const RequestQuotePage = () => {
           setShowSuccess={setShowSuccess} 
         />
       </div>
+      
+      {/* Decorative elements */}
+      <div className="bg-muted py-16 relative overflow-hidden">
+        <div className="absolute inset-0 leaf-pattern opacity-20"></div>
+      </div>
+      
       <Footer />
     </>
   );

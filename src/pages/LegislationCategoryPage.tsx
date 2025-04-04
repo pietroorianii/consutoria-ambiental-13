@@ -1,3 +1,4 @@
+
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { useParams } from "react-router-dom";
@@ -164,7 +165,7 @@ const LegislationCategoryPage = () => {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         {/* Banner */}
         <div className="relative overflow-hidden">
           <div
@@ -174,15 +175,20 @@ const LegislationCategoryPage = () => {
               backgroundPosition: "center 40%"
             }}
           >
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30 backdrop-blur-[1px]" />
           </div>
           
+          <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-20"></div>
+          
           <div className="container relative z-10 py-16 md:py-24">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div className="max-w-3xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ 
+                fontFamily: "'Poppins', sans-serif",
+                textShadow: "0px 2px 4px rgba(0,0,0,0.3)"
+              }}>
                 {categoryData.title}
               </h1>
-              <p className="text-white/90 text-lg">
+              <p className="text-white/90 text-lg" style={{ fontFamily: "'Roboto', sans-serif" }}>
                 {categoryData.description}
               </p>
             </div>
@@ -190,27 +196,36 @@ const LegislationCategoryPage = () => {
         </div>
         
         {/* Legislation List */}
-        <section className="container py-16">
+        <section className="container py-16 relative">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          
           <div className="space-y-6">
             {categoryData.items.map((item, index) => (
-              <Card key={index} className="eco-card">
+              <Card key={index} className="eco-card bg-background/80 backdrop-blur-sm border-eco-green/10 hover:border-eco-green/30 shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: `${0.1 + index * 0.1}s` }}>
                 <CardHeader>
-                  <CardTitle>{item.title}</CardTitle>
+                  <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{item.description}</p>
+                  <p className="text-muted-foreground mb-4" style={{ fontFamily: "'Lato', sans-serif" }}>{item.description}</p>
                   <a 
                     href={item.link} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-eco-green hover:text-eco-green-dark transition-colors flex items-center gap-2"
+                    className="text-eco-green hover:text-eco-green-dark transition-colors flex items-center gap-2 group"
                   >
-                    Acessar legislação <ExternalLink size={16} />
+                    Acessar legislação <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </CardContent>
               </Card>
             ))}
           </div>
+        </section>
+        
+        <section className="relative py-16 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 leaf-pattern"></div>
+          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div>
         </section>
         
         <CTASection />

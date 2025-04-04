@@ -1,9 +1,11 @@
+
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
 import { ArrowRight, Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun, Earth } from "lucide-react";
+
 const serviceCategories = [{
   icon: <Leaf className="h-12 w-12 text-eco-green" />,
   title: "Licenciamento e Autorizações",
@@ -41,24 +43,31 @@ const serviceCategories = [{
   items: ["Renovação de licenças e autorizações", "Declarações e inventários anuais", "Defesas ambientais", "Manutenções e atualizações periódicas"],
   link: "/services/management"
 }];
+
 const ServicesPage = () => {
   return <>
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         {/* Page Header */}
         <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 py-12 md:py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-opacity-5 leaf-pattern"></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" 
+              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
+          </div>
+          <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-              <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm">
+              <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
                 <Earth className="h-12 w-12 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white" style={{
-                fontFamily: "'Poppins', sans-serif"
+                <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{
+                fontFamily: "'Poppins', sans-serif",
+                textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
               }}>Nossos Serviços</h1>
-                <p className="text-white/90 mt-4 max-w-3xl" style={{
-                fontFamily: "'Roboto', sans-serif"
+                <p className="text-white/90 mt-4 max-w-3xl animate-fade-up" style={{
+                fontFamily: "'Roboto', sans-serif",
+                animationDelay: "0.1s"
               }}>
                   Oferecemos soluções ambientais completas para empresas de todos os portes e setores, auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis.
                 </p>
@@ -68,14 +77,17 @@ const ServicesPage = () => {
         </div>
         
         {/* Service Categories */}
-        <section className="container py-16">
+        <section className="container py-16 relative">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          
           <div className="space-y-16">
             {serviceCategories.map((category, index) => <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''} animate-fade-up`} style={{
             animationDelay: `${0.1 + index * 0.1}s`
           }}>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="bg-eco-green/10 p-4 rounded-full">
+                    <div className="bg-eco-green/10 p-4 rounded-full animate-pulse-slow">
                       {category.icon}
                     </div>
                     <h2 className="text-3xl font-bold" style={{
@@ -100,16 +112,16 @@ const ServicesPage = () => {
                       </li>)}
                   </ul>
                   
-                  <Button asChild className="bg-eco-green hover:bg-eco-green-dark">
+                  <Button asChild className="bg-eco-green hover:bg-eco-green-dark shimmer-button">
                     <Link to={category.link} className="flex items-center gap-2">
                       Ver detalhes <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
                 </div>
                 
-                <div className="relative rounded-lg overflow-hidden h-[300px] group">
+                <div className="relative rounded-lg overflow-hidden h-[300px] group shadow-lg">
                   <img src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1482938289607-e9573fc25ebb' : '1509316975850-ff9c5deb0cd9'}?auto=format&fit=crop&q=80&w=800&h=500`} alt={category.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   
                   <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
                     {category.icon}
@@ -120,8 +132,11 @@ const ServicesPage = () => {
         </section>
         
         {/* Process Section */}
-        <section className="bg-gradient-to-br from-muted to-muted/50 py-16 leaf-pattern">
-          <div className="container">
+        <section className="relative py-16 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 leaf-pattern"></div>
+          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div>
+          <div className="container relative">
             <div className="text-center mb-12 animate-fade-up">
               <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{
               fontFamily: "'Poppins', sans-serif"
@@ -132,10 +147,10 @@ const ServicesPage = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="relative bg-background rounded-lg p-8 shadow-sm animate-fade-up" style={{
+              <div className="relative bg-background/80 backdrop-blur-sm rounded-lg p-8 shadow-md hover:shadow-lg transition-all animate-fade-up" style={{
               animationDelay: "0.2s"
             }}>
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg shadow-lg">
                   1
                 </div>
                 <h3 className="text-xl font-semibold mb-4 mt-2" style={{
@@ -148,10 +163,10 @@ const ServicesPage = () => {
                 </p>
               </div>
               
-              <div className="relative bg-background rounded-lg p-8 shadow-sm animate-fade-up" style={{
+              <div className="relative bg-background/80 backdrop-blur-sm rounded-lg p-8 shadow-md hover:shadow-lg transition-all animate-fade-up" style={{
               animationDelay: "0.3s"
             }}>
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg shadow-lg">
                   2
                 </div>
                 <h3 className="text-xl font-semibold mb-4 mt-2" style={{
@@ -164,10 +179,10 @@ const ServicesPage = () => {
                 </p>
               </div>
               
-              <div className="relative bg-background rounded-lg p-8 shadow-sm animate-fade-up" style={{
+              <div className="relative bg-background/80 backdrop-blur-sm rounded-lg p-8 shadow-md hover:shadow-lg transition-all animate-fade-up" style={{
               animationDelay: "0.4s"
             }}>
-                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-eco-green flex items-center justify-center text-white font-bold text-lg shadow-lg">
                   3
                 </div>
                 <h3 className="text-xl font-semibold mb-4 mt-2" style={{

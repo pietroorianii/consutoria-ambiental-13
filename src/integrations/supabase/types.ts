@@ -9,7 +9,7 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      contacts: {
+      CONTATOS: {
         Row: {
           company: string | null
           created_at: string
@@ -42,7 +42,7 @@ export type Database = {
         }
         Relationships: []
       }
-      quote_requests: {
+      ORÇAMENTOS: {
         Row: {
           company: string | null
           created_at: string

@@ -1,3 +1,4 @@
+
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -64,18 +65,28 @@ const LegislationPage = () => {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         {/* Page Header */}
         <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 py-12 md:py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-opacity-5 leaf-pattern"></div>
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" 
+              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
+          </div>
+          <div className="absolute inset-0 bg-opacity-5 leaf-pattern mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-              <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm">
+              <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
                 <Globe className="h-12 w-12 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>Legislação Ambiental</h1>
-                <p className="text-white/90 mt-4 max-w-3xl" style={{ fontFamily: "'Roboto', sans-serif" }}>
+                <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{ 
+                  fontFamily: "'Poppins', sans-serif",
+                  textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
+                }}>Legislação Ambiental</h1>
+                <p className="text-white/90 mt-4 max-w-3xl animate-fade-up" style={{ 
+                  fontFamily: "'Roboto', sans-serif", 
+                  animationDelay: "0.1s"
+                }}>
                   Conheça as principais legislações ambientais aplicáveis aos diferentes setores econômicos e atividades. Mantenha-se atualizado sobre as normas e regulamentações que afetam o seu negócio.
                 </p>
               </div>
@@ -84,10 +95,13 @@ const LegislationPage = () => {
         </div>
         
         {/* Legislation Categories */}
-        <section className="container py-16">
+        <section className="container py-16 relative">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {legislationCategories.map((category, index) => (
-              <Card key={index} className="eco-card h-full border-eco-green/10 hover:border-eco-green/30 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${0.1 + index * 0.1}s` }}>
+              <Card key={index} className="eco-card h-full border-eco-green/10 hover:border-eco-green/30 transition-all duration-300 animate-fade-up bg-background/80 backdrop-blur-sm shadow-md hover:shadow-lg" style={{ animationDelay: `${0.1 + index * 0.1}s` }}>
                 <div className="aspect-[3/2] w-full overflow-hidden rounded-t-lg relative">
                   <img 
                     src={category.image} 
@@ -125,8 +139,12 @@ const LegislationPage = () => {
         </section>
         
         {/* Legislation Updates */}
-        <section className="bg-gradient-to-br from-muted to-muted/50 py-16 leaf-pattern">
-          <div className="container">
+        <section className="relative py-16 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 leaf-pattern"></div>
+          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div>
+          
+          <div className="container relative z-10">
             <div className="text-center mb-12 animate-fade-up">
               <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Atualizações Recentes</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'Lato', sans-serif" }}>
@@ -135,7 +153,7 @@ const LegislationPage = () => {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <Card className="bg-background border-none shadow-sm animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              <Card className="bg-background/80 backdrop-blur-sm border-none shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: "0.2s" }}>
                 <CardHeader>
                   <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>Resolução CONAMA nº 500/2020</CardTitle>
                   <p className="text-sm text-eco-green font-medium">Publicada em 29/09/2020</p>
@@ -147,7 +165,7 @@ const LegislationPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-background border-none shadow-sm animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              <Card className="bg-background/80 backdrop-blur-sm border-none shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: "0.3s" }}>
                 <CardHeader>
                   <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>Lei nº 14.119/2021</CardTitle>
                   <p className="text-sm text-eco-green font-medium">Publicada em 13/01/2021</p>
@@ -159,7 +177,7 @@ const LegislationPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-background border-none shadow-sm animate-fade-up" style={{ animationDelay: "0.4s" }}>
+              <Card className="bg-background/80 backdrop-blur-sm border-none shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: "0.4s" }}>
                 <CardHeader>
                   <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>Decreto nº 10.936/2022</CardTitle>
                   <p className="text-sm text-eco-green font-medium">Publicada em 12/01/2022</p>
