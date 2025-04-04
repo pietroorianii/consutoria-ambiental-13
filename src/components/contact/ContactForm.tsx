@@ -38,9 +38,9 @@ export function ContactForm() {
     setIsSubmitting(true);
     
     try {
-      // Insert contact data into Supabase
+      // Insert contact data into Supabase - using the correct table name "CONTATOS"
       const { error } = await supabase
-        .from('contacts')
+        .from('CONTATOS')
         .insert({
           name: formData.name,
           email: formData.email,

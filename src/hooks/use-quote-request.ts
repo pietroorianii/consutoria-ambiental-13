@@ -67,9 +67,9 @@ export const useQuoteRequest = () => {
         type: file.type
       }));
       
-      // Insert data into Supabase
+      // Insert data into Supabase - using the correct table name "ORÇAMENTOS"
       const { error } = await supabase
-        .from('quote_requests')
+        .from('ORÇAMENTOS')
         .insert({
           full_name: data.fullName,
           company: data.company,
