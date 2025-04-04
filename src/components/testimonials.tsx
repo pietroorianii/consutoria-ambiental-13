@@ -31,9 +31,9 @@ export function Testimonials() {
         }}>
             O Que Nossos Clientes Dizem
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto" style={{
+          <p style={{
           fontFamily: "'Roboto', sans-serif"
-        }}>
+        }} className="text-muted-foreground max-w-2xl mx-auto font-medium">
             Conheça a experiência de empresas que já contam com nossos serviços de consultoria ambiental.
           </p>
         </div>
