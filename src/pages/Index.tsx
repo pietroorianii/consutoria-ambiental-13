@@ -4,17 +4,22 @@ import { CompanyIntro } from "@/components/company-intro";
 import { FeaturedServices } from "@/components/featured-services";
 import { Testimonials } from "@/components/testimonials";
 import { CTASection } from "@/components/cta-section";
-import { PageLayout } from "@/components/layout/PageLayout";
+import { Navbar } from "@/components/ui/navbar";
+import { Footer } from "@/components/ui/footer";
 
 const Index = () => {
   return (
-    <PageLayout>
-      <HeroBanner />
-      <CompanyIntro />
-      <FeaturedServices />
-      <Testimonials />
-      <CTASection />
-    </PageLayout>
+    <>
+      <Navbar />
+      <main>
+        <HeroBanner />
+        <CompanyIntro />
+        <FeaturedServices />
+        <Testimonials />
+        <CTASection />
+      </main>
+      <Footer />
+    </>
   );
 };
 
