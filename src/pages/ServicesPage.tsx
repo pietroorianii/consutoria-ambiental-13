@@ -1,7 +1,6 @@
-import { Navbar } from "@/components/ui/navbar";
-import { Footer } from "@/components/ui/footer";
-import { ServiceCategories } from "@/components/service/ServiceCategories";
+
 import { CTASection } from "@/components/cta-section";
+import { ServiceCategories } from "@/components/service/ServiceCategories";
 import { PageLayout } from "@/components/layout/PageLayout";
 
 const ServicesPage = () => {
