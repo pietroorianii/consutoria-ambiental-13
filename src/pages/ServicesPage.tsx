@@ -104,7 +104,7 @@ const ServicesPage = () => {
                       </div>
                       <span style={{
                   fontFamily: "'Lato', sans-serif"
-                }} className="text-muted-foreground font-medium">{item}</span>
+                }} className="text-muted-foreground text-lg font-medium">{item}</span>
                     </li>)}
                 </ul>
                 
