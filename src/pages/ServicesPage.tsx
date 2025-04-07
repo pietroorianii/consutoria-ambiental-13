@@ -1,17 +1,50 @@
-
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
+import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
-import { Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun, Earth } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ServiceList } from "@/components/service/ServiceList";
-import { serviceCategories } from "@/data/serviceCategories";
+import { ArrowRight, Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun, Earth } from "lucide-react";
+
+const serviceCategories = [{
+  icon: <Leaf className="h-12 w-12 text-eco-green" />,
+  title: "Licenciamento e Autorizações",
+  description: "Obtenção de licenças e autorizações ambientais em conformidade com a legislação vigente.",
+  items: ["Licenciamentos Ambientais (LP, LI, LO, AA, LAS)", "Autorizações Ambientais", "Cadastro Técnico Federal (IBAMA)", "Outorgas de Recursos Hídricos"],
+  link: "/services/licensing"
+}, {
+  icon: <Beaker className="h-12 w-12 text-eco-blue" />,
+  title: "Monitoramento e Análises",
+  description: "Acompanhamento de condicionantes ambientais e análises de conformidade.",
+  items: ["Acompanhamento de condicionantes ambientais", "Declaração de Carga Poluidora (DCP)", "Monitoramento de emissões de poluentes", "Gestão de amostragens e análises"],
+  link: "/services/monitoring"
+}, {
+  icon: <FileText className="h-12 w-12 text-eco-green-dark" />,
+  title: "Planos e Relatórios",
+  description: "Elaboração de documentos técnicos para sua empresa atender às exigências legais.",
+  items: ["Inventário de Resíduos Sólidos", "Planos de Gerenciamento de Resíduos", "Estudos de Impacto Ambiental (EIA/RIMA, EIV/RIV)", "Programas de Gestão Ambiental"],
+  link: "/services/reports"
+}, {
+  icon: <Users className="h-12 w-12 text-eco-blue-dark" />,
+  title: "Acompanhamento e Consultoria",
+  description: "Assessoria técnica para questões ambientais e acompanhamento de projetos.",
+  items: ["Acompanhamento de projetos ambientais", "Elaboração de relatórios para TAC e notificações", "Inspeções ambientais e auditorias", "Relatórios de cumprimento de condicionantes"],
+  link: "/services/consulting"
+}, {
+  icon: <TreeDeciduous className="h-12 w-12 text-eco-green" />,
+  title: "Treinamentos e Capacitações",
+  description: "Capacitação e treinamentos especializados para equipes e colaboradores.",
+  items: ["Treinamentos presenciais e remotos", "Treinamento em Gerenciamento de Resíduos Sólidos", "Capacitações específicas para cada setor"],
+  link: "/services/training"
+}, {
+  icon: <CloudSun className="h-12 w-12 text-eco-blue" />,
+  title: "Gestão e Manutenção Ambiental",
+  description: "Serviços continuados de gestão e manutenção de requisitos ambientais.",
+  items: ["Renovação de licenças e autorizações", "Declarações e inventários anuais", "Defesas ambientais", "Manutenções e atualizações periódicas"],
+  link: "/services/management"
+}];
 
 const ServicesPage = () => {
-  return (
-    <>
+  return <>
       <Navbar />
       <main className="overflow-hidden">
         {/* Page Header */}
@@ -46,46 +79,60 @@ const ServicesPage = () => {
           </div>
         </div>
         
-        {/* Service Categories in Cards Format */}
+        {/* Service Categories */}
         <section className="container py-16 relative">
           <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+          <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(serviceCategories).map(([categoryKey, category], index) => (
-              <Card 
-                key={categoryKey}
-                className="overflow-hidden border-eco-green/10 hover:border-eco-green/30 hover:shadow-lg transition-all duration-300 h-full animate-fade-up" 
-                style={{animationDelay: `${0.1 + index * 0.1}s`}}
-              >
-                <div className="h-40 bg-gradient-to-r relative overflow-hidden"
-                  style={{
-                    backgroundImage: index % 2 === 0 
-                      ? 'linear-gradient(90deg, hsla(134, 36%, 53%, 0.8) 0%, hsla(59, 86%, 68%, 0.8) 100%)' 
-                      : 'linear-gradient(90deg, hsla(176, 73%, 88%, 0.8) 0%, hsla(46, 73%, 75%, 0.8) 100%)'
-                  }}
-                >
-                  <div className="absolute inset-0 leaf-pattern opacity-10"></div>
-                  <div className="absolute bottom-4 left-4 bg-white/10 p-3 rounded-lg backdrop-blur-sm">
-                    <div className="text-white">{category.icon}</div>
+          <div className="space-y-16">
+            {serviceCategories.map((category, index) => <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''} animate-fade-up`} style={{
+            animationDelay: `${0.1 + index * 0.1}s`
+          }}>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-eco-green/10 p-4 rounded-full animate-float">
+                      {category.icon}
+                    </div>
+                    <h2 className="text-3xl font-bold" style={{
+                  fontFamily: "'Poppins', sans-serif"
+                }}>{category.title}</h2>
                   </div>
-                </div>
-                
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3" style={{fontFamily: "'Poppins', sans-serif"}}>
-                    {category.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6" style={{fontFamily: "'Lato', sans-serif"}}>
+                  
+                  <p className="text-muted-foreground text-lg" style={{
+                fontFamily: "'Lato', sans-serif"
+              }}>
                     {category.description}
                   </p>
-                  <Button asChild className="bg-eco-green hover:bg-eco-green-dark transition-all duration-300 w-full">
-                    <Link to={`/services/${categoryKey}`} className="flex items-center justify-center gap-2">
-                      Ver detalhes <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  
+                  <ul className="space-y-3">
+                    {category.items.map((item, idx) => <li key={idx} className="flex items-start gap-2 rounded-md">
+                        <div className="rounded-full bg-eco-green/20 p-1 mt-0.5">
+                          <div className="rounded-full bg-eco-green w-2 h-2"></div>
+                        </div>
+                        <span style={{
+                    fontFamily: "'Lato', sans-serif"
+                  }} className="text-muted-foreground font-medium">{item}</span>
+                      </li>)}
+                  </ul>
+                  
+                  <Button asChild className="bg-eco-green hover:bg-eco-green-dark shimmer-button">
+                    <Link to={category.link} className="flex items-center gap-2">
+                      Ver detalhes <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+                
+                <div className="relative rounded-lg overflow-hidden h-[300px] group shadow-lg">
+                  <img src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1482938289607-e9573fc25ebb' : '1509316975850-ff9c5deb0cd9'}?auto=format&fit=crop&q=80&w=800&h=500`} alt={category.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 leaf-pattern opacity-10"></div>
+                  
+                  <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+                    {category.icon}
+                  </div>
+                </div>
+              </div>)}
           </div>
         </section>
         
@@ -159,8 +206,6 @@ const ServicesPage = () => {
         <CTASection />
       </main>
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default ServicesPage;
