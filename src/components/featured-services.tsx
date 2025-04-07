@@ -68,7 +68,7 @@ export function FeaturedServices() {
             }}>{service.title}</CardTitle>
                 <CardDescription style={{
               fontFamily: "'Lato', sans-serif"
-            }}>{service.description}</CardDescription>
+            }} className="text-lg text-left">{service.description}</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4">
                 <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80 group">
