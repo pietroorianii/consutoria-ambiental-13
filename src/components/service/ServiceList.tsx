@@ -15,11 +15,11 @@ export const ServiceList = ({
 }: ServiceListProps) => {
   return (
     <section className="container py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         {services.map((service, index) => (
           <Card 
             key={index} 
-            className="eco-card border-eco-green/10 hover:border-eco-green/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col"
+            className="eco-card border-eco-green/10 hover:border-eco-green/30 hover:shadow-lg transition-all duration-300"
           >
             <CardHeader>
               <div className="flex items-center gap-2 mb-3">
@@ -30,7 +30,7 @@ export const ServiceList = ({
               </div>
               <CardDescription className="mt-2 text-base text-left">{service.description}</CardDescription>
             </CardHeader>
-            <CardContent className="mt-auto">
+            <CardContent>
               <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80">
                 <Link to="/request-quote" className="flex items-center gap-1">
                   Solicitar orçamento <ArrowRight className="h-4 w-4 ml-1" />
