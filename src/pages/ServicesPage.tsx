@@ -1,3 +1,4 @@
+
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
@@ -86,34 +87,37 @@ const ServicesPage = () => {
           <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
           
           <div className="space-y-16">
-            {serviceCategories.map((category, index) => <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''} animate-fade-up`} style={{
-            animationDelay: `${0.1 + index * 0.1}s`
-          }}>
+            {serviceCategories.map((category, index) => (
+              <div key={index} className={`animate-fade-up`} style={{
+                animationDelay: `${0.1 + index * 0.1}s`
+              }}>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="bg-eco-green/10 p-4 rounded-full animate-float">
                       {category.icon}
                     </div>
                     <h2 className="text-3xl font-bold" style={{
-                  fontFamily: "'Poppins', sans-serif"
-                }}>{category.title}</h2>
+                      fontFamily: "'Poppins', sans-serif"
+                    }}>{category.title}</h2>
                   </div>
                   
                   <p className="text-muted-foreground text-lg" style={{
-                fontFamily: "'Lato', sans-serif"
-              }}>
+                    fontFamily: "'Lato', sans-serif"
+                  }}>
                     {category.description}
                   </p>
                   
                   <ul className="space-y-3">
-                    {category.items.map((item, idx) => <li key={idx} className="flex items-start gap-2 rounded-md">
+                    {category.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2 rounded-md">
                         <div className="rounded-full bg-eco-green/20 p-1 mt-0.5">
                           <div className="rounded-full bg-eco-green w-2 h-2"></div>
                         </div>
                         <span style={{
-                    fontFamily: "'Lato', sans-serif"
-                  }} className="text-muted-foreground font-medium">{item}</span>
-                      </li>)}
+                          fontFamily: "'Lato', sans-serif"
+                        }} className="text-muted-foreground font-medium">{item}</span>
+                      </li>
+                    ))}
                   </ul>
                   
                   <Button asChild className="bg-eco-green hover:bg-eco-green-dark shimmer-button">
@@ -122,17 +126,8 @@ const ServicesPage = () => {
                     </Link>
                   </Button>
                 </div>
-                
-                <div className="relative rounded-lg overflow-hidden h-[300px] group shadow-lg">
-                  <img src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1482938289607-e9573fc25ebb' : '1509316975850-ff9c5deb0cd9'}?auto=format&fit=crop&q=80&w=800&h=500`} alt={category.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute inset-0 leaf-pattern opacity-10"></div>
-                  
-                  <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
-                    {category.icon}
-                  </div>
-                </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </section>
         
@@ -209,3 +204,4 @@ const ServicesPage = () => {
     </>;
 };
 export default ServicesPage;
+
