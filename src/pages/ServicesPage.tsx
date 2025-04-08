@@ -93,7 +93,7 @@ const ServicesPage = () => {
               animationDelay: `${0.1 + index * 0.1}s`
             }}>
               <div className="space-y-6 bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-md border border-eco-green/10 hover:border-eco-green/20 transition-all">
-                <div className="flex items-center gap-4 justify-center">
+                <div className="flex flex-col items-center gap-4 text-center">
                   <div className="bg-eco-green/10 p-4 rounded-full animate-float">
                     {category.icon}
                   </div>
@@ -108,7 +108,7 @@ const ServicesPage = () => {
                   {category.description}
                 </p>
                 
-                <ul className="space-y-3 mx-auto sm:mx-0 max-w-lg">
+                <ul className="space-y-3 mx-auto max-w-lg">
                   {category.items.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2 rounded-md">
                       <div className="rounded-full bg-eco-green/20 p-1 mt-0.5">

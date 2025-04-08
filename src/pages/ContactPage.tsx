@@ -21,12 +21,12 @@ const ContactPage = () => {
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
         
         <div className="container relative z-10">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+          <div className="flex flex-col items-center text-center gap-4">
             <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
               <MessageSquare className="h-12 w-12 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up text-center md:text-left" style={{
+              <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{
                 fontFamily: "'Poppins', sans-serif",
                 textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
               }}>Contato</h1>
