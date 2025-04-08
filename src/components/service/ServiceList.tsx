@@ -39,4 +39,4 @@ export const ServiceList = ({
       </div>
     </section>
   );
-};
+}

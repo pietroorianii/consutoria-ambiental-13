@@ -10,7 +10,7 @@ interface PageWrapperProps {
 export function PageWrapper({ children }: PageWrapperProps) {
   return (
     <div className="min-h-screen flex flex-col bg-background relative">
-      {/* Background Elements */}
+      {/* Background Elements - Adding leaf texture and fluid decorative elements */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 leaf-pattern opacity-10"></div>
         <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>

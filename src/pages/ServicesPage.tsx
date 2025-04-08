@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
@@ -88,7 +89,7 @@ const ServicesPage = () => {
               animationDelay: `${0.1 + index * 0.1}s`
             }}>
               <div className="space-y-6 bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-md border border-eco-green/10 hover:border-eco-green/20 transition-all">
-                <div className="flex items-center gap-4 justify-center sm:justify-start">
+                <div className="flex items-center gap-4 justify-center">
                   <div className="bg-eco-green/10 p-4 rounded-full animate-float">
                     {category.icon}
                   </div>
@@ -97,7 +98,7 @@ const ServicesPage = () => {
                   }}>{category.title}</h2>
                 </div>
                 
-                <p className="text-muted-foreground text-lg text-center sm:text-left" style={{
+                <p className="text-muted-foreground text-lg text-center" style={{
                   fontFamily: "'Lato', sans-serif"
                 }}>
                   {category.description}
