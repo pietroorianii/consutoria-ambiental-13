@@ -9,7 +9,7 @@ const legislationCategories = [
   {
     title: "Indústrias",
     description: "Legislações ambientais aplicáveis ao setor industrial, incluindo normas federais, estaduais e municipais.",
-    image: "https://images.unsplash.com/photo-1518542442123-4c25cc0f43d4?auto=format&fit=crop&q=80&w=800&h=500",
+    image: "https://images.unsplash.com/photo-1564937026082-07c8a1ea8498?auto=format&fit=crop&q=80&w=800&h=500",
     icon: <Factory className="h-10 w-10 text-eco-green" />,
     items: [
       "Política Nacional do Meio Ambiente",

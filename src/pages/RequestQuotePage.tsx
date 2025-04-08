@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Leaf } from "lucide-react";
 import { Form } from "@/components/ui/form";
@@ -11,8 +10,7 @@ import { ServiceInfoStep } from "@/components/quote-request/ServiceInfoStep";
 import { EnvironmentalContextStep } from "@/components/quote-request/EnvironmentalContextStep";
 import { AdditionalInfoStep } from "@/components/quote-request/AdditionalInfoStep";
 import { SuccessDialog } from "@/components/quote-request/SuccessDialog";
-import { Navbar } from "@/components/ui/navbar";
-import { Footer } from "@/components/ui/footer";
+import { PageWrapper } from "@/components/ui/page-wrapper";
 
 const RequestQuotePage = () => {
   const {
@@ -31,9 +29,7 @@ const RequestQuotePage = () => {
   } = useQuoteRequest();
 
   return (
-    <>
-      <Navbar />
-      
+    <PageWrapper>
       {/* Header background */}
       <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 pt-12 md:pt-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" 
@@ -138,9 +134,7 @@ const RequestQuotePage = () => {
         <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
         <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
       </div>
-      
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 
