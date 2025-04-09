@@ -33,7 +33,7 @@ export function Testimonials() {
           </h2>
           <p style={{
           fontFamily: "'Roboto', sans-serif"
-        }} className="text-muted-foreground max-w-2xl mx-auto font-medium">
+        }} className="text-muted-foreground max-w-2xl mx-auto font-medium text-lg">
             Conheça a experiência de empresas que já contam com nossos serviços de consultoria ambiental.
           </p>
         </div>
