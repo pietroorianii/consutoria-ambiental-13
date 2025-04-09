@@ -1,3 +1,4 @@
+
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CTASection } from "@/components/cta-section";
@@ -8,7 +9,7 @@ const legislationCategories = [
   {
     title: "Indústrias",
     description: "Legislações ambientais aplicáveis ao setor industrial, incluindo normas federais, estaduais e municipais.",
-    image: "https://images.unsplash.com/photo-1518542442123-4c25cc0f43d4?auto=format&fit=crop&q=80&w=800&h=500",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=500",
     icon: <Factory className="h-10 w-10 text-eco-green" />,
     items: [
       "Política Nacional do Meio Ambiente",
@@ -75,16 +76,16 @@ const LegislationPage = () => {
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
         
         <div className="container relative z-10">
-          <div className="flex flex-col items-center text-center gap-4">
+          <div className="flex flex-col items-start gap-4">
             <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
               <Globe className="h-12 w-12 text-white" />
             </div>
-            <div className="text-center">
+            <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{ 
                 fontFamily: "'Poppins', sans-serif",
                 textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
               }}>Legislação Ambiental</h1>
-              <p className="text-white/90 mt-4 max-w-3xl mx-auto animate-fade-up" style={{ 
+              <p className="text-white/90 mt-4 max-w-3xl animate-fade-up" style={{ 
                 fontFamily: "'Roboto', sans-serif", 
                 animationDelay: "0.1s"
               }}>
@@ -117,8 +118,8 @@ const LegislationPage = () => {
                 </div>
               </div>
               <CardHeader>
-                <CardTitle className="text-center" style={{ fontFamily: "'Poppins', sans-serif" }}>{category.title}</CardTitle>
-                <CardDescription className="text-center" style={{ fontFamily: "'Lato', sans-serif" }}>{category.description}</CardDescription>
+                <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>{category.title}</CardTitle>
+                <CardDescription style={{ fontFamily: "'Lato', sans-serif" }}>{category.description}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-2">
@@ -132,7 +133,7 @@ const LegislationPage = () => {
                   ))}
                 </ul>
                 
-                <div className="flex justify-center pt-2">
+                <div className="flex justify-start pt-2">
                   <Link to={category.link} className="inline-flex items-center gap-1 text-eco-green hover:text-eco-green-dark transition-colors font-medium mt-4 group">
                     Ver legislações <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -150,45 +151,45 @@ const LegislationPage = () => {
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div>
         
         <div className="container relative z-10">
-          <div className="text-center mb-12 animate-fade-up">
+          <div className="text-left mb-12 animate-fade-up">
             <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Atualizações Recentes</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'Lato', sans-serif" }}>
+            <p className="text-muted-foreground max-w-2xl" style={{ fontFamily: "'Lato', sans-serif" }}>
               Fique por dentro das mais recentes alterações e atualizações na legislação ambiental brasileira.
             </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Card className="bg-background/80 backdrop-blur-sm border-none shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              <CardHeader className="text-center">
+              <CardHeader>
                 <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>Resolução CONAMA nº 500/2020</CardTitle>
                 <p className="text-sm text-eco-green font-medium">Publicada em 29/09/2020</p>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-center" style={{ fontFamily: "'Lato', sans-serif" }}>
+                <p className="text-muted-foreground" style={{ fontFamily: "'Lato', sans-serif" }}>
                   Revoga a Resolução nº 303/2002, que dispõe sobre parâmetros, definições e limites de Áreas de Preservação Permanente.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="bg-background/80 backdrop-blur-sm border-none shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              <CardHeader className="text-center">
+              <CardHeader>
                 <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>Lei nº 14.119/2021</CardTitle>
                 <p className="text-sm text-eco-green font-medium">Publicada em 13/01/2021</p>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-center" style={{ fontFamily: "'Lato', sans-serif" }}>
+                <p className="text-muted-foreground" style={{ fontFamily: "'Lato', sans-serif" }}>
                   Institui a Política Nacional de Pagamento por Serviços Ambientais e altera as Leis nº 8.212/1991, 8.629/1993 e 6.015/1973.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="bg-background/80 backdrop-blur-sm border-none shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <CardHeader className="text-center">
+              <CardHeader>
                 <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>Decreto nº 10.936/2022</CardTitle>
                 <p className="text-sm text-eco-green font-medium">Publicada em 12/01/2022</p>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-center" style={{ fontFamily: "'Lato', sans-serif" }}>
+                <p className="text-muted-foreground" style={{ fontFamily: "'Lato', sans-serif" }}>
                   Regulamenta a Lei nº 12.305/2010, que institui a Política Nacional de Resíduos Sólidos.
                 </p>
               </CardContent>

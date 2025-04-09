@@ -11,7 +11,7 @@ const legislationCategories = {
   industry: {
     title: "Legislação para Indústrias",
     description: "Principais legislações ambientais aplicáveis ao setor industrial, incluindo normas federais, estaduais e municipais que regulamentam as atividades industriais.",
-    image: "https://images.unsplash.com/photo-1510785693440-9f44bc64ec40?auto=format&fit=crop&q=80&w=1000&h=600",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000&h=600",
     icon: <Factory className="h-10 w-10 text-eco-green" />,
     items: [
       {
@@ -153,7 +153,7 @@ const LegislationCategoryPage = () => {
   if (!categoryData) {
     return (
       <PageWrapper>
-        <div className="container py-16 text-center">
+        <div className="container py-16">
           <h1 className="text-3xl font-bold mb-4">Categoria não encontrada</h1>
           <p className="text-muted-foreground mb-8">A categoria de legislação solicitada não existe.</p>
         </div>
@@ -178,7 +178,7 @@ const LegislationCategoryPage = () => {
         <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-20"></div>
         
         <div className="container relative z-10 py-16 md:py-24">
-          <div className="max-w-3xl mx-auto text-center animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div className="max-w-3xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ 
               fontFamily: "'Poppins', sans-serif",
               textShadow: "0px 2px 4px rgba(0,0,0,0.3)"
@@ -200,12 +200,12 @@ const LegislationCategoryPage = () => {
         <div className="space-y-6 max-w-4xl mx-auto">
           {categoryData.items.map((item, index) => (
             <Card key={index} className="eco-card bg-background/80 backdrop-blur-sm border-eco-green/10 hover:border-eco-green/30 shadow-md hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: `${0.1 + index * 0.1}s` }}>
-              <CardHeader className="text-center">
+              <CardHeader>
                 <CardTitle style={{ fontFamily: "'Poppins', sans-serif" }}>{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4 text-center" style={{ fontFamily: "'Lato', sans-serif" }}>{item.description}</p>
-                <div className="flex justify-center">
+                <p className="text-muted-foreground mb-4" style={{ fontFamily: "'Lato', sans-serif" }}>{item.description}</p>
+                <div>
                   <a 
                     href={item.link} 
                     target="_blank" 

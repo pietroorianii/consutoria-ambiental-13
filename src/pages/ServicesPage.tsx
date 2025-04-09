@@ -67,11 +67,11 @@ const ServicesPage = () => {
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
         
         <div className="container relative z-10">
-          <div className="flex flex-col items-center text-center gap-4">
+          <div className="flex flex-col items-start gap-4">
             <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
               <Earth className="h-12 w-12 text-white" />
             </div>
-            <div className="text-center">
+            <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{
                 fontFamily: "'Poppins', sans-serif",
                 textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
@@ -79,7 +79,7 @@ const ServicesPage = () => {
               <p style={{
                 fontFamily: "'Roboto', sans-serif",
                 animationDelay: "0.1s"
-              }} className="text-white/90 mt-4 max-w-3xl mx-auto animate-fade-up text-lg">
+              }} className="text-white/90 mt-4 max-w-3xl animate-fade-up text-lg">
                 Oferecemos soluções ambientais completas para empresas de todos os portes e setores, auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis.
               </p>
             </div>
@@ -95,7 +95,7 @@ const ServicesPage = () => {
               animationDelay: `${0.1 + index * 0.1}s`
             }}>
               <div className="space-y-6 bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-md border border-eco-green/10 hover:border-eco-green/20 transition-all">
-                <div className="flex flex-col items-center gap-4 text-center">
+                <div className="flex flex-col items-center gap-4">
                   <div className="bg-eco-green/10 p-4 rounded-full animate-float">
                     {category.icon}
                   </div>
@@ -142,11 +142,11 @@ const ServicesPage = () => {
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div>
         <div className="container relative">
-          <div className="text-center mb-12 animate-fade-up">
+          <div className="text-left mb-12 animate-fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{
               fontFamily: "'Poppins', sans-serif"
             }}>Como Trabalhamos</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto" style={{
+            <p className="text-muted-foreground max-w-2xl" style={{
               fontFamily: "'Lato', sans-serif"
             }}>Nossa abordagem para projetos ambientais é estruturada e orientada para resultados</p>
           </div>

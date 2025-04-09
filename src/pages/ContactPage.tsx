@@ -21,7 +21,7 @@ const ContactPage = () => {
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
         
         <div className="container relative z-10">
-          <div className="flex flex-col items-center text-center gap-4">
+          <div className="flex flex-col items-start gap-4">
             <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
               <MessageSquare className="h-12 w-12 text-white" />
             </div>
