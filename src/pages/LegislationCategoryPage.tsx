@@ -1,8 +1,9 @@
+
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { useParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CTASection } from "@/components/cta-section";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Factory } from "lucide-react";
 import { useEffect } from "react";
 
 // Legislation category data
