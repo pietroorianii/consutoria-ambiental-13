@@ -1,3 +1,5 @@
+
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
@@ -97,7 +99,7 @@ const ServicesPage = () => {
                   <div className="bg-eco-green/10 p-4 rounded-full animate-float">
                     {category.icon}
                   </div>
-                  <h2 className="text-3xl font-bold" style={{
+                  <h2 className="text-3xl font-bold text-center" style={{
                     fontFamily: "'Poppins', sans-serif"
                   }}>{category.title}</h2>
                 </div>

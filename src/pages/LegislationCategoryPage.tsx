@@ -10,7 +10,8 @@ const legislationCategories = {
   industry: {
     title: "Legislação para Indústrias",
     description: "Principais legislações ambientais aplicáveis ao setor industrial, incluindo normas federais, estaduais e municipais que regulamentam as atividades industriais.",
-    image: "https://images.unsplash.com/photo-1518542442123-4c25cc0f43d4?auto=format&fit=crop&q=80&w=1000&h=600",
+    image: "https://images.unsplash.com/photo-1510785693440-9f44bc64ec40?auto=format&fit=crop&q=80&w=1000&h=600",
+    icon: <Factory className="h-10 w-10 text-eco-green" />,
     items: [
       {
         title: "Lei nº 6.938/1981",
@@ -37,7 +38,8 @@ const legislationCategories = {
         description: "Fixa normas para a cooperação entre a União, os Estados, o Distrito Federal e os Municípios nas ações administrativas relativas à proteção do meio ambiente.",
         link: "http://www.planalto.gov.br/ccivil_03/leis/lcp/lcp140.htm"
       }
-    ]
+    ],
+    link: "/legislation/industry"
   },
   construction: {
     title: "Legislação para Construção Civil",
