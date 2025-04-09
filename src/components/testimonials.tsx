@@ -21,7 +21,7 @@ const testimonials = [{
 }];
 export function Testimonials() {
   return <section className="bg-muted py-16 md:py-24 relative">
-      <div className="absolute inset-0 bg-opacity-5 leaf-pattern bg-zinc-200"></div>
+      <div className="absolute inset-0 bg-opacity-5 leaf-pattern bg-lime-100"></div>
       <div className="container relative z-10">
         <div className="text-center mb-16 animate-fade-up" style={{
         animationDelay: "0.1s"
