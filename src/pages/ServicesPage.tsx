@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
 import { PageWrapper } from "@/components/ui/page-wrapper";
+import { PageHeader } from "@/components/ui/page-header";
 import { ArrowRight, Beaker, FileText, Leaf, TreeDeciduous, Users, CloudSun, Earth } from "lucide-react";
 
 const serviceCategories = [
@@ -54,38 +55,13 @@ const serviceCategories = [
 const ServicesPage = () => {
   return (
     <PageWrapper>
-      {/* Page Header */}
-      <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 py-12 md:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600')"
-        }}>
-        </div>
-        <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
-        
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-        
-        <div className="container relative z-10">
-          <div className="flex flex-col items-start gap-4">
-            <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
-              <Earth className="h-12 w-12 text-white" />
-            </div>
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{
-                fontFamily: "'Poppins', sans-serif",
-                textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
-              }}>Nossos Serviços</h1>
-              <p style={{
-                fontFamily: "'Roboto', sans-serif",
-                animationDelay: "0.1s"
-              }} className="text-white/90 mt-4 max-w-3xl animate-fade-up text-lg">
-                Oferecemos soluções ambientais completas para empresas de todos os portes e setores, auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Page Header with standardized format */}
+      <PageHeader 
+        title="Nossos Serviços"
+        description="Oferecemos soluções ambientais completas para empresas de todos os portes e setores, auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis."
+        icon={<Earth className="h-12 w-12 text-white" />}
+        backgroundImage="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600"
+      />
       
       {/* Service Categories */}
       <section className="container py-16 relative">
@@ -142,11 +118,11 @@ const ServicesPage = () => {
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div>
         <div className="container relative">
-          <div className="text-left mb-12 animate-fade-up">
+          <div className="text-center mb-12 animate-fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{
               fontFamily: "'Poppins', sans-serif"
             }}>Como Trabalhamos</h2>
-            <p className="text-muted-foreground max-w-2xl" style={{
+            <p className="text-muted-foreground max-w-2xl mx-auto" style={{
               fontFamily: "'Lato', sans-serif"
             }}>Nossa abordagem para projetos ambientais é estruturada e orientada para resultados</p>
           </div>

@@ -12,6 +12,7 @@ import { EnvironmentalContextStep } from "@/components/quote-request/Environment
 import { AdditionalInfoStep } from "@/components/quote-request/AdditionalInfoStep";
 import { SuccessDialog } from "@/components/quote-request/SuccessDialog";
 import { PageWrapper } from "@/components/ui/page-wrapper";
+import { PageHeader } from "@/components/ui/page-header";
 
 const RequestQuotePage = () => {
   const {
@@ -31,29 +32,21 @@ const RequestQuotePage = () => {
 
   return (
     <PageWrapper>
-      {/* Header background */}
-      <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 pt-12 md:pt-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" 
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
-        </div>
-        <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
-        
-        {/* Elementos fluidos decorativos */}
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-      </div>
+      {/* Header with standardized format */}
+      <PageHeader 
+        title="Solicitação de Orçamento"
+        description="Preencha o formulário abaixo para solicitar um orçamento personalizado para seu projeto ambiental."
+        icon={<Leaf className="h-12 w-12 text-white" />}
+        backgroundImage="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600"
+      />
       
       <div className="container mx-auto -mt-8 px-4 md:px-6 pb-16 relative z-10">
         <div className="max-w-3xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border border-eco-green/10 hover:border-eco-green/20 transition-all">
           <div className="bg-gradient-to-r from-eco-green to-eco-blue p-6 text-white">
-            <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
               <Leaf className="h-8 w-8 animate-float" />
-              Solicitação de Orçamento
-            </h1>
-            <p className="mt-2 opacity-90" style={{ fontFamily: "'Roboto', sans-serif" }}>
-              Preencha o formulário abaixo para solicitar um orçamento personalizado para seu projeto ambiental.
-            </p>
+              Formulário de Solicitação
+            </h2>
           </div>
 
           <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
@@ -129,7 +122,7 @@ const RequestQuotePage = () => {
         />
       </div>
       
-      {/* Decorative elements */}
+      {/* Decorative elements with leaf pattern */}
       <div className="bg-muted py-16 relative overflow-hidden">
         <div className="absolute inset-0 leaf-pattern opacity-20"></div>
         <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>

@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CTASection } from "@/components/cta-section";
 import { Link } from "react-router-dom";
 import { ArrowRight, Globe, Factory, Droplets, Building2, Leaf } from "lucide-react";
+import { PageHeader } from "@/components/ui/page-header";
 
 const legislationCategories = [
   {
@@ -63,38 +64,13 @@ const legislationCategories = [
 const LegislationPage = () => {
   return (
     <PageWrapper>
-      {/* Page Header */}
-      <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 py-12 md:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" 
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200&h=600')" }}>
-        </div>
-        <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
-        
-        {/* Elementos fluidos decorativos */}
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-        
-        <div className="container relative z-10">
-          <div className="flex flex-col items-start gap-4">
-            <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
-              <Globe className="h-12 w-12 text-white" />
-            </div>
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{ 
-                fontFamily: "'Poppins', sans-serif",
-                textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
-              }}>Legislação Ambiental</h1>
-              <p className="text-white/90 mt-4 max-w-3xl animate-fade-up" style={{ 
-                fontFamily: "'Roboto', sans-serif", 
-                animationDelay: "0.1s"
-              }}>
-                Conheça as principais legislações ambientais aplicáveis aos diferentes setores econômicos e atividades. Mantenha-se atualizado sobre as normas e regulamentações que afetam o seu negócio.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Page Header with standardized format */}
+      <PageHeader 
+        title="Legislação Ambiental"
+        description="Conheça as principais legislações ambientais aplicáveis aos diferentes setores econômicos e atividades. Mantenha-se atualizado sobre as normas e regulamentações que afetam o seu negócio."
+        icon={<Globe className="h-12 w-12 text-white" />}
+        backgroundImage="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200&h=600"
+      />
       
       {/* Legislation Categories */}
       <section className="container py-16 relative">
@@ -151,9 +127,9 @@ const LegislationPage = () => {
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div>
         
         <div className="container relative z-10">
-          <div className="text-left mb-12 animate-fade-up">
+          <div className="text-center mb-12 animate-fade-up">
             <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif" }}>Atualizações Recentes</h2>
-            <p className="text-muted-foreground max-w-2xl" style={{ fontFamily: "'Lato', sans-serif" }}>
+            <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'Lato', sans-serif" }}>
               Fique por dentro das mais recentes alterações e atualizações na legislação ambiental brasileira.
             </p>
           </div>

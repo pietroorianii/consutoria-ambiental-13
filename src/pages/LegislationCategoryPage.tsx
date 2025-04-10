@@ -3,8 +3,9 @@ import { PageWrapper } from "@/components/ui/page-wrapper";
 import { useParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CTASection } from "@/components/cta-section";
-import { ExternalLink, Factory } from "lucide-react";
+import { ExternalLink, Factory, Building2, Leaf, Droplets } from "lucide-react";
 import { useEffect } from "react";
+import { PageHeader } from "@/components/ui/page-header";
 
 // Legislation category data
 const legislationCategories = {
@@ -46,6 +47,7 @@ const legislationCategories = {
     title: "Legislação para Construção Civil",
     description: "Normas e leis ambientais específicas para o setor da construção civil, abrangendo desde o licenciamento de obras até a gestão de resíduos da construção civil.",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000&h=600",
+    icon: <Building2 className="h-10 w-10 text-eco-blue" />,
     items: [
       {
         title: "Resolução CONAMA nº 307/2002",
@@ -78,6 +80,7 @@ const legislationCategories = {
     title: "Legislação para Agricultura",
     description: "Legislações ambientais aplicáveis ao setor agrícola, incluindo normas sobre uso do solo, recursos hídricos, agrotóxicos e preservação ambiental em áreas rurais.",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000&h=600",
+    icon: <Leaf className="h-10 w-10 text-eco-green-dark" />,
     items: [
       {
         title: "Lei nº 12.651/2012 (Código Florestal)",
@@ -110,6 +113,7 @@ const legislationCategories = {
     title: "Legislação para Recursos Hídricos",
     description: "Normas e regulamentações para gestão, uso e preservação dos recursos hídricos, incluindo outorgas, enquadramento de corpos d'água e cobrança pelo uso da água.",
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1000&h=600",
+    icon: <Droplets className="h-10 w-10 text-eco-blue-dark" />,
     items: [
       {
         title: "Lei nº 9.433/1997",
@@ -161,41 +165,30 @@ const LegislationCategoryPage = () => {
     );
   }
 
+  // Get the appropriate icon for the header based on category
+  const getHeaderIcon = () => {
+    if (category === 'industry') return <Factory className="h-12 w-12 text-white" />;
+    if (category === 'construction') return <Building2 className="h-12 w-12 text-white" />;
+    if (category === 'agriculture') return <Leaf className="h-12 w-12 text-white" />;
+    if (category === 'water') return <Droplets className="h-12 w-12 text-white" />;
+    return null;
+  };
+
   return (
     <PageWrapper>
-      {/* Banner */}
-      <div className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url('${categoryData.image}')`,
-            backgroundPosition: "center 40%"
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30 backdrop-blur-[1px]" />
-        </div>
-        
-        <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-20"></div>
-        
-        <div className="container relative z-10 py-16 md:py-24">
-          <div className="max-w-3xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ 
-              fontFamily: "'Poppins', sans-serif",
-              textShadow: "0px 2px 4px rgba(0,0,0,0.3)"
-            }}>
-              {categoryData.title}
-            </h1>
-            <p className="text-white/90 text-lg" style={{ fontFamily: "'Roboto', sans-serif" }}>
-              {categoryData.description}
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Standardized Page Header */}
+      <PageHeader 
+        title={categoryData.title}
+        description={categoryData.description}
+        icon={getHeaderIcon()}
+        backgroundImage={categoryData.image}
+      />
       
       {/* Legislation List */}
       <section className="container py-16 relative">
         <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10"></div>
         
         <div className="space-y-6 max-w-4xl mx-auto">
           {categoryData.items.map((item, index) => (

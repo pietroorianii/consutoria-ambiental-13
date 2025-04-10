@@ -3,43 +3,18 @@ import { PageWrapper } from "@/components/ui/page-wrapper";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactInfo } from "@/components/contact/ContactInfo";
 import { MessageSquare } from "lucide-react";
+import { PageHeader } from "@/components/ui/page-header";
 
 const ContactPage = () => {
   return (
     <PageWrapper>
       {/* Page Header */}
-      <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 py-12 md:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200&h=600')"
-        }}>
-        </div>
-        <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
-        
-        {/* Elementos fluidos decorativos */}
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-        
-        <div className="container relative z-10">
-          <div className="flex flex-col items-start gap-4">
-            <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
-              <MessageSquare className="h-12 w-12 text-white" />
-            </div>
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{
-                fontFamily: "'Poppins', sans-serif",
-                textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
-              }}>Contato</h1>
-              <p style={{
-                fontFamily: "'Roboto', sans-serif",
-                animationDelay: "0.1s"
-              }} className="text-white/90 mt-4 max-w-3xl animate-fade-up text-lg">
-                Entre em contato com nossa equipe para solicitar um orçamento ou esclarecer dúvidas sobre nossos serviços.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHeader 
+        title="Contato"
+        description="Entre em contato com nossa equipe para solicitar um orçamento ou esclarecer dúvidas sobre nossos serviços."
+        icon={<MessageSquare className="h-12 w-12 text-white" />}
+        backgroundImage="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200&h=600"
+      />
       
       {/* Contact Section */}
       <section className="container py-16 relative">
