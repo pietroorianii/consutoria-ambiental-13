@@ -10,7 +10,7 @@ interface ServiceListProps {
 export const ServiceList = ({
   services
 }: ServiceListProps) => {
-  return <section className="container py-16 flex justify-center bg-[#c1ee96]/[0.59]">
+  return <section className="container py-16 flex justify-center bg-lime-50">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl bg-lime-50">
         {services.map((service, index) => <Card key={index} className="eco-card border-eco-green/10 hover:border-eco-green/30 transition-all duration-300">
             <CardHeader>
