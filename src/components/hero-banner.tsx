@@ -30,7 +30,7 @@ export function HeroBanner() {
           <Button asChild size="lg" className="btn-gradient text-white relative overflow-hidden group">
             <Link to="/services" className="relative z-10 flex items-center gap-2">
               <span>Nossos Serviços</span>
-              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-300 text-lg text-right font-medium">→</span>
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm">
