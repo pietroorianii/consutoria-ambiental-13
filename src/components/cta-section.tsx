@@ -34,7 +34,7 @@ export function CTASection() {
           animationDelay: "0.3s"
         }}>
             <Button asChild size="lg" className="btn-gradient text-white relative overflow-hidden group">
-              <Link to="/request-quote" className="relative z-10 flex items-center gap-2">
+              <Link to="/request-quote" className="relative z-10 flex items-center gap-2 mx-[25px]">
                 <span>Solicitar Orçamento</span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300 text-lg font-medium">→</span>
               </Link>
