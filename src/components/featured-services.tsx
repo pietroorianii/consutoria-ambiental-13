@@ -70,7 +70,7 @@ export function FeaturedServices() {
               fontFamily: "'Lato', sans-serif"
             }} className="text-lg text-center">{service.description}</CardDescription>
               </CardHeader>
-              <CardFooter className="mt-auto pt-4 flex justify-center bg-neutral-200">
+              <CardFooter className="mt-auto pt-4 flex justify-center bg-neutral-200 rounded-md">
                 <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80 group">
                   <Link to={service.link} className="flex items-center gap-1">
                     Saiba mais <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
