@@ -22,7 +22,7 @@ export const ServiceList = ({
               </div>
               <CardDescription className="mt-2 text-base text-center">{service.description}</CardDescription>
             </CardHeader>
-            <CardContent className="flex justify-center">
+            <CardContent className="flex justify-center bg-gray-200">
               <Button asChild variant="link" className="p-0 h-auto font-medium text-primary hover:text-primary/80">
                 <Link to="/request-quote" className="flex items-center gap-1">
                   Solicitar orçamento <ArrowRight className="h-4 w-4 ml-1" />
