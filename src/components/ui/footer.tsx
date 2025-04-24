@@ -81,7 +81,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-5 w-5 text-eco-green flex-shrink-0" />
-                <span>contato@ecoconsult.com.br</span>
+                <span>contato@l&p.com.br</span>
               </li>
             </ul>
           </div>
@@ -97,13 +97,14 @@ export function Footer() {
               <li>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                   <Facebook className="h-5 w-5 text-eco-green" />
-                  <span>EcoConsult Brasil</span>
+                  <span>L&amp;P Brasil</span>
                 </a>
               </li>
               <li>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                   <Instagram className="h-5 w-5 text-eco-green" />
-                  <span>@ecoconsult_br</span>
+                  <span>@L&amp;P 
+                </span>
                 </a>
               </li>
               <li>
