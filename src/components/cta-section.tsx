@@ -40,7 +40,7 @@ export function CTASection() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm">
-              <Link to="/services">Conhecer Serviços</Link>
+              <Link to="/services" className="my-0 mx-[25px]">Conhecer Serviços</Link>
             </Button>
           </div>
         </div>
