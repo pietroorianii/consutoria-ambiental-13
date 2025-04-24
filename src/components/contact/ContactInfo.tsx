@@ -63,7 +63,7 @@ export function ContactInfo() {
       </div>
       
       <div className="hidden md:block relative h-48 w-48 mx-auto animate-float">
-        <img src="/lovable-uploads/47db2abf-fda2-4030-848d-000f9ddac075.png" alt="Sustentabilidade" className="w-full h-full object-fill" />
+        <img src="/lovable-uploads/47db2abf-fda2-4030-848d-000f9ddac075.png" alt="Sustentabilidade" className="w-full h-full object-scale-down" />
       </div>
     </div>;
 }
