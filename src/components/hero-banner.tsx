@@ -22,9 +22,9 @@ export function HeroBanner() {
         animationDelay: "0.3s",
         fontFamily: "'Roboto', sans-serif"
       }} className="mt-6 text-lg text-white/90 max-w-2xl animate-fade-in md:text-2xl">Consultoria ambiental especializada para empreendimentos e empresas que buscam excelência em sustentabilidade e conformidade legal.</p>
-        <div className="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in" style={{
+        <div style={{
         animationDelay: "0.5s"
-      }}>
+      }} className="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in rounded-full">
           <Button asChild size="lg" className="btn-gradient text-white relative overflow-hidden group">
             <Link to="/services" className="relative z-10 flex items-center gap-2 mx-[25px]">
               <span className="text-sm">Nossos Serviços</span>
