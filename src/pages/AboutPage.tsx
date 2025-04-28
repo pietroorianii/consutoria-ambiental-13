@@ -147,9 +147,7 @@ const AboutPage = () => {
         }}>Nossa Equipe</h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto" style={{
           fontFamily: "'Lato', sans-serif"
-        }}>
-            Conheça os especialistas que fazem da EcoConsult uma referência em consultoria ambiental.
-          </p>
+        }}>Conheça os especialistas que fazem da L&amp;P SOLUÇÕES AMBIENTAIS uma referência em consultoria ambiental.</p>
           <div className="h-1 w-20 bg-eco-green mt-4 mx-auto"></div>
         </div>
           
