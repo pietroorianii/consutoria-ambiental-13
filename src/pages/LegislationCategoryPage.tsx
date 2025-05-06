@@ -5,6 +5,7 @@ import { LegislationLayout } from "@/components/legislation/LegislationLayout";
 import { LegislationList } from "@/components/legislation/LegislationList";
 import { LegislationTabs } from "@/components/legislation/LegislationTabs";
 import { CategoryNotFound } from "@/components/legislation/CategoryNotFound";
+import { LegislationItem } from "@/data/legislationData";
 
 const LegislationCategoryPage = () => {
   const { category } = useParams<{ category: string }>();
@@ -34,6 +35,15 @@ const LegislationCategoryPage = () => {
     );
   }
 
+  // If the category has string items, convert them to LegislationItem objects
+  const legislationItems: LegislationItem[] = Array.isArray(categoryData.items) 
+    ? categoryData.items.map((item, index) => ({
+        title: item,
+        description: `Informações sobre ${item}`,
+        link: "#" // Default placeholder link
+      }))
+    : [];
+
   // Renderização original para categorias sem subcategorias
   return (
     <LegislationLayout
@@ -42,7 +52,7 @@ const LegislationCategoryPage = () => {
       icon={<IconComponent className="h-12 w-12 text-white" />}
       backgroundImage={categoryData.image}
     >
-      <LegislationList items={categoryData.items} />
+      <LegislationList items={legislationItems} />
     </LegislationLayout>
   );
 };
