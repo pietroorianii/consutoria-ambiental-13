@@ -1,12 +1,12 @@
 
-import { Factory, Building2, Leaf, Droplets } from "lucide-react";
+import { Factory, Building2, Leaf, Droplets, LucideIcon } from "lucide-react";
 import React from "react";
 
 export interface LegislationCategory {
   title: string;
   description: string;
   image: string;
-  icon: React.ComponentType;
+  icon: LucideIcon;
   items: string[];
   link: string;
 }

@@ -1,9 +1,9 @@
 
-import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun } from "lucide-react";
+import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, LucideIcon } from "lucide-react";
 import React from "react";
 
 export interface ServiceCategoryData {
-  icon: React.ComponentType;
+  icon: LucideIcon;
   title: string;
   description: string;
   items: string[];
