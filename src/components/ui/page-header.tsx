@@ -1,47 +1,40 @@
+
 import React from "react";
-import { LucideIcon } from "lucide-react";
+
 interface PageHeaderProps {
   title: string;
-  description?: string;
-  icon?: React.ReactNode;
-  backgroundImage?: string;
+  description: string;
+  icon: React.ReactNode;
+  backgroundImage: string;
 }
-export function PageHeader({
-  title,
-  description,
-  icon,
-  backgroundImage = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200&h=600"
-}: PageHeaderProps) {
-  return <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 py-12 md:py-16 relative overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
-      backgroundImage: `url('${backgroundImage}')`
-    }}>
+
+export function PageHeader({ title, description, icon, backgroundImage }: PageHeaderProps) {
+  return (
+    <div className="relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url('${backgroundImage}')`,
+      }}>
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
       </div>
-      <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
       
-      {/* Elementos fluidos decorativos */}
-      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-      <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+      {/* Textura de folhas no cabeçalho */}
+      <div className="absolute inset-0 leaf-pattern opacity-20"></div>
       
-      <div className="container relative z-10">
-        <div className="flex flex-col items-center gap-4 text-center">
-          {icon && <div className="bg-white/10 p-4 rounded-full backdrop-blur-sm animate-float">
-              {icon}
-            </div>}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white animate-fade-up" style={{
-            fontFamily: "'Poppins', sans-serif",
-            textShadow: "0px 2px 4px rgba(0,0,0,0.2)"
-          }}>{title}</h1>
-            {description && <p style={{
-            fontFamily: "'Roboto', sans-serif",
-            animationDelay: "0.1s"
-          }} className="text-white/90 mt-4 max-w-3xl mx-auto animate-fade-up text-xl">
-                {description}
-              </p>}
-          </div>
+      {/* Content */}
+      <div className="container relative z-10 py-24 flex flex-col items-center text-center">
+        <div className="bg-eco-green p-4 rounded-full mb-6 animate-float">
+          {icon}
         </div>
+        
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 scroll-trigger">
+          {title}
+        </h1>
+        
+        <p className="max-w-2xl text-white/90 md:text-xl text-center scroll-trigger">
+          {description}
+        </p>
       </div>
-    </div>;
+    </div>
+  );
 }
