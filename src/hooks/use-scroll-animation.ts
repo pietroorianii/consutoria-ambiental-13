@@ -20,7 +20,7 @@ export function useScrollAnimation() {
         // Remover animações existentes para garantir que o efeito seja aplicado novamente
         element.classList.remove("animate-fade-up");
         // Adicionar opacidade 0 inicialmente
-        element.style.opacity = "0";
+        (element as HTMLElement).style.opacity = "0";
         // Observar o elemento
         observer.observe(element);
       });
