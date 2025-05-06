@@ -25,7 +25,7 @@ export const LegislationCard: React.FC<LegislationCardProps> = ({
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-white/90 p-4 rounded-full">
-            <IconComponent className="h-10 w-10 text-eco-green" />
+            {React.createElement(IconComponent, { className: "h-10 w-10 text-eco-green" })}
           </div>
         </div>
       </div>

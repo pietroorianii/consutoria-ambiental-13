@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ServiceCategoryData } from "@/data/servicePageData";
+import { LucideIcon } from "lucide-react";
 
 interface ServiceCategoryProps {
   category: ServiceCategoryData;
@@ -21,7 +22,7 @@ export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ category, inde
       <div className="space-y-6 bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-md border border-eco-green/10 hover:border-eco-green/20 transition-all">
         <div className="flex flex-col items-center gap-4">
           <div className="bg-eco-green/10 p-4 rounded-full animate-float">
-            <IconComponent className="h-12 w-12 text-eco-green" />
+            {React.createElement(IconComponent, { className: "h-12 w-12 text-eco-green" })}
           </div>
           <h2 className="text-3xl font-bold text-center" style={{
             fontFamily: "'Poppins', sans-serif"
