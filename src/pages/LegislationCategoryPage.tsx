@@ -13,7 +13,7 @@ const legislationCategories = {
     title: "Legislação para Indústrias",
     description: "Principais legislações ambientais aplicáveis ao setor industrial, incluindo normas federais, estaduais e municipais que regulamentam as atividades industriais.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000&h=600",
-    icon: <Factory className="h-10 w-10 text-eco-green" />,
+    icon: Factory,
     items: [
       {
         title: "Lei nº 6.938/1981",
@@ -47,7 +47,7 @@ const legislationCategories = {
     title: "Legislação para Construção Civil",
     description: "Normas e leis ambientais específicas para o setor da construção civil, abrangendo desde o licenciamento de obras até a gestão de resíduos da construção civil.",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000&h=600",
-    icon: <Building2 className="h-10 w-10 text-eco-blue" />,
+    icon: Building2,
     items: [
       {
         title: "Resolução CONAMA nº 307/2002",
@@ -80,7 +80,7 @@ const legislationCategories = {
     title: "Legislação para Agricultura",
     description: "Legislações ambientais aplicáveis ao setor agrícola, incluindo normas sobre uso do solo, recursos hídricos, agrotóxicos e preservação ambiental em áreas rurais.",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000&h=600",
-    icon: <Leaf className="h-10 w-10 text-eco-green-dark" />,
+    icon: Leaf,
     items: [
       {
         title: "Lei nº 12.651/2012 (Código Florestal)",
@@ -113,7 +113,7 @@ const legislationCategories = {
     title: "Legislação para Recursos Hídricos",
     description: "Normas e regulamentações para gestão, uso e preservação dos recursos hídricos, incluindo outorgas, enquadramento de corpos d'água e cobrança pelo uso da água.",
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1000&h=600",
-    icon: <Droplets className="h-10 w-10 text-eco-blue-dark" />,
+    icon: Droplets,
     items: [
       {
         title: "Lei nº 9.433/1997",
@@ -166,13 +166,7 @@ const LegislationCategoryPage = () => {
   }
 
   // Get the appropriate icon for the header based on category
-  const getHeaderIcon = () => {
-    if (category === 'industry') return <Factory className="h-12 w-12 text-white" />;
-    if (category === 'construction') return <Building2 className="h-12 w-12 text-white" />;
-    if (category === 'agriculture') return <Leaf className="h-12 w-12 text-white" />;
-    if (category === 'water') return <Droplets className="h-12 w-12 text-white" />;
-    return null;
-  };
+  const IconComponent = categoryData.icon;
 
   return (
     <PageWrapper>
@@ -180,7 +174,7 @@ const LegislationCategoryPage = () => {
       <PageHeader 
         title={categoryData.title}
         description={categoryData.description}
-        icon={getHeaderIcon()}
+        icon={<IconComponent className="h-12 w-12 text-white" />}
         backgroundImage={categoryData.image}
       />
       
