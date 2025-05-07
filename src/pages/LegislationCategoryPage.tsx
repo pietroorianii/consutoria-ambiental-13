@@ -1,11 +1,9 @@
-
 import { useParams } from "react-router-dom";
-import { legislationCategories } from "@/data/legislationData";
+import { legislationCategories, LegislationItem } from "@/data/legislationData";
 import { LegislationLayout } from "@/components/legislation/LegislationLayout";
 import { LegislationList } from "@/components/legislation/LegislationList";
 import { LegislationTabs } from "@/components/legislation/LegislationTabs";
 import { CategoryNotFound } from "@/components/legislation/CategoryNotFound";
-import { LegislationItem } from "@/data/legislationData";
 
 const LegislationCategoryPage = () => {
   const { category } = useParams<{ category: string }>();
