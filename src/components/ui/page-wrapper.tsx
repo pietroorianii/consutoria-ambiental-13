@@ -24,7 +24,7 @@ export function PageWrapper({ children }: PageWrapperProps) {
       <TexturedBackground />
       
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         {children}
       </main>
       <Footer />

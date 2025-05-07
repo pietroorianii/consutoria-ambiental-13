@@ -16,12 +16,12 @@ export const LegislationTabs = ({ subcategories }: LegislationTabsProps) => {
       
       <div className="max-w-4xl mx-auto">
         <Tabs defaultValue={subcategories[0].title} className="w-full">
-          <TabsList className="w-full flex flex-wrap h-auto justify-center mb-6">
+          <TabsList className="w-full flex flex-wrap h-auto justify-center mb-8 bg-muted/50 p-2 border border-eco-green/10">
             {subcategories.map((subcat, index) => (
               <TabsTrigger 
                 key={index} 
                 value={subcat.title}
-                className="mb-2 data-[state=active]:bg-eco-green data-[state=active]:text-white"
+                className="mb-2 data-[state=active]:bg-eco-green data-[state=active]:text-white px-4 py-2 rounded-md font-medium"
               >
                 {subcat.title}
               </TabsTrigger>

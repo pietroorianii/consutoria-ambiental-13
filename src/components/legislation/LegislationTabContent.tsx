@@ -11,7 +11,8 @@ interface LegislationTabContentProps {
 export const LegislationTabContent = ({ subcategory, index }: LegislationTabContentProps) => {
   return (
     <TabsContent key={index} value={subcategory.title} className="space-y-8">
-      <div className="bg-muted/30 p-4 rounded-lg mb-6">
+      <div className="bg-muted/30 p-6 rounded-lg mb-8 border border-eco-green/20">
+        <h3 className="text-xl font-medium mb-2 text-eco-green">{subcategory.title}</h3>
         <p className="text-muted-foreground" style={{ fontFamily: "'Lato', sans-serif" }}>
           {subcategory.description}
         </p>
