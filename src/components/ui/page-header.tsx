@@ -1,20 +1,21 @@
-
 import React from "react";
-
 interface PageHeaderProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   backgroundImage: string;
 }
-
-export function PageHeader({ title, description, icon, backgroundImage }: PageHeaderProps) {
-  return (
-    <div className="relative overflow-hidden">
+export function PageHeader({
+  title,
+  description,
+  icon,
+  backgroundImage
+}: PageHeaderProps) {
+  return <div className="relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url('${backgroundImage}')`,
-      }}>
+      backgroundImage: `url('${backgroundImage}')`
+    }}>
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
       </div>
       
@@ -35,6 +36,5 @@ export function PageHeader({ title, description, icon, backgroundImage }: PageHe
           {description}
         </p>
       </div>
-    </div>
-  );
+    </div>;
 }
