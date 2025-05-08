@@ -70,7 +70,7 @@ export function MissionVisionValues() {
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-4 text-center">Visão</h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-center">
               Ser reconhecida como referência nacional em consultoria ambiental, expandindo nossa atuação para 
               diferentes regiões do país e contribuindo para a formação de uma sociedade mais consciente e sustentável.
             </p>
