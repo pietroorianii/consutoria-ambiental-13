@@ -16,7 +16,7 @@ import {
   PopoverContent,
   PopoverTrigger 
 } from "@/components/ui/popover";
-import { legislationCategories } from "@/data/legislationData";
+import { legislationCategories } from "@/data/legislation/index";
 import { useNavigate } from "react-router-dom";
 
 interface SearchResult {
@@ -88,11 +88,12 @@ export const LegislationSearch = () => {
   const handleSelectItem = (item: SearchResult) => {
     setOpen(false);
     
-    // Navigate to the specific category
-    navigate(`/legislation/${item.category}`, { 
+    // Navigate to the consolidated legislation page with search parameters
+    navigate(`/legislation`, { 
       state: { 
         searchTerm: query,
-        selectedItem: item.title
+        selectedItem: item.title,
+        categoryFilter: item.category
       } 
     });
   };

@@ -1,22 +1,18 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
-import { LegislationItem as LegislationItemType } from "@/data/legislationData";
+import { LegislationItem as LegislationItemType } from "@/data/legislation/types";
 import React, { useEffect, useRef } from "react";
 
 interface LegislationItemProps {
-  item: LegislationItemType & {
-    shouldHighlight?: boolean;
-    searchTerm?: string;
-    isSelected?: boolean;
-  };
+  item: LegislationItemType;
   index: number;
 }
 
 export const LegislationItem = ({ item, index }: LegislationItemProps) => {
   const itemRef = useRef<HTMLDivElement>(null);
   
-  // Extrair informações do título (número da lei e ano)
+  // Extract information from the title (law number and year)
   const titleParts = item.title.match(/([^\d]+)([\d.\/]+)(?:\D+(\d{4}))?/);
   const lawType = titleParts?.[1]?.trim() || "";
   const lawNumber = titleParts?.[2] || "";
@@ -27,6 +23,7 @@ export const LegislationItem = ({ item, index }: LegislationItemProps) => {
   
   useEffect(() => {
     if (item.isSelected && itemRef.current) {
+      itemRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
       itemRef.current.classList.add('highlight-item');
       
       // Remove highlight class after animation completes
@@ -57,8 +54,8 @@ export const LegislationItem = ({ item, index }: LegislationItemProps) => {
     <Card 
       id={itemId}
       ref={itemRef}
-      className={`eco-card bg-background/80 backdrop-blur-sm border-eco-green/10 hover:border-eco-green/30 shadow-md hover:shadow-lg transition-all animate-fade-up ${item.isSelected ? 'border-eco-green border-2' : ''}`} 
-      style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+      className={`eco-card bg-background/80 backdrop-blur-sm border-eco-green/10 hover:border-eco-green/30 shadow-md hover:shadow-lg transition-all animate-fade-up ${item.isSelected ? 'border-eco-green border-2' : ''} ${item.shouldHighlight ? 'ring-2 ring-yellow-300 dark:ring-yellow-500' : ''}`} 
+      style={{ animationDelay: `${0.1 + index * 0.05}s` }}
     >
       <CardHeader className="pb-2 border-b border-border/40">
         <CardTitle className="flex flex-col gap-1" style={{ fontFamily: "'Poppins', sans-serif" }}>
