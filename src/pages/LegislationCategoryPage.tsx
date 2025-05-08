@@ -1,11 +1,15 @@
 
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { legislationCategories, LegislationItem } from "@/data/legislationData";
-import { LegislationLayout } from "@/components/legislation/LegislationLayout";
 import { LegislationList } from "@/components/legislation/LegislationList";
 import { LegislationTabs } from "@/components/legislation/LegislationTabs";
 import { CategoryNotFound } from "@/components/legislation/CategoryNotFound";
 import { useEffect, useState } from "react";
+import { PageWrapper } from "@/components/ui/page-wrapper";
+import { CTASection } from "@/components/cta-section";
+import { PageBanner } from "@/components/ui/page-banner";
+import { SearchBar } from "@/components/legislation/SearchBar";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 interface LocationState {
   searchTerm?: string;
@@ -15,9 +19,11 @@ interface LocationState {
 const LegislationCategoryPage = () => {
   const { category } = useParams<{ category: string }>();
   const location = useLocation();
+  const navigate = useNavigate();
   const locationState = location.state as LocationState;
-  const searchTerm = locationState?.searchTerm;
-  const selectedItem = locationState?.selectedItem;
+  
+  const [searchTerm, setSearchTerm] = useState(locationState?.searchTerm || "");
+  const [selectedItem, setSelectedItem] = useState(locationState?.selectedItem || "");
   
   const [scrollToItem, setScrollToItem] = useState(false);
   
@@ -43,6 +49,11 @@ const LegislationCategoryPage = () => {
       }, 500);
     }
   }, [selectedItem, scrollToItem]);
+
+  // Handle search
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+  };
   
   if (!categoryData) {
     return <CategoryNotFound />;
@@ -66,16 +77,32 @@ const LegislationCategoryPage = () => {
         isSelected: item.title === selectedItem
       }))
     }));
-    
+
     return (
-      <LegislationLayout
-        title={categoryData.title}
-        description={categoryData.description}
-        icon={<IconComponent className="h-12 w-12 text-white" />}
-        backgroundImage={categoryData.image}
-      >
-        <LegislationTabs subcategories={subcategoriesWithHighlight} searchTerm={searchTerm} />
-      </LegislationLayout>
+      <PageWrapper>
+        <PageBanner 
+          title={categoryData.title}
+          description={categoryData.description}
+          icon={<IconComponent className="h-12 w-12 text-eco-green" />}
+          image={categoryData.image}
+        />
+        
+        <div className="container py-6">
+          <div className="max-w-3xl mx-auto mb-8">
+            <SearchBar 
+              onSearch={handleSearch} 
+              initialValue={searchTerm} 
+              placeholder={`Buscar em ${categoryData.title}...`}
+            />
+          </div>
+        </div>
+        
+        <TooltipProvider>
+          <LegislationTabs subcategories={subcategoriesWithHighlight} searchTerm={searchTerm} />
+        </TooltipProvider>
+        
+        <CTASection />
+      </PageWrapper>
     );
   }
 
@@ -104,14 +131,30 @@ const LegislationCategoryPage = () => {
 
   // Renderização original para categorias sem subcategorias
   return (
-    <LegislationLayout
-      title={categoryData.title}
-      description={categoryData.description}
-      icon={<IconComponent className="h-12 w-12 text-white" />}
-      backgroundImage={categoryData.image}
-    >
-      <LegislationList items={legislationItems} searchTerm={searchTerm} />
-    </LegislationLayout>
+    <PageWrapper>
+      <PageBanner 
+        title={categoryData.title}
+        description={categoryData.description}
+        icon={<IconComponent className="h-12 w-12 text-eco-green" />}
+        image={categoryData.image}
+      />
+      
+      <div className="container py-6">
+        <div className="max-w-3xl mx-auto mb-8">
+          <SearchBar 
+            onSearch={handleSearch} 
+            initialValue={searchTerm} 
+            placeholder={`Buscar em ${categoryData.title}...`}
+          />
+        </div>
+      </div>
+      
+      <TooltipProvider>
+        <LegislationList items={legislationItems} searchTerm={searchTerm} />
+      </TooltipProvider>
+      
+      <CTASection />
+    </PageWrapper>
   );
 };
 

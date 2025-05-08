@@ -1,7 +1,8 @@
 
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { LegislationSubcategory } from "@/data/legislationData";
 import { LegislationTabContent } from "./LegislationTabContent";
+import { useState } from "react";
 
 interface LegislationTabsProps {
   subcategories: (LegislationSubcategory & {
@@ -23,6 +24,14 @@ export const LegislationTabs = ({ subcategories, searchTerm }: LegislationTabsPr
     return matchingSubcategory ? matchingSubcategory.title : subcategories[0].title;
   };
   
+  const [activeTab, setActiveTab] = useState(getDefaultTab());
+  
+  // Count highlighted items per tab
+  const highlightedCountPerTab = subcategories.reduce((acc, subcat) => {
+    acc[subcat.title] = subcat.items.filter(item => item.shouldHighlight).length;
+    return acc;
+  }, {} as Record<string, number>);
+  
   return (
     <section className="container py-16 relative">
       <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
@@ -31,7 +40,7 @@ export const LegislationTabs = ({ subcategories, searchTerm }: LegislationTabsPr
       
       <div className="max-w-4xl mx-auto">
         {searchTerm && (
-          <div className="bg-muted/50 p-4 rounded-lg mb-6 border border-eco-green/10">
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg mb-6 border border-yellow-200 dark:border-yellow-800/30">
             <p className="text-center">
               <span className="font-medium">Resultados para: </span>
               <span className="bg-yellow-200 dark:bg-yellow-800 px-2 py-0.5 rounded">{searchTerm}</span>
@@ -39,18 +48,18 @@ export const LegislationTabs = ({ subcategories, searchTerm }: LegislationTabsPr
           </div>
         )}
         
-        <Tabs defaultValue={getDefaultTab()} className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full flex flex-wrap h-auto justify-center mb-8 bg-muted/50 p-2 border border-eco-green/10">
             {subcategories.map((subcat, index) => (
               <TabsTrigger 
                 key={index} 
                 value={subcat.title}
-                className="mb-2 data-[state=active]:bg-eco-green data-[state=active]:text-white px-4 py-2 rounded-md font-medium"
+                className="mb-2 data-[state=active]:bg-eco-green data-[state=active]:text-white px-4 py-2 rounded-md font-medium relative"
               >
                 {subcat.title}
-                {searchTerm && subcat.items.some(item => item.shouldHighlight) && (
-                  <span className="ml-2 bg-yellow-200 text-black text-xs px-1.5 py-0.5 rounded-full">
-                    {subcat.items.filter(item => item.shouldHighlight).length}
+                {searchTerm && highlightedCountPerTab[subcat.title] > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-yellow-200 text-black text-xs px-1.5 py-0.5 rounded-full">
+                    {highlightedCountPerTab[subcat.title]}
                   </span>
                 )}
               </TabsTrigger>
