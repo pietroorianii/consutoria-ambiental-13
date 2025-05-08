@@ -5,6 +5,9 @@ export interface LegislationItem {
   title: string;
   description: string;
   link: string;
+  shouldHighlight?: boolean;
+  searchTerm?: string;
+  isSelected?: boolean;
 }
 
 export interface LegislationSubcategory {
@@ -18,7 +21,7 @@ export interface LegislationCategory {
   description: string;
   image: string;
   icon: LucideIcon;
-  items: string[];
+  items: string[] | LegislationItem[];
   link: string;
   subcategories?: LegislationSubcategory[];
 }

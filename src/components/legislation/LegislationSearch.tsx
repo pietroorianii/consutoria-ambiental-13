@@ -56,7 +56,7 @@ export const LegislationSearch = () => {
       // If category has direct items
       else if (category.items && Array.isArray(category.items)) {
         category.items.forEach(item => {
-          if (typeof item === 'object' && item.title) {
+          if (typeof item === 'object' && item !== null && 'title' in item) {
             results.push({
               title: item.title,
               description: item.description || '',
