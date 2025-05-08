@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LegislationSearch } from './LegislationSearch';
 import { legislationCategories } from '@/data/legislation/index';
 import { LegislationCategory, LegislationItem as LegislationItemType } from '@/data/legislation/types';
 import { LegislationItem } from './LegislationItem';
-import { Filter, ChevronDown } from "lucide-react";
-import { SearchBar } from './SearchBar';
+import { Input } from "@/components/ui/input";
+import { Search, Filter, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -98,55 +99,36 @@ export const ConsolidatedLegislationGuide = () => {
     
     setFilteredItems(itemsWithHighlight);
   }, [searchTerm, selectedCategories, allLegislationItems, selectedItem]);
-  
-  // Scroll to selected item when it changes
-  useEffect(() => {
-    if (selectedItem) {
-      setTimeout(() => {
-        const element = document.getElementById(`legislation-item-${selectedItem.replace(/\s+/g, '-').toLowerCase()}`);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          element.classList.add('highlight-item');
-          
-          // Remove highlight after animation
-          setTimeout(() => {
-            element.classList.remove('highlight-item');
-          }, 4000);
-        }
-      }, 500);
-    }
-  }, [selectedItem]);
 
   // Get unique category IDs from filtered items  
   const availableCategories = [...new Set(allLegislationItems.map(item => item.categoryId))];
-  
-  // Handle search
-  const handleSearch = (term: string) => {
-    setSearchTerm(term);
-  };
 
   return (
     <div className="container py-8 max-w-5xl mx-auto">
-      {/* Hero search box */}
+      {/* Search box */}
       <div className="mb-8">
-        <div className="max-w-3xl mx-auto text-center mb-8">
+        <div className="max-w-3xl mx-auto text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
             Consulta de Legislação Ambiental
           </h2>
           <p className="text-muted-foreground mb-6" style={{ fontFamily: "'Lato', sans-serif" }}>
             Pesquise por leis, resoluções ou palavras-chave para encontrar rapidamente a legislação que você precisa.
           </p>
-          <div className="bg-gradient-to-r from-eco-green/5 to-eco-blue/5 p-6 rounded-lg border border-eco-green/20 shadow-md">
-            <SearchBar onSearch={handleSearch} initialValue={searchTerm} />
-          </div>
+          <LegislationSearch />
         </div>
       </div>
       
       {/* Filter options */}
       <div className="flex flex-wrap gap-3 items-center mb-6 px-4">
-        <p className="text-muted-foreground flex-1">
-          Filtros adicionais:
-        </p>
+        <div className="relative flex-1 min-w-[280px]">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+          <Input
+            className="pl-10 pr-4 py-2"
+            placeholder="Filtrar resultados..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
         
         <DropdownMenu open={isCategoryCheckboxesOpen} onOpenChange={setIsCategoryCheckboxesOpen}>
           <DropdownMenuTrigger asChild>
@@ -180,7 +162,7 @@ export const ConsolidatedLegislationGuide = () => {
       {/* Legislation items */}
       <div className="mt-8">
         {searchTerm && (
-          <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg mb-6 border border-yellow-200 dark:border-yellow-800/30">
+          <div className="bg-muted/50 p-4 rounded-lg mb-6 border border-eco-green/10">
             <p className="text-center">
               <span className="font-medium">Resultados para: </span>
               <span className="bg-yellow-200 dark:bg-yellow-800 px-2 py-0.5 rounded">{searchTerm}</span>
