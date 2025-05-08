@@ -1,9 +1,10 @@
 
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
-import { CompanyIntro } from "@/components/company-intro";
 import { Info } from "lucide-react";
 import { PageBanner } from "@/components/ui/page-banner";
+import { MissionVisionValues } from "@/components/about/MissionVisionValues";
+import { CompanyIntro } from "@/components/company-intro";
 
 const AboutPage = () => {
   return (
@@ -16,6 +17,8 @@ const AboutPage = () => {
       />
       
       <CompanyIntro />
+      
+      <MissionVisionValues />
       
       <CTASection />
     </PageWrapper>
