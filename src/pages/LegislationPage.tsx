@@ -4,6 +4,7 @@ import { CTASection } from "@/components/cta-section";
 import { Globe } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { ConsolidatedLegislationGuide } from "@/components/legislation/ConsolidatedLegislationGuide";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const LegislationPage = () => {
   return (
@@ -15,7 +16,9 @@ const LegislationPage = () => {
         backgroundImage="https://images.unsplash.com/photo-1517976547714-720226b864c1?auto=format&fit=crop&q=80&w=1200&h=600"
       />
       
-      <ConsolidatedLegislationGuide />
+      <TooltipProvider>
+        <ConsolidatedLegislationGuide />
+      </TooltipProvider>
       
       <CTASection />
     </PageWrapper>
