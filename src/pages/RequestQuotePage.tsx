@@ -12,7 +12,7 @@ import { EnvironmentalContextStep } from "@/components/quote-request/Environment
 import { AdditionalInfoStep } from "@/components/quote-request/AdditionalInfoStep";
 import { SuccessDialog } from "@/components/quote-request/SuccessDialog";
 import { PageWrapper } from "@/components/ui/page-wrapper";
-import { PageHeader } from "@/components/ui/page-header";
+import { PageBanner } from "@/components/ui/page-banner";
 
 const RequestQuotePage = () => {
   const {
@@ -32,12 +32,12 @@ const RequestQuotePage = () => {
 
   return (
     <PageWrapper>
-      {/* Header with standardized format */}
-      <PageHeader 
+      {/* Header com formato padronizado */}
+      <PageBanner 
         title="Solicitação de Orçamento"
         description="Preencha o formulário abaixo para solicitar um orçamento personalizado para seu projeto ambiental."
-        icon={<Leaf className="h-12 w-12 text-white" />}
-        backgroundImage="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600"
+        icon={<Leaf className="h-12 w-12 text-eco-green" />}
+        image="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600"
       />
       
       <div className="container mx-auto -mt-8 px-4 md:px-6 pb-16 relative z-10">
