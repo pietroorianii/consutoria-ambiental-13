@@ -1,83 +1,61 @@
-import { Button } from "@/components/ui/button";
+
+import React from "react";
+import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { CheckCircle, Leaf } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { Leaf, Users } from "lucide-react";
+
 export function CompanyIntro() {
-  const highlightsRef = useRef<HTMLUListElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-up');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    if (highlightsRef.current) {
-      const listItems = highlightsRef.current.querySelectorAll('li');
-      listItems.forEach(item => {
-        observer.observe(item);
-      });
-    }
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
-    }
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-  const highlights = ["Equipe técnica especializada e multidisciplinar", "Mais de 15 anos de experiência no mercado", "Atendimento personalizado para cada cliente", "Soluções ambientais adaptadas às necessidades específicas"];
-  return <section className="container py-16 md:py-24 leaf-pattern relative overflow-hidden">
-      <div className="absolute top-10 right-10 text-eco-green/10">
-        <Leaf className="h-32 w-32 animate-float" />
-      </div>
-      <div className="absolute -bottom-20 -left-20 text-eco-green/10 rotate-45">
-        <Leaf className="h-40 w-40 animate-float" style={{
-        animationDelay: "2s"
-      }} />
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div ref={imageRef} className="transform transition-all duration-700 opacity-0">
-          <div className="relative rounded-lg overflow-hidden h-full max-h-[500px] shadow-xl">
-            <img src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" alt="Sustentabilidade ambiental" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+  return (
+    <section className="container py-16 lg:py-24 relative">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="space-y-6 md:space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight scroll-trigger opacity-0" style={{fontFamily: "'Poppins', sans-serif"}}>
+            Expertise em Soluções Ambientais
+          </h2>
+          
+          <div className="h-1 w-20 bg-eco-green scroll-trigger opacity-0"></div>
+          
+          <p className="text-muted-foreground text-lg scroll-trigger opacity-0">
+            A L&P Soluções Ambientais oferece serviços de consultoria e assessoria ambiental completa, 
+            proporcionando às empresas o suporte necessário para atender às exigências da legislação ambiental 
+            vigente de forma eficiente e sustentável.
+          </p>
+          
+          <p className="text-muted-foreground scroll-trigger opacity-0">
+            Nossa equipe de profissionais qualificados atua em todo o território nacional, 
+            oferecendo soluções personalizadas para cada cliente, sempre buscando a excelência 
+            e a inovação em todos os projetos que desenvolvemos.
+          </p>
+          
+          <div className="pt-4 flex flex-wrap gap-4 scroll-trigger opacity-0">
+            <Button asChild className="btn-gradient">
+              <Link to="/services" className="flex items-center gap-2">
+                <Leaf className="h-5 w-5" />
+                Nossos Serviços
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green/10">
+              <Link to="/about#team" className="flex items-center gap-2">
+                <Users className="h-5 w-5" />
+                Conhecer Nossa Equipe
+              </Link>
+            </Button>
           </div>
         </div>
         
-        <div className="space-y-6">
-          <div className="transform transition-all duration-500">
-            <h2 className="text-3xl md:text-4xl font-bold flex items-center gap-2" style={{
-            fontFamily: "'Poppins', sans-serif"
-          }}>
-              <span className="bg-eco-green/10 p-2 rounded-full">
-                <Leaf className="h-6 w-6 text-eco-green" />
-              </span>
-              Consultoria Ambiental Especializada
-            </h2>
-            <div className="h-1 w-20 bg-eco-green mt-4 transform origin-left transition-all duration-500 hover:w-40"></div>
+        <div className="relative lg:h-[500px] h-[400px] rounded-lg overflow-hidden scroll-trigger opacity-0">
+          <img 
+            src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" 
+            alt="Nossa empresa em ação" 
+            className="w-full h-full object-cover rounded-lg shadow-xl" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-eco-green/30 to-eco-blue/30 mix-blend-multiply"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+            <h3 className="text-white text-xl font-semibold">Compromisso com o futuro sustentável</h3>
+            <p className="text-white/80">Atuando para equilibrar desenvolvimento e preservação ambiental</p>
           </div>
-          
-          <p className="text-muted-foreground transform transition-all duration-700 delay-100">A L&amp;P SOLUÇÕES AMBIENTAIS é uma empresa de consultoria ambiental que oferece soluções completas para empresas que buscam sustentabilidade e conformidade legal em seus processos. Com uma equipe técnica altamente qualificada, trabalhamos para garantir que nossos clientes estejam em dia com todas as exigências ambientais, otimizando recursos e promovendo práticas sustentáveis.</p>
-          
-          <ul className="space-y-3" ref={highlightsRef}>
-            {highlights.map((item, index) => <li key={index} className="flex items-center gap-2 opacity-0" style={{
-            transitionDelay: `${0.3 + index * 0.1}s`
-          }}>
-                <CheckCircle className="h-5 w-5 text-eco-green flex-shrink-0" />
-                <span style={{
-              fontFamily: "'Lato', sans-serif"
-            }}>{item}</span>
-              </li>)}
-          </ul>
-          
-          <Button asChild className="mt-4 btn-gradient text-white transform transition-all duration-500 hover:scale-105">
-            <Link to="/about">Conheça Nossa Equipe</Link>
-          </Button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
