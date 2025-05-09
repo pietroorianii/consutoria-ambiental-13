@@ -20,8 +20,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif'],
 				roboto: ['Roboto', 'sans-serif'],
+				'roboto-slab': ['"Roboto Slab"', 'serif'],
 				lato: ['Lato', 'sans-serif'],
 			},
 			colors: {
@@ -68,22 +70,27 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Custom colors for our environmental consulting site
+                // Refined eco colors palette for 2025 design
                 eco: {
                     green: {
-                        light: '#84cc16',
-                        DEFAULT: '#65a30d',
-                        dark: '#4d7c0f',
+                        light: '#8EB69B', // Softer sage green
+                        DEFAULT: '#3B7D59', // Rich moss green
+                        dark: '#2B5B41', // Deep forest green
                     },
                     blue: {
-                        light: '#7dd3fc',
-                        DEFAULT: '#0ea5e9',
-                        dark: '#0284c7',
+                        light: '#A8DADC', // Soft water blue
+                        DEFAULT: '#1A759F', // Lake blue
+                        dark: '#184E77', // Deep ocean blue
                     },
                     earth: {
-                        light: '#d6d3d1',
-                        DEFAULT: '#a8a29e',
-                        dark: '#78716c',
+                        light: '#E9E6E1', // Cream/paper
+                        DEFAULT: '#C8B8A9', // Soft sand
+                        dark: '#8A7968', // Warm brown
+                    },
+                    accent: {
+                        yellow: '#D9B44A', // Mustard yellow
+                        orange: '#E07A5F', // Terracotta
+                        teal: '#4DA1A9', // Teal accent
                     }
                 }
 			},
@@ -112,7 +119,7 @@ export default {
                 'fade-in': {
                     '0%': {
                         opacity: '0',
-                        transform: 'translateY(10px)'
+                        transform: 'translateY(15px)'
                     },
                     '100%': {
                         opacity: '1',
@@ -131,18 +138,50 @@ export default {
 					'100%': {
 						'background-position': '100% 0'
 					}
-				}
+				},
+                'gentle-wave': {
+                    '0%': {
+                        transform: 'translateX(0) translateZ(0) scaleY(1)'
+                    },
+                    '50%': {
+                        transform: 'translateX(-25%) translateZ(0) scaleY(0.9)'
+                    },
+                    '100%': {
+                        transform: 'translateX(-50%) translateZ(0) scaleY(1)'
+                    }
+                },
+                'spin-slow': {
+                    '0%': {
+                        transform: 'rotate(0deg)'
+                    },
+                    '100%': {
+                        transform: 'rotate(360deg)'
+                    }
+                },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-                'fade-in': 'fade-in 0.5s ease-out',
+                'fade-in': 'fade-in 0.7s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'shimmer': 'shimmer 2s infinite linear'
+				'shimmer': 'shimmer 2s infinite linear',
+                'gentle-wave': 'gentle-wave 8s linear infinite',
+                'spin-slow': 'spin-slow 20s linear infinite'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-			}
+                'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%)',
+                'organic-pattern': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233b7d59' fill-opacity='0.05' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z'%3E%3C/path%3E%3C/svg%3E\")",
+			},
+            boxShadow: {
+                'glass': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02)',
+                'neo': '5px 5px 15px rgba(0, 0, 0, 0.07), -5px -5px 15px rgba(255, 255, 255, 0.5)',
+                'soft': '0px 12px 25px rgba(0, 0, 0, 0.06)',
+            },
+            width: {
+                '128': '32rem',
+                '144': '36rem',
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
