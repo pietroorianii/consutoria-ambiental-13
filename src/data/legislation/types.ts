@@ -8,6 +8,10 @@ export interface LegislationItem {
   shouldHighlight?: boolean;
   searchTerm?: string;
   isSelected?: boolean;
+  // Add the missing properties
+  number?: string;
+  category?: string;
+  date?: string;
 }
 
 export interface LegislationSubcategory {

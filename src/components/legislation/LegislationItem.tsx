@@ -25,11 +25,13 @@ export function LegislationItem({ item, index }: LegislationItemProps) {
             </h3>
           </div>
           
-          <div className="md:text-right">
-            <Badge className="bg-eco-green/10 border-eco-green/20 text-eco-green py-1.5 px-3 text-xs">
-              {item.category}
-            </Badge>
-          </div>
+          {item.category && (
+            <div className="md:text-right">
+              <Badge className="bg-eco-green/10 border-eco-green/20 text-eco-green py-1.5 px-3 text-xs">
+                {item.category}
+              </Badge>
+            </div>
+          )}
         </div>
         
         <div className="mb-4 text-muted-foreground text-sm leading-relaxed line-clamp-3">
@@ -38,7 +40,9 @@ export function LegislationItem({ item, index }: LegislationItemProps) {
         
         <div className="flex justify-between items-center pt-2 border-t border-muted/50">
           <div className="text-sm text-muted-foreground">
-            Publicação: <span className="font-medium">{item.date}</span>
+            {item.date && (
+              <>Publicação: <span className="font-medium">{item.date}</span></>
+            )}
           </div>
           
           <a 
