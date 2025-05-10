@@ -1,20 +1,27 @@
 
 import React from "react";
-import { LegislationItemType } from "@/data/legislation/types";
+import { LegislationItem as LegislationItemType } from "@/data/legislation/types";
 import { Badge } from "@/components/ui/badge";
 
 interface LegislationItemProps {
   item: LegislationItemType;
+  index?: number;
 }
 
-export function LegislationItem({ item }: LegislationItemProps) {
+export function LegislationItem({ item, index }: LegislationItemProps) {
+  // Create an ID for the legislation item based on title or index for scrolling and highlighting
+  const itemId = item.title ? `legislation-item-${item.title.replace(/\s+/g, '-').toLowerCase()}` : `legislation-item-${index}`;
+  
   return (
-    <div className="glass-card mb-6 overflow-hidden hover:shadow-md transition-all duration-300 group">
+    <div 
+      id={itemId}
+      className={`glass-card mb-6 overflow-hidden hover:shadow-md transition-all duration-300 group ${item.isSelected ? 'animate-pulse border-2 border-eco-green' : ''}`}
+    >
       <div className="p-6">
         <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
           <div className="flex-1">
             <h3 className="text-xl font-semibold text-eco-green" style={{fontFamily: "'Poppins', sans-serif"}}>
-              {item.number} - {item.title}
+              {item.number && `${item.number} - `}{item.title}
             </h3>
           </div>
           

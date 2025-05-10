@@ -1,5 +1,5 @@
 
-import { LegislationItem as LegislationItemType } from "@/data/legislationData";
+import { LegislationItem as LegislationItemType } from "@/data/legislation/types";
 import { LegislationItem } from "./LegislationItem";
 
 interface LegislationListProps {

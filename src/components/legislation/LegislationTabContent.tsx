@@ -1,6 +1,6 @@
 
 import { TabsContent } from "@/components/ui/tabs";
-import { LegislationSubcategory } from "@/data/legislationData";
+import { LegislationSubcategory } from "@/data/legislation/types";
 import { LegislationItem } from "./LegislationItem";
 
 interface LegislationTabContentProps {
