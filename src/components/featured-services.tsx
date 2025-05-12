@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -7,8 +6,10 @@ const services = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-green">
-        <path d="M2 22c1.25-1.67 2.04-3.92 6-7 3 4 5 5 14 0-4.87 8.68-15 10-20 7z"></path>
-        <path d="M22 8c0 5-3 7-8 7s-8-2-8-7c0-3.31 1.79-6 4-6 1 0 2.83 1.67 4 2 1.17-.33 3-2 4-2 2.21 0 4 2.69 4 6z"></path>
+        <path d="M8 6h10"></path>
+        <path d="M6 12h9"></path>
+        <path d="M11 18h7"></path>
+        <path d="M3 6v12c0 1 1 2 2 2s2-1 2-2V6c0-1-1-2-2-2s-2 1-2 2z"></path>
       </svg>
     ),
     title: "Licenciamento Ambiental",
@@ -18,11 +19,11 @@ const services = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-blue">
-        <path d="M2.273 12.8a1.09 1.09 0 0 0 1.092-1.085l.001-.001c.01-2.741 2.246-4.971 5.008-4.971 2.414 0 4.432 1.7 4.911 3.969l.05.201c.144.538.597.864 1.174.864h.1c3.145-.253 5.872 2.104 6.15 5.249a5.51 5.51 0 0 1-5.5 5.785H7.742a5.5 5.5 0 0 1-5.5-4.983 5.452 5.452 0 0 1 0-1.066 1.087 1.087 0 0 0 .031-.262Z"></path>
-        <path d="M8.794 12.141c.275-.92 1.152-1.591 2.199-1.591s1.924.671 2.199 1.591l.461 1.999c.111.483.181.978.209 1.475h-5.538c.028-.497.098-.992.209-1.474l.261-.999"></path>
-        <path d="M10.994 12.3v2.7"></path>
-        <path d="m15.5 9 2-2"></path>
-        <path d="M8 7 6 5"></path>
+        <path d="M8.4 10.6a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2"></path>
+        <path d="M18.9 8.7a8 8 0 0 1 1 4 8 8 0 0 1-1 4"></path>
+        <path d="M4.9 4.9a8 8 0 0 1 2-1.2 9 9 0 0 1 10.2 0c.7.3 1.4.7 2 1.2"></path>
+        <path d="M4.9 19.1a8 8 0 0 0 2 1.2 9 9 0 0 0 10.2 0c.7-.3 1.4-.7 2-1.2"></path>
+        <path d="M15.6 10.6a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2z"></path>
       </svg>
     ),
     title: "Monitoramento e Análises",
@@ -32,11 +33,10 @@ const services = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-green-dark">
-        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <line x1="16" x2="8" y1="13" y2="13"></line>
-        <line x1="16" x2="8" y1="17" y2="17"></line>
-        <line x1="10" x2="8" y1="9" y2="9"></line>
+        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+        <path d="M9 17h6"></path>
+        <path d="M9 13h6"></path>
       </svg>
     ),
     title: "Planos e Relatórios",
@@ -59,11 +59,10 @@ const services = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-green">
-        <path d="M17 14V2a1.93 1.93 0 0 0-2.3-1.89c-.24.05-6.77 2.31-7.7 2.64A2.93 2.93 0 0 0 5 5.5V14"></path>
-        <path d="M17 14H5"></path>
-        <path d="m8 19-3-3 3-3"></path>
-        <path d="M14 13v6"></path>
-        <path d="M5 8c0-2.2 1.8-4 4-4"></path>
+        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+        <path d="M3 9h18"></path>
+        <path d="M9 3v18"></path>
+        <path d="m14 15 3-3-3-3"></path>
       </svg>
     ),
     title: "Treinamentos Ambientais",
@@ -73,15 +72,10 @@ const services = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-blue">
-        <circle cx="12" cy="12" r="4"></circle>
-        <path d="M12 2v2"></path>
-        <path d="M12 20v2"></path>
-        <path d="m4.93 4.93 1.41 1.41"></path>
-        <path d="m17.66 17.66 1.41 1.41"></path>
-        <path d="M2 12h2"></path>
-        <path d="M20 12h2"></path>
-        <path d="m6.34 17.66-1.41 1.41"></path>
-        <path d="m19.07 4.93-1.41 1.41"></path>
+        <path d="M20.9 18.55A10.58 10.58 0 0 0 22 12a10 10 0 1 0-20 0c0 4.83 3.44 8.86 8 9.8"></path>
+        <path d="M12 2v10l4.45 4.45"></path>
+        <path d="m19.5 15 2 2-2 2"></path>
+        <path d="m15.5 19-2 2 2 2"></path>
       </svg>
     ),
     title: "Gestão Ambiental",

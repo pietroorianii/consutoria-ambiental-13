@@ -60,7 +60,7 @@ export function HeroBanner() {
           </Button>
 
           <Button asChild size="lg" variant="outline" 
-                  className="glass-blur-dark text-white border-white/30 hover:bg-white/10 backdrop-blur-sm px-8 py-6 rounded-lg text-base">
+                  className="bg-eco-green text-white hover:bg-eco-green-dark border-eco-green hover:border-eco-green-dark px-8 py-6 rounded-lg text-base">
             <Link to="/request-quote" className="flex items-center gap-2">
               Solicitar Orçamento
             </Link>
