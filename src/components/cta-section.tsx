@@ -60,7 +60,7 @@ export function CTASection() {
               </Button>
               
               <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 backdrop-blur-sm py-6 px-10 rounded-lg">
-                <Link to="/services" className="relative z-10 flex items-center gap-2 text-base font-medium">
+                <Link to="/services" className="flex items-center gap-2">
                   Conhecer Serviços
                 </Link>
               </Button>
