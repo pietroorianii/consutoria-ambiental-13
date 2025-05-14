@@ -1,5 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Earth } from "lucide-react";
+
 export function CTASection() {
   return <section className="container py-20 md:py-28 relative z-10">
       <div className="rounded-2xl overflow-hidden relative">
@@ -14,8 +17,8 @@ export function CTASection() {
         <div className="absolute inset-0 bg-organic-pattern opacity-15 mix-blend-overlay"></div>
         
         {/* Decorative elements */}
-        <div className="absolute top-10 left-10 leaf-decoration animate-spin-slow opacity-30"></div>
-        <div className="absolute bottom-10 right-10 leaf-decoration animate-spin-slow opacity-30"></div>
+        <div className="absolute top-10 left-10 leaf-decoration opacity-30"></div>
+        <div className="absolute bottom-10 right-10 leaf-decoration opacity-30"></div>
         
         {/* Content */}
         <div className="relative z-10 p-12 sm:p-16 md:p-20 text-center">
@@ -25,10 +28,7 @@ export function CTASection() {
           }}>
               <div className="flex justify-center mb-8">
                 <div className="p-5 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                    <path d="M2 22c1.25-1.67 2.04-3.92 6-7 3 4 5 5 14 0-4.87 8.68-15 10-20 7z"></path>
-                    <path d="M22 8c0 5-3 7-8 7s-8-2-8-7c0-3.31 1.79-6 4-6 1 0 2.83 1.67 4 2 1.17-.33 3-2 4-2 2.21 0 4 2.69 4 6z"></path>
-                  </svg>
+                  <Earth className="text-white w-8 h-8" />
                 </div>
               </div>
               
