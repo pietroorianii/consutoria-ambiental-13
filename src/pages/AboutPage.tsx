@@ -2,6 +2,7 @@ import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
 import { MissionVisionValues } from "@/components/about/MissionVisionValues";
 import { TeamMemberCard } from "@/components/about/TeamMemberCard";
+import { Info } from "lucide-react"; // Importar o ícone Info
 
 // Team members data
 const teamMembers = [{
@@ -66,12 +67,8 @@ const AboutPage = () => {
         
         <div className="container relative z-10">
           <div className="text-center">
-            <div className="inline-block p-4 mb-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 animate-float">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 16v-4"></path>
-                <path d="M12 8h.01"></path>
-              </svg>
+            <div className="inline-block p-5 mb-8 rounded-full bg-eco-green/10 backdrop-blur-sm border border-white/10 animate-float shadow-glass"> {/* Estilo do container do ícone atualizado */}
+              <Info className="h-12 w-12 text-eco-green" /> {/* Ícone Info substituindo o SVG, com classes de PageBanner */}
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 scroll-trigger">

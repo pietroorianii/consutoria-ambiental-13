@@ -1,4 +1,5 @@
 
+
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactInfo } from "@/components/contact/ContactInfo";
@@ -46,9 +47,16 @@ const ContactPage = () => {
           <div className="rounded-lg overflow-hidden shadow-lg aspect-[21/9] bg-muted animate-fade-up" style={{
             animationDelay: "0.2s"
           }}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.3565895841186!2d-43.17971084897154!3d-22.90369084349275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9981da517e0946%3A0xab5d97a5e5c76ee2!2sCentro%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1649884532527!5m2!1spt-BR!2sbr" width="100%" height="100%" style={{
-              border: 0
-            }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Mapa de localização" />
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5914003190997!2d-50.16066632383453!3d-25.08783794308761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e8190899958217%3A0x8d961a14c36d2e51!2sR.%20Sete%20de%20Setembro%2C%201322%20-%20Centro%2C%20Ponta%20Grossa%20-%20PR%2C%2084010-350!5e0!3m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade" 
+              title="Mapa de localização - Rua Sete de Setembro 1322, Centro, Ponta Grossa" 
+            />
           </div>
         </div>
       </section>
