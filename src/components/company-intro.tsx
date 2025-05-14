@@ -1,14 +1,15 @@
+
 import React from "react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+
 export function CompanyIntro() {
-  return <section className="container py-24 lg:py-32 relative">
+  return (
+    <section className="container py-24 lg:py-32 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-organic-pattern opacity-20 z-0"></div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-10 leaf-decoration animate-spin-slow opacity-20"></div>
-      <div className="absolute bottom-40 left-20 leaf-decoration animate-spin-slow opacity-10"></div>
+      {/* Decorative elements - spinning ones removed */}
       
       <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="space-y-8 scroll-trigger">
@@ -37,16 +38,7 @@ export function CompanyIntro() {
           </p>
           
           <div className="pt-6 flex flex-wrap gap-5">
-            <Button asChild className="btn-gradient py-6 px-8 rounded-lg text-base">
-              <Link to="/services" className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2 22c1.25-1.67 2.04-3.92 6-7 3 4 5 5 14 0-4.87 8.68-15 10-20 7z"></path>
-                  <path d="M22 8c0 5-3 7-8 7s-8-2-8-7c0-3.31 1.79-6 4-6 1 0 2.83 1.67 4 2 1.17-.33 3-2 4-2 2.21 0 4 2.69 4 6z"></path>
-                </svg>
-                Nossos Serviços
-              </Link>
-            </Button>
-            
+            {/* Botão "Nossos Serviços" foi removido daqui */}
             <Button asChild variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green/5 py-6 px-8 rounded-lg text-base">
               <Link to="/about#team" className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -87,5 +79,6 @@ export function CompanyIntro() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

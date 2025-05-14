@@ -8,8 +8,8 @@ interface TexturedBackgroundProps {
 export const TexturedBackground: React.FC<TexturedBackgroundProps> = ({ className }) => {
   return (
     <div className={`fixed inset-0 -z-10 overflow-hidden pointer-events-none ${className}`}>
-      {/* Padrão de folhas estilizado aplicado a todo o plano de fundo */}
-      <div className="absolute inset-0 leaf-pattern opacity-15"></div>
+      {/* Padrão de folhas estilizado aplicado a todo o plano de fundo com opacidade reduzida */}
+      <div className="absolute inset-0 leaf-pattern opacity-10"></div> {/* Opacidade alterada de 15 para 10 */}
       
       {/* Elementos fluidos decorativos */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-eco-green/5 rounded-full blur-3xl animate-pulse-slow"></div>
