@@ -1,4 +1,3 @@
-
 import { ServiceCategoryType } from "@/data/serviceCategories";
 interface ServiceBannerProps {
   categoryData: {
@@ -12,13 +11,10 @@ export function ServiceBanner({
   categoryData
 }: ServiceBannerProps) {
   return <div className="bg-gradient-to-r from-eco-green/90 to-eco-blue/90 py-12 md:py-16 relative overflow-hidden">
-      {/* Background Image with overlay */}
       <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
       backgroundImage: `url('${categoryData.image || "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600"}')`
     }}>
       </div>
-      
-      {/* Pattern overlay */}
       <div className="absolute inset-0 leaf-pattern mix-blend-overlay opacity-25"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
       
@@ -43,15 +39,6 @@ export function ServiceBanner({
               {categoryData.description}
             </p>
           </div>
-        </div>
-      </div>
-      
-      {/* Wave Divider */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <div className="wave-divider">
-          <div className="wave wave-1"></div>
-          <div className="wave wave-2"></div>
-          <div className="wave wave-3"></div>
         </div>
       </div>
     </div>;
