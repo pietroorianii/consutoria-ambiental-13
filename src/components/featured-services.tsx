@@ -1,6 +1,8 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Activity } from "lucide-react"; // Importar o ícone Activity
 
 const services = [
   {
@@ -17,15 +19,7 @@ const services = [
     link: "/services/licensing"
   },
   {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-blue">
-        <path d="M8.4 10.6a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2"></path>
-        <path d="M18.9 8.7a8 8 0 0 1 1 4 8 8 0 0 1-1 4"></path>
-        <path d="M4.9 4.9a8 8 0 0 1 2-1.2 9 9 0 0 1 10.2 0c.7.3 1.4.7 2 1.2"></path>
-        <path d="M4.9 19.1a8 8 0 0 0 2 1.2 9 9 0 0 0 10.2 0c.7-.3 1.4-.7 2-1.2"></path>
-        <path d="M15.6 10.6a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2z"></path>
-      </svg>
-    ),
+    icon: <Activity className="h-8 w-8 text-eco-blue" />, // Ícone atualizado
     title: "Monitoramento e Análises",
     description: "Acompanhamento de condicionantes ambientais e análises de conformidade.",
     link: "/services/monitoring"

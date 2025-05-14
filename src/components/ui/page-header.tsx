@@ -1,10 +1,13 @@
+
 import React from "react";
+
 interface PageHeaderProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   backgroundImage: string;
 }
+
 export function PageHeader({
   title,
   description,
@@ -24,7 +27,7 @@ export function PageHeader({
       
       {/* Content */}
       <div className="container relative z-10 py-24 flex flex-col items-center text-center">
-        <div className="bg-eco-green p-4 rounded-full mb-6 animate-float">
+        <div className="p-5 rounded-full bg-white/20 backdrop-blur-sm animate-float border border-white/30 shadow-glass mb-6">
           {icon}
         </div>
         

@@ -38,7 +38,7 @@ export function ServiceBanner({ categoryData }: ServiceBannerProps) {
       <div className="container relative z-10">
         <div className="flex flex-col items-center gap-6 text-center">
           {/* Icon */}
-          <div className="p-5 rounded-full backdrop-blur-sm animate-float glass-blur-dark">
+          <div className="p-5 rounded-full bg-white/20 backdrop-blur-sm animate-float border border-white/30 shadow-glass">
             {categoryData.icon}
           </div>
 
