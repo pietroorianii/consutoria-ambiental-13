@@ -1,4 +1,3 @@
-
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
 import { MissionVisionValues } from "@/components/about/MissionVisionValues";
@@ -7,24 +6,26 @@ import { Info } from "lucide-react"; // Manter Info, pois Users e Building não 
 
 // Team members data
 const teamMembers = [{
-  id: 1, // Added id
+  id: 1,
+  // Added id
   name: "Dra. Lilian C. Prates",
   role: "Diretora Executiva e Consultora Ambiental Sênior",
-  image: "/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png", // Renamed imageUrl to image
+  image: "/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png",
+  // Renamed imageUrl to image
   bio: "Engenheira Ambiental com vasta experiência em licenciamento, gestão de resíduos e auditorias. Lidera a equipe com foco em soluções inovadoras e sustentáveis.",
   specialties: ["Licenciamento Ambiental", "Gestão de Resíduos", "Auditorias Ambientais"] // Added specialties
 }, {
-  id: 2, // Added id
+  id: 2,
+  // Added id
   name: "Dr. Paulo R. Almeida",
   role: "Consultor Ambiental Especialista em Recursos Hídricos",
-  image: "/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png", // Renamed imageUrl to image
+  image: "/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png",
+  // Renamed imageUrl to image
   bio: "Geólogo especializado em hidrogeologia e outorgas. Responsável por projetos de uso e conservação da água, garantindo conformidade e eficiência.",
   specialties: ["Recursos Hídricos", "Hidrogeologia", "Outorgas"] // Added specialties
 }];
-
 const AboutPage = () => {
-  return (
-    <PageWrapper>
+  return <PageWrapper>
       {/* Cabeçalho da página com imagem de fundo e efeito de sobreposição */}
       <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-eco-green/80 to-eco-blue/80 overflow-hidden">
         {/* Imagem de fundo */}
@@ -87,9 +88,7 @@ const AboutPage = () => {
                 Pioneiros em Consultoria Ambiental Inovadora
               </h2>
               <div className="h-1 w-20 bg-eco-accent-teal rounded-full mb-8"></div>
-              <p className="text-muted-foreground text-lg mb-6">
-                Fundada em [Ano de Fundação], a L&P Soluções Ambientais nasceu da paixão pela natureza e do compromisso com o desenvolvimento sustentável. Nossa missão é oferecer consultoria ambiental de excelência, auxiliando empresas a prosperar em harmonia com o meio ambiente.
-              </p>
+              <p className="text-muted-foreground text-lg mb-6">Fundada em 2025, a L&P Soluções Ambientais nasceu da paixão pela natureza e do compromisso com o desenvolvimento sustentável. Nossa missão é oferecer consultoria ambiental de excelência, auxiliando empresas a prosperar em harmonia com o meio ambiente.</p>
               <p className="text-muted-foreground text-lg">
                 Com uma equipe multidisciplinar e experiente, combinamos conhecimento técnico com uma abordagem personalizada para cada cliente, garantindo soluções eficazes e em conformidade com as mais recentes legislações ambientais.
               </p>
@@ -124,15 +123,14 @@ const AboutPage = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {teamMembers.map((member) => ( // Removed animationDelay as it was not defined in TeamMemberCard props
-              <TeamMemberCard key={member.id} member={member} />
-            ))}
+            {teamMembers.map(member =>
+          // Removed animationDelay as it was not defined in TeamMemberCard props
+          <TeamMemberCard key={member.id} member={member} />)}
           </div>
         </div>
       </section>
       
       <CTASection />
-    </PageWrapper>
-  );
+    </PageWrapper>;
 };
 export default AboutPage;
