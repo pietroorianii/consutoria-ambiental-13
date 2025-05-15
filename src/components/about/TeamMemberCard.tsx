@@ -39,7 +39,7 @@ export function TeamMemberCard({ member }: TeamMemberProps) {
         </p>
         
         <div className="flex flex-wrap gap-2 mt-4">
-          {member.specialties.map((specialty, index) => (
+          {member.specialties && member.specialties.map((specialty, index) => (
             <Badge key={index} variant="outline" className="bg-eco-green/10 text-eco-green border-eco-green/20 py-1 px-3">
               {specialty}
             </Badge>
