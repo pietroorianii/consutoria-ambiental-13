@@ -3,26 +3,28 @@ import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
 import { MissionVisionValues } from "@/components/about/MissionVisionValues";
 import { TeamMemberCard } from "@/components/about/TeamMemberCard";
-import { Info, Users, Building, Target } from "lucide-react"; // Importar o ícone Info
+import { Info } from "lucide-react"; // Manter Info, pois Users e Building não são usados aqui. Target também não.
 
 // Team members data
 const teamMembers = [{
+  id: 1, // Added id
   name: "Dra. Lilian C. Prates",
   role: "Diretora Executiva e Consultora Ambiental Sênior",
-  imageUrl: "/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png",
+  image: "/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png", // Renamed imageUrl to image
   bio: "Engenheira Ambiental com vasta experiência em licenciamento, gestão de resíduos e auditorias. Lidera a equipe com foco em soluções inovadoras e sustentáveis.",
-  linkedin: "#",
-  email: "lilian.prates@lpsolucoes.com"
+  specialties: ["Licenciamento Ambiental", "Gestão de Resíduos", "Auditorias Ambientais"] // Added specialties
 }, {
+  id: 2, // Added id
   name: "Dr. Paulo R. Almeida",
   role: "Consultor Ambiental Especialista em Recursos Hídricos",
-  imageUrl: "/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png",
+  image: "/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png", // Renamed imageUrl to image
   bio: "Geólogo especializado em hidrogeologia e outorgas. Responsável por projetos de uso e conservação da água, garantindo conformidade e eficiência.",
-  linkedin: "#",
-  email: "paulo.almeida@lpsolucoes.com"
+  specialties: ["Recursos Hídricos", "Hidrogeologia", "Outorgas"] // Added specialties
 }];
+
 const AboutPage = () => {
-  return <PageWrapper>
+  return (
+    <PageWrapper>
       {/* Cabeçalho da página com imagem de fundo e efeito de sobreposição */}
       <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-eco-green/80 to-eco-blue/80 overflow-hidden">
         {/* Imagem de fundo */}
@@ -38,7 +40,7 @@ const AboutPage = () => {
         {/* Elementos decorativos */}
         <div className="absolute -top-1/4 -left-1/4 w-96 h-96 bg-eco-green/20 rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
         <div className="absolute -bottom-1/4 -right-1/4 w-96 h-96 bg-eco-blue/20 rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
-        
+
         <div className="container relative z-10">
           <div className="text-center">
             <div className="inline-block p-5 mb-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 animate-float shadow-glass">
@@ -122,12 +124,15 @@ const AboutPage = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {teamMembers.map((member, index) => <TeamMemberCard key={index} member={member} animationDelay={index * 0.15} />)}
+            {teamMembers.map((member) => ( // Removed animationDelay as it was not defined in TeamMemberCard props
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
           </div>
         </div>
       </section>
       
       <CTASection />
-    </PageWrapper>;
+    </PageWrapper>
+  );
 };
 export default AboutPage;
