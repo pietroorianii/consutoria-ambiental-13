@@ -117,7 +117,7 @@ export function FeaturedServices() {
                 </CardDescription>
               </CardContent>
               
-              <CardFooter className="mt-auto pt-4 pb-6 flex justify-center border-t border-gray-100 bg-[#111411]/15">
+              <CardFooter className="mt-auto pt-4 pb-6 flex justify-center border-t border-gray-100 bg-[#111411]/15 rounded-full">
                 <Link to={service.link} className="text-eco-green font-medium inline-flex items-center gap-2 hover:text-eco-green-dark transition-colors group">
                   Saiba mais 
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
