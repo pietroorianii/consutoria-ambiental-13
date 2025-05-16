@@ -1,10 +1,13 @@
+
 import React, { useRef, useEffect } from "react";
 import { Target, Eye, Award, CheckCircle } from "lucide-react";
+
 export function MissionVisionValues() {
   const missionRef = useRef<HTMLDivElement>(null);
   const visionRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
   const valuesItemsRef = useRef<HTMLUListElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -16,9 +19,11 @@ export function MissionVisionValues() {
     }, {
       threshold: 0.1
     });
+
     if (missionRef.current) observer.observe(missionRef.current);
     if (visionRef.current) observer.observe(visionRef.current);
     if (valuesRef.current) observer.observe(valuesRef.current);
+
     if (valuesItemsRef.current) {
       const listItems = valuesItemsRef.current.querySelectorAll('li');
       listItems.forEach((item, index) => {
@@ -26,25 +31,35 @@ export function MissionVisionValues() {
         observer.observe(item);
       });
     }
+
     return () => {
       observer.disconnect();
     };
   }, []);
-  return <section className="py-16 bg-gradient-to-br from-background to-muted/10 relative overflow-hidden">
-      <div className="absolute inset-0 leaf-pattern opacity-10 -z-10"></div>
+
+  return (
+    <section className="py-16 bg-gradient-to-br from-background to-muted/10 relative overflow-hidden">
+      {/* Textura de folhas e elementos decorativos */}
+      <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-eco-green/5 to-eco-blue/5 -z-10"></div>
+      
+      {/* Elementos decorativos fluidos */}
+      <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-eco-blue/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+      
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{
-          fontFamily: "'Poppins', sans-serif"
-        }}>Nossa Missão, Visão e Valores</h2>
+            fontFamily: "'Poppins', sans-serif"
+          }}>Nossa Missão, Visão e Valores</h2>
           <div className="h-1 w-24 bg-eco-green mx-auto"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {/* Missão */}
-          <div ref={missionRef} className="bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-eco-green/10 hover:border-eco-green/20 transition-all duration-300 opacity-0" style={{
-          animationDelay: "0.1s"
-        }}>
+          <div ref={missionRef} className="bg-background/90 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-eco-green/10 hover:border-eco-green/30 transition-all duration-300 opacity-0 hover:-translate-y-1" style={{
+            animationDelay: "0.1s"
+          }}>
             <div className="mb-6 flex justify-center">
               <div className="bg-eco-green/10 p-4 rounded-full">
                 <Target className="h-10 w-10 text-eco-green" />
@@ -58,9 +73,9 @@ export function MissionVisionValues() {
           </div>
           
           {/* Visão */}
-          <div ref={visionRef} className="bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-eco-blue/10 hover:border-eco-blue/20 transition-all duration-300 opacity-0" style={{
-          animationDelay: "0.2s"
-        }}>
+          <div ref={visionRef} className="bg-background/90 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-eco-blue/10 hover:border-eco-blue/30 transition-all duration-300 opacity-0 hover:-translate-y-1" style={{
+            animationDelay: "0.2s"
+          }}>
             <div className="mb-6 flex justify-center">
               <div className="bg-eco-blue/10 p-4 rounded-full">
                 <Eye className="h-10 w-10 text-eco-blue" />
@@ -74,9 +89,9 @@ export function MissionVisionValues() {
           </div>
           
           {/* Valores */}
-          <div ref={valuesRef} className="bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-eco-earth/10 hover:border-eco-earth/20 transition-all duration-300 opacity-0" style={{
-          animationDelay: "0.3s"
-        }}>
+          <div ref={valuesRef} className="bg-background/90 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-eco-earth/10 hover:border-eco-earth/30 transition-all duration-300 opacity-0 hover:-translate-y-1" style={{
+            animationDelay: "0.3s"
+          }}>
             <div className="mb-6 flex justify-center">
               <div className="bg-eco-earth/10 p-4 rounded-full">
                 <Award className="h-10 w-10 text-eco-earth" />
@@ -108,5 +123,6 @@ export function MissionVisionValues() {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

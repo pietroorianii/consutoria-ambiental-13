@@ -21,6 +21,14 @@ const ServicesPage = () => {
       
       {/* Service Categories */}
       <section className="container py-16 relative">
+        {/* Background textures */}
+        <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-eco-green/5 to-eco-blue/5 -z-10"></div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-1/4 right-10 w-40 h-40 bg-eco-green/10 rounded-full blur-xl -z-10 animate-pulse-slow"></div>
+        <div className="absolute bottom-1/4 left-10 w-40 h-40 bg-eco-blue/10 rounded-full blur-xl -z-10 animate-pulse-slow"></div>
+        
         <div className="space-y-16 flex flex-col items-center">
           {serviceCategories.map((category, index) => (
             <ServiceCategory 

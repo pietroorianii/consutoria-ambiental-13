@@ -4,7 +4,7 @@ import { CTASection } from "@/components/cta-section";
 import { MissionVisionValues } from "@/components/about/MissionVisionValues";
 import { TeamMemberCard } from "@/components/about/TeamMemberCard";
 import { Info } from "lucide-react";
-import { PageBanner } from "@/components/ui/page-banner"; // Importar PageBanner
+import { PageBanner } from "@/components/ui/page-banner";
 
 // Team members data
 const teamMembers = [{
@@ -30,12 +30,16 @@ const AboutPage = () => {
       <PageBanner
         title="Sobre a L&P Soluções Ambientais"
         description="Conectando desenvolvimento e sustentabilidade com expertise e inovação."
-        icon={<Info className="h-12 w-12 text-white" />} // Ícone ajustado para branco conforme padrão PageBanner
+        icon={<Info className="h-12 w-12 text-white" />}
         image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800" // Imagem de fundo temática
       />
       
       {/* Seção de Introdução da Empresa */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-32 bg-background relative">
+        {/* Textura de folhas no fundo */}
+        <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-eco-green/5 to-eco-blue/5 -z-10"></div>
+        
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="scroll-trigger animate-slide-left">
@@ -53,13 +57,18 @@ const AboutPage = () => {
             </div>
             
             <div className="relative scroll-trigger animate-slide-right flex items-center justify-center">
-              {/* Imagem da equipe removida e substituída pela logo */}
-              <img 
-                src="/lovable-uploads/a1326e41-9b89-4d6b-92d1-906cc37a9179.png" 
-                alt="L&P Soluções Ambientais Logo" 
-                className="max-h-60 w-auto object-contain hover-grow p-4 bg-white/50 dark:bg-black/30 rounded-lg shadow-soft border border-white/20 dark:border-white/10" 
-              />
-              {/* Blob decorativo removido pois a logo agora tem seu próprio tratamento visual */}
+              {/* Logo da empresa */}
+              <div className="relative p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-eco-green/20 hover:border-eco-green/40 transition-all duration-300 hover-grow">
+                <img 
+                  src="/lovable-uploads/027bd48a-0820-4102-841d-43d98185f223.png" 
+                  alt="L&P Soluções Ambientais Logo" 
+                  className="max-w-full h-auto max-h-72 object-contain"
+                />
+              </div>
+              
+              {/* Elementos decorativos */}
+              <div className="absolute -z-10 top-1/4 right-1/4 w-32 h-32 bg-eco-green/10 rounded-full blur-xl"></div>
+              <div className="absolute -z-10 bottom-1/4 left-1/4 w-40 h-40 bg-eco-blue/10 rounded-full blur-xl"></div>
             </div>
           </div>
         </div>
@@ -68,7 +77,11 @@ const AboutPage = () => {
       <MissionVisionValues />
       
       {/* Seção da Equipe */}
-      <section id="team" className="py-20 md:py-32 bg-muted/50">
+      <section id="team" className="py-20 md:py-32 bg-muted/50 relative">
+        {/* Textura de folhas no fundo */}
+        <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-eco-green/5 to-eco-blue/5 -z-10"></div>
+        
         <div className="container">
           <div className="text-center mb-16 scroll-trigger">
             <div className="inline-block px-4 py-2 bg-eco-blue/10 text-eco-blue font-medium text-sm uppercase tracking-wider rounded-full mb-6">

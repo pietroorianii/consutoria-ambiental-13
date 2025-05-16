@@ -15,28 +15,28 @@ export function PageBanner({
   image
 }: PageBannerProps) {
   return (
-    <div className="bg-gradient-to-r from-eco-green to-eco-blue py-24 relative overflow-hidden">
+    <div className="bg-gradient-to-r from-eco-green via-eco-blue/70 to-eco-blue py-24 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center opacity-20" 
            style={{backgroundImage: `url('${image || "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600"}')`}}>
       </div>
       
       {/* Pattern overlay */}
-      <div className="absolute inset-0 bg-organic-pattern mix-blend-overlay opacity-25"></div>
+      <div className="absolute inset-0 bg-organic-pattern mix-blend-overlay opacity-35"></div>
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-blue/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-eco-green/20"></div>
       
       {/* Decorative elements */}
-      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-      <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/30 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-eco-green/40 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+      <div className="absolute -top-24 -right-24 w-72 h-72 bg-eco-blue/40 rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
       
       {/* Content */}
       <div className="container relative z-10">
         <div className="flex flex-col items-center gap-6 text-center">
-          {/* Icon */}
-          <div className="p-5 rounded-full bg-white/20 backdrop-blur-sm animate-float border border-white/30 shadow-glass">
-            {icon}
+          {/* Icon with standardized styling */}
+          <div className="p-5 rounded-full bg-white/30 backdrop-blur-sm animate-float border border-white/40 shadow-glass">
+            {React.cloneElement(icon as React.ReactElement, { className: "h-12 w-12 text-white" })}
           </div>
           
           {/* Title */}

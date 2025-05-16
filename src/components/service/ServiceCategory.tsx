@@ -18,7 +18,7 @@ export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ category, inde
       className="scroll-trigger max-w-4xl w-full" 
       style={{ animationDelay: `${0.1 + index * 0.1}s` }}
     >
-      <div className="space-y-6 bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-md border border-eco-green/10 hover:border-eco-green/20 transition-all">
+      <div className="space-y-6 bg-background/80 backdrop-blur-sm p-8 rounded-lg shadow-md border border-eco-green/10 hover:border-eco-green/40 transition-all">
         <div className="flex flex-col items-center gap-4">
           <div className="bg-eco-green/10 p-4 rounded-full animate-float">
             <IconComponent className="h-12 w-12 text-eco-green" />
@@ -52,9 +52,9 @@ export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ category, inde
           ))}
         </ul>
         
-        <div className="flex justify-center">
-          <Button asChild className="bg-eco-green hover:bg-eco-green-dark shimmer-button group">
-            <Link to={category.link} className="flex items-center gap-2 hover:underline">
+        <div className="flex justify-center pt-2">
+          <Button asChild className="bg-eco-green hover:bg-eco-green-dark group">
+            <Link to={category.link} className="flex items-center gap-2 hover:underline group-hover:scale-105 transition-all duration-300">
               Ver detalhes <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>

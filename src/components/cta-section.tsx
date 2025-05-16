@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Sprout } from "lucide-react"; // Adicionando import do ícone Sprout
+import { Sprout } from "lucide-react";
 
 export function CTASection() {
   return (
@@ -17,8 +17,8 @@ export function CTASection() {
         {/* Pattern overlay */}
         <div className="absolute inset-0 bg-organic-pattern opacity-15 mix-blend-overlay"></div>
         
-        {/* Decorative elements */}
-        {/* Elementos giratórios foram removidos se existiam aqui, mantendo outros se necessário */}
+        {/* Textura de folhas */}
+        <div className="absolute inset-0 leaf-pattern opacity-15"></div>
         
         {/* Content */}
         <div className="relative z-10 p-12 sm:p-16 md:p-20 text-center">
@@ -28,7 +28,6 @@ export function CTASection() {
             }}>
               <div className="flex justify-center mb-8">
                 <div className="p-5 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
-                  {/* Ícone alterado para Sprout */}
                   <Sprout className="text-white" size={32} />
                 </div>
               </div>
@@ -50,9 +49,8 @@ export function CTASection() {
             <div className="flex flex-col sm:flex-row justify-center gap-5 animate-fade-up" style={{
               animationDelay: "0.4s"
             }}>
-              {/* Botão "Solicitar Orçamento" atualizado para estilo primário do HeroBanner */}
               <Button asChild size="lg" className="btn-gradient relative overflow-hidden group ripple-button px-8 py-6 rounded-lg text-base">
-                <Link to="/request-quote" className="relative z-10 flex items-center gap-3">
+                <Link to="/request-quote" className="relative z-10 flex items-center gap-3 hover:underline transition-all group-hover:scale-105">
                   <span className="text-base font-medium">Solicitar Orçamento</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
                     <path d="M5 12h14"></path>
@@ -61,9 +59,8 @@ export function CTASection() {
                 </Link>
               </Button>
               
-              {/* Botão "Conhecer Serviços" atualizado para estilo secundário do HeroBanner */}
-              <Button asChild size="lg" variant="outline" className="bg-eco-green text-white hover:bg-eco-green-dark border-eco-green hover:border-eco-green-dark px-8 py-6 rounded-lg text-base">
-                <Link to="/services" className="flex items-center gap-2">
+              <Button asChild size="lg" variant="outline" className="bg-eco-green text-white hover:bg-eco-green-dark border-eco-green hover:border-eco-green-dark px-8 py-6 rounded-lg text-base group">
+                <Link to="/services" className="flex items-center gap-2 hover:underline transition-all group-hover:scale-105">
                   Conhecer Serviços
                 </Link>
               </Button>

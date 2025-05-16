@@ -1,14 +1,17 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Activity } from "lucide-react";
+import { 
+  Leaf, 
+  Activity, 
+  FileText, 
+  Users, 
+  TreeDeciduous, 
+  CloudSun 
+} from "lucide-react";
+
 const services = [{
-  icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-green">
-        <path d="M8 6h10"></path>
-        <path d="M6 12h9"></path>
-        <path d="M11 18h7"></path>
-        <path d="M3 6v12c0 1 1 2 2 2s2-1 2-2V6c0-1-1-2-2-2s-2 1-2 2z"></path>
-      </svg>,
+  icon: <Leaf className="h-8 w-8 text-eco-green" />,
   title: "Licenciamento Ambiental",
   description: "Obtenção de licenças e autorizações ambientais em conformidade com a legislação vigente.",
   link: "/services/licensing"
@@ -18,46 +21,27 @@ const services = [{
   description: "Acompanhamento de condicionantes ambientais e análises de conformidade.",
   link: "/services/monitoring"
 }, {
-  icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-green-dark">
-        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
-        <path d="M9 17h6"></path>
-        <path d="M9 13h6"></path>
-      </svg>,
+  icon: <FileText className="h-8 w-8 text-eco-green-dark" />,
   title: "Planos e Relatórios",
   description: "Elaboração de documentos técnicos para sua empresa atender às exigências legais.",
   link: "/services/reports"
 }, {
-  icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-blue-dark">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-        <circle cx="9" cy="7" r="4"></circle>
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-      </svg>,
+  icon: <Users className="h-8 w-8 text-eco-blue-dark" />,
   title: "Consultoria Especializada",
   description: "Assessoria técnica para questões ambientais e acompanhamento de projetos.",
   link: "/services/consulting"
 }, {
-  icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-green">
-        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-        <path d="M3 9h18"></path>
-        <path d="M9 3v18"></path>
-        <path d="m14 15 3-3-3-3"></path>
-      </svg>,
+  icon: <TreeDeciduous className="h-8 w-8 text-eco-green" />,
   title: "Treinamentos Ambientais",
   description: "Capacitação e treinamentos especializados para equipes e colaboradores.",
   link: "/services/training"
 }, {
-  icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-blue">
-        <path d="M20.9 18.55A10.58 10.58 0 0 0 22 12a10 10 0 1 0-20 0c0 4.83 3.44 8.86 8 9.8"></path>
-        <path d="M12 2v10l4.45 4.45"></path>
-        <path d="m19.5 15 2 2-2 2"></path>
-        <path d="m15.5 19-2 2 2 2"></path>
-      </svg>,
+  icon: <CloudSun className="h-8 w-8 text-eco-blue" />,
   title: "Gestão Ambiental",
   description: "Serviços continuados de gestão e manutenção de requisitos ambientais.",
   link: "/services/management"
 }];
+
 export function FeaturedServices() {
   return <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Gradient background */}
