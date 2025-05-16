@@ -1,80 +1,38 @@
+
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
 import { MissionVisionValues } from "@/components/about/MissionVisionValues";
 import { TeamMemberCard } from "@/components/about/TeamMemberCard";
-import { Info } from "lucide-react"; // Manter Info, pois Users e Building não são usados aqui. Target também não.
+import { Info } from "lucide-react";
+import { PageBanner } from "@/components/ui/page-banner"; // Importar PageBanner
 
 // Team members data
 const teamMembers = [{
   id: 1,
-  // Added id
   name: "Dra. Lilian C. Prates",
   role: "Diretora Executiva e Consultora Ambiental Sênior",
   image: "/lovable-uploads/f0e39d9d-92ef-40b8-8252-05cdfebcb9f6.png",
-  // Renamed imageUrl to image
   bio: "Engenheira Ambiental com vasta experiência em licenciamento, gestão de resíduos e auditorias. Lidera a equipe com foco em soluções inovadoras e sustentáveis.",
-  specialties: ["Licenciamento Ambiental", "Gestão de Resíduos", "Auditorias Ambientais"] // Added specialties
+  specialties: ["Licenciamento Ambiental", "Gestão de Resíduos", "Auditorias Ambientais"]
 }, {
   id: 2,
-  // Added id
   name: "Dr. Paulo R. Almeida",
   role: "Consultor Ambiental Especialista em Recursos Hídricos",
   image: "/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png",
-  // Renamed imageUrl to image
   bio: "Geólogo especializado em hidrogeologia e outorgas. Responsável por projetos de uso e conservação da água, garantindo conformidade e eficiência.",
-  specialties: ["Recursos Hídricos", "Hidrogeologia", "Outorgas"] // Added specialties
+  specialties: ["Recursos Hídricos", "Hidrogeologia", "Outorgas"]
 }];
-const AboutPage = () => {
-  return <PageWrapper>
-      {/* Cabeçalho da página com imagem de fundo e efeito de sobreposição */}
-      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-eco-green/80 to-eco-blue/80 overflow-hidden">
-        {/* Imagem de fundo */}
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1518976029346-3e1b599isfunc?auto=format&fit=crop&q=80&w=1920&h=800')"
-      }}>
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
-        </div>
-        
-        {/* Textura de folhas no cabeçalho */}
-        <div className="absolute inset-0 leaf-pattern opacity-10"></div>
-        
-        {/* Elementos decorativos */}
-        <div className="absolute -top-1/4 -left-1/4 w-96 h-96 bg-eco-green/20 rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
-        <div className="absolute -bottom-1/4 -right-1/4 w-96 h-96 bg-eco-blue/20 rounded-full blur-3xl opacity-50 animate-pulse-slow"></div>
 
-        <div className="container relative z-10">
-          <div className="text-center">
-            <div className="inline-block p-5 mb-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 animate-float shadow-glass">
-              <Info className="h-12 w-12 text-eco-green" />
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 scroll-trigger">
-              Sobre a L&P Soluções Ambientais
-            </h1>
-            
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/90 scroll-trigger" style={{
-            animationDelay: "0.2s"
-          }}>
-              Conectando desenvolvimento e sustentabilidade com expertise e inovação.
-            </p>
-          </div>
-        </div>
-        
-        {/* Divisor de onda elegante */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <div className="wave-divider">
-            <div className="wave wave-1" style={{
-            fill: "hsl(var(--background))"
-          }}></div>
-            <div className="wave wave-2" style={{
-            fill: "hsl(var(--background))"
-          }}></div>
-            <div className="wave wave-3" style={{
-            fill: "hsl(var(--background))"
-          }}></div>
-          </div>
-        </div>
-      </div>
+const AboutPage = () => {
+  return (
+    <PageWrapper>
+      {/* Cabeçalho da página padronizado com PageBanner */}
+      <PageBanner
+        title="Sobre a L&P Soluções Ambientais"
+        description="Conectando desenvolvimento e sustentabilidade com expertise e inovação."
+        icon={<Info className="h-12 w-12 text-white" />} // Ícone ajustado para branco conforme padrão PageBanner
+        image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800" // Imagem de fundo temática
+      />
       
       {/* Seção de Introdução da Empresa */}
       <section className="py-20 md:py-32 bg-background">
@@ -94,11 +52,14 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="relative scroll-trigger animate-slide-right">
-              <div className="aspect-video rounded-xl overflow-hidden shadow-soft hover-grow">
-                <img src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" alt="Equipe L&P em campo" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-eco-blue/10 rounded-full -z-10 eco-blob"></div>
+            <div className="relative scroll-trigger animate-slide-right flex items-center justify-center">
+              {/* Imagem da equipe removida e substituída pela logo */}
+              <img 
+                src="/lovable-uploads/a1326e41-9b89-4d6b-92d1-906cc37a9179.png" 
+                alt="L&P Soluções Ambientais Logo" 
+                className="max-h-60 w-auto object-contain hover-grow p-4 bg-white/50 dark:bg-black/30 rounded-lg shadow-soft border border-white/20 dark:border-white/10" 
+              />
+              {/* Blob decorativo removido pois a logo agora tem seu próprio tratamento visual */}
             </div>
           </div>
         </div>
@@ -124,13 +85,14 @@ const AboutPage = () => {
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {teamMembers.map(member =>
-          // Removed animationDelay as it was not defined in TeamMemberCard props
-          <TeamMemberCard key={member.id} member={member} />)}
+              <TeamMemberCard key={member.id} member={member} />
+            )}
           </div>
         </div>
       </section>
       
       <CTASection />
-    </PageWrapper>;
+    </PageWrapper>
+  );
 };
 export default AboutPage;

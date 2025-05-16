@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -52,8 +53,8 @@ export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ category, inde
         </ul>
         
         <div className="flex justify-center">
-          <Button asChild className="bg-eco-green hover:bg-eco-green-dark shimmer-button">
-            <Link to={category.link} className="flex items-center gap-2">
+          <Button asChild className="bg-eco-green hover:bg-eco-green-dark shimmer-button group">
+            <Link to={category.link} className="flex items-center gap-2 hover:underline">
               Ver detalhes <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>

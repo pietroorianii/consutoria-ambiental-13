@@ -8,8 +8,8 @@ interface TexturedBackgroundProps {
 export const TexturedBackground: React.FC<TexturedBackgroundProps> = ({ className }) => {
   return (
     <div className={`fixed inset-0 -z-10 overflow-hidden pointer-events-none ${className}`}>
-      {/* Padrão de folhas estilizado aplicado a todo o plano de fundo com opacidade reduzida */}
-      <div className="absolute inset-0 leaf-pattern opacity-10"></div> {/* Opacidade alterada de 15 para 10 */}
+      {/* Padrão de folhas estilizado aplicado a todo o plano de fundo com opacidade ajustada */}
+      <div className="absolute inset-0 leaf-pattern opacity-15"></div> {/* Opacidade alterada de 10 para 15 */}
       
       {/* Elementos fluidos decorativos */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-eco-green/5 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -19,8 +19,10 @@ export const TexturedBackground: React.FC<TexturedBackgroundProps> = ({ classNam
       <div className="absolute top-1/4 right-1/3 w-72 h-72 bg-eco-blue/5 rounded-full blur-3xl animate-pulse-slow"></div>
       
       {/* Adicionando mais elementos com textura de folha */}
-      <div className="absolute top-1/3 left-1/6 w-40 h-40 leaf-decoration opacity-10 animate-float"></div>
-      <div className="absolute bottom-1/4 right-1/6 w-40 h-40 leaf-decoration opacity-10 animate-float"></div>
+      <div className="absolute top-1/3 left-1/6 w-40 h-40 leaf-decoration opacity-10 animate-float" style={{animationDelay: '0s'}}></div>
+      <div className="absolute bottom-1/4 right-1/6 w-40 h-40 leaf-decoration opacity-10 animate-float" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-2/3 right-1/2 w-32 h-32 leaf-decoration opacity-10 animate-float" style={{animationDelay: '0.5s', transform: 'scaleX(-1)'}}></div>
+      <div className="absolute bottom-1/2 left-1/3 w-36 h-36 leaf-decoration opacity-10 animate-float" style={{animationDelay: '1.5s', transform: 'rotate(90deg)'}}></div>
     </div>
   );
 };
