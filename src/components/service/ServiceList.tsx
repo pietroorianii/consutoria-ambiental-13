@@ -24,7 +24,7 @@ export const ServiceList = ({
                 {service.description}
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex justify-center mt-auto pt-4 pb-6 border-t border-gray-100 dark:border-gray-700/50 bg-gray-50">
+            <CardContent className="flex justify-center mt-auto pt-4 pb-6 border-t border-gray-100 dark:border-gray-700/50 bg-gray-100">
               <Button asChild variant="link" className="p-0 h-auto font-medium text-eco-green hover:text-eco-green-dark group hover-grow">
                 <Link to="/request-quote" className="flex items-center gap-1 hover:underline">
                   Solicitar orçamento <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
