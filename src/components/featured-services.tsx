@@ -1,9 +1,7 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Activity } from "lucide-react"; 
-
+import { Activity } from "lucide-react";
 const services = [{
   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-eco-green">
         <path d="M8 6h10"></path>
@@ -60,10 +58,8 @@ const services = [{
   description: "Serviços continuados de gestão e manutenção de requisitos ambientais.",
   link: "/services/management"
 }];
-
 export function FeaturedServices() {
-  return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+  return <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-eco-green/5 to-white"></div>
       
@@ -81,48 +77,46 @@ export function FeaturedServices() {
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{
-            fontFamily: "'Poppins', sans-serif"
-          }}>
+          fontFamily: "'Poppins', sans-serif"
+        }}>
             Soluções Ambientais Completas
           </h2>
           
           <div className="h-1 w-24 bg-eco-accent-teal rounded-full mx-auto mb-8"></div>
           
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg" style={{
-            fontFamily: "'Montserrat', sans-serif"
-          }}>
+          fontFamily: "'Montserrat', sans-serif"
+        }}>
             Oferecemos soluções ambientais completas para empresas de todos os portes e setores,
             auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis.
           </p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="border border-border/70 h-full flex flex-col bg-white/90 backdrop-blur-sm hover-grow transition-all duration-500 scroll-trigger" 
-              style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-            >
+          {services.map((service, index) => <Card key={index} className="border border-border/70 h-full flex flex-col bg-white/90 backdrop-blur-sm hover-grow transition-all duration-500 scroll-trigger" style={{
+          animationDelay: `${0.2 + index * 0.1}s`
+        }}>
               <CardHeader className="text-center pb-4">
                 <div className="mb-4 bg-eco-green/10 p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
                   {service.icon}
                 </div>
-                <CardTitle className="text-xl" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <CardTitle className="text-xl" style={{
+              fontFamily: "'Poppins', sans-serif"
+            }}>
                   {service.title}
                 </CardTitle>
               </CardHeader>
               
               <CardContent className="text-center px-8 pb-6 flex-grow">
-                <CardDescription style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-base text-gray-600">
+                <CardDescription style={{
+              fontFamily: "'Montserrat', sans-serif"
+            }} className="text-base text-gray-600">
                   {service.description}
                 </CardDescription>
               </CardContent>
               
-              <CardFooter className="mt-auto pt-4 pb-6 flex justify-center border-t border-gray-100 bg-gray-50 dark:bg-gray-800/50 rounded-b-xl">
-                <Link 
-                  to={service.link} 
-                  className="text-eco-green font-medium inline-flex items-center gap-2 hover:text-eco-green-dark hover:underline transition-colors group"
-                >
+              <CardFooter className="mt-auto pt-4 pb-6 flex justify-center border-t border-gray-100 rounded-b-xl bg-gray-100">
+                <Link to={service.link} className="text-eco-green font-medium inline-flex items-center gap-2 hover:text-eco-green-dark hover:underline transition-colors group">
                   Saiba mais 
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
                     <path d="M5 12h14"></path>
@@ -130,8 +124,7 @@ export function FeaturedServices() {
                   </svg>
                 </Link>
               </CardFooter>
-            </Card>
-          ))}
+            </Card>)}
         </div>
         
         <div className="text-center mt-16 scroll-trigger">
@@ -146,6 +139,5 @@ export function FeaturedServices() {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
