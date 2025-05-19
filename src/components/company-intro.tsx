@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-
 export function CompanyIntro() {
-  return (
-    <section className="container py-24 lg:py-32 relative">
+  return <section className="container py-24 lg:py-32 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-organic-pattern opacity-20 z-0"></div>
       
@@ -13,9 +10,7 @@ export function CompanyIntro() {
       
       <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="space-y-8 scroll-trigger">
-          <div className="inline-block px-4 py-2 bg-eco-green/10 rounded-full text-eco-green font-medium text-sm uppercase tracking-wider">
-            Nossa Expertise
-          </div>
+          <div className="inline-block px-4 py-2 bg-eco-green/10 rounded-full text-eco-green font-medium text-sm uppercase tracking-wider">ESPECIALIDADE</div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-800 dark:text-gray-100" style={{
           fontFamily: "'Poppins', sans-serif"
@@ -79,6 +74,5 @@ export function CompanyIntro() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
