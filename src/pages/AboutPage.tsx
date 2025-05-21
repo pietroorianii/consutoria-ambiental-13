@@ -1,4 +1,3 @@
-
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
 import { MissionVisionValues } from "@/components/about/MissionVisionValues";
@@ -22,17 +21,11 @@ const teamMembers = [{
   bio: "Geólogo especializado em hidrogeologia e outorgas. Responsável por projetos de uso e conservação da água, garantindo conformidade e eficiência.",
   specialties: ["Recursos Hídricos", "Hidrogeologia", "Outorgas"]
 }];
-
 const AboutPage = () => {
-  return (
-    <PageWrapper>
+  return <PageWrapper>
       {/* Cabeçalho da página padronizado com PageBanner */}
-      <PageBanner
-        title="Sobre a L&P Soluções Ambientais"
-        description="Conectando desenvolvimento e sustentabilidade com expertise e inovação."
-        icon={<Info className="h-12 w-12 text-white" />}
-        image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800" // Imagem de fundo temática
-      />
+      <PageBanner title="Sobre a L&P Soluções Ambientais" description="Conectando desenvolvimento e sustentabilidade com expertise e inovação." icon={<Info className="h-12 w-12 text-green" />} image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800" // Imagem de fundo temática
+    />
       
       {/* Seção de Introdução da Empresa */}
       <section className="py-20 md:py-32 bg-background relative">
@@ -59,11 +52,7 @@ const AboutPage = () => {
             <div className="relative scroll-trigger animate-slide-right flex items-center justify-center">
               {/* Logo da empresa */}
               <div className="relative p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-eco-green/20 hover:border-eco-green/40 transition-all duration-300 hover-grow">
-                <img 
-                  src="/lovable-uploads/027bd48a-0820-4102-841d-43d98185f223.png" 
-                  alt="L&P Soluções Ambientais Logo" 
-                  className="max-w-full h-auto max-h-72 object-contain"
-                />
+                <img src="/lovable-uploads/027bd48a-0820-4102-841d-43d98185f223.png" alt="L&P Soluções Ambientais Logo" className="max-w-full h-auto max-h-72 object-contain" />
               </div>
               
               {/* Elementos decorativos */}
@@ -97,15 +86,12 @@ const AboutPage = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {teamMembers.map(member =>
-              <TeamMemberCard key={member.id} member={member} />
-            )}
+            {teamMembers.map(member => <TeamMemberCard key={member.id} member={member} />)}
           </div>
         </div>
       </section>
       
       <CTASection />
-    </PageWrapper>
-  );
+    </PageWrapper>;
 };
 export default AboutPage;
