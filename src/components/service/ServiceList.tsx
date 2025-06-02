@@ -32,7 +32,7 @@ export const ServiceList = ({ services }: ServiceListProps) => {
             </CardHeader>
             <CardContent className="flex-grow px-5 pb-0">
               <p className="text-muted-foreground text-sm mb-4">
-                {service.details || "Nossos especialistas fornecem consultoria personalizada para atender às necessidades específicas do seu negócio."}
+                Nossos especialistas fornecem consultoria personalizada para atender às necessidades específicas do seu negócio.
               </p>
             </CardContent>
             <CardContent className="flex justify-center pt-4 pb-6 mt-auto border-t border-gray-100 dark:border-gray-700/50 bg-gray-100">
