@@ -2,9 +2,14 @@
 import { LucideIcon } from "lucide-react";
 
 export interface LegislationItem {
+  id?: string;
   title: string;
   description: string;
   link: string;
+  url?: string;
+  summary?: string;
+  applicableStates?: string[];
+  lastUpdate?: string;
   shouldHighlight?: boolean;
   searchTerm?: string;
   isSelected?: boolean;
@@ -12,6 +17,7 @@ export interface LegislationItem {
   number?: string;
   category?: string;
   date?: string;
+  tags?: string[];
 }
 
 export interface LegislationSubcategory {
