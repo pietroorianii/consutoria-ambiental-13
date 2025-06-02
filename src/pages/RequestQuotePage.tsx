@@ -36,7 +36,8 @@ const RequestQuotePage = () => {
       <PageBanner 
         title="Solicitação de Orçamento"
         description="Preencha o formulário abaixo para solicitar um orçamento personalizado para seu projeto ambiental."
-        icon={<Leaf className="h-12 w-12 text-eco-green" />}
+        icon={<Leaf />}
+        iconColor="green"
         image="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600"
       />
       

@@ -3,7 +3,7 @@ import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
 import { MissionVisionValues } from "@/components/about/MissionVisionValues";
 import { TeamMemberCard } from "@/components/about/TeamMemberCard";
-import { Info } from "lucide-react";
+import { Users } from "lucide-react";
 import { PageBanner } from "@/components/ui/page-banner";
 
 // Team members data
@@ -30,8 +30,9 @@ const AboutPage = () => {
       <PageBanner
         title="Sobre a L&P Soluções Ambientais"
         description="Conectando desenvolvimento e sustentabilidade com expertise e inovação."
-        icon={<Info className="h-12 w-12 text-white" />}
-        image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800" // Imagem de fundo temática
+        icon={<Users />}
+        iconColor="teal"
+        image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800"
       />
       
       {/* Seção de Introdução da Empresa */}

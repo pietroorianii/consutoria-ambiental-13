@@ -6,14 +6,34 @@ interface PageBannerProps {
   description: string;
   icon: React.ReactNode;
   image?: string;
+  iconColor?: 'green' | 'blue' | 'earth' | 'yellow' | 'orange' | 'teal';
 }
 
 export function PageBanner({
   title,
   description,
   icon,
-  image
+  image,
+  iconColor = 'green'
 }: PageBannerProps) {
+  
+  const getIconColorClass = (color: string) => {
+    switch (color) {
+      case 'blue':
+        return 'text-eco-blue';
+      case 'earth':
+        return 'text-eco-earth';
+      case 'yellow':
+        return 'text-eco-accent-yellow';
+      case 'orange':
+        return 'text-eco-accent-orange';
+      case 'teal':
+        return 'text-eco-accent-teal';
+      default:
+        return 'text-eco-green';
+    }
+  };
+
   return (
     <div className="bg-gradient-to-r from-eco-green via-eco-blue/70 to-eco-blue py-24 relative overflow-hidden">
       {/* Background Image */}
@@ -34,9 +54,11 @@ export function PageBanner({
       {/* Content */}
       <div className="container relative z-10">
         <div className="flex flex-col items-center gap-6 text-center">
-          {/* Icon with standardized styling */}
+          {/* Icon with standardized styling and dynamic color */}
           <div className="p-5 rounded-full bg-white/30 backdrop-blur-sm animate-float border border-white/40 shadow-glass">
-            {React.cloneElement(icon as React.ReactElement, { className: "h-12 w-12 text-white" })}
+            {React.cloneElement(icon as React.ReactElement, { 
+              className: `h-12 w-12 ${getIconColorClass(iconColor)}` 
+            })}
           </div>
           
           {/* Title */}

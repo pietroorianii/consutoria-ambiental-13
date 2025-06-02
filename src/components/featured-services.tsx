@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -6,8 +7,8 @@ import {
   Activity, 
   FileText, 
   Users, 
-  TreeDeciduous, 
-  CloudSun 
+  GraduationCap, 
+  Shield 
 } from "lucide-react";
 
 const services = [{
@@ -31,12 +32,12 @@ const services = [{
   description: "Assessoria técnica para questões ambientais e acompanhamento de projetos.",
   link: "/services/consulting"
 }, {
-  icon: <TreeDeciduous className="h-8 w-8 text-eco-green" />,
+  icon: <GraduationCap className="h-8 w-8 text-eco-accent-orange" />,
   title: "Treinamentos Ambientais",
   description: "Capacitação e treinamentos especializados para equipes e colaboradores.",
   link: "/services/training"
 }, {
-  icon: <CloudSun className="h-8 w-8 text-eco-blue" />,
+  icon: <Shield className="h-8 w-8 text-eco-accent-teal" />,
   title: "Gestão Ambiental",
   description: "Serviços continuados de gestão e manutenção de requisitos ambientais.",
   link: "/services/management"

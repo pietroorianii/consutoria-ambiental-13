@@ -3,7 +3,7 @@ import React from "react";
 import { CTASection } from "@/components/cta-section";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { PageBanner } from "@/components/ui/page-banner";
-import { Earth } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { ServiceCategory } from "@/components/service/ServiceCategory";
 import { ProcessSection } from "@/components/service/ProcessSection";
 import { serviceCategories } from "@/data/servicePageData";
@@ -15,7 +15,8 @@ const ServicesPage = () => {
       <PageBanner 
         title="Nossos Serviços" 
         description="Oferecemos soluções ambientais completas para empresas de todos os portes e setores, auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis." 
-        icon={<Earth className="h-12 w-12 text-white" />} 
+        icon={<Leaf />}
+        iconColor="green"
         image="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600" 
       />
       

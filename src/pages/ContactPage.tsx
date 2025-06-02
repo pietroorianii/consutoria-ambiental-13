@@ -1,5 +1,4 @@
 
-
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactInfo } from "@/components/contact/ContactInfo";
@@ -13,7 +12,8 @@ const ContactPage = () => {
       <PageBanner 
         title="Contato"
         description="Entre em contato com nossa equipe para solicitar um orçamento ou esclarecer dúvidas sobre nossos serviços."
-        icon={<MessageSquare className="h-12 w-12 text-eco-green" />}
+        icon={<MessageSquare />}
+        iconColor="blue"
         image="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200&h=600"
       />
       
