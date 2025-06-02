@@ -8,9 +8,22 @@ import { Button } from "@/components/ui/button";
 
 interface ServiceListProps {
   services: ServiceItem[];
+  categoryId: string;
 }
 
-export const ServiceList = ({ services }: ServiceListProps) => {
+// Mapeamento de categorias para IDs de serviços detalhados
+const categoryToServiceMap: Record<string, string> = {
+  'licensing': 'licensing',
+  'monitoring': 'monitoring', 
+  'reports': 'reports',
+  'consulting': 'consulting',
+  'training': 'training',
+  'management': 'management'
+};
+
+export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
+  const serviceDetailId = categoryToServiceMap[categoryId];
+  
   return (
     <section className="container py-16 flex justify-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
@@ -35,7 +48,22 @@ export const ServiceList = ({ services }: ServiceListProps) => {
                 Nossos especialistas fornecem consultoria personalizada para atender às necessidades específicas do seu negócio.
               </p>
             </CardContent>
-            <CardContent className="flex justify-center pt-4 pb-6 mt-auto border-t border-gray-100 dark:border-gray-700/50 bg-gray-100">
+            <CardContent className="flex justify-between items-center pt-4 pb-6 mt-auto border-t border-gray-100 dark:border-gray-700/50 bg-gray-100 gap-4">
+              {serviceDetailId && (
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  size="sm"
+                  className="border-eco-green text-eco-green hover:bg-eco-green hover:text-white"
+                >
+                  <Link 
+                    to={`/service/${serviceDetailId}`}
+                    className="flex items-center gap-1"
+                  >
+                    Saiba mais <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
               <Button 
                 asChild 
                 variant="link" 

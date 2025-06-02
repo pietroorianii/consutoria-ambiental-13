@@ -26,11 +26,10 @@ const ServiceCategoryPage = () => {
       <ServiceBanner categoryData={categoryData} />
       
       <div className="relative py-16">
-        {/* Elementos decorativos fluidos com textura de folha */}
         <TabsBackgroundDecoration />
         
         <div className="container relative">
-          <ServiceList services={categoryData.services} />
+          <ServiceList services={categoryData.services} categoryId={category || ''} />
         </div>
       </div>
       

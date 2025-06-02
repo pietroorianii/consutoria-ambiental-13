@@ -5,13 +5,12 @@ import { FeaturedServices } from "@/components/featured-services";
 import { Testimonials } from "@/components/testimonials";
 import { CTASection } from "@/components/cta-section";
 import { PageWrapper } from "@/components/ui/page-wrapper";
-import { TexturedBackground } from "@/components/ui/textured-background";
 
 const Index = () => {
   return (
     <PageWrapper>
-      {/* Adicionar plano de fundo texturizado */}
-      <TexturedBackground />
+      {/* Fundo simples e moderno */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-eco-green/5"></div>
       
       <HeroBanner />
       <CompanyIntro />

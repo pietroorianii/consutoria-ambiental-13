@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
   Leaf, 
-  Activity, 
+  Beaker, 
   FileText, 
   Users, 
-  GraduationCap, 
-  Shield 
+  TreeDeciduous, 
+  CloudSun 
 } from "lucide-react";
 
 const services = [{
@@ -17,7 +17,7 @@ const services = [{
   description: "Obtenção de licenças e autorizações ambientais em conformidade com a legislação vigente.",
   link: "/services/licensing"
 }, {
-  icon: <Activity className="h-8 w-8 text-eco-blue" />,
+  icon: <Beaker className="h-8 w-8 text-eco-blue" />,
   title: "Monitoramento e Análises",
   description: "Acompanhamento de condicionantes ambientais e análises de conformidade.",
   link: "/services/monitoring"
@@ -32,12 +32,12 @@ const services = [{
   description: "Assessoria técnica para questões ambientais e acompanhamento de projetos.",
   link: "/services/consulting"
 }, {
-  icon: <GraduationCap className="h-8 w-8 text-eco-accent-orange" />,
+  icon: <TreeDeciduous className="h-8 w-8 text-eco-green" />,
   title: "Treinamentos Ambientais",
   description: "Capacitação e treinamentos especializados para equipes e colaboradores.",
   link: "/services/training"
 }, {
-  icon: <Shield className="h-8 w-8 text-eco-accent-teal" />,
+  icon: <CloudSun className="h-8 w-8 text-eco-blue" />,
   title: "Gestão Ambiental",
   description: "Serviços continuados de gestão e manutenção de requisitos ambientais.",
   link: "/services/management"
@@ -45,15 +45,8 @@ const services = [{
 
 export function FeaturedServices() {
   return <section className="py-24 md:py-32 relative overflow-hidden">
-      {/* Gradient background */}
+      {/* Gradient background simples */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-eco-green/5 to-white"></div>
-      
-      {/* Pattern overlay */}
-      <div className="absolute inset-0 bg-organic-pattern opacity-25"></div>
-      
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-eco-green/10 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-eco-blue/10 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
       
       <div className="container relative z-10">
         <div className="text-center mb-16 scroll-trigger">
