@@ -3,7 +3,7 @@ import React from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { LegislationCategory } from "@/data/legislationData";
 
 interface LegislationCardProps {
@@ -15,7 +15,7 @@ export const LegislationCard: React.FC<LegislationCardProps> = ({
   category,
   index
 }) => {
-  const IconComponent = category.icon as LucideIcon;
+  const IconComponent = category.icon;
   
   return (
     <Card className="overflow-hidden border-none shadow-md hover:shadow-xl transition-shadow scroll-trigger" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>

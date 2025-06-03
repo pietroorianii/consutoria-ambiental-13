@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ServiceCategoryData } from "@/data/servicePageData";
 
 interface ServiceCategoryProps {
@@ -11,7 +11,7 @@ interface ServiceCategoryProps {
 }
 
 export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ category, index }) => {
-  const IconComponent = category.icon as LucideIcon;
+  const IconComponent = category.icon;
   
   return (
     <div 
