@@ -3,32 +3,32 @@ export const navData = {
   services: [
     {
       title: "Licenciamento e Autorizações",
-      href: "/services/licensing",
+      href: "/service/licensing",
       description: "Licenciamentos Ambientais e Autorizações"
     },
     {
       title: "Monitoramento e Análises",
-      href: "/services/monitoring",
+      href: "/service/monitoring",
       description: "Acompanhamento de condicionantes e análises ambientais"
     },
     {
       title: "Planos e Relatórios",
-      href: "/services/reports",
+      href: "/service/reports",
       description: "Elaboração de planos e relatórios ambientais"
     },
     {
       title: "Acompanhamento e Consultoria",
-      href: "/services/consulting",
+      href: "/service/consulting",
       description: "Acompanhamento de projetos e consultoria ambiental"
     },
     {
       title: "Treinamentos",
-      href: "/services/training",
+      href: "/service/training",
       description: "Treinamentos e capacitações ambientais"
     },
     {
       title: "Gestão e Manutenção",
-      href: "/services/management",
+      href: "/service/management",
       description: "Gestão contínua e manutenção ambiental"
     }
   ],

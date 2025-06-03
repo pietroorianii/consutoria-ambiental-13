@@ -28,19 +28,9 @@ export function MobileNav() {
               Início
             </Link>
             
-            <div className="flex flex-col gap-2">
-              <h3 className="text-lg font-semibold">Serviços</h3>
-              {navData.services.map((service) => (
-                <Link 
-                  key={service.title}
-                  to={service.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors pl-2"
-                >
-                  {service.title}
-                </Link>
-              ))}
-            </div>
+            <Link to="/services" onClick={() => setIsOpen(false)} className="text-xl font-semibold">
+              Serviços
+            </Link>
             
             <div className="flex flex-col gap-2">
               <h3 className="text-lg font-semibold">Legislação</h3>
