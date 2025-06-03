@@ -8,7 +8,7 @@ interface LegislationItemProps {
   index?: number;
 }
 
-export function LegislationItem({ item, index }: LegislationItemProps) {
+const LegislationItemComponent = ({ item, index }: LegislationItemProps) => {
   // Create an ID for the legislation item based on title or index for scrolling and highlighting
   const itemId = item.title ? `legislation-item-${item.title.replace(/\s+/g, '-').toLowerCase()}` : `legislation-item-${index}`;
   
@@ -61,4 +61,11 @@ export function LegislationItem({ item, index }: LegislationItemProps) {
       </div>
     </div>
   );
-}
+};
+
+// Memoização do componente com comparação personalizada
+export const LegislationItem = React.memo(LegislationItemComponent, (prevProps, nextProps) => {
+  return prevProps.item.title === nextProps.item.title && 
+         prevProps.item.searchTerm === nextProps.item.searchTerm &&
+         prevProps.item.isSelected === nextProps.item.isSelected;
+});

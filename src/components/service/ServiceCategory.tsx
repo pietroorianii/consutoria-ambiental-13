@@ -10,7 +10,7 @@ interface ServiceCategoryProps {
   index: number;
 }
 
-export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ category, index }) => {
+const ServiceCategoryComponent: React.FC<ServiceCategoryProps> = ({ category, index }) => {
   const IconComponent = category.icon;
   
   return (
@@ -63,3 +63,9 @@ export const ServiceCategory: React.FC<ServiceCategoryProps> = ({ category, inde
     </div>
   );
 };
+
+// Memoização do componente
+export const ServiceCategory = React.memo(ServiceCategoryComponent, (prevProps, nextProps) => {
+  return prevProps.category.title === nextProps.category.title && 
+         prevProps.index === nextProps.index;
+});

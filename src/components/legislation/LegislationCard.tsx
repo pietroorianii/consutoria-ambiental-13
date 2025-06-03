@@ -11,7 +11,7 @@ interface LegislationCardProps {
   index: number;
 }
 
-export const LegislationCard: React.FC<LegislationCardProps> = ({ 
+const LegislationCardComponent: React.FC<LegislationCardProps> = ({ 
   category,
   index
 }) => {
@@ -58,3 +58,9 @@ export const LegislationCard: React.FC<LegislationCardProps> = ({
     </Card>
   );
 };
+
+// Memoização do componente
+export const LegislationCard = React.memo(LegislationCardComponent, (prevProps, nextProps) => {
+  return prevProps.category.title === nextProps.category.title && 
+         prevProps.index === nextProps.index;
+});

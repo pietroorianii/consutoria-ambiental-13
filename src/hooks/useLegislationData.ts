@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { legislationCategories } from '@/data/legislation/index';
 import { LegislationItem } from '@/data/legislation/types';
@@ -22,13 +22,11 @@ export const useLegislationData = () => {
   const [searchTerm, setSearchTerm] = useState(locationState?.searchTerm || '');
   const [activeCategoryId, setActiveCategoryId] = useState<string | null>(locationState?.categoryFilter || null);
   const [selectedItem, setSelectedItem] = useState(locationState?.selectedItem || '');
-  const [allLegislationItems, setAllLegislationItems] = useState<LegislationItemWithCategory[]>([]);
-  const [filteredItems, setFilteredItems] = useState<LegislationItemWithCategory[]>([]);
   const [isCategoryCheckboxesOpen, setIsCategoryCheckboxesOpen] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   
-  // Collect all legislation items on component mount
-  useEffect(() => {
+  // Memoizar a coleta de itens de legislação
+  const allLegislationItems = useMemo(() => {
     const items: LegislationItemWithCategory[] = [];
     
     legislationCategories.forEach(category => {
@@ -57,16 +55,18 @@ export const useLegislationData = () => {
       }
     });
     
-    setAllLegislationItems(items);
-    
-    // Initialize selected categories with all available categories
-    const allCategoryIds = [...new Set(items.map(item => item.categoryId))];
-    setSelectedCategories(allCategoryIds);
+    return items;
   }, []);
   
-  // Apply filtering when search term or category filters change
+  // Initialize selected categories with all available categories
   useEffect(() => {
-    const filtered = allLegislationItems.filter(item => {
+    const allCategoryIds = [...new Set(allLegislationItems.map(item => item.categoryId))];
+    setSelectedCategories(allCategoryIds);
+  }, [allLegislationItems]);
+  
+  // Memoizar itens filtrados
+  const filteredItems = useMemo(() => {
+    return allLegislationItems.filter(item => {
       // Filter by selected categories
       if (selectedCategories.length > 0 && !selectedCategories.includes(item.categoryId)) {
         return false;
@@ -79,10 +79,7 @@ export const useLegislationData = () => {
       }
       
       return true;
-    });
-    
-    // Apply search term and highlight flags
-    const itemsWithHighlight = filtered.map(item => ({
+    }).map(item => ({
       ...item,
       shouldHighlight: searchTerm ? 
         item.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -90,9 +87,7 @@ export const useLegislationData = () => {
       searchTerm: searchTerm,
       isSelected: item.title === selectedItem
     }));
-    
-    setFilteredItems(itemsWithHighlight);
-  }, [searchTerm, selectedCategories, allLegislationItems, selectedItem]);
+  }, [allLegislationItems, selectedCategories, searchTerm, selectedItem]);
   
   // Scroll to selected item when it changes
   useEffect(() => {
@@ -113,12 +108,14 @@ export const useLegislationData = () => {
   }, [selectedItem]);
 
   // Get unique category IDs from all items
-  const availableCategories = [...new Set(allLegislationItems.map(item => item.categoryId))];
+  const availableCategories = useMemo(() => {
+    return [...new Set(allLegislationItems.map(item => item.categoryId))];
+  }, [allLegislationItems]);
   
-  // Handle search
-  const handleSearch = (term: string) => {
+  // Memoizar função de busca
+  const handleSearch = useCallback((term: string) => {
     setSearchTerm(term);
-  };
+  }, []);
 
   return {
     searchTerm,

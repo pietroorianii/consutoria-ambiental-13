@@ -1,40 +1,51 @@
 
-import { useEffect } from "react";
+import { useEffect, useCallback, useRef } from "react";
 
 export function useScrollAnimation() {
-  useEffect(() => {
-    // Função para detectar elementos no viewport
-    const observeElements = () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      // Seleciona todos os elementos com a classe scroll-trigger
-      const elements = document.querySelectorAll(".scroll-trigger");
-      elements.forEach((element) => {
-        // Remover animações existentes para garantir que o efeito seja aplicado novamente
-        element.classList.remove("animate-fade-up");
-        // Adicionar opacidade 0 inicialmente
-        (element as HTMLElement).style.opacity = "0";
-        // Observar o elemento
-        observer.observe(element);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  
+  const observeElements = useCallback(() => {
+    // Limpar observer anterior
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+    
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up");
+          observerRef.current?.unobserve(entry.target);
+        }
       });
-    };
+    }, { 
+      threshold: 0.1,
+      rootMargin: '50px' // Pré-carrega animações
+    });
 
-    // Executa a função inicial
-    observeElements();
-
-    // Adiciona listener para resize (para recalcular quando o tamanho da tela mudar)
-    window.addEventListener("resize", observeElements);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", observeElements);
-    };
+    const elements = document.querySelectorAll(".scroll-trigger");
+    elements.forEach((element) => {
+      element.classList.remove("animate-fade-up");
+      (element as HTMLElement).style.opacity = "0";
+      observerRef.current?.observe(element);
+    });
   }, []);
+
+  useEffect(() => {
+    observeElements();
+    
+    // Debounce resize events
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(observeElements, 250);
+    };
+
+    window.addEventListener("resize", handleResize, { passive: true });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      observerRef.current?.disconnect();
+      clearTimeout(resizeTimeout);
+    };
+  }, [observeElements]);
 }
