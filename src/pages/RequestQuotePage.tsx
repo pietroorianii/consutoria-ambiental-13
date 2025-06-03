@@ -3,6 +3,7 @@ import React from "react";
 import { Leaf } from "lucide-react";
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
+import { MetaTags } from "@/components/layout/MetaTags";
 import { useQuoteRequest } from "@/hooks/use-quote-request";
 import { ProgressBar } from "@/components/quote-request/ProgressBar";
 import { PersonalInfoStep } from "@/components/quote-request/PersonalInfoStep";
@@ -32,6 +33,12 @@ const RequestQuotePage = () => {
 
   return (
     <PageWrapper>
+      <MetaTags 
+        title="Solicitação de Orçamento - EcoConsult | Consultoria Ambiental"
+        description="Solicite um orçamento personalizado para seu projeto ambiental. Formulário completo e processo ágil para atender suas necessidades."
+        keywords="orçamento consultoria ambiental, licenciamento ambiental preço, solicitação orçamento"
+      />
+      
       {/* Header com formato padronizado */}
       <PageBanner 
         title="Solicitação de Orçamento"
@@ -53,7 +60,7 @@ const RequestQuotePage = () => {
           <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-6 relative">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-6 relative" noValidate>
               <div className="absolute top-0 right-0 w-80 h-80 bg-eco-green/5 rounded-full blur-3xl -z-10"></div>
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-eco-blue/5 rounded-full blur-3xl -z-10"></div>
               <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-eco-earth/5 rounded-full blur-3xl -z-10"></div>
@@ -87,6 +94,7 @@ const RequestQuotePage = () => {
                     variant="outline" 
                     onClick={prevStep}
                     className="flex items-center gap-2 hover:bg-muted/80"
+                    aria-label="Voltar para etapa anterior"
                   >
                     <span>Voltar</span>
                   </Button>
@@ -99,6 +107,7 @@ const RequestQuotePage = () => {
                     type="button" 
                     onClick={nextStep}
                     className="bg-eco-green hover:bg-eco-green/90 flex items-center gap-2 shimmer-button"
+                    aria-label="Avançar para próxima etapa"
                   >
                     <span>Próximo</span>
                   </Button>
@@ -107,6 +116,7 @@ const RequestQuotePage = () => {
                     type="submit" 
                     className="bg-eco-green hover:bg-eco-green/90 flex items-center gap-2 shimmer-button"
                     disabled={isSubmitting}
+                    aria-label="Enviar solicitação de orçamento"
                   >
                     {isSubmitting ? "Enviando..." : "Enviar Solicitação"}
                   </Button>

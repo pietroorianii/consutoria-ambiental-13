@@ -2,12 +2,19 @@
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactInfo } from "@/components/contact/ContactInfo";
+import { MetaTags } from "@/components/layout/MetaTags";
 import { MessageSquare } from "lucide-react";
 import { PageBanner } from "@/components/ui/page-banner";
 
 const ContactPage = () => {
   return (
     <PageWrapper>
+      <MetaTags 
+        title="Contato - EcoConsult | Consultoria Ambiental"
+        description="Entre em contato com nossa equipe para solicitar um orçamento ou esclarecer dúvidas sobre nossos serviços de consultoria ambiental."
+        keywords="contato ecoconsult, consultoria ambiental contato, orçamento ambiental"
+      />
+      
       {/* Page Header */}
       <PageBanner 
         title="Contato"
@@ -55,7 +62,8 @@ const ContactPage = () => {
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade" 
-              title="Mapa de localização - Rua Sete de Setembro 1322, Centro, Ponta Grossa" 
+              title="Mapa de localização - Rua Sete de Setembro 1322, Centro, Ponta Grossa"
+              aria-label="Localização da EcoConsult no mapa"
             />
           </div>
         </div>
