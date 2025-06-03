@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -26,7 +27,6 @@ const testimonials = [
   }
 ];
 
-// Memoização do componente individual de testemunho
 const TestimonialCard = React.memo(({ testimonial, index }: { testimonial: typeof testimonials[0], index: number }) => (
   <Card 
     className="bg-background border-none shadow-md hover:shadow-lg transition-all animate-fade-up" 
