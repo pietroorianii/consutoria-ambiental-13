@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf } from "lucide-react";
+import { ArrowRight, Leaf, CheckCircle } from "lucide-react";
 import { ServiceItem } from "@/data/serviceCategories";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,69 +11,89 @@ interface ServiceListProps {
   categoryId: string;
 }
 
-// Mapeamento de categorias para IDs de serviços detalhados
 const categoryToServiceMap: Record<string, string> = {
-  'licensing': 'licensing',
-  'monitoring': 'monitoring', 
-  'reports': 'reports',
-  'consulting': 'consulting',
-  'training': 'training',
-  'management': 'management'
+  licensing: "licensing",
+  monitoring: "monitoring", 
+  reports: "reports",
+  consulting: "consulting",
+  training: "training",
+  management: "management"
 };
 
 export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
   const serviceDetailId = categoryToServiceMap[categoryId];
-  
+
   return (
-    <section className="container py-16 flex justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+    <section className="container py-16">
+      {/* Category introduction */}
+      <div className="text-center mb-12 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold mb-4 text-gray-900 font-primary">
+          Serviços Especializados
+        </h2>
+        <p className="text-gray-600 font-body leading-relaxed">
+          Cada serviço é desenvolvido com foco na sua necessidade específica, 
+          garantindo soluções eficazes e conformidade total.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {services.map((service, index) => (
           <Card 
-            key={index} 
-            className="eco-card border-eco-green/10 hover:border-eco-green/30 transition-all duration-300 bg-white/90 dark:bg-gray-800/50 backdrop-blur-sm h-full flex flex-col"
+            key={index}
+            className="group border-eco-green/20 hover:border-eco-green/40 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:shadow-lg hover:-translate-y-1 h-full flex flex-col"
           >
             <CardHeader className="text-center pb-4">
-              <div className="flex items-center gap-2 mb-2 justify-center">
-                <div className="bg-eco-green/10 p-2 rounded-full">
-                  <Leaf className="h-4 w-4 text-eco-green" />
+              <div className="flex items-center gap-3 mb-3 justify-center">
+                <div className="bg-eco-green/10 p-3 rounded-full group-hover:bg-eco-green/20 transition-colors">
+                  <Leaf className="h-6 w-6 text-eco-green" />
                 </div>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
+                <CardTitle className="text-xl font-secondary text-gray-900 group-hover:text-eco-green-dark transition-colors">
+                  {service.title}
+                </CardTitle>
               </div>
-              <CardDescription className="mt-2 text-base text-center">
+              <CardDescription className="text-base text-center leading-relaxed font-body">
                 {service.description}
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow px-5 pb-0">
-              <p className="text-muted-foreground text-sm mb-4">
-                Nossos especialistas fornecem consultoria personalizada para atender às necessidades específicas do seu negócio.
-              </p>
+            
+            <CardContent className="flex-grow px-6 pb-0">
+              <div className="bg-eco-green/5 rounded-lg p-4 mb-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-eco-green mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-600 text-sm font-body">
+                    Nossos especialistas fornecem consultoria personalizada e acompanhamento 
+                    completo para atender às necessidades específicas do seu negócio.
+                  </p>
+                </div>
+              </div>
             </CardContent>
-            <CardContent className="flex justify-between items-center pt-4 pb-6 mt-auto border-t border-gray-100 dark:border-gray-700/50 bg-gray-100 gap-4">
+            
+            <CardContent className="flex justify-between items-center pt-4 pb-6 mt-auto border-t border-gray-100 bg-gray-50/50 gap-4">
               {serviceDetailId && (
                 <Button 
                   asChild 
                   variant="outline" 
                   size="sm"
-                  className="border-eco-green text-eco-green hover:bg-eco-green hover:text-white"
+                  className="border-eco-green text-eco-green hover:bg-eco-green hover:text-white transition-all duration-300"
                 >
                   <Link 
                     to={`/service/${serviceDetailId}`}
-                    className="flex items-center gap-1"
+                    className="flex items-center gap-2"
                   >
-                    Saiba mais <ArrowRight className="h-4 w-4" />
+                    Ver detalhes <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
               )}
+              
               <Button 
-                asChild 
-                variant="link" 
-                className="p-0 h-auto font-medium text-eco-green hover:text-eco-green-dark group transition-all duration-300"
+                asChild
+                className="bg-eco-green hover:bg-eco-green-dark text-white flex-1 transition-all duration-300 hover:scale-105"
               >
                 <Link 
-                  to="/request-quote" 
-                  className="flex items-center gap-1 hover:underline group-hover:scale-105 transition-transform duration-300"
+                  to="/request-quote"
+                  className="flex items-center justify-center gap-2"
                 >
-                  Solicitar orçamento <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  Solicitar orçamento <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </CardContent>
