@@ -1,5 +1,4 @@
-
-import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun } from "lucide-react";
+import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, Globe, Recycle } from "lucide-react";
 
 export interface ServiceStep {
   title: string;
@@ -392,6 +391,130 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "Monitore mudanças na legislação",
       "Documente todas as atividades",
       "Mantenha comunicação com órgãos ambientais"
+    ]
+  },
+  esg: {
+    id: "esg",
+    title: "Consultoria ESG",
+    description: "Assessoria especializada em critérios ambientais, sociais e de governança para sustentabilidade corporativa.",
+    icon: Globe,
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000&h=600",
+    whatIs: "A consultoria ESG (Environmental, Social and Governance) oferece assessoria estratégica para empresas que buscam integrar critérios de sustentabilidade em suas operações, melhorar sua performance ESG e atender às crescentes demandas de investidores e stakeholders por práticas responsáveis.",
+    benefits: [
+      "Melhoria do rating ESG e acesso a investimentos",
+      "Redução de riscos operacionais e regulatórios",
+      "Fortalecimento da reputação corporativa",
+      "Atração e retenção de talentos",
+      "Vantagem competitiva no mercado",
+      "Cumprimento de regulamentações emergentes"
+    ],
+    steps: [
+      {
+        title: "Diagnóstico ESG",
+        description: "Avaliação completa das práticas ESG atuais e identificação de gaps",
+        duration: "2 a 4 semanas"
+      },
+      {
+        title: "Estratégia ESG",
+        description: "Desenvolvimento de estratégia ESG alinhada aos objetivos de negócio",
+        duration: "3 a 6 semanas"
+      },
+      {
+        title: "Implementação",
+        description: "Execução do plano de ação e implementação de políticas ESG",
+        duration: "3 a 12 meses"
+      },
+      {
+        title: "Monitoramento e Relato",
+        description: "Acompanhamento de indicadores e elaboração de relatórios ESG",
+        duration: "Processo contínuo"
+      }
+    ],
+    documents: [
+      "Relatório de diagnóstico ESG",
+      "Estratégia ESG corporativa",
+      "Políticas e procedimentos ESG",
+      "Relatório de sustentabilidade",
+      "Matriz de materialidade",
+      "Plano de engajamento com stakeholders",
+      "Sistema de indicadores ESG"
+    ],
+    timeline: "Implementação completa em 6 a 18 meses, com monitoramento e relato contínuos.",
+    legalBasis: [
+      "Resolução CVM nº 59/2021 - Relatório de Sustentabilidade",
+      "Lei nº 14.182/2021 - Marco Legal das Startups",
+      "Padrões GRI (Global Reporting Initiative)",
+      "Framework SASB (Sustainability Accounting Standards Board)",
+      "Recomendações TCFD (Task Force on Climate-related Financial Disclosures)"
+    ],
+    tips: [
+      "Alinhe a estratégia ESG com objetivos de negócio",
+      "Envolva a alta liderança desde o início",
+      "Estabeleça metas claras e mensuráveis",
+      "Mantenha transparência na comunicação",
+      "Monitore tendências e regulamentações ESG"
+    ]
+  },
+  climate: {
+    id: "climate",
+    title: "Mudanças Climáticas e Descarbonização",
+    description: "Soluções especializadas para gestão de riscos climáticos, redução de emissões e adaptação às mudanças climáticas.",
+    icon: Recycle,
+    image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?auto=format&fit=crop&q=80&w=1000&h=600",
+    whatIs: "Nossos serviços de mudanças climáticas e descarbonização ajudam empresas a compreender, mitigar e adaptar-se aos impactos das mudanças climáticas, desenvolvendo estratégias de baixo carbono e construindo resiliência climática para operações sustentáveis de longo prazo.",
+    benefits: [
+      "Redução da pegada de carbono empresarial",
+      "Preparação para regulamentações climáticas",
+      "Acesso a mercados de carbono",
+      "Melhoria da resiliência operacional",
+      "Atração de investimentos sustentáveis",
+      "Liderança em sustentabilidade setorial"
+    ],
+    steps: [
+      {
+        title: "Inventário de GEE",
+        description: "Elaboração do inventário de gases de efeito estufa e cálculo da pegada de carbono",
+        duration: "4 a 8 semanas"
+      },
+      {
+        title: "Análise de Vulnerabilidade",
+        description: "Avaliação de riscos físicos e de transição climática",
+        duration: "6 a 10 semanas"
+      },
+      {
+        title: "Estratégia de Descarbonização",
+        description: "Desenvolvimento de plano de redução de emissões e metas baseadas na ciência",
+        duration: "8 a 12 semanas"
+      },
+      {
+        title: "Implementação e Monitoramento",
+        description: "Execução das ações e acompanhamento contínuo do progresso",
+        duration: "Processo contínuo"
+      }
+    ],
+    documents: [
+      "Inventário de gases de efeito estufa",
+      "Relatório de pegada de carbono",
+      "Avaliação de riscos climáticos",
+      "Plano de descarbonização",
+      "Estratégia de adaptação climática",
+      "Projetos de crédito de carbono",
+      "Relatórios de progresso"
+    ],
+    timeline: "Desenvolvimento da estratégia em 3 a 6 meses, com implementação e monitoramento contínuos.",
+    legalBasis: [
+      "Acordo de Paris - NDCs do Brasil",
+      "Lei nº 12.187/2009 - Política Nacional sobre Mudança do Clima",
+      "ISO 14064 - Gases de efeito estufa",
+      "Programa Brasileiro GHG Protocol",
+      "Science Based Targets initiative (SBTi)"
+    ],
+    tips: [
+      "Estabeleça metas baseadas na ciência (SBTi)",
+      "Priorize ações de redução antes da compensação",
+      "Considere toda a cadeia de valor",
+      "Monitore regulamentações emergentes",
+      "Comunique progressos de forma transparente"
     ]
   }
 };

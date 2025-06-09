@@ -30,6 +30,16 @@ export const navData = {
       title: "Gestão e Manutenção",
       href: "/service/management",
       description: "Gestão contínua e manutenção ambiental"
+    },
+    {
+      title: "Consultoria ESG",
+      href: "/service/esg",
+      description: "Estratégias ESG e sustentabilidade corporativa"
+    },
+    {
+      title: "Mudanças Climáticas",
+      href: "/service/climate",
+      description: "Descarbonização e adaptação climática"
     }
   ]
 };

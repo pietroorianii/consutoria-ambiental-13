@@ -3,7 +3,7 @@ import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, CheckCircle, ArrowRight, Sparkles } from "lucide-react";
+import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, Globe, Recycle, CheckCircle, ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 
 const services = [{
   icon: <Leaf className="h-10 w-10 text-eco-green" />,
@@ -15,10 +15,11 @@ const services = [{
     "Garantia de conformidade legal total"
   ],
   link: "/service/licensing",
-  bgGradient: "from-eco-green/5 via-eco-green/2 to-transparent",
-  borderColor: "border-eco-green/20 hover:border-eco-green/40",
-  iconBg: "bg-eco-green/10",
-  buttonColor: "bg-eco-green hover:bg-eco-green-dark"
+  bgGradient: "from-eco-green/8 via-eco-green/3 to-transparent",
+  borderColor: "border-eco-green/30 hover:border-eco-green/60",
+  iconBg: "bg-eco-green/15",
+  buttonColor: "bg-eco-green hover:bg-eco-green-dark",
+  badge: "Essencial"
 }, {
   icon: <Beaker className="h-10 w-10 text-eco-blue" />,
   title: "Monitoramento Ambiental",
@@ -29,10 +30,11 @@ const services = [{
     "Relatórios técnicos detalhados"
   ],
   link: "/service/monitoring",
-  bgGradient: "from-eco-blue/5 via-eco-blue/2 to-transparent",
-  borderColor: "border-eco-blue/20 hover:border-eco-blue/40",
-  iconBg: "bg-eco-blue/10",
-  buttonColor: "bg-eco-blue hover:bg-eco-blue-dark"
+  bgGradient: "from-eco-blue/8 via-eco-blue/3 to-transparent",
+  borderColor: "border-eco-blue/30 hover:border-eco-blue/60",
+  iconBg: "bg-eco-blue/15",
+  buttonColor: "bg-eco-blue hover:bg-eco-blue-dark",
+  badge: "Contínuo"
 }, {
   icon: <FileText className="h-10 w-10 text-eco-earth-dark" />,
   title: "Planos e Relatórios",
@@ -43,10 +45,11 @@ const services = [{
     "Programas de gestão customizados"
   ],
   link: "/service/reports",
-  bgGradient: "from-eco-earth-medium/5 via-eco-earth-medium/2 to-transparent",
-  borderColor: "border-eco-earth-medium/20 hover:border-eco-earth-medium/40",
-  iconBg: "bg-eco-earth-medium/10",
-  buttonColor: "bg-eco-earth-dark hover:bg-eco-earth-dark/90"
+  bgGradient: "from-eco-earth-medium/8 via-eco-earth-medium/3 to-transparent",
+  borderColor: "border-eco-earth-medium/30 hover:border-eco-earth-medium/60",
+  iconBg: "bg-eco-earth-medium/15",
+  buttonColor: "bg-eco-earth-dark hover:bg-eco-earth-dark/90",
+  badge: "Técnico"
 }, {
   icon: <Users className="h-10 w-10 text-eco-accent-teal" />,
   title: "Consultoria Especializada",
@@ -57,10 +60,11 @@ const services = [{
     "Defesas em processos ambientais"
   ],
   link: "/service/consulting",
-  bgGradient: "from-eco-accent-teal/5 via-eco-accent-teal/2 to-transparent",
-  borderColor: "border-eco-accent-teal/20 hover:border-eco-accent-teal/40",
-  iconBg: "bg-eco-accent-teal/10",
-  buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90"
+  bgGradient: "from-eco-accent-teal/8 via-eco-accent-teal/3 to-transparent",
+  borderColor: "border-eco-accent-teal/30 hover:border-eco-accent-teal/60",
+  iconBg: "bg-eco-accent-teal/15",
+  buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
+  badge: "Estratégico"
 }, {
   icon: <TreeDeciduous className="h-10 w-10 text-eco-accent-sage" />,
   title: "Treinamentos Ambientais",
@@ -71,10 +75,11 @@ const services = [{
     "Capacitação em legislação atual"
   ],
   link: "/service/training",
-  bgGradient: "from-eco-accent-sage/5 via-eco-accent-sage/2 to-transparent",
-  borderColor: "border-eco-accent-sage/20 hover:border-eco-accent-sage/40",
-  iconBg: "bg-eco-accent-sage/10",
-  buttonColor: "bg-eco-accent-sage hover:bg-eco-accent-sage/90"
+  bgGradient: "from-eco-accent-sage/8 via-eco-accent-sage/3 to-transparent",
+  borderColor: "border-eco-accent-sage/30 hover:border-eco-accent-sage/60",
+  iconBg: "bg-eco-accent-sage/15",
+  buttonColor: "bg-eco-accent-sage hover:bg-eco-accent-sage/90",
+  badge: "Capacitação"
 }, {
   icon: <CloudSun className="h-10 w-10 text-eco-blue-muted" />,
   title: "Gestão Ambiental",
@@ -85,22 +90,55 @@ const services = [{
     "Suporte técnico permanente"
   ],
   link: "/service/management",
-  bgGradient: "from-eco-blue-muted/5 via-eco-blue-muted/2 to-transparent",
-  borderColor: "border-eco-blue-muted/20 hover:border-eco-blue-muted/40",
-  iconBg: "bg-eco-blue-muted/10",
-  buttonColor: "bg-eco-blue-muted hover:bg-eco-blue-muted/90"
+  bgGradient: "from-eco-blue-muted/8 via-eco-blue-muted/3 to-transparent",
+  borderColor: "border-eco-blue-muted/30 hover:border-eco-blue-muted/60",
+  iconBg: "bg-eco-blue-muted/15",
+  buttonColor: "bg-eco-blue-muted hover:bg-eco-blue-muted/90",
+  badge: "Gestão"
+}, {
+  icon: <Globe className="h-10 w-10 text-eco-accent-teal" />,
+  title: "Consultoria ESG",
+  description: "Estratégias ESG para sustentabilidade, competitividade e acesso a investimentos",
+  highlights: [
+    "Diagnóstico e estratégias ESG completas",
+    "Relatórios de sustentabilidade certificados",
+    "Engajamento estratégico com stakeholders"
+  ],
+  link: "/service/esg",
+  bgGradient: "from-eco-accent-teal/8 via-eco-accent-teal/3 to-transparent",
+  borderColor: "border-eco-accent-teal/30 hover:border-eco-accent-teal/60",
+  iconBg: "bg-eco-accent-teal/15",
+  buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
+  badge: "Inovação",
+  isNew: true
+}, {
+  icon: <Recycle className="h-10 w-10 text-eco-accent-sage" />,
+  title: "Mudanças Climáticas",
+  description: "Descarbonização e adaptação climática para um futuro sustentável",
+  highlights: [
+    "Inventários GEE e pegada de carbono",
+    "Planos de descarbonização baseados na ciência",
+    "Projetos de crédito de carbono certificados"
+  ],
+  link: "/service/climate",
+  bgGradient: "from-eco-accent-sage/8 via-eco-accent-sage/3 to-transparent",
+  borderColor: "border-eco-accent-sage/30 hover:border-eco-accent-sage/60",
+  iconBg: "bg-eco-accent-sage/15",
+  buttonColor: "bg-eco-accent-sage hover:bg-eco-accent-sage/90",
+  badge: "Futuro",
+  isNew: true
 }];
 
 export const ServiceShowcase = () => {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Enhanced background with subtle textures */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-eco-green/2 to-eco-earth-light/20"></div>
-      <div className="absolute inset-0 leaf-pattern opacity-[0.02]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-eco-green/2 to-eco-earth-light/15"></div>
+      <div className="absolute inset-0 leaf-pattern opacity-[0.015]"></div>
       
       {/* Floating organic shapes */}
-      <div className="absolute top-1/4 right-10 w-60 h-60 bg-eco-green/3 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-eco-blue/3 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute top-1/4 right-10 w-60 h-60 bg-eco-green/4 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-eco-blue/4 rounded-full blur-3xl animate-pulse-slow"></div>
       
       <div className="container relative z-10">
         {/* Enhanced header section */}
@@ -133,10 +171,20 @@ export const ServiceShowcase = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className={`group relative overflow-hidden transition-all duration-500 bg-gradient-to-br ${service.bgGradient} backdrop-blur-sm border-2 ${service.borderColor} hover:shadow-lg hover:-translate-y-1 hover:scale-[1.01]`}
+              className={`group relative overflow-hidden transition-all duration-500 bg-gradient-to-br ${service.bgGradient} backdrop-blur-sm border-2 ${service.borderColor} hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]`}
             >
+              {/* Badge para serviços novos */}
+              {service.isNew && (
+                <div className="absolute top-4 right-4 z-20">
+                  <div className="bg-gradient-to-r from-eco-accent-orange to-eco-accent-yellow text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                    <TrendingUp className="h-3 w-3" />
+                    NOVO
+                  </div>
+                </div>
+              )}
+
               {/* Subtle overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <CardHeader className="pb-4 relative z-10">
                 <div className="flex items-start gap-4">
@@ -144,7 +192,12 @@ export const ServiceShowcase = () => {
                     {service.icon}
                   </div>
                   <div className="flex-grow">
-                    <CardTitle className="font-secondary text-xl mb-3 group-hover:text-eco-green-dark transition-colors">
+                    <div className="mb-2">
+                      <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${service.iconBg} text-gray-600 group-hover:text-gray-800 transition-colors`}>
+                        {service.badge}
+                      </span>
+                    </div>
+                    <CardTitle className="font-secondary text-xl mb-3 group-hover:text-eco-green-dark transition-colors leading-tight">
                       {service.title}
                     </CardTitle>
                     <CardDescription className="font-body text-gray-600 text-base leading-relaxed">
@@ -190,7 +243,7 @@ export const ServiceShowcase = () => {
                   <Button 
                     asChild
                     variant="outline"
-                    className="flex-1 border-eco-green/30 text-eco-green hover:bg-eco-green/10 hover:border-eco-green/50 transition-all duration-300"
+                    className="flex-1 border-eco-green/40 text-eco-green hover:bg-eco-green/10 hover:border-eco-green/60 transition-all duration-300"
                   >
                     <Link to="/request-quote" className="flex items-center justify-center gap-2">
                       Solicitar Orçamento
@@ -205,15 +258,15 @@ export const ServiceShowcase = () => {
         {/* Bottom section with trust indicators */}
         <div className="text-center mt-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
-            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-eco-green/20">
+            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-eco-green/30 hover:border-eco-green/50 transition-colors">
               <CheckCircle className="h-5 w-5 text-eco-green" />
               <span className="font-medium text-gray-700">+500 Projetos Realizados</span>
             </div>
-            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-eco-blue/20">
+            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-eco-blue/30 hover:border-eco-blue/50 transition-colors">
               <CheckCircle className="h-5 w-5 text-eco-blue" />
               <span className="font-medium text-gray-700">98% Taxa de Sucesso</span>
             </div>
-            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-eco-accent-teal/20">
+            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-eco-accent-teal/30 hover:border-eco-accent-teal/50 transition-colors">
               <CheckCircle className="h-5 w-5 text-eco-accent-teal" />
               <span className="font-medium text-gray-700">Conformidade Garantida</span>
             </div>

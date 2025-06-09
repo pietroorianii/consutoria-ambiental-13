@@ -1,8 +1,8 @@
 
-import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun } from "lucide-react";
+import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, Globe, Recycle } from "lucide-react";
 import React from "react";
 
-export type ServiceCategoryType = 'licensing' | 'monitoring' | 'reports' | 'consulting' | 'training' | 'management';
+export type ServiceCategoryType = 'licensing' | 'monitoring' | 'reports' | 'consulting' | 'training' | 'management' | 'esg' | 'climate';
 
 export interface ServiceItem {
   title: string;
@@ -159,6 +159,62 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
       {
         title: "Manutenções Periódicas",
         description: "Serviços de manutenção e atualização periódica de sistemas e documentos ambientais da empresa.",
+      }
+    ]
+  },
+  esg: {
+    title: "Consultoria ESG",
+    description: "Assessoria especializada em critérios ambientais, sociais e de governança para empresas que buscam sustentabilidade, competitividade e acesso a investimentos.",
+    icon: React.createElement(Globe, { className: "h-8 w-8 text-eco-accent-teal" }),
+    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000&h=600",
+    services: [
+      {
+        title: "Diagnóstico e Mapeamento ESG",
+        description: "Avaliação completa das práticas ESG atuais, identificação de gaps e oportunidades de melhoria alinhadas aos padrões internacionais.",
+      },
+      {
+        title: "Estratégias e Políticas ESG",
+        description: "Desenvolvimento de estratégias ESG customizadas, criação de políticas corporativas e definição de metas e indicadores de desempenho.",
+      },
+      {
+        title: "Relatórios de Sustentabilidade",
+        description: "Elaboração de relatórios ESG conforme padrões GRI, SASB, TCFD e outros frameworks reconhecidos internacionalmente.",
+      },
+      {
+        title: "Análise de Riscos ESG",
+        description: "Identificação e análise de riscos e oportunidades ESG, desenvolvimento de planos de mitigação e gestão de impactos.",
+      },
+      {
+        title: "Engajamento com Stakeholders",
+        description: "Estratégias de comunicação e engajamento com investidores, comunidades, colaboradores e outros públicos de interesse.",
+      }
+    ]
+  },
+  climate: {
+    title: "Mudanças Climáticas e Descarbonização",
+    description: "Soluções especializadas para gestão de riscos climáticos, redução de emissões e adaptação às mudanças climáticas.",
+    icon: React.createElement(Recycle, { className: "h-8 w-8 text-eco-accent-sage" }),
+    image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?auto=format&fit=crop&q=80&w=1000&h=600",
+    services: [
+      {
+        title: "Inventários de Gases de Efeito Estufa",
+        description: "Elaboração de inventários GEE corporativos, cálculo de pegada de carbono e verificação por terceira parte conforme ISO 14064.",
+      },
+      {
+        title: "Planos de Descarbonização",
+        description: "Desenvolvimento de estratégias de redução de emissões, definição de metas baseadas na ciência (SBTi) e roadmap de neutralidade carbônica.",
+      },
+      {
+        title: "Análise de Vulnerabilidade Climática",
+        description: "Avaliação de riscos físicos e de transição climática, análise de vulnerabilidades e desenvolvimento de planos de adaptação.",
+      },
+      {
+        title: "Projetos de Crédito de Carbono",
+        description: "Desenvolvimento e consultoria em projetos de crédito de carbono, desde a concepção até a certificação e comercialização.",
+      },
+      {
+        title: "Economia Circular",
+        description: "Implementação de estratégias de economia circular, otimização de recursos e desenvolvimento de modelos de negócio sustentáveis.",
       }
     ]
   }
