@@ -39,23 +39,9 @@ export const formSchema = z.object({
 
   // Contexto Ambiental
   hasLicense: z.string(),
-  licenseDetails: z.string()
-    .optional()
-    .refine((val, ctx) => {
-      if (ctx.parent.hasLicense === "sim" && (!val || val.trim().length < 10)) {
-        return false;
-      }
-      return true;
-    }, { message: "Forneça detalhes sobre as licenças existentes (mínimo 10 caracteres)" }),
+  licenseDetails: z.string().optional(),
   hasNotifications: z.string(),
-  notificationDetails: z.string()
-    .optional()
-    .refine((val, ctx) => {
-      if (ctx.parent.hasNotifications === "sim" && (!val || val.trim().length < 10)) {
-        return false;
-      }
-      return true;
-    }, { message: "Forneça detalhes sobre as notificações existentes (mínimo 10 caracteres)" }),
+  notificationDetails: z.string().optional(),
 
   // Informações Adicionais
   estimatedBudget: z.string().optional(),
@@ -69,6 +55,22 @@ export const formSchema = z.object({
   termsAccepted: z.boolean().refine(val => val === true, {
     message: "Você deve aceitar os termos e condições para continuar"
   }),
+}).refine((data) => {
+  if (data.hasLicense === "sim" && (!data.licenseDetails || data.licenseDetails.trim().length < 10)) {
+    return false;
+  }
+  return true;
+}, {
+  message: "Forneça detalhes sobre as licenças existentes (mínimo 10 caracteres)",
+  path: ["licenseDetails"]
+}).refine((data) => {
+  if (data.hasNotifications === "sim" && (!data.notificationDetails || data.notificationDetails.trim().length < 10)) {
+    return false;
+  }
+  return true;
+}, {
+  message: "Forneça detalhes sobre as notificações existentes (mínimo 10 caracteres)",
+  path: ["notificationDetails"]
 });
 
 export type FormValues = z.infer<typeof formSchema>;
