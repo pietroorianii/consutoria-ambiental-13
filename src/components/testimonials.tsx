@@ -44,7 +44,7 @@ export function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <Card 
-              key={testimonial.author}
+              key={`${testimonial.author}-${index}`}
               className="bg-background border-none shadow-md hover:shadow-lg transition-all animate-fade-up"
             >
               <CardContent className="pt-6">
