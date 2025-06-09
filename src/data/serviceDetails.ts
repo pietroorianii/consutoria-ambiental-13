@@ -9,7 +9,7 @@ import { managementServices } from "./services/managementServices";
 import { esgServices } from "./services/esgServices";
 import { climateServices } from "./services/climateServices";
 
-export { ServiceStep, ServiceDetailData } from "./types/serviceTypes";
+export type { ServiceStep, ServiceDetailData } from "./types/serviceTypes";
 
 export const serviceDetails: Record<string, ServiceDetailData> = {
   licensing: licensingServices,
