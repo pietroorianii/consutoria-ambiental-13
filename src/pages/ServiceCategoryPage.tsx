@@ -7,7 +7,6 @@ import { ServiceList } from "@/components/service/ServiceList";
 import { CategoryNotFound } from "@/components/service/CategoryNotFound";
 import { serviceCategories, ServiceCategoryType } from "@/data/serviceCategories";
 import { PageWrapper } from "@/components/ui/page-wrapper";
-import { TabsBackgroundDecoration } from "@/components/legislation/TabsBackgroundDecoration";
 
 const ServiceCategoryPage = () => {
   const { category } = useParams<{ category: string }>();
@@ -26,8 +25,6 @@ const ServiceCategoryPage = () => {
       <ServiceBanner categoryData={categoryData} />
       
       <div className="relative py-16">
-        <TabsBackgroundDecoration />
-        
         <div className="container relative">
           <ServiceList services={categoryData.services} categoryId={category || ''} />
         </div>
