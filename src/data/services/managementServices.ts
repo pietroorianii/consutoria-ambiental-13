@@ -4,63 +4,63 @@ import { ServiceDetailData } from "../types/serviceTypes";
 
 export const managementServices: ServiceDetailData = {
   id: "management",
-  title: "Gestão e Manutenção Ambiental",
-  description: "Serviços continuados para manutenção da conformidade ambiental.",
+  title: "Gestão Ambiental Contínua",
+  description: "Serviços continuados para manutenção da conformidade ambiental e gestão sistemática de requisitos legais.",
   icon: CloudSun,
   image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "A gestão ambiental continuada envolve o acompanhamento sistemático das obrigações ambientais, renovação de licenças, atualização de documentos e manutenção da conformidade legal ao longo do tempo.",
+  whatIs: "A gestão ambiental contínua é um sistema estruturado para manter sua empresa em permanente conformidade com a legislação ambiental. Inclui controle de prazos, renovação de licenças, gestão de condicionantes e acompanhamento de mudanças regulatórias, garantindo operação segura e livre de penalidades.",
   benefits: [
     "Conformidade legal permanente",
-    "Redução de custos operacionais",
-    "Prevenção de penalidades",
-    "Otimização de processos",
-    "Melhoria contínua",
-    "Tranquilidade operacional"
+    "Controle sistemático de prazos",
+    "Prevenção de multas e penalidades",
+    "Otimização de custos ambientais",
+    "Redução de riscos operacionais",
+    "Tranquilidade para focar no negócio"
   ],
   steps: [
     {
-      title: "Diagnóstico da Situação",
-      description: "Avaliação do status atual das obrigações ambientais",
-      duration: "1 semana"
+      title: "Diagnóstico da Situação Atual",
+      description: "Levantamento completo de licenças, autorizações e obrigações ambientais",
+      duration: "1 a 2 semanas"
     },
     {
-      title: "Planejamento Anual",
-      description: "Elaboração de cronograma de atividades e renovações",
-      duration: "1 semana"
+      title: "Estruturação do Sistema",
+      description: "Implementação de sistema de gestão de requisitos legais ambientais",
+      duration: "2 a 3 semanas"
     },
     {
-      title: "Execução das Atividades",
-      description: "Cumprimento das obrigações conforme cronograma estabelecido",
+      title: "Operação Contínua",
+      description: "Acompanhamento mensal de obrigações e prazos conforme cronograma",
       duration: "Processo contínuo"
     },
     {
-      title: "Monitoramento e Ajustes",
-      description: "Acompanhamento dos resultados e adequações necessárias",
-      duration: "Mensal"
+      title: "Renovações e Atualizações",
+      description: "Gestão proativa de renovações e adequações a mudanças regulatórias",
+      duration: "Conforme vencimentos"
     }
   ],
   documents: [
-    "Calendário ambiental",
-    "Licenças e autorizações vigentes",
-    "Relatórios de acompanhamento",
-    "Declarações anuais",
-    "Registros de conformidade",
-    "Cronograma de renovações",
-    "Documentação atualizada"
+    "Sistema de gestão de requisitos legais",
+    "Calendário ambiental personalizado",
+    "Relatórios mensais de conformidade",
+    "Documentação de renovações",
+    "Registros de mudanças regulatórias",
+    "Cronograma de obrigações anuais",
+    "Alertas preventivos de vencimentos"
   ],
-  timeline: "Serviço contínuo com atividades programadas mensalmente e renovações conforme vencimentos.",
+  timeline: "Serviço contínuo com diagnóstico inicial (1-2 semanas) e acompanhamento mensal permanente.",
   legalBasis: [
-    "Legislação ambiental aplicável",
-    "Condicionantes das licenças",
-    "Resoluções dos órgãos ambientais",
-    "Normas técnicas atualizadas",
-    "Compromissos assumidos"
+    "Decreto Estadual nº 9.541/2025",
+    "Resolução CEMA nº 107/2020",
+    "Lei nº 12.305/2010 (PNRS)",
+    "Instruções Normativas do IAT",
+    "Resoluções CONAMA aplicáveis"
   ],
   tips: [
-    "Mantenha calendário ambiental atualizado",
-    "Antecipe-se aos vencimentos",
-    "Monitore mudanças na legislação",
-    "Documente todas as atividades",
-    "Mantenha comunicação com órgãos ambientais"
+    "Mantenha sistema de gestão sempre atualizado",
+    "Solicite renovações com 120 dias de antecedência",
+    "Acompanhe mudanças na legislação ambiental",
+    "Documente todas as ações realizadas",
+    "Estabeleça rotinas de verificação mensal"
   ]
 };

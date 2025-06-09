@@ -4,63 +4,63 @@ import { ServiceDetailData } from "../types/serviceTypes";
 
 export const consultingServices: ServiceDetailData = {
   id: "consulting",
-  title: "Acompanhamento e Consultoria Ambiental",
-  description: "Assessoria técnica especializada para questões ambientais e conformidade legal.",
+  title: "Consultoria Ambiental Especializada",
+  description: "Assessoria técnica estratégica para questões ambientais complexas, auditorias e adequações regulatórias.",
   icon: Users,
   image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "A consultoria ambiental oferece assessoria técnica especializada para auxiliar empresas no cumprimento da legislação ambiental, gestão de riscos e implementação de boas práticas sustentáveis.",
+  whatIs: "Nossa consultoria ambiental especializada oferece assessoria estratégica para empresas enfrentarem desafios ambientais complexos, desde auditorias de conformidade até implementação de tecnologias geoespaciais. Combinamos expertise técnica com visão de negócios para transformar obrigações ambientais em vantagens competitivas.",
   benefits: [
-    "Expertise técnica especializada",
-    "Redução de riscos ambientais",
-    "Otimização de processos",
-    "Conformidade legal garantida",
-    "Suporte na tomada de decisões",
-    "Acompanhamento contínuo"
+    "Expertise técnica multidisciplinar",
+    "Soluções customizadas por setor",
+    "Redução de riscos regulatórios",
+    "Otimização de processos ambientais",
+    "Suporte em litígios ambientais",
+    "Implementação de tecnologias avançadas"
   ],
   steps: [
     {
-      title: "Diagnóstico Ambiental",
-      description: "Avaliação completa da situação ambiental atual da empresa",
+      title: "Diagnóstico Técnico Especializado",
+      description: "Avaliação detalhada da situação ambiental e identificação de oportunidades",
+      duration: "1 a 3 semanas"
+    },
+    {
+      title: "Desenvolvimento de Estratégia",
+      description: "Elaboração de plano de ação técnico e cronograma de implementação",
       duration: "1 a 2 semanas"
     },
     {
-      title: "Plano de Ação",
-      description: "Desenvolvimento de estratégias e cronograma de adequações",
-      duration: "1 a 2 semanas"
-    },
-    {
-      title: "Implementação",
-      description: "Acompanhamento da execução das ações propostas",
+      title: "Implementação Assistida",
+      description: "Acompanhamento técnico especializado na execução das soluções",
       duration: "Conforme cronograma"
     },
     {
-      title: "Monitoramento",
-      description: "Acompanhamento contínuo dos resultados e ajustes necessários",
+      title: "Monitoramento e Otimização",
+      description: "Avaliação contínua de resultados e ajustes estratégicos",
       duration: "Processo contínuo"
     }
   ],
   documents: [
-    "Relatório de diagnóstico ambiental",
-    "Plano de adequação ambiental",
-    "Cronograma de implementação",
-    "Relatórios de acompanhamento",
-    "Registros de não conformidades",
-    "Propostas de melhorias",
-    "Documentação legal atualizada"
+    "Relatórios de auditoria ambiental",
+    "Pareceres técnicos especializados",
+    "Defesas para autos de infração",
+    "Laudos de perícia ambiental",
+    "Mapas e análises geoespaciais",
+    "Relatórios de due diligence",
+    "Planos de adequação regulatória"
   ],
-  timeline: "O acompanhamento pode ser pontual (2-4 semanas) ou contínuo conforme necessidade da empresa.",
+  timeline: "Projetos de consultoria variam de 2 semanas (pareceres técnicos) a 6 meses (implementação de sistemas complexos).",
   legalBasis: [
-    "Legislação ambiental federal, estadual e municipal",
-    "Resoluções CONAMA aplicáveis",
-    "Normas técnicas NBR",
-    "Condicionantes de licenças ambientais",
-    "Termos de ajuste de conduta"
+    "Decreto Estadual nº 9.541/2025",
+    "Resolução CEMA nº 107/2020",
+    "Lei Federal nº 6.938/1981",
+    "Código Florestal (Lei nº 12.651/2012)",
+    "Normas técnicas ABNT aplicáveis"
   ],
   tips: [
-    "Mantenha comunicação clara sobre objetivos",
-    "Documente todas as ações realizadas",
-    "Estabeleça indicadores de desempenho",
-    "Promova capacitação das equipes",
-    "Revise estratégias periodicamente"
+    "Realize auditorias preventivas regulares",
+    "Mantenha documentação técnica organizada",
+    "Invista em tecnologias de monitoramento",
+    "Capacite equipes em questões ambientais",
+    "Busque consultoria antes de problemas regulatórios"
   ]
 };

@@ -5,61 +5,62 @@ import { ServiceDetailData } from "../types/serviceTypes";
 export const licensingServices: ServiceDetailData = {
   id: "licensing",
   title: "Licenciamento e Autorizações Ambientais",
-  description: "Obtenção de licenças e autorizações ambientais para regularização e operação legal de empreendimentos.",
+  description: "Serviços completos de licenciamento ambiental conforme Decreto Estadual nº 9.541/2025 e normas do IAT-PR.",
   icon: Leaf,
   image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "O licenciamento ambiental é um procedimento administrativo pelo qual o órgão ambiental competente licencia a localização, instalação, ampliação e operação de empreendimentos e atividades utilizadoras de recursos ambientais consideradas efetiva ou potencialmente poluidoras ou daquelas que, sob qualquer forma, possam causar degradação ambiental.",
+  whatIs: "O licenciamento ambiental no Paraná, conforme o Decreto Estadual nº 9.541/2025, abrange diversas modalidades desde a Declaração de Dispensa de Licenciamento Ambiental (DLAM) para atividades de baixo impacto até o licenciamento trifásico convencional para empreendimentos de maior complexidade. Nossos serviços garantem conformidade total com as normas do IAT e agilidade nos processos.",
   benefits: [
-    "Conformidade legal com a legislação ambiental",
-    "Segurança jurídica para operação do empreendimento",
-    "Acesso a financiamentos e investimentos",
-    "Melhoria da imagem corporativa",
-    "Redução de riscos de multas e penalidades",
-    "Competitividade no mercado"
+    "Conformidade com Decreto nº 9.541/2025",
+    "Processo otimizado no SGA do IAT",
+    "Segurança jurídica para operação",
+    "Redução de prazos e custos",
+    "Acompanhamento especializado",
+    "Prevenção de multas e penalidades"
   ],
   steps: [
     {
-      title: "Licença Prévia (LP)",
-      description: "Aprovação da localização e concepção do empreendimento, atestando a viabilidade ambiental",
-      duration: "4 a 6 meses"
+      title: "Análise e Enquadramento",
+      description: "Identificação da modalidade adequada conforme porte e potencial poluidor da atividade",
+      duration: "3 a 5 dias"
     },
     {
-      title: "Licença de Instalação (LI)",
-      description: "Autorização para iniciar a construção do empreendimento de acordo com as especificações aprovadas",
-      duration: "4 a 6 meses"
+      title: "Preparação Documental",
+      description: "Elaboração de estudos ambientais e reunião da documentação exigida",
+      duration: "2 a 8 semanas"
     },
     {
-      title: "Licença de Operação (LO)",
-      description: "Autorização para funcionamento do empreendimento após verificação do cumprimento das condicionantes",
-      duration: "4 a 6 meses"
+      title: "Protocolo e Acompanhamento",
+      description: "Submissão no SGA do IAT e acompanhamento da análise técnica",
+      duration: "Conforme modalidade"
     },
     {
-      title: "Renovação da LO",
-      description: "Processo de renovação da licença de operação antes do vencimento",
-      duration: "3 a 4 meses"
+      title: "Obtenção da Licença",
+      description: "Recebimento da licença/autorização e orientações para cumprimento",
+      duration: "1 a 2 dias"
     }
   ],
   documents: [
-    "Requerimento padrão",
-    "Projeto básico ou executivo",
-    "Estudos ambientais (conforme porte e potencial poluidor)",
-    "Certidões municipais",
-    "Outorga de uso da água (quando aplicável)",
-    "Anuência de órgãos específicos",
-    "Comprovação de propriedade ou posse do terreno"
+    "DLAM - Declaração de Dispensa (1 a 15 dias)",
+    "LAC - Licença por Adesão e Compromisso (emissão eletrônica)",
+    "LAS - Licença Ambiental Simplificada (até 60 dias)",
+    "LP/LI/LO - Licenciamento Trifásico (4 a 6 meses cada)",
+    "LASR/LIR/LOR - Modalidades de Regularização",
+    "AA - Autorizações Ambientais específicas",
+    "AF - Autorizações Florestais"
   ],
-  timeline: "O processo completo de licenciamento pode levar de 8 a 18 meses, dependendo da complexidade do empreendimento e do órgão licenciador.",
+  timeline: "Os prazos variam conforme a modalidade: DLAM (1-15 dias), LAC (emissão imediata), LAS (até 60 dias), licenciamento convencional (4-6 meses por fase).",
   legalBasis: [
-    "Lei nº 6.938/1981 - Política Nacional do Meio Ambiente",
-    "Resolução CONAMA nº 237/1997",
-    "Lei Complementar nº 140/2011",
-    "Legislação estadual e municipal específica"
+    "Decreto Estadual nº 9.541/2025",
+    "Resolução CEMA nº 107/2020",
+    "Instruções Normativas do IAT",
+    "Lei Federal nº 6.938/1981",
+    "Lei Complementar nº 140/2011"
   ],
   tips: [
-    "Inicie o processo com antecedência adequada",
-    "Mantenha toda documentação organizada e atualizada",
-    "Acompanhe os prazos das condicionantes",
-    "Considere a contratação de consultoria especializada",
-    "Mantenha diálogo aberto com os órgãos ambientais"
+    "Consulte sempre as INs específicas do IAT para sua atividade",
+    "Utilize o SGA do IAT para processos eletrônicos",
+    "Mantenha documentação organizada e atualizada",
+    "Solicite renovações com 120 dias de antecedência",
+    "Considere a modalidade mais adequada ao seu porte"
   ]
 };

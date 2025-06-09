@@ -20,173 +20,201 @@ export interface ServiceCategoryData {
 export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData> = {
   licensing: {
     title: "Licenciamento e Autorizações Ambientais",
-    description: "Nossos serviços de licenciamento ambiental abrangem todas as etapas necessárias para obtenção e manutenção das licenças e autorizações exigidas pelos órgãos ambientais.",
+    description: "Serviços completos de licenciamento conforme Decreto Estadual nº 9.541/2025 e normas do IAT-PR, desde dispensas até licenciamento trifásico.",
     icon: React.createElement(Leaf, { className: "h-8 w-8 text-eco-green" }),
     image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
-        title: "Licenciamentos Ambientais",
-        description: "Obtenção de Licenças Prévias (LP), Licenças de Instalação (LI), Licenças de Operação (LO), Autorizações Ambientais (AA), Licenças Ambientais Simplificadas (LAS) e Dispensas de Licença.",
+        title: "DLAM - Declaração de Dispensa",
+        description: "Para atividades de baixo impacto ambiental conforme critérios do IAT (1-15 dias).",
       },
       {
-        title: "Autorizações Ambientais",
-        description: "Obtenção de autorizações específicas para intervenções ambientais, como supressão de vegetação, intervenção em APP, entre outras.",
+        title: "LAC - Licença por Adesão e Compromisso",
+        description: "Emissão eletrônica para atividades padronizáveis via SGA do IAT.",
       },
       {
-        title: "Cadastro Técnico Federal (IBAMA)",
-        description: "Inscrição no Cadastro Técnico Federal (CTF), elaboração e envio da Declaração RAPP, e acompanhamento da TCFA.",
+        title: "LAS - Licença Ambiental Simplificada",
+        description: "Processo unificado para atividades de pequeno porte (até 60 dias).",
       },
       {
-        title: "Recursos Hídricos",
-        description: "Autorizações para perfuração de poços, solicitação de outorgas de direito de uso de recursos hídricos e cadastros de dispensa de outorga.",
+        title: "Licenciamento Trifásico (LP/LI/LO)",
+        description: "Processo completo para empreendimentos de maior complexidade.",
+      },
+      {
+        title: "Modalidades de Regularização",
+        description: "LASR, LIR e LOR para adequação de empreendimentos em operação irregular.",
+      },
+      {
+        title: "Autorizações Específicas (AA e AF)",
+        description: "Autorizações Ambientais e Florestais para atividades e intervenções específicas.",
       }
     ]
   },
   monitoring: {
     title: "Monitoramento e Análises Ambientais",
-    description: "Serviços de monitoramento contínuo e análises técnicas para garantir a conformidade ambiental e atendimento às condicionantes estabelecidas nas licenças e autorizações.",
+    description: "Monitoramento contínuo e análises técnicas especializadas para garantir conformidade ambiental e atendimento às condicionantes.",
     icon: React.createElement(Beaker, { className: "h-8 w-8 text-eco-blue" }),
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
+        title: "Monitoramento de Emissões Atmosféricas",
+        description: "Controle de poluentes atmosféricos conforme condicionantes de licenças.",
+      },
+      {
+        title: "Monitoramento de Efluentes Líquidos",
+        description: "Análise e controle da qualidade de efluentes industriais e sanitários.",
+      },
+      {
+        title: "Monitoramento da Qualidade da Água",
+        description: "Acompanhamento de águas superficiais e subterrâneas.",
+      },
+      {
+        title: "Gestão de Análises Laboratoriais",
+        description: "Coordenação de coletas e análises com laboratórios credenciados.",
+      },
+      {
         title: "Acompanhamento de Condicionantes",
-        description: "Monitoramento mensal do cumprimento das condicionantes ambientais estabelecidas nas licenças e autorizações.",
-      },
-      {
-        title: "Declaração de Carga Poluidora",
-        description: "Elaboração da Declaração de Carga Poluidora (DCP) e análise de laudos físico-químicos.",
-      },
-      {
-        title: "Monitoramento de Emissões",
-        description: "Monitoramento de emissões de poluentes atmosféricos, efluentes líquidos e gestão de resíduos sólidos.",
-      },
-      {
-        title: "Gestão de Amostragens e Análises",
-        description: "Gestão completa de cotação de laboratórios e definição de cronogramas de coleta de amostras para análises ambientais.",
+        description: "Gestão sistemática do cumprimento de condicionantes ambientais.",
       }
     ]
   },
   reports: {
-    title: "Planos e Relatórios Ambientais",
-    description: "Elaboração de documentos técnicos especializados para atendimento às exigências legais e implementação de boas práticas de gestão ambiental.",
+    title: "Estudos e Relatórios Ambientais",
+    description: "Elaboração de estudos ambientais especializados conforme exigências do IAT e legislação ambiental vigente.",
     icon: React.createElement(FileText, { className: "h-8 w-8 text-eco-green-dark" }),
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
-        title: "Inventário de Resíduos Sólidos",
-        description: "Elaboração de Inventário de Resíduos Sólidos conforme modelo SGA-IR ou IBAMA.",
+        title: "EIA/RIMA",
+        description: "Estudos de Impacto Ambiental para empreendimentos de significativo impacto.",
       },
       {
-        title: "Planos de Gerenciamento de Resíduos",
-        description: "Desenvolvimento de PGRS, PGRSS e PGRCC adaptados às necessidades específicas de cada atividade.",
+        title: "RAP e RAS",
+        description: "Relatórios Ambientais Prévios e Simplificados conforme complexidade da atividade.",
       },
       {
-        title: "Estudos de Impacto Ambiental",
-        description: "Elaboração de EIV/RIV, EIA/RIMA e outros estudos de impacto ambiental requeridos por órgãos ambientais.",
+        title: "Planos de Gerenciamento (PGRS/PGRSS/PGRCC)",
+        description: "Planos especializados para gestão de resíduos sólidos por setor.",
       },
       {
-        title: "Programas de Gestão Ambiental",
-        description: "Desenvolvimento de programas de gerenciamento ambiental conforme ISO 14.001, incluindo programas específicos para recursos hídricos e emissões atmosféricas.",
+        title: "Estudos de Fauna e Flora",
+        description: "Conforme Portaria IAT nº 012/2024 para licenciamentos e autorizações florestais.",
       },
       {
-        title: "Planos de Controle Ambiental",
-        description: "Elaboração de PCAs, RAPs e outros documentos técnicos para controle e mitigação de impactos ambientais.",
+        title: "PCA e PRAD",
+        description: "Planos de Controle Ambiental e Recuperação de Áreas Degradadas.",
+      },
+      {
+        title: "Inventários Ambientais",
+        description: "Inventários de resíduos sólidos e emissões de gases de efeito estufa.",
       }
     ]
   },
   consulting: {
-    title: "Acompanhamento e Consultoria",
-    description: "Assessoria técnica especializada para questões ambientais, incluindo acompanhamento de projetos, auditorias e elaboração de relatórios técnicos.",
+    title: "Consultoria Ambiental Especializada",
+    description: "Assessoria técnica estratégica para questões ambientais complexas, auditorias e adequações regulatórias.",
     icon: React.createElement(Users, { className: "h-8 w-8 text-eco-blue-dark" }),
     image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
-        title: "Acompanhamento de Projetos",
-        description: "Acompanhamento técnico de projetos de adequações ambientais, garantindo conformidade com as exigências legais.",
+        title: "Auditorias Ambientais",
+        description: "Auditorias de conformidade legal, desempenho ambiental e due diligence.",
       },
       {
-        title: "Elaboração de Relatórios Específicos",
-        description: "Elaboração de relatórios para Auto de Infração, Termo de Ajuste de Conduta (TAC) e/ou Notificações ambientais.",
+        title: "Defesas e Recursos Ambientais",
+        description: "Elaboração de defesas para autos de infração e recursos administrativos.",
       },
       {
-        title: "Inspeções e Auditorias",
-        description: "Realização de inspeções ambientais, emissão de relatórios técnicos e auditorias internas para identificar não conformidades.",
+        title: "Assessoria para TAC",
+        description: "Suporte técnico em Termos de Ajuste de Conduta ambiental.",
       },
       {
-        title: "Relatórios de Cumprimento",
-        description: "Elaboração de Relatórios de Cumprimento de Condicionantes Ambientais para apresentação aos órgãos fiscalizadores.",
+        title: "Perícia Ambiental",
+        description: "Avaliação técnica especializada para processos judiciais e administrativos.",
+      },
+      {
+        title: "Geotecnologias (SIG)",
+        description: "Mapeamento e análise ambiental com Sistemas de Informação Geográfica.",
+      },
+      {
+        title: "Certificações Ambientais",
+        description: "Assessoria para ISO 14001 e outras certificações de gestão ambiental.",
       }
     ]
   },
   training: {
-    title: "Treinamentos e Capacitações",
-    description: "Programas de treinamento e capacitação para equipes técnicas, visando a implementação de práticas ambientais adequadas e o cumprimento da legislação.",
+    title: "Treinamentos e Capacitações Ambientais",
+    description: "Programas de educação ambiental e capacitação técnica para equipes e colaboradores.",
     icon: React.createElement(TreeDeciduous, { className: "h-8 w-8 text-eco-green" }),
     image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
-        title: "Treinamentos Presenciais e Remotos",
-        description: "Realização de treinamentos e palestras in loco e remotos sobre temas ambientais relevantes para a atividade da empresa.",
+        title: "Treinamento em Legislação Ambiental",
+        description: "Capacitação sobre Decreto nº 9.541/2025 e normas aplicáveis por setor.",
       },
       {
-        title: "Treinamento em Gerenciamento de Resíduos",
-        description: "Treinamento anual em Gerenciamento de Resíduos Sólidos, com emissão de certificação para os participantes.",
+        title: "Gerenciamento de Resíduos Sólidos",
+        description: "Treinamento certificado em PGRS conforme Lei nº 12.305/2010.",
       },
       {
-        title: "Capacitações Específicas",
-        description: "Programas de capacitação adaptados às necessidades específicas da empresa e do setor em que atua.",
+        title: "Atendimento a Emergências Ambientais",
+        description: "Capacitação para resposta rápida e adequada a incidentes ambientais.",
+      },
+      {
+        title: "Capacitações Setoriais",
+        description: "Programas específicos para indústria, agronegócio, serviços e construção civil.",
       }
     ]
   },
   management: {
-    title: "Gestão e Manutenção Ambiental",
-    description: "Serviços continuados de gestão ambiental para manutenção da conformidade legal e implementação de melhorias nos processos ambientais da empresa.",
+    title: "Gestão Ambiental Contínua",
+    description: "Serviços continuados para manutenção da conformidade ambiental e gestão de requisitos legais.",
     icon: React.createElement(CloudSun, { className: "h-8 w-8 text-eco-blue" }),
     image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
-        title: "Renovação de Licenças e Autorizações",
-        description: "Gestão do processo de renovação de licenças e autorizações ambientais, garantindo a continuidade das operações.",
+        title: "Gestão de Requisitos Legais",
+        description: "Sistema de gestão de obrigações ambientais e controle de prazos.",
       },
       {
-        title: "Declarações e Inventários Anuais",
-        description: "Elaboração e envio de declarações e inventários ambientais anuais exigidos pelos órgãos reguladores.",
+        title: "Renovação de Licenças",
+        description: "Acompanhamento e renovação de licenças e autorizações com antecedência.",
       },
       {
-        title: "Defesas Ambientais",
-        description: "Elaboração de defesas administrativas em processos ambientais e acompanhamento jurídico especializado.",
+        title: "Declarações Anuais",
+        description: "Elaboração de inventários e declarações obrigatórias aos órgãos ambientais.",
       },
       {
-        title: "Manutenções Periódicas",
-        description: "Serviços de manutenção e atualização periódica de sistemas e documentos ambientais da empresa.",
+        title: "Suporte Técnico Contínuo",
+        description: "Assessoria permanente para questões ambientais do dia a dia.",
       }
     ]
   },
   esg: {
     title: "Consultoria ESG",
-    description: "Assessoria especializada em critérios ambientais, sociais e de governança para empresas que buscam sustentabilidade, competitividade e acesso a investimentos.",
+    description: "Assessoria especializada em critérios ambientais, sociais e de governança para competitividade e sustentabilidade corporativa.",
     icon: React.createElement(Globe, { className: "h-8 w-8 text-eco-accent-teal" }),
     image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000&h=600",
     services: [
       {
-        title: "Diagnóstico e Mapeamento ESG",
-        description: "Avaliação completa das práticas ESG atuais, identificação de gaps e oportunidades de melhoria alinhadas aos padrões internacionais.",
-      },
-      {
-        title: "Estratégias e Políticas ESG",
-        description: "Desenvolvimento de estratégias ESG customizadas, criação de políticas corporativas e definição de metas e indicadores de desempenho.",
+        title: "Diagnóstico e Estratégia ESG",
+        description: "Avaliação completa de práticas ESG e desenvolvimento de estratégias customizadas.",
       },
       {
         title: "Relatórios de Sustentabilidade",
-        description: "Elaboração de relatórios ESG conforme padrões GRI, SASB, TCFD e outros frameworks reconhecidos internacionalmente.",
+        description: "Elaboração conforme padrões GRI, SASB, TCFD e outros frameworks internacionais.",
       },
       {
         title: "Análise de Riscos ESG",
-        description: "Identificação e análise de riscos e oportunidades ESG, desenvolvimento de planos de mitigação e gestão de impactos.",
+        description: "Identificação de riscos e oportunidades ambientais, sociais e de governança.",
       },
       {
         title: "Engajamento com Stakeholders",
-        description: "Estratégias de comunicação e engajamento com investidores, comunidades, colaboradores e outros públicos de interesse.",
+        description: "Estratégias de comunicação com investidores, comunidades e colaboradores.",
+      },
+      {
+        title: "Políticas Corporativas ESG",
+        description: "Desenvolvimento de políticas e indicadores de desempenho em sustentabilidade.",
       }
     ]
   },
@@ -198,23 +226,23 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
     services: [
       {
         title: "Inventários de Gases de Efeito Estufa",
-        description: "Elaboração de inventários GEE corporativos, cálculo de pegada de carbono e verificação por terceira parte conforme ISO 14064.",
+        description: "Elaboração de inventários GEE corporativos conforme ISO 14064 e verificação terceirizada.",
       },
       {
         title: "Planos de Descarbonização",
-        description: "Desenvolvimento de estratégias de redução de emissões, definição de metas baseadas na ciência (SBTi) e roadmap de neutralidade carbônica.",
+        description: "Estratégias de redução de emissões e roadmap para neutralidade carbônica.",
       },
       {
         title: "Análise de Vulnerabilidade Climática",
-        description: "Avaliação de riscos físicos e de transição climática, análise de vulnerabilidades e desenvolvimento de planos de adaptação.",
+        description: "Avaliação de riscos físicos e de transição climática para adaptação empresarial.",
       },
       {
         title: "Projetos de Crédito de Carbono",
-        description: "Desenvolvimento e consultoria em projetos de crédito de carbono, desde a concepção até a certificação e comercialização.",
+        description: "Desenvolvimento e consultoria em projetos desde concepção até comercialização.",
       },
       {
         title: "Economia Circular",
-        description: "Implementação de estratégias de economia circular, otimização de recursos e desenvolvimento de modelos de negócio sustentáveis.",
+        description: "Implementação de estratégias circulares e modelos de negócio sustentáveis.",
       }
     ]
   }
