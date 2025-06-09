@@ -18,7 +18,9 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
 const LegislationPage = lazy(() => import('./pages/LegislationPage'));
 const LegislationCategoryPage = lazy(() => import('./pages/LegislationCategoryPage'));
+const LicensesAuthorizationsPage = lazy(() => import('./pages/LicensesAuthorizationsPage'));
 const RequestQuotePage = lazy(() => import('./pages/RequestQuotePage'));
+const FAQPage = lazy(() => import('./pages/FAQPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient({
@@ -53,7 +55,9 @@ const App = () => (
               <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
               <Route path="/legislation" element={<LegislationPage />} />
               <Route path="/legislation/:category" element={<LegislationCategoryPage />} />
+              <Route path="/licencas-e-autorizacoes" element={<LicensesAuthorizationsPage />} />
               <Route path="/request-quote" element={<RequestQuotePage />} />
+              <Route path="/faq" element={<FAQPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
