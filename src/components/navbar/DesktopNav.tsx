@@ -8,7 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { NavListItem } from "./NavListItem";
+import NavListItem from "./NavListItem";
 import { navData } from "./navData";
 import { Leaf } from "lucide-react";
 
