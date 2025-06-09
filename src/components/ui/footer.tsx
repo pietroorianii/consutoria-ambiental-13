@@ -1,8 +1,12 @@
+
 import { Facebook, Instagram, Linkedin, Leaf, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  return <footer className="bg-muted relative overflow-hidden">
+
+  return (
+    <footer className="bg-muted relative overflow-hidden">
       <div className="absolute inset-0 leaf-pattern opacity-5"></div>
       
       <div className="container py-12 md:py-16 relative z-10">
@@ -10,14 +14,14 @@ export function Footer() {
           {/* About */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{
-            fontFamily: "'Poppins', sans-serif"
-          }}>
+              fontFamily: "'Poppins', sans-serif"
+            }}>
               <Leaf className="h-5 w-5 text-eco-green" />
-              EcoConsult
+              L&P Soluções Ambientais
             </h3>
             <p className="text-muted-foreground mb-4" style={{
-            fontFamily: "'Roboto', sans-serif"
-          }}>
+              fontFamily: "'Roboto', sans-serif"
+            }}>
               Consultoria ambiental especializada para empresas que buscam excelência em sustentabilidade e conformidade legal.
             </p>
           </div>
@@ -25,11 +29,11 @@ export function Footer() {
           {/* Links */}
           <div>
             <h3 className="text-xl font-bold mb-4" style={{
-            fontFamily: "'Poppins', sans-serif"
-          }}>Links Rápidos</h3>
+              fontFamily: "'Poppins', sans-serif"
+            }}>Links Rápidos</h3>
             <ul className="space-y-2" style={{
-            fontFamily: "'Lato', sans-serif"
-          }}>
+              fontFamily: "'Lato', sans-serif"
+            }}>
               <li>
                 <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
                   Início
@@ -46,8 +50,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/legislation" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
-                  Legislação
+                <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                  Perguntas Frequentes
                 </Link>
               </li>
               <li>
@@ -66,11 +70,11 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-xl font-bold mb-4" style={{
-            fontFamily: "'Poppins', sans-serif"
-          }}>Contato</h3>
+              fontFamily: "'Poppins', sans-serif"
+            }}>Contato</h3>
             <ul className="space-y-3" style={{
-            fontFamily: "'Lato', sans-serif"
-          }}>
+              fontFamily: "'Lato', sans-serif"
+            }}>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="h-5 w-5 text-eco-green flex-shrink-0 mt-0.5" />
                 <span>Av. Rio Branco, 1500<br />Centro, Rio de Janeiro - RJ<br />CEP: 20040-002</span>
@@ -89,28 +93,27 @@ export function Footer() {
           {/* Social Media */}
           <div>
             <h3 className="text-xl font-bold mb-4" style={{
-            fontFamily: "'Poppins', sans-serif"
-          }}>Redes Sociais</h3>
+              fontFamily: "'Poppins', sans-serif"
+            }}>Redes Sociais</h3>
             <ul className="space-y-3" style={{
-            fontFamily: "'Lato', sans-serif"
-          }}>
+              fontFamily: "'Lato', sans-serif"
+            }}>
               <li>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                   <Facebook className="h-5 w-5 text-eco-green" />
-                  <span>L&amp;P Brasil</span>
+                  <span>L&P Brasil</span>
                 </a>
               </li>
               <li>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                   <Instagram className="h-5 w-5 text-eco-green" />
-                  <span>@L&amp;P 
-                </span>
+                  <span>@L&P</span>
                 </a>
               </li>
               <li>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                   <Linkedin className="h-5 w-5 text-eco-green" />
-                  <span> L&amp;P Soluções Ambientais</span>
+                  <span>L&P Soluções Ambientais</span>
                 </a>
               </li>
             </ul>
@@ -119,11 +122,12 @@ export function Footer() {
 
         <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground/80">
           <p style={{
-          fontFamily: "'Lato', sans-serif"
-        }}>
-            &copy; {currentYear} EcoConsult. Todos os direitos reservados.
+            fontFamily: "'Lato', sans-serif"
+          }}>
+            &copy; {currentYear} L&P Soluções Ambientais. Todos os direitos reservados.
           </p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 }

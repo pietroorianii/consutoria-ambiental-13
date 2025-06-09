@@ -1,67 +1,43 @@
 
-import { Suspense, lazy } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
+import RequestQuotePage from "./pages/RequestQuotePage";
+import ServiceCategoryPage from "./pages/ServiceCategoryPage";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
+import LicensesAuthorizationsPage from "./pages/LicensesAuthorizationsPage";
+import FAQPage from "./pages/FAQPage";
+import TeamPage from "./pages/TeamPage";
+import NotFound from "./pages/NotFound";
 
-// Adicionando estilo para animação pulse-slow
-import "./animations.css";
-
-// Lazy load das páginas
-const Index = lazy(() => import('./pages/Index'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
-const LicensesAuthorizationsPage = lazy(() => import('./pages/LicensesAuthorizationsPage'));
-const RequestQuotePage = lazy(() => import('./pages/RequestQuotePage'));
-const FAQPage = lazy(() => import('./pages/FAQPage'));
-const NotFound = lazy(() => import('./pages/NotFound'));
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      retry: 1,
-    },
-  },
-});
-
-// Loading component otimizado
-const PageLoader = () => (
-  <div className="flex items-center justify-center min-h-screen">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-eco-green" aria-label="Carregando página"></div>
-  </div>
-);
+const queryClient = new QueryClient();
 
 const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
-              <Route path="/licencas-e-autorizacoes" element={<LicensesAuthorizationsPage />} />
-              <Route path="/request-quote" element={<RequestQuotePage />} />
-              <Route path="/faq" element={<FAQPage />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:categoryId" element={<ServiceCategoryPage />} />
+          <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
+          <Route path="/licenses-authorizations" element={<LicensesAuthorizationsPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/request-quote" element={<RequestQuotePage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export default App;

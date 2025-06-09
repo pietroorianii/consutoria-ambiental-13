@@ -41,5 +41,27 @@ export const navData = {
       href: "/service/climate",
       description: "Descarbonização e adaptação climática"
     }
+  ],
+  mainNav: [
+    {
+      title: "Início",
+      href: "/"
+    },
+    {
+      title: "Sobre Nós",
+      href: "/about"
+    },
+    {
+      title: "Serviços",
+      href: "/services"
+    },
+    {
+      title: "Perguntas Frequentes",
+      href: "/faq"
+    },
+    {
+      title: "Contato",
+      href: "/contact"
+    }
   ]
 };
