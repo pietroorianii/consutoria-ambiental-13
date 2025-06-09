@@ -31,27 +31,5 @@ export const navData = {
       href: "/service/management",
       description: "Gestão contínua e manutenção ambiental"
     }
-  ],
-  legislation: [
-    {
-      title: "Indústrias",
-      href: "/legislation/industry",
-      description: "Legislação ambiental para o setor industrial"
-    },
-    {
-      title: "Construção Civil",
-      href: "/legislation/construction",
-      description: "Normas ambientais para construção civil"
-    },
-    {
-      title: "Agricultura",
-      href: "/legislation/agriculture",
-      description: "Leis e decretos para o setor agrícola"
-    },
-    {
-      title: "Recursos Hídricos",
-      href: "/legislation/water",
-      description: "Legislação para gestão de recursos hídricos"
-    }
   ]
 };

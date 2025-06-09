@@ -16,8 +16,6 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
-const LegislationPage = lazy(() => import('./pages/LegislationPage'));
-const LegislationCategoryPage = lazy(() => import('./pages/LegislationCategoryPage'));
 const LicensesAuthorizationsPage = lazy(() => import('./pages/LicensesAuthorizationsPage'));
 const RequestQuotePage = lazy(() => import('./pages/RequestQuotePage'));
 const FAQPage = lazy(() => import('./pages/FAQPage'));
@@ -53,8 +51,6 @@ const App = () => (
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
-              <Route path="/legislation" element={<LegislationPage />} />
-              <Route path="/legislation/:category" element={<LegislationCategoryPage />} />
               <Route path="/licencas-e-autorizacoes" element={<LicensesAuthorizationsPage />} />
               <Route path="/request-quote" element={<RequestQuotePage />} />
               <Route path="/faq" element={<FAQPage />} />

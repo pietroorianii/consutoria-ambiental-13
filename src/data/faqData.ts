@@ -2,122 +2,47 @@
 export interface FAQItem {
   question: string;
   answer: string;
-  relatedLink?: {
-    text: string;
-    href: string;
-  };
 }
 
-export interface FAQCategory {
-  id: string;
-  title: string;
-  icon: string;
-  items: FAQItem[];
-}
-
-export const faqData: FAQCategory[] = [
+export const faqData: FAQItem[] = [
   {
-    id: "consultoria-ambiental",
-    title: "Sobre Consultoria Ambiental",
-    icon: "help-circle",
-    items: [
-      {
-        question: "O que é consultoria ambiental e por que minha empresa precisa dela?",
-        answer: "A consultoria ambiental é um serviço especializado que auxilia empresas a cumprir a legislação ambiental, reduzir impactos ambientais e implementar práticas sustentáveis. É essencial para evitar multas, obter licenças necessárias e melhorar a imagem corporativa junto ao mercado e sociedade."
-      },
-      {
-        question: "Quais são os riscos de não ter consultoria ambiental adequada?",
-        answer: "Os principais riscos incluem: multas e penalidades por descumprimento legal, embargo de atividades, danos à reputação empresarial, dificuldades para obter financiamentos, perda de competitividade no mercado e possíveis ações judiciais por danos ambientais."
-      },
-      {
-        question: "Como escolher uma consultoria ambiental confiável?",
-        answer: "Verifique a experiência da equipe, certificações técnicas, portfólio de projetos similares, referências de clientes, capacidade de atender prazos e conhecimento atualizado da legislação. A L&P Soluções Ambientais possui mais de 10 anos de experiência e centenas de projetos executados."
-      }
-    ]
+    question: "O que exatamente faz uma consultoria ambiental?",
+    answer: "Uma consultoria ambiental, como a L&P Soluções Ambientais, auxilia empresas e organizações a gerenciar suas responsabilidades e impactos ambientais. Isso envolve desde a obtenção de licenças obrigatórias, desenvolvimento de estudos de impacto, monitoramento da qualidade do ar e da água, até a implementação de práticas de gestão de resíduos, treinamentos e estratégias de sustentabilidade. Nosso objetivo é garantir que nossos clientes operem em conformidade com a legislação, minimizem riscos e promovam o desenvolvimento sustentável."
   },
   {
-    id: "servicos",
-    title: "Nossos Serviços",
-    icon: "briefcase",
-    items: [
-      {
-        question: "Quais tipos de licenças ambientais minha atividade necessita?",
-        answer: "Depende do tipo, porte e potencial poluidor da sua atividade. Podem ser necessárias Licença Prévia (LP), Licença de Instalação (LI), Licença de Operação (LO), além de autorizações específicas como supressão de vegetação e outorga de água.",
-        relatedLink: {
-          text: "Saiba mais sobre Licenciamento",
-          href: "/service/licensing"
-        }
-      },
-      {
-        question: "Como funciona o processo de elaboração de um PGRS?",
-        answer: "O Plano de Gerenciamento de Resíduos Sólidos (PGRS) é elaborado através de diagnóstico dos resíduos gerados, classificação conforme NBR 10004, definição de procedimentos de manejo, armazenamento, transporte e destinação final, além de estabelecer metas de redução e reciclagem.",
-        relatedLink: {
-          text: "Ver detalhes sobre Planos e Relatórios",
-          href: "/service/reports"
-        }
-      },
-      {
-        question: "Vocês atendem empresas de pequeno porte?",
-        answer: "Sim! Atendemos empresas de todos os portes, desde microempresas até grandes corporações. Nossos serviços são personalizados conforme a necessidade e orçamento de cada cliente, sempre mantendo a qualidade técnica."
-      },
-      {
-        question: "Qual a diferença entre monitoramento ambiental e auditoria?",
-        answer: "O monitoramento é um acompanhamento contínuo de parâmetros ambientais conforme condicionantes das licenças. A auditoria é uma avaliação pontual e abrangente do cumprimento legal e eficácia dos sistemas de gestão ambiental.",
-        relatedLink: {
-          text: "Conheça nossos serviços de Monitoramento",
-          href: "/service/monitoring"
-        }
-      }
-    ]
+    question: "Por que minha empresa precisa de uma consultoria ambiental?",
+    answer: "Há várias razões importantes: **Conformidade Legal** - A legislação ambiental é complexa e está em constante mudança. Ajudamos sua empresa a navegar por essas exigências, evitando multas, embargos e outras penalidades. **Redução de Riscos e Custos** - Identificamos riscos ambientais que podem levar a passivos financeiros e danos à reputação, propondo soluções que otimizam recursos e reduzem custos. **Sustentabilidade e Imagem Corporativa** - Demonstramos o compromisso da sua empresa com a sustentabilidade, melhorando sua imagem perante clientes, investidores e sociedade. **Acesso a Mercados** - Muitas instituições financeiras e mercados exigem comprovação de boas práticas ambientais."
   },
   {
-    id: "processos-custos",
-    title: "Processos e Custos",
-    icon: "calculator",
-    items: [
-      {
-        question: "Quanto tempo demora para obter uma licença ambiental?",
-        answer: "O prazo varia conforme o tipo de licença, complexidade do empreendimento e órgão licenciador. Em média: Licença Prévia (4-6 meses), Licença de Instalação (4-6 meses), Licença de Operação (4-6 meses). Processos mais complexos podem levar mais tempo."
-      },
-      {
-        question: "Como são calculados os custos dos serviços?",
-        answer: "Os custos são calculados com base na complexidade do projeto, tempo estimado de execução, equipe técnica necessária, deslocamentos e custos diretos (análises laboratoriais, taxas de órgãos). Fornecemos orçamentos detalhados e transparentes para cada projeto.",
-        relatedLink: {
-          text: "Solicite um orçamento",
-          href: "/request-quote"
-        }
-      },
-      {
-        question: "É possível parcelar os pagamentos?",
-        answer: "Sim! Oferecemos opções de parcelamento conforme o cronograma do projeto. Para projetos de longa duração, estabelecemos marcos de pagamento alinhados com as entregas, facilitando o fluxo de caixa do cliente."
-      },
-      {
-        question: "Quais documentos preciso fornecer para iniciar um projeto?",
-        answer: "Os documentos variam conforme o serviço, mas geralmente incluem: dados cadastrais da empresa, caracterização da atividade, plantas do empreendimento, licenças existentes e informações sobre processos produtivos. Nossa equipe fornece uma lista específica após a análise inicial."
-      }
-    ]
+    question: "Quais tipos de serviços vocês oferecem?",
+    answer: "Oferecemos uma gama completa de soluções ambientais: **Licenciamento e Autorizações Ambientais** (LP, LI, LO, etc.), **Monitoramento e Análises Ambientais** (água, solo, ar, efluentes), **Elaboração de Planos e Relatórios Técnicos** (PGRS, EIA/RIMA, PCA, etc.), **Consultoria Estratégica e Acompanhamento de Projetos**, **Treinamentos e Capacitações Ambientais**, **Gestão e Manutenção de Requisitos Ambientais**. Cada serviço é personalizado conforme as necessidades específicas do seu empreendimento."
   },
   {
-    id: "beneficios",
-    title: "Benefícios e Resultados",
-    icon: "trending-up",
-    items: [
-      {
-        question: "Quais os benefícios de implementar um sistema de gestão ambiental?",
-        answer: "Os principais benefícios incluem: redução de custos operacionais, melhoria da eficiência energética, redução de riscos legais, acesso facilitado a financiamentos, valorização da marca, maior competitividade no mercado e atração de talentos e clientes conscientes."
-      },
-      {
-        question: "Como a L&P garante a qualidade e cumprimento de prazos?",
-        answer: "Mantemos uma equipe técnica qualificada, processos padronizados, cronogramas detalhados com marcos de controle, comunicação transparente com o cliente e parcerias com laboratórios e fornecedores confiáveis. Oferecemos garantia de qualidade em todos os nossos serviços."
-      },
-      {
-        question: "Vocês oferecem suporte após a entrega do projeto?",
-        answer: "Sim! Oferecemos suporte pós-entrega para esclarecimento de dúvidas, acompanhamento de implementação e serviços de manutenção. Também disponibilizamos contratos de gestão ambiental continuada para manter a conformidade legal."
-      },
-      {
-        question: "Posso ter uma estimativa de economia com seus serviços?",
-        answer: "Sim! Durante nossa consultoria inicial, realizamos uma análise que pode identificar oportunidades de economia em recursos naturais, energia, gestão de resíduos e prevenção de multas. Muitos clientes recuperam o investimento em consultoria em poucos meses."
-      }
-    ]
+    question: "Como funciona o processo de contratação e desenvolvimento de um projeto?",
+    answer: "Nosso processo é colaborativo e transparente, seguindo estas etapas: **1. Contato Inicial e Diagnóstico** - Entendemos suas necessidades através do formulário de solicitação de orçamento ou contato direto, realizando um diagnóstico preliminar. **2. Proposta Personalizada** - Elaboramos uma proposta técnica e comercial detalhada, com escopo, cronograma e custos. **3. Planejamento** - Após aprovação, definimos um plano de trabalho detalhado. **4. Execução** - Nossa equipe multidisciplinar executa os serviços, mantendo comunicação constante. **5. Entrega e Acompanhamento** - Entregamos os relatórios, planos ou licenças, oferecendo suporte para implementação conforme necessário."
+  },
+  {
+    question: "Quais são os benefícios tangíveis de investir em consultoria ambiental?",
+    answer: "Além da conformidade legal, os benefícios incluem: **Prevenção de multas e sanções ambientais**, **Otimização do uso de recursos naturais** (água, energia), levando à redução de custos, **Melhora da reputação e valor da marca**, **Aumento da competitividade** e acesso a novos mercados, **Melhoria do relacionamento com stakeholders** (comunidade, órgãos ambientais, investidores), **Identificação de oportunidades de inovação** e processos mais sustentáveis. O investimento em consultoria ambiental frequentemente se paga através da economia de recursos e prevenção de custos regulatórios."
+  },
+  {
+    question: "Quanto custam os serviços de consultoria ambiental?",
+    answer: "O custo varia significativamente dependendo da complexidade do projeto, do tipo de serviço, do porte do empreendimento e das especificidades locais. Fatores como urgência, localização, complexidade técnica e requisitos específicos influenciam o investimento. Encorajamos você a solicitar um orçamento personalizado para que possamos entender suas necessidades e fornecer uma estimativa precisa. Nosso compromisso é oferecer soluções com excelente custo-benefício, sempre transparentes sobre os custos envolvidos."
+  },
+  {
+    question: "Como escolher a consultoria ambiental certa para minha empresa?",
+    answer: "Considere os seguintes pontos essenciais: **Experiência e Especialização** - Verifique se a consultoria tem experiência comprovada no seu setor e nos serviços que você necessita. **Equipe Técnica Qualificada** - Avalie a qualificação e multidisciplinaridade da equipe. **Reputação e Referências** - Busque por depoimentos de clientes e estudos de caso. **Abordagem e Metodologia** - Entenda como a consultoria trabalha e se sua abordagem se alinha com as necessidades da sua empresa. **Comunicação e Transparência** - Escolha uma empresa que demonstre clareza na comunicação e transparência nos processos."
+  },
+  {
+    question: "Quanto tempo leva para obter uma licença ambiental?",
+    answer: "O prazo varia conforme o tipo de licença e complexidade do projeto. **Licenças Simplificadas** podem levar de 15 a 30 dias, **Licenças Prévias** geralmente variam entre 3 a 6 meses, **Licenças de Instalação** podem levar de 2 a 4 meses, e **Licenças de Operação** normalmente de 2 a 3 meses. Fatores como qualidade da documentação, necessidade de estudos complementares, consultas públicas e especificidades do órgão ambiental podem influenciar esses prazos. Nossa experiência nos permite otimizar processos e antecipar necessidades, agilizando a tramitação."
+  },
+  {
+    question: "Minha empresa precisa de licença ambiental para funcionar?",
+    answer: "A necessidade de licença ambiental depende do tipo de atividade e seu potencial poluidor. **Atividades de alto impacto** (indústrias, mineração, grandes empreendimentos) geralmente precisam de licenças específicas. **Atividades de médio impacto** podem necessitar de licenças simplificadas. **Atividades de baixo impacto** podem precisar apenas de declarações ou cadastros. Realizamos uma análise gratuita inicial para determinar exatamente quais licenças ou autorizações sua empresa precisa, baseando-nos na legislação aplicável e nas características específicas do seu empreendimento."
+  },
+  {
+    question: "O que acontece se minha empresa for autuada por questões ambientais?",
+    answer: "Em caso de autuação, é fundamental agir rapidamente. **Primeiros passos**: Analisar o auto de infração, identificar as não conformidades e avaliar prazos para defesa. **Nossa atuação**: Elaboramos defesas técnicas e administrativas, orientamos sobre medidas corretivas necessárias, acompanhamos processos administrativos e, quando necessário, buscamos acordos ou termos de ajustamento de conduta. **Prevenção**: O mais importante é a prevenção através de conformidade legal adequada. Oferecemos auditorias preventivas para identificar e corrigir não conformidades antes que se tornem problemas."
   }
 ];

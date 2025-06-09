@@ -8,7 +8,6 @@ import {
   SheetTrigger 
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { navData } from "./navData";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,22 +31,12 @@ export function MobileNav() {
               Serviços
             </Link>
             
-            <div className="flex flex-col gap-2">
-              <h3 className="text-lg font-semibold">Legislação</h3>
-              {navData.legislation.map((item) => (
-                <Link 
-                  key={item.title}
-                  to={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors pl-2"
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </div>
-            
             <Link to="/about" onClick={() => setIsOpen(false)} className="text-xl font-semibold">
               Sobre Nós
+            </Link>
+            
+            <Link to="/faq" onClick={() => setIsOpen(false)} className="text-xl font-semibold">
+              FAQ
             </Link>
             
             <Link to="/contact" onClick={() => setIsOpen(false)} className="text-xl font-semibold">
