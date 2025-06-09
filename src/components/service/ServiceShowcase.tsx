@@ -1,252 +1,102 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, Globe, Recycle, CheckCircle, ArrowRight, Sparkles, TrendingUp } from "lucide-react";
-
-const services = [{
-  icon: <Leaf className="h-10 w-10 text-eco-green" />,
-  title: "Licenciamento Ambiental",
-  description: "Navegue pela burocracia ambiental e opere legalmente com nosso suporte especializado",
-  highlights: [
-    "Obtenção de todas as licenças necessárias",
-    "Acompanhamento em órgãos ambientais",
-    "Garantia de conformidade legal total"
-  ],
-  link: "/service/licensing",
-  bgGradient: "from-eco-green/8 via-eco-green/3 to-transparent",
-  borderColor: "border-eco-green/30 hover:border-eco-green/60",
-  iconBg: "bg-eco-green/15",
-  buttonColor: "bg-eco-green hover:bg-eco-green-dark",
-  badge: "Essencial"
-}, {
-  icon: <Beaker className="h-10 w-10 text-eco-blue" />,
-  title: "Monitoramento Ambiental",
-  description: "Mantenha sua empresa em conformidade com acompanhamento sistemático e análises precisas",
-  highlights: [
-    "Monitoramento contínuo de condicionantes",
-    "Análises laboratoriais especializadas",
-    "Relatórios técnicos detalhados"
-  ],
-  link: "/service/monitoring",
-  bgGradient: "from-eco-blue/8 via-eco-blue/3 to-transparent",
-  borderColor: "border-eco-blue/30 hover:border-eco-blue/60",
-  iconBg: "bg-eco-blue/15",
-  buttonColor: "bg-eco-blue hover:bg-eco-blue-dark",
-  badge: "Contínuo"
-}, {
-  icon: <FileText className="h-10 w-10 text-eco-earth-dark" />,
-  title: "Planos e Relatórios",
-  description: "Documentação técnica completa para gestão ambiental eficiente e conformidade",
-  highlights: [
-    "Planos de gerenciamento de resíduos",
-    "Estudos de impacto ambiental",
-    "Programas de gestão customizados"
-  ],
-  link: "/service/reports",
-  bgGradient: "from-eco-earth-medium/8 via-eco-earth-medium/3 to-transparent",
-  borderColor: "border-eco-earth-medium/30 hover:border-eco-earth-medium/60",
-  iconBg: "bg-eco-earth-medium/15",
-  buttonColor: "bg-eco-earth-dark hover:bg-eco-earth-dark/90",
-  badge: "Técnico"
-}, {
-  icon: <Users className="h-10 w-10 text-eco-accent-teal" />,
-  title: "Consultoria Especializada",
-  description: "Assessoria técnica personalizada para resolver questões ambientais complexas",
-  highlights: [
-    "Consultoria para questões específicas",
-    "Acompanhamento de projetos",
-    "Defesas em processos ambientais"
-  ],
-  link: "/service/consulting",
-  bgGradient: "from-eco-accent-teal/8 via-eco-accent-teal/3 to-transparent",
-  borderColor: "border-eco-accent-teal/30 hover:border-eco-accent-teal/60",
-  iconBg: "bg-eco-accent-teal/15",
-  buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
-  badge: "Estratégico"
-}, {
-  icon: <TreeDeciduous className="h-10 w-10 text-eco-accent-sage" />,
-  title: "Treinamentos Ambientais",
-  description: "Capacite sua equipe com conhecimento especializado em gestão ambiental",
-  highlights: [
-    "Treinamentos personalizados",
-    "Certificação profissional",
-    "Capacitação em legislação atual"
-  ],
-  link: "/service/training",
-  bgGradient: "from-eco-accent-sage/8 via-eco-accent-sage/3 to-transparent",
-  borderColor: "border-eco-accent-sage/30 hover:border-eco-accent-sage/60",
-  iconBg: "bg-eco-accent-sage/15",
-  buttonColor: "bg-eco-accent-sage hover:bg-eco-accent-sage/90",
-  badge: "Capacitação"
-}, {
-  icon: <CloudSun className="h-10 w-10 text-eco-blue-muted" />,
-  title: "Gestão Ambiental",
-  description: "Mantenha a conformidade com serviços continuados de gestão e manutenção",
-  highlights: [
-    "Renovação automática de licenças",
-    "Gestão de declarações anuais",
-    "Suporte técnico permanente"
-  ],
-  link: "/service/management",
-  bgGradient: "from-eco-blue-muted/8 via-eco-blue-muted/3 to-transparent",
-  borderColor: "border-eco-blue-muted/30 hover:border-eco-blue-muted/60",
-  iconBg: "bg-eco-blue-muted/15",
-  buttonColor: "bg-eco-blue-muted hover:bg-eco-blue-muted/90",
-  badge: "Gestão"
-}, {
-  icon: <Globe className="h-10 w-10 text-eco-accent-teal" />,
-  title: "Consultoria ESG",
-  description: "Estratégias ESG para sustentabilidade, competitividade e acesso a investimentos",
-  highlights: [
-    "Diagnóstico e estratégias ESG completas",
-    "Relatórios de sustentabilidade certificados",
-    "Engajamento estratégico com stakeholders"
-  ],
-  link: "/service/esg",
-  bgGradient: "from-eco-accent-teal/8 via-eco-accent-teal/3 to-transparent",
-  borderColor: "border-eco-accent-teal/30 hover:border-eco-accent-teal/60",
-  iconBg: "bg-eco-accent-teal/15",
-  buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
-  badge: "Inovação",
-  isNew: true
-}, {
-  icon: <Recycle className="h-10 w-10 text-eco-accent-sage" />,
-  title: "Mudanças Climáticas",
-  description: "Descarbonização e adaptação climática para um futuro sustentável",
-  highlights: [
-    "Inventários GEE e pegada de carbono",
-    "Planos de descarbonização baseados na ciência",
-    "Projetos de crédito de carbono certificados"
-  ],
-  link: "/service/climate",
-  bgGradient: "from-eco-accent-sage/8 via-eco-accent-sage/3 to-transparent",
-  borderColor: "border-eco-accent-sage/30 hover:border-eco-accent-sage/60",
-  iconBg: "bg-eco-accent-sage/15",
-  buttonColor: "bg-eco-accent-sage hover:bg-eco-accent-sage/90",
-  badge: "Futuro",
-  isNew: true
-}];
+import { serviceCategories } from "@/data/serviceCategories";
 
 export const ServiceShowcase = () => {
+  const categories = Object.entries(serviceCategories);
+
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Enhanced background with subtle textures */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-eco-green/2 to-eco-earth-light/15"></div>
-      <div className="absolute inset-0 leaf-pattern opacity-[0.015]"></div>
-      
-      {/* Floating organic shapes */}
-      <div className="absolute top-1/4 right-10 w-60 h-60 bg-eco-green/4 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-eco-blue/4 rounded-full blur-3xl animate-pulse-slow"></div>
+    <section className="relative py-20">
+      {/* Background with subtle pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-eco-green/3 via-background to-eco-blue/2"></div>
+      <div className="absolute inset-0 leaf-pattern opacity-[0.02]"></div>
       
       <div className="container relative z-10">
-        {/* Enhanced header section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-eco-green/10 text-eco-green font-medium text-sm uppercase tracking-wider rounded-full mb-6">
-            <Sparkles className="h-4 w-4" />
-            Soluções Completas
-          </div>
-          
-          <h2 className="font-primary text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-            Nossos Serviços
+        {/* Introdução à Seção */}
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-primary text-gray-900">
+            Soluções Ambientais Completas para Sua Empresa
           </h2>
-          
-          <div className="h-1 w-24 bg-eco-accent-teal rounded-full mx-auto mb-8"></div>
-          
-          <div className="max-w-3xl mx-auto">
-            <p className="font-body text-lg text-gray-600 leading-relaxed mb-6">
-              Na <strong className="text-eco-green-dark">L&P Soluções Ambientais</strong>, oferecemos consultoria 
-              especializada que transforma desafios ambientais em oportunidades de crescimento sustentável para sua empresa.
-            </p>
-            <p className="font-body text-base text-gray-500 leading-relaxed">
-              Nossa abordagem integrada garante conformidade legal, eficiência operacional e excelência ambiental 
-              em todos os aspectos do seu negócio.
-            </p>
-          </div>
+          <p className="text-lg text-gray-600 leading-relaxed font-body">
+            Na L&P Soluções Ambientais, oferecemos consultoria especializada que transforma desafios 
+            ambientais em oportunidades de crescimento sustentável. Nossa abordagem integrada garante 
+            conformidade legal, redução de riscos e fortalecimento da sua imagem corporativa no mercado.
+          </p>
+          <div className="h-1 w-24 bg-eco-green rounded-full mx-auto mt-6"></div>
         </div>
-        
-        {/* Services grid with enhanced design */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <Card 
-              key={index}
-              className={`group relative overflow-hidden transition-all duration-500 bg-gradient-to-br ${service.bgGradient} backdrop-blur-sm border-2 ${service.borderColor} hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02]`}
-            >
-              {/* Badge para serviços novos */}
-              {service.isNew && (
-                <div className="absolute top-4 right-4 z-20">
-                  <div className="bg-gradient-to-r from-eco-accent-orange to-eco-accent-yellow text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
-                    <TrendingUp className="h-3 w-3" />
-                    NOVO
-                  </div>
-                </div>
-              )}
 
-              {/* Subtle overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              <CardHeader className="pb-4 relative z-10">
+        {/* Grid de Categorias de Serviços */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          {categories.map(([key, category]) => (
+            <Card 
+              key={key}
+              className="group border-eco-green/20 hover:border-eco-green/40 transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 overflow-hidden"
+            >
+              {/* Header com ícone e título */}
+              <CardHeader className="pb-4 bg-gradient-to-br from-eco-green/5 to-eco-blue/3">
                 <div className="flex items-start gap-4">
-                  <div className={`p-4 rounded-xl ${service.iconBg} shadow-sm flex-shrink-0 transition-all duration-300 group-hover:shadow-md group-hover:scale-110`}>
-                    {service.icon}
+                  <div className="p-3 bg-eco-green/15 rounded-xl group-hover:bg-eco-green/25 transition-colors shadow-sm flex-shrink-0">
+                    {React.cloneElement(category.icon as React.ReactElement, {
+                      className: "h-8 w-8 text-eco-green"
+                    })}
                   </div>
                   <div className="flex-grow">
-                    <div className="mb-2">
-                      <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${service.iconBg} text-gray-600 group-hover:text-gray-800 transition-colors`}>
-                        {service.badge}
-                      </span>
-                    </div>
-                    <CardTitle className="font-secondary text-xl mb-3 group-hover:text-eco-green-dark transition-colors leading-tight">
-                      {service.title}
+                    <CardTitle className="text-xl font-secondary text-gray-900 group-hover:text-eco-green-dark transition-colors mb-2">
+                      {category.title}
                     </CardTitle>
-                    <CardDescription className="font-body text-gray-600 text-base leading-relaxed">
-                      {service.description}
+                    <CardDescription className="text-sm text-gray-600 leading-relaxed font-body">
+                      {getShortDescription(key)}
                     </CardDescription>
                   </div>
                 </div>
               </CardHeader>
               
-              <CardContent className="pt-0 relative z-10">
-                {/* Main highlights */}
+              <CardContent className="p-6">
+                {/* Principais Entregas/Focos */}
                 <div className="mb-6">
-                  <h4 className="font-secondary font-semibold text-sm text-gray-700 mb-3 uppercase tracking-wide">
-                    Principais Entregas
+                  <h4 className="text-sm font-semibold text-eco-green-dark mb-3 font-secondary">
+                    Principais Entregas:
                   </h4>
                   <ul className="space-y-2">
-                    {service.highlights.map((highlight, idx) => (
-                      <li 
-                        key={idx}
-                        className="flex items-start gap-3 group/item transition-all duration-300"
-                      >
-                        <CheckCircle className="h-4 w-4 text-eco-green mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
-                        <span className="font-body text-gray-700 text-sm leading-relaxed">
-                          {highlight}
-                        </span>
+                    {getMainDeliverables(key).map((deliverable, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-eco-green mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-gray-600 font-body">{deliverable}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                
-                {/* Action buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
+
+                {/* Call to Action */}
+                <div className="flex gap-3">
                   <Button 
-                    asChild
-                    className={`flex-1 ${service.buttonColor} text-white group-hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg font-medium`}
+                    asChild 
+                    variant="outline" 
+                    size="sm"
+                    className="border-eco-green/40 text-eco-green hover:bg-eco-green hover:text-white transition-all duration-300 flex-1"
                   >
-                    <Link to={service.link} className="flex items-center justify-center gap-2">
-                      Saiba mais
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <Link 
+                      to={`/services/${key}`}
+                      className="flex items-center justify-center gap-2"
+                    >
+                      Saiba Mais <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
                   
                   <Button 
                     asChild
-                    variant="outline"
-                    className="flex-1 border-eco-green/40 text-eco-green hover:bg-eco-green/10 hover:border-eco-green/60 transition-all duration-300"
+                    size="sm"
+                    className="bg-eco-green hover:bg-eco-green-dark text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
                   >
-                    <Link to="/request-quote" className="flex items-center justify-center gap-2">
-                      Solicitar Orçamento
+                    <Link 
+                      to="/request-quote"
+                      className="flex items-center gap-2"
+                    >
+                      Orçamento
                     </Link>
                   </Button>
                 </div>
@@ -254,29 +104,85 @@ export const ServiceShowcase = () => {
             </Card>
           ))}
         </div>
-        
-        {/* Bottom section with trust indicators */}
+
+        {/* CTA geral */}
         <div className="text-center mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
-            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-eco-green/30 hover:border-eco-green/50 transition-colors">
-              <CheckCircle className="h-5 w-5 text-eco-green" />
-              <span className="font-medium text-gray-700">+500 Projetos Realizados</span>
-            </div>
-            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-eco-blue/30 hover:border-eco-blue/50 transition-colors">
-              <CheckCircle className="h-5 w-5 text-eco-blue" />
-              <span className="font-medium text-gray-700">98% Taxa de Sucesso</span>
-            </div>
-            <div className="flex items-center justify-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-eco-accent-teal/30 hover:border-eco-accent-teal/50 transition-colors">
-              <CheckCircle className="h-5 w-5 text-eco-accent-teal" />
-              <span className="font-medium text-gray-700">Conformidade Garantida</span>
-            </div>
+          <div className="bg-gradient-to-r from-eco-green/10 to-eco-blue/10 rounded-2xl p-8 max-w-3xl mx-auto border border-eco-green/20">
+            <h3 className="text-2xl font-bold mb-4 font-primary text-gray-900">
+              Não Encontrou o Que Procura?
+            </h3>
+            <p className="text-gray-600 mb-6 font-body">
+              Nossa equipe desenvolve soluções personalizadas para atender às necessidades específicas do seu negócio.
+            </p>
+            <Button asChild size="lg" className="bg-eco-green hover:bg-eco-green-dark">
+              <Link to="/contact" className="flex items-center gap-2">
+                Fale com Nossos Especialistas <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
-          
-          <p className="font-body text-gray-500 text-sm">
-            Transformando desafios ambientais em oportunidades de crescimento sustentável
-          </p>
         </div>
       </div>
     </section>
   );
 };
+
+// Funções auxiliares para conteúdo específico por categoria
+function getShortDescription(key: string): string {
+  const descriptions: Record<string, string> = {
+    licensing: "Navegue pela burocracia ambiental e opere legalmente com nosso suporte especializado.",
+    monitoring: "Mantenha conformidade contínua com monitoramento profissional e relatórios técnicos.",
+    reports: "Documentação técnica especializada para gestão ambiental e atendimento legal.",
+    consulting: "Assessoria estratégica para questões ambientais complexas e tomada de decisão.",
+    training: "Capacite suas equipes com conhecimento ambiental prático e certificado.",
+    management: "Gestão contínua para manter sua empresa sempre em conformidade ambiental.",
+    esg: "Fortaleça sua posição ESG e acesse novos mercados e investimentos sustentáveis.",
+    climate: "Prepare-se para o futuro com estratégias de descarbonização e adaptação climática."
+  };
+  return descriptions[key] || "";
+}
+
+function getMainDeliverables(key: string): string[] {
+  const deliverables: Record<string, string[]> = {
+    licensing: [
+      "Licenças Ambientais (LP, LI, LO)",
+      "Autorizações e Dispensas",
+      "Acompanhamento de Processos"
+    ],
+    monitoring: [
+      "Coleta e Análises Laboratoriais",
+      "Relatórios de Conformidade",
+      "Gestão de Condicionantes"
+    ],
+    reports: [
+      "Planos de Gerenciamento (PGRS, PGRSS)",
+      "Estudos de Impacto (EIA/RIMA)",
+      "Inventários e Relatórios Técnicos"
+    ],
+    consulting: [
+      "Diagnóstico e Adequação Ambiental",
+      "Assessoria em Fiscalizações",
+      "Suporte em Decisões Estratégicas"
+    ],
+    training: [
+      "Treinamentos Certificados",
+      "Capacitação em Gestão Ambiental",
+      "Programas Customizados"
+    ],
+    management: [
+      "Renovação de Licenças",
+      "Declarações Anuais",
+      "Manutenção de Conformidade"
+    ],
+    esg: [
+      "Diagnóstico e Estratégia ESG",
+      "Relatórios de Sustentabilidade",
+      "Análise de Riscos e Oportunidades"
+    ],
+    climate: [
+      "Inventários de Gases de Efeito Estufa",
+      "Planos de Descarbonização",
+      "Projetos de Crédito de Carbono"
+    ]
+  };
+  return deliverables[key] || [];
+}
