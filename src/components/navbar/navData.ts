@@ -56,6 +56,10 @@ export const navData = {
       href: "/services"
     },
     {
+      title: "Licenças e Autorizações",
+      href: "/licenses-authorizations"
+    },
+    {
       title: "Perguntas Frequentes",
       href: "/faq"
     },
