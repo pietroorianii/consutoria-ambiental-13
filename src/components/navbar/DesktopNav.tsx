@@ -3,13 +3,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { 
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import NavListItem from "./NavListItem";
-import { navData } from "./navData";
 import { Leaf } from "lucide-react";
 
 export function DesktopNav() {
@@ -26,9 +22,6 @@ export function DesktopNav() {
           <h1 className="text-xl font-bold text-gray-900 font-primary group-hover:text-eco-green-dark transition-colors duration-300">
             L&P Soluções Ambientais
           </h1>
-          <p className="text-xs text-muted-foreground font-body">
-            Consultoria especializada
-          </p>
         </div>
       </Link>
 
@@ -59,58 +52,16 @@ export function DesktopNav() {
             </Link>
           </NavigationMenuItem>
 
-          {/* Services with dropdown */}
+          {/* Services */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger 
-              className="hover:bg-eco-green/10 hover:text-eco-green-dark data-[state=open]:bg-eco-green/15"
+            <Link 
+              to="/services" 
+              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green-dark focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
               onMouseEnter={() => setHoveredItem("services")}
+              onMouseLeave={() => setHoveredItem(null)}
             >
               Serviços
-            </NavigationMenuTrigger>
-            <NavigationMenuContent className="left-0 top-0 w-full md:w-[500px] lg:w-[600px]">
-              <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <div className="row-span-3">
-                  <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-eco-green/50 to-eco-green p-6 no-underline outline-none focus:shadow-md">
-                    <Leaf className="h-6 w-6 text-white" />
-                    <div className="mb-2 mt-4 text-lg font-medium text-white">
-                      Nossos Serviços
-                    </div>
-                    <p className="text-sm leading-tight text-white/90">
-                      Soluções ambientais completas para sua empresa
-                    </p>
-                  </div>
-                </div>
-                <div className="grid gap-2">
-                  {navData.services.slice(0, 4).map((service) => (
-                    <NavListItem
-                      key={service.title}
-                      title={service.title}
-                      href={service.href}
-                    >
-                      {service.description}
-                    </NavListItem>
-                  ))}
-                </div>
-                <div className="grid gap-2">
-                  {navData.services.slice(4).map((service) => (
-                    <NavListItem
-                      key={service.title}
-                      title={service.title}
-                      href={service.href}
-                    >
-                      {service.description}
-                    </NavListItem>
-                  ))}
-                  <NavListItem
-                    title="Ver Todos os Serviços"
-                    href="/services"
-                    className="font-medium text-eco-green-dark border-t pt-2"
-                  >
-                    Explore nossa gama completa de soluções
-                  </NavListItem>
-                </div>
-              </div>
-            </NavigationMenuContent>
+            </Link>
           </NavigationMenuItem>
 
           {/* FAQ */}

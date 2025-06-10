@@ -3,17 +3,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Menu, ChevronDown, Leaf } from "lucide-react";
-import { navData } from "./navData";
+import { Menu, Leaf } from "lucide-react";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
 
   const closeMenu = () => {
     setIsOpen(false);
-    setServicesOpen(false);
   };
 
   return (
@@ -60,33 +56,15 @@ export function MobileNav() {
             >
               Sobre Nós
             </Link>
-
-            {/* Services Collapsible */}
-            <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
-              <CollapsibleTrigger className="flex w-full items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors">
-                Serviços
-                <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-              </CollapsibleTrigger>
-              <CollapsibleContent className="mt-2 space-y-2 pl-4">
-                {navData.services.map((service) => (
-                  <Link
-                    key={service.title}
-                    to={service.href}
-                    onClick={closeMenu}
-                    className="block px-4 py-2 text-sm text-gray-600 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors"
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-                <Link
-                  to="/services"
-                  onClick={closeMenu}
-                  className="block px-4 py-2 text-sm font-medium text-eco-green border-t pt-4 mt-4"
-                >
-                  Ver Todos os Serviços
-                </Link>
-              </CollapsibleContent>
-            </Collapsible>
+            
+            {/* Services */}
+            <Link
+              to="/services"
+              onClick={closeMenu}
+              className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors"
+            >
+              Serviços
+            </Link>
 
             {/* FAQ */}
             <Link

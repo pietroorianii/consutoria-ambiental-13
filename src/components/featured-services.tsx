@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,8 +18,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-// Mapeamento completo de estilos para todas as categorias
-const serviceStyles: { [key: string]: { icon: React.ReactNode; badge: string; bgGradient: string; borderColor: string; buttonColor: string; isNew?: boolean } } = {
+// Mapeamento completo de estilos para todas as categorias - removendo isNew
+const serviceStyles: { [key: string]: { icon: React.ReactNode; badge: string; bgGradient: string; borderColor: string; buttonColor: string } } = {
   licensing: {
     icon: <Leaf className="h-8 w-8 text-eco-green" />,
     badge: "Essencial",
@@ -68,16 +67,14 @@ const serviceStyles: { [key: string]: { icon: React.ReactNode; badge: string; bg
     badge: "Inovação",
     bgGradient: "from-eco-green-dark/8 via-eco-green-dark/3 to-transparent",
     borderColor: "border-eco-green-dark/30 hover:border-eco-green-dark/60",
-    buttonColor: "bg-eco-green-dark hover:bg-eco-green-dark/90",
-    isNew: true
+    buttonColor: "bg-eco-green-dark hover:bg-eco-green-dark/90"
   },
   climate: {
     icon: <Recycle className="h-8 w-8 text-eco-accent-yellow" />,
     badge: "Futuro",
     bgGradient: "from-eco-accent-yellow/8 via-eco-accent-yellow/3 to-transparent",
     borderColor: "border-eco-accent-yellow/30 hover:border-eco-accent-yellow/60",
-    buttonColor: "bg-eco-accent-yellow hover:bg-eco-accent-yellow/90",
-    isNew: true
+    buttonColor: "bg-eco-accent-yellow hover:bg-eco-accent-yellow/90"
   }
 };
 
@@ -118,15 +115,6 @@ export function FeaturedServices() {
                 className={`group relative overflow-hidden transition-all duration-500 bg-gradient-to-br ${styles.bgGradient} backdrop-blur-sm border-2 ${styles.borderColor} h-full flex flex-col hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] scroll-trigger`}
                 style={{ animationDelay: `${0.1 + index * 0.05}s` }}
               >
-                {styles.isNew && (
-                  <div className="absolute top-3 right-3 z-10">
-                    <div className="bg-gradient-to-r from-eco-accent-orange to-eco-accent-yellow text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
-                      <TrendingUp className="h-3 w-3" />
-                      NOVO
-                    </div>
-                  </div>
-                )}
-                
                 <CardHeader className="text-center pb-4 relative z-10">
                   <div className={`mb-4 bg-opacity-15 p-3 rounded-xl w-16 h-16 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-md`}>
                     {styles.icon}
@@ -142,18 +130,18 @@ export function FeaturedServices() {
                 </CardHeader>
                 
                 <CardContent className="px-6 pb-6 flex-grow relative z-10 flex flex-col">
-                  {/* LISTA DETALHADA DE SUB-SERVIÇOS */}
+                  {/* LISTA DETALHADA DE SUB-SERVIÇOS com fonte maior */}
                   <ul className="space-y-2 text-left mb-4 flex-grow">
                     {serviceData.services.slice(0, 3).map((subService, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="h-3.5 w-3.5 text-eco-green mt-1 flex-shrink-0" />
-                        <span className="font-body text-xs text-gray-700">{subService.title}</span>
+                        <CheckCircle className="h-4 w-4 text-eco-green mt-1 flex-shrink-0" />
+                        <span className="font-body text-sm text-gray-700">{subService.title}</span>
                       </li>
                     ))}
                     {serviceData.services.length > 3 && (
                         <li className="flex items-start gap-2">
-                             <CheckCircle className="h-3.5 w-3.5 text-eco-green/50 mt-1 flex-shrink-0" />
-                            <span className="font-body text-xs text-gray-500">e mais...</span>
+                             <CheckCircle className="h-4 w-4 text-eco-green/50 mt-1 flex-shrink-0" />
+                            <span className="font-body text-sm text-gray-500">e mais...</span>
                         </li>
                     )}
                   </ul>
