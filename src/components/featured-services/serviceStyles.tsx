@@ -22,7 +22,7 @@ export interface ServiceStyle {
   buttonColor: string;
 }
 
-export const serviceStyles: { [key: string]: ServiceStyle } = {
+export const serviceStyles: Record<string, ServiceStyle> = {
   licensing: {
     icon: <Leaf className="h-8 w-8 text-eco-green" />,
     badge: "Essencial",
