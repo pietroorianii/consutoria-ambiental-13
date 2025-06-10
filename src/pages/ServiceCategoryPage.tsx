@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { CTASection } from "@/components/cta-section";
@@ -9,21 +8,20 @@ import { serviceCategories, ServiceCategoryType } from "@/data/serviceCategories
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Target, Users } from "lucide-react";
-
 const ServiceCategoryPage = () => {
-  const { categoryId } = useParams<{ categoryId: string }>();
+  const {
+    categoryId
+  } = useParams<{
+    categoryId: string;
+  }>();
   const categoryData = categoryId ? serviceCategories[categoryId as ServiceCategoryType] : null;
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [categoryId]);
-
   if (!categoryData) {
     return <CategoryNotFound />;
   }
-
-  return (
-    <PageWrapper>
+  return <PageWrapper>
       <ServiceBanner categoryData={categoryData} />
       
       {/* Introdução à Categoria */}
@@ -75,7 +73,7 @@ const ServiceCategoryPage = () => {
       </div>
       
       {/* Lista de Serviços da Categoria */}
-      <div className="relative py-16">
+      <div className="relative py-0">
         <div className="container relative">
           <ServiceList services={categoryData.services} categoryId={categoryId || ''} />
         </div>
@@ -88,31 +86,21 @@ const ServiceCategoryPage = () => {
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent -z-10"></div>
         <CTASection />
       </div>
-    </PageWrapper>
-  );
+    </PageWrapper>;
 };
 
 // Função auxiliar para descrições detalhadas por categoria
 function getDetailedCategoryDescription(categoryId: string): string {
   const descriptions: Record<string, string> = {
     licensing: "Nossa expertise em licenciamento ambiental garante que sua empresa obtenha todas as autorizações necessárias de forma ágil e segura. Navegamos pela complexidade regulatória para que você possa focar no seu negócio, sempre mantendo total conformidade legal.",
-    
     monitoring: "Mantemos sua empresa em conformidade contínua através de monitoramento profissional e sistemático. Nossa abordagem proativa identifica oportunidades de melhoria e previne não conformidades antes que se tornem problemas.",
-    
     reports: "Transformamos requisitos técnicos complexos em documentos claros e eficazes. Nossos planos e relatórios não apenas atendem às exigências legais, mas servem como ferramentas estratégicas para a gestão ambiental da sua empresa.",
-    
     consulting: "Oferecemos assessoria estratégica baseada em décadas de experiência no setor. Nossa consultoria vai além do cumprimento legal, ajudando sua empresa a transformar desafios ambientais em vantagens competitivas sustentáveis.",
-    
     training: "Capacitamos suas equipes com conhecimento prático e aplicável. Nossos treinamentos são desenvolvidos especificamente para as necessidades do seu setor, garantindo que sua equipe esteja sempre preparada para os desafios ambientais.",
-    
     management: "Cuidamos da gestão ambiental contínua da sua empresa, mantendo-a sempre em conformidade. Nossa abordagem sistemática garante que você nunca perca prazos importantes e mantenha todas as suas obrigações em dia.",
-    
     esg: "Ajudamos sua empresa a se posicionar como líder em sustentabilidade. Nossa consultoria ESG conecta práticas ambientais responsáveis com objetivos de negócio, abrindo portas para novos mercados e oportunidades de investimento.",
-    
     climate: "Preparamos sua empresa para o futuro com estratégias inteligentes de descarbonização. Nossa abordagem combina redução de impactos ambientais com oportunidades de negócio em economia verde e mercados de carbono."
   };
-  
   return descriptions[categoryId] || "Nossa expertise nesta área garante soluções eficazes e conformidade total com a legislação ambiental vigente.";
 }
-
 export default ServiceCategoryPage;
