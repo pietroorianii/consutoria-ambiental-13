@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -78,6 +79,15 @@ const serviceStyles: { [key: string]: { icon: React.ReactNode; badge: string; bg
   }
 };
 
+// Default fallback styles
+const defaultStyles = {
+  icon: <TrendingUp className="h-8 w-8 text-gray-500" />,
+  badge: "Serviço",
+  bgGradient: "from-gray-50/8 via-gray-50/3 to-transparent",
+  borderColor: "border-gray-300/30 hover:border-gray-300/60",
+  buttonColor: "bg-gray-500 hover:bg-gray-600"
+};
+
 export function FeaturedServices() {
   const serviceEntries = Object.entries(serviceCategories);
 
@@ -108,7 +118,7 @@ export function FeaturedServices() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {serviceEntries.map(([key, serviceData], index) => {
-            const styles = serviceStyles[key] || {};
+            const styles = serviceStyles[key] || defaultStyles;
             return (
               <Card 
                 key={key} 
