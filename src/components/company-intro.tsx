@@ -1,41 +1,55 @@
+
 import React from "react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+
 export function CompanyIntro() {
-  return <section className="container py-24 lg:py-32 relative">
+  return (
+    <section className="container py-24 lg:py-32 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-organic-pattern opacity-20 z-0"></div>
       
-      {/* Decorative elements - spinning ones removed */}
-      
       <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="space-y-8 scroll-trigger">
-          <div className="inline-block px-4 py-2 bg-eco-green/10 rounded-full text-eco-green font-medium text-sm uppercase tracking-wider">ESPECIALIDADE</div>
+          <div className="inline-block px-4 py-2 bg-eco-green/10 rounded-full text-eco-green font-medium text-sm uppercase tracking-wider">
+            ESPECIALIDADE
+          </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-800 dark:text-gray-100" style={{
-          fontFamily: "'Poppins', sans-serif"
-        }}>
-            Expertise em Soluções Ambientais
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-eco-neutral-dark" style={{
+            fontFamily: "'Poppins', sans-serif"
+          }}>
+            Por que escolher a L&P Consultoria Ambiental?
           </h2>
           
           <div className="h-1 w-20 bg-eco-accent-teal rounded-full"></div>
           
           <p className="text-muted-foreground text-lg">
-            A L&P Soluções Ambientais oferece serviços de consultoria e assessoria ambiental completa, 
-            proporcionando às empresas o suporte necessário para atender às exigências da legislação ambiental 
-            vigente de forma eficiente e sustentável.
+            <strong>Mais de 15 anos</strong> resolvendo os problemas ambientais mais complexos para empresas de todos os portes. 
+            Nossa missão é simples: <strong>garantir que sua empresa esteja sempre em conformidade</strong> com a legislação ambiental, 
+            evitando multas, embargos e dores de cabeça burocráticas.
           </p>
           
-          <p className="text-muted-foreground text-lg">
-            Nossa equipe de profissionais qualificados atua em todo o território nacional, 
-            oferecendo soluções personalizadas para cada cliente, sempre buscando a excelência 
-            e a inovação em todos os projetos que desenvolvemos.
-          </p>
+          <div className="bg-eco-green/5 p-6 rounded-lg border-l-4 border-eco-accent-primary">
+            <h3 className="font-semibold text-eco-neutral-dark mb-3">Nossa Garantia de Resultado:</h3>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-eco-accent-primary rounded-full"></div>
+                <span>95% de aprovação em licenciamentos na primeira tentativa</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-eco-accent-primary rounded-full"></div>
+                <span>Redução média de 60% em multas através de defesas técnicas</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-eco-accent-primary rounded-full"></div>
+                <span>Atendimento de urgência 24h para casos críticos</span>
+              </li>
+            </ul>
+          </div>
           
           <div className="pt-6 flex flex-wrap gap-5">
-            {/* Botão "Nossos Serviços" foi removido daqui */}
-            <Button asChild variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green/5 py-6 px-8 rounded-lg text-base">
-              <Link to="/about#team" className="flex items-center gap-2">
+            <Button asChild className="bg-eco-accent-primary hover:bg-eco-accent-primary/90 py-6 px-8 rounded-lg text-base">
+              <Link to="/about" className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
@@ -45,34 +59,46 @@ export function CompanyIntro() {
                 Conhecer Nossa Equipe
               </Link>
             </Button>
+            
+            <Button asChild variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green/5 py-6 px-8 rounded-lg text-base">
+              <Link to="/services" className="flex items-center gap-2">
+                Ver Nossos Serviços
+              </Link>
+            </Button>
           </div>
         </div>
         
         <div className="relative scroll-trigger h-[550px]">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-eco-accent-teal/10 eco-blob rounded-3xl -z-10"></div>
+          <div className="absolute top-10 right-10 w-72 h-72 bg-eco-accent-teal/10 rounded-3xl -z-10"></div>
           
           {/* Main image with glass card overlay */}
           <div className="relative h-[500px] w-full overflow-hidden rounded-2xl shadow-soft hover-grow">
-            <img src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" alt="Nossa empresa em ação" className="w-full h-full object-cover" />
+            <img 
+              src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" 
+              alt="Equipe L&P Consultoria Ambiental em campo realizando licenciamento ambiental" 
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
             
             {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-eco-green/40 to-eco-blue/30 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-eco-green/40 to-eco-accent-primary/30 mix-blend-multiply"></div>
             
             {/* Content card */}
             <div className="absolute bottom-0 left-0 right-0 p-8 glass-blur-dark">
-              <h3 className="text-white text-xl font-semibold mb-2">Compromisso com o futuro sustentável</h3>
-              <p className="text-white/90">Atuando para equilibrar desenvolvimento e preservação ambiental</p>
+              <h3 className="text-white text-xl font-semibold mb-2">Expertise Reconhecida no Mercado</h3>
+              <p className="text-white/90">Mais de 500 licenças aprovadas e 200 defesas ambientais bem-sucedidas</p>
             </div>
           </div>
           
           {/* Decorative card */}
-          <div className="absolute -bottom-8 -left-8 glass-card p-6 shadow-soft">
+          <div className="absolute -bottom-8 -left-8 glass-card p-6 shadow-soft bg-white">
             <div className="flex items-center gap-3">
               <div className="text-3xl text-eco-green font-bold">15+</div>
-              <div className="text-sm">Anos de<br />experiência</div>
+              <div className="text-sm text-eco-neutral-dark">Anos de<br />experiência</div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }

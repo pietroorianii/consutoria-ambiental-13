@@ -2,34 +2,34 @@
 export const navData = {
   services: [
     {
-      title: "Licenciamento e Autorizações",
+      title: "Licenciamento Ambiental",
       href: "/service/licensing",
-      description: "Licenciamentos Ambientais e Autorizações"
+      description: "Licenças LP, LI, LO e Autorizações sem complicações"
     },
     {
       title: "Monitoramento e Análises",
       href: "/service/monitoring",
-      description: "Acompanhamento de condicionantes e análises ambientais"
+      description: "Acompanhamento de condicionantes e gestão de MTR"
     },
     {
-      title: "Planos e Relatórios",
+      title: "PGRS e Relatórios",
       href: "/service/reports",
-      description: "Elaboração de planos e relatórios ambientais"
+      description: "Planos de Gerenciamento de Resíduos e EIA/RIMA"
     },
     {
-      title: "Acompanhamento e Consultoria",
+      title: "Consultoria Especializada",
       href: "/service/consulting",
-      description: "Acompanhamento de projetos e consultoria ambiental"
+      description: "Regularização de passivos e defesas ambientais"
     },
     {
-      title: "Treinamentos",
+      title: "Treinamentos Corporativos",
       href: "/service/training",
-      description: "Treinamentos e capacitações ambientais"
+      description: "Capacitação em gestão ambiental para equipes"
     },
     {
-      title: "Gestão e Manutenção",
+      title: "Gestão Contínua",
       href: "/service/management",
-      description: "Gestão contínua e manutenção ambiental"
+      description: "Renovação de licenças e gestão de prazos"
     },
     {
       title: "Consultoria ESG",
@@ -39,7 +39,7 @@ export const navData = {
     {
       title: "Mudanças Climáticas",
       href: "/service/climate",
-      description: "Descarbonização e adaptação climática"
+      description: "Descarbonização e inventários de GEE"
     }
   ],
   mainNav: [

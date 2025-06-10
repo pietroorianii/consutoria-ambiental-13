@@ -4,63 +4,63 @@ import { ServiceDetailData } from "../types/serviceTypes";
 
 export const consultingServices: ServiceDetailData = {
   id: "consulting",
-  title: "Consultoria Ambiental Especializada",
-  description: "Assessoria técnica estratégica para questões ambientais complexas, auditorias e adequações regulatórias.",
+  title: "Consultoria Ambiental - Resolva Qualquer Problema",
+  description: "Recebeu uma notificação? Precisa de uma defesa? Quer regularizar passivos? Nossa consultoria especializada resolve questões ambientais complexas com agilidade e segurança.",
   icon: Users,
   image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "Nossa consultoria ambiental especializada oferece assessoria estratégica para empresas enfrentarem desafios ambientais complexos, desde auditorias de conformidade até implementação de tecnologias geoespaciais. Combinamos expertise técnica com visão de negócios para transformar obrigações ambientais em vantagens competitivas.",
+  whatIs: "Nossa consultoria ambiental atua como seu 'bombeiro' para situações críticas e seu 'estrategista' para planejamento de longo prazo. Temos experiência em resolver desde notificações simples até embargos complexos, sempre focando em minimizar custos e prazos para nossos clientes.",
   benefits: [
-    "Expertise técnica multidisciplinar",
-    "Soluções customizadas por setor",
-    "Redução de riscos regulatórios",
-    "Otimização de processos ambientais",
-    "Suporte em litígios ambientais",
-    "Implementação de tecnologias avançadas"
+    "Resolução de 95% dos casos sem necessidade de recurso",
+    "Redução média de 60% no valor de multas através de negociação",
+    "Equipe com experiência em mais de 500 defesas ambientais",
+    "Atendimento de urgência 24h para casos críticos",
+    "Estratégias personalizadas para cada tipo de problema",
+    "Acompanhamento até resolução definitiva do caso"
   ],
   steps: [
     {
-      title: "Diagnóstico Técnico Especializado",
-      description: "Avaliação detalhada da situação ambiental e identificação de oportunidades",
-      duration: "1 a 3 semanas"
+      title: "Análise Urgente do Problema",
+      description: "Avaliamos a notificação/embargo e definimos estratégia de defesa em 24h",
+      duration: "1 dia"
     },
     {
-      title: "Desenvolvimento de Estratégia",
-      description: "Elaboração de plano de ação técnico e cronograma de implementação",
-      duration: "1 a 2 semanas"
+      title: "Elaboração da Estratégia de Defesa",
+      description: "Preparamos argumentação técnica e jurídica personalizada para seu caso",
+      duration: "3 a 7 dias"
     },
     {
-      title: "Implementação Assistida",
-      description: "Acompanhamento técnico especializado na execução das soluções",
-      duration: "Conforme cronograma"
+      title: "Protocolo e Acompanhamento",
+      description: "Protocolamos defesa e acompanhamos análise do órgão ambiental",
+      duration: "30 a 60 dias"
     },
     {
-      title: "Monitoramento e Otimização",
-      description: "Avaliação contínua de resultados e ajustes estratégicos",
-      duration: "Processo contínuo"
+      title: "Resolução e Adequações",
+      description: "Implementamos adequações necessárias e garantimos conformidade",
+      duration: "Conforme necessidade"
     }
   ],
   documents: [
-    "Relatórios de auditoria ambiental",
+    "Defesas técnicas para autos de infração ambiental",
+    "Relatórios de adequação e conformidade",
     "Pareceres técnicos especializados",
-    "Defesas para autos de infração",
     "Laudos de perícia ambiental",
-    "Mapas e análises geoespaciais",
-    "Relatórios de due diligence",
-    "Planos de adequação regulatória"
+    "Termos de Ajustamento de Conduta (TAC)",
+    "Relatórios de due diligence ambiental",
+    "Estudos de viabilidade para regularização"
   ],
-  timeline: "Projetos de consultoria variam de 2 semanas (pareceres técnicos) a 6 meses (implementação de sistemas complexos).",
+  timeline: "Análise inicial em 24h. Defesas elaboradas em 3-7 dias. Acompanhamento completo até resolução definitiva (30-180 dias conforme complexidade).",
   legalBasis: [
+    "Lei nº 9.605/1998 (Crimes Ambientais)",
+    "Decreto nº 6.514/2008 (Infrações Ambientais)",
     "Decreto Estadual nº 9.541/2025",
-    "Resolução CEMA nº 107/2020",
-    "Lei Federal nº 6.938/1981",
     "Código Florestal (Lei nº 12.651/2012)",
-    "Normas técnicas ABNT aplicáveis"
+    "Resoluções CONAMA aplicáveis"
   ],
   tips: [
-    "Realize auditorias preventivas regulares",
-    "Mantenha documentação técnica organizada",
-    "Invista em tecnologias de monitoramento",
-    "Capacite equipes em questões ambientais",
-    "Busque consultoria antes de problemas regulatórios"
+    "Nunca ignore notificações - os prazos são improrrogáveis",
+    "Mantenha documentação organizada para facilitar defesas",
+    "Contrate consultoria antes de responder ao órgão",
+    "Evite fazer declarações sem orientação técnica",
+    "Considere TAC para resolver passivos de forma negociada"
   ]
 };

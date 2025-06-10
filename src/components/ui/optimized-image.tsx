@@ -29,12 +29,22 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     setIsLoaded(true);
   };
 
-  const imageSrc = imageError && fallbackSrc ? fallbackSrc : src;
+  // Otimizar URL de imagem automaticamente para WebP quando disponível
+  const optimizeImageUrl = (url: string) => {
+    if (url.includes('unsplash.com')) {
+      // Adicionar parâmetros de otimização do Unsplash
+      const separator = url.includes('?') ? '&' : '?';
+      return `${url}${separator}auto=format&fit=crop&w=800&q=80`;
+    }
+    return url;
+  };
+
+  const imageSrc = imageError && fallbackSrc ? fallbackSrc : optimizeImageUrl(src);
 
   return (
     <div className={cn("relative overflow-hidden", className)}>
       {!isLoaded && (
-        <div className="absolute inset-0 bg-muted animate-pulse" />
+        <div className="absolute inset-0 bg-eco-neutral-light animate-pulse" />
       )}
       <img
         src={imageSrc}
