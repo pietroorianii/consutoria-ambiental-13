@@ -7,6 +7,16 @@ export const navData = {
       description: "Licenciamentos Ambientais e Autorizações"
     },
     {
+      title: "Outorga e Recursos Hídricos",
+      href: "/service/water_resources",
+      description: "Gestão completa de recursos hídricos e outorgas"
+    },
+    {
+      title: "Recuperação de Áreas Degradadas",
+      href: "/service/degraded_areas",
+      description: "Soluções para passivos ambientais e recuperação"
+    },
+    {
       title: "Monitoramento e Análises",
       href: "/service/monitoring",
       description: "Acompanhamento de condicionantes e análises ambientais"
