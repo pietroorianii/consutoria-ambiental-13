@@ -18,15 +18,15 @@ export function MobileNav() {
 
   return (
     <div className="flex md:hidden items-center justify-between w-full">
-      {/* Logo corrigido */}
+      {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
         <div className="p-2 bg-eco-green/15 rounded-xl">
           <Leaf className="h-6 w-6 text-eco-green" />
         </div>
         <div>
-          <h1 className="text-lg font-bold text-eco-neutral-dark font-primary">L&P</h1>
+          <h1 className="text-lg font-bold text-gray-900 font-primary">L&P</h1>
           <p className="text-xs text-muted-foreground font-body leading-tight">
-            Consultoria Ambiental
+            Soluções Ambientais
           </p>
         </div>
       </Link>
@@ -47,7 +47,7 @@ export function MobileNav() {
             <Link
               to="/"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-eco-neutral-dark hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
+              className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors"
             >
               Início
             </Link>
@@ -56,14 +56,14 @@ export function MobileNav() {
             <Link
               to="/about"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-eco-neutral-dark hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
+              className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors"
             >
               Sobre Nós
             </Link>
 
             {/* Services Collapsible */}
             <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
-              <CollapsibleTrigger className="flex w-full items-center justify-between px-4 py-2 text-sm font-medium text-eco-neutral-dark hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors">
+              <CollapsibleTrigger className="flex w-full items-center justify-between px-4 py-2 text-sm font-medium text-gray-700 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors">
                 Serviços
                 <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
               </CollapsibleTrigger>
@@ -73,7 +73,7 @@ export function MobileNav() {
                     key={service.title}
                     to={service.href}
                     onClick={closeMenu}
-                    className="block px-4 py-2 text-sm text-gray-600 hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
+                    className="block px-4 py-2 text-sm text-gray-600 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors"
                   >
                     {service.title}
                   </Link>
@@ -92,7 +92,7 @@ export function MobileNav() {
             <Link
               to="/faq"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-eco-neutral-dark hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
+              className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors"
             >
               Perguntas Frequentes
             </Link>
@@ -101,7 +101,7 @@ export function MobileNav() {
             <Link
               to="/contact"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-eco-neutral-dark hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
+              className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-eco-green/10 hover:text-eco-green-dark rounded-md transition-colors"
             >
               Contato
             </Link>
@@ -111,9 +111,9 @@ export function MobileNav() {
               <Link
                 to="/request-quote"
                 onClick={closeMenu}
-                className="block w-full text-center bg-eco-accent-primary text-white px-4 py-3 rounded-md font-medium shadow-md hover:bg-eco-accent-primary/90 transition-all duration-300"
+                className="block w-full text-center bg-eco-green text-white px-4 py-3 rounded-md font-medium shadow-md hover:bg-eco-green-dark transition-all duration-300"
               >
-                Diagnóstico Gratuito
+                Solicitar Orçamento
               </Link>
             </div>
           </div>

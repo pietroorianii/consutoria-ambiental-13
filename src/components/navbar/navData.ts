@@ -2,34 +2,34 @@
 export const navData = {
   services: [
     {
-      title: "Licenciamento Ambiental",
+      title: "Licenciamento e Autorizações",
       href: "/service/licensing",
-      description: "Licenças LP, LI, LO e Autorizações sem complicações"
+      description: "Licenciamentos Ambientais e Autorizações"
     },
     {
       title: "Monitoramento e Análises",
       href: "/service/monitoring",
-      description: "Acompanhamento de condicionantes e gestão de MTR"
+      description: "Acompanhamento de condicionantes e análises ambientais"
     },
     {
-      title: "PGRS e Relatórios",
+      title: "Planos e Relatórios",
       href: "/service/reports",
-      description: "Planos de Gerenciamento de Resíduos e EIA/RIMA"
+      description: "Elaboração de planos e relatórios ambientais"
     },
     {
-      title: "Consultoria Especializada",
+      title: "Acompanhamento e Consultoria",
       href: "/service/consulting",
-      description: "Regularização de passivos e defesas ambientais"
+      description: "Acompanhamento de projetos e consultoria ambiental"
     },
     {
-      title: "Treinamentos Corporativos",
+      title: "Treinamentos",
       href: "/service/training",
-      description: "Capacitação em gestão ambiental para equipes"
+      description: "Treinamentos e capacitações ambientais"
     },
     {
-      title: "Gestão Contínua",
+      title: "Gestão e Manutenção",
       href: "/service/management",
-      description: "Renovação de licenças e gestão de prazos"
+      description: "Gestão contínua e manutenção ambiental"
     },
     {
       title: "Consultoria ESG",
@@ -39,7 +39,7 @@ export const navData = {
     {
       title: "Mudanças Climáticas",
       href: "/service/climate",
-      description: "Descarbonização e inventários de GEE"
+      description: "Descarbonização e adaptação climática"
     }
   ],
   mainNav: [
@@ -54,10 +54,6 @@ export const navData = {
     {
       title: "Serviços",
       href: "/services"
-    },
-    {
-      title: "Licenças e Autorizações",
-      href: "/licenses-authorizations"
     },
     {
       title: "Perguntas Frequentes",

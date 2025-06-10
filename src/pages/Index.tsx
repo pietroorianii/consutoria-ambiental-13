@@ -11,15 +11,15 @@ const Index = () => {
   return (
     <PageWrapper>
       <MetaTags 
-        title="L&P Consultoria Ambiental | Licenciamento sem Complicações | Evite Multas"
-        description="Especialistas em licenciamento ambiental no Paraná. Regularize sua empresa e evite multas com nossa consultoria especializada. Diagnóstico gratuito em 24h. Garantia de resultado."
-        keywords="consultoria ambiental Paraná, licenciamento ambiental, evitar multas ambientais, IAT Paraná, regularização ambiental, defesa ambiental"
+        title="L&P Soluções Ambientais | Consultoria Ambiental Especializada"
+        description="Consultoria ambiental especializada para empreendimentos e empresas que buscam excelência em sustentabilidade e conformidade legal. Licenciamento, monitoramento e gestão ambiental."
+        keywords="consultoria ambiental, licenciamento ambiental, sustentabilidade empresarial, monitoramento ambiental, gestão ambiental"
         image="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200&h=600"
       />
       
-      {/* Fundo otimizado com nova paleta */}
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-eco-neutral-light via-white to-eco-green/5">
-        <div className="absolute inset-0 organic-pattern opacity-[0.03]"></div>
+      {/* Fundo otimizado com padrão orgânico */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-eco-green/5">
+        <div className="absolute inset-0 organic-pattern opacity-[0.02]"></div>
       </div>
       
       <HeroBanner />

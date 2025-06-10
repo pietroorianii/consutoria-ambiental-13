@@ -17,29 +17,29 @@ export function DesktopNav() {
 
   return (
     <div className="hidden md:flex items-center justify-between w-full">
-      {/* Logo corrigido */}
+      {/* Logo */}
       <Link to="/" className="flex items-center space-x-3 group">
         <div className="p-2 bg-eco-green/15 rounded-xl group-hover:bg-eco-green/25 transition-all duration-300 shadow-sm group-hover:shadow-md">
           <Leaf className="h-7 w-7 text-eco-green group-hover:scale-110 transition-transform duration-300" />
         </div>
         <div className="hidden lg:block">
-          <h1 className="text-xl font-bold text-eco-neutral-dark font-primary group-hover:text-eco-green transition-colors duration-300">
-            L&P Consultoria Ambiental
+          <h1 className="text-xl font-bold text-gray-900 font-primary group-hover:text-eco-green-dark transition-colors duration-300">
+            L&P Soluções Ambientais
           </h1>
           <p className="text-xs text-muted-foreground font-body">
-            Especialistas em conformidade ambiental
+            Consultoria especializada
           </p>
         </div>
       </Link>
 
-      {/* Navigation Menu com nova paleta */}
+      {/* Navigation Menu */}
       <NavigationMenu>
         <NavigationMenuList className="space-x-2">
           {/* Home */}
           <NavigationMenuItem>
             <Link 
               to="/" 
-              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green-dark focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
               onMouseEnter={() => setHoveredItem("home")}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -51,7 +51,7 @@ export function DesktopNav() {
           <NavigationMenuItem>
             <Link 
               to="/about" 
-              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green-dark focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
               onMouseEnter={() => setHoveredItem("about")}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -62,7 +62,7 @@ export function DesktopNav() {
           {/* Services with dropdown */}
           <NavigationMenuItem>
             <NavigationMenuTrigger 
-              className="hover:bg-eco-green/10 hover:text-eco-green data-[state=open]:bg-eco-green/15"
+              className="hover:bg-eco-green/10 hover:text-eco-green-dark data-[state=open]:bg-eco-green/15"
               onMouseEnter={() => setHoveredItem("services")}
             >
               Serviços
@@ -76,7 +76,7 @@ export function DesktopNav() {
                       Nossos Serviços
                     </div>
                     <p className="text-sm leading-tight text-white/90">
-                      Soluções completas para regularização ambiental
+                      Soluções ambientais completas para sua empresa
                     </p>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ export function DesktopNav() {
                   <NavListItem
                     title="Ver Todos os Serviços"
                     href="/services"
-                    className="font-medium text-eco-green border-t pt-2"
+                    className="font-medium text-eco-green-dark border-t pt-2"
                   >
                     Explore nossa gama completa de soluções
                   </NavListItem>
@@ -117,7 +117,7 @@ export function DesktopNav() {
           <NavigationMenuItem>
             <Link 
               to="/faq" 
-              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green-dark focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
               onMouseEnter={() => setHoveredItem("faq")}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -129,7 +129,7 @@ export function DesktopNav() {
           <NavigationMenuItem>
             <Link 
               to="/contact" 
-              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green-dark focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
               onMouseEnter={() => setHoveredItem("contact")}
               onMouseLeave={() => setHoveredItem(null)}
             >
@@ -139,13 +139,13 @@ export function DesktopNav() {
         </NavigationMenuList>
       </NavigationMenu>
 
-      {/* CTA Button com nova paleta */}
+      {/* CTA Button */}
       <div className="flex items-center space-x-4">
         <Link
           to="/request-quote"
-          className="inline-flex items-center justify-center rounded-md bg-eco-accent-primary px-6 py-2.5 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-eco-accent-primary/90 hover:shadow-lg hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eco-accent-primary"
+          className="inline-flex items-center justify-center rounded-md bg-eco-green px-6 py-2.5 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-eco-green-dark hover:shadow-lg hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eco-green"
         >
-          Diagnóstico Gratuito
+          Solicitar Orçamento
         </Link>
       </div>
     </div>
