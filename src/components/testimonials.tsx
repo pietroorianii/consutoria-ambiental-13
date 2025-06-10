@@ -29,7 +29,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="bg-muted py-16 md:py-24 relative">
+    <section className="bg-muted py-20 md:py-28 relative">
       <div className="absolute inset-0 bg-opacity-5 leaf-pattern bg-green-50"></div>
       <div className="container relative z-10">
         <div className="text-center mb-16 animate-fade-up">

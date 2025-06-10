@@ -1,8 +1,10 @@
+
 import React from "react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+
 export function CompanyIntro() {
-  return <section className="container py-24 lg:py-32 relative">
+  return <section className="container py-20 md:py-28 relative">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-organic-pattern opacity-20 z-0"></div>
       

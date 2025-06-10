@@ -60,7 +60,7 @@ const AboutPage = () => {
       />
       
       {/* Seção de Introdução da Empresa */}
-      <section className="py-20 md:py-32 bg-background relative">
+      <section className="py-20 md:py-28 bg-background relative">
         {/* Textura de folhas no fundo */}
         <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-eco-green/5 to-eco-blue/5 -z-10"></div>
@@ -102,7 +102,7 @@ const AboutPage = () => {
       <MissionVisionValues />
       
       {/* NOVA SEÇÃO DE CASES DE SUCESSO */}
-      <section className="py-20 md:py-32 bg-background">
+      <section className="py-20 md:py-28 bg-background">
         <div className="container">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-eco-blue/10 text-eco-blue font-medium text-sm uppercase tracking-wider rounded-full mb-6">
@@ -123,7 +123,7 @@ const AboutPage = () => {
       </section>
       
       {/* Seção da Equipe */}
-      <section id="team" className="py-20 md:py-32 bg-muted/50 relative">
+      <section id="team" className="py-20 md:py-28 bg-muted/50 relative">
         {/* Textura de folhas no fundo */}
         <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-eco-green/5 to-eco-blue/5 -z-10"></div>

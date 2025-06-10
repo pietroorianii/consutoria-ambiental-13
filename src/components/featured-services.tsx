@@ -1,7 +1,9 @@
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import React from "react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { serviceCategories } from "@/data/serviceCategories";
 import { 
   Leaf, 
   Beaker, 
@@ -11,144 +13,82 @@ import {
   CloudSun,
   Globe,
   Recycle,
+  ArrowRight, 
   CheckCircle,
-  ArrowRight,
   Sparkles,
-  TrendingUp
+  TrendingUp,
 } from "lucide-react";
 
-const services = [{
-  icon: <Leaf className="h-8 w-8 text-eco-green" />,
-  title: "Licenciamento Ambiental",
-  description: "Obtenção de licenças e autorizações ambientais em conformidade com a legislação vigente.",
-  highlights: [
-    "Licenças Prévias, de Instalação e Operação",
-    "Autorizações para supressão de vegetação",
-    "Acompanhamento em órgãos ambientais"
-  ],
-  link: "/service/licensing",
-  bgGradient: "from-eco-green/8 via-eco-green/3 to-transparent",
-  borderColor: "border-eco-green/30 hover:border-eco-green/60",
-  iconBg: "bg-eco-green/15",
-  buttonColor: "bg-eco-green hover:bg-eco-green-dark",
-  badge: "Essencial"
-}, {
-  icon: <Beaker className="h-8 w-8 text-eco-blue" />,
-  title: "Monitoramento e Análises",
-  description: "Acompanhamento de condicionantes ambientais e análises de conformidade.",
-  highlights: [
-    "Acompanhamento de condicionantes",
-    "Monitoramento de emissões",
-    "Análises laboratoriais especializadas"
-  ],
-  link: "/service/monitoring",
-  bgGradient: "from-eco-blue/8 via-eco-blue/3 to-transparent",
-  borderColor: "border-eco-blue/30 hover:border-eco-blue/60",
-  iconBg: "bg-eco-blue/15",
-  buttonColor: "bg-eco-blue hover:bg-eco-blue-dark",
-  badge: "Contínuo"
-}, {
-  icon: <FileText className="h-8 w-8 text-eco-earth-dark" />,
-  title: "Planos e Relatórios",
-  description: "Elaboração de documentos técnicos para sua empresa atender às exigências legais.",
-  highlights: [
-    "Planos de Gerenciamento (PGRS, PGRSS)",
-    "Estudos de Impacto Ambiental",
-    "Programas de Gestão Ambiental"
-  ],
-  link: "/service/reports",
-  bgGradient: "from-eco-earth-medium/8 via-eco-earth-medium/3 to-transparent",
-  borderColor: "border-eco-earth-medium/30 hover:border-eco-earth-medium/60",
-  iconBg: "bg-eco-earth-medium/15",
-  buttonColor: "bg-eco-earth-dark hover:bg-eco-earth-dark/90",
-  badge: "Técnico"
-}, {
-  icon: <Users className="h-8 w-8 text-eco-accent-teal" />,
-  title: "Consultoria Especializada",
-  description: "Assessoria técnica para questões ambientais e acompanhamento de projetos.",
-  highlights: [
-    "Acompanhamento de projetos",
-    "Relatórios para Auto de Infração",
-    "Inspeções e auditorias ambientais"
-  ],
-  link: "/service/consulting",
-  bgGradient: "from-eco-accent-teal/8 via-eco-accent-teal/3 to-transparent",
-  borderColor: "border-eco-accent-teal/30 hover:border-eco-accent-teal/60",
-  iconBg: "bg-eco-accent-teal/15",
-  buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
-  badge: "Estratégico"
-}, {
-  icon: <TreeDeciduous className="h-8 w-8 text-eco-accent-sage" />,
-  title: "Treinamentos Ambientais",
-  description: "Capacitação e treinamentos especializados para equipes e colaboradores.",
-  highlights: [
-    "Treinamentos presenciais e remotos",
-    "Gerenciamento de Resíduos Sólidos",
-    "Certificação de participantes"
-  ],
-  link: "/service/training",
-  bgGradient: "from-eco-accent-sage/8 via-eco-accent-sage/3 to-transparent",
-  borderColor: "border-eco-accent-sage/30 hover:border-eco-accent-sage/60",
-  iconBg: "bg-eco-accent-sage/15",
-  buttonColor: "bg-eco-accent-sage hover:bg-eco-accent-sage/90",
-  badge: "Capacitação"
-}, {
-  icon: <CloudSun className="h-8 w-8 text-eco-blue-muted" />,
-  title: "Gestão Ambiental",
-  description: "Serviços continuados de gestão e manutenção de requisitos ambientais.",
-  highlights: [
-    "Renovação de licenças e autorizações",
-    "Declarações e inventários anuais",
-    "Manutenções periódicas"
-  ],
-  link: "/service/management",
-  bgGradient: "from-eco-blue-muted/8 via-eco-blue-muted/3 to-transparent",
-  borderColor: "border-eco-blue-muted/30 hover:border-eco-blue-muted/60",
-  iconBg: "bg-eco-blue-muted/15",
-  buttonColor: "bg-eco-blue-muted hover:bg-eco-blue-muted/90",
-  badge: "Gestão"
-}, {
-  icon: <Globe className="h-8 w-8 text-eco-accent-teal" />,
-  title: "Consultoria ESG",
-  description: "Estratégias ESG e sustentabilidade corporativa para competitividade e investimentos.",
-  highlights: [
-    "Diagnóstico e estratégias ESG",
-    "Relatórios de sustentabilidade",
-    "Engajamento com stakeholders"
-  ],
-  link: "/service/esg",
-  bgGradient: "from-eco-accent-teal/8 via-eco-accent-teal/3 to-transparent",
-  borderColor: "border-eco-accent-teal/30 hover:border-eco-accent-teal/60",
-  iconBg: "bg-eco-accent-teal/15",
-  buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
-  badge: "Inovação",
-  isNew: true
-}, {
-  icon: <Recycle className="h-8 w-8 text-eco-accent-sage" />,
-  title: "Mudanças Climáticas",
-  description: "Descarbonização e adaptação climática para um futuro sustentável.",
-  highlights: [
-    "Inventários de gases de efeito estufa",
-    "Planos de descarbonização",
-    "Projetos de crédito de carbono"
-  ],
-  link: "/service/climate",
-  bgGradient: "from-eco-accent-sage/8 via-eco-accent-sage/3 to-transparent",
-  borderColor: "border-eco-accent-sage/30 hover:border-eco-accent-sage/60",
-  iconBg: "bg-eco-accent-sage/15",
-  buttonColor: "bg-eco-accent-sage hover:bg-eco-accent-sage/90",
-  badge: "Futuro",
-  isNew: true
-}];
+// Mapeamento completo de estilos para todas as categorias
+const serviceStyles: { [key: string]: { icon: React.ReactNode; badge: string; bgGradient: string; borderColor: string; buttonColor: string; isNew?: boolean } } = {
+  licensing: {
+    icon: <Leaf className="h-8 w-8 text-eco-green" />,
+    badge: "Essencial",
+    bgGradient: "from-eco-green/8 via-eco-green/3 to-transparent",
+    borderColor: "border-eco-green/30 hover:border-eco-green/60",
+    buttonColor: "bg-eco-green hover:bg-eco-green-dark"
+  },
+  monitoring: {
+    icon: <Beaker className="h-8 w-8 text-eco-blue" />,
+    badge: "Contínuo",
+    bgGradient: "from-eco-blue/8 via-eco-blue/3 to-transparent",
+    borderColor: "border-eco-blue/30 hover:border-eco-blue/60",
+    buttonColor: "bg-eco-blue hover:bg-eco-blue-dark"
+  },
+  reports: {
+    icon: <FileText className="h-8 w-8 text-eco-earth-dark" />,
+    badge: "Técnico",
+    bgGradient: "from-eco-earth/8 via-eco-earth/3 to-transparent",
+    borderColor: "border-eco-earth/30 hover:border-eco-earth/60",
+    buttonColor: "bg-eco-earth-dark hover:bg-eco-earth-dark/90"
+  },
+  consulting: {
+    icon: <Users className="h-8 w-8 text-eco-accent-teal" />,
+    badge: "Estratégico",
+    bgGradient: "from-eco-accent-teal/8 via-eco-accent-teal/3 to-transparent",
+    borderColor: "border-eco-accent-teal/30 hover:border-eco-accent-teal/60",
+    buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90"
+  },
+  training: {
+    icon: <TreeDeciduous className="h-8 w-8 text-eco-accent-orange" />,
+    badge: "Capacitação",
+    bgGradient: "from-eco-accent-orange/8 via-eco-accent-orange/3 to-transparent",
+    borderColor: "border-eco-accent-orange/30 hover:border-eco-accent-orange/60",
+    buttonColor: "bg-eco-accent-orange hover:bg-eco-accent-orange/90"
+  },
+  management: {
+    icon: <CloudSun className="h-8 w-8 text-eco-blue-dark" />,
+    badge: "Gestão",
+    bgGradient: "from-eco-blue-dark/8 via-eco-blue-dark/3 to-transparent",
+    borderColor: "border-eco-blue-dark/30 hover:border-eco-blue-dark/60",
+    buttonColor: "bg-eco-blue-dark hover:bg-eco-blue-dark/90"
+  },
+  esg: {
+    icon: <Globe className="h-8 w-8 text-eco-green-dark" />,
+    badge: "Inovação",
+    bgGradient: "from-eco-green-dark/8 via-eco-green-dark/3 to-transparent",
+    borderColor: "border-eco-green-dark/30 hover:border-eco-green-dark/60",
+    buttonColor: "bg-eco-green-dark hover:bg-eco-green-dark/90",
+    isNew: true
+  },
+  climate: {
+    icon: <Recycle className="h-8 w-8 text-eco-accent-yellow" />,
+    badge: "Futuro",
+    bgGradient: "from-eco-accent-yellow/8 via-eco-accent-yellow/3 to-transparent",
+    borderColor: "border-eco-accent-yellow/30 hover:border-eco-accent-yellow/60",
+    buttonColor: "bg-eco-accent-yellow hover:bg-eco-accent-yellow/90",
+    isNew: true
+  }
+};
 
 export function FeaturedServices() {
+  const serviceEntries = Object.entries(serviceCategories);
+
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+    <section className="py-20 md:py-28 relative overflow-hidden">
       {/* Background aprimorado */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-eco-green/3 to-white"></div>
       <div className="absolute inset-0 organic-pattern opacity-[0.015]"></div>
-      <div className="absolute top-1/4 right-10 w-60 h-60 bg-eco-green/4 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-eco-blue/4 rounded-full blur-3xl animate-pulse-slow"></div>
       
       <div className="container relative z-10">
         <div className="text-center mb-16 scroll-trigger">
@@ -170,70 +110,69 @@ export function FeaturedServices() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className={`group relative overflow-hidden transition-all duration-500 bg-gradient-to-br ${service.bgGradient} backdrop-blur-sm border-2 ${service.borderColor} h-full hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] scroll-trigger`}
-              style={{
-                animationDelay: `${0.1 + index * 0.05}s`
-              }}
-            >
-              {/* Badge para serviços novos */}
-              {service.isNew && (
-                <div className="absolute top-3 right-3 z-10">
-                  <div className="bg-gradient-to-r from-eco-accent-orange to-eco-accent-yellow text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
-                    <TrendingUp className="h-3 w-3" />
-                    NOVO
+          {serviceEntries.map(([key, serviceData], index) => {
+            const styles = serviceStyles[key] || {};
+            return (
+              <Card 
+                key={key} 
+                className={`group relative overflow-hidden transition-all duration-500 bg-gradient-to-br ${styles.bgGradient} backdrop-blur-sm border-2 ${styles.borderColor} h-full flex flex-col hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] scroll-trigger`}
+                style={{ animationDelay: `${0.1 + index * 0.05}s` }}
+              >
+                {styles.isNew && (
+                  <div className="absolute top-3 right-3 z-10">
+                    <div className="bg-gradient-to-r from-eco-accent-orange to-eco-accent-yellow text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                      <TrendingUp className="h-3 w-3" />
+                      NOVO
+                    </div>
                   </div>
-                </div>
-              )}
-
-              {/* Overlay sutil para profundidade */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              <CardHeader className="text-center pb-4 relative z-10">
-                <div className={`mb-4 ${service.iconBg} p-3 rounded-xl w-16 h-16 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-md`}>
-                  {service.icon}
-                </div>
-                <div className="mb-2">
-                  <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full ${service.iconBg} text-gray-600 group-hover:text-gray-800 transition-colors`}>
-                    {service.badge}
-                  </span>
-                </div>
-                <CardTitle className="font-secondary text-lg group-hover:text-eco-green-dark transition-colors leading-tight">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              
-              <CardContent className="text-center px-6 pb-6 flex-grow relative z-10">
-                <CardDescription className="font-body text-sm text-gray-600 leading-relaxed mb-4">
-                  {service.description}
-                </CardDescription>
+                )}
                 
-                {/* Principais highlights */}
-                <ul className="space-y-2 text-left">
-                  {service.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle className="h-3 w-3 text-eco-green mt-1 flex-shrink-0" />
-                      <span className="font-body text-xs text-gray-600">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              
-              <CardFooter className="mt-auto pt-4 pb-6 flex flex-col gap-3 border-t border-gray-100 bg-gray-50/60 relative z-10">
-                <Button 
-                  asChild 
-                  className={`w-full ${service.buttonColor} text-white group-hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg font-medium text-sm`}
-                >
-                  <Link to={service.link} className="flex items-center justify-center gap-2">
-                    Saiba mais 
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+                <CardHeader className="text-center pb-4 relative z-10">
+                  <div className={`mb-4 bg-opacity-15 p-3 rounded-xl w-16 h-16 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-md`}>
+                    {styles.icon}
+                  </div>
+                  <div className="mb-2">
+                    <span className={`inline-block px-2 py-1 text-xs font-medium rounded-full bg-opacity-15 text-gray-600 group-hover:text-gray-800 transition-colors`}>
+                      {styles.badge}
+                    </span>
+                  </div>
+                  <CardTitle className="font-secondary text-lg group-hover:text-eco-green-dark transition-colors leading-tight">
+                    {serviceData.title}
+                  </CardTitle>
+                </CardHeader>
+                
+                <CardContent className="px-6 pb-6 flex-grow relative z-10 flex flex-col">
+                  {/* LISTA DETALHADA DE SUB-SERVIÇOS */}
+                  <ul className="space-y-2 text-left mb-4 flex-grow">
+                    {serviceData.services.slice(0, 3).map((subService, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="h-3.5 w-3.5 text-eco-green mt-1 flex-shrink-0" />
+                        <span className="font-body text-xs text-gray-700">{subService.title}</span>
+                      </li>
+                    ))}
+                    {serviceData.services.length > 3 && (
+                        <li className="flex items-start gap-2">
+                             <CheckCircle className="h-3.5 w-3.5 text-eco-green/50 mt-1 flex-shrink-0" />
+                            <span className="font-body text-xs text-gray-500">e mais...</span>
+                        </li>
+                    )}
+                  </ul>
+                </CardContent>
+                
+                <CardFooter className="mt-auto pt-4 pb-6 flex flex-col gap-3 border-t border-gray-100 bg-gray-50/60 relative z-10">
+                  <Button 
+                    asChild 
+                    className={`w-full ${styles.buttonColor} text-white group-hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg font-medium text-sm`}
+                  >
+                    <Link to={`/services/${key}`} className="flex items-center justify-center gap-2">
+                      Saiba mais 
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            );
+          })}
         </div>
         
         <div className="text-center mt-16 scroll-trigger">
