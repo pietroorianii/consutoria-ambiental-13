@@ -17,6 +17,8 @@ import {
   CheckCircle,
   Sparkles,
   TrendingUp,
+  Waves,
+  Mountain
 } from "lucide-react";
 
 // Mapeamento completo de estilos para todas as categorias - removendo isNew
@@ -27,6 +29,20 @@ const serviceStyles: { [key: string]: { icon: React.ReactNode; badge: string; bg
     bgGradient: "from-eco-green/8 via-eco-green/3 to-transparent",
     borderColor: "border-eco-green/30 hover:border-eco-green/60",
     buttonColor: "bg-eco-green hover:bg-eco-green-dark"
+  },
+  water_resources: {
+    icon: <Waves className="h-8 w-8 text-blue-500" />,
+    badge: "Vital",
+    bgGradient: "from-blue-500/8 via-blue-500/3 to-transparent",
+    borderColor: "border-blue-500/30 hover:border-blue-500/60",
+    buttonColor: "bg-blue-500 hover:bg-blue-600"
+  },
+  degraded_areas: {
+    icon: <Mountain className="h-8 w-8 text-amber-600" />,
+    badge: "Recuperação",
+    bgGradient: "from-amber-600/8 via-amber-600/3 to-transparent",
+    borderColor: "border-amber-600/30 hover:border-amber-600/60",
+    buttonColor: "bg-amber-600 hover:bg-amber-700"
   },
   monitoring: {
     icon: <Beaker className="h-8 w-8 text-eco-blue" />,

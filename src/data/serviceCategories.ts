@@ -1,8 +1,19 @@
 
-import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, Globe, Recycle } from "lucide-react";
+import { 
+  Waves,
+  Mountain,
+  Leaf, 
+  Beaker, 
+  FileText, 
+  Users, 
+  TreeDeciduous, 
+  CloudSun,
+  Globe,
+  Recycle 
+} from "lucide-react";
 import React from "react";
 
-export type ServiceCategoryType = 'licensing' | 'monitoring' | 'reports' | 'consulting' | 'training' | 'management' | 'esg' | 'climate';
+export type ServiceCategoryType = 'licensing' | 'monitoring' | 'reports' | 'consulting' | 'training' | 'management' | 'esg' | 'climate' | 'water_resources' | 'degraded_areas';
 
 export interface ServiceItem {
   title: string;
@@ -48,6 +59,30 @@ export const serviceCategories: Record<ServiceCategoryType, ServiceCategoryData>
         title: "Autorizações Específicas (AA e AF)",
         description: "Autorizações Ambientais e Florestais para atividades e intervenções específicas.",
       }
+    ]
+  },
+  water_resources: {
+    title: "Outorga e Recursos Hídricos",
+    description: "Garanta o direito de uso da água e gerencie este recurso vital de forma sustentável e em conformidade com a lei.",
+    icon: React.createElement(Waves, { className: "h-8 w-8 text-eco-blue" }),
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=1000&h=600",
+    services: [
+        { title: "Outorga de Uso da Água (Superficial e Subterrânea)", description: "Direito de uso para captação em rios, lagos e poços artesianos." },
+        { title: "Estudos de Disponibilidade Hídrica", description: "Análises técnicas para fundamentar a solicitação de outorga." },
+        { title: "Plano de Uso Racional da Água", description: "Estratégias para otimizar o consumo e reduzir custos." },
+        { title: "Monitoramento de Qualidade e Vazão", description: "Coleta e análise de dados para atender às condicionantes da outorga." },
+    ]
+  },
+  degraded_areas: {
+    title: "Recuperação de Áreas e Passivos Ambientais",
+    description: "Soluções completas para a recuperação de áreas e resolução de passivos ambientais, transformando problemas em oportunidades.",
+    icon: React.createElement(Mountain, { className: "h-8 w-8 text-eco-accent-orange" }),
+    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1000&h=600",
+    services: [
+        { title: "GAC (Investigação e Remediação de Áreas Contaminadas)", description: "Ciclo completo, da avaliação preliminar ao monitoramento pós-remediação." },
+        { title: "PRAD (Elaboração e Execução de Planos de Recuperação)", description: "Projetos técnicos para restaurar ecossistemas e atender à legislação." },
+        { title: "TAC (Assessoria para Termos de Ajustamento de Conduta)", description: "Suporte técnico e jurídico para negociação e cumprimento de acordos." },
+        { title: "Auditoria e Investigação de Passivos Ambientais", description: "Diagnóstico completo para processos de fusão, aquisição (M&A) e auditorias." },
     ]
   },
   monitoring: {

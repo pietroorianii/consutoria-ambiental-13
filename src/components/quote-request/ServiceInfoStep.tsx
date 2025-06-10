@@ -46,11 +46,13 @@ export const ServiceInfoStep: React.FC<ServiceInfoStepProps> = ({ form }) => {
               </FormControl>
               <SelectContent>
                 <SelectItem value="licenciamento">Licenciamento Ambiental</SelectItem>
+                <SelectItem value="water_resources">Outorga e Recursos Hídricos</SelectItem>
+                <SelectItem value="degraded_areas">Recuperação de Áreas e Passivos</SelectItem>
                 <SelectItem value="pgrs">PGRS - Plano de Gerenciamento de Resíduos Sólidos</SelectItem>
                 <SelectItem value="eia-rima">EIA/RIMA - Estudo e Relatório de Impacto Ambiental</SelectItem>
-                <SelectItem value="outorga">Outorga de Uso da Água</SelectItem>
-                <SelectItem value="recuperacao">Recuperação de Áreas Degradadas</SelectItem>
                 <SelectItem value="consultoria">Consultoria Ambiental</SelectItem>
+                <SelectItem value="esg">Consultoria ESG</SelectItem>
+                <SelectItem value="climate">Mudanças Climáticas e Carbono</SelectItem>
                 <SelectItem value="auditoria">Auditoria Ambiental</SelectItem>
                 <SelectItem value="outros">Outros</SelectItem>
               </SelectContent>
