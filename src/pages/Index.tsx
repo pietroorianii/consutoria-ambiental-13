@@ -11,10 +11,10 @@ const Index = () => {
   return (
     <PageWrapper>
       <MetaTags 
-        title="L&P Soluções Ambientais | Consultoria Ambiental Especializada"
-        description="Consultoria ambiental especializada para empreendimentos e empresas que buscam excelência em sustentabilidade e conformidade legal. Licenciamento, monitoramento e gestão ambiental."
-        keywords="consultoria ambiental, licenciamento ambiental, sustentabilidade empresarial, monitoramento ambiental, gestão ambiental"
-        image="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1200&h=600"
+        title="L&P Soluções Ambientais | Consultoria em Paraná"
+        description="Garanta a conformidade legal do seu negócio com nossa assessoria completa em licenciamento, gestão de resíduos e estudos de impacto ambiental."
+        keywords="consultoria ambiental Paraná, licenciamento IAT, gestão resíduos, conformidade ambiental, evitar multas ambientais"
+        companyName="L&P Soluções Ambientais"
       />
       
       {/* Fundo otimizado com padrão orgânico */}

@@ -8,6 +8,8 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   fallbackSrc?: string;
   className?: string;
   priority?: boolean;
+  webpSrc?: string; // For modern WebP format if available
+  sizes?: string; // For responsive images
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -16,6 +18,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   fallbackSrc,
   className,
   priority = false,
+  webpSrc,
+  sizes = "100vw",
   ...props
 }) => {
   const [imageError, setImageError] = useState(false);
@@ -23,6 +27,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   const handleError = () => {
     setImageError(true);
+    console.log(`Image loading error for: ${src}`);
   };
 
   const handleLoad = () => {
@@ -36,20 +41,44 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       {!isLoaded && (
         <div className="absolute inset-0 bg-muted animate-pulse" />
       )}
-      <img
-        src={imageSrc}
-        alt={alt}
-        loading={priority ? "eager" : "lazy"}
-        decoding="async"
-        onError={handleError}
-        onLoad={handleLoad}
-        className={cn(
-          "transition-opacity duration-300",
-          isLoaded ? "opacity-100" : "opacity-0",
-          className
-        )}
-        {...props}
-      />
+      
+      {/* If WebP version is available, use picture element for format flexibility */}
+      {webpSrc ? (
+        <picture>
+          <source srcSet={webpSrc} type="image/webp" />
+          <img
+            src={imageSrc}
+            alt={alt}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            onError={handleError}
+            onLoad={handleLoad}
+            sizes={sizes}
+            className={cn(
+              "transition-opacity duration-300",
+              isLoaded ? "opacity-100" : "opacity-0",
+              className
+            )}
+            {...props}
+          />
+        </picture>
+      ) : (
+        <img
+          src={imageSrc}
+          alt={alt}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          onError={handleError}
+          onLoad={handleLoad}
+          sizes={sizes}
+          className={cn(
+            "transition-opacity duration-300",
+            isLoaded ? "opacity-100" : "opacity-0",
+            className
+          )}
+          {...props}
+        />
+      )}
     </div>
   );
 };

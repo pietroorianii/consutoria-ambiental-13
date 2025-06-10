@@ -8,11 +8,12 @@ export const reportsServices: ServiceDetailData = {
   description: "Elaboração de documentos técnicos especializados para gestão ambiental e atendimento legal.",
   icon: FileText,
   image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "Os planos e relatórios ambientais são documentos técnicos que estabelecem diretrizes, procedimentos e análises para a gestão adequada dos aspectos ambientais de empreendimentos e atividades.",
+  whatIs: "Os planos e relatórios ambientais são documentos técnicos que estabelecem diretrizes, procedimentos e análises para a gestão adequada dos aspectos ambientais, incluindo a rastreabilidade de resíduos através do sistema MTR.",
   benefits: [
     "Organização da gestão ambiental",
     "Cumprimento de exigências legais",
     "Redução de impactos ambientais",
+    "Rastreabilidade e controle de resíduos (MTR)",
     "Melhoria da eficiência operacional",
     "Demonstração de compliance",
     "Subsídio para certificações"

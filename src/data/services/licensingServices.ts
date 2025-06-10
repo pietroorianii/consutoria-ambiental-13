@@ -15,7 +15,8 @@ export const licensingServices: ServiceDetailData = {
     "Segurança jurídica para operação",
     "Redução de prazos e custos",
     "Acompanhamento especializado",
-    "Prevenção de multas e penalidades"
+    "Prevenção de multas e penalidades",
+    "Adequação ao Programa de Regularização Ambiental (PRA)"
   ],
   steps: [
     {
@@ -52,6 +53,7 @@ export const licensingServices: ServiceDetailData = {
   legalBasis: [
     "Decreto Estadual nº 9.541/2025",
     "Resolução CEMA nº 107/2020",
+    "Portaria IAT Nº 190/2024 (Diretrizes do PRA)",
     "Instruções Normativas do IAT",
     "Lei Federal nº 6.938/1981",
     "Lei Complementar nº 140/2011"

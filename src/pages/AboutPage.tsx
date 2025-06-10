@@ -5,6 +5,8 @@ import { MissionVisionValues } from "@/components/about/MissionVisionValues";
 import { TeamMemberCard } from "@/components/about/TeamMemberCard";
 import { Users } from "lucide-react";
 import { PageBanner } from "@/components/ui/page-banner";
+import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { MetaTags } from "@/components/layout/MetaTags";
 
 // Team members data
 const teamMembers = [{
@@ -23,9 +25,31 @@ const teamMembers = [{
   specialties: ["Recursos Hídricos", "Hidrogeologia", "Outorgas"]
 }];
 
+// Case studies data
+const caseStudies = [
+  {
+    sector: "Indústria Metalúrgica",
+    challenge: "Atraso na Renovação da Licença de Operação",
+    solution: "Realizamos uma auditoria de conformidade, preparamos toda a documentação técnica e acompanhamos o processo junto ao IAT.",
+    result: "Licença de Operação renovada em 45 dias, 50% mais rápido que a média do setor.",
+  },
+  {
+    sector: "Agronegócio",
+    challenge: "Necessidade de Outorga para Uso de Água em Irrigação",
+    solution: "Desenvolvemos os estudos hidrológicos necessários e o plano de uso racional da água, protocolando o pedido de outorga.",
+    result: "Obtenção da outorga, garantindo a segurança hídrica para a safra.",
+  }
+];
+
 const AboutPage = () => {
   return (
     <PageWrapper>
+      <MetaTags 
+        title="Sobre a L&P Soluções Ambientais | Consultoria Ambiental Especializada"
+        description="Conheça nossa equipe de especialistas em consultoria ambiental e nossa trajetória de sucesso em soluções para licenciamento e gestão ambiental."
+        keywords="consultoria ambiental paraná, especialistas ambientais, equipe técnica, licenciamento"
+      />
+      
       {/* Cabeçalho da página padronizado com PageBanner */}
       <PageBanner
         title="Sobre a L&P Soluções Ambientais"
@@ -76,6 +100,27 @@ const AboutPage = () => {
       </section>
       
       <MissionVisionValues />
+      
+      {/* NOVA SEÇÃO DE CASES DE SUCESSO */}
+      <section className="py-20 md:py-32 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-eco-blue/10 text-eco-blue font-medium text-sm uppercase tracking-wider rounded-full mb-6">
+              Cases de Sucesso
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Resultados Reais para Nossos Clientes</h2>
+            <div className="h-1 w-20 bg-eco-accent-orange rounded-full mx-auto mb-8"></div>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Veja como ajudamos empresas como a sua a superar desafios e alcançar seus objetivos.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {caseStudies.map((study, index) => (
+              <CaseStudyCard key={index} case={study} />
+            ))}
+          </div>
+        </div>
+      </section>
       
       {/* Seção da Equipe */}
       <section id="team" className="py-20 md:py-32 bg-muted/50 relative">
