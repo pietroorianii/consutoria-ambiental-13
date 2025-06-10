@@ -19,7 +19,9 @@ const categoryToServiceMap: Record<string, string> = {
   training: "training",
   management: "management",
   esg: "esg",
-  climate: "climate"
+  climate: "climate",
+  water_resources: "water_resources",
+  degraded_areas: "degraded_areas"
 };
 
 export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
