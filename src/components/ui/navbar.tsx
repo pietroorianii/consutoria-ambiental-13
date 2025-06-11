@@ -9,11 +9,20 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-eco-green to-eco-blue" style={{
-              fontFamily: "'Poppins', sans-serif"
-            }}>L&P SOLUÇÕES AMBIENTAIS
-            </span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/510063e3-c0ae-41ce-88e9-a835f4ecffcd.png" 
+              alt="PRISMA Soluções Ambientais" 
+              className="h-10 w-auto"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-prisma-green font-poppins">
+                PRISMA
+              </span>
+              <span className="text-xs text-prisma-blue font-montserrat uppercase tracking-wider">
+                Soluções Ambientais
+              </span>
+            </div>
           </Link>
         </div>
 
