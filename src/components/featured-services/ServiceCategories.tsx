@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Scale, FileText, Leaf } from "lucide-react";
+import { ArrowRight, Scale, FileText, Leaf, CheckCircle } from "lucide-react";
 
 interface ServiceGroup {
   title: string;
@@ -15,6 +15,8 @@ interface ServiceGroup {
     href: string;
   }>;
   color: string;
+  buttonColor: string;
+  mainDeliverables?: string[];
 }
 
 const serviceGroups: ServiceGroup[] = [
@@ -23,6 +25,7 @@ const serviceGroups: ServiceGroup[] = [
     description: "Foco em obter e manter a permissão para operar",
     icon: <Scale className="h-6 w-6" />,
     color: "eco-green",
+    buttonColor: "bg-eco-green hover:bg-eco-green-dark",
     services: [
       {
         title: "Licenciamento Ambiental",
@@ -39,6 +42,12 @@ const serviceGroups: ServiceGroup[] = [
         description: "Manutenção e renovações",
         href: "/services/management"
       }
+    ],
+    mainDeliverables: [
+      "Licenças Ambientais (LP, LI, LO)",
+      "Outorgas de Uso da Água",
+      "Autorizações e Dispensas",
+      "Acompanhamento de Processos"
     ]
   },
   {
@@ -46,6 +55,7 @@ const serviceGroups: ServiceGroup[] = [
     description: "Foco na análise e documentação técnica",
     icon: <FileText className="h-6 w-6" />,
     color: "eco-blue",
+    buttonColor: "bg-eco-blue hover:bg-eco-blue-dark",
     services: [
       {
         title: "Planos e Relatórios",
@@ -62,6 +72,12 @@ const serviceGroups: ServiceGroup[] = [
         description: "PRAD e GAC",
         href: "/services/degraded_areas"
       }
+    ],
+    mainDeliverables: [
+      "Planos de Gerenciamento (PGRS, PGRSS)",
+      "Estudos de Impacto (EIA/RIMA)",
+      "Inventários de Áreas Contaminadas (GAC)",
+      "Planos de Recuperação (PRAD)"
     ]
   },
   {
@@ -69,6 +85,7 @@ const serviceGroups: ServiceGroup[] = [
     description: "Foco em visão de futuro e valor de marca",
     icon: <Leaf className="h-6 w-6" />,
     color: "eco-accent-teal",
+    buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
     services: [
       {
         title: "Consultoria ESG",
@@ -90,6 +107,12 @@ const serviceGroups: ServiceGroup[] = [
         description: "Capacitação de equipes",
         href: "/services/training"
       }
+    ],
+    mainDeliverables: [
+      "Diagnóstico e Estratégia ESG",
+      "Inventários de Gases de Efeito Estufa",
+      "Relatórios de Sustentabilidade",
+      "Treinamentos Certificados"
     ]
   }
 ];
@@ -114,6 +137,21 @@ export function ServiceCategories() {
           </CardHeader>
           
           <CardContent className="space-y-3">
+            {/* Principais Entregas */}
+            {group.mainDeliverables && (
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-gray-700 mb-2">Principais Entregas:</h4>
+                <div className="space-y-1">
+                  {group.mainDeliverables.map((deliverable, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <CheckCircle className="h-3 w-3 text-eco-green mt-1 flex-shrink-0" />
+                      <span className="text-xs text-gray-600">{deliverable}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {group.services.map((service, serviceIndex) => (
               <Link
                 key={serviceIndex}
@@ -134,8 +172,8 @@ export function ServiceCategories() {
               </Link>
             ))}
             
-            <div className="pt-4 border-t border-gray-100">
-              <Button asChild className={`w-full bg-${group.color} hover:bg-${group.color}-dark`}>
+            <div className="pt-4 border-t border-gray-100 flex justify-center">
+              <Button asChild className={`w-full ${group.buttonColor}`}>
                 <Link to="/services">
                   Ver Todos os Serviços
                 </Link>

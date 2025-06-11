@@ -9,7 +9,6 @@ import {
   NavigationMenuList,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
-import { Leaf } from "lucide-react";
 import { serviceCategories } from "@/data/serviceCategories";
 import NavListItem from "./NavListItem";
 
@@ -18,18 +17,6 @@ export function DesktopNav() {
 
   return (
     <div className="hidden md:flex items-center justify-between w-full">
-      {/* Logo */}
-      <Link to="/" className="flex items-center space-x-3 group">
-        <div className="p-2 bg-eco-green/15 rounded-xl group-hover:bg-eco-green/25 transition-all duration-300 shadow-sm group-hover:shadow-md">
-          <Leaf className="h-7 w-7 text-eco-green group-hover:scale-110 transition-transform duration-300" />
-        </div>
-        <div className="hidden lg:block">
-          <h1 className="text-xl font-bold text-gray-900 font-primary group-hover:text-eco-green-dark transition-colors duration-300">
-            L&P Soluções Ambientais
-          </h1>
-        </div>
-      </Link>
-
       {/* Navigation Menu */}
       <NavigationMenu>
         <NavigationMenuList className="space-x-2">
@@ -64,23 +51,7 @@ export function DesktopNav() {
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-                    <Link
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-eco-green/20 to-eco-green/10 p-6 no-underline outline-none focus:shadow-md"
-                      to="/services"
-                    >
-                      <Leaf className="h-6 w-6 text-eco-green" />
-                      <div className="mb-2 mt-4 text-lg font-medium font-primary">
-                        Todos os Serviços
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground font-body">
-                        Explore nossa gama completa de soluções ambientais organizadas por categoria.
-                      </p>
-                    </Link>
-                  </NavigationMenuLink>
-                </li>
-                {Object.entries(serviceCategories).slice(0, 5).map(([key, category]) => (
+                {Object.entries(serviceCategories).map(([key, category]) => (
                   <NavListItem
                     key={key}
                     title={category.title}
@@ -120,7 +91,7 @@ export function DesktopNav() {
       </NavigationMenu>
 
       {/* CTA Button */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center">
         <Link
           to="/request-quote"
           className="inline-flex items-center justify-center rounded-md bg-eco-green px-6 py-2.5 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-eco-green-dark hover:shadow-lg hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eco-green"

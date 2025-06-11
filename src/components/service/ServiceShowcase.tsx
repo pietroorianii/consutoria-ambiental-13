@@ -6,6 +6,70 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { serviceCategories } from "@/data/serviceCategories";
 
+// Mapeamento de cores por categoria
+const categoryColors: Record<string, { bg: string; border: string; button: string; icon: string }> = {
+  licensing: {
+    bg: "from-eco-green/5 to-eco-green/3",
+    border: "border-eco-green/20 hover:border-eco-green/40",
+    button: "bg-eco-green hover:bg-eco-green-dark",
+    icon: "text-eco-green"
+  },
+  water_resources: {
+    bg: "from-blue-500/5 to-blue-500/3",
+    border: "border-blue-500/20 hover:border-blue-500/40",
+    button: "bg-blue-500 hover:bg-blue-600",
+    icon: "text-blue-500"
+  },
+  degraded_areas: {
+    bg: "from-amber-600/5 to-amber-600/3",
+    border: "border-amber-600/20 hover:border-amber-600/40",
+    button: "bg-amber-600 hover:bg-amber-700",
+    icon: "text-amber-600"
+  },
+  monitoring: {
+    bg: "from-eco-blue/5 to-eco-blue/3",
+    border: "border-eco-blue/20 hover:border-eco-blue/40",
+    button: "bg-eco-blue hover:bg-eco-blue-dark",
+    icon: "text-eco-blue"
+  },
+  reports: {
+    bg: "from-eco-earth/5 to-eco-earth/3",
+    border: "border-eco-earth/20 hover:border-eco-earth/40",
+    button: "bg-eco-earth-dark hover:bg-eco-earth-dark/90",
+    icon: "text-eco-earth-dark"
+  },
+  consulting: {
+    bg: "from-eco-accent-teal/5 to-eco-accent-teal/3",
+    border: "border-eco-accent-teal/20 hover:border-eco-accent-teal/40",
+    button: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
+    icon: "text-eco-accent-teal"
+  },
+  training: {
+    bg: "from-eco-accent-orange/5 to-eco-accent-orange/3",
+    border: "border-eco-accent-orange/20 hover:border-eco-accent-orange/40",
+    button: "bg-eco-accent-orange hover:bg-eco-accent-orange/90",
+    icon: "text-eco-accent-orange"
+  },
+  management: {
+    bg: "from-eco-blue-dark/5 to-eco-blue-dark/3",
+    border: "border-eco-blue-dark/20 hover:border-eco-blue-dark/40",
+    button: "bg-eco-blue-dark hover:bg-eco-blue-dark/90",
+    icon: "text-eco-blue-dark"
+  },
+  esg: {
+    bg: "from-eco-green-dark/5 to-eco-green-dark/3",
+    border: "border-eco-green-dark/20 hover:border-eco-green-dark/40",
+    button: "bg-eco-green-dark hover:bg-eco-green-dark/90",
+    icon: "text-eco-green-dark"
+  },
+  climate: {
+    bg: "from-eco-accent-yellow/5 to-eco-accent-yellow/3",
+    border: "border-eco-accent-yellow/20 hover:border-eco-accent-yellow/40",
+    button: "bg-eco-accent-yellow hover:bg-eco-accent-yellow/90",
+    icon: "text-eco-accent-yellow"
+  }
+};
+
 export const ServiceShowcase = () => {
   const categories = Object.entries(serviceCategories);
 
@@ -31,78 +95,82 @@ export const ServiceShowcase = () => {
 
         {/* Grid de Categorias de Serviços */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {categories.map(([key, category]) => (
-            <Card 
-              key={key}
-              className="group border-eco-green/20 hover:border-eco-green/40 transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 overflow-hidden"
-            >
-              {/* Header com ícone e título */}
-              <CardHeader className="pb-4 bg-gradient-to-br from-eco-green/5 to-eco-blue/3">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-eco-green/15 rounded-xl group-hover:bg-eco-green/25 transition-colors shadow-sm flex-shrink-0">
-                    {React.cloneElement(category.icon as React.ReactElement, {
-                      className: "h-8 w-8 text-eco-green"
-                    })}
+          {categories.map(([key, category]) => {
+            const colors = categoryColors[key] || categoryColors.licensing;
+            
+            return (
+              <Card 
+                key={key}
+                className={`group ${colors.border} transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 overflow-hidden`}
+              >
+                {/* Header com ícone e título */}
+                <CardHeader className={`pb-4 bg-gradient-to-br ${colors.bg}`}>
+                  <div className="flex items-start gap-4">
+                    <div className={`p-3 bg-white/80 rounded-xl group-hover:bg-white transition-colors shadow-sm flex-shrink-0`}>
+                      {React.cloneElement(category.icon as React.ReactElement, {
+                        className: `h-8 w-8 ${colors.icon}`
+                      })}
+                    </div>
+                    <div className="flex-grow">
+                      <CardTitle className="text-xl font-secondary text-gray-900 group-hover:text-gray-800 transition-colors mb-2">
+                        {category.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-gray-600 leading-relaxed font-body">
+                        {getShortDescription(key)}
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div className="flex-grow">
-                    <CardTitle className="text-xl font-secondary text-gray-900 group-hover:text-eco-green-dark transition-colors mb-2">
-                      {category.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm text-gray-600 leading-relaxed font-body">
-                      {getShortDescription(key)}
-                    </CardDescription>
+                </CardHeader>
+                
+                <CardContent className="p-6">
+                  {/* Principais Entregas/Focos */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-800 mb-3 font-secondary">
+                      Principais Entregas:
+                    </h4>
+                    <ul className="space-y-2">
+                      {getMainDeliverables(key).map((deliverable, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <CheckCircle className={`h-4 w-4 ${colors.icon} mt-0.5 flex-shrink-0`} />
+                          <span className="text-sm text-gray-600 font-body">{deliverable}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-              </CardHeader>
-              
-              <CardContent className="p-6">
-                {/* Principais Entregas/Focos */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-eco-green-dark mb-3 font-secondary">
-                    Principais Entregas:
-                  </h4>
-                  <ul className="space-y-2">
-                    {getMainDeliverables(key).map((deliverable, index) => (
-                      <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-eco-green mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-600 font-body">{deliverable}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
-                {/* Call to Action */}
-                <div className="flex gap-3">
-                  <Button 
-                    asChild 
-                    variant="outline" 
-                    size="sm"
-                    className="border-eco-green/40 text-eco-green hover:bg-eco-green hover:text-white transition-all duration-300 flex-1"
-                  >
-                    <Link 
-                      to={`/services/${key}`}
-                      className="flex items-center justify-center gap-2"
+                  {/* Call to Action */}
+                  <div className="flex gap-3">
+                    <Button 
+                      asChild 
+                      variant="outline" 
+                      size="sm"
+                      className={`${colors.border.replace('border-', 'border-').replace('/20', '/40')} ${colors.icon} hover:bg-white hover:text-gray-800 transition-all duration-300 flex-1`}
                     >
-                      Saiba Mais <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                  
-                  <Button 
-                    asChild
-                    size="sm"
-                    className="bg-eco-green hover:bg-eco-green-dark text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
-                  >
-                    <Link 
-                      to="/request-quote"
-                      className="flex items-center gap-2"
+                      <Link 
+                        to={`/services/${key}`}
+                        className="flex items-center justify-center gap-2"
+                      >
+                        Saiba Mais <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                    
+                    <Button 
+                      asChild
+                      size="sm"
+                      className={`${colors.button} text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg`}
                     >
-                      Orçamento
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                      <Link 
+                        to="/request-quote"
+                        className="flex items-center gap-2"
+                      >
+                        Orçamento
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* CTA geral */}
@@ -130,6 +198,8 @@ export const ServiceShowcase = () => {
 function getShortDescription(key: string): string {
   const descriptions: Record<string, string> = {
     licensing: "Navegue pela burocracia ambiental e opere legalmente com nosso suporte especializado.",
+    water_resources: "Garanta o direito de uso da água com estudos técnicos e outorgas completas.",
+    degraded_areas: "Resolva passivos ambientais e recupere áreas com projetos técnicos especializados.",
     monitoring: "Mantenha conformidade contínua com monitoramento profissional e relatórios técnicos.",
     reports: "Documentação técnica especializada para gestão ambiental e atendimento legal.",
     consulting: "Assessoria estratégica para questões ambientais complexas e tomada de decisão.",
@@ -147,6 +217,18 @@ function getMainDeliverables(key: string): string[] {
       "Licenças Ambientais (LP, LI, LO)",
       "Autorizações e Dispensas",
       "Acompanhamento de Processos"
+    ],
+    water_resources: [
+      "Outorgas de Uso da Água",
+      "Estudos de Disponibilidade Hídrica",
+      "Anuência para Perfuração de Poços",
+      "Monitoramento de Qualidade"
+    ],
+    degraded_areas: [
+      "Gerenciamento de Áreas Contaminadas (GAC)",
+      "Planos de Recuperação (PRAD)",
+      "Assessoria em TAC",
+      "Auditoria de Passivos Ambientais"
     ],
     monitoring: [
       "Coleta e Análises Laboratoriais",
