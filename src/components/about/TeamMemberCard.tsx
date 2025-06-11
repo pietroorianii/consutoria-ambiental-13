@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface TeamMemberProps {
   member: {
@@ -17,10 +18,12 @@ export function TeamMemberCard({ member }: TeamMemberProps) {
   return (
     <div className="glass-card overflow-hidden hover-grow transition-all duration-500 scroll-trigger group">
       <div className="relative overflow-hidden h-72">
-        <img 
-          src={member.image} 
-          alt={member.name}
+        <OptimizedImage
+          src={member.image}
+          alt={`Foto de ${member.name}`}
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
           <div className="text-white">

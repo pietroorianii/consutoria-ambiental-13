@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useContactForm } from "@/hooks/use-contact-form";
 import { ContactFormFields } from "./ContactFormFields";
+import { Loader2 } from "lucide-react";
 
 export function ContactForm() {
   const { form, isSubmitting, handleSubmit } = useContactForm();
@@ -16,14 +17,23 @@ export function ContactForm() {
       
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
-          <ContactFormFields form={form} />
+          <fieldset disabled={isSubmitting} className="space-y-6">
+            <ContactFormFields form={form} />
+          </fieldset>
           
           <Button 
             type="submit" 
             className="w-full bg-eco-green hover:bg-eco-green-dark transition-all duration-300 transform hover:scale-[1.01]"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+            {isSubmitting ? (
+              <>
+                <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5" />
+                Enviando...
+              </>
+            ) : (
+              "Enviar Mensagem"
+            )}
           </Button>
         </form>
       </Form>

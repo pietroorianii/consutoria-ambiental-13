@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { 
   NavigationMenu,
   NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Leaf } from "lucide-react";
+import { serviceCategories } from "@/data/serviceCategories";
+import NavListItem from "./NavListItem";
 
 export function DesktopNav() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -52,16 +56,40 @@ export function DesktopNav() {
             </Link>
           </NavigationMenuItem>
 
-          {/* Services */}
+          {/* Services with Dropdown */}
           <NavigationMenuItem>
-            <Link 
-              to="/services" 
-              className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green-dark focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-              onMouseEnter={() => setHoveredItem("services")}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
+            <NavigationMenuTrigger className="bg-background hover:bg-eco-green/10 hover:text-eco-green-dark">
               Serviços
-            </Link>
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <li className="row-span-3">
+                  <NavigationMenuLink asChild>
+                    <Link
+                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-eco-green/20 to-eco-green/10 p-6 no-underline outline-none focus:shadow-md"
+                      to="/services"
+                    >
+                      <Leaf className="h-6 w-6 text-eco-green" />
+                      <div className="mb-2 mt-4 text-lg font-medium font-primary">
+                        Todos os Serviços
+                      </div>
+                      <p className="text-sm leading-tight text-muted-foreground font-body">
+                        Explore nossa gama completa de soluções ambientais organizadas por categoria.
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+                {Object.entries(serviceCategories).slice(0, 5).map(([key, category]) => (
+                  <NavListItem
+                    key={key}
+                    title={category.title}
+                    href={`/services/${key}`}
+                  >
+                    {category.description}
+                  </NavListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
           </NavigationMenuItem>
 
           {/* FAQ */}

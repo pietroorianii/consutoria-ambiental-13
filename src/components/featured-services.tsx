@@ -1,13 +1,10 @@
 
 import React from "react";
-import { serviceCategories } from "@/data/serviceCategories";
 import { Sparkles } from "lucide-react";
-import { ServiceCard } from "./featured-services/ServiceCard";
+import { ServiceCategories } from "./featured-services/ServiceCategories";
 import { StatsSection } from "./featured-services/StatsSection";
 
 export function FeaturedServices() {
-  const serviceEntries = Object.entries(serviceCategories);
-
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
       {/* Background aprimorado */}
@@ -27,22 +24,13 @@ export function FeaturedServices() {
           
           <div className="h-1 w-24 bg-eco-accent-teal rounded-full mx-auto mb-8"></div>
           
-          <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-            Oferecemos soluções ambientais completas para empresas de todos os portes e setores,
-            auxiliando no cumprimento das exigências legais e na implementação de práticas sustentáveis.
+          <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed mb-12">
+            Oferecemos soluções ambientais completas organizadas em três áreas estratégicas 
+            para atender empresas de todos os portes e setores.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {serviceEntries.map(([key, serviceData], index) => (
-            <ServiceCard 
-              key={key}
-              serviceKey={key}
-              serviceData={serviceData}
-              index={index}
-            />
-          ))}
-        </div>
+        <ServiceCategories />
         
         <StatsSection />
       </div>

@@ -16,42 +16,58 @@ export interface FAQCategory {
 
 export const faqData: FAQCategory[] = [
   {
-    id: "general",
-    title: "Informações Gerais",
+    id: "licensing",
+    title: "Licenciamento e Operação",
     items: [
       {
-        question: "O que exatamente faz uma consultoria ambiental?",
-        answer: "Uma consultoria ambiental, como a L&P Soluções Ambientais, auxilia empresas e organizações a gerenciar suas responsabilidades e impactos ambientais. Isso envolve desde a obtenção de licenças obrigatórias, desenvolvimento de estudos de impacto, monitoramento da qualidade do ar e da água, até a implementação de práticas de gestão de resíduos, treinamentos e estratégias de sustentabilidade. Nosso objetivo é garantir que nossos clientes operem em conformidade com a legislação, minimizem riscos e promovam o desenvolvimento sustentável."
+        question: "Vou iniciar um novo empreendimento/obra. Do que preciso para estar em conformidade com a lei?",
+        answer: "Todo novo empreendimento com potencial de impacto ambiental precisa de uma licença. O primeiro passo é o Licenciamento Ambiental, que pode variar desde uma simples Dispensa (DLAM) até um processo trifásico (LP/LI/LO). Nossa equipe realiza o enquadramento correto e cuida de todo o processo para você, desde a análise de viabilidade até a obtenção da licença final.",
+        relatedLink: {
+          text: "Saiba mais sobre Licenciamento",
+          href: "/services/licensing"
+        }
       },
       {
-        question: "Por que minha empresa precisa de uma consultoria ambiental?",
-        answer: "Há várias razões importantes: **Conformidade Legal** - A legislação ambiental é complexa e está em constante mudança. Ajudamos sua empresa a navegar por essas exigências, evitando multas, embargos e outras penalidades. **Redução de Riscos e Custos** - Identificamos riscos ambientais que podem levar a passivos financeiros e danos à reputação, propondo soluções que otimizam recursos e reduzem custos. **Sustentabilidade e Imagem Corporativa** - Demonstramos o compromisso da sua empresa com a sustentabilidade, melhorando sua imagem perante clientes, investidores e sociedade. **Acesso a Mercados** - Muitas instituições financeiras e mercados exigem comprovação de boas práticas ambientais."
+        question: "Minha atividade utiliza água de um poço ou rio. Preciso de alguma autorização especial?",
+        answer: "Sim, o uso de recursos hídricos superficiais ou subterrâneos exige uma Outorga de Direito de Uso, emitida pelo IAT no Paraná. Dependendo do volume, pode ser necessário apenas uma Declaração de Uso Insignificante (emissão automática) ou uma Outorga formal. Elaboramos os estudos necessários e conduzimos todo o processo para garantir seu direito de uso da água.",
+        relatedLink: {
+          text: "Ver detalhes sobre Outorga",
+          href: "/service/water_resources"
+        }
       },
       {
-        question: "Como escolher a consultoria ambiental certa para minha empresa?",
-        answer: "Considere os seguintes pontos essenciais: **Experiência e Especialização** - Verifique se a consultoria tem experiência comprovada no seu setor e nos serviços que você necessita. **Equipe Técnica Qualificada** - Avalie a qualificação e multidisciplinaridade da equipe. **Reputação e Referências** - Busque por depoimentos de clientes e estudos de caso. **Abordagem e Metodologia** - Entenda como a consultoria trabalha e se sua abordagem se alinha com as necessidades da sua empresa. **Comunicação e Transparência** - Escolha uma empresa que demonstre clareza na comunicação e transparência nos processos."
+        question: "Quanto tempo demora para obter uma licença ambiental?",
+        answer: "O prazo varia conforme o tipo de licença: **Licenças Simplificadas** podem levar de 15 a 30 dias, **Licenças Prévias** geralmente variam entre 3 a 6 meses, **Licenças de Instalação** podem levar de 2 a 4 meses. Nossa experiência nos permite otimizar processos e antecipar necessidades, agilizando a tramitação."
+      },
+      {
+        question: "Quais atividades precisam obrigatoriamente de licença ambiental?",
+        answer: "Atividades com potencial poluidor como indústrias, mineração, agricultura intensiva, construção civil, postos de combustível, aterros sanitários, hospitais e muitas outras. A necessidade é determinada pelo porte e potencial poluidor da atividade. Realizamos uma análise gratuita inicial para determinar exatamente quais licenças sua empresa precisa."
       }
     ]
   },
   {
-    id: "services",
-    title: "Serviços e Processos",
+    id: "problems",
+    title: "Problemas e Fiscalizações",
     items: [
       {
-        question: "Quais tipos de serviços vocês oferecem?",
-        answer: "Oferecemos uma gama completa de soluções ambientais: **Licenciamento e Autorizações Ambientais** (LP, LI, LO, etc.), **Monitoramento e Análises Ambientais** (água, solo, ar, efluentes), **Elaboração de Planos e Relatórios Técnicos** (PGRS, EIA/RIMA, PCA, etc.), **Consultoria Estratégica e Acompanhamento de Projetos**, **Treinamentos e Capacitações Ambientais**, **Gestão e Manutenção de Requisitos Ambientais**. Cada serviço é personalizado conforme as necessidades específicas do seu empreendimento.",
+        question: "Recebi um Auto de Infração / Notificação do IAT. O que devo fazer?",
+        answer: "Aja rapidamente! O primeiro passo é nos contatar para uma análise técnica do auto. Temos prazos legais para defesa (geralmente 15 a 20 dias). Nossa equipe elabora a defesa ou recurso administrativo e, se necessário, negocia um Termo de Ajustamento de Conduta (TAC) para regularizar a situação e evitar multas mais pesadas.",
         relatedLink: {
-          text: "Ver todos os serviços",
-          href: "/services"
+          text: "Solicite ajuda urgente",
+          href: "/contact"
         }
       },
       {
-        question: "Como funciona o processo de contratação e desenvolvimento de um projeto?",
-        answer: "Nosso processo é colaborativo e transparente, seguindo estas etapas: **1. Contato Inicial e Diagnóstico** - Entendemos suas necessidades através do formulário de solicitação de orçamento ou contato direto, realizando um diagnóstico preliminar. **2. Proposta Personalizada** - Elaboramos uma proposta técnica e comercial detalhada, com escopo, cronograma e custos. **3. Planejamento** - Após aprovação, definimos um plano de trabalho detalhado. **4. Execução** - Nossa equipe multidisciplinar executa os serviços, mantendo comunicação constante. **5. Entrega e Acompanhamento** - Entregamos os relatórios, planos ou licenças, oferecendo suporte para implementação conforme necessário."
+        question: "Meu terreno tem um histórico de contaminação ou preciso recuperar uma área desmatada. Como proceder?",
+        answer: "Essa situação exige um plano específico: Recuperação de Áreas Degradadas (PRAD) para vegetação ou Gerenciamento de Áreas Contaminadas (GAC) para solo/água contaminados. Realizamos desde a investigação inicial até a execução do plano de recuperação, resolvendo o passivo ambiental e valorizando seu ativo.",
+        relatedLink: {
+          text: "Entenda sobre recuperação de áreas",
+          href: "/service/degraded_areas"
+        }
       },
       {
-        question: "Quais são os benefícios tangíveis de investir em consultoria ambiental?",
-        answer: "Além da conformidade legal, os benefícios incluem: **Prevenção de multas e sanções ambientais**, **Otimização do uso de recursos naturais** (água, energia), levando à redução de custos, **Melhora da reputação e valor da marca**, **Aumento da competitividade** e acesso a novos mercados, **Melhoria do relacionamento com stakeholders** (comunidade, órgãos ambientais, investidores), **Identificação de oportunidades de inovação** e processos mais sustentáveis. O investimento em consultoria ambiental frequentemente se paga através da economia de recursos e prevenção de custos regulatórios."
+        question: "O que acontece se eu operar sem licença ambiental?",
+        answer: "Operar sem licença é crime ambiental (Lei 9.605/98) e pode resultar em: multas de R$ 500 a R$ 10 milhões, embargo da atividade, responsabilização criminal dos dirigentes e obrigação de reparar danos. A regularização imediata é fundamental para minimizar riscos e custos."
       }
     ]
   },
@@ -61,38 +77,36 @@ export const faqData: FAQCategory[] = [
     items: [
       {
         question: "Quanto custam os serviços de consultoria ambiental?",
-        answer: "O custo varia significativamente dependendo da complexidade do projeto, do tipo de serviço, do porte do empreendimento e das especificidades locais. Fatores como urgência, localização, complexidade técnica e requisitos específicos influenciam o investimento. Encorajamos você a solicitar um orçamento personalizado para que possamos entender suas necessidades e fornecer uma estimativa precisa. Nosso compromisso é oferecer soluções com excelente custo-benefício, sempre transparentes sobre os custos envolvidos.",
+        answer: "O investimento varia conforme a complexidade: licenças simplificadas podem custar de R$ 3.000 a R$ 15.000, licenças complexas de R$ 15.000 a R$ 80.000, outorgas de R$ 5.000 a R$ 25.000. O importante é ver como investimento preventivo - o custo de uma multa ou embargo sempre supera o investimento em conformidade.",
         relatedLink: {
-          text: "Solicitar orçamento",
+          text: "Solicitar orçamento personalizado",
           href: "/request-quote"
         }
-      }
-    ]
-  },
-  {
-    id: "licensing",
-    title: "Licenciamento Ambiental",
-    items: [
-      {
-        question: "Quanto tempo leva para obter uma licença ambiental?",
-        answer: "O prazo varia conforme o tipo de licença e complexidade do projeto. **Licenças Simplificadas** podem levar de 15 a 30 dias, **Licenças Prévias** geralmente variam entre 3 a 6 meses, **Licenças de Instalação** podem levar de 2 a 4 meses, e **Licenças de Operação** normalmente de 2 a 3 meses. Fatores como qualidade da documentação, necessidade de estudos complementares, consultas públicas e especificidades do órgão ambiental podem influenciar esses prazos. Nossa experiência nos permite otimizar processos e antecipar necessidades, agilizando a tramitação."
       },
       {
-        question: "Minha empresa precisa de licença ambiental para funcionar?",
-        answer: "A necessidade de licença ambiental depende do tipo de atividade e seu potencial poluidor. **Atividades de alto impacto** (indústrias, mineração, grandes empreendimentos) geralmente precisam de licenças específicas. **Atividades de médio impacto** podem necessitar de licenças simplificadas. **Atividades de baixo impacto** podem precisar apenas de declarações ou cadastros. Realizamos uma análise gratuita inicial para determinar exatamente quais licenças ou autorizações sua empresa precisa, baseando-nos na legislação aplicável e nas características específicas do seu empreendimento."
+        question: "Vale a pena investir em consultoria ambiental para uma pequena empresa?",
+        answer: "Definitivamente! Pequenas empresas são frequentemente mais vulneráveis a multas e embargos. Uma única autuação pode custar mais que anos de consultoria preventiva. Além disso, a conformidade ambiental pode abrir portas para novos clientes, financiamentos e parcerias que exigem certificações ambientais."
       }
     ]
   },
   {
-    id: "compliance",
-    title: "Conformidade e Problemas",
+    id: "specific",
+    title: "Setores Específicos",
     items: [
       {
-        question: "O que acontece se minha empresa for autuada por questões ambientais?",
-        answer: "Em caso de autuação, é fundamental agir rapidamente. **Primeiros passos**: Analisar o auto de infração, identificar as não conformidades e avaliar prazos para defesa. **Nossa atuação**: Elaboramos defesas técnicas e administrativas, orientamos sobre medidas corretivas necessárias, acompanhamos processos administrativos e, quando necessário, buscamos acordos ou termos de ajustamento de conduta. **Prevenção**: O mais importante é a prevenção através de conformidade legal adequada. Oferecemos auditorias preventivas para identificar e corrigir não conformidades antes que se tornem problemas.",
+        question: "Sou do agronegócio. Quais são minhas principais obrigações ambientais?",
+        answer: "Principais obrigações incluem: **Cadastro Ambiental Rural (CAR)**, **Licenciamento para atividades de alto impacto** (suinocultura, avicultura industrial), **Outorga para irrigação**, **Gestão de defensivos** e embalagens, **Reserva Legal e APP** preservadas. Oferecemos um pacote completo para o setor."
+      },
+      {
+        question: "Trabalho com construção civil. Que licenças preciso?",
+        answer: "Construção civil exige: **Licença de Instalação** para a obra, **PGRS** (Plano de Gerenciamento de Resíduos Sólidos), **Outorga** se usar água de poço/rio, possível **Supressão de Vegetação**, **Licença de Operação** para atividades permanentes. Cada projeto tem suas especificidades que analisamos caso a caso."
+      },
+      {
+        question: "Minha indústria gera resíduos perigosos. Como devo proceder?",
+        answer: "Resíduos perigosos exigem **PGRS específico**, **Cadastro Técnico Federal (IBAMA)**, **Licenciamento adequado**, **CADRI** (Certificado de Aprovação para Destinação de Resíduos), transporte por empresas credenciadas e **Inventário Nacional de Resíduos Sólidos**. A gestão inadequada pode resultar em crime ambiental.",
         relatedLink: {
-          text: "Fale conosco urgentemente",
-          href: "/contact"
+          text: "Saiba mais sobre PGRS",
+          href: "/services/reports"
         }
       }
     ]
