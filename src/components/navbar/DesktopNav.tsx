@@ -7,6 +7,7 @@ import {
   NavigationMenuContent,
   NavigationMenuTrigger,
   NavigationMenuList,
+  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { Leaf } from "lucide-react";
 import { serviceCategories } from "@/data/serviceCategories";
