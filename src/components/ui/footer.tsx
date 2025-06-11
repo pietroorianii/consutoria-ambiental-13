@@ -16,8 +16,9 @@ export function Footer() {
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{
               fontFamily: "'Poppins', sans-serif"
             }}>
-              <Leaf className="h-5 w-5 text-eco-green" />
-              L&P Soluções Ambientais
+              <Leaf className="h-5 w-5" style={{ color: "#2A6F47" }} />
+              <span style={{ color: "#2A6F47" }}>PRISMA</span>{" "}
+              <span style={{ color: "#0077C2" }}>Soluções Ambientais</span>
             </h3>
             <p className="text-muted-foreground mb-4" style={{
               fontFamily: "'Roboto', sans-serif"
@@ -76,16 +77,16 @@ export function Footer() {
               fontFamily: "'Lato', sans-serif"
             }}>
               <li className="flex items-start gap-2 text-muted-foreground">
-                <MapPin className="h-5 w-5 text-eco-green flex-shrink-0 mt-0.5" />
+                <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: "#2A6F47" }} />
                 <span>Av. Rio Branco, 1500<br />Centro, Rio de Janeiro - RJ<br />CEP: 20040-002</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
-                <Phone className="h-5 w-5 text-eco-green flex-shrink-0" />
+                <Phone className="h-5 w-5 flex-shrink-0" style={{ color: "#2A6F47" }} />
                 <span>(14) 99713-3722</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
-                <Mail className="h-5 w-5 text-eco-green flex-shrink-0" />
-                <span>contato@l&p.com.br</span>
+                <Mail className="h-5 w-5 flex-shrink-0" style={{ color: "#2A6F47" }} />
+                <span>contato@prisma.com.br</span>
               </li>
             </ul>
           </div>
@@ -100,20 +101,20 @@ export function Footer() {
             }}>
               <li>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-                  <Facebook className="h-5 w-5 text-eco-green" />
-                  <span>L&P Brasil</span>
+                  <Facebook className="h-5 w-5" style={{ color: "#2A6F47" }} />
+                  <span>PRISMA Brasil</span>
                 </a>
               </li>
               <li>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-                  <Instagram className="h-5 w-5 text-eco-green" />
-                  <span>@L&P</span>
+                  <Instagram className="h-5 w-5" style={{ color: "#2A6F47" }} />
+                  <span>@PRISMA</span>
                 </a>
               </li>
               <li>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-                  <Linkedin className="h-5 w-5 text-eco-green" />
-                  <span>L&P Soluções Ambientais</span>
+                  <Linkedin className="h-5 w-5" style={{ color: "#2A6F47" }} />
+                  <span>PRISMA Soluções Ambientais</span>
                 </a>
               </li>
             </ul>
@@ -124,7 +125,7 @@ export function Footer() {
           <p style={{
             fontFamily: "'Lato', sans-serif"
           }}>
-            &copy; {currentYear} L&P Soluções Ambientais. Todos os direitos reservados.
+            &copy; {currentYear} PRISMA Soluções Ambientais. Todos os direitos reservados.
           </p>
         </div>
       </div>
