@@ -70,53 +70,27 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Cores da PRISMA Soluções Ambientais
-                prisma: {
-                    green: {
-                        DEFAULT: '#2A6F47', // Verde primário
-                        light: '#4A8B64',
-                        dark: '#1A5530'
-                    },
-                    blue: {
-                        DEFAULT: '#0077C2', // Azul secundário
-                        light: '#3391D1',
-                        dark: '#005999'
-                    },
-                    yellow: {
-                        DEFAULT: '#FDB813', // Amarelo/dourado de destaque
-                        light: '#FDCC40',
-                        dark: '#E6A50A'
-                    },
-                    text: {
-                        DEFAULT: '#333333', // Cinza escuro para textos
-                        light: '#666666'
-                    },
-                    bg: {
-                        DEFAULT: '#FFFFFF',
-                        light: '#F8F9FA'
-                    }
-                },
-                // Mantendo as cores eco existentes para compatibilidade
+                // Refined eco colors palette for 2025 design
                 eco: {
                     green: {
-                        light: '#8EB69B',
-                        DEFAULT: '#3B7D59',
-                        dark: '#2B5B41',
+                        light: '#8EB69B', // Softer sage green
+                        DEFAULT: '#3B7D59', // Rich moss green
+                        dark: '#2B5B41', // Deep forest green
                     },
                     blue: {
-                        light: '#A8DADC',
-                        DEFAULT: '#1A759F',
-                        dark: '#184E77',
+                        light: '#A8DADC', // Soft water blue
+                        DEFAULT: '#1A759F', // Lake blue
+                        dark: '#184E77', // Deep ocean blue
                     },
                     earth: {
-                        light: '#E9E6E1',
-                        DEFAULT: '#C8B8A9',
-                        dark: '#8A7968',
+                        light: '#E9E6E1', // Cream/paper
+                        DEFAULT: '#C8B8A9', // Soft sand
+                        dark: '#8A7968', // Warm brown
                     },
                     accent: {
-                        yellow: '#D9B44A',
-                        orange: '#E07A5F',
-                        teal: '#4DA1A9',
+                        yellow: '#D9B44A', // Mustard yellow
+                        orange: '#E07A5F', // Terracotta
+                        teal: '#4DA1A9', // Teal accent
                     }
                 }
 			},
@@ -197,7 +171,7 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%)',
-                'organic-pattern': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233b7d59' fill-opacity='0.08' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z'%3E%3C/path%3E%3C/svg%3E\")",
+                'organic-pattern': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233b7d59' fill-opacity='0.08' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z'%3E%3C/path%3E%3C/svg%3E\")", // fill-opacity changed from 0.05 to 0.08
 			},
             boxShadow: {
                 'glass': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02)',
