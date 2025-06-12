@@ -148,14 +148,11 @@ export function ServiceCategories() {
               </span>
             </div>
             
-            <CardTitle className={`text-xl group-hover:text-${group.color} transition-colors duration-300 leading-tight mb-2 relative group/title`} style={{
+            <CardTitle className={`text-xl group-hover:text-${group.color} transition-colors duration-300 leading-tight mb-2`} style={{
               fontFamily: "'Poppins', sans-serif",
               color: "#333333"
             }}>
-              <span className="relative">
-                {group.title}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-${group.color} scale-x-0 group-hover/title:scale-x-100 transition-transform duration-300 origin-left`}></span>
-              </span>
+              {group.title}
             </CardTitle>
             
             <p className="text-sm text-prisma-gray-text/80 leading-relaxed" style={{
@@ -168,11 +165,8 @@ export function ServiceCategories() {
           <CardContent className="px-6 pb-6 flex-grow relative z-10 flex flex-col">
             {/* Principais Entregas com animação */}
             <div className="mb-6">
-              <h4 className="text-sm font-semibold text-prisma-gray-text mb-3 font-secondary relative group/subtitle">
-                <span className="relative">
-                  Principais Entregas:
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-prisma-green scale-x-0 group-hover/subtitle:scale-x-100 transition-transform duration-300 origin-left"></span>
-                </span>
+              <h4 className="text-sm font-semibold text-prisma-gray-text mb-3 font-secondary">
+                Principais Entregas:
               </h4>
               <ul className="space-y-2">
                 {group.mainDeliverables?.map((deliverable, idx) => (
@@ -182,14 +176,9 @@ export function ServiceCategories() {
                     style={{ animationDelay: `${0.1 + idx * 0.05}s` }}
                   >
                     <CheckCircle className={`h-4 w-4 text-${group.color} mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300`} />
-                    <span className="text-sm text-prisma-gray-text/90 leading-relaxed group-hover/item:text-prisma-gray-text transition-colors relative group/text" style={{
+                    <span className="text-sm text-prisma-gray-text/90 leading-relaxed group-hover/item:text-prisma-gray-text transition-colors" style={{
                       fontFamily: "'Montserrat', sans-serif"
-                    }}>
-                      <span className="relative">
-                        {deliverable}
-                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-prisma-green scale-x-0 group-hover/text:scale-x-100 transition-transform duration-300 origin-left"></span>
-                      </span>
-                    </span>
+                    }}>{deliverable}</span>
                   </li>
                 ))}
               </ul>
@@ -197,11 +186,8 @@ export function ServiceCategories() {
             
             {/* Serviços em lista compacta */}
             <div className="mb-6">
-              <h4 className="text-sm font-semibold text-prisma-gray-text mb-3 relative group/services">
-                <span className="relative">
-                  Principais Serviços:
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-prisma-green scale-x-0 group-hover/services:scale-x-100 transition-transform duration-300 origin-left"></span>
-                </span>
+              <h4 className="text-sm font-semibold text-prisma-gray-text mb-3">
+                Principais Serviços:
               </h4>
               <div className="space-y-1">
                 {group.services.slice(0, 2).map((service, idx) => (
@@ -211,11 +197,8 @@ export function ServiceCategories() {
                     className="block p-2 rounded-lg hover:bg-prisma-gray-light/30 transition-all duration-200 group/service"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium text-prisma-gray-text group-hover/service:text-prisma-green transition-colors relative">
-                        <span className="relative">
-                          {service.title}
-                          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-prisma-green scale-x-0 group-hover/service:scale-x-100 transition-transform duration-300 origin-left"></span>
-                        </span>
+                      <span className="text-xs font-medium text-prisma-gray-text group-hover/service:text-prisma-green transition-colors">
+                        {service.title}
                       </span>
                       <ExternalLink className="h-3 w-3 text-prisma-gray-text/50 group-hover/service:text-prisma-green transition-colors" />
                     </div>
@@ -235,13 +218,10 @@ export function ServiceCategories() {
                 asChild 
                 variant="outline" 
                 size="sm"
-                className={`flex-1 border-${group.color}/30 text-${group.color} hover:bg-${group.color} hover:text-white transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group`}
+                className={`flex-1 border-${group.color}/30 text-${group.color} hover:bg-${group.color} hover:text-white transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg`}
               >
                 <Link to={`/services`} className="flex items-center justify-center gap-2">
-                  <span className="relative">
-                    Explorar
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-current scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </span>
+                  Explorar 
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -249,13 +229,10 @@ export function ServiceCategories() {
               <Button 
                 asChild
                 size="sm"
-                className={`${group.buttonColor} text-white transition-all duration-300 group-hover:scale-105 shadow-md group-hover:shadow-xl group`}
+                className={`${group.buttonColor} text-white transition-all duration-300 group-hover:scale-105 shadow-md group-hover:shadow-xl`}
               >
-                <Link to="/request-quote" className="relative">
-                  <span className="relative">
-                    Orçamento
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </span>
+                <Link to="/request-quote">
+                  Orçamento
                 </Link>
               </Button>
             </div>
