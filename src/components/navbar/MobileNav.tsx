@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Menu, Leaf } from "lucide-react";
+import { Menu } from "lucide-react";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,12 +16,14 @@ export function MobileNav() {
     <div className="flex md:hidden items-center justify-between w-full">
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
-        <div className="p-2 bg-prisma-green/15 rounded-xl">
-          <Leaf className="h-6 w-6 text-prisma-green" />
-        </div>
+        <img 
+          src="/lovable-uploads/20af9ca8-439a-4c69-a3a3-4e79814b104b.png" 
+          alt="PRISMA Soluções Ambientais" 
+          className="h-10 w-auto"
+        />
         <div>
-          <h1 className="text-lg font-bold text-prisma-green" style={{ fontFamily: "'Poppins', sans-serif" }}>PRISMA</h1>
-          <p className="text-xs text-prisma-blue leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <h1 className="text-lg font-bold bg-gradient-to-r from-prisma-green to-prisma-blue bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>PRISMA</h1>
+          <p className="text-xs bg-gradient-to-r from-prisma-blue to-prisma-green bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Soluções Ambientais
           </p>
         </div>
@@ -36,7 +38,7 @@ export function MobileNav() {
         </SheetTrigger>
         <SheetContent side="right" className="w-80">
           <SheetHeader>
-            <SheetTitle className="text-left text-prisma-green" style={{ fontFamily: "'Poppins', sans-serif" }}>Menu de Navegação</SheetTitle>
+            <SheetTitle className="text-left bg-gradient-to-r from-prisma-green to-prisma-blue bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Menu de Navegação</SheetTitle>
           </SheetHeader>
           <div className="mt-6 space-y-4">
             {/* Home */}
@@ -94,7 +96,7 @@ export function MobileNav() {
               <Link
                 to="/request-quote"
                 onClick={closeMenu}
-                className="block w-full text-center bg-prisma-green text-white px-4 py-3 rounded-md font-medium shadow-md hover:bg-prisma-green-dark transition-all duration-300"
+                className="block w-full text-center bg-gradient-to-r from-prisma-green to-prisma-blue text-white px-4 py-3 rounded-md font-medium shadow-md hover:from-prisma-blue hover:to-prisma-green transition-all duration-300"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Solicitar Orçamento

@@ -11,17 +11,17 @@ export function Navbar() {
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
-              src="/lovable-uploads/510063e3-c0ae-41ce-88e9-a835f4ecffcd.png" 
-              alt="PRISMA Logo" 
-              className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
+              src="/lovable-uploads/20af9ca8-439a-4c69-a3a3-4e79814b104b.png" 
+              alt="PRISMA Soluções Ambientais" 
+              className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
             />
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-prisma-green group-hover:text-prisma-green transition-colors" style={{
+              <span className="text-2xl font-bold bg-gradient-to-r from-prisma-green via-prisma-blue to-prisma-green bg-clip-text text-transparent group-hover:from-prisma-blue group-hover:to-prisma-green transition-all duration-300" style={{
                 fontFamily: "'Poppins', sans-serif"
               }}>
                 PRISMA
               </span>
-              <span className="text-sm font-medium text-prisma-blue" style={{
+              <span className="text-sm font-medium bg-gradient-to-r from-prisma-blue to-prisma-green bg-clip-text text-transparent" style={{
                 fontFamily: "'Montserrat', sans-serif"
               }}>
                 Soluções Ambientais

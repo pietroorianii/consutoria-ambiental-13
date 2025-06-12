@@ -74,9 +74,9 @@ export function HeroBanner() {
             <div className="relative group">
               <div className="absolute inset-0 bg-white/20 rounded-3xl blur-2xl group-hover:bg-white/30 transition-all duration-500"></div>
               <img 
-                src="/lovable-uploads/510063e3-c0ae-41ce-88e9-a835f4ecffcd.png" 
+                src="/lovable-uploads/20af9ca8-439a-4c69-a3a3-4e79814b104b.png" 
                 alt="PRISMA Soluções Ambientais" 
-                className="relative w-72 h-auto animate-float group-hover:scale-105 transition-transform duration-500"
+                className="relative w-80 h-auto animate-float group-hover:scale-110 transition-transform duration-500"
                 style={{
                   filter: "drop-shadow(0 20px 40px rgba(255, 255, 255, 0.3))"
                 }}
