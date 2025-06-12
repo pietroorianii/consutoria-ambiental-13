@@ -32,7 +32,10 @@ export function HeroBanner() {
               textShadow: "0px 2px 4px rgba(0,0,0,0.3)"
             }}>
               Conformidade Ambiental que{" "}
-              <span className="text-prisma-yellow">Impulsiona</span>{" "}
+              <span className="text-prisma-yellow hover:text-prisma-yellow/90 transition-colors duration-300 cursor-default relative group">
+                Impulsiona
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-prisma-yellow scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              </span>{" "}
               seu Negócio
             </h1>
 
@@ -51,9 +54,9 @@ export function HeroBanner() {
             <div className="flex flex-col sm:flex-row gap-5 mt-4 animate-fade-in" style={{
               animationDelay: "0.6s"
             }}>
-              <Button asChild size="lg" className="prisma-btn-primary px-8 py-6 rounded-lg text-base ripple-button">
+              <Button asChild size="lg" className="prisma-btn-primary px-8 py-6 rounded-lg text-base ripple-button group">
                 <Link to="/services" className="relative z-10 flex items-center gap-3 transition-all group-hover:scale-105">
-                  <span className="text-base font-medium">Nossos Serviços</span>
+                  <span className="text-base font-medium group-hover:text-white transition-colors">Nossos Serviços</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
@@ -63,18 +66,18 @@ export function HeroBanner() {
 
               <Button asChild size="lg" variant="outline" className="prisma-btn-secondary px-8 py-6 rounded-lg text-base group border-2 border-white/30 text-white hover:bg-white hover:text-prisma-green">
                 <Link to="/contact" className="relative z-10 flex items-center gap-3 transition-all group-hover:scale-105">
-                  Fale com um Especialista
+                  <span className="group-hover:text-prisma-green transition-colors">Fale com um Especialista</span>
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Logo à direita - posicionamento estático e melhorado */}
+          {/* Nova imagem à direita */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute inset-0 bg-white/20 rounded-3xl blur-2xl"></div>
               <img 
-                src="/lovable-uploads/2841475c-8c0a-45ba-b310-8788db19c7ea.png" 
+                src="/lovable-uploads/d620006c-64d5-4c80-b264-c256773f112f.png" 
                 alt="PRISMA Soluções Ambientais" 
                 className="relative w-80 h-auto"
                 style={{
