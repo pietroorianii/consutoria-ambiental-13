@@ -6,16 +6,8 @@ import React from "react";
 export function HeroBanner() {
   return (
     <div className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Fundo sofisticado com imagem de alta qualidade */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=2000&h=1200"
-          alt="Natureza sustentável"
-          className="w-full h-full object-cover"
-        />
-        {/* Sobreposição de gradiente PRISMA */}
-        <div className="absolute inset-0 bg-gradient-to-br from-prisma-green/80 via-prisma-blue/75 to-prisma-green/70"></div>
-      </div>
+      {/* Fundo com gradiente PRISMA - sem imagem de árvore */}
+      <div className="absolute inset-0 bg-gradient-to-br from-prisma-green/80 via-prisma-blue/75 to-prisma-green/70"></div>
       
       {/* Elementos decorativos abstratos modernos */}
       <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-prisma-yellow/10 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -77,15 +69,16 @@ export function HeroBanner() {
             </div>
           </div>
 
-          {/* Logo à direita */}
+          {/* Logo à direita - melhor posicionamento e destaque */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-white/20 rounded-3xl blur-2xl group-hover:bg-white/30 transition-all duration-500"></div>
               <img 
                 src="/lovable-uploads/510063e3-c0ae-41ce-88e9-a835f4ecffcd.png" 
                 alt="PRISMA Soluções Ambientais" 
-                className="w-80 h-auto animate-float"
+                className="relative w-72 h-auto animate-float group-hover:scale-105 transition-transform duration-500"
                 style={{
-                  filter: "drop-shadow(0 20px 40px rgba(255, 255, 255, 0.2))"
+                  filter: "drop-shadow(0 20px 40px rgba(255, 255, 255, 0.3))"
                 }}
               />
             </div>

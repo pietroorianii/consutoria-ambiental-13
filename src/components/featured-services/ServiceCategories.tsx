@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Scale, FileText, Leaf, CheckCircle } from "lucide-react";
+import { ArrowRight, Scale, FileText, Leaf, CheckCircle, ExternalLink } from "lucide-react";
 
 interface ServiceGroup {
   title: string;
@@ -17,15 +17,17 @@ interface ServiceGroup {
   color: string;
   buttonColor: string;
   mainDeliverables?: string[];
+  badge: string;
 }
 
 const serviceGroups: ServiceGroup[] = [
   {
     title: "Licenciamento e Conformidade Legal",
-    description: "Foco em obter e manter a permissão para operar",
-    icon: <Scale className="h-6 w-6" />,
-    color: "eco-green",
-    buttonColor: "bg-eco-green hover:bg-eco-green-dark",
+    description: "Garanta a operação legal do seu negócio",
+    icon: <Scale className="h-8 w-8" />,
+    color: "prisma-green",
+    buttonColor: "bg-prisma-green hover:bg-prisma-green/90",
+    badge: "Essencial",
     services: [
       {
         title: "Licenciamento Ambiental",
@@ -46,16 +48,16 @@ const serviceGroups: ServiceGroup[] = [
     mainDeliverables: [
       "Licenças Ambientais (LP, LI, LO)",
       "Outorgas de Uso da Água",
-      "Autorizações e Dispensas",
-      "Acompanhamento de Processos"
+      "Autorizações e Dispensas"
     ]
   },
   {
     title: "Estudos Técnicos e Diagnósticos",
-    description: "Foco na análise e documentação técnica",
-    icon: <FileText className="h-6 w-6" />,
-    color: "eco-blue",
-    buttonColor: "bg-eco-blue hover:bg-eco-blue-dark",
+    description: "Análise técnica especializada",
+    icon: <FileText className="h-8 w-8" />,
+    color: "prisma-blue",
+    buttonColor: "bg-prisma-blue hover:bg-prisma-blue/90",
+    badge: "Técnico",
     services: [
       {
         title: "Planos e Relatórios",
@@ -76,16 +78,16 @@ const serviceGroups: ServiceGroup[] = [
     mainDeliverables: [
       "Planos de Gerenciamento (PGRS, PGRSS)",
       "Estudos de Impacto (EIA/RIMA)",
-      "Inventários de Áreas Contaminadas (GAC)",
-      "Planos de Recuperação (PRAD)"
+      "Inventários de Áreas Contaminadas"
     ]
   },
   {
-    title: "Consultoria Estratégica e Sustentabilidade",
-    description: "Foco em visão de futuro e valor de marca",
-    icon: <Leaf className="h-6 w-6" />,
-    color: "eco-accent-teal",
-    buttonColor: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
+    title: "Consultoria Estratégica e ESG",
+    description: "Visão de futuro e sustentabilidade",
+    icon: <Leaf className="h-8 w-8" />,
+    color: "prisma-yellow",
+    buttonColor: "bg-prisma-yellow hover:bg-prisma-yellow/90",
+    badge: "Inovação",
     services: [
       {
         title: "Consultoria ESG",
@@ -98,11 +100,6 @@ const serviceGroups: ServiceGroup[] = [
         href: "/services/climate"
       },
       {
-        title: "Consultoria Especializada",
-        description: "Assessoria e treinamentos",
-        href: "/services/consulting"
-      },
-      {
         title: "Treinamentos",
         description: "Capacitação de equipes",
         href: "/services/training"
@@ -111,8 +108,7 @@ const serviceGroups: ServiceGroup[] = [
     mainDeliverables: [
       "Diagnóstico e Estratégia ESG",
       "Inventários de Gases de Efeito Estufa",
-      "Relatórios de Sustentabilidade",
-      "Treinamentos Certificados"
+      "Relatórios de Sustentabilidade"
     ]
   }
 ];
@@ -121,65 +117,126 @@ export function ServiceCategories() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
       {serviceGroups.map((group, index) => (
-        <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-opacity-60 bg-white/95 backdrop-blur-sm">
-          <CardHeader className="text-center pb-4">
-            <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-${group.color}/15 flex items-center justify-center group-hover:bg-${group.color}/25 transition-colors`}>
-              <div className={`text-${group.color}`}>
-                {group.icon}
+        <Card 
+          key={index} 
+          className="group relative overflow-hidden transition-all duration-500 bg-white/95 backdrop-blur-sm border-2 border-prisma-gray-light/30 hover:border-prisma-green/50 h-full flex flex-col hover:shadow-2xl hover:-translate-y-4 hover:scale-[1.03] scroll-trigger shadow-lg"
+          style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+        >
+          {/* Linha de acento animada no topo */}
+          <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-${group.color} to-${group.color}/70 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100`}></div>
+          
+          {/* Efeito de brilho no hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <CardHeader className="text-center pb-4 relative z-10">
+            {/* Container do ícone com animação especial */}
+            <div className="relative mb-4 mx-auto w-20 h-20">
+              <div className={`absolute inset-0 bg-${group.color}/10 rounded-2xl group-hover:bg-${group.color}/20 transition-all duration-500 group-hover:rotate-12 group-hover:scale-110`}></div>
+              <div className="relative w-full h-full flex items-center justify-center bg-white/80 rounded-2xl group-hover:bg-white transition-all duration-500 group-hover:-rotate-6 shadow-lg group-hover:shadow-xl">
+                {React.cloneElement(group.icon as React.ReactElement, {
+                  className: `h-8 w-8 text-${group.color} group-hover:scale-110 transition-all duration-500`
+                })}
               </div>
             </div>
-            <CardTitle className="text-xl font-secondary text-gray-900">
+            
+            {/* Badge animado */}
+            <div className="mb-3">
+              <span className={`inline-block px-4 py-1.5 text-xs font-bold rounded-full bg-${group.color}/15 text-${group.color} group-hover:bg-${group.color}/25 group-hover:scale-105 transition-all duration-300 uppercase tracking-wider`} style={{
+                fontFamily: "'Montserrat', sans-serif"
+              }}>
+                {group.badge}
+              </span>
+            </div>
+            
+            <CardTitle className={`text-xl group-hover:text-${group.color} transition-colors duration-300 leading-tight mb-2`} style={{
+              fontFamily: "'Poppins', sans-serif",
+              color: "#333333"
+            }}>
               {group.title}
             </CardTitle>
-            <p className="text-sm text-gray-600 font-body">
+            
+            <p className="text-sm text-prisma-gray-text/80 leading-relaxed" style={{
+              fontFamily: "'Montserrat', sans-serif"
+            }}>
               {group.description}
             </p>
           </CardHeader>
           
-          <CardContent className="space-y-3">
-            {/* Principais Entregas */}
-            {group.mainDeliverables && (
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Principais Entregas:</h4>
-                <div className="space-y-1">
-                  {group.mainDeliverables.map((deliverable, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle className="h-3 w-3 text-eco-green mt-1 flex-shrink-0" />
-                      <span className="text-xs text-gray-600">{deliverable}</span>
+          <CardContent className="px-6 pb-6 flex-grow relative z-10 flex flex-col">
+            {/* Principais Entregas com animação */}
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-prisma-gray-text mb-3 font-secondary">
+                Principais Entregas:
+              </h4>
+              <ul className="space-y-2">
+                {group.mainDeliverables?.map((deliverable, idx) => (
+                  <li 
+                    key={idx} 
+                    className="flex items-start gap-3 group/item opacity-90 group-hover:opacity-100 transition-all duration-300"
+                    style={{ animationDelay: `${0.1 + idx * 0.05}s` }}
+                  >
+                    <CheckCircle className={`h-4 w-4 text-${group.color} mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300`} />
+                    <span className="text-sm text-prisma-gray-text/90 leading-relaxed group-hover/item:text-prisma-gray-text transition-colors" style={{
+                      fontFamily: "'Montserrat', sans-serif"
+                    }}>{deliverable}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Serviços em lista compacta */}
+            <div className="mb-6">
+              <h4 className="text-sm font-semibold text-prisma-gray-text mb-3">
+                Principais Serviços:
+              </h4>
+              <div className="space-y-1">
+                {group.services.slice(0, 2).map((service, idx) => (
+                  <Link
+                    key={idx}
+                    to={service.href}
+                    className="block p-2 rounded-lg hover:bg-prisma-gray-light/30 transition-all duration-200 group/service"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium text-prisma-gray-text group-hover/service:text-prisma-green transition-colors">
+                        {service.title}
+                      </span>
+                      <ExternalLink className="h-3 w-3 text-prisma-gray-text/50 group-hover/service:text-prisma-green transition-colors" />
                     </div>
-                  ))}
+                  </Link>
+                ))}
+                <div className="text-xs text-prisma-gray-text/60 pt-1">
+                  + {group.services.length - 2} outros serviços
                 </div>
               </div>
-            )}
-
-            {group.services.map((service, serviceIndex) => (
-              <Link
-                key={serviceIndex}
-                to={service.href}
-                className="block p-3 rounded-lg border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-all duration-200 group/service"
+            </div>
+          </CardContent>
+          
+          {/* Footer com botões animados */}
+          <div className="mt-auto p-6 pt-4 border-t border-prisma-gray-light/40 bg-prisma-gray-light/10 group-hover:bg-prisma-gray-light/20 transition-all duration-300 relative z-10">
+            <div className="flex gap-3">
+              <Button 
+                asChild 
+                variant="outline" 
+                size="sm"
+                className={`flex-1 border-${group.color}/30 text-${group.color} hover:bg-${group.color} hover:text-white transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg`}
               >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="font-medium text-gray-900 group-hover/service:text-eco-green-dark transition-colors">
-                      {service.title}
-                    </h4>
-                    <p className="text-xs text-gray-600 mt-1">
-                      {service.description}
-                    </p>
-                  </div>
-                  <ArrowRight className="h-4 w-4 text-gray-400 group-hover/service:text-eco-green transform group-hover/service:translate-x-1 transition-all" />
-                </div>
-              </Link>
-            ))}
-            
-            <div className="pt-4 border-t border-gray-100 flex justify-center">
-              <Button asChild className={`w-full ${group.buttonColor}`}>
-                <Link to="/services">
-                  Ver Todos os Serviços
+                <Link to={`/services`} className="flex items-center justify-center gap-2">
+                  Explorar 
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+              
+              <Button 
+                asChild
+                size="sm"
+                className={`${group.buttonColor} text-white transition-all duration-300 group-hover:scale-105 shadow-md group-hover:shadow-xl`}
+              >
+                <Link to="/request-quote">
+                  Orçamento
                 </Link>
               </Button>
             </div>
-          </CardContent>
+          </div>
         </Card>
       ))}
     </div>
