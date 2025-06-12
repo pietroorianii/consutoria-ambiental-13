@@ -6,8 +6,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted relative overflow-hidden">
-      <div className="absolute inset-0 leaf-pattern opacity-5"></div>
+    <footer className="bg-prisma-gray-light relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-prisma-gray-light via-white to-prisma-gray-light opacity-50"></div>
       
       <div className="container py-12 md:py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -16,12 +16,12 @@ export function Footer() {
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{
               fontFamily: "'Poppins', sans-serif"
             }}>
-              <Leaf className="h-5 w-5" style={{ color: "#2A6F47" }} />
-              <span style={{ color: "#2A6F47" }}>PRISMA</span>{" "}
-              <span style={{ color: "#0077C2" }}>Soluções Ambientais</span>
+              <Leaf className="h-5 w-5 text-prisma-green" />
+              <span className="text-prisma-green">PRISMA</span>{" "}
+              <span className="text-prisma-blue">Soluções Ambientais</span>
             </h3>
-            <p className="text-muted-foreground mb-4" style={{
-              fontFamily: "'Roboto', sans-serif"
+            <p className="text-prisma-gray-text/80 mb-4 leading-relaxed" style={{
+              fontFamily: "'Montserrat', sans-serif"
             }}>
               Consultoria ambiental especializada para empresas que buscam excelência em sustentabilidade e conformidade legal.
             </p>
@@ -29,39 +29,39 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{
+            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
               fontFamily: "'Poppins', sans-serif"
             }}>Links Rápidos</h3>
             <ul className="space-y-2" style={{
-              fontFamily: "'Lato', sans-serif"
+              fontFamily: "'Montserrat', sans-serif"
             }}>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                <Link to="/" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
                   Início
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                <Link to="/about" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                <Link to="/services" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
                   Serviços
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                <Link to="/faq" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
                   Perguntas Frequentes
                 </Link>
               </li>
               <li>
-                <Link to="/request-quote" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                <Link to="/request-quote" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
                   Solicitar Orçamento
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors link-hover">
+                <Link to="/contact" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
                   Contato
                 </Link>
               </li>
@@ -70,22 +70,22 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{
+            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
               fontFamily: "'Poppins', sans-serif"
             }}>Contato</h3>
             <ul className="space-y-3" style={{
-              fontFamily: "'Lato', sans-serif"
+              fontFamily: "'Montserrat', sans-serif"
             }}>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: "#2A6F47" }} />
+              <li className="flex items-start gap-2 text-prisma-gray-text/80">
+                <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5 text-prisma-green" />
                 <span>Av. Rio Branco, 1500<br />Centro, Rio de Janeiro - RJ<br />CEP: 20040-002</span>
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground">
-                <Phone className="h-5 w-5 flex-shrink-0" style={{ color: "#2A6F47" }} />
+              <li className="flex items-center gap-2 text-prisma-gray-text/80">
+                <Phone className="h-5 w-5 flex-shrink-0 text-prisma-green" />
                 <span>(14) 99713-3722</span>
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground">
-                <Mail className="h-5 w-5 flex-shrink-0" style={{ color: "#2A6F47" }} />
+              <li className="flex items-center gap-2 text-prisma-gray-text/80">
+                <Mail className="h-5 w-5 flex-shrink-0 text-prisma-green" />
                 <span>contato@prisma.com.br</span>
               </li>
             </ul>
@@ -93,27 +93,27 @@ export function Footer() {
 
           {/* Social Media */}
           <div>
-            <h3 className="text-xl font-bold mb-4" style={{
+            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
               fontFamily: "'Poppins', sans-serif"
             }}>Redes Sociais</h3>
             <ul className="space-y-3" style={{
-              fontFamily: "'Lato', sans-serif"
+              fontFamily: "'Montserrat', sans-serif"
             }}>
               <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-                  <Facebook className="h-5 w-5" style={{ color: "#2A6F47" }} />
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-prisma-green transition-colors">
+                  <Facebook className="h-5 w-5 text-prisma-green" />
                   <span>PRISMA Brasil</span>
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-                  <Instagram className="h-5 w-5" style={{ color: "#2A6F47" }} />
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-prisma-green transition-colors">
+                  <Instagram className="h-5 w-5 text-prisma-green" />
                   <span>@PRISMA</span>
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-                  <Linkedin className="h-5 w-5" style={{ color: "#2A6F47" }} />
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-prisma-green transition-colors">
+                  <Linkedin className="h-5 w-5 text-prisma-green" />
                   <span>PRISMA Soluções Ambientais</span>
                 </a>
               </li>
@@ -121,9 +121,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground/80">
+        <div className="border-t border-prisma-gray-light/60 mt-8 pt-8 text-center text-prisma-gray-text/60">
           <p style={{
-            fontFamily: "'Lato', sans-serif"
+            fontFamily: "'Montserrat', sans-serif"
           }}>
             &copy; {currentYear} PRISMA Soluções Ambientais. Todos os direitos reservados.
           </p>
