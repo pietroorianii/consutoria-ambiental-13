@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -17,13 +16,13 @@ export function MobileNav() {
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
         <img 
-          src="/lovable-uploads/20af9ca8-439a-4c69-a3a3-4e79814b104b.png" 
+          src="/lovable-uploads/2841475c-8c0a-45ba-b310-8788db19c7ea.png" 
           alt="PRISMA Soluções Ambientais" 
           className="h-10 w-auto"
         />
         <div>
           <h1 className="text-lg font-bold bg-gradient-to-r from-prisma-green to-prisma-blue bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>PRISMA</h1>
-          <p className="text-xs bg-gradient-to-r from-prisma-blue to-prisma-green bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <p className="text-xs bg-gradient-to-r from-prisma-green via-green-500 to-prisma-green bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
             Soluções Ambientais
           </p>
         </div>

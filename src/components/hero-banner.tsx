@@ -6,7 +6,7 @@ import React from "react";
 export function HeroBanner() {
   return (
     <div className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Fundo com gradiente PRISMA - sem imagem de árvore */}
+      {/* Fundo com gradiente PRISMA */}
       <div className="absolute inset-0 bg-gradient-to-br from-prisma-green/80 via-prisma-blue/75 to-prisma-green/70"></div>
       
       {/* Elementos decorativos abstratos modernos */}
@@ -69,14 +69,14 @@ export function HeroBanner() {
             </div>
           </div>
 
-          {/* Logo à direita - melhor posicionamento e destaque */}
+          {/* Logo à direita - posicionamento estático e melhorado */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-white/20 rounded-3xl blur-2xl group-hover:bg-white/30 transition-all duration-500"></div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/20 rounded-3xl blur-2xl"></div>
               <img 
-                src="/lovable-uploads/20af9ca8-439a-4c69-a3a3-4e79814b104b.png" 
+                src="/lovable-uploads/2841475c-8c0a-45ba-b310-8788db19c7ea.png" 
                 alt="PRISMA Soluções Ambientais" 
-                className="relative w-80 h-auto animate-float group-hover:scale-110 transition-transform duration-500"
+                className="relative w-80 h-auto"
                 style={{
                   filter: "drop-shadow(0 20px 40px rgba(255, 255, 255, 0.3))"
                 }}
