@@ -20,7 +20,7 @@ export function DesktopNav() {
             <NavigationMenuItem>
               <Link 
                 to="/" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                 onMouseEnter={() => setHoveredItem("home")}
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -33,7 +33,7 @@ export function DesktopNav() {
             <NavigationMenuItem>
               <Link 
                 to="/about" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                 onMouseEnter={() => setHoveredItem("about")}
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -46,7 +46,7 @@ export function DesktopNav() {
             <NavigationMenuItem>
               <Link 
                 to="/services" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                 onMouseEnter={() => setHoveredItem("services")}
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -59,7 +59,7 @@ export function DesktopNav() {
             <NavigationMenuItem>
               <Link 
                 to="/faq" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                 onMouseEnter={() => setHoveredItem("faq")}
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -72,7 +72,7 @@ export function DesktopNav() {
             <NavigationMenuItem>
               <Link 
                 to="/contact" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                 onMouseEnter={() => setHoveredItem("contact")}
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{ fontFamily: "'Montserrat', sans-serif"  }}
@@ -88,7 +88,7 @@ export function DesktopNav() {
       <div className="flex items-center">
         <Link
           to="/request-quote"
-          className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-prisma-green to-prisma-blue px-6 py-2.5 text-sm font-medium text-white shadow-md transition-all duration-300 hover:from-prisma-blue hover:to-prisma-green hover:shadow-lg hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-prisma-green"
+          className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-prisma-green to-prisma-blue px-6 py-2.5 text-base font-medium text-white shadow-md transition-all duration-300 hover:from-prisma-blue hover:to-prisma-green hover:shadow-lg hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-prisma-green"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           Solicitar Orçamento

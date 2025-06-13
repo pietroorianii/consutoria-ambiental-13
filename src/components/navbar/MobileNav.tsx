@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -44,7 +45,7 @@ export function MobileNav() {
             <Link
               to="/"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Início
@@ -54,7 +55,7 @@ export function MobileNav() {
             <Link
               to="/about"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Sobre Nós
@@ -64,7 +65,7 @@ export function MobileNav() {
             <Link
               to="/services"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Serviços
@@ -74,7 +75,7 @@ export function MobileNav() {
             <Link
               to="/faq"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Perguntas Frequentes
@@ -84,7 +85,7 @@ export function MobileNav() {
             <Link
               to="/contact"
               onClick={closeMenu}
-              className="block px-4 py-2 text-sm font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Contato
@@ -95,7 +96,7 @@ export function MobileNav() {
               <Link
                 to="/request-quote"
                 onClick={closeMenu}
-                className="block w-full text-center bg-gradient-to-r from-prisma-green to-prisma-blue text-white px-4 py-3 rounded-md font-medium shadow-md hover:from-prisma-blue hover:to-prisma-green transition-all duration-300"
+                className="block w-full text-center bg-gradient-to-r from-prisma-green to-prisma-blue text-white px-4 py-3 rounded-md text-base font-medium shadow-md hover:from-prisma-blue hover:to-prisma-green transition-all duration-300"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Solicitar Orçamento
