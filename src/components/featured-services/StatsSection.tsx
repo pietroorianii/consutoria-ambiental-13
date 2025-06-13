@@ -2,70 +2,79 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, Building2, Factory, TreePine } from "lucide-react";
 
 export function StatsSection() {
   return (
     <div className="text-center mt-16 scroll-trigger">
+      <div className="mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          Atendemos Diversos Segmentos
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Nossa expertise abrange múltiplos setores industriais e empresariais
+        </p>
+      </div>
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-8">
-        <div className="group relative overflow-hidden transition-all duration-500 bg-gradient-to-br from-white via-white to-eco-green/10 backdrop-blur-sm rounded-2xl border-2 border-eco-green/20 hover:border-eco-green/60 hover:shadow-2xl hover:-translate-y-4 hover:scale-105 cursor-pointer">
-          {/* Gradiente de fundo animado */}
-          <div className="absolute inset-0 bg-gradient-to-br from-eco-green/10 via-eco-green/20 to-eco-green/30 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+        <div className="group relative overflow-hidden transition-all duration-500 bg-white backdrop-blur-sm rounded-2xl border-2 border-eco-green/30 hover:border-eco-green hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer p-6">
+          {/* Gradiente de fundo animado mais suave */}
+          <div className="absolute inset-0 bg-gradient-to-br from-eco-green/5 to-eco-green/15 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-2xl"></div>
           
           {/* Linha de acento animada no topo */}
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-eco-green to-emerald-400 opacity-70 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-eco-green to-emerald-400 opacity-70 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100 rounded-t-2xl"></div>
           
-          {/* Efeito de brilho no hover */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/20 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          
-          <div className="flex items-center justify-center gap-4 px-8 py-6 relative z-10">
-            <CheckCircle className="h-8 w-8 text-eco-green group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
-            <span className="font-bold text-lg text-gray-700 group-hover:text-eco-green transition-all duration-300 group-hover:underline underline-offset-4 decoration-2">
-              +500 Projetos Realizados
+          <div className="flex flex-col items-center justify-center gap-4 relative z-10">
+            <Building2 className="h-12 w-12 text-eco-green group-hover:scale-110 group-hover:rotate-3 transition-all duration-500" />
+            <span className="font-semibold text-xl text-gray-800 group-hover:text-eco-green transition-all duration-300">
+              Indústrias
             </span>
+            <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-center">
+              Licenciamento e conformidade ambiental
+            </p>
           </div>
         </div>
         
-        <div className="group relative overflow-hidden transition-all duration-500 bg-gradient-to-br from-white via-white to-eco-blue/10 backdrop-blur-sm rounded-2xl border-2 border-eco-blue/20 hover:border-eco-blue/60 hover:shadow-2xl hover:-translate-y-4 hover:scale-105 cursor-pointer">
-          {/* Gradiente de fundo animado */}
-          <div className="absolute inset-0 bg-gradient-to-br from-eco-blue/10 via-eco-blue/20 to-eco-blue/30 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+        <div className="group relative overflow-hidden transition-all duration-500 bg-white backdrop-blur-sm rounded-2xl border-2 border-eco-blue/30 hover:border-eco-blue hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer p-6">
+          {/* Gradiente de fundo animado mais suave */}
+          <div className="absolute inset-0 bg-gradient-to-br from-eco-blue/5 to-eco-blue/15 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-2xl"></div>
           
           {/* Linha de acento animada no topo */}
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-eco-blue to-blue-400 opacity-70 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-eco-blue to-blue-400 opacity-70 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100 rounded-t-2xl"></div>
           
-          {/* Efeito de brilho no hover */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/20 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          
-          <div className="flex items-center justify-center gap-4 px-8 py-6 relative z-10">
-            <CheckCircle className="h-8 w-8 text-eco-blue group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
-            <span className="font-bold text-lg text-gray-700 group-hover:text-eco-blue transition-all duration-300 group-hover:underline underline-offset-4 decoration-2">
-              98% Taxa de Sucesso
+          <div className="flex flex-col items-center justify-center gap-4 relative z-10">
+            <Factory className="h-12 w-12 text-eco-blue group-hover:scale-110 group-hover:rotate-3 transition-all duration-500" />
+            <span className="font-semibold text-xl text-gray-800 group-hover:text-eco-blue transition-all duration-300">
+              Empresas
             </span>
+            <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-center">
+              Gestão de resíduos e sustentabilidade
+            </p>
           </div>
         </div>
         
-        <div className="group relative overflow-hidden transition-all duration-500 bg-gradient-to-br from-white via-white to-eco-accent-teal/10 backdrop-blur-sm rounded-2xl border-2 border-eco-accent-teal/20 hover:border-eco-accent-teal/60 hover:shadow-2xl hover:-translate-y-4 hover:scale-105 cursor-pointer">
-          {/* Gradiente de fundo animado */}
-          <div className="absolute inset-0 bg-gradient-to-br from-eco-accent-teal/10 via-eco-accent-teal/20 to-eco-accent-teal/30 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+        <div className="group relative overflow-hidden transition-all duration-500 bg-white backdrop-blur-sm rounded-2xl border-2 border-eco-accent-teal/30 hover:border-eco-accent-teal hover:shadow-2xl hover:-translate-y-2 hover:scale-105 cursor-pointer p-6">
+          {/* Gradiente de fundo animado mais suave */}
+          <div className="absolute inset-0 bg-gradient-to-br from-eco-accent-teal/5 to-eco-accent-teal/15 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-2xl"></div>
           
           {/* Linha de acento animada no topo */}
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-eco-accent-teal to-teal-400 opacity-70 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100"></div>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-eco-accent-teal to-teal-400 opacity-70 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100 rounded-t-2xl"></div>
           
-          {/* Efeito de brilho no hover */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/20 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          
-          <div className="flex items-center justify-center gap-4 px-8 py-6 relative z-10">
-            <CheckCircle className="h-8 w-8 text-eco-accent-teal group-hover:scale-125 group-hover:rotate-12 transition-all duration-500" />
-            <span className="font-bold text-lg text-gray-700 group-hover:text-eco-accent-teal transition-all duration-300 group-hover:underline underline-offset-4 decoration-2">
-              Conformidade Garantida
+          <div className="flex flex-col items-center justify-center gap-4 relative z-10">
+            <TreePine className="h-12 w-12 text-eco-accent-teal group-hover:scale-110 group-hover:rotate-3 transition-all duration-500" />
+            <span className="font-semibold text-xl text-gray-800 group-hover:text-eco-accent-teal transition-all duration-300">
+              Agronegócio
             </span>
+            <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300 text-center">
+              Monitoramento e estudos ambientais
+            </p>
           </div>
         </div>
       </div>
       
       <Button asChild size="lg" className="btn-gradient text-white group overflow-hidden relative py-6 px-8 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300">
-        <Link to="/services" className="flex items-center gap-2 relative z-10 text-base">
-          Ver Todos os Serviços
+        <Link to="/contact" className="flex items-center gap-2 relative z-10 text-base">
+          Fale com um Especialista
           <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
         </Link>
       </Button>
