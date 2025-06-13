@@ -140,11 +140,13 @@ export function ServiceCategories() {
             <CardHeader className="text-center pb-4 relative z-10">
               {/* Container do ícone com animação especial */}
               <div className="relative mb-4 mx-auto w-20 h-20">
-                <div className={`absolute inset-0 ${
+                {/* Fundo colorido específico para cada grupo */}
+                <div className={`absolute inset-0 rounded-2xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 ${
                   group.color === 'prisma-green' ? 'bg-prisma-green/10 group-hover:bg-prisma-green/20' :
                   group.color === 'prisma-blue' ? 'bg-prisma-blue/10 group-hover:bg-prisma-blue/20' :
                   'bg-prisma-yellow/10 group-hover:bg-prisma-yellow/20'
-                } rounded-2xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110`}></div>
+                }`}></div>
+                
                 <div className="relative w-full h-full flex items-center justify-center bg-white/80 rounded-2xl group-hover:bg-white transition-all duration-500 group-hover:-rotate-6 shadow-lg group-hover:shadow-xl">
                   {React.cloneElement(group.icon as React.ReactElement, {
                     className: `h-8 w-8 ${
@@ -190,7 +192,7 @@ export function ServiceCategories() {
             <CardContent className="px-6 pb-6 flex-grow relative z-10 flex flex-col">
               {/* Principais Entregas com animação */}
               <div className="mb-6">
-                <h4 className="text-sm font-semibold text-prisma-gray-text mb-3 font-secondary">
+                <h4 className="text-base font-semibold text-prisma-gray-text mb-3 font-secondary">
                   Principais Entregas:
                 </h4>
                 <ul className="space-y-2">
@@ -213,37 +215,39 @@ export function ServiceCategories() {
                 </ul>
               </div>
               
-              {/* Serviços em lista compacta */}
+              {/* Serviços Prestados - Todos os serviços */}
               <div className="mb-6">
-                <h4 className="text-sm font-semibold text-prisma-gray-text mb-3">
-                  Principais Serviços:
+                <h4 className="text-base font-semibold text-prisma-gray-text mb-3">
+                  Serviços Prestados:
                 </h4>
-                <div className="space-y-1">
-                  {group.services.slice(0, 2).map((service, idx) => (
+                <div className="space-y-2">
+                  {group.services.map((service, idx) => (
                     <Link
                       key={idx}
                       to={service.href}
-                      className="block p-2 rounded-lg hover:bg-prisma-gray-light/30 transition-all duration-200 group/service"
+                      className="block p-3 rounded-lg hover:bg-prisma-gray-light/30 transition-all duration-200 group/service"
                     >
                       <div className="flex items-center justify-between">
-                        <span className={`text-xs font-medium text-prisma-gray-text ${
-                          group.color === 'prisma-green' ? 'group-hover/service:text-prisma-green' :
-                          group.color === 'prisma-blue' ? 'group-hover/service:text-prisma-blue' :
-                          'group-hover/service:text-prisma-yellow'
-                        } transition-colors`}>
-                          {service.title}
-                        </span>
+                        <div className="flex-grow">
+                          <span className={`text-sm font-medium text-prisma-gray-text ${
+                            group.color === 'prisma-green' ? 'group-hover/service:text-prisma-green' :
+                            group.color === 'prisma-blue' ? 'group-hover/service:text-prisma-blue' :
+                            'group-hover/service:text-prisma-yellow'
+                          } transition-colors block mb-1`}>
+                            {service.title}
+                          </span>
+                          <span className="text-xs text-prisma-gray-text/70 block">
+                            {service.description}
+                          </span>
+                        </div>
                         <ExternalLink className={`h-3 w-3 text-prisma-gray-text/50 ${
                           group.color === 'prisma-green' ? 'group-hover/service:text-prisma-green' :
                           group.color === 'prisma-blue' ? 'group-hover/service:text-prisma-blue' :
                           'group-hover/service:text-prisma-yellow'
-                        } transition-colors`} />
+                        } transition-colors ml-2 flex-shrink-0`} />
                       </div>
                     </Link>
                   ))}
-                  <div className="text-xs text-prisma-gray-text/60 pt-1">
-                    + {group.services.length - 2} outros serviços
-                  </div>
                 </div>
               </div>
             </CardContent>
