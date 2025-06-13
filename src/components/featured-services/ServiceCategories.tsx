@@ -190,24 +190,24 @@ export function ServiceCategories() {
             </CardHeader>
             
             <CardContent className="px-6 pb-6 flex-grow relative z-10 flex flex-col">
-              {/* Principais Entregas com animação */}
+              {/* Principais Entregas com animação - FONTE AUMENTADA */}
               <div className="mb-6">
-                <h4 className="text-base font-semibold text-prisma-gray-text mb-3 font-secondary">
+                <h4 className="text-lg font-bold text-prisma-gray-text mb-4 font-secondary">
                   Principais Entregas:
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {group.mainDeliverables?.map((deliverable, idx) => (
                     <li 
                       key={idx} 
                       className="flex items-start gap-3 group/item opacity-90 group-hover:opacity-100 transition-all duration-300"
                       style={{ animationDelay: `${0.1 + idx * 0.05}s` }}
                     >
-                      <CheckCircle className={`h-4 w-4 ${
+                      <CheckCircle className={`h-5 w-5 ${
                         group.color === 'prisma-green' ? 'text-prisma-green' :
                         group.color === 'prisma-blue' ? 'text-prisma-blue' :
                         'text-prisma-yellow'
                       } mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-300`} />
-                      <span className="text-sm text-prisma-gray-text/90 leading-relaxed group-hover/item:text-prisma-gray-text transition-colors" style={{
+                      <span className="text-base text-prisma-gray-text/90 leading-relaxed group-hover/item:text-prisma-gray-text transition-colors" style={{
                         fontFamily: "'Montserrat', sans-serif"
                       }}>{deliverable}</span>
                     </li>
@@ -215,36 +215,40 @@ export function ServiceCategories() {
                 </ul>
               </div>
               
-              {/* Serviços Prestados - Todos os serviços */}
+              {/* Serviços Prestados - FONTE AUMENTADA E PADRONIZADO */}
               <div className="mb-6">
-                <h4 className="text-base font-semibold text-prisma-gray-text mb-3">
+                <h4 className="text-lg font-bold text-prisma-gray-text mb-4 font-secondary">
                   Serviços Prestados:
                 </h4>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {group.services.map((service, idx) => (
                     <Link
                       key={idx}
                       to={service.href}
-                      className="block p-3 rounded-lg hover:bg-prisma-gray-light/30 transition-all duration-200 group/service"
+                      className="block p-4 rounded-lg hover:bg-prisma-gray-light/30 transition-all duration-200 group/service"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex-grow">
-                          <span className={`text-sm font-medium text-prisma-gray-text ${
+                          <span className={`text-base font-semibold text-prisma-gray-text ${
                             group.color === 'prisma-green' ? 'group-hover/service:text-prisma-green' :
                             group.color === 'prisma-blue' ? 'group-hover/service:text-prisma-blue' :
                             'group-hover/service:text-prisma-yellow'
-                          } transition-colors block mb-1`}>
+                          } transition-colors block mb-2`} style={{
+                            fontFamily: "'Montserrat', sans-serif"
+                          }}>
                             {service.title}
                           </span>
-                          <span className="text-xs text-prisma-gray-text/70 block">
+                          <span className="text-sm text-prisma-gray-text/70 block leading-relaxed" style={{
+                            fontFamily: "'Montserrat', sans-serif"
+                          }}>
                             {service.description}
                           </span>
                         </div>
-                        <ExternalLink className={`h-3 w-3 text-prisma-gray-text/50 ${
+                        <ExternalLink className={`h-4 w-4 text-prisma-gray-text/50 ${
                           group.color === 'prisma-green' ? 'group-hover/service:text-prisma-green' :
                           group.color === 'prisma-blue' ? 'group-hover/service:text-prisma-blue' :
                           'group-hover/service:text-prisma-yellow'
-                        } transition-colors ml-2 flex-shrink-0`} />
+                        } transition-colors ml-3 flex-shrink-0`} />
                       </div>
                     </Link>
                   ))}

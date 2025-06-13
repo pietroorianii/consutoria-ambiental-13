@@ -4,13 +4,8 @@ import { Link } from "react-router-dom";
 import { 
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuContent,
-  NavigationMenuTrigger,
   NavigationMenuList,
-  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
-import { serviceCategories } from "@/data/serviceCategories";
-import NavListItem from "./NavListItem";
 
 export function DesktopNav() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -47,24 +42,17 @@ export function DesktopNav() {
               </Link>
             </NavigationMenuItem>
 
-            {/* Services with Dropdown */}
+            {/* Services - Apenas Link Simples */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-background hover:bg-prisma-green/10 hover:text-prisma-green px-3" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              <Link 
+                to="/services" 
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                onMouseEnter={() => setHoveredItem("services")}
+                onMouseLeave={() => setHoveredItem(null)}
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
                 Serviços
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {Object.entries(serviceCategories).map(([key, category]) => (
-                    <NavListItem
-                      key={key}
-                      title={category.title}
-                      href={`/services/${key}`}
-                    >
-                      {category.description}
-                    </NavListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
+              </Link>
             </NavigationMenuItem>
 
             {/* FAQ */}
@@ -87,7 +75,7 @@ export function DesktopNav() {
                 className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-prisma-green/10 hover:text-prisma-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                 onMouseEnter={() => setHoveredItem("contact")}
                 onMouseLeave={() => setHoveredItem(null)}
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                style={{ fontFamily: "'Montserrat', sans-serif"  }}
               >
                 Contato
               </Link>
