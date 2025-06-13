@@ -119,10 +119,10 @@ export function ServiceCategories() {
       {serviceGroups.map((group, index) => (
         <Card 
           key={index} 
-          className="group relative overflow-hidden transition-all duration-500 bg-white/95 backdrop-blur-sm border-2 border-prisma-gray-light/30 hover:border-prisma-green/50 h-full flex flex-col hover:shadow-2xl hover:-translate-y-4 hover:scale-[1.03] scroll-trigger shadow-lg"
+          className={`group relative overflow-hidden transition-all duration-500 bg-white/95 backdrop-blur-sm border-2 border-prisma-gray-light/30 hover:border-${group.color}/50 h-full flex flex-col hover:shadow-2xl hover:-translate-y-4 hover:scale-[1.03] scroll-trigger shadow-lg`}
           style={{ animationDelay: `${0.1 + index * 0.1}s` }}
         >
-          {/* Linha de acento animada no topo */}
+          {/* Linha de acento animada no topo com cor específica do grupo */}
           <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-${group.color} to-${group.color}/70 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100`}></div>
           
           {/* Efeito de brilho no hover */}
@@ -197,10 +197,10 @@ export function ServiceCategories() {
                     className="block p-2 rounded-lg hover:bg-prisma-gray-light/30 transition-all duration-200 group/service"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium text-prisma-gray-text group-hover/service:text-prisma-green transition-colors">
+                      <span className={`text-xs font-medium text-prisma-gray-text group-hover/service:text-${group.color} transition-colors`}>
                         {service.title}
                       </span>
-                      <ExternalLink className="h-3 w-3 text-prisma-gray-text/50 group-hover/service:text-prisma-green transition-colors" />
+                      <ExternalLink className={`h-3 w-3 text-prisma-gray-text/50 group-hover/service:text-${group.color} transition-colors`} />
                     </div>
                   </Link>
                 ))}
