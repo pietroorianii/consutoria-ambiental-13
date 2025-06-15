@@ -6,11 +6,11 @@ import React from "react";
 export function HeroBanner() {
   return (
     <div className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Fundo com gradiente PRISMA */}
-      <div className="absolute inset-0 bg-gradient-to-br from-prisma-green/80 via-prisma-blue/75 to-prisma-green/70"></div>
+      {/* Fundo com gradiente personalizado */}
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/80 via-yellow-300/75 to-eco-green/60"></div>
       
       {/* Elementos decorativos abstratos modernos */}
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-prisma-yellow/10 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse-slow"></div>
       
       {/* Content */}
@@ -19,33 +19,33 @@ export function HeroBanner() {
           {/* Texto à esquerda */}
           <div className="text-left">
             <div className="mb-6">
-              <span className="text-sm font-medium tracking-wider uppercase text-white/90" style={{
+              <span className="text-sm font-medium tracking-wider uppercase text-yellow-700/90" style={{
                 fontFamily: "'Montserrat', sans-serif"
               }}>
-                PRISMA SOLUÇÕES AMBIENTAIS
+                SOLARI SOLUÇÕES AMBIENTAIS
               </span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-white" style={{
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-yellow-900" style={{
               animationDelay: "0.1s",
-              fontFamily: "'Poppins', sans-serif",
-              textShadow: "0px 2px 4px rgba(0,0,0,0.3)"
+              fontFamily: "'Playfair Display', 'Poppins', serif",
+              textShadow: "0px 2px 4px rgba(0,0,0,0.15)"
             }}>
               Conformidade Ambiental que{" "}
-              <span className="text-prisma-yellow">Impulsiona</span>{" "}
-              seu Negócio
+              <span className="text-eco-green">Impulsiona</span>{" "}
+              seu Negócio com a Solari
             </h1>
 
-            <div className="w-20 h-1.5 rounded-full mb-8 animate-fade-in bg-prisma-yellow" style={{
+            <div className="w-20 h-1.5 rounded-full mb-8 animate-fade-in bg-eco-green" style={{
               animationDelay: "0.3s"
             }}></div>
             
             <p style={{
               animationDelay: "0.4s",
               fontFamily: "'Montserrat', sans-serif",
-              textShadow: "0px 1px 2px rgba(0,0,0,0.2)"
-            }} className="text-lg max-w-2xl animate-fade-in md:text-xl mb-10 leading-relaxed text-white/95">
-              Com a PRISMA, a complexidade da legislação ambiental se transforma em segurança para suas operações. Foco no seu crescimento, com a tranquilidade de estar em plena conformidade.
+              textShadow: "0px 1px 2px rgba(255,255,255,0.08)"
+            }} className="text-lg max-w-2xl animate-fade-in md:text-xl mb-10 leading-relaxed text-yellow-900/95">
+              Com a Solari, a complexidade da legislação ambiental se transforma em segurança para suas operações. Foco no seu crescimento, com a tranquilidade de estar em plena conformidade.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 mt-4 animate-fade-in" style={{
@@ -61,7 +61,7 @@ export function HeroBanner() {
                 </Link>
               </Button>
 
-              <Button asChild size="lg" variant="outline" className="prisma-btn-secondary px-8 py-6 rounded-lg text-base group border-2 border-white/30 text-white hover:bg-white hover:text-prisma-green">
+              <Button asChild size="lg" variant="outline" className="prisma-btn-secondary px-8 py-6 rounded-lg text-base group border-2 border-white/30 text-yellow-900 hover:bg-white hover:text-eco-green">
                 <Link to="/contact" className="relative z-10 flex items-center gap-3 transition-all group-hover:scale-105">
                   Fale com um Especialista
                 </Link>
@@ -69,13 +69,13 @@ export function HeroBanner() {
             </div>
           </div>
 
-          {/* Logo à direita - posicionamento estático e melhorado */}
+          {/* Logo à direita */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute inset-0 bg-white/20 rounded-3xl blur-2xl"></div>
               <img 
                 src="/lovable-uploads/2841475c-8c0a-45ba-b310-8788db19c7ea.png" 
-                alt="PRISMA Soluções Ambientais" 
+                alt="Solari Soluções Ambientais" 
                 className="relative w-80 h-auto"
                 style={{
                   filter: "drop-shadow(0 20px 40px rgba(255, 255, 255, 0.3))"

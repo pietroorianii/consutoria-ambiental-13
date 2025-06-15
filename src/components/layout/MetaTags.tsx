@@ -11,12 +11,12 @@ interface MetaTagsProps {
 }
 
 export const MetaTags: React.FC<MetaTagsProps> = ({
-  title = "L&P Soluções Ambientais | Consultoria Ambiental Especializada",
+  title = "Solari Soluções Ambientais | Consultoria Ambiental Especializada",
   description = "Consultoria e assessoria completa para licenciamento, gestão de resíduos e conformidade com a legislação ambiental.",
-  keywords = "consultoria ambiental, licenciamento ambiental, sustentabilidade, gestão de resíduos, IAT, Paraná",
+  keywords = "consultoria ambiental, licenciamento ambiental, sustentabilidade, gestão de resíduos, IAT, Paraná, Solari Soluções Ambientais",
   image = "/lovable-uploads/027bd48a-0820-4102-841d-43d98185f223.png",
-  url = "https://lpsolucoes.com.br",
-  companyName = "L&P Soluções Ambientais"
+  url = "https://solariambiental.com.br",
+  companyName = "Solari Soluções Ambientais"
 }) => {
   return (
     <Helmet>

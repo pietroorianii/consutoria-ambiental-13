@@ -12,10 +12,10 @@ const Index = () => {
   return (
     <PageWrapper>
       <MetaTags 
-        title="L&P Soluções Ambientais | Consultoria em Paraná"
+        title="Solari Soluções Ambientais | Consultoria em Paraná"
         description="Garanta a conformidade legal do seu negócio com nossa assessoria completa em licenciamento, gestão de resíduos e estudos de impacto ambiental."
-        keywords="consultoria ambiental Paraná, licenciamento IAT, gestão resíduos, conformidade ambiental, evitar multas ambientais"
-        companyName="L&P Soluções Ambientais"
+        keywords="consultoria ambiental Paraná, licenciamento IAT, gestão resíduos, conformidade ambiental, evitar multas ambientais, Solari Soluções Ambientais"
+        companyName="Solari Soluções Ambientais"
       />
       
       {/* Fundo otimizado com padrão orgânico */}

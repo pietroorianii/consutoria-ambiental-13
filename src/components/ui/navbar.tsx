@@ -12,18 +12,20 @@ export function Navbar() {
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
               src="/lovable-uploads/2841475c-8c0a-45ba-b310-8788db19c7ea.png" 
-              alt="PRISMA Soluções Ambientais" 
+              alt="Solari Soluções Ambientais" 
               className="h-12 w-auto transition-transform duration-300"
             />
-            <div className="flex items-baseline space-x-2">
-              <span className="text-2xl font-bold bg-gradient-to-r from-prisma-green to-prisma-blue bg-clip-text text-transparent transition-all duration-300" style={{
-                fontFamily: "'Poppins', sans-serif"
-              }}>
-                PRISMA
+            <div className="flex flex-col leading-tight">
+              <span
+                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-400 via-yellow-600 to-eco-green bg-clip-text text-transparent tracking-tight"
+                style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
+              >
+                Solari
               </span>
-              <span className="text-lg font-medium bg-gradient-to-r from-prisma-green via-green-500 to-prisma-green bg-clip-text text-transparent" style={{
-                fontFamily: "'Poppins', sans-serif"
-              }}>
+              <span
+                className="text-lg md:text-xl font-medium text-eco-green"
+                style={{ fontFamily: "'Montserrat', sans-serif", letterSpacing: "0.03em" }}
+              >
                 Soluções Ambientais
               </span>
             </div>

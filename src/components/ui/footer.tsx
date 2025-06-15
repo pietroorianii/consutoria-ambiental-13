@@ -13,12 +13,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{
-              fontFamily: "'Poppins', sans-serif"
-            }}>
-              <Leaf className="h-5 w-5 text-prisma-green" />
-              <span className="text-prisma-green">PRISMA</span>{" "}
-              <span className="text-prisma-blue">Soluções Ambientais</span>
+            <h3 className="text-2xl font-extrabold mb-4 flex items-center gap-2"
+                style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}>
+              <Leaf className="h-5 w-5 text-eco-green" />
+              <span className="text-yellow-700">Solari</span>{' '}
+              <span className="text-eco-green">Soluções Ambientais</span>
             </h3>
             <p className="text-prisma-gray-text/80 mb-4 leading-relaxed" style={{
               fontFamily: "'Montserrat', sans-serif"
@@ -36,32 +35,32 @@ export function Footer() {
               fontFamily: "'Montserrat', sans-serif"
             }}>
               <li>
-                <Link to="/" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
+                <Link to="/" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
                   Início
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
+                <Link to="/about" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
+                <Link to="/services" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
                   Serviços
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
+                <Link to="/faq" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
                   Perguntas Frequentes
                 </Link>
               </li>
               <li>
-                <Link to="/request-quote" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
+                <Link to="/request-quote" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
                   Solicitar Orçamento
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-prisma-gray-text/70 hover:text-prisma-green transition-colors link-hover">
+                <Link to="/contact" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
                   Contato
                 </Link>
               </li>
@@ -77,16 +76,16 @@ export function Footer() {
               fontFamily: "'Montserrat', sans-serif"
             }}>
               <li className="flex items-start gap-2 text-prisma-gray-text/80">
-                <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5 text-prisma-green" />
+                <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5 text-eco-green" />
                 <span>Av. Rio Branco, 1500<br />Centro, Rio de Janeiro - RJ<br />CEP: 20040-002</span>
               </li>
               <li className="flex items-center gap-2 text-prisma-gray-text/80">
-                <Phone className="h-5 w-5 flex-shrink-0 text-prisma-green" />
+                <Phone className="h-5 w-5 flex-shrink-0 text-eco-green" />
                 <span>(14) 99713-3722</span>
               </li>
               <li className="flex items-center gap-2 text-prisma-gray-text/80">
-                <Mail className="h-5 w-5 flex-shrink-0 text-prisma-green" />
-                <span>contato@prisma.com.br</span>
+                <Mail className="h-5 w-5 flex-shrink-0 text-eco-green" />
+                <span>contato@solariambiental.com.br</span>
               </li>
             </ul>
           </div>
@@ -100,21 +99,21 @@ export function Footer() {
               fontFamily: "'Montserrat', sans-serif"
             }}>
               <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-prisma-green transition-colors">
-                  <Facebook className="h-5 w-5 text-prisma-green" />
-                  <span>PRISMA Brasil</span>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-eco-green transition-colors">
+                  <Facebook className="h-5 w-5 text-eco-green" />
+                  <span>Solari Brasil</span>
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-prisma-green transition-colors">
-                  <Instagram className="h-5 w-5 text-prisma-green" />
-                  <span>@PRISMA</span>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-eco-green transition-colors">
+                  <Instagram className="h-5 w-5 text-eco-green" />
+                  <span>@solariambiental</span>
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-prisma-green transition-colors">
-                  <Linkedin className="h-5 w-5 text-prisma-green" />
-                  <span>PRISMA Soluções Ambientais</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-eco-green transition-colors">
+                  <Linkedin className="h-5 w-5 text-eco-green" />
+                  <span>Solari Soluções Ambientais</span>
                 </a>
               </li>
             </ul>
@@ -125,7 +124,7 @@ export function Footer() {
           <p style={{
             fontFamily: "'Montserrat', sans-serif"
           }}>
-            &copy; {currentYear} PRISMA Soluções Ambientais. Todos os direitos reservados.
+            &copy; {currentYear} Solari Soluções Ambientais. Todos os direitos reservados.
           </p>
         </div>
       </div>
