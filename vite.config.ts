@@ -26,6 +26,16 @@ export default defineConfig(({ mode }) => {
     server: {
       host: "::",
       port: 8080,
+      watch: {
+        // Reduce watcher "pressure" to help prevent EMFILE
+        usePolling: false,
+        interval: 1000,
+        awaitWriteFinish: {
+          stabilityThreshold: 2000,
+          pollInterval: 100,
+        },
+        ignored: ['**/node_modules/**', '**/.git/**', '**/dist/**'],
+      },
     },
     plugins,
     resolve: {
