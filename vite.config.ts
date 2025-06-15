@@ -29,12 +29,22 @@ export default defineConfig(({ mode }) => {
       watch: {
         // Reduce watcher "pressure" to help prevent EMFILE
         usePolling: false,
-        interval: 1000,
+        interval: 1500,
+        depth: 2, // Watch only up to 2 folder levels deep
         awaitWriteFinish: {
-          stabilityThreshold: 2000,
-          pollInterval: 100,
+          stabilityThreshold: 3000,
+          pollInterval: 250,
         },
-        ignored: ['**/node_modules/**', '**/.git/**', '**/dist/**'],
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/dist/**',
+          '**/public/**',
+          '**/.cache/**',
+          '**/.pnpm/**',
+          '**/.next/**',
+          '**/.output/**'
+        ],
       },
     },
     plugins,
@@ -62,5 +72,10 @@ export default defineConfig(({ mode }) => {
     optimizeDeps: {
       include: ['react', 'react-dom', 'react-router-dom'],
     },
+    fs: {
+      strict: true,
+      allow: [path.resolve(__dirname, './src'), path.resolve(__dirname)]
+    },
   };
 });
+
