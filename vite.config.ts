@@ -6,43 +6,51 @@ import { componentTagger } from "lovable-tagger";
 import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [
+export default defineConfig(({ mode }) => {
+  const isDev = mode === 'development';
+  const isAnalyze = mode === 'analyze';
+
+  // Only push the plugin if it should be active, avoiding any accidental undefineds
+  const plugins = [
     react(),
-    mode === 'development' && componentTagger(),
-    mode === 'analyze' && visualizer({ 
-      open: true, 
-      gzipSize: true, 
+    isDev ? componentTagger() : null,
+    isAnalyze ? visualizer({
+      open: true,
+      gzipSize: true,
       brotliSize: true,
       filename: 'dist/stats.html'
-    }),
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    }) : null
+  ].filter(Boolean);
+
+  return {
+    server: {
+      host: "::",
+      port: 8080,
     },
-  },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-select', '@radix-ui/react-tabs'],
-          forms: ['react-hook-form', '@hookform/resolvers'],
-          query: ['@tanstack/react-query'],
-          icons: ['lucide-react'],
-          utils: ['lodash-es', 'clsx', 'tailwind-merge'],
-        },
+    plugins,
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
       },
     },
-    chunkSizeWarningLimit: 1000,
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
-  },
-}));
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
+            router: ['react-router-dom'],
+            ui: ['@radix-ui/react-dialog', '@radix-ui/react-select', '@radix-ui/react-tabs'],
+            forms: ['react-hook-form', '@hookform/resolvers'],
+            query: ['@tanstack/react-query'],
+            icons: ['lucide-react'],
+            utils: ['lodash-es', 'clsx', 'tailwind-merge'],
+          },
+        },
+      },
+      chunkSizeWarningLimit: 1000,
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-router-dom'],
+    },
+  };
+});
