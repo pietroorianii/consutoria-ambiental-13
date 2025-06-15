@@ -4,8 +4,24 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { visualizer } from 'rollup-plugin-visualizer';
+import fs from "fs";
 
-// https://vitejs.dev/config/
+// Helper: check for accidental symlink inside src (can cause too many watchers)
+const srcPath = path.resolve(__dirname, "./src");
+let extraFilesToIgnore: string[] = [];
+try {
+  const files = fs.readdirSync(srcPath);
+  files.forEach(name => {
+    const abs = path.join(srcPath, name);
+    // ignore symlinks
+    if (fs.lstatSync(abs).isSymbolicLink()) {
+      extraFilesToIgnore.push(`**/src/${name}/**`);
+    }
+  });
+} catch (e) {
+  // ignore, just a safety net
+}
+
 export default defineConfig(({ mode }) => {
   const isDev = mode === 'development';
   const isAnalyze = mode === 'analyze';
@@ -27,10 +43,9 @@ export default defineConfig(({ mode }) => {
       host: "::",
       port: 8080,
       watch: {
-        // Reduce watcher "pressure" to help prevent EMFILE
         usePolling: false,
         interval: 1500,
-        depth: 2, // Watch only up to 2 folder levels deep
+        depth: 1, // Reduce to one level deep
         awaitWriteFinish: {
           stabilityThreshold: 3000,
           pollInterval: 250,
@@ -43,8 +58,13 @@ export default defineConfig(({ mode }) => {
           '**/.cache/**',
           '**/.pnpm/**',
           '**/.next/**',
-          '**/.output/**'
+          '**/.output/**',
+          '**/.vscode/**',
+          '**/.DS_Store',
+          ...extraFilesToIgnore
         ],
+        // Watch only .ts,.tsx,.js,.jsx files in /src
+        // Vite doesn't expose a "files" option, but a deep ignored is safest
       },
     },
     plugins,
@@ -74,8 +94,7 @@ export default defineConfig(({ mode }) => {
     },
     fs: {
       strict: true,
-      allow: [path.resolve(__dirname, './src'), path.resolve(__dirname)]
+      allow: [srcPath, path.resolve(__dirname)],
     },
   };
 });
-
