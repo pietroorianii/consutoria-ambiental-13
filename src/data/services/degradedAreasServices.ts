@@ -36,6 +36,8 @@ export const degradedAreasServices: ServiceDetailData = {
     'Lei Federal nº 12.651/2012 (Novo Código Florestal).',
     'Lei Federal nº 9.605/1998 (Lei de Crimes Ambientais).',
     'Decisões Normativas e Instruções Técnicas de órgãos estaduais (CETESB, IAT, etc.).',
+    'Portaria IAT Nº 190/2024, que estabelece diretrizes para o Programa de Regularização Ambiental (PRA) no Paraná.',
+    'Termos de Ajustamento de Conduta (TAC) conforme legislação estadual.',
   ],
   tips: [
     'Proatividade: Ao suspeitar de uma contaminação ou receber uma notificação, agir rapidamente pode reduzir drasticamente os custos e a complexidade da solução.',

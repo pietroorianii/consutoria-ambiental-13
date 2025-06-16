@@ -62,6 +62,7 @@ export const reportsServices: ServiceDetailData = {
     "Mantenha documentação atualizada",
     "Considere aspectos práticos de implementação",
     "Envolva as equipes operacionais",
-    "Revise periodicamente os documentos"
+    "Revise periodicamente os documentos",
+    "Utilize o sistema MTR do IAT para rastreabilidade de resíduos, garantindo a conformidade do seu PGRS"
   ]
 };

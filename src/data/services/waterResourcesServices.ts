@@ -25,17 +25,20 @@ export const waterResourcesServices: ServiceDetailData = {
     { title: 'Renovação e Regularização', description: 'Gerenciamos os prazos de validade de sua outorga e iniciamos o processo de renovação com a antecedência necessária para garantir a continuidade do seu direito de uso.', duration: 'Contínuo' },
   ],
   documents: [
-    'Formulários de requerimento do órgão ambiental.',
+    'Requerimento via Sistema de Gestão Ambiental (SGA) do IAT.',
     'Documentos de identificação (CPF/CNPJ) do requerente.',
     'Matrícula do imóvel ou documento de posse/arrendamento.',
     'ART (Anotação de Responsabilidade Técnica) do profissional responsável.',
     'Estudos técnicos específicos (teste de bombeamento, análise de água, etc.).',
+    'Declaração de Carga Poluidora, se aplicável para lançamentos de efluentes.',
   ],
   timeline: 'O prazo para análise e emissão de uma outorga pode variar de 60 a 180 dias, a depender da complexidade do uso, da bacia hidrográfica em questão e da demanda do órgão ambiental.',
   legalBasis: [
     'Lei nº 9.433/1997 - Política Nacional de Recursos Hídricos.',
     'Resoluções da Agência Nacional de Águas (ANA).',
     'Legislação Estadual de Recursos Hídricos (ex: Leis e Decretos do IAT no Paraná).',
+    'Normativas do IAT para uso de recursos hídricos no Paraná.',
+    'Decreto Estadual nº 9.541/2025, no que tange às outorgas vinculadas ao licenciamento.',
   ],
   tips: [
     'Sempre inicie o processo de outorga ou renovação com a máxima antecedência.',

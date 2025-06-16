@@ -41,7 +41,7 @@ export const monitoringServices: ServiceDetailData = {
   ],
   documents: [
     "Plano de monitoramento ambiental",
-    "Licença ambiental com condicionantes",
+    "Condicionantes da Licença ou Autorização Ambiental (LP, LI, LO, LAS, etc.)",
     "Laudos analíticos",
     "Relatórios de monitoramento",
     "Certificados de calibração dos equipamentos",
@@ -54,7 +54,9 @@ export const monitoringServices: ServiceDetailData = {
     "Resolução CONAMA nº 396/2008 - Águas Subterrâneas",
     "Resolução CONAMA nº 491/2018 - Ar",
     "NBR ISO/IEC 17025 - Laboratórios",
-    "Condicionantes específicas da licença"
+    "Condicionantes específicas da licença",
+    "Exigências de monitoramento conforme Decreto Estadual nº 9.541/2025",
+    "Instruções Normativas e Portarias específicas do IAT para cada parâmetro monitorado"
   ],
   tips: [
     "Mantenha cronograma rigoroso de coletas",

@@ -54,7 +54,9 @@ export const trainingServices: ServiceDetailData = {
     "Lei nº 12.305/2010 - PNRS",
     "Resolução CONAMA aplicáveis",
     "Normas técnicas específicas",
-    "Condicionantes de licenças"
+    "Condicionantes de licenças",
+    "Decreto Estadual nº 9.541/2025 (para treinamentos sobre as novas modalidades de licenciamento)",
+    "Resolução CEMA nº 107/2020 (para treinamentos sobre enquadramento de atividades)"
   ],
   tips: [
     "Adapte o conteúdo ao público-alvo",
