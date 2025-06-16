@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
@@ -7,7 +6,12 @@ import { Button } from "@/components/ui/button";
 import { serviceCategories } from "@/data/serviceCategories";
 
 // Mapeamento de cores por categoria
-const categoryColors: Record<string, { bg: string; border: string; button: string; icon: string }> = {
+const categoryColors: Record<string, {
+  bg: string;
+  border: string;
+  button: string;
+  icon: string;
+}> = {
   licensing: {
     bg: "from-eco-green/5 to-eco-green/3",
     border: "border-eco-green/20 hover:border-eco-green/40",
@@ -69,12 +73,9 @@ const categoryColors: Record<string, { bg: string; border: string; button: strin
     icon: "text-eco-accent-yellow"
   }
 };
-
 export const ServiceShowcase = () => {
   const categories = Object.entries(serviceCategories);
-
-  return (
-    <section className="relative py-20">
+  return <section className="relative py-20">
       {/* Background with subtle pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-eco-green/3 via-background to-eco-blue/2"></div>
       <div className="absolute inset-0 leaf-pattern opacity-[0.02]"></div>
@@ -85,31 +86,22 @@ export const ServiceShowcase = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-primary text-gray-900">
             Soluções Ambientais Completas para Sua Empresa
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed font-body">
-            Na L&P Soluções Ambientais, oferecemos consultoria especializada que transforma desafios 
-            ambientais em oportunidades de crescimento sustentável. Nossa abordagem integrada garante 
-            conformidade legal, redução de riscos e fortalecimento da sua imagem corporativa no mercado.
-          </p>
+          <p className="text-lg text-gray-600 leading-relaxed font-body">Na SOLARI SOLUÇÕES AMBIENTAIS, oferecemos consultoria especializada que transforma desafios ambientais em oportunidades de crescimento sustentável. Nossa abordagem integrada garante conformidade legal, redução de riscos e fortalecimento da sua imagem corporativa no mercado.</p>
           <div className="h-1 w-24 bg-eco-green rounded-full mx-auto mt-6"></div>
         </div>
 
         {/* Grid de Categorias de Serviços */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {categories.map(([key, category]) => {
-            const colors = categoryColors[key] || categoryColors.licensing;
-            
-            return (
-              <Card 
-                key={key}
-                className={`group ${colors.border} transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 overflow-hidden`}
-              >
+          const colors = categoryColors[key] || categoryColors.licensing;
+          return <Card key={key} className={`group ${colors.border} transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 overflow-hidden`}>
                 {/* Header com ícone e título */}
                 <CardHeader className={`pb-4 bg-gradient-to-br ${colors.bg}`}>
                   <div className="flex items-start gap-4">
                     <div className={`p-3 bg-white/80 rounded-xl group-hover:bg-white transition-colors shadow-sm flex-shrink-0`}>
                       {React.cloneElement(category.icon as React.ReactElement, {
-                        className: `h-8 w-8 ${colors.icon}`
-                      })}
+                    className: `h-8 w-8 ${colors.icon}`
+                  })}
                     </div>
                     <div className="flex-grow">
                       <CardTitle className="text-xl font-secondary text-gray-900 group-hover:text-gray-800 transition-colors mb-2">
@@ -129,48 +121,30 @@ export const ServiceShowcase = () => {
                       Principais Entregas:
                     </h4>
                     <ul className="space-y-2">
-                      {getMainDeliverables(key).map((deliverable, index) => (
-                        <li key={index} className="flex items-start gap-2">
+                      {getMainDeliverables(key).map((deliverable, index) => <li key={index} className="flex items-start gap-2">
                           <CheckCircle className={`h-4 w-4 ${colors.icon} mt-0.5 flex-shrink-0`} />
                           <span className="text-sm text-gray-600 font-body">{deliverable}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </div>
 
                   {/* Call to Action */}
                   <div className="flex gap-3">
-                    <Button 
-                      asChild 
-                      variant="outline" 
-                      size="sm"
-                      className={`${colors.border.replace('border-', 'border-').replace('/20', '/40')} ${colors.icon} hover:bg-white hover:text-gray-800 transition-all duration-300 flex-1`}
-                    >
-                      <Link 
-                        to={`/services/${key}`}
-                        className="flex items-center justify-center gap-2"
-                      >
+                    <Button asChild variant="outline" size="sm" className={`${colors.border.replace('border-', 'border-').replace('/20', '/40')} ${colors.icon} hover:bg-white hover:text-gray-800 transition-all duration-300 flex-1`}>
+                      <Link to={`/services/${key}`} className="flex items-center justify-center gap-2">
                         Saiba Mais <ArrowRight className="h-4 w-4" />
                       </Link>
                     </Button>
                     
-                    <Button 
-                      asChild
-                      size="sm"
-                      className={`${colors.button} text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg`}
-                    >
-                      <Link 
-                        to="/request-quote"
-                        className="flex items-center gap-2"
-                      >
+                    <Button asChild size="sm" className={`${colors.button} text-white transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg`}>
+                      <Link to="/request-quote" className="flex items-center gap-2">
                         Orçamento
                       </Link>
                     </Button>
                   </div>
                 </CardContent>
-              </Card>
-            );
-          })}
+              </Card>;
+        })}
         </div>
 
         {/* CTA geral */}
@@ -190,8 +164,7 @@ export const ServiceShowcase = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 
 // Funções auxiliares para conteúdo específico por categoria
@@ -210,61 +183,18 @@ function getShortDescription(key: string): string {
   };
   return descriptions[key] || "";
 }
-
 function getMainDeliverables(key: string): string[] {
   const deliverables: Record<string, string[]> = {
-    licensing: [
-      "Licenças Ambientais (LP, LI, LO)",
-      "Autorizações e Dispensas",
-      "Acompanhamento de Processos"
-    ],
-    water_resources: [
-      "Outorgas de Uso da Água",
-      "Estudos de Disponibilidade Hídrica",
-      "Anuência para Perfuração de Poços",
-      "Monitoramento de Qualidade"
-    ],
-    degraded_areas: [
-      "Gerenciamento de Áreas Contaminadas (GAC)",
-      "Planos de Recuperação (PRAD)",
-      "Assessoria em TAC",
-      "Auditoria de Passivos Ambientais"
-    ],
-    monitoring: [
-      "Coleta e Análises Laboratoriais",
-      "Relatórios de Conformidade",
-      "Gestão de Condicionantes"
-    ],
-    reports: [
-      "Planos de Gerenciamento (PGRS, PGRSS)",
-      "Estudos de Impacto (EIA/RIMA)",
-      "Inventários e Relatórios Técnicos"
-    ],
-    consulting: [
-      "Diagnóstico e Adequação Ambiental",
-      "Assessoria em Fiscalizações",
-      "Suporte em Decisões Estratégicas"
-    ],
-    training: [
-      "Treinamentos Certificados",
-      "Capacitação em Gestão Ambiental",
-      "Programas Customizados"
-    ],
-    management: [
-      "Renovação de Licenças",
-      "Declarações Anuais",
-      "Manutenção de Conformidade"
-    ],
-    esg: [
-      "Diagnóstico e Estratégia ESG",
-      "Relatórios de Sustentabilidade",
-      "Análise de Riscos e Oportunidades"
-    ],
-    climate: [
-      "Inventários de Gases de Efeito Estufa",
-      "Planos de Descarbonização",
-      "Projetos de Crédito de Carbono"
-    ]
+    licensing: ["Licenças Ambientais (LP, LI, LO)", "Autorizações e Dispensas", "Acompanhamento de Processos"],
+    water_resources: ["Outorgas de Uso da Água", "Estudos de Disponibilidade Hídrica", "Anuência para Perfuração de Poços", "Monitoramento de Qualidade"],
+    degraded_areas: ["Gerenciamento de Áreas Contaminadas (GAC)", "Planos de Recuperação (PRAD)", "Assessoria em TAC", "Auditoria de Passivos Ambientais"],
+    monitoring: ["Coleta e Análises Laboratoriais", "Relatórios de Conformidade", "Gestão de Condicionantes"],
+    reports: ["Planos de Gerenciamento (PGRS, PGRSS)", "Estudos de Impacto (EIA/RIMA)", "Inventários e Relatórios Técnicos"],
+    consulting: ["Diagnóstico e Adequação Ambiental", "Assessoria em Fiscalizações", "Suporte em Decisões Estratégicas"],
+    training: ["Treinamentos Certificados", "Capacitação em Gestão Ambiental", "Programas Customizados"],
+    management: ["Renovação de Licenças", "Declarações Anuais", "Manutenção de Conformidade"],
+    esg: ["Diagnóstico e Estratégia ESG", "Relatórios de Sustentabilidade", "Análise de Riscos e Oportunidades"],
+    climate: ["Inventários de Gases de Efeito Estufa", "Planos de Descarbonização", "Projetos de Crédito de Carbono"]
   };
   return deliverables[key] || [];
 }
