@@ -2,7 +2,6 @@
 import React from "react";
 import { Sparkles } from "lucide-react";
 import { ServiceCategories } from "./featured-services/ServiceCategories";
-import { StatsSection } from "./featured-services/StatsSection";
 
 export function FeaturedServices() {
   return (
@@ -41,8 +40,6 @@ export function FeaturedServices() {
         </div>
         
         <ServiceCategories />
-        
-        <StatsSection />
       </div>
     </section>
   );
