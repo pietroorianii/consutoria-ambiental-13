@@ -21,10 +21,9 @@ export function MobileNav() {
           alt="Solari Soluções Ambientais" 
           className="h-10 w-auto"
         />
-        <div className="flex items-center space-x-1">
-          <span className="text-lg font-bold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>SOLARI</span>
-          <span className="text-lg font-bold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>
-            SOLUÇÕES AMBIENTAIS
+        <div className="flex items-center">
+          <span className="text-lg font-bold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            SOLARI SOLUÇÕES AMBIENTAIS
           </span>
         </div>
       </Link>

@@ -20,13 +20,7 @@ export function Navbar() {
                 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent tracking-tight"
                 style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
               >
-                SOLARI
-              </span>
-              <span
-                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent tracking-tight"
-                style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
-              >
-                SOLUÇÕES AMBIENTAIS
+                SOLARI SOLUÇÕES AMBIENTAIS
               </span>
             </div>
           </Link>
