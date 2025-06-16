@@ -12,8 +12,8 @@ export function DesktopNav() {
 
   return (
     <div className="hidden md:flex items-center justify-between w-full">
-      {/* Navigation Menu - movido mais para a direita */}
-      <div className="flex-1 flex justify-center mr-8">
+      {/* Navigation Menu - aproximado do botão */}
+      <div className="flex-1 flex justify-end mr-4">
         <NavigationMenu>
           <NavigationMenuList className="space-x-1">
             {/* Home */}
@@ -84,7 +84,7 @@ export function DesktopNav() {
         </NavigationMenu>
       </div>
 
-      {/* CTA Button - mais próximo do menu */}
+      {/* CTA Button - mantido próximo */}
       <div className="flex items-center">
         <Link
           to="/request-quote"

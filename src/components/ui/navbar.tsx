@@ -17,16 +17,16 @@ export function Navbar() {
             />
             <div className="flex items-center space-x-2">
               <span
-                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 bg-clip-text text-transparent tracking-tight"
+                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent tracking-tight"
                 style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
               >
-                Solari
+                SOLARI
               </span>
               <span
-                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 bg-clip-text text-transparent tracking-tight"
+                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent tracking-tight"
                 style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
               >
-                Soluções Ambientais
+                SOLUÇÕES AMBIENTAIS
               </span>
             </div>
           </Link>

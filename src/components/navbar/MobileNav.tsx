@@ -21,10 +21,10 @@ export function MobileNav() {
           alt="Solari Soluções Ambientais" 
           className="h-10 w-auto"
         />
-        <div className="flex flex-col">
-          <span className="text-lg font-bold bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Solari</span>
-          <span className="text-sm font-bold bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
-            Soluções Ambientais
+        <div className="flex items-center space-x-1">
+          <span className="text-lg font-bold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>SOLARI</span>
+          <span className="text-lg font-bold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            SOLUÇÕES AMBIENTAIS
           </span>
         </div>
       </Link>
@@ -38,7 +38,7 @@ export function MobileNav() {
         </SheetTrigger>
         <SheetContent side="right" className="w-80">
           <SheetHeader>
-            <SheetTitle className="text-left bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Menu de Navegação</SheetTitle>
+            <SheetTitle className="text-left bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Menu de Navegação</SheetTitle>
           </SheetHeader>
           <div className="mt-6 space-y-4">
             {/* Home */}
