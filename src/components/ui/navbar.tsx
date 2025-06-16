@@ -15,16 +15,16 @@ export function Navbar() {
               alt="Solari Soluções Ambientais" 
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="flex flex-col leading-tight">
+            <div className="flex items-center space-x-2">
               <span
-                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-eco-accent-yellow via-eco-green to-eco-blue bg-clip-text text-transparent tracking-tight"
+                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 bg-clip-text text-transparent tracking-tight"
                 style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
               >
                 Solari
               </span>
               <span
-                className="text-lg md:text-xl font-medium text-eco-green"
-                style={{ fontFamily: "'Montserrat', sans-serif", letterSpacing: "0.03em" }}
+                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 bg-clip-text text-transparent tracking-tight"
+                style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
               >
                 Soluções Ambientais
               </span>
