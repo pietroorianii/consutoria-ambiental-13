@@ -17,13 +17,13 @@ export function MobileNav() {
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
         <img 
-          src="/lovable-uploads/2841475c-8c0a-45ba-b310-8788db19c7ea.png" 
-          alt="PRISMA Soluções Ambientais" 
+          src="/lovable-uploads/d411c434-c49d-4917-ae05-49dc59580547.png" 
+          alt="Solari Soluções Ambientais" 
           className="h-10 w-auto"
         />
         <div>
-          <h1 className="text-lg font-bold bg-gradient-to-r from-prisma-green to-prisma-blue bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>PRISMA</h1>
-          <p className="text-xs bg-gradient-to-r from-prisma-green via-green-500 to-prisma-green bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
+          <h1 className="text-lg font-bold bg-gradient-to-r from-eco-green to-eco-blue bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Solari</h1>
+          <p className="text-xs bg-gradient-to-r from-eco-green via-eco-accent-yellow to-eco-blue bg-clip-text text-transparent leading-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
             Soluções Ambientais
           </p>
         </div>
@@ -32,20 +32,20 @@ export function MobileNav() {
       {/* Mobile Menu */}
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="hover:bg-prisma-green/10">
-            <Menu className="h-6 w-6 text-prisma-green" />
+          <Button variant="ghost" size="icon" className="hover:bg-eco-green/10">
+            <Menu className="h-6 w-6 text-eco-green" />
           </Button>
         </SheetTrigger>
         <SheetContent side="right" className="w-80">
           <SheetHeader>
-            <SheetTitle className="text-left bg-gradient-to-r from-prisma-green to-prisma-blue bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Menu de Navegação</SheetTitle>
+            <SheetTitle className="text-left bg-gradient-to-r from-eco-green to-eco-blue bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Menu de Navegação</SheetTitle>
           </SheetHeader>
           <div className="mt-6 space-y-4">
             {/* Home */}
             <Link
               to="/"
               onClick={closeMenu}
-              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Início
@@ -55,7 +55,7 @@ export function MobileNav() {
             <Link
               to="/about"
               onClick={closeMenu}
-              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Sobre Nós
@@ -65,7 +65,7 @@ export function MobileNav() {
             <Link
               to="/services"
               onClick={closeMenu}
-              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Serviços
@@ -75,7 +75,7 @@ export function MobileNav() {
             <Link
               to="/faq"
               onClick={closeMenu}
-              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Perguntas Frequentes
@@ -85,18 +85,18 @@ export function MobileNav() {
             <Link
               to="/contact"
               onClick={closeMenu}
-              className="block px-4 py-2 text-base font-medium text-prisma-gray-text hover:bg-prisma-green/10 hover:text-prisma-green rounded-md transition-colors"
+              className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Contato
             </Link>
 
             {/* CTA Button */}
-            <div className="pt-4 border-t border-prisma-gray-light">
+            <div className="pt-4 border-t border-border">
               <Link
                 to="/request-quote"
                 onClick={closeMenu}
-                className="block w-full text-center bg-gradient-to-r from-prisma-green to-prisma-blue text-white px-4 py-3 rounded-md text-base font-medium shadow-md hover:from-prisma-blue hover:to-prisma-green transition-all duration-300"
+                className="block w-full text-center bg-gradient-to-r from-eco-green to-eco-blue text-white px-4 py-3 rounded-md text-base font-medium shadow-md hover:from-eco-blue hover:to-eco-green transition-all duration-300"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Solicitar Orçamento

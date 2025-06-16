@@ -6,18 +6,18 @@ import { MobileNav } from "@/components/navbar/MobileNav";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-prisma-gray-light/30">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-eco-green/20">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
-              src="/lovable-uploads/2841475c-8c0a-45ba-b310-8788db19c7ea.png" 
+              src="/lovable-uploads/d411c434-c49d-4917-ae05-49dc59580547.png" 
               alt="Solari Soluções Ambientais" 
-              className="h-12 w-auto transition-transform duration-300"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col leading-tight">
               <span
-                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-yellow-400 via-yellow-600 to-eco-green bg-clip-text text-transparent tracking-tight"
+                className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-eco-accent-yellow via-eco-green to-eco-blue bg-clip-text text-transparent tracking-tight"
                 style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}
               >
                 Solari

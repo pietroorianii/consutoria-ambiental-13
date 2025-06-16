@@ -12,13 +12,13 @@ export function CompanyIntro() {
         <div className="space-y-8 scroll-trigger">
           <div className="inline-block px-4 py-2 bg-eco-green/10 rounded-full text-eco-green font-medium text-sm uppercase tracking-wider">ESPECIALIDADE</div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-yellow-900 dark:text-gray-100" style={{
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground" style={{
           fontFamily: "'Playfair Display', 'Poppins', serif"
         }}>
             Expertise em Soluções Ambientais
           </h2>
           
-          <div className="h-1 w-20 bg-eco-accent-teal rounded-full"></div>
+          <div className="h-1 w-20 bg-eco-accent-yellow rounded-full"></div>
           
           <p className="text-muted-foreground text-lg">
             A Solari Soluções Ambientais oferece serviços de consultoria e assessoria ambiental completa, 
@@ -33,7 +33,7 @@ export function CompanyIntro() {
           </p>
           
           <div className="pt-6 flex flex-wrap gap-5">
-            <Button asChild variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green/5 py-6 px-8 rounded-lg text-base">
+            <Button asChild variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green hover:text-white py-6 px-8 rounded-lg text-base transition-all duration-300">
               <Link to="/about#team" className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
@@ -48,10 +48,10 @@ export function CompanyIntro() {
         </div>
         
         <div className="relative scroll-trigger h-[550px]">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-eco-accent-teal/10 eco-blob rounded-3xl -z-10"></div>
+          <div className="absolute top-10 right-10 w-72 h-72 bg-eco-green/10 eco-blob rounded-3xl -z-10"></div>
           
           <div className="relative h-[500px] w-full overflow-hidden rounded-2xl shadow-soft hover-grow">
-            <img src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" alt="Nossa empresa em ação" className="w-full h-full object-cover" />
+            <img src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" alt="Solari Soluções Ambientais em ação" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-br from-eco-green/40 to-eco-blue/30 mix-blend-multiply"></div>
             <div className="absolute bottom-0 left-0 right-0 p-8 glass-blur-dark">
               <h3 className="text-white text-xl font-semibold mb-2">Compromisso com o futuro sustentável</h3>
