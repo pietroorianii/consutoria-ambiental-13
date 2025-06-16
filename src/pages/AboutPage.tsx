@@ -45,14 +45,14 @@ const AboutPage = () => {
   return (
     <PageWrapper>
       <MetaTags 
-        title="Sobre a L&P Soluções Ambientais | Consultoria Ambiental Especializada"
+        title="Sobre a Solari Soluções Ambientais | Consultoria Ambiental Especializada"
         description="Conheça nossa equipe de especialistas em consultoria ambiental e nossa trajetória de sucesso em soluções para licenciamento e gestão ambiental."
         keywords="consultoria ambiental paraná, especialistas ambientais, equipe técnica, licenciamento"
       />
       
       {/* Cabeçalho da página padronizado com PageBanner */}
       <PageBanner
-        title="Sobre a L&P Soluções Ambientais"
+        title="Sobre a Solari Soluções Ambientais"
         description="Conectando desenvolvimento e sustentabilidade com expertise e inovação."
         icon={<Users />}
         iconColor="teal"
@@ -75,7 +75,7 @@ const AboutPage = () => {
                 Pioneiros em Consultoria Ambiental Inovadora
               </h2>
               <div className="h-1 w-20 bg-eco-accent-teal rounded-full mb-8"></div>
-              <p className="text-muted-foreground text-lg mb-6">Fundada em 2025, a L&P Soluções Ambientais nasceu da paixão pela natureza e do compromisso com o desenvolvimento sustentável. Nossa missão é oferecer consultoria ambiental de excelência, auxiliando empresas a prosperar em harmonia com o meio ambiente.</p>
+              <p className="text-muted-foreground text-lg mb-6">Fundada em 2025, a Solari Soluções Ambientais nasceu da paixão pela natureza e do compromisso com o desenvolvimento sustentável. Nossa missão é oferecer consultoria ambiental de excelência, auxiliando empresas a prosperar em harmonia com o meio ambiente.</p>
               <p className="text-muted-foreground text-lg">
                 Com uma equipe multidisciplinar e experiente, combinamos conhecimento técnico com uma abordagem personalizada para cada cliente, garantindo soluções eficazes e em conformidade com as mais recentes legislações ambientais.
               </p>
@@ -85,8 +85,8 @@ const AboutPage = () => {
               {/* Logo da empresa */}
               <div className="relative p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-eco-green/20 hover:border-eco-green/40 transition-all duration-300 hover-grow">
                 <img 
-                  src="/lovable-uploads/027bd48a-0820-4102-841d-43d98185f223.png" 
-                  alt="L&P Soluções Ambientais Logo" 
+                  src="/lovable-uploads/d411c434-c49d-4917-ae05-49dc59580547.png" 
+                  alt="Solari Soluções Ambientais Logo" 
                   className="max-w-full h-auto max-h-72 object-contain"
                 />
               </div>
