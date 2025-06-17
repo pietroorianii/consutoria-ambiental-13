@@ -41,12 +41,17 @@ export const licensingServices: ServiceDetailData = {
     }
   ],
   documents: [
-    "LICENÇA PRÉVIA (LP): Certidão de Uso e Ocupação do Solo, Requerimento de Licenciamento Ambiental (RLA), Comprovante de pagamento da Taxa Ambiental, Ato Constitutivo e CNPJ/CPF, Matrícula do imóvel atualizada, Estudo Ambiental aplicável (EIA/RIMA, RAS, etc.), Certidão Negativa de Débitos Ambientais.",
-    "LICENÇA DE INSTALAÇÃO (LI): Certidão de Uso e Ocupação do Solo (se houver alterações), Cópia da LP válida, Comprovação do cumprimento das condicionantes da LP, Planos e Programas Ambientais (PCA, PGRS, etc.), Comprovante de publicação do pedido da LI.",
-    "LICENÇA DE OPERAÇÃO (LO): Certidão de Uso e Ocupação do Solo, Cópia da LI válida, Relatório de Autoavaliação, Laudos de comissionamento dos sistemas de controle ambiental, Outorga de Recursos Hídricos (se aplicável).",
-    "LICENÇA AMBIENTAL SIMPLIFICADA (LAS): Certidão de Uso e Ocupação do Solo, RLA, Comprovante de Taxa Ambiental, Ato Constitutivo e CNPJ/CPF, Matrícula do imóvel, Relatório Ambiental Simplificado (RAS), ART do profissional responsável.",
-    "LICENÇA POR ADESÃO E COMPROMISSO (LAC): Certidão de Uso e Ocupação do Solo, Cadastro completo nos sistemas online, Comprovante de Taxa Ambiental, Ato Constitutivo e CNPJ/CPF, Matrícula do imóvel, Termo de Adesão e Compromisso (TAC), ART do profissional responsável.",
-    "DECLARAÇÃO DE LICENCIAMENTO AMBIENTAL MUNICIPAL (DLAM): Certidão de Uso e Ocupação do Solo, Formulário municipal específico, Comprovante de taxas municipais, Documentos pessoais/empresariais, Matrícula do imóvel, Memorial Descritivo Simplificado, Croqui de localização e layout, ART do profissional responsável."
+    "DECLARAÇÃO DE LICENCIAMENTO AMBIENTAL MUNICIPAL (DLAM): Certidão de Uso e Ocupação do Solo; Formulário municipal específico; Comprovante de taxas municipais; Documentos pessoais (CPF/RG) ou da empresa (CNPJ); Matrícula do imóvel; Memorial Descritivo Simplificado da Atividade; Croqui de localização e layout do empreendimento; ART do profissional responsável.",
+    
+    "LICENÇA POR ADESÃO E COMPROMISSO (LAC): Certidão de Uso e Ocupação do Solo; Cadastro completo nos sistemas online do órgão ambiental; Comprovante de pagamento da Taxa Ambiental; Ato Constitutivo (Contrato Social/Estatuto) e CNPJ/CPF; Matrícula do imóvel atualizada; Termo de Adesão e Compromisso (TAC) assinado digitalmente; ART do profissional responsável.",
+    
+    "LICENÇA AMBIENTAL SIMPLIFICADA (LAS): Certidão de Uso e Ocupação do Solo; Requerimento de Licenciamento Ambiental (RLA); Comprovante de pagamento da Taxa Ambiental; Ato Constitutivo (Contrato Social/Estatuto) e CNPJ/CPF; Matrícula do imóvel atualizada; Relatório Ambiental Simplificado (RAS) incluindo descrição da atividade, controles ambientais e layout; ART do profissional responsável.",
+    
+    "LICENÇA PRÉVIA (LP): Certidão de Uso e Ocupação do Solo; Requerimento de Licenciamento Ambiental (RLA); Comprovante de pagamento da Taxa Ambiental; Ato Constitutivo (Contrato Social/Estatuto) e CNPJ/CPF; Matrícula do imóvel atualizada ou documento de justa posse; Estudo Ambiental aplicável (EIA/RIMA, RAS, etc.); Certidão Negativa de Débitos Ambientais.",
+    
+    "LICENÇA DE INSTALAÇÃO (LI): Certidão de Uso e Ocupação do Solo (quando há alterações no projeto); Cópia da Licença Prévia (LP) válida; Comprovação do cumprimento das condicionantes da LP; Planos, Programas e Projetos Ambientais (PCA, PGRS, etc.); Comprovante de publicação do pedido da LI.",
+    
+    "LICENÇA DE OPERAÇÃO (LO): Certidão de Uso e Ocupação do Solo (para confirmar a manutenção da conformidade); Cópia da Licença de Instalação (LI) válida; Relatório de Autoavaliação comprovando o cumprimento das condicionantes da LI; Laudos de comissionamento dos sistemas de controle ambiental; Outorga de Direito de Uso de Recursos Hídricos (se aplicável)."
   ],
   timeline: "Os prazos variam conforme a modalidade: DLAM (1-15 dias), LAC (emissão imediata), LAS (até 60 dias), licenciamento convencional (4-6 meses por fase).",
   legalBasis: [
