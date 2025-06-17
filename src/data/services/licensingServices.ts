@@ -41,13 +41,12 @@ export const licensingServices: ServiceDetailData = {
     }
   ],
   documents: [
-    "DLAM - Declaração de Dispensa (1 a 15 dias)",
-    "LAC - Licença por Adesão e Compromisso (emissão eletrônica)",
-    "LAS - Licença Ambiental Simplificada (até 60 dias)",
-    "LP/LI/LO - Licenciamento Trifásico (4 a 6 meses cada)",
-    "LASR/LIR/LOR - Modalidades de Regularização",
-    "AA - Autorizações Ambientais específicas",
-    "AF - Autorizações Florestais"
+    "LICENÇA PRÉVIA (LP): Certidão de Uso e Ocupação do Solo, Requerimento de Licenciamento Ambiental (RLA), Comprovante de pagamento da Taxa Ambiental, Ato Constitutivo e CNPJ/CPF, Matrícula do imóvel atualizada, Estudo Ambiental aplicável (EIA/RIMA, RAS, etc.), Certidão Negativa de Débitos Ambientais.",
+    "LICENÇA DE INSTALAÇÃO (LI): Certidão de Uso e Ocupação do Solo (se houver alterações), Cópia da LP válida, Comprovação do cumprimento das condicionantes da LP, Planos e Programas Ambientais (PCA, PGRS, etc.), Comprovante de publicação do pedido da LI.",
+    "LICENÇA DE OPERAÇÃO (LO): Certidão de Uso e Ocupação do Solo, Cópia da LI válida, Relatório de Autoavaliação, Laudos de comissionamento dos sistemas de controle ambiental, Outorga de Recursos Hídricos (se aplicável).",
+    "LICENÇA AMBIENTAL SIMPLIFICADA (LAS): Certidão de Uso e Ocupação do Solo, RLA, Comprovante de Taxa Ambiental, Ato Constitutivo e CNPJ/CPF, Matrícula do imóvel, Relatório Ambiental Simplificado (RAS), ART do profissional responsável.",
+    "LICENÇA POR ADESÃO E COMPROMISSO (LAC): Certidão de Uso e Ocupação do Solo, Cadastro completo nos sistemas online, Comprovante de Taxa Ambiental, Ato Constitutivo e CNPJ/CPF, Matrícula do imóvel, Termo de Adesão e Compromisso (TAC), ART do profissional responsável.",
+    "DECLARAÇÃO DE LICENCIAMENTO AMBIENTAL MUNICIPAL (DLAM): Certidão de Uso e Ocupação do Solo, Formulário municipal específico, Comprovante de taxas municipais, Documentos pessoais/empresariais, Matrícula do imóvel, Memorial Descritivo Simplificado, Croqui de localização e layout, ART do profissional responsável."
   ],
   timeline: "Os prazos variam conforme a modalidade: DLAM (1-15 dias), LAC (emissão imediata), LAS (até 60 dias), licenciamento convencional (4-6 meses por fase).",
   legalBasis: [
