@@ -25,7 +25,7 @@ export const waterResourcesServices: ServiceDetailData = {
     { title: 'Renovação e Regularização', description: 'Gerenciamos os prazos de validade de sua outorga e iniciamos o processo de renovação com a antecedência necessária para garantir a continuidade do seu direito de uso.', duration: 'Contínuo' },
   ],
   documents: [
-    'Requerimento via Sistema de Gestão Ambiental (SGA) do IAT.',
+    'Requerimento via Sistema SIGARH (Sistema Integrado de Gestão de Águas e Recursos Hídricos).',
     'Documentos de identificação (CPF/CNPJ) do requerente.',
     'Matrícula do imóvel ou documento de posse/arrendamento.',
     'ART (Anotação de Responsabilidade Técnica) do profissional responsável.',
