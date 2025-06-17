@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,11 +10,33 @@ interface ServiceDetailHeroProps {
     description: string;
     icon: React.ComponentType<{ className?: string }>;
     image?: string;
+    id?: string;
   };
 }
 
 export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
   const IconComponent = service.icon;
+  const location = useLocation();
+  
+  // Determinar a URL de volta baseada no serviço
+  const getBackUrl = () => {
+    // Se for um serviço de licenciamento individual, volta para licensing
+    const licensingServices = ['lp', 'li', 'lo', 'las', 'lac', 'dlam'];
+    if (service.id && licensingServices.includes(service.id)) {
+      return '/services/licensing';
+    }
+    
+    // Para outros serviços, volta para a página geral de serviços
+    return '/services';
+  };
+
+  const getBackText = () => {
+    const licensingServices = ['lp', 'li', 'lo', 'las', 'lac', 'dlam'];
+    if (service.id && licensingServices.includes(service.id)) {
+      return 'Voltar ao Licenciamento';
+    }
+    return 'Voltar aos Serviços';
+  };
 
   return (
     <div className="bg-gradient-to-r from-eco-green via-eco-green-dark to-eco-blue py-24 relative overflow-hidden">
@@ -27,9 +49,9 @@ export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
       <div className="container relative z-10">
         <div className="flex items-center gap-4 mb-8">
           <Button asChild variant="outline" className="bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm">
-            <Link to="/services" className="flex items-center gap-2">
+            <Link to={getBackUrl()} className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
-              Voltar aos Serviços
+              {getBackText()}
             </Link>
           </Button>
         </div>
