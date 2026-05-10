@@ -19,11 +19,11 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				sora: ['Sora', 'Montserrat', 'sans-serif'],
+				inter: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['Sora', 'Montserrat', 'sans-serif'],
 				montserrat: ['Montserrat', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif'],
-				roboto: ['Roboto', 'sans-serif'],
-				'roboto-slab': ['"Roboto Slab"', 'serif'],
-				lato: ['Lato', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -65,6 +65,17 @@ export default {
 					primary: 'hsl(var(--sidebar-primary))',
 					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
 					accent: 'hsl(var(--sidebar-accent))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+					border: 'hsl(var(--sidebar-border))',
+					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Solari brand tokens (HSL-backed)
+				brand: {
+					dark: 'hsl(var(--brand-dark))',      // #14261C
+					primary: 'hsl(var(--brand-primary))',// #2D5A27
+					accent: 'hsl(var(--brand-accent))',  // #00A3AD
+					cream: 'hsl(var(--brand-cream))',    // #F4F1EA
+				},
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
