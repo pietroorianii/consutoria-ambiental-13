@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,26 +6,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 214 10% 25%;
+    /* Solari — Branding Sustentável de Alta Performance */
+    --background: 42 28% 94%;          /* #F4F1EA Creme Orgânico */
+    --foreground: 140 31% 11%;         /* #14261C Verde Floresta */
 
-    --card: 0 0% 100%;
-    --card-foreground: 214 10% 25%;
+    --card: 42 30% 97%;
+    --card-foreground: 140 31% 11%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 214 10% 25%;
+    --popover: 42 30% 97%;
+    --popover-foreground: 140 31% 11%;
 
-    --primary: 154 43% 33%; /* Verde Primário PRISMA */
-    --primary-foreground: 0 0% 98%;
+    --primary: 140 31% 11%;            /* #14261C Verde Floresta Profundo */
+    --primary-foreground: 42 28% 94%;
 
-    --secondary: 205 100% 38%; /* Azul Secundário PRISMA */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 115 40% 25%;          /* #2D5A27 Verde Ecossistema */
+    --secondary-foreground: 42 28% 94%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 42 22% 88%;
+    --muted-foreground: 140 12% 32%;
 
-    --accent: 43 94% 54%; /* Amarelo/Dourado PRISMA */
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 184 100% 34%;            /* #00A3AD Azul Glacial / Tecnologia */
+    --accent-foreground: 0 0% 100%;
+
+    /* Brand aliases */
+    --brand-dark: 140 31% 11%;
+    --brand-primary: 115 40% 25%;
+    --brand-accent: 184 100% 34%;
+    --brand-cream: 42 28% 94%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
