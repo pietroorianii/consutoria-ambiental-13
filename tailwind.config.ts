@@ -76,10 +76,6 @@ export default {
 					accent: 'hsl(var(--brand-accent))',  // #00A3AD
 					cream: 'hsl(var(--brand-cream))',    // #F4F1EA
 				},
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
                 // Cores da PRISMA
                 prisma: {
                     green: {
