@@ -1,109 +1,161 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles, MessageCircle } from "lucide-react";
 
 export function HeroBanner() {
   return (
-    <div className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Background image with nature and technology */}
-      <div className="absolute inset-0 bg-cover bg-center" 
-           style={{backgroundImage: "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=2000&h=1200')"}}>
-      </div>
-      
-      {/* Overlay gradient integrating brand colors */}
-      <div className="absolute inset-0 bg-gradient-to-br from-eco-green/70 via-eco-blue/60 to-eco-accent-yellow/50"></div>
-      
-      {/* Subtle decorative elements */}
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-eco-accent-yellow/10 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse-slow"></div>
-      
-      {/* Content */}
-      <div className="container relative z-10 py-24 md:py-36">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Content */}
-          <div className="text-left">
-            <div className="mb-6">
-              <span className="text-sm font-medium tracking-wider uppercase text-white/90" style={{
-                fontFamily: "'Montserrat', sans-serif"
-              }}>
-                SOLARI SOLUÇÕES AMBIENTAIS
+    <section className="relative overflow-hidden bg-brand-dark text-brand-cream min-h-[92vh] flex items-center">
+      {/* Layered gradient + glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark to-brand-primary/40" />
+      <div
+        className="absolute inset-0 opacity-[0.18] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>\")",
+        }}
+      />
+      <div className="absolute -top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-brand-primary/30 blur-3xl" />
+      <div className="absolute -bottom-40 -right-20 w-[36rem] h-[36rem] rounded-full bg-brand-accent/20 blur-3xl" />
+
+      <div className="container relative z-10 py-24 md:py-32">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="lg:col-span-7"
+          >
+            {/* Stylized badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-brand-cream/15 bg-brand-cream/5 backdrop-blur-md">
+              <Sparkles className="h-4 w-4 text-brand-accent" />
+              <span className="text-xs md:text-sm font-medium tracking-wider uppercase text-brand-cream/90 font-inter">
+                Engenharia com Propósito
               </span>
             </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-white" style={{
-              animationDelay: "0.1s",
-              fontFamily: "'Playfair Display', 'Poppins', serif",
-              textShadow: "0px 2px 4px rgba(0,0,0,0.3)"
-            }}>
-              Solari: Clareza e Segurança para sua{" "}
-              <span className="text-eco-accent-yellow">Conformidade Ambiental</span>
+
+            <h1 className="font-sora font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight">
+              Clareza e segurança para sua{" "}
+              <span className="bg-gradient-to-r from-brand-accent via-brand-cream to-brand-accent bg-clip-text text-transparent">
+                conformidade ambiental
+              </span>
+              .
             </h1>
 
-            <div className="w-20 h-1.5 rounded-full mb-8 animate-fade-in bg-eco-accent-yellow" style={{
-              animationDelay: "0.3s"
-            }}></div>
-            
-            <p style={{
-              animationDelay: "0.4s",
-              fontFamily: "'Montserrat', sans-serif",
-              textShadow: "0px 1px 2px rgba(0,0,0,0.3)"
-            }} className="text-lg max-w-2xl animate-fade-in md:text-xl mb-10 leading-relaxed text-white/95">
-              Navegue pela complexidade da legislação ambiental com a parceria de especialistas. 
-              Transformamos desafios regulatórios em oportunidades estratégicas, garantindo a segurança 
-              e o crescimento sustentável da sua empresa.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25, duration: 0.6 }}
+              className="mt-7 max-w-2xl text-lg md:text-xl text-brand-cream/80 font-inter leading-relaxed"
+            >
+              Navegue pela complexidade da legislação ambiental com a parceria
+              de especialistas. Transformamos desafios regulatórios em
+              oportunidades estratégicas para o crescimento sustentável da sua
+              empresa.
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-5 mt-4 animate-fade-in" style={{
-              animationDelay: "0.6s"
-            }}>
-              <Button asChild size="lg" className="bg-eco-green hover:bg-eco-green-dark text-white px-8 py-6 rounded-lg text-base ripple-button transition-all duration-300 shadow-lg hover:shadow-xl">
-                <Link to="/services" className="relative z-10 flex items-center gap-3 group">
-                  <span className="text-base font-medium">Conheça Nossas Soluções</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="mt-10 flex flex-col sm:flex-row gap-4"
+            >
+              <Button
+                asChild
+                size="lg"
+                className="group bg-brand-accent hover:bg-brand-accent/90 text-white rounded-2xl px-8 py-6 text-base font-medium shadow-lg shadow-brand-accent/20 transition-transform duration-200 hover:scale-[1.03]"
+              >
+                <Link to="/services" className="flex items-center gap-3">
+                  Conheça nossas soluções
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
 
-              <Button asChild size="lg" variant="outline" className="bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white hover:bg-white hover:text-eco-green px-8 py-6 rounded-lg text-base group transition-all duration-300">
-                <Link to="/contact" className="relative z-10 flex items-center gap-3">
-                  Fale com um Especialista
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-2xl px-8 py-6 text-base font-medium border-brand-cream/30 bg-brand-cream/5 text-brand-cream hover:bg-brand-cream hover:text-brand-dark backdrop-blur-md transition-transform duration-200 hover:scale-[1.03]"
+              >
+                <Link to="/contact" className="flex items-center gap-3">
+                  <MessageCircle className="h-5 w-5" />
+                  Fale com um especialista
                 </Link>
               </Button>
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Right side - Logo with glassmorphism effect */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Glass card effect for the logo */}
-              <div className="glass-blur p-8 rounded-3xl animate-float shadow-glass">
-                <img 
-                  src="/lovable-uploads/d411c434-c49d-4917-ae05-49dc59580547.png" 
-                  alt="Solari Soluções Ambientais - Logo" 
-                  className="w-80 h-auto"
-                />
+            {/* Trust strip */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="mt-12 grid grid-cols-3 gap-6 max-w-md"
+            >
+              {[
+                { k: "15+", v: "Anos de atuação" },
+                { k: "300+", v: "Projetos entregues" },
+                { k: "100%", v: "Conformidade legal" },
+              ].map((s) => (
+                <div key={s.k}>
+                  <div className="font-sora text-2xl md:text-3xl font-bold text-brand-accent">
+                    {s.k}
+                  </div>
+                  <div className="text-xs text-brand-cream/70 mt-1 font-inter">
+                    {s.v}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden border border-brand-cream/10 shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1200&h=1400"
+                alt="Painéis solares e infraestrutura sustentável"
+                className="w-full h-[460px] md:h-[520px] object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 backdrop-blur-md bg-brand-dark/40 border-t border-brand-cream/10">
+                <div className="text-xs uppercase tracking-widest text-brand-accent mb-1 font-inter">
+                  Solari · Soluções Ambientais
+                </div>
+                <div className="font-sora font-semibold text-brand-cream">
+                  Engenharia integrada a tecnologia limpa
+                </div>
               </div>
-              
-              {/* Subtle pulsing elements around the logo */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-eco-accent-yellow/30 rounded-full animate-pulse-slow"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-eco-blue/30 rounded-full animate-pulse-slow" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 -left-8 w-4 h-4 bg-eco-green/30 rounded-full animate-pulse-slow" style={{animationDelay: '2s'}}></div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Wave Divider */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <div className="wave-divider">
-          <div className="wave wave-1"></div>
-          <div className="wave wave-2"></div>
-          <div className="wave wave-3"></div>
+            {/* Floating accent card */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="hidden md:block absolute -bottom-6 -left-6 rounded-2xl bg-brand-cream text-brand-dark p-4 shadow-2xl border border-brand-dark/5"
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-brand-accent/15 grid place-items-center">
+                  <Sparkles className="h-5 w-5 text-brand-accent" />
+                </div>
+                <div>
+                  <div className="font-sora font-semibold text-sm">
+                    Licenciamento ágil
+                  </div>
+                  <div className="text-xs text-brand-dark/60 font-inter">
+                    LP · LI · LO · Outorgas
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
