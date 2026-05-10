@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { TexturedBackground } from "@/components/ui/textured-background";
+import { StickyMobileCTA } from "@/components/ui/sticky-mobile-cta";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface PageWrapperProps {
@@ -28,6 +29,7 @@ export function PageWrapper({ children }: PageWrapperProps) {
         {children}
       </main>
       <Footer />
+      <StickyMobileCTA />
     </div>
   );
 }
