@@ -29,6 +29,7 @@ export function PageWrapper({ children }: PageWrapperProps) {
         {children}
       </main>
       <Footer />
+      <StickyMobileCTA />
     </div>
   );
 }

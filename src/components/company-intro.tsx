@@ -1,70 +1,110 @@
-
-import React from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Users, Leaf, Award } from "lucide-react";
 
 export function CompanyIntro() {
-  return <section className="container py-20 md:py-28 relative">
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-organic-pattern opacity-20 z-0"></div>
-      
-      <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
-        <div className="space-y-8 scroll-trigger">
-          <div className="inline-block px-4 py-2 bg-eco-green/10 rounded-full text-eco-green font-medium text-sm uppercase tracking-wider">ESPECIALIDADE</div>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground" style={{
-          fontFamily: "'Playfair Display', 'Poppins', serif"
-        }}>
-            Expertise em Soluções Ambientais
+  return (
+    <section className="container py-20 md:py-28 relative">
+      <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Left: editorial copy */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="lg:col-span-6 space-y-7"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-inter uppercase tracking-widest">
+            <Leaf className="h-3.5 w-3.5" />
+            Especialidade
+          </div>
+
+          <h2 className="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark leading-tight">
+            Expertise em soluções{" "}
+            <span className="text-brand-accent">ambientais</span> e
+            sustentabilidade.
           </h2>
-          
-          <div className="h-1 w-20 bg-eco-accent-yellow rounded-full"></div>
-          
-          <p className="text-muted-foreground text-lg">
-            A Solari Soluções Ambientais oferece serviços de consultoria e assessoria ambiental completa, 
-            proporcionando às empresas o suporte necessário para atender às exigências da legislação ambiental 
-            vigente de forma eficiente e sustentável.
+
+          <div className="h-1 w-16 rounded-full bg-brand-accent" />
+
+          <p className="font-inter text-lg text-brand-dark/75 leading-relaxed">
+            A Solari Soluções Ambientais oferece consultoria e assessoria
+            completa, proporcionando às empresas o suporte necessário para
+            atender às exigências da legislação ambiental vigente de forma
+            eficiente e sustentável.
           </p>
-          
-          <p className="text-muted-foreground text-lg">
-            Nossa equipe de profissionais qualificados atua em todo o território nacional, 
-            oferecendo soluções personalizadas para cada cliente, sempre buscando a excelência 
-            e a inovação em todos os projetos que desenvolvemos.
+
+          <p className="font-inter text-base text-brand-dark/65 leading-relaxed">
+            Nossa equipe de profissionais qualificados atua em todo o
+            território nacional, oferecendo soluções personalizadas para cada
+            cliente, com excelência técnica e inovação em todos os projetos.
           </p>
-          
-          <div className="pt-6 flex flex-wrap gap-5">
-            <Button asChild variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green hover:text-white py-6 px-8 rounded-lg text-base transition-all duration-300">
+
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Button
+              asChild
+              className="rounded-2xl bg-brand-dark hover:bg-brand-dark/90 text-brand-cream px-6 py-6 transition-transform hover:scale-[1.03]"
+            >
               <Link to="/about#team" className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-                Conhecer Nossa Equipe
+                <Users className="h-5 w-5" />
+                Conheça nossa equipe
               </Link>
             </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-2xl border-brand-dark/15 text-brand-dark hover:bg-brand-dark hover:text-brand-cream px-6 py-6 transition-transform hover:scale-[1.03]"
+            >
+              <Link to="/services">Nossos serviços</Link>
+            </Button>
           </div>
-        </div>
-        
-        <div className="relative scroll-trigger h-[550px]">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-eco-green/10 eco-blob rounded-3xl -z-10"></div>
-          
-          <div className="relative h-[500px] w-full overflow-hidden rounded-2xl shadow-soft hover-grow">
-            <img src="/lovable-uploads/9a64c487-4744-489a-9762-3739eb5961ad.png" alt="Solari Soluções Ambientais em ação" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-br from-eco-green/40 to-eco-blue/30 mix-blend-multiply"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8 glass-blur-dark">
-              <h3 className="text-white text-xl font-semibold mb-2">Compromisso com o futuro sustentável</h3>
-              <p className="text-white/90">Atuando para equilibrar desenvolvimento e preservação ambiental</p>
-            </div>
+        </motion.div>
+
+        {/* Right: image collage */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-6 relative h-[520px]"
+        >
+          <div className="absolute top-0 right-0 w-3/4 h-[340px] rounded-3xl overflow-hidden shadow-2xl border border-brand-dark/5">
+            <img
+              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1000"
+              alt="Painéis solares em campo aberto"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-dark/60 via-transparent to-transparent" />
           </div>
-          <div className="absolute -bottom-8 -left-8 glass-card p-6 shadow-soft">
+
+          <div className="absolute bottom-0 left-0 w-2/3 h-[280px] rounded-3xl overflow-hidden shadow-2xl border-4 border-background">
+            <img
+              src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=900"
+              alt="Tratamento e gestão de água industrial"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="absolute bottom-6 right-2 rounded-2xl bg-brand-cream/95 backdrop-blur-md p-5 shadow-2xl border border-brand-dark/5 max-w-[200px]">
             <div className="flex items-center gap-3">
-              <div className="text-3xl text-eco-green font-bold">15+</div>
-              <div className="text-sm">Anos de<br />experiência</div>
+              <div className="h-11 w-11 rounded-xl bg-brand-accent/15 grid place-items-center">
+                <Award className="h-5 w-5 text-brand-accent" />
+              </div>
+              <div>
+                <div className="font-sora text-2xl font-bold text-brand-dark">
+                  15+
+                </div>
+                <div className="text-xs font-inter text-brand-dark/60 leading-tight">
+                  Anos de experiência
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 }
