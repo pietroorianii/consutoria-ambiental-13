@@ -101,14 +101,18 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     line-height: 1.7;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
+    /* Subtle grain texture overlay */
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.15  0 0 0 0 0.11  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Sora', 'Montserrat', sans-serif;
     letter-spacing: -0.02em;
   }
 
