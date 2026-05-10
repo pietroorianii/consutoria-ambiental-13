@@ -34,7 +34,7 @@ export function useScrollAnimation() {
     observeElements();
     
     // Debounce resize events
-    let resizeTimeout: NodeJS.Timeout;
+    let resizeTimeout: ReturnType<typeof setTimeout>;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(observeElements, 250);

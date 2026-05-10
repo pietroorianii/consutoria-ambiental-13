@@ -11,12 +11,3 @@ const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiO
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
-// Add this type augmentation to support direct access to quote_requests table
-// while we wait for the Supabase types to be regenerated
-declare module '@supabase/supabase-js' {
-  interface PostgrestQueryBuilder<Schema extends Record<string, unknown>> {
-    from<TableName extends string>(
-      relation: TableName
-    ): PostgrestQueryBuilder<Schema>
-  }
-}
