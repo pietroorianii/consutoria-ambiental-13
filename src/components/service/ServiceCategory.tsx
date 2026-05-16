@@ -23,12 +23,16 @@ const ServiceCategoryComponent: React.FC<ServiceCategoryProps> = ({ category, in
           <div className="bg-eco-green/10 p-4 rounded-full animate-float">
             <IconComponent className="h-12 w-12 text-eco-green" />
           </div>
-          <h2 className="text-3xl font-bold text-center" >
+          <h2 className="text-3xl font-bold text-center" style={{
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             {category.title}
           </h2>
         </div>
         
-        <p className="text-muted-foreground text-lg text-center" >
+        <p className="text-muted-foreground text-lg text-center" style={{
+          fontFamily: "'Lato', sans-serif"
+        }}>
           {category.description}
         </p>
         
@@ -39,7 +43,7 @@ const ServiceCategoryComponent: React.FC<ServiceCategoryProps> = ({ category, in
                 <div className="rounded-full bg-eco-green w-2 h-2"></div>
               </div>
               <span 
-                 
+                style={{ fontFamily: "'Lato', sans-serif" }} 
                 className="text-muted-foreground text-lg font-medium"
               >
                 {item}

@@ -20,14 +20,19 @@ export function FeaturedServices() {
             Nossos Serviços
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-foreground" >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-foreground" style={{
+            fontFamily: "'Poppins', sans-serif"
+          }}>
             Soluções Ambientais{" "}
             <span className="text-eco-green">Completas</span>
           </h2>
           
           <div className="h-1.5 w-32 bg-gradient-to-r from-eco-green to-eco-accent-yellow rounded-full mx-auto mb-10"></div>
           
-          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed mb-12" >
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed mb-12" style={{
+            fontFamily: "'Montserrat', sans-serif",
+            lineHeight: "1.8"
+          }}>
             Oferecemos soluções ambientais completas organizadas em três áreas estratégicas 
             para atender empresas de todos os portes e setores. Cada serviço é desenvolvido 
             com excelência técnica e foco na conformidade legal.

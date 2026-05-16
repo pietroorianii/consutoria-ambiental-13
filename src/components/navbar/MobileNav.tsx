@@ -21,7 +21,7 @@ export function MobileNav() {
           alt="Solari Soluções Ambientais" 
           className="h-10 w-auto"
         />
-        <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent whitespace-nowrap" >
+        <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent whitespace-nowrap" style={{ fontFamily: "'Poppins', sans-serif" }}>
           SOLARI SOLUÇÕES AMBIENTAIS
         </span>
       </Link>
@@ -35,7 +35,7 @@ export function MobileNav() {
         </SheetTrigger>
         <SheetContent side="right" className="w-80">
           <SheetHeader>
-            <SheetTitle className="text-left bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent" >Menu de Navegação</SheetTitle>
+            <SheetTitle className="text-left bg-gradient-to-r from-yellow-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Poppins', sans-serif" }}>Menu de Navegação</SheetTitle>
           </SheetHeader>
           <div className="mt-6 space-y-4">
             {/* Home */}
@@ -43,7 +43,7 @@ export function MobileNav() {
               to="/"
               onClick={closeMenu}
               className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
-              
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Início
             </Link>
@@ -53,7 +53,7 @@ export function MobileNav() {
               to="/about"
               onClick={closeMenu}
               className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
-              
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Sobre Nós
             </Link>
@@ -63,7 +63,7 @@ export function MobileNav() {
               to="/services"
               onClick={closeMenu}
               className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
-              
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Serviços
             </Link>
@@ -73,7 +73,7 @@ export function MobileNav() {
               to="/faq"
               onClick={closeMenu}
               className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
-              
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Perguntas Frequentes
             </Link>
@@ -83,7 +83,7 @@ export function MobileNav() {
               to="/contact"
               onClick={closeMenu}
               className="block px-4 py-2 text-base font-medium text-foreground hover:bg-eco-green/10 hover:text-eco-green rounded-md transition-colors"
-              
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Contato
             </Link>
@@ -94,7 +94,7 @@ export function MobileNav() {
                 to="/request-quote"
                 onClick={closeMenu}
                 className="block w-full text-center bg-gradient-to-r from-eco-green to-eco-blue text-white px-4 py-3 rounded-md text-base font-medium shadow-md hover:from-eco-blue hover:to-eco-green transition-all duration-300"
-                
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Solicitar Orçamento
               </Link>

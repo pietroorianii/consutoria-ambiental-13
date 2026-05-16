@@ -14,20 +14,26 @@ export function Footer() {
           {/* About */}
           <div>
             <h3 className="text-2xl font-extrabold mb-4 flex items-center gap-2"
-                >
+                style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}>
               <Leaf className="h-5 w-5 text-eco-green" />
               <span className="text-yellow-700">Solari</span>{' '}
               <span className="text-eco-green">Soluções Ambientais</span>
             </h3>
-            <p className="text-prisma-gray-text/80 mb-4 leading-relaxed" >
+            <p className="text-prisma-gray-text/80 mb-4 leading-relaxed" style={{
+              fontFamily: "'Montserrat', sans-serif"
+            }}>
               Consultoria ambiental especializada para empresas que buscam excelência em sustentabilidade e conformidade legal.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" >Links Rápidos</h3>
-            <ul className="space-y-2" >
+            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
+              fontFamily: "'Poppins', sans-serif"
+            }}>Links Rápidos</h3>
+            <ul className="space-y-2" style={{
+              fontFamily: "'Montserrat', sans-serif"
+            }}>
               <li>
                 <Link to="/" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
                   Início
@@ -63,8 +69,12 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" >Contato</h3>
-            <ul className="space-y-3" >
+            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
+              fontFamily: "'Poppins', sans-serif"
+            }}>Contato</h3>
+            <ul className="space-y-3" style={{
+              fontFamily: "'Montserrat', sans-serif"
+            }}>
               <li className="flex items-start gap-2 text-prisma-gray-text/80">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5 text-eco-green" />
                 <span>Av. Rio Branco, 1500<br />Centro, Rio de Janeiro - RJ<br />CEP: 20040-002</span>
@@ -82,8 +92,12 @@ export function Footer() {
 
           {/* Social Media */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" >Redes Sociais</h3>
-            <ul className="space-y-3" >
+            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
+              fontFamily: "'Poppins', sans-serif"
+            }}>Redes Sociais</h3>
+            <ul className="space-y-3" style={{
+              fontFamily: "'Montserrat', sans-serif"
+            }}>
               <li>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-eco-green transition-colors">
                   <Facebook className="h-5 w-5 text-eco-green" />
@@ -107,7 +121,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-prisma-gray-light/60 mt-8 pt-8 text-center text-prisma-gray-text/60">
-          <p >
+          <p style={{
+            fontFamily: "'Montserrat', sans-serif"
+          }}>
             &copy; {currentYear} Solari Soluções Ambientais. Todos os direitos reservados.
           </p>
         </div>

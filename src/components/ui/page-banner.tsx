@@ -61,14 +61,22 @@ export function PageBanner({
           {/* Title */}
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white animate-fade-up" 
-                >
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  textShadow: "0px 2px 4px rgba(0,0,0,0.3)"
+                }}>
               {title}
             </h1>
             
             <div className="h-1 w-24 bg-prisma-yellow rounded-full mx-auto my-6 animate-fade-up"
                  style={{animationDelay: "0.2s"}}></div>
             
-            <p  
+            <p style={{
+                fontFamily: "'Montserrat', sans-serif",
+                animationDelay: "0.3s",
+                textShadow: "0px 1px 2px rgba(0,0,0,0.2)",
+                lineHeight: "1.8"
+              }} 
               className="text-white/95 max-w-3xl mx-auto animate-fade-up text-lg md:text-xl leading-relaxed">
               {description}
             </p>
