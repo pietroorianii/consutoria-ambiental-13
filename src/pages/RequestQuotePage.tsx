@@ -51,7 +51,7 @@ const RequestQuotePage = () => {
       <div className="container mx-auto -mt-8 px-4 md:px-6 pb-16 relative z-10">
         <div className="max-w-3xl mx-auto bg-background/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border border-eco-green/10 hover:border-eco-green/20 transition-all">
           <div className="bg-gradient-to-r from-eco-green to-eco-blue p-6 text-white">
-            <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-2" >
               <Leaf className="h-8 w-8 animate-float" />
               Formulário de Solicitação
             </h2>

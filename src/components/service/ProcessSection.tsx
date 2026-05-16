@@ -32,13 +32,13 @@ export const ProcessSection: React.FC = () => {
             {step.number}
           </div>
           <h3 
-            style={{ fontFamily: "'Poppins', sans-serif" }} 
+             
             className="font-semibold mb-4 mt-2 text-2xl"
           >
             {step.title}
           </h3>
           <p 
-            style={{ fontFamily: "'Lato', sans-serif" }} 
+             
             className="text-muted-foreground text-lg"
           >
             {step.description}

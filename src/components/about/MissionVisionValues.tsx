@@ -49,9 +49,7 @@ export function MissionVisionValues() {
       
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{
-            fontFamily: "'Poppins', sans-serif"
-          }}>Nossa Missão, Visão e Valores</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" >Nossa Missão, Visão e Valores</h2>
           <div className="h-1 w-24 bg-eco-green mx-auto"></div>
         </div>
         

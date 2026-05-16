@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, MessageCircle } from "lucide-react";
+import { ArrowRight, Sparkles, MessageCircle, MapPin, Award } from "lucide-react";
 
 export function HeroBanner() {
   return (
@@ -89,15 +89,17 @@ export function HeroBanner() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="mt-12 grid grid-cols-3 gap-6 max-w-md"
+              className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl"
             >
               {[
                 { k: "15+", v: "Anos de atuação" },
                 { k: "300+", v: "Projetos entregues" },
-                { k: "100%", v: "Conformidade legal" },
+                { k: "100%", v: "Conformidade" },
+                { k: "Paraná", v: "Atendimento local", icon: <MapPin className="h-4 w-4 inline mr-1 text-brand-accent" /> },
               ].map((s) => (
                 <div key={s.k}>
-                  <div className="font-sora text-2xl md:text-3xl font-bold text-brand-accent">
+                  <div className="font-sora text-2xl md:text-3xl font-bold text-brand-accent flex items-center">
+                    {s.icon}
                     {s.k}
                   </div>
                   <div className="text-xs text-brand-cream/70 mt-1 font-inter">
@@ -115,18 +117,25 @@ export function HeroBanner() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl overflow-hidden border border-brand-cream/10 shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=75&w=900&h=1100"
-                alt="Painéis solares e infraestrutura sustentável em campo aberto"
-                width={900}
-                height={1100}
-                className="w-full h-[460px] md:h-[520px] object-cover"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-              />
+            <div className="relative rounded-3xl overflow-hidden border border-brand-cream/10 shadow-2xl bg-gradient-to-br from-brand-primary/20 to-brand-dark aspect-[4/5] flex items-center justify-center">
+              {/* Abstract SVG Composition replacing the image */}
+              <svg width="100%" height="100%" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-screen">
+                <path d="M0 250 Q 100 150 200 250 T 400 250" stroke="#00A3AD" strokeWidth="2" fill="none" opacity="0.6"/>
+                <path d="M0 300 Q 100 200 200 300 T 400 300" stroke="#00A3AD" strokeWidth="1" fill="none" opacity="0.3"/>
+                <path d="M0 350 Q 100 250 200 350 T 400 350" stroke="#00A3AD" strokeWidth="3" fill="none" opacity="0.8"/>
+                <circle cx="200" cy="200" r="100" stroke="#2D5A27" strokeWidth="1" fill="none" strokeDasharray="5 5" opacity="0.5"/>
+                <circle cx="200" cy="200" r="150" stroke="#2D5A27" strokeWidth="1" fill="none" strokeDasharray="2 10" opacity="0.3"/>
+                <path d="M150 150 Q 200 100 250 150 Q 300 200 250 250 Q 200 300 150 250 Q 100 200 150 150 Z" fill="#2D5A27" opacity="0.1"/>
+              </svg>
+              
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent" />
+              
+              {/* Badge "Credenciada IAT-PR" no canto da imagem */}
+              <div className="absolute top-6 right-6 bg-brand-cream text-brand-dark px-4 py-2 rounded-full font-bold text-sm shadow-xl flex items-center gap-2 border border-brand-primary/20 font-sora">
+                <Award className="h-4 w-4 text-brand-primary" />
+                Credenciada IAT-PR
+              </div>
+
               <div className="absolute bottom-0 left-0 right-0 p-6 backdrop-blur-md bg-brand-dark/40 border-t border-brand-cream/10">
                 <div className="text-xs uppercase tracking-widest text-brand-accent mb-1 font-inter">
                   Solari · Soluções Ambientais

@@ -71,7 +71,7 @@ const TeamPage = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{fontFamily: "'Poppins', sans-serif"}}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" >
               Especialistas em Meio Ambiente
             </h2>
             <div className="h-1 w-24 bg-eco-green mx-auto mb-6"></div>
@@ -93,7 +93,7 @@ const TeamPage = () => {
         <div className="absolute inset-0 leaf-pattern opacity-10"></div>
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{fontFamily: "'Poppins', sans-serif"}}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4" >
               Trabalhando juntos por um futuro sustentável
             </h2>
             <p className="text-lg mb-6">

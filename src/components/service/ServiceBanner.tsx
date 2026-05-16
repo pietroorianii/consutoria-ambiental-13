@@ -46,10 +46,7 @@ export function ServiceBanner({ categoryData }: ServiceBannerProps) {
           <div>
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white animate-fade-up"
-              style={{
-                fontFamily: "'Poppins', sans-serif",
-                textShadow: "0px 2px 4px rgba(0,0,0,0.2)",
-              }}
+              
             >
               {categoryData.title}
             </h1>
@@ -60,11 +57,7 @@ export function ServiceBanner({ categoryData }: ServiceBannerProps) {
             ></div>
 
             <p
-              style={{
-                fontFamily: "'Montserrat', sans-serif",
-                animationDelay: "0.3s",
-                textShadow: "0px 1px 2px rgba(0,0,0,0.1)",
-              }}
+              
               className="text-white/90 max-w-3xl mx-auto animate-fade-up text-lg md:text-xl leading-relaxed"
             >
               {categoryData.description}
