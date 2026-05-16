@@ -117,10 +117,14 @@ export function HeroBanner() {
           >
             <div className="relative rounded-3xl overflow-hidden border border-brand-cream/10 shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1200&h=1400"
-                alt="Painéis solares e infraestrutura sustentável"
+                src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=75&w=900&h=1100"
+                alt="Painéis solares e infraestrutura sustentável em campo aberto"
+                width={900}
+                height={1100}
                 className="w-full h-[460px] md:h-[520px] object-cover"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 backdrop-blur-md bg-brand-dark/40 border-t border-brand-cream/10">
