@@ -12,14 +12,20 @@ interface ServiceGroupCardProps {
 }
 
 export function ServiceGroupCard({ group, index }: ServiceGroupCardProps) {
+  // Map legacy group.color to the group id for routing
+  const categoryId =
+    group.color === 'prisma-green' ? 'licensing' :
+    group.color === 'prisma-blue' ? 'reports' :
+    'esg';
+
   return (
     <Card 
-      className={`group relative overflow-hidden transition-all duration-500 bg-gradient-to-br from-white via-white to-prisma-green/5 backdrop-blur-sm border-2 border-prisma-gray-light/30 ${
+      className={`group relative overflow-hidden transition-all duration-300 bg-gradient-to-br from-white via-white to-prisma-green/5 backdrop-blur-sm border-2 border-prisma-gray-light/30 ${
         group.color === 'prisma-green' ? 'hover:border-prisma-green/50 hover:to-prisma-green/15' :
         group.color === 'prisma-blue' ? 'hover:border-prisma-blue/50 hover:to-prisma-blue/15' :
         'hover:border-prisma-yellow/50 hover:to-prisma-yellow/15'
-      } h-full flex flex-col hover:shadow-2xl hover:-translate-y-6 hover:scale-[1.05] scroll-trigger shadow-lg`}
-      style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+      } h-full flex flex-col hover:shadow-xl hover:-translate-y-2 scroll-trigger shadow-lg`}
+      style={{ animationDelay: `${0.1 + index * 0.1}s`, willChange: 'transform' }}
     >
       {/* Gradiente de fundo animado */}
       <div className={`absolute inset-0 bg-gradient-to-br ${
@@ -172,7 +178,7 @@ export function ServiceGroupCard({ group, index }: ServiceGroupCardProps) {
               'border-prisma-yellow/30 text-prisma-yellow hover:bg-prisma-yellow hover:text-white'
             } transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg hover:underline underline-offset-2`}
           >
-            <Link to={`/services`} className="flex items-center justify-center gap-2">
+            <Link to={`/services/${categoryId}`} className="flex items-center justify-center gap-2">
               Explorar 
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
