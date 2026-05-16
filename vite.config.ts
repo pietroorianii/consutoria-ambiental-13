@@ -83,6 +83,7 @@ export default defineConfig(({ mode }) => {
             forms: ['react-hook-form', '@hookform/resolvers'],
             query: ['@tanstack/react-query'],
             icons: ['lucide-react'],
+            motion: ['framer-motion'],
             utils: ['lodash-es', 'clsx', 'tailwind-merge'],
           },
         },

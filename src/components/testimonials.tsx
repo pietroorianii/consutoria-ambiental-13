@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const testimonials = [
   {
-    quote: "A consultoria da EcoConsult foi fundamental para obtermos todas as licenças ambientais necessárias para nossa operação. Processo ágil e descomplicado.",
+    quote: "A consultoria foi fundamental para obtermos todas as licenças ambientais necessárias para nossa operação. Processo ágil e descomplicado, com acompanhamento técnico em todas as etapas.",
     author: "Carlos Silva",
     role: "Diretor Industrial",
     company: "Metalúrgica Brasil",
