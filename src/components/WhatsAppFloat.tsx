@@ -14,7 +14,7 @@ export function WhatsAppFloat() {
       aria-label="Fale conosco no WhatsApp"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-[#25D366] text-white rounded-full shadow-2xl shadow-[#25D366]/40 px-4 py-3 transition-all hover:bg-[#1ebe5d]"
+      className="fixed bottom-5 right-5 z-40 flex items-center gap-3 rounded-full bg-brand-accent px-4 py-3 text-white shadow-2xl shadow-brand-accent/30 transition-all hover:bg-brand-accent/90"
     >
       <MessageCircle className="h-6 w-6" />
       <span
