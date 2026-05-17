@@ -45,16 +45,14 @@ export const ServiceInfoStep: React.FC<ServiceInfoStepProps> = ({ form }) => {
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                <SelectItem value="licenciamento">Licenciamento Ambiental</SelectItem>
-                <SelectItem value="water_resources">Outorga e Recursos Hídricos</SelectItem>
-                <SelectItem value="degraded_areas">Recuperação de Áreas e Passivos</SelectItem>
-                <SelectItem value="pgrs">PGRS - Plano de Gerenciamento de Resíduos Sólidos</SelectItem>
-                <SelectItem value="eia-rima">EIA/RIMA - Estudo e Relatório de Impacto Ambiental</SelectItem>
-                <SelectItem value="consultoria">Consultoria Ambiental</SelectItem>
-                <SelectItem value="esg">Consultoria ESG</SelectItem>
-                <SelectItem value="climate">Mudanças Climáticas e Carbono</SelectItem>
-                <SelectItem value="auditoria">Auditoria Ambiental</SelectItem>
-                <SelectItem value="outros">Outros</SelectItem>
+                <SelectItem value="licenciamento">Licenciamento Ambiental (DLAM / LAC / LAS / LP / LI / LO)</SelectItem>
+                <SelectItem value="autorizacoes">Autorização Ambiental ou Florestal (AA / AF)</SelectItem>
+                <SelectItem value="outorga">Outorga de Recursos Hídricos — SIGARH</SelectItem>
+                <SelectItem value="emissoes">Controle de Emissões Atmosféricas — SGADEA</SelectItem>
+                <SelectItem value="estudos">Elaboração de Estudos Técnicos (EIA/RIMA / RAS / MCE / PGRS / PCA / PRAD e outros)</SelectItem>
+                <SelectItem value="conformidade">Gestão de Conformidade e Renovações — SGA IR</SelectItem>
+                <SelectItem value="regularizacao">Regularização Ambiental (LASR / LIR / LOR / TAC)</SelectItem>
+                <SelectItem value="outros">Outro / Não sei ainda</SelectItem>
               </SelectContent>
             </Select>
             <FormMessage />

@@ -2,54 +2,34 @@
 export const navData = {
   services: [
     {
-      title: "Licenciamento e Autorizações",
+      title: "Licenciamento Ambiental",
       href: "/service/licensing",
-      description: "Licenciamentos Ambientais e Autorizações"
+      description: "DLAM, LAC, LAS, LP, LI, LO e regularização — para indústria, agronegócio, construção civil, energia, resíduos e saúde — via SGA do IAT"
     },
     {
-      title: "Outorga e Recursos Hídricos",
-      href: "/service/water_resources",
-      description: "Gestão completa de recursos hídricos e outorgas"
+      title: "Autorizações Ambientais e Florestais",
+      href: "/service/authorizations",
+      description: "AA e AF para supressão de vegetação, corte de árvores, manejo florestal, reposição florestal (SERFLOR) e intervenções em APP — via SGA do IAT"
     },
     {
-      title: "Recuperação de Áreas Degradadas",
-      href: "/service/degraded_areas",
-      description: "Soluções para passivos ambientais e recuperação"
+      title: "Outorga de Recursos Hídricos",
+      href: "/service/water_grants",
+      description: "Captação subterrânea, captação superficial, lançamento de efluentes e barragens — via SIGARH"
     },
     {
-      title: "Monitoramento e Análises",
-      href: "/service/monitoring",
-      description: "Acompanhamento de condicionantes e análises ambientais"
+      title: "Controle de Emissões Atmosféricas",
+      href: "/service/air_emissions",
+      description: "Plano de automonitoramento, cadastro de fontes fixas e declarações periódicas — via SGADEA"
     },
     {
-      title: "Planos e Relatórios",
-      href: "/service/reports",
-      description: "Elaboração de planos e relatórios ambientais"
+      title: "Estudos e Documentos Técnicos",
+      href: "/service/technical_studies",
+      description: "EIA/RIMA, RAS, MCE, PBA, PGRS, PGRSS, PCA, PRAD, PRF, PACUERA e demais instrumentos exigidos no licenciamento"
     },
     {
-      title: "Acompanhamento e Consultoria",
-      href: "/service/consulting",
-      description: "Acompanhamento de projetos e consultoria ambiental"
-    },
-    {
-      title: "Treinamentos",
-      href: "/service/training",
-      description: "Treinamentos e capacitações ambientais"
-    },
-    {
-      title: "Gestão e Manutenção",
-      href: "/service/management",
-      description: "Gestão contínua e manutenção ambiental"
-    },
-    {
-      title: "Consultoria ESG",
-      href: "/service/esg",
-      description: "Estratégias ESG e sustentabilidade corporativa"
-    },
-    {
-      title: "Mudanças Climáticas",
-      href: "/service/climate",
-      description: "Descarbonização e adaptação climática"
+      title: "Gestão de Conformidade",
+      href: "/service/compliance",
+      description: "Renovações, relatórios periódicos via SGA IR, regularização ambiental e TAC"
     }
   ],
   mainNav: [
