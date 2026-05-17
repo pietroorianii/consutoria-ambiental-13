@@ -1,5 +1,5 @@
 
-import { Map } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { ServiceDetailData } from "../../types/serviceTypes";
 
 export const lpService: ServiceDetailData = {
