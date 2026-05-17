@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ShieldCheck } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { ServiceCategoryData } from "../types/serviceCategoryTypes";
 
 export const licensingCategory: ServiceCategoryData = {
