@@ -11,66 +11,77 @@ const categoryColors: Record<string, {
   border: string;
   button: string;
   icon: string;
+  saibaMais: string;
 }> = {
   licensing: {
     bg: "from-eco-green/5 to-eco-green/3",
     border: "border-eco-green/20 hover:border-eco-green/40",
     button: "bg-eco-green hover:bg-eco-green-dark",
-    icon: "text-eco-green"
+    icon: "text-eco-green",
+    saibaMais: "border-eco-green/40 text-eco-green hover:bg-eco-green hover:text-white hover:border-eco-green"
   },
   water_resources: {
     bg: "from-blue-500/5 to-blue-500/3",
     border: "border-blue-500/20 hover:border-blue-500/40",
     button: "bg-blue-500 hover:bg-blue-600",
-    icon: "text-blue-500"
+    icon: "text-blue-500",
+    saibaMais: "border-blue-500/40 text-blue-500 hover:bg-blue-500 hover:text-white hover:border-blue-500"
   },
   degraded_areas: {
     bg: "from-amber-600/5 to-amber-600/3",
     border: "border-amber-600/20 hover:border-amber-600/40",
     button: "bg-amber-600 hover:bg-amber-700",
-    icon: "text-amber-600"
+    icon: "text-amber-600",
+    saibaMais: "border-amber-600/40 text-amber-600 hover:bg-amber-600 hover:text-white hover:border-amber-600"
   },
   monitoring: {
     bg: "from-eco-blue/5 to-eco-blue/3",
     border: "border-eco-blue/20 hover:border-eco-blue/40",
     button: "bg-eco-blue hover:bg-eco-blue-dark",
-    icon: "text-eco-blue"
+    icon: "text-eco-blue",
+    saibaMais: "border-eco-blue/40 text-eco-blue hover:bg-eco-blue hover:text-white hover:border-eco-blue"
   },
   reports: {
     bg: "from-eco-earth/5 to-eco-earth/3",
     border: "border-eco-earth/20 hover:border-eco-earth/40",
     button: "bg-eco-earth-dark hover:bg-eco-earth-dark/90",
-    icon: "text-eco-earth-dark"
+    icon: "text-eco-earth-dark",
+    saibaMais: "border-eco-earth-dark/40 text-eco-earth-dark hover:bg-eco-earth-dark hover:text-white hover:border-eco-earth-dark"
   },
   consulting: {
     bg: "from-eco-accent-teal/5 to-eco-accent-teal/3",
     border: "border-eco-accent-teal/20 hover:border-eco-accent-teal/40",
     button: "bg-eco-accent-teal hover:bg-eco-accent-teal/90",
-    icon: "text-eco-accent-teal"
+    icon: "text-eco-accent-teal",
+    saibaMais: "border-eco-accent-teal/40 text-eco-accent-teal hover:bg-eco-accent-teal hover:text-white hover:border-eco-accent-teal"
   },
   training: {
     bg: "from-eco-accent-orange/5 to-eco-accent-orange/3",
     border: "border-eco-accent-orange/20 hover:border-eco-accent-orange/40",
     button: "bg-eco-accent-orange hover:bg-eco-accent-orange/90",
-    icon: "text-eco-accent-orange"
+    icon: "text-eco-accent-orange",
+    saibaMais: "border-eco-accent-orange/40 text-eco-accent-orange hover:bg-eco-accent-orange hover:text-white hover:border-eco-accent-orange"
   },
   management: {
     bg: "from-eco-blue-dark/5 to-eco-blue-dark/3",
     border: "border-eco-blue-dark/20 hover:border-eco-blue-dark/40",
     button: "bg-eco-blue-dark hover:bg-eco-blue-dark/90",
-    icon: "text-eco-blue-dark"
+    icon: "text-eco-blue-dark",
+    saibaMais: "border-eco-blue-dark/40 text-eco-blue-dark hover:bg-eco-blue-dark hover:text-white hover:border-eco-blue-dark"
   },
   esg: {
     bg: "from-eco-green-dark/5 to-eco-green-dark/3",
     border: "border-eco-green-dark/20 hover:border-eco-green-dark/40",
     button: "bg-eco-green-dark hover:bg-eco-green-dark/90",
-    icon: "text-eco-green-dark"
+    icon: "text-eco-green-dark",
+    saibaMais: "border-eco-green-dark/40 text-eco-green-dark hover:bg-eco-green-dark hover:text-white hover:border-eco-green-dark"
   },
   climate: {
     bg: "from-eco-accent-yellow/5 to-eco-accent-yellow/3",
     border: "border-eco-accent-yellow/20 hover:border-eco-accent-yellow/40",
     button: "bg-eco-accent-yellow hover:bg-eco-accent-yellow/90",
-    icon: "text-eco-accent-yellow"
+    icon: "text-eco-accent-yellow",
+    saibaMais: "border-eco-accent-yellow/40 text-eco-accent-yellow hover:bg-eco-accent-yellow hover:text-white hover:border-eco-accent-yellow"
   }
 };
 export const ServiceShowcase = () => {
@@ -130,7 +141,7 @@ export const ServiceShowcase = () => {
 
                   {/* Call to Action */}
                   <div className="flex gap-3">
-                    <Button asChild variant="outline" size="sm" className={`${colors.border.replace('border-', 'border-').replace('/20', '/40')} ${colors.icon} hover:bg-white hover:text-gray-800 transition-all duration-300 flex-1`}>
+                    <Button asChild variant="outline" size="sm" className={`${colors.saibaMais} transition-all duration-300 flex-1 font-semibold`}>
                       <Link to={`/services/${key}`} className="flex items-center justify-center gap-2">
                         Saiba Mais <ArrowRight className="h-4 w-4" />
                       </Link>
