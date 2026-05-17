@@ -13,7 +13,7 @@ export function MobileNav() {
   };
 
   return (
-    <div className="flex shrink-0 items-center lg:hidden">
+    <div className="flex shrink-0 items-center xl:hidden">
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="hover:bg-brand-primary/10" aria-label="Abrir menu">
