@@ -9,73 +9,63 @@ import {
 
 export function DesktopNav() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const navLinkClass = "group inline-flex h-10 items-center justify-center rounded-full bg-transparent px-3 py-2 text-sm font-medium text-brand-dark transition-colors hover:bg-brand-primary/10 hover:text-brand-primary focus:bg-brand-primary/10 focus:text-brand-primary focus:outline-none lg:px-4";
 
   return (
-    <div className="hidden md:flex items-center justify-between w-full">
-      {/* Navigation Menu - aproximado do botão */}
-      <div className="flex-1 flex justify-end mr-4">
+    <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 md:flex">
+      <div className="min-w-0">
         <NavigationMenu>
-          <NavigationMenuList className="space-x-1">
-            {/* Home */}
+          <NavigationMenuList className="gap-1">
             <NavigationMenuItem>
               <Link 
                 to="/" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className={navLinkClass}
                 onMouseEnter={() => setHoveredItem("home")}
                 onMouseLeave={() => setHoveredItem(null)}
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Início
               </Link>
             </NavigationMenuItem>
 
-            {/* About */}
             <NavigationMenuItem>
               <Link 
                 to="/about" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className={navLinkClass}
                 onMouseEnter={() => setHoveredItem("about")}
                 onMouseLeave={() => setHoveredItem(null)}
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Sobre Nós
               </Link>
             </NavigationMenuItem>
 
-            {/* Services - Apenas Link Simples */}
             <NavigationMenuItem>
               <Link 
                 to="/services" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className={navLinkClass}
                 onMouseEnter={() => setHoveredItem("services")}
                 onMouseLeave={() => setHoveredItem(null)}
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Serviços
               </Link>
             </NavigationMenuItem>
 
-            {/* FAQ */}
             <NavigationMenuItem>
               <Link 
                 to="/faq" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className={navLinkClass}
                 onMouseEnter={() => setHoveredItem("faq")}
                 onMouseLeave={() => setHoveredItem(null)}
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 FAQ
               </Link>
             </NavigationMenuItem>
 
-            {/* Contact */}
             <NavigationMenuItem>
               <Link 
                 to="/contact" 
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-3 py-2 text-base font-medium transition-colors hover:bg-eco-green/10 hover:text-eco-green focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                className={navLinkClass}
                 onMouseEnter={() => setHoveredItem("contact")}
                 onMouseLeave={() => setHoveredItem(null)}
-                style={{ fontFamily: "'Montserrat', sans-serif"  }}
               >
                 Contato
               </Link>
@@ -84,12 +74,10 @@ export function DesktopNav() {
         </NavigationMenu>
       </div>
 
-      {/* CTA Button - mantido próximo */}
-      <div className="flex items-center">
+      <div className="flex shrink-0 items-center">
         <Link
           to="/request-quote"
-          className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-eco-green to-eco-blue px-6 py-2.5 text-base font-medium text-white shadow-md transition-all duration-300 hover:from-eco-blue hover:to-eco-green hover:shadow-lg hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eco-green"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
+          className="inline-flex items-center justify-center rounded-full bg-brand-primary px-4 py-2.5 text-sm font-semibold text-brand-cream shadow-md shadow-brand-primary/15 transition-all duration-300 hover:bg-brand-dark hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent lg:px-5"
         >
           Solicitar Orçamento
         </Link>
