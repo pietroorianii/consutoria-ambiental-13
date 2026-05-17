@@ -38,6 +38,7 @@ export const formSchema = z.object({
   deadline: z.string({ required_error: "Selecione um prazo desejado" }),
 
   // Contexto Ambiental
+  sector: z.string().optional(),
   hasLicense: z.string(),
   licenseDetails: z.string().optional(),
   hasNotifications: z.string(),
