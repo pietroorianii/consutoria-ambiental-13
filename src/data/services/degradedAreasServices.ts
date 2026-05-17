@@ -1,47 +1,64 @@
 
-import { ServiceDetailData } from '../types/serviceTypes';
-import { Mountain } from 'lucide-react';
+import { Mountain } from "lucide-react";
+import { ServiceDetailData } from "../types/serviceTypes";
 
 export const degradedAreasServices: ServiceDetailData = {
-  id: 'degraded_areas',
-  title: 'Recuperação de Áreas e Passivos Ambientais',
-  description: 'Soluções completas para a recuperação de áreas e resolução de passivos ambientais, transformando problemas em oportunidades.',
+  id: "degraded_areas",
+  title: "Recuperação de Áreas e Passivos Ambientais",
+  description: "Soluções completas para GAC, PRAD e TAC no Paraná, conforme Resolução CONAMA 420/2009, Código Florestal e Programa de Regularização Ambiental (PRA) do IAT.",
   icon: Mountain,
-  image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000&h=600',
-  whatIs: 'A gestão de passivos ambientais é um campo complexo que trata da identificação, avaliação e resolução de danos ambientais históricos, como a contaminação do solo e da água. Na SOLARI, abordamos este desafio através de três frentes principais: Gerenciamento de Áreas Contaminadas (GAC) - Um processo técnico detalhado, desde a investigação inicial até a remediação, para reabilitar locais impactados por atividades poluidoras e garantir que se tornem seguros para o uso futuro. Plano de Recuperação de Áreas Degradadas (PRAD) - Um estudo e projeto técnico, exigido por lei, para restaurar áreas que sofreram degradação, como supressão de vegetação, erosão ou atividades de mineração. Termo de Ajustamento de Conduta (TAC) - Atuamos como seu parceiro técnico e jurídico na negociação e cumprimento de acordos com órgãos ambientais ou Ministério Público, transformando uma autuação ou processo em um plano de ação viável para corrigir irregularidades e reparar danos.',
+  image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000&h=600",
+  whatIs: "Na SOLARI, abordamos a gestão de passivos ambientais por três frentes principais: Gerenciamento de Áreas Contaminadas (GAC) — processo técnico regulamentado pela Resolução CONAMA 420/2009, que vai da avaliação preliminar até a remediação e monitoramento pós-intervenção; Plano de Recuperação de Áreas Degradadas (PRAD) — estudo técnico exigido pelo Código Florestal (Lei 12.651/2012) e Portaria IAT 190/2024 (PRA), para restaurar áreas com supressão de vegetação, erosão ou mineração; Termo de Ajustamento de Conduta (TAC) — acordo técnico e jurídico firmado com o IAT ou Ministério Público, transformando autuações em plano de ação com metas e prazos definidos. A IN IAT 12/2025 atualizou os procedimentos de reposição florestal no Paraná, impactando diretamente os PRADs.",
   benefits: [
-    'Resolução Definitiva de Passivos: Soluciona problemas de contaminação, eliminando riscos à saúde, passivos legais e a desvalorização de ativos imobiliários.',
-    'Viabilidade para Novos Projetos: A elaboração e aprovação de um PRAD é, muitas vezes, um passo obrigatório para obter licenças ambientais para novos empreendimentos que envolvam supressão de vegetação.',
-    'Segurança Jurídica: O cumprimento de um TAC negociado adequadamente pode extinguir a punibilidade administrativa e criminal, permitindo que a empresa se regularize e opere com tranquilidade.',
-    'Valorização de Ativos: Um imóvel com passivo ambiental resolvido ou uma área degradada em processo de recuperação tem seu valor de mercado significativamente aumentado.',
-    'Fortalecimento da Reputação: Ações proativas de recuperação e remediação demonstram o compromisso da empresa com a sustentabilidade e a responsabilidade socioambiental.',
+    "Resolução Definitiva: elimina contaminações, passivos legais e desvalorização de ativos",
+    "Viabilidade de Projetos: o PRAD é pré-requisito para licenças que envolvam supressão de vegetação",
+    "Segurança Jurídica: TAC bem negociado pode extinguir punibilidade administrativa e criminal",
+    "Valorização de Ativos: imóvel com passivo resolvido tem valor de mercado significativamente maior",
+    "Reputação: ações de recuperação demonstram compromisso com sustentabilidade e responsabilidade socioambiental",
+    "Acesso ao PRA: regularização dentro do Programa de Regularização Ambiental do IAT (Portaria 190/2024)"
   ],
   steps: [
-    { title: 'Diagnóstico e Investigação (GAC/Passivos)', description: 'Realizamos a Avaliação Preliminar e a Investigação Confirmatória para identificar e comprovar a existência de contaminação.', duration: '30-60 dias' },
-    { title: 'Detalhamento e Plano de Ação (GAC/PRAD)', description: 'Conduzimos a Investigação Detalhada e a Avaliação de Risco (no GAC) ou o Diagnóstico Ambiental (no PRAD) para criar um projeto técnico detalhado, seja um Plano de Intervenção para remediação ou um projeto de recuperação.', duration: '45-90 dias' },
-    { title: 'Negociação e Assessoria (TAC)', description: 'Oferecemos todo o suporte técnico e jurídico para negociar as melhores cláusulas, metas e prazos junto às autoridades, formalizando um acordo exequível.', duration: '3-12 meses' },
-    { title: 'Execução e Gerenciamento', description: 'Gerenciamos a execução dos planos de remediação ou recuperação, coordenando fornecedores e garantindo o cumprimento de todas as etapas.', duration: 'Variável' },
-    { title: 'Monitoramento e Relatórios', description: 'Realizamos o monitoramento contínuo da área em recuperação ou remediação e elaboramos todos os relatórios técnicos exigidos para comprovar o sucesso do projeto junto aos órgãos competentes.', duration: '2-5 anos' },
+    {
+      title: "Avaliação Preliminar e Investigação Confirmatória (GAC)",
+      description: "Histórico de uso do solo, amostragem de solo e água subterrânea, identificação de substâncias de interesse e delimitação da área de contaminação",
+      duration: "30 a 60 dias"
+    },
+    {
+      title: "Investigação Detalhada e Avaliação de Risco (GAC) / Diagnóstico (PRAD)",
+      description: "Para GAC: levantamento detalhado e Avaliação de Risco Humano e Ecológico. Para PRAD: diagnóstico fitossociológico e pedológico da área, com definição de espécies para recomposição conforme IN IAT 12/2025",
+      duration: "45 a 90 dias"
+    },
+    {
+      title: "Negociação e Formalização (TAC) / Plano de Ação",
+      description: "Elaboração do Plano de Intervenção (remediação/recuperação) e, quando aplicável, negociação do TAC junto ao IAT ou MP com metas, prazos e garantias adequadas",
+      duration: "3 a 12 meses"
+    },
+    {
+      title: "Execução e Monitoramento",
+      description: "Implementação das medidas de remediação ou recuperação, com monitoramento periódico e elaboração de Relatórios de Monitoramento (RMF) para o IAT",
+      duration: "1 a 5 anos"
+    }
   ],
   documents: [
-    'Histórico de ocupação e atividades na área.',
-    'Matrícula atualizada do imóvel.',
-    'Laudos de análises químicas de solo e água subterrânea.',
-    'Levantamentos topográficos e de caracterização da vegetação.',
-    'Cópias de autos de infração ou processos judiciais/administrativos, se aplicável.',
+    "Histórico de ocupação e atividades desenvolvidas na área (escrituras, contratos, alvarás antigos); Matrícula atualizada do imóvel; Laudos de análises químicas de solo e água (laboratório credenciado e acreditado pelo INMETRO); Relatório de Avaliação Preliminar (AP) conforme Resolução CONAMA 420/2009; Plano de Investigação Confirmatória (PIC) e/ou Detalhada (PID); Avaliação de Risco Humano e Ecológico (ARHE) para áreas contaminadas; Projeto de Recuperação de Áreas Degradadas (PRAD) com: diagnóstico fitossociológico, mapa da área, cronograma de plantio, espécies selecionadas (conforme IN IAT 12/2025); Plano de Monitoramento da Recuperação (PMR) com cronograma de avaliações; Cópias de autos de infração, TAC, ou processos judiciais/administrativos em andamento; Cadastro Ambiental Rural (CAR) do imóvel (obrigatório para PRAD em áreas rurais); ART/TRT do profissional responsável por cada fase técnica."
   ],
-  timeline: 'Os prazos são altamente variáveis. Projetos de GAC podem durar de 6 meses (investigação) a vários anos (remediação e monitoramento). PRADs geralmente exigem um monitoramento mínimo de 2 a 5 anos. A negociação de um TAC pode levar de 3 a 12 meses.',
+  timeline: "GAC: investigação (2 a 6 meses) + remediação + monitoramento pós-intervenção (2 a 5 anos). PRAD: aprovação do projeto (30 a 90 dias) + execução + monitoramento mínimo de 2 a 5 anos. TAC: negociação de 3 a 12 meses para formalização do acordo.",
   legalBasis: [
-    'Resolução CONAMA nº 420/2009 (Diretrizes para GAC).',
-    'Lei Federal nº 12.651/2012 (Novo Código Florestal).',
-    'Lei Federal nº 9.605/1998 (Lei de Crimes Ambientais).',
-    'Decisões Normativas e Instruções Técnicas de órgãos estaduais (CETESB, IAT, etc.).',
-    'Portaria IAT Nº 190/2024, que estabelece diretrizes para o Programa de Regularização Ambiental (PRA) no Paraná.',
-    'Termos de Ajustamento de Conduta (TAC) conforme legislação estadual.',
+    "Resolução CONAMA nº 420/2009 — Critérios e diretrizes para o GAC e seus valores orientadores de qualidade do solo",
+    "Lei Federal nº 12.651/2012 — Código Florestal Brasileiro (PRAD e recomposição florestal)",
+    "Portaria IAT nº 190/2024 — Diretrizes do Programa de Regularização Ambiental (PRA) no Paraná",
+    "IN IAT 12/2025 — Procedimentos para reposição florestal no Paraná (impacta espécies e métodos nos PRADs)",
+    "OT IAT 04/2024 — Embargo e regularização em assentamentos do INCRA",
+    "Lei Federal nº 9.605/1998 — Lei de Crimes Ambientais (base para TAC)",
+    "Lei Federal nº 6.938/1981 — Política Nacional do Meio Ambiente (responsabilidade civil)",
+    "Decreto Estadual nº 9.541 (vigente) — Procedimentos de licenciamento vinculados ao PRA",
+    "Resolução CONAMA nº 01/1986 — AIA e medidas de controle ambiental"
   ],
   tips: [
-    'Proatividade: Ao suspeitar de uma contaminação ou receber uma notificação, agir rapidamente pode reduzir drasticamente os custos e a complexidade da solução.',
-    'Due Diligence: Antes de adquirir um imóvel industrial ou com histórico de risco, realize uma auditoria de passivo ambiental (Due Diligence). É o melhor investimento para evitar problemas futuros.',
-    'Veja o TAC como uma Oportunidade: Um Termo de Ajustamento de Conduta não é apenas uma punição, mas uma oportunidade de regularizar sua situação de forma planejada e com segurança jurídica.',
+    "Proatividade é fundamental: agir ao suspeitar de contaminação pode reduzir drasticamente custos e complexidade da solução",
+    "Due Diligence: antes de adquirir imóvel industrial ou rural com histórico de risco, contrate uma auditoria de passivo ambiental — é o melhor investimento preventivo",
+    "O TAC não é punição, é oportunidade: permite regularizar a situação de forma planejada, com metas acordadas e segurança jurídica",
+    "Verifique o PRA do IAT (Portaria 190/2024) — pode ser mais vantajoso regularizar pelo programa estadual",
+    "Consulte a IN IAT 12/2025 antes de elaborar o PRAD — ela atualiza espécies e metodologias aceitas pelo IAT"
   ]
 };
