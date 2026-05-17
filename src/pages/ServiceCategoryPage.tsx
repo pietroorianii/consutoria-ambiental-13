@@ -30,7 +30,7 @@ const ServiceCategoryPage = () => {
         <div className="container relative">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 font-primary text-gray-900">
-              Por Que Escolher a L&P para {categoryData.title}?
+              Por Que Escolher a SOLARI para {categoryData.title}?
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

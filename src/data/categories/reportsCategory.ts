@@ -7,7 +7,7 @@ export const reportsCategory: ServiceCategoryData = {
   title: "Estudos e Relatórios Ambientais",
   description: "Elaboração de estudos ambientais especializados conforme exigências do IAT e legislação ambiental vigente.",
   icon: React.createElement(FileText, { className: "h-8 w-8 text-eco-green-dark" }),
-  image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000&h=600",
   services: [
     {
       title: "EIA/RIMA",

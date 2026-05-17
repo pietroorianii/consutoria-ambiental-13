@@ -7,7 +7,7 @@ export const consultingCategory: ServiceCategoryData = {
   title: "Consultoria Ambiental Especializada",
   description: "Assessoria técnica estratégica para questões ambientais complexas, auditorias e adequações regulatórias.",
   icon: React.createElement(Users, { className: "h-8 w-8 text-eco-blue-dark" }),
-  image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000&h=600",
   services: [
     {
       title: "Auditorias Ambientais",

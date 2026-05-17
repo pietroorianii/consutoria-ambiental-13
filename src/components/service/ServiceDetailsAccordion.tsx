@@ -81,7 +81,7 @@ export const ServiceDetailsAccordion = ({ service }: ServiceDetailsAccordionProp
           <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-eco-accent-orange">
             <div className="flex items-center gap-3">
               <Lightbulb className="h-5 w-5 text-eco-accent-orange" />
-              Dicas Especializadas da L&P
+              Dicas Especializadas da SOLARI
             </div>
           </AccordionTrigger>
           <AccordionContent className="pt-4">

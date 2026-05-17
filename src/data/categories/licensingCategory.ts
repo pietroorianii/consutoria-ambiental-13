@@ -7,7 +7,7 @@ export const licensingCategory: ServiceCategoryData = {
   title: "Licenciamento e Autorizações Ambientais",
   description: "Serviços completos de licenciamento conforme Decreto Estadual nº 9.541/2025 e normas do IAT-PR, desde dispensas até licenciamento trifásico.",
   icon: React.createElement(Leaf, { className: "h-8 w-8 text-eco-green" }),
-  image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=1000&h=600",
   services: [
     {
       title: "DLAM - Declaração de Dispensa",

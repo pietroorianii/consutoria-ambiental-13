@@ -19,11 +19,13 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sora: ['Sora', 'Montserrat', 'sans-serif'],
-				inter: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Sora', 'Montserrat', 'sans-serif'],
-				montserrat: ['Montserrat', 'sans-serif'],
-				poppins: ['Poppins', 'sans-serif'],
+				outfit: ['Outfit', 'sans-serif'],
+				'dm-sans': ['DM Sans', 'system-ui', 'sans-serif'],
+				sora: ['Outfit', 'sans-serif'],        // alias para retrocompatibilidade
+				inter: ['DM Sans', 'system-ui', 'sans-serif'], // alias para retrocompatibilidade
+				display: ['Outfit', 'sans-serif'],
+				montserrat: ['Outfit', 'sans-serif'],
+				poppins: ['Outfit', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

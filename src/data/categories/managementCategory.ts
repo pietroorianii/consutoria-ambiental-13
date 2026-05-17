@@ -7,7 +7,7 @@ export const managementCategory: ServiceCategoryData = {
   title: "Gestão Ambiental Contínua",
   description: "Serviços continuados para manutenção da conformidade ambiental e gestão de requisitos legais.",
   icon: React.createElement(CloudSun, { className: "h-8 w-8 text-eco-blue" }),
-  image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000&h=600",
   services: [
     {
       title: "Gestão de Requisitos Legais",
