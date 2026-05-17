@@ -6,7 +6,7 @@ import { ServiceSearch } from "@/components/ServiceSearch";
 
 export function HeroBanner() {
   return (
-    <section className="relative overflow-hidden bg-brand-primary text-brand-cream min-h-[92vh] flex items-center">
+    <section className="relative flex min-h-[calc(100vh-4rem)] overflow-hidden bg-brand-primary text-brand-cream lg:min-h-[86vh] lg:items-center">
       {/* Layered gradient + glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-primary/40" />
       <div
@@ -19,13 +19,13 @@ export function HeroBanner() {
       <div className="absolute -top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-brand-accent/20 blur-3xl" />
       <div className="absolute -bottom-40 -right-20 w-[36rem] h-[36rem] rounded-full bg-brand-cream/10 blur-3xl" />
 
-      <div className="container relative z-10 py-24 md:py-32">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container relative z-10 py-16 md:py-20 lg:py-24">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="lg:col-span-7"
+            className="min-w-0 lg:col-span-7"
           >
             {/* Stylized badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-brand-cream/15 bg-brand-cream/10 backdrop-blur-md">
@@ -35,7 +35,7 @@ export function HeroBanner() {
               </span>
             </div>
 
-            <h1 className="font-sora font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight">
+            <h1 className="max-w-3xl font-sora text-4xl font-bold leading-[1.06] sm:text-5xl lg:text-6xl">
               Clareza e segurança para sua{" "}
               <span className="bg-gradient-to-r from-brand-accent via-brand-cream to-brand-accent bg-clip-text text-transparent">
                 conformidade ambiental
@@ -47,7 +47,7 @@ export function HeroBanner() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.6 }}
-              className="mt-7 max-w-2xl text-lg md:text-xl text-brand-cream/90 font-inter leading-relaxed"
+              className="mt-7 max-w-2xl font-inter text-lg leading-relaxed text-brand-cream/90 md:text-xl"
             >
               Navegue pela complexidade da legislação ambiental com a parceria
               de especialistas. Transformamos desafios regulatórios em
@@ -68,12 +68,12 @@ export function HeroBanner() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.6 }}
-              className="mt-10 flex flex-col sm:flex-row gap-4"
+              className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
             >
               <Button
                 asChild
                 size="lg"
-                className="group bg-brand-accent hover:bg-brand-accent/90 text-white rounded-2xl px-8 py-6 text-base font-medium shadow-lg shadow-brand-accent/20 transition-transform duration-200 hover:scale-[1.03]"
+                className="group min-h-12 rounded-2xl bg-brand-accent px-6 py-3 text-base font-medium text-white shadow-lg shadow-brand-accent/20 transition-transform duration-200 hover:scale-[1.02] hover:bg-brand-accent/90 sm:px-8"
               >
                 <Link to="/services" className="flex items-center gap-3">
                   Conheça nossas soluções
@@ -85,7 +85,7 @@ export function HeroBanner() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-2xl px-8 py-6 text-base font-medium border-brand-cream/30 bg-brand-cream/5 text-brand-cream hover:bg-brand-cream hover:text-brand-primary backdrop-blur-md transition-transform duration-200 hover:scale-[1.03]"
+                className="min-h-12 rounded-2xl border-brand-cream/30 bg-brand-cream/5 px-6 py-3 text-base font-medium text-brand-cream backdrop-blur-md transition-transform duration-200 hover:scale-[1.02] hover:bg-brand-cream hover:text-brand-primary sm:px-8"
               >
                 <Link to="/contact" className="flex items-center gap-3">
                   <MessageCircle className="h-5 w-5" />
@@ -99,7 +99,7 @@ export function HeroBanner() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl"
+              className="mt-12 grid max-w-2xl grid-cols-2 gap-6 md:grid-cols-4"
             >
               {[
                 { k: "15+", v: "Anos de atuação" },
@@ -125,7 +125,7 @@ export function HeroBanner() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="lg:col-span-5 relative"
+            className="relative min-w-0 lg:col-span-5"
           >
             <div className="relative rounded-3xl overflow-hidden border border-brand-cream/20 shadow-2xl bg-gradient-to-br from-brand-primary to-brand-dark aspect-[4/5] flex items-center justify-center">
               {/* Abstract SVG Composition replacing the image */}
@@ -141,7 +141,7 @@ export function HeroBanner() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/20 to-transparent mix-blend-overlay" />
               
               {/* Badge "Credenciada IAT-PR" no canto da imagem */}
-              <div className="absolute top-6 right-6 bg-brand-cream text-brand-primary px-4 py-2 rounded-full font-bold text-sm shadow-xl flex items-center gap-2 border border-brand-primary/20 font-sora">
+              <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-cream px-3 py-2 font-sora text-xs font-bold text-brand-primary shadow-xl sm:right-6 sm:top-6 sm:px-4 sm:text-sm">
                 <Award className="h-4 w-4 text-brand-accent" />
                 Credenciada IAT-PR
               </div>
