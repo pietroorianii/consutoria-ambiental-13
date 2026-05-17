@@ -1,5 +1,5 @@
 
-import { Briefcase } from "lucide-react";
+import { Users } from "lucide-react";
 import { ServiceDetailData } from "../types/serviceTypes";
 
 export const consultingServices: ServiceDetailData = {
