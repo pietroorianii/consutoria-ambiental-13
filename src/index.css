@@ -102,9 +102,14 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: 'DM Sans', system-ui, sans-serif;
     line-height: 1.7;
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
     font-weight: 400;
+    overflow-x: hidden;
     /* Subtle grain texture overlay */
+  }
+
+  html {
+    overflow-x: hidden;
   }
 
   /* Grain overlay as a fixed pseudo-element keeps GPU compositing on mobile */
@@ -131,7 +136,7 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
     font-family: 'Outfit', sans-serif;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
   }
 
   h1 {
