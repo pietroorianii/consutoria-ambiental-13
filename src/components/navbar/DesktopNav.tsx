@@ -12,7 +12,7 @@ export function DesktopNav() {
   const navLinkClass = "group inline-flex h-10 items-center justify-center rounded-full bg-transparent px-3 py-2 text-sm font-medium text-brand-dark transition-colors hover:bg-brand-primary/10 hover:text-brand-primary focus:bg-brand-primary/10 focus:text-brand-primary focus:outline-none lg:px-4";
 
   return (
-    <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 md:flex">
+    <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex">
       <div className="min-w-0">
         <NavigationMenu>
           <NavigationMenuList className="gap-1">
