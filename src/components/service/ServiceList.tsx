@@ -1,10 +1,10 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { ServiceItem } from "@/data/serviceCategories";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getServiceTheme, getThemeClasses } from "@/utils/serviceTheme";
 
 interface ServiceListProps {
   services: ServiceItem[];
@@ -58,17 +58,20 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
             detailServiceId = licensingServiceMap[service.title] || serviceDetailId;
           }
 
+          const { icon: Icon, color } = getServiceTheme(detailServiceId);
+          const theme = getThemeClasses(color);
+
           return (
             <Card 
               key={index}
-              className="group border-eco-green/30 hover:border-eco-green/60 transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 h-full flex flex-col"
+              className={`group ${theme.border} transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 h-full flex flex-col`}
             >
               <CardHeader className="text-center pb-4">
                 <div className="flex items-center gap-3 mb-3 justify-center">
-                  <div className="bg-eco-green/15 p-3 rounded-xl group-hover:bg-eco-green/25 transition-colors shadow-sm">
-                    <Leaf className="h-6 w-6 text-eco-green" />
+                  <div className={`${theme.lightBg} p-3 rounded-xl ${theme.hoverLightBg} transition-colors shadow-sm`}>
+                    <Icon className={`h-6 w-6 ${theme.text}`} />
                   </div>
-                  <CardTitle className="text-xl font-secondary text-gray-900 group-hover:text-eco-green-dark transition-colors">
+                  <CardTitle className={`text-xl font-secondary text-gray-900 ${theme.hoverText} transition-colors`}>
                     {service.title}
                   </CardTitle>
                 </div>
@@ -78,9 +81,9 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
               </CardHeader>
               
               <CardContent className="flex-grow px-6 pb-0">
-                <div className="bg-eco-green/8 rounded-lg p-4 mb-4">
+                <div className={`${theme.checkBg} rounded-lg p-4 mb-4`}>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-eco-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className={`h-5 w-5 ${theme.checkIcon} mt-0.5 flex-shrink-0`} />
                     <p className="text-gray-600 text-sm font-body">
                       Nossos especialistas fornecem consultoria personalizada e acompanhamento 
                       completo para atender às necessidades específicas do seu negócio.
@@ -95,7 +98,7 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
                     asChild 
                     variant="outline" 
                     size="sm"
-                    className="border-eco-green/40 text-eco-green hover:bg-eco-green hover:text-white transition-all duration-300"
+                    className={`${theme.buttonOutline} transition-all duration-300`}
                   >
                     <Link 
                       to={`/service/${detailServiceId}`}
@@ -108,7 +111,7 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
                 
                 <Button 
                   asChild
-                  className="bg-eco-green hover:bg-eco-green-dark text-white flex-1 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg"
+                  className={`${theme.buttonBg} flex-1 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg`}
                 >
                   <Link 
                     to="/request-quote"
@@ -138,19 +141,26 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
                 { title: "Licença Prévia (LP)", id: "lp", description: "Viabilidade e localização" },
                 { title: "Licença de Instalação (LI)", id: "li", description: "Autorização para construir" },
                 { title: "Licença de Operação (LO)", id: "lo", description: "Autorização para operar" }
-              ].map((phase) => (
-                <Card key={phase.id} className="text-center border-eco-green/20">
-                  <CardContent className="p-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">{phase.title}</h4>
-                    <p className="text-sm text-gray-600 mb-4">{phase.description}</p>
-                    <Button asChild size="sm" variant="outline" className="border-eco-green text-eco-green hover:bg-eco-green hover:text-white">
-                      <Link to={`/service/${phase.id}`}>
-                        Ver detalhes <ArrowRight className="h-3 w-3 ml-1" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+              ].map((phase) => {
+                const { icon: PhaseIcon, color: phaseColor } = getServiceTheme(phase.id);
+                const phaseTheme = getThemeClasses(phaseColor);
+                return (
+                  <Card key={phase.id} className={`text-center ${phaseTheme.border}`}>
+                    <CardContent className="p-4">
+                      <div className="flex justify-center mb-3">
+                        <PhaseIcon className={`h-8 w-8 ${phaseTheme.text}`} />
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-2">{phase.title}</h4>
+                      <p className="text-sm text-gray-600 mb-4">{phase.description}</p>
+                      <Button asChild size="sm" variant="outline" className={phaseTheme.buttonOutline}>
+                        <Link to={`/service/${phase.id}`}>
+                          Ver detalhes <ArrowRight className="h-3 w-3 ml-1" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -158,3 +168,4 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
     </section>
   );
 };
+

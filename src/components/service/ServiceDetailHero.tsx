@@ -1,8 +1,8 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, CheckCircle, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getServiceTheme, getThemeClasses } from "@/utils/serviceTheme";
 
 interface ServiceDetailHeroProps {
   service: {
@@ -16,6 +16,10 @@ interface ServiceDetailHeroProps {
 
 export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
   const IconComponent = service.icon;
+
+  // Obter cores dinâmicas baseadas no ID do serviço
+  const { color } = getServiceTheme(service.id || "");
+  const theme = getThemeClasses(color);
 
   // Determinar a URL de volta baseada no serviço
   const getBackUrl = () => {
@@ -37,13 +41,13 @@ export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
   return (
     <div className="relative">
       {/* Hero principal */}
-      <div className="bg-gradient-to-r from-eco-green via-eco-green-dark to-eco-blue py-20 relative overflow-hidden">
+      <div className={`bg-gradient-to-r ${theme.gradient} py-20 relative overflow-hidden transition-all duration-500`}>
         {/* Imagem de fundo */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{ backgroundImage: `url('${service.image}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-eco-green/60 via-transparent to-eco-green-dark/80" />
+        <div className={`absolute inset-0 bg-gradient-to-b ${theme.gradientOverlay}`} />
         <div className="absolute inset-0 leaf-pattern opacity-5" />
 
         <div className="container relative z-10">
@@ -83,8 +87,8 @@ export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
             <div className="flex items-center gap-4 px-6 py-5">
-              <div className="p-2.5 bg-eco-green/10 rounded-xl flex-shrink-0">
-                <Clock className="h-5 w-5 text-eco-green" />
+              <div className={`${theme.lightBg} p-2.5 rounded-xl flex-shrink-0`}>
+                <Clock className={`h-5 w-5 ${theme.text}`} />
               </div>
               <div>
                 <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold">Agilidade</p>
@@ -92,8 +96,8 @@ export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
               </div>
             </div>
             <div className="flex items-center gap-4 px-6 py-5">
-              <div className="p-2.5 bg-eco-blue/10 rounded-xl flex-shrink-0">
-                <CheckCircle className="h-5 w-5 text-eco-blue" />
+              <div className={`${theme.lightBg} p-2.5 rounded-xl flex-shrink-0`}>
+                <CheckCircle className={`h-5 w-5 ${theme.text}`} />
               </div>
               <div>
                 <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold">Conformidade</p>
@@ -101,8 +105,8 @@ export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
               </div>
             </div>
             <div className="flex items-center gap-4 px-6 py-5">
-              <div className="p-2.5 bg-eco-accent-orange/10 rounded-xl flex-shrink-0">
-                <Building2 className="h-5 w-5 text-eco-accent-orange" />
+              <div className={`${theme.lightBg} p-2.5 rounded-xl flex-shrink-0`}>
+                <Building2 className={`h-5 w-5 ${theme.text}`} />
               </div>
               <div>
                 <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold">Experiência</p>
@@ -115,3 +119,4 @@ export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
     </div>
   );
 };
+
