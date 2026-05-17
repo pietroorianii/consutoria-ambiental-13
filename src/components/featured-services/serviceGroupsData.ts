@@ -1,13 +1,12 @@
-
 import React from "react";
-import { Scale, FileText, Leaf } from "lucide-react";
+import { Leaf, FileText, Globe2 } from "lucide-react";
 import { ServiceGroup } from "./types";
 
 export const serviceGroups: ServiceGroup[] = [
   {
     title: "Licenciamento e Conformidade Legal",
     description: "Garanta a operação legal do seu negócio",
-    icon: React.createElement(Scale, { className: "h-8 w-8" }),
+    icon: React.createElement(Leaf, { className: "h-8 w-8" }),
     color: "prisma-green",
     buttonColor: "bg-prisma-green hover:bg-prisma-green/90",
     badge: "Essencial",
@@ -67,7 +66,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     title: "Consultoria Estratégica e ESG",
     description: "Visão de futuro e sustentabilidade",
-    icon: React.createElement(Leaf, { className: "h-8 w-8" }),
+    icon: React.createElement(Globe2, { className: "h-8 w-8" }),
     color: "prisma-yellow",
     buttonColor: "bg-prisma-yellow hover:bg-prisma-yellow/90",
     badge: "Inovação",

@@ -1,12 +1,12 @@
 
-import { Globe } from "lucide-react";
+import { Globe2 } from "lucide-react";
 import { ServiceDetailData } from "../types/serviceTypes";
 
 export const esgServices: ServiceDetailData = {
   id: "esg",
   title: "Consultoria ESG",
   description: "Assessoria especializada em critérios ambientais, sociais e de governança para sustentabilidade corporativa, conforme GRI, SASB, TCFD e Resolução CVM 193/2023.",
-  icon: Globe,
+  icon: Globe2,
   image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000&h=600",
   whatIs: "A consultoria ESG da SOLARI integra exigências regulatórias, demandas de investidores e melhores práticas internacionais para posicionar sua empresa como referência em sustentabilidade. No Brasil, a Resolução CVM 193/2023 tornou obrigatória a divulgação de informações de sustentabilidade para companhias abertas, adotando as normas IFRS S1 e S2 (emitidas pelo ISSB). No Paraná, o licenciamento ambiental responsável e a conformidade com as INs do IAT são pilares da dimensão 'E' do ESG. Auxiliamos desde o diagnóstico inicial até a publicação do Relatório de Sustentabilidade conforme padrão GRI, além de apoiar o acesso a linhas de crédito e financiamentos vinculados a desempenho ESG.",
   benefits: [

@@ -1,12 +1,12 @@
 
-import { CloudSun } from "lucide-react";
+import { Map, ClipboardList } from "lucide-react";
 import { ServiceDetailData } from "../types/serviceTypes";
 
 export const managementServices: ServiceDetailData = {
   id: "management",
   title: "Gestão Ambiental Contínua",
   description: "Gerenciamento permanente de conformidade ambiental no Paraná: renovações, condicionantes IAT, declarações anuais e atualização regulatória contínua.",
-  icon: CloudSun,
+  icon: ClipboardList,
   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000&h=600",
   whatIs: "A gestão ambiental contínua mantém sua empresa permanentemente em conformidade com a legislação ambiental, sem que você precise acompanhar cada prazo ou mudança regulatória. No Paraná, as Instruções Normativas do IAT são publicadas com frequência — em 2025/2026 já foram mais de 10 INs com mudanças relevantes nos procedimentos de licenciamento, outorga e gestão de resíduos. Nosso serviço inclui: controle ativo de prazos de licenças e condicionantes; renovações protocoladas com antecedência mínima de 120 dias; gestão das declarações anuais obrigatórias (RAPP, CAR, SNCR, MTR); e monitoramento contínuo das publicações do IAT, SEMA e órgãos federais para manter seu sistema de gestão sempre atualizado.",
   benefits: [

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Users } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { ServiceCategoryData } from "../types/serviceCategoryTypes";
 
 export const consultingCategory: ServiceCategoryData = {

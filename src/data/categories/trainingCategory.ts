@@ -1,12 +1,12 @@
 
 import React from "react";
-import { TreeDeciduous } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { ServiceCategoryData } from "../types/serviceCategoryTypes";
 
 export const trainingCategory: ServiceCategoryData = {
   title: "Treinamentos e Capacitações Ambientais",
   description: "Programas de educação ambiental e capacitação técnica para equipes e colaboradores.",
-  icon: React.createElement(TreeDeciduous, { className: "h-8 w-8 text-eco-green" }),
+  icon: React.createElement(GraduationCap, { className: "h-8 w-8 text-eco-green" }),
   image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1000&h=600",
   services: [
     {

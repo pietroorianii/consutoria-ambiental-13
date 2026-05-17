@@ -1,5 +1,5 @@
 
-import { Beaker } from "lucide-react";
+import { LineChart } from "lucide-react";
 import { ServiceDetailData } from "../types/serviceTypes";
 
 export const monitoringServices: ServiceDetailData = {

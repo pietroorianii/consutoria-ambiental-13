@@ -1,12 +1,12 @@
 
-import { Recycle } from "lucide-react";
+import { Wind, Triangle } from "lucide-react";
 import { ServiceDetailData } from "../types/serviceTypes";
 
 export const climateServices: ServiceDetailData = {
   id: "climate",
   title: "Mudanças Climáticas e Descarbonização",
   description: "Inventários de GEE, planos de descarbonização, análise de vulnerabilidade climática e projetos de crédito de carbono, conforme ISO 14064, GHG Protocol e Lei 15.042/2024.",
-  icon: Recycle,
+  icon: Triangle,
   image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1000&h=600",
   whatIs: "Nossos serviços de mudanças climáticas e descarbonização preparam empresas para o novo marco regulatório climático brasileiro — a Lei Federal 15.042/2024 instituiu o SBCE (Sistema Brasileiro de Comércio de Emissões de Gases de Efeito Estufa), criando o mercado regulado de carbono no Brasil, com implementação progressiva prevista a partir de 2025. Elaboramos inventários de GEE corporativos (Escopos 1, 2 e 3) conforme ISO 14064-1 e GHG Protocol, desenvolvemos planos de descarbonização com Science Based Targets (SBTi), realizamos análise de riscos físicos e de transição climática (TCFD/IFRS S2) e estruturamos projetos de crédito de carbono para o mercado voluntário e regulado.",
   benefits: [

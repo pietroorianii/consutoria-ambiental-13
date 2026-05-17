@@ -1,12 +1,12 @@
 
-import { TreeDeciduous } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { ServiceDetailData } from "../types/serviceTypes";
 
 export const trainingServices: ServiceDetailData = {
   id: "training",
   title: "Treinamentos e Capacitações Ambientais",
   description: "Programas de capacitação técnica em legislação ambiental, gerenciamento de resíduos, emergências ambientais e PGRS, com base nas normas IAT, CONAMA e NRs vigentes.",
-  icon: TreeDeciduous,
+  icon: GraduationCap,
   image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1000&h=600",
   whatIs: "Os treinamentos e capacitações ambientais desenvolvidos pela SOLARI habilitam profissionais e equipes para o correto cumprimento da legislação ambiental, com foco em aplicação prática. Nossos programas abordam as Instruções Normativas do IAT mais recentes, incluindo as modalidades de licenciamento da Resolução CEMA 105/2019, o sistema MTR de rastreabilidade de resíduos (Decreto Federal 10.936/2022), a nova classificação de atividades de Baixo Risco (IN IAT 11/2026), e as exigências de monitoramento do IAT. Os treinamentos são elaborados por especialistas com registro profissional (CREA/CRBio/CRQ), com emissão de certificado e ART quando exigível pela condicionante da licença.",
   benefits: [

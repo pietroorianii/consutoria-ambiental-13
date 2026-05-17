@@ -1,12 +1,12 @@
 
 import React from "react";
-import { Globe } from "lucide-react";
+import { Globe2 } from "lucide-react";
 import { ServiceCategoryData } from "../types/serviceCategoryTypes";
 
 export const esgCategory: ServiceCategoryData = {
   title: "Consultoria ESG",
   description: "Assessoria especializada em critérios ambientais, sociais e de governança para competitividade e sustentabilidade corporativa.",
-  icon: React.createElement(Globe, { className: "h-8 w-8 text-eco-accent-teal" }),
+  icon: React.createElement(Globe2, { className: "h-8 w-8 text-eco-accent-teal" }),
   image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000&h=600",
   services: [
     {

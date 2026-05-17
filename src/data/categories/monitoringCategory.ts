@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Beaker } from "lucide-react";
+import { LineChart } from "lucide-react";
 import { ServiceCategoryData } from "../types/serviceCategoryTypes";
 
 export const monitoringCategory: ServiceCategoryData = {

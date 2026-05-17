@@ -1,5 +1,5 @@
 
-import { Leaf } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { ServiceDetailData } from "../types/serviceTypes";
 
 export const licensingServices: ServiceDetailData = {

@@ -1,12 +1,12 @@
 
 import React from "react";
-import { Recycle } from "lucide-react";
+import { Wind, Triangle } from "lucide-react";
 import { ServiceCategoryData } from "../types/serviceCategoryTypes";
 
 export const climateCategory: ServiceCategoryData = {
   title: "Mudanças Climáticas e Descarbonização",
   description: "Soluções especializadas para gestão de riscos climáticos, redução de emissões e adaptação às mudanças climáticas.",
-  icon: React.createElement(Recycle, { className: "h-8 w-8 text-eco-accent-sage" }),
+  icon: React.createElement(Triangle, { className: "h-8 w-8 text-eco-accent-sage" }),
   image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1000&h=600",
   services: [
     {

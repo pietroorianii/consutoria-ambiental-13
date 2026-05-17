@@ -1,5 +1,4 @@
-
-import { Leaf, Beaker, FileText, Users, TreeDeciduous, CloudSun, LucideIcon } from "lucide-react";
+import { Leaf, Beaker, FileText, Users, GraduationCap, ClipboardList, LucideIcon } from "lucide-react";
 import React from "react";
 
 export interface ServiceCategoryData {
@@ -40,14 +39,14 @@ export const serviceCategories: ServiceCategoryData[] = [
     link: "/services/consulting"
   },
   {
-    icon: TreeDeciduous,
+    icon: GraduationCap,
     title: "Treinamentos e Capacitações",
     description: "Capacitação e treinamentos especializados para equipes e colaboradores.",
     items: ["Treinamentos presenciais e remotos", "Treinamento em Gerenciamento de Resíduos Sólidos", "Capacitações específicas para cada setor"],
     link: "/services/training"
   },
   {
-    icon: CloudSun,
+    icon: ClipboardList,
     title: "Gestão e Manutenção Ambiental",
     description: "Serviços continuados de gestão e manutenção de requisitos ambientais.",
     items: ["Renovação de licenças e autorizações", "Declarações e inventários anuais", "Defesas ambientais", "Manutenções e atualizações periódicas"],
