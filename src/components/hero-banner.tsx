@@ -127,18 +127,29 @@ export function HeroBanner() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="relative min-w-0 lg:col-span-5"
           >
-            <div className="relative rounded-3xl overflow-hidden border border-brand-cream/20 shadow-2xl bg-gradient-to-br from-brand-primary to-brand-dark aspect-[4/5] flex items-center justify-center">
-              {/* Abstract SVG Composition replacing the image */}
-              <svg width="100%" height="100%" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-screen">
-                <path d="M0 250 Q 100 150 200 250 T 400 250" stroke="#00A3AD" strokeWidth="2" fill="none" opacity="0.6"/>
-                <path d="M0 300 Q 100 200 200 300 T 400 300" stroke="#00A3AD" strokeWidth="1" fill="none" opacity="0.3"/>
-                <path d="M0 350 Q 100 250 200 350 T 400 350" stroke="#00A3AD" strokeWidth="3" fill="none" opacity="0.8"/>
-                <circle cx="200" cy="200" r="100" stroke="#F4F1EA" strokeWidth="1" fill="none" strokeDasharray="5 5" opacity="0.3"/>
-                <circle cx="200" cy="200" r="150" stroke="#F4F1EA" strokeWidth="1" fill="none" strokeDasharray="2 10" opacity="0.1"/>
-                <path d="M150 150 Q 200 100 250 150 Q 300 200 250 250 Q 200 300 150 250 Q 100 200 150 150 Z" fill="#F4F1EA" opacity="0.05"/>
+            <div className="relative rounded-3xl overflow-hidden border border-brand-cream/20 shadow-2xl aspect-[4/5]">
+              {/* Real photo background */}
+              <img
+                src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=900&h=1125"
+                alt="Floresta nativa preservada — consultoria ambiental Solari"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={900}
+                height={1125}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+
+              {/* Color grade overlay (brand tint) */}
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/70 via-brand-primary/30 to-brand-accent/40 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/40 to-transparent" />
+
+              {/* Subtle decorative curves */}
+              <svg className="absolute inset-0 w-full h-full opacity-40 pointer-events-none" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 380 Q 100 320 200 360 T 400 340" stroke="#00A3AD" strokeWidth="1.5" fill="none" opacity="0.6"/>
+                <path d="M0 420 Q 120 380 220 410 T 400 400" stroke="#F4F1EA" strokeWidth="1" fill="none" opacity="0.4"/>
               </svg>
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/20 to-transparent mix-blend-overlay" />
+
               
               {/* Badge "Credenciada IAT-PR" no canto da imagem */}
               <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-cream px-3 py-2 font-sora text-xs font-bold text-brand-primary shadow-xl sm:right-6 sm:top-6 sm:px-4 sm:text-sm">
