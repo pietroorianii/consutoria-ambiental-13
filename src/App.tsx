@@ -9,6 +9,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
 import RequestQuotePage from "./pages/RequestQuotePage";
 import ServiceCategoryPage from "./pages/ServiceCategoryPage";
+import ServiceGroupPage from "./pages/ServiceGroupPage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import LicensesAuthorizationsPage from "./pages/LicensesAuthorizationsPage";
 import FAQPage from "./pages/FAQPage";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/group/:groupId" element={<ServiceGroupPage />} />
           <Route path="/services/:categoryId" element={<ServiceCategoryPage />} />
           <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
           <Route path="/licenses-authorizations" element={<LicensesAuthorizationsPage />} />

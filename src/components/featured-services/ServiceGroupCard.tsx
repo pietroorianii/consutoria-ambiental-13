@@ -174,7 +174,7 @@ export function ServiceGroupCard({ group, index }: ServiceGroupCardProps) {
               'border-prisma-yellow/30 text-prisma-yellow hover:bg-prisma-yellow hover:text-white'
             } transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg hover:underline underline-offset-2`}
           >
-            <Link to={`/services/${categoryId}`} className="flex items-center justify-center gap-2">
+            <Link to={`/services/group/${groupId}`} className="flex items-center justify-center gap-2">
               Explorar 
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
