@@ -2,6 +2,7 @@
 import React from "react";
 
 export interface ServiceGroup {
+  id: string;
   title: string;
   description: string;
   icon: React.ReactNode;

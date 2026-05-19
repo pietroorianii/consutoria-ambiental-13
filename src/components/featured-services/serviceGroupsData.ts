@@ -4,6 +4,7 @@ import { ServiceGroup } from "./types";
 
 export const serviceGroups: ServiceGroup[] = [
   {
+    id: "licensing",
     title: "Licenciamento e Autorizações Ambientais",
     description: "Regularize e opere com segurança jurídica total",
     icon: React.createElement(Scale, { className: "h-8 w-8" }),
@@ -34,6 +35,7 @@ export const serviceGroups: ServiceGroup[] = [
     ]
   },
   {
+    id: "technical-studies",
     title: "Estudos Técnicos e Instrumentos de Gestão",
     description: "Documentação técnica especializada para o licenciamento",
     icon: React.createElement(FileText, { className: "h-8 w-8" }),
@@ -64,6 +66,7 @@ export const serviceGroups: ServiceGroup[] = [
     ]
   },
   {
+    id: "compliance",
     title: "Conformidade e Regularização Contínua",
     description: "Manutenção da licença e gestão de obrigações periódicas",
     icon: React.createElement(Leaf, { className: "h-8 w-8" }),
