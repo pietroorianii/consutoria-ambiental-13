@@ -12,11 +12,10 @@ interface ServiceGroupCardProps {
 }
 
 export function ServiceGroupCard({ group, index }: ServiceGroupCardProps) {
-  // Map legacy group.color to the group id for routing
   const categoryId =
     group.color === 'prisma-green' ? 'licensing' :
-    group.color === 'prisma-blue' ? 'reports' :
-    'esg';
+    group.color === 'prisma-blue' ? 'technical_studies' :
+    'compliance';
 
   return (
     <Card 
