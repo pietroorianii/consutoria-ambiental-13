@@ -1,6 +1,6 @@
 import { HeroBanner } from "@/components/hero-banner";
 import { CompanyIntro } from "@/components/company-intro";
-import { FeaturedServices } from "@/components/featured-services";
+import { ServicesShowcase } from "@/components/ServicesShowcase";
 import { SegmentCards } from "@/components/SegmentCards";
 import { WorkProcess } from "@/components/WorkProcess";
 import { SocialProof } from "@/components/SocialProof";
@@ -25,7 +25,7 @@ const Index = () => {
       <CompanyIntro />
       <WorkProcess />
       <SocialProof />
-      <FeaturedServices />
+      <ServicesShowcase />
       <Testimonials />
       <CTASection />
       <WhatsAppFloat />
