@@ -21,11 +21,11 @@ const Index = () => {
       />
 
       <HeroBanner />
+      <ServicesShowcase />
       <SegmentCards />
       <CompanyIntro />
       <WorkProcess />
       <SocialProof />
-      <ServicesShowcase />
       <Testimonials />
       <CTASection />
       <WhatsAppFloat />
