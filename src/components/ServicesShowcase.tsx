@@ -15,35 +15,28 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-type Tone = "primary" | "accent" | "secondary";
-
 interface ShowcaseService {
   icon: LucideIcon;
   title: string;
   description: string;
   tag: string;
   href: string;
-  tone: Tone;
-  span?: string; // tailwind col-span for bento
 }
 
 const services: ShowcaseService[] = [
   {
     icon: Scale,
     title: "Licenciamento Ambiental",
-    description: "DLAM, LAC, LAS, LP, LI e LO conduzidos com segurança jurídica e agilidade técnica.",
+    description: "DLAM, LAC, LAS, LP, LI e LO com segurança jurídica e agilidade técnica.",
     tag: "Licenciamento",
     href: "/service/licensing",
-    tone: "primary",
-    span: "md:col-span-2",
   },
   {
     icon: FileCheck,
     title: "Autorizações AA e AF",
-    description: "Supressão de vegetação, manejo florestal e autorizações ambientais específicas.",
+    description: "Supressão de vegetação, manejo florestal e autorizações específicas.",
     tag: "Autorizações",
     href: "/service/authorizations",
-    tone: "secondary",
   },
   {
     icon: Droplets,
@@ -51,24 +44,20 @@ const services: ShowcaseService[] = [
     description: "Captação, lançamento e regularização hídrica via SIGARH.",
     tag: "Recursos Hídricos",
     href: "/service/water_grants",
-    tone: "accent",
   },
   {
     icon: FlaskConical,
     title: "Estudos Ambientais",
-    description: "EIA/RIMA, RAS, MCE, PBA e PACUERA com profundidade técnica e clareza estratégica.",
+    description: "EIA/RIMA, RAS, MCE, PBA e PACUERA com profundidade técnica.",
     tag: "Estudos Técnicos",
     href: "/service/technical_studies",
-    tone: "accent",
-    span: "md:col-span-2",
   },
   {
     icon: Recycle,
     title: "Planos de Gestão",
-    description: "PGRS, PGRSS, PCA, PRAD e PRF prontos para auditoria e fiscalização.",
+    description: "PGRS, PGRSS, PCA, PRAD e PRF prontos para auditoria.",
     tag: "Gestão",
     href: "/service/technical_studies",
-    tone: "primary",
   },
   {
     icon: Wind,
@@ -76,55 +65,30 @@ const services: ShowcaseService[] = [
     description: "Plano de automonitoramento atmosférico e gestão via SGADEA.",
     tag: "Monitoramento",
     href: "/service/air_emissions",
-    tone: "secondary",
   },
   {
     icon: ClipboardCheck,
     title: "Gestão de Conformidade",
-    description: "Relatórios SGA IR, renovações e acompanhamento contínuo de condicionantes.",
+    description: "Relatórios SGA IR, renovações e acompanhamento de condicionantes.",
     tag: "Conformidade",
     href: "/service/compliance",
-    tone: "secondary",
   },
   {
     icon: RefreshCw,
     title: "Regularização Ambiental",
-    description: "LASR, LIR, LOR e Termos de Ajustamento de Conduta (TAC) bem encaminhados.",
+    description: "LASR, LIR, LOR e Termos de Ajustamento de Conduta (TAC).",
     tag: "Regularização",
     href: "/service/compliance",
-    tone: "primary",
-    span: "md:col-span-2",
   },
 ];
 
-const toneStyles: Record<Tone, { card: string; icon: string; tag: string; glow: string }> = {
-  primary: {
-    card: "from-brand-primary to-brand-primary/90 text-brand-cream",
-    icon: "bg-brand-accent/20 text-brand-accent",
-    tag: "bg-brand-accent/15 text-brand-accent",
-    glow: "from-brand-accent/40 to-transparent",
-  },
-  accent: {
-    card: "from-brand-accent to-brand-accent/85 text-white",
-    icon: "bg-white/20 text-white",
-    tag: "bg-white/15 text-white",
-    glow: "from-white/40 to-transparent",
-  },
-  secondary: {
-    card: "from-brand-cream to-white text-brand-primary border border-brand-primary/10",
-    icon: "bg-brand-primary/10 text-brand-primary",
-    tag: "bg-brand-primary/10 text-brand-primary",
-    glow: "from-brand-primary/15 to-transparent",
-  },
-};
-
 export function ServicesShowcase() {
   return (
-    <section className="relative overflow-hidden bg-brand-cream py-20 md:py-28">
+    <section className="relative overflow-hidden bg-brand-cream py-20 md:py-24">
       {/* Decorative background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-brand-accent/15 blur-3xl" />
-        <div className="absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-brand-primary/15 blur-3xl" />
+        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-brand-accent/10 blur-3xl" />
+        <div className="absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-brand-primary/10 blur-3xl" />
         <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
@@ -137,7 +101,7 @@ export function ServicesShowcase() {
 
       <div className="container relative z-10">
         {/* Header */}
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -172,60 +136,50 @@ export function ServicesShowcase() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-5 font-inter text-base leading-relaxed text-brand-primary/75 md:text-lg"
           >
-            Cada serviço abaixo abre uma página detalhada com etapas, prazos, base legal e
-            documentos. Clique e veja exatamente como entregamos.
+            Clique em qualquer serviço para ver etapas, prazos, base legal e documentos.
           </motion.p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
+        {/* Uniform Grid — same size cards */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, i) => {
-            const t = toneStyles[service.tone];
             const Icon = service.icon;
             return (
               <motion.div
-                key={service.title + i}
+                key={service.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: Math.min(i * 0.05, 0.3) }}
-                className={service.span || ""}
+                transition={{ duration: 0.45, delay: Math.min(i * 0.04, 0.25) }}
               >
                 <Link
                   to={service.href}
-                  className={`group relative flex h-full flex-col overflow-hidden rounded-3xl bg-gradient-to-br p-6 shadow-lg transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl md:p-7 ${t.card}`}
+                  className="group relative flex h-full min-h-[300px] flex-col overflow-hidden rounded-2xl border border-brand-primary/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-accent/40 hover:shadow-xl"
                 >
-                  {/* Glow blob */}
-                  <div
-                    className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gradient-to-br opacity-60 blur-3xl transition-opacity duration-500 group-hover:opacity-100 ${t.glow}`}
-                  />
+                  {/* Top accent bar */}
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
 
-                  <div className="relative flex items-start justify-between gap-4">
-                    <div
-                      className={`flex h-14 w-14 items-center justify-center rounded-2xl backdrop-blur-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${t.icon}`}
-                    >
-                      <Icon className="h-7 w-7" strokeWidth={1.75} />
+                  {/* Glow on hover */}
+                  <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-accent/0 blur-3xl transition-all duration-500 group-hover:bg-brand-accent/20" />
+
+                  <div className="relative flex items-start justify-between gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/8 text-brand-primary transition-all duration-300 group-hover:bg-brand-accent group-hover:text-white">
+                      <Icon className="h-6 w-6" strokeWidth={1.75} />
                     </div>
-                    <span
-                      className={`rounded-full px-3 py-1 font-inter text-[10px] font-semibold uppercase tracking-wider ${t.tag}`}
-                    >
+                    <span className="rounded-full bg-brand-primary/5 px-2.5 py-1 font-inter text-[10px] font-semibold uppercase tracking-wider text-brand-primary/70">
                       {service.tag}
                     </span>
                   </div>
 
-                  <h3 className="relative mt-6 font-sora text-xl font-bold leading-tight md:text-2xl">
+                  <h3 className="relative mt-5 font-sora text-lg font-bold leading-snug text-brand-primary">
                     {service.title}
                   </h3>
 
-                  <p
-                    className={`relative mt-3 font-inter text-sm leading-relaxed md:text-[15px] ${
-                      service.tone === "secondary" ? "text-brand-primary/70" : "opacity-90"
-                    }`}
-                  >
+                  <p className="relative mt-2 font-inter text-sm leading-relaxed text-brand-primary/70 line-clamp-3">
                     {service.description}
                   </p>
 
-                  <div className="relative mt-auto flex items-center gap-2 pt-6 font-inter text-sm font-semibold">
+                  <div className="relative mt-auto flex items-center gap-1.5 pt-5 font-inter text-sm font-semibold text-brand-accent">
                     <span>Saiba mais</span>
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </div>
@@ -236,7 +190,7 @@ export function ServicesShowcase() {
         </div>
 
         {/* Footer CTA */}
-        <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             to="/services"
             className="group inline-flex items-center gap-2 rounded-2xl bg-brand-primary px-7 py-3.5 font-inter text-sm font-semibold text-brand-cream shadow-lg transition-all hover:scale-[1.02] hover:bg-brand-primary/90"
