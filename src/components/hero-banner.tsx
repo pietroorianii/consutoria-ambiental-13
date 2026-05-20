@@ -7,10 +7,20 @@ import { ServiceSearch } from "@/components/ServiceSearch";
 export function HeroBanner() {
   return (
     <section className="relative flex min-h-[calc(100vh-4rem)] overflow-hidden bg-brand-primary text-brand-cream lg:min-h-[86vh] lg:items-center">
-      {/* Layered gradient + glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-primary via-brand-primary to-brand-primary/40" />
+      {/* Full-bleed environmental background photo */}
+      <img
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920&h=1280"
+        alt="Floresta nativa preservada ao amanhecer"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* Brand color grade — keeps text legible */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/95 via-brand-primary/80 to-brand-primary/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/40 to-transparent" />
       <div
-        className="absolute inset-0 opacity-[0.18] mix-blend-overlay"
+        className="absolute inset-0 opacity-[0.12] mix-blend-overlay"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>\")",
@@ -18,6 +28,7 @@ export function HeroBanner() {
       />
       <div className="absolute -top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-brand-accent/20 blur-3xl" />
       <div className="absolute -bottom-40 -right-20 w-[36rem] h-[36rem] rounded-full bg-brand-cream/10 blur-3xl" />
+
 
       <div className="container relative z-10 py-16 md:py-20 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
