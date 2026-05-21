@@ -50,7 +50,7 @@ export const technicalStudiesService: ServiceDetailData = {
     "PGRSS — Plano de Gerenciamento de Resíduos de Serviços de Saúde (RDC ANVISA 222/2018): para hospitais, clínicas, laboratórios e estabelecimentos de saúde — documento distinto do PGRS, com base legal diferente",
     "PCA — Plano de Controle Ambiental: medidas de controle ambiental durante a fase de instalação/obra — condicionante da LI em projetos de construção civil e obras lineares",
     "Plano de Automonitoramento Ambiental: monitoramento de efluentes líquidos, resíduos e parâmetros definidos nas condicionantes específicas da LO",
-    "PRAD — Projeto de Recuperação de Áreas Degradadas ou Alteradas (Portaria IAT 170/2020): para passivos ambientais, cumprimento de TAC e condicionantes de licença",
+    "PRAD — Projeto de Recuperação de Áreas Degradadas ou Alteradas (Portaria IAT 17/2025): para passivos ambientais, cumprimento de TAC e condicionantes de licença",
     "PRF — Plano de Resgate da Flora (IN 15/2025): exigido em qualquer autorização de supressão de vegetação nativa com espécies de interesse",
     "Compensação de Reserva Legal (IN 53/2025): Servidão Ambiental, cadastramento de área equivalente ou doação a Unidade de Conservação",
     "Realocação de Reserva Legal (IN 54/2025): para empreendimentos de utilidade pública e interesse social que impactam a RL",
@@ -60,6 +60,7 @@ export const technicalStudiesService: ServiceDetailData = {
   timeline: "MCE: 1 a 2 semanas; RAS: 2 a 4 semanas; PGRS/PGRSS: 2 a 4 semanas; PCA: 3 a 6 semanas; EIA/RIMA: 3 a 6 meses; PRAD: 4 a 8 semanas; PRF (IN 15/2025): 2 a 4 semanas.",
   legalBasis: [
     "Resolução CONAMA nº 01/1986 — EIA/RIMA",
+    "Resolução CONAMA nº 237/1997 — procedimentos de licenciamento ambiental (vigente)",
     "IN IAT nº 13/2025 — critérios de exigência de EIA/RIMA em projetos agropecuários e florestais",
     "IN IAT nº 15/2025 — Plano de Resgate da Flora (PRF)",
     "IN IAT nº 53/2025 — compensação de Reserva Legal",
@@ -68,7 +69,8 @@ export const technicalStudiesService: ServiceDetailData = {
     "IN IAT nº 65/2025 — MCE para empreendimentos industriais",
     "Lei Federal nº 12.305/2010 — Política Nacional de Resíduos Sólidos (PGRS)",
     "RDC ANVISA nº 222/2018 — PGRSS",
-    "Portaria IAT nº 170/2020 — PRAD",
+    "Resolução CONAMA nº 358/2005 — tratamento e disposição final de RSS (complementa RDC ANVISA 222/2018 no aspecto ambiental)",
+    "Portaria IAT nº 17/2025 — PRAD (vigente desde 15/01/2025 — revogou Portaria 170/2020)",
     "ABNT NBR 10004 — classificação de resíduos sólidos",
     "Decreto Estadual nº 9.541/2025"
   ],

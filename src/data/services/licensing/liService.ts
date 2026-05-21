@@ -47,8 +47,8 @@ export const liService: ServiceDetailData = {
   ],
   timeline: "O prazo para análise da LI varia de 3 a 4 meses, dependendo da complexidade dos programas ambientais e do cumprimento das condicionantes da LP.",
   legalBasis: [
-    "Decreto Estadual nº 9.541/2025",
-    "Resolução CEMA nº 107/2020",
+    "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
+    "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "Lei Federal nº 6.938/1981",
     "Lei Complementar nº 140/2011"
   ],

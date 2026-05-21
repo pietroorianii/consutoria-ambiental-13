@@ -50,9 +50,9 @@ export const lasService: ServiceDetailData = {
   ],
   timeline: "O prazo máximo para análise da LAS é de 60 dias corridos, conforme estabelecido pela legislação estadual.",
   legalBasis: [
-    "Decreto Estadual nº 9.541/2025",
-    "Resolução CEMA nº 107/2020",
-    "Instruções Normativas do IAT",
+    "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
+    "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
+    "Instruções Normativas setoriais do IAT vigentes",
     "Lei Federal nº 6.938/1981"
   ],
   tips: [

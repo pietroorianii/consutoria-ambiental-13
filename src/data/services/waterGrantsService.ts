@@ -53,12 +53,13 @@ export const waterGrantsService: ServiceDetailData = {
   timeline: "60 a 180 dias contados do protocolo completo no SIGARH, variando conforme tipo de uso, disponibilidade hídrica da bacia e demanda de análises técnicas do IAT. Captação subterrânea via processo integrado (IN 09/2026) pode ter análise sincronizada com o licenciamento.",
   legalBasis: [
     "Lei Federal nº 9.433/1997 — Política Nacional de Recursos Hídricos",
+    "Lei Estadual nº 12.726/1999 — Política Estadual de Recursos Hídricos do Paraná",
+    "Decreto Estadual nº 2.314/2000 — sistema de outorgas de recursos hídricos no Paraná",
     "IN IAT nº 09/2026 — integração entre licenciamento ambiental e outorga para captação subterrânea",
     "IN IAT nº 63/2025 — equipamentos medidores de vazão e volume para outorgas e declarações de uso insignificante",
     "IN IAT nº 51/2025 — outorga vinculada ao licenciamento de aquicultura e maricultura",
     "Decreto Estadual nº 9.541/2025",
-    "Resoluções da ANA (Agência Nacional de Águas) aplicáveis à bacia",
-    "Legislação estadual de recursos hídricos do Paraná"
+    "Resoluções da ANA (Agência Nacional de Águas) aplicáveis à bacia"
   ],
   tips: [
     "Inicie o processo de outorga em paralelo ao licenciamento ambiental — a LO pode depender dela e atraso na outorga trava a operação",

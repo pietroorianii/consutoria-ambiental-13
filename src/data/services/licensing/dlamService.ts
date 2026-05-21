@@ -51,10 +51,11 @@ export const dlamService: ServiceDetailData = {
   ],
   timeline: "O prazo varia conforme cada município, geralmente entre 1 a 15 dias úteis após protocolo da documentação completa.",
   legalBasis: [
-    "Lei Complementar nº 140/2011",
-    "Legislação municipal específica",
-    "Resoluções municipais de meio ambiente",
-    "Códigos municipais de posturas"
+    "Lei Estadual nº 22.252/2024, Art. 8º, II — definição e critérios da DLAM",
+    "Decreto Estadual nº 9.541/2025, Art. 56 e 57 — procedimento e condições da DLAM",
+    "INs setoriais do IAT vigentes — definem quais atividades se enquadram na DLAM por setor de atividade",
+    "Lei Complementar Federal nº 140/2011 — repartição de competências entre entes federativos",
+    "Lei Federal nº 6.938/1981 — Política Nacional do Meio Ambiente"
   ],
   tips: [
     "Consulte sempre a legislação municipal específica",
