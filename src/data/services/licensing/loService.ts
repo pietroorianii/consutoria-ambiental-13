@@ -47,8 +47,8 @@ export const loService: ServiceDetailData = {
   ],
   timeline: "O prazo para análise da LO varia de 2 a 3 meses, incluindo vistoria técnica para verificação das instalações e sistemas de controle.",
   legalBasis: [
-    "Decreto Estadual nº 9.541/2025",
-    "Resolução CEMA nº 107/2020",
+    "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
+    "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "Lei Federal nº 6.938/1981",
     "Lei Complementar nº 140/2011"
   ],

@@ -50,9 +50,9 @@ export const lacService: ServiceDetailData = {
   ],
   timeline: "A LAC tem emissão imediata após o correto preenchimento e submissão de toda documentação no sistema online.",
   legalBasis: [
-    "Decreto Estadual nº 9.541/2025",
-    "Resolução CEMA nº 107/2020",
-    "Instruções Normativas do IAT",
+    "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
+    "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
+    "Instruções Normativas setoriais do IAT vigentes",
     "Portarias específicas do IAT"
   ],
   tips: [
