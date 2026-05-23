@@ -30,7 +30,7 @@ export const AdditionalInfoStep: React.FC<AdditionalInfoStepProps> = ({
 }) => {
   return (
     <div className="space-y-4 animate-fade-in">
-      <h2 className="text-xl font-semibold text-eco-green">
+      <h2 className="text-xl font-semibold text-brand-accent">
         Informações Adicionais
       </h2>
       
@@ -118,6 +118,20 @@ export const AdditionalInfoStep: React.FC<AdditionalInfoStepProps> = ({
         </div>
       </div>
       
+      {/* ── Bloco de consentimento LGPD ── */}
+      <div className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-4 border border-border">
+        <p className="font-semibold text-foreground mb-1">Proteção de dados — LGPD</p>
+        <p className="leading-relaxed">
+          Ao enviar este formulário, você autoriza a Solari Soluções Ambientais a
+          armazenar e utilizar seus dados para fins de atendimento comercial,
+          conforme a Lei nº 13.709/2018 (LGPD). Seus dados não serão
+          compartilhados com terceiros.{" "}
+          <a href="/privacidade" className="underline text-primary hover:text-primary/80 transition-colors">
+            Política de Privacidade
+          </a>
+        </p>
+      </div>
+
       <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
         <FormField
           control={form.control}

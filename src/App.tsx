@@ -14,6 +14,7 @@ import ServiceDetailPage from "./pages/ServiceDetailPage";
 import LicensesAuthorizationsPage from "./pages/LicensesAuthorizationsPage";
 import FAQPage from "./pages/FAQPage";
 import TeamPage from "./pages/TeamPage";
+import PrivacyPage from "./pages/PrivacyPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/request-quote" element={<RequestQuotePage />} />
+          <Route path="/privacidade" element={<PrivacyPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

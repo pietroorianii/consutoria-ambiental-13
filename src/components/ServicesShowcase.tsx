@@ -57,7 +57,7 @@ const services: ShowcaseService[] = [
     title: "Planos de Gestão",
     description: "PGRS, PGRSS, PCA, PRAD e PRF prontos para auditoria.",
     tag: "Gestão",
-    href: "/service/technical_studies",
+    href: "/service/management",
   },
   {
     icon: Wind,
@@ -78,7 +78,7 @@ const services: ShowcaseService[] = [
     title: "Regularização Ambiental",
     description: "LASR, LIR, LOR e Termos de Ajustamento de Conduta (TAC).",
     tag: "Regularização",
-    href: "/service/compliance",
+    href: "/service/regularization",
   },
 ];
 

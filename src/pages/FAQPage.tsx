@@ -35,6 +35,27 @@ const FAQPage = () => {
         image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000&h=400"
         icon={<HelpCircle />}
       />
+
+      {/* Grupo 5 — FAQ Schema JSON-LD para SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.flatMap(cat =>
+              cat.items.map(item => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": item.answer
+                }
+              }))
+            )
+          })
+        }}
+      />
       
       <div className="container py-16 space-y-12">
         {/* Search and Filter Section */}
@@ -55,7 +76,7 @@ const FAQPage = () => {
               variant={selectedCategory === null ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory(null)}
-              className="bg-eco-green hover:bg-eco-green-dark"
+              className="bg-brand-accent hover:bg-brand-accent/90"
             >
               Todas as Categorias
             </Button>
@@ -65,7 +86,7 @@ const FAQPage = () => {
                 variant={selectedCategory === category.id ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category.id)}
-                className="bg-eco-green hover:bg-eco-green-dark"
+                className="bg-brand-accent hover:bg-brand-accent/90"
               >
                 {category.title}
               </Button>
@@ -91,10 +112,10 @@ const FAQPage = () => {
           ) : (
             displayCategories.map((category) => (
               <Card key={category.id} className="overflow-hidden">
-                <CardHeader className="bg-eco-green/5">
-                  <CardTitle className="font-secondary flex items-center gap-2 text-xl">
-                    <div className="p-2 bg-eco-green/10 rounded-lg">
-                      <HelpCircle className="h-5 w-5 text-eco-green" />
+                <CardHeader className="bg-brand-accent/5">
+                  <CardTitle className="font-sora flex items-center gap-2 text-xl">
+                    <div className="p-2 bg-brand-accent/10 rounded-lg">
+                      <HelpCircle className="h-5 w-5 text-brand-accent" />
                     </div>
                     {category.title}
                   </CardTitle>
@@ -115,7 +136,7 @@ const FAQPage = () => {
                               {item.answer}
                             </p>
                             {item.relatedLink && (
-                              <Button asChild variant="link" className="p-0 h-auto text-eco-green">
+                              <Button asChild variant="link" className="p-0 h-auto text-brand-accent">
                                 <Link to={item.relatedLink.href} className="flex items-center gap-1">
                                   {item.relatedLink.text}
                                   <ExternalLink className="h-4 w-4" />
@@ -135,15 +156,15 @@ const FAQPage = () => {
 
         {/* Contact CTA */}
         <div className="max-w-2xl mx-auto">
-          <Card className="bg-gradient-to-r from-eco-green/10 to-eco-blue/10 border-eco-green/20">
+          <Card className="bg-gradient-to-r from-brand-accent/10 to-brand-primary/10 border-brand-accent/20">
             <CardContent className="p-8 text-center">
-              <MessageCircle className="h-12 w-12 text-eco-green mx-auto mb-4" />
-              <h3 className="font-primary text-2xl font-bold mb-4">Não encontrou sua resposta?</h3>
+              <MessageCircle className="h-12 w-12 text-brand-accent mx-auto mb-4" />
+              <h3 className="font-sora text-2xl font-bold mb-4">Não encontrou sua resposta?</h3>
               <p className="font-body text-muted-foreground mb-6">
                 Nossa equipe está pronta para esclarecer suas dúvidas específicas e fornecer orientação personalizada.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button asChild size="lg" className="bg-eco-green hover:bg-eco-green-dark">
+                <Button asChild size="lg" className="bg-brand-accent hover:bg-brand-accent/90 text-white">
                   <Link to="/contact">Fale Conosco</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">

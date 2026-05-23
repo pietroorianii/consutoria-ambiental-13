@@ -11,6 +11,7 @@ interface TeamMemberProps {
     image: string;
     bio: string;
     specialties: string[];
+    registro?: string; // CREA, CRQ ou outro registro profissional
   };
 }
 
@@ -35,7 +36,14 @@ export function TeamMemberCard({ member }: TeamMemberProps) {
       
       <div className="p-6">
         <h4 className="text-xl font-semibold mb-1">{member.name}</h4>
-        <p className="text-eco-green font-medium mb-4">{member.role}</p>
+        <p className="text-brand-accent font-medium mb-1">{member.role}</p>
+
+        {/* Registro profissional — opcional */}
+        {member.registro && (
+          <p className="text-xs text-muted-foreground font-mono mb-4">
+            {member.registro}
+          </p>
+        )}
         
         <p className="text-muted-foreground mb-5 text-sm leading-relaxed line-clamp-3">
           {member.bio}
@@ -43,7 +51,7 @@ export function TeamMemberCard({ member }: TeamMemberProps) {
         
         <div className="flex flex-wrap gap-2 mt-4">
           {member.specialties && member.specialties.map((specialty, index) => (
-            <Badge key={index} variant="outline" className="bg-eco-green/10 text-eco-green border-eco-green/20 py-1 px-3">
+            <Badge key={index} variant="outline" className="bg-brand-accent/10 text-brand-accent border-brand-accent/20 py-1 px-3">
               {specialty}
             </Badge>
           ))}
