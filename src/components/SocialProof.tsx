@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Building2, Award, Briefcase, Layers } from 'lucide-react';
 
 const metrics = [
-  { value: 500, suffix: '+', label: 'Empresas atendidas', icon: Building2 },
-  { value: 15, suffix: '+', label: 'Anos de experiência', icon: Award },
-  { value: 300, suffix: '+', label: 'Projetos entregues', icon: Briefcase },
-  { value: 6, suffix: '', label: 'Segmentos atendidos', icon: Layers },
+  { value: 300, suffix: '+', label: 'Processos conduzidos', icon: Briefcase },
+  { value: 100, suffix: '+', label: 'Clientes atendidos', icon: Building2 },
+  { value: 5, suffix: '+', label: 'Anos de atuação', icon: Award },
+  { value: 10, suffix: '', label: 'Segmentos atendidos', icon: Layers },
 ];
 
 function useCountUp(target: number, start: boolean, duration = 1400) {

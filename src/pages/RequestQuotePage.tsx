@@ -34,9 +34,9 @@ const RequestQuotePage = () => {
   return (
     <PageWrapper>
       <MetaTags 
-        title="Solicitação de Orçamento - EcoConsult | Consultoria Ambiental"
-        description="Solicite um orçamento personalizado para seu projeto ambiental. Formulário completo e processo ágil para atender suas necessidades."
-        keywords="orçamento consultoria ambiental, licenciamento ambiental preço, solicitação orçamento"
+        title="Solicitação de Orçamento — Solari Soluções Ambientais"
+        description="Solicite um orçamento personalizado para seu projeto ambiental no Paraná. Consultoria em licenciamento ambiental, outorgas, estudos técnicos e gestão de conformidade junto ao IAT."
+        keywords="orçamento consultoria ambiental, licenciamento ambiental Ponta Grossa, orçamento IAT Paraná, solicitação orçamento ambiental"
       />
       
       {/* Header com formato padronizado */}

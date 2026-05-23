@@ -142,8 +142,8 @@ export function HeroBanner() {
               className="flex flex-wrap items-stretch"
             >
               {[
-                { icon: <Users className="h-4 w-4 text-brand-accent" />, k: "15+", v: "anos de atuação" },
-                { icon: <FileCheck className="h-4 w-4 text-brand-accent" />, k: "300+", v: "processos aprovados" },
+                { icon: <Users className="h-4 w-4 text-brand-accent" />, k: "5+", v: "anos de atuação" },
+                { icon: <FileCheck className="h-4 w-4 text-brand-accent" />, k: "300+", v: "processos conduzidos" },
                 { icon: <ShieldCheck className="h-4 w-4 text-brand-accent" />, k: "100%", v: "foco em resultados" },
                 { icon: <MapPin className="h-4 w-4 text-brand-accent" />, k: "PR", v: "presença local" },
               ].map((s, i) => (
@@ -218,8 +218,8 @@ export function HeroBanner() {
                   <Leaf className="h-5 w-5 text-brand-accent" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-brand-cream font-sora">+300 licenças</div>
-                  <div className="text-[10px] text-brand-cream/60 font-inter">emitidas no PR</div>
+                  <div className="text-xs font-bold text-brand-cream font-sora">300+ processos</div>
+                  <div className="text-[10px] text-brand-cream/60 font-inter">conduzidos no PR</div>
                 </div>
               </motion.div>
 
