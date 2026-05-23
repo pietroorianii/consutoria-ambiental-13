@@ -4,10 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/cta-section";
 import { PageWrapper } from "@/components/ui/page-wrapper";
+import { PageBanner } from "@/components/ui/page-banner";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   ArrowRight,
-  CheckCircle2,
-  ChevronDown,
+  CheckCircle,
+  ExternalLink,
   Leaf,
   Droplet,
   TreePine,
@@ -18,542 +20,474 @@ import {
   ClipboardList,
   Globe2,
   Wind,
-  MessageCircle,
+  ChevronDown,
 } from "lucide-react";
 
-// ── Todos os dados de serviços inline para esta página ──────────────────────
-
+// ── Dados de todas as categorias ─────────────────────────────────────────────
 const ALL_CATEGORIES = [
   {
     id: "licensing",
-    color: "green",
+    color: "prisma-green" as const,
     accentHex: "#2A6F47",
     icon: Leaf,
-    tag: "LICENCIAMENTO",
+    badge: "LICENCIAMENTO",
     title: "Licenciamento e Autorizações Ambientais",
-    summary:
-      "Todas as modalidades conforme a nova regulamentação do IAT-PR — da dispensa ao licenciamento trifásico.",
+    description: "Todas as modalidades conforme a nova regulamentação do IAT-PR — da dispensa ao licenciamento trifásico.",
     services: [
-      { title: "DLAM — Declaração de Dispensa", desc: "Para atividades de baixo impacto (1–15 dias via SGA do IAT)." },
-      { title: "LAC — Licença por Adesão e Compromisso", desc: "Emissão eletrônica imediata para atividades padronizáveis." },
-      { title: "LAS — Licença Ambiental Simplificada", desc: "Processo unificado LP+LI+LO para pequeno porte (até 60 dias)." },
-      { title: "LP — Licença Prévia", desc: "Aprovação de viabilidade na fase de planejamento." },
-      { title: "LI — Licença de Instalação", desc: "Autoriza a implantação conforme projeto aprovado." },
-      { title: "LO — Licença de Operação", desc: "Autoriza o início das atividades após verificação das condicionantes." },
-      { title: "Regularização — LASR / LIR / LOR", desc: "Adequação de empreendimentos em situação irregular (PRA)." },
-      { title: "Autorizações AA e AF", desc: "Autorização Ambiental e Florestal para atividades específicas." },
+      { title: "DLAM — Declaração de Dispensa", description: "Para atividades de baixo impacto (1–15 dias via SGA do IAT)." },
+      { title: "LAC — Licença por Adesão e Compromisso", description: "Emissão eletrônica imediata para atividades padronizáveis." },
+      { title: "LAS — Licença Ambiental Simplificada", description: "Processo unificado LP+LI+LO para pequeno porte (até 60 dias)." },
+      { title: "LP / LI / LO — Licenciamento Trifásico", description: "Processo completo para empreendimentos de maior complexidade." },
+      { title: "Regularização — LASR / LIR / LOR", description: "Adequação de empreendimentos em situação irregular (PRA)." },
+      { title: "Autorizações Ambientais (AA) e Florestais (AF)", description: "Intervenções específicas em vegetação nativa e APP." },
     ],
+    mainDeliverables: ["DLAM / LAC / LAS completos", "LP / LI / LO trifásico", "LASR, LIR, LOR regularização"],
   },
   {
     id: "water_resources",
-    color: "blue",
+    color: "prisma-blue" as const,
     accentHex: "#0077C2",
     icon: Droplet,
-    tag: "RECURSOS HÍDRICOS",
+    badge: "RECURSOS HÍDRICOS",
     title: "Outorga e Recursos Hídricos",
-    summary:
-      "Direito legal de uso de águas superficiais e subterrâneas, captação e lançamento de efluentes no Paraná.",
+    description: "Direito legal de uso de águas superficiais e subterrâneas — captação e lançamento de efluentes no Paraná.",
     services: [
-      { title: "Outorga de Captação Superficial", desc: "Direito de uso em rios e lagos para irrigação, criação de animais e aquicultura." },
-      { title: "Outorga de Captação Subterrânea", desc: "Uso de poços artesianos com ART, testes e análise físico-química." },
-      { title: "Outorga de Lançamento de Efluentes", desc: "Direito de lançar efluentes tratados em corpos hídricos com DCP." },
-      { title: "Outorga de Barragem", desc: "Barramento de cursos d'água com projeto executivo e estudo hídrico." },
-      { title: "Estudos de Disponibilidade Hídrica", desc: "Análises técnicas para fundamentar pedidos de outorga." },
-      { title: "Monitoramento de Qualidade e Vazão", desc: "Atendimento de condicionantes de outorga vigentes." },
+      { title: "Outorga de Captação Superficial", description: "Irrigação, criação de animais e aquicultura em rios e lagos." },
+      { title: "Outorga de Captação Subterrânea", description: "Poços artesianos com ART, testes e análise físico-química." },
+      { title: "Outorga de Lançamento de Efluentes", description: "Lançamento de efluentes tratados com Declaração de Carga Poluidora." },
+      { title: "Outorga de Barragem", description: "Barramento de cursos d'água com projeto executivo e estudo hídrico." },
+      { title: "Estudos de Disponibilidade Hídrica", description: "Análises técnicas para fundamentar pedidos de outorga." },
+      { title: "Monitoramento de Qualidade e Vazão", description: "Atendimento de condicionantes de outorga vigentes." },
     ],
+    mainDeliverables: ["Outorgas superficiais e subterrâneas", "Outorgas de efluentes e barragens", "Estudos hídricos e monitoramento"],
   },
   {
     id: "degraded_areas",
-    color: "orange",
-    accentHex: "#E07A5F",
+    color: "prisma-yellow" as const,
+    accentHex: "#C17F00",
     icon: TreePine,
-    tag: "PASSIVOS AMBIENTAIS",
-    title: "Recuperação de Áreas e Passivos Ambientais",
-    summary:
-      "Da investigação à remediação completa de áreas degradadas e passivos ambientais.",
+    badge: "PASSIVOS AMBIENTAIS",
+    title: "Recuperação de Áreas e Passivos",
+    description: "Da investigação à remediação completa de áreas degradadas e passivos ambientais.",
     services: [
-      { title: "GAC — Investigação e Remediação", desc: "Ciclo completo da avaliação preliminar ao monitoramento pós-remediação." },
-      { title: "PRAD — Projeto de Recuperação", desc: "Projetos técnicos para restaurar ecossistemas e atender à lei." },
-      { title: "TAC — Assessoria para Ajuste de Conduta", desc: "Suporte técnico em negociação e cumprimento de acordos ambientais." },
-      { title: "Auditoria de Passivos Ambientais", desc: "Diagnóstico completo para M&A, fusões e due diligence." },
+      { title: "GAC — Investigação e Remediação", description: "Ciclo completo da avaliação preliminar ao monitoramento pós-remediação." },
+      { title: "PRAD — Projeto de Recuperação de Áreas Degradadas", description: "Projetos técnicos para restaurar ecossistemas e atender à lei." },
+      { title: "TAC — Assessoria para Ajuste de Conduta", description: "Suporte técnico em negociação e cumprimento de acordos ambientais." },
+      { title: "Auditoria de Passivos Ambientais", description: "Diagnóstico completo para M&A, fusões e due diligence." },
     ],
+    mainDeliverables: ["GAC e remediação completa", "PRAD elaboração e execução", "Assessoria TAC e auditoria"],
   },
   {
     id: "monitoring",
-    color: "blue",
+    color: "prisma-blue" as const,
     accentHex: "#1A759F",
     icon: Beaker,
-    tag: "MONITORAMENTO",
+    badge: "MONITORAMENTO",
     title: "Monitoramento e Análises Ambientais",
-    summary:
-      "Monitoramento contínuo e análises técnicas para conformidade e atendimento às condicionantes.",
+    description: "Monitoramento contínuo e análises técnicas para conformidade e atendimento às condicionantes de licença.",
     services: [
-      { title: "Emissões Atmosféricas", desc: "Controle de poluentes conforme condicionantes de licenças e SGADEA." },
-      { title: "Efluentes Líquidos", desc: "Análise e controle de qualidade de efluentes industriais e sanitários." },
-      { title: "Qualidade da Água", desc: "Acompanhamento de águas superficiais e subterrâneas." },
-      { title: "Gestão de Análises Laboratoriais", desc: "Coordenação de coletas com laboratórios credenciados INMETRO." },
-      { title: "Acompanhamento de Condicionantes", desc: "Gestão sistemática do cumprimento de condicionantes de licença." },
+      { title: "Monitoramento de Emissões Atmosféricas", description: "Controle de poluentes conforme condicionantes e SGADEA do IAT." },
+      { title: "Monitoramento de Efluentes Líquidos", description: "Análise e controle de qualidade de efluentes industriais e sanitários." },
+      { title: "Monitoramento da Qualidade da Água", description: "Acompanhamento de águas superficiais e subterrâneas." },
+      { title: "Gestão de Análises Laboratoriais", description: "Coordenação de coletas com laboratórios credenciados INMETRO." },
+      { title: "Acompanhamento de Condicionantes", description: "Gestão sistemática do cumprimento de todas as condicionantes." },
     ],
+    mainDeliverables: ["Emissões atmosféricas e SGADEA", "Efluentes líquidos e água", "Laboratórios credenciados"],
   },
   {
     id: "reports",
-    color: "green",
-    accentHex: "#3B7D59",
+    color: "prisma-green" as const,
+    accentHex: "#2A6F47",
     icon: FileText,
-    tag: "ESTUDOS TÉCNICOS",
+    badge: "ESTUDOS TÉCNICOS",
     title: "Estudos e Documentos Técnicos",
-    summary:
-      "Todos os instrumentos técnicos exigidos no licenciamento — do EIA ao PGRAD.",
+    description: "Todos os instrumentos técnicos exigidos no licenciamento ambiental — do EIA ao PRAD.",
     services: [
-      { title: "EIA/RIMA", desc: "Estudo de Impacto Ambiental para empreendimentos de significativo impacto." },
-      { title: "RAP / RAS", desc: "Relatórios Ambientais Prévios e Simplificados por modalidade de licença." },
-      { title: "MCE — Memorial de Caracterização", desc: "Documento técnico detalhado exigido em LAC, LAS e LP." },
-      { title: "PGRS / PGRSS / PGRCC", desc: "Planos de gerenciamento de resíduos sólidos por setor." },
-      { title: "PCA / PRAD / PRF", desc: "Controle, recuperação de áreas e resgate da flora." },
-      { title: "Plano de Automonitoramento", desc: "Efluentes, resíduos e parâmetros de condicionantes de LO." },
+      { title: "EIA / RIMA", description: "Estudo de Impacto Ambiental para empreendimentos de significativo impacto." },
+      { title: "RAP / RAS — Relatórios Ambientais", description: "Relatórios prévios e simplificados conforme modalidade de licença." },
+      { title: "MCE — Memorial de Caracterização", description: "Documento técnico detalhado exigido em LAC, LAS e LP." },
+      { title: "PGRS / PGRSS / PGRCC", description: "Planos de gerenciamento de resíduos sólidos por setor." },
+      { title: "PCA / PRAD / PRF", description: "Controle ambiental, recuperação de áreas e resgate da flora." },
+      { title: "Plano de Automonitoramento", description: "Efluentes, resíduos e parâmetros de condicionantes de LO." },
     ],
+    mainDeliverables: ["EIA / RIMA / RAS / MCE", "PGRS / PGRSS / PGRCC", "PCA / PRAD / PRF"],
   },
   {
     id: "consulting",
-    color: "teal",
-    accentHex: "#00A3AD",
+    color: "prisma-blue" as const,
+    accentHex: "#0077C2",
     icon: Users,
-    tag: "CONSULTORIA",
+    badge: "CONSULTORIA",
     title: "Consultoria Ambiental Especializada",
-    summary:
-      "Assessoria técnica estratégica, auditorias, defesas e adequações regulatórias.",
+    description: "Assessoria técnica estratégica, auditorias, defesas administrativas e adequações regulatórias.",
     services: [
-      { title: "Auditorias Ambientais", desc: "Conformidade legal, desempenho ambiental e due diligence." },
-      { title: "Defesas e Recursos Ambientais", desc: "Elaboração de defesas para autos de infração e recursos administrativos." },
-      { title: "Assessoria para TAC", desc: "Suporte técnico em Termos de Ajuste de Conduta ambiental." },
-      { title: "Perícia Ambiental", desc: "Avaliação técnica para processos judiciais e administrativos." },
-      { title: "Geotecnologias (SIG)", desc: "Mapeamento e análise ambiental com Sistemas de Informação Geográfica." },
-      { title: "Certificações — ISO 14001", desc: "Assessoria para certificações de gestão ambiental." },
+      { title: "Auditorias Ambientais", description: "Conformidade legal, desempenho ambiental e due diligence." },
+      { title: "Defesas e Recursos Ambientais", description: "Elaboração de defesas para autos de infração e recursos administrativos." },
+      { title: "Assessoria para TAC", description: "Suporte técnico em Termos de Ajuste de Conduta ambiental." },
+      { title: "Perícia Ambiental", description: "Avaliação técnica para processos judiciais e administrativos." },
+      { title: "Geotecnologias (SIG)", description: "Mapeamento e análise ambiental com Sistemas de Informação Geográfica." },
+      { title: "Certificações — ISO 14001", description: "Assessoria para certificações de gestão ambiental." },
     ],
+    mainDeliverables: ["Auditorias e defesas", "Perícia e assessoria TAC", "SIG e certificações ISO"],
   },
   {
     id: "training",
-    color: "green",
+    color: "prisma-green" as const,
     accentHex: "#2A6F47",
     icon: GraduationCap,
-    tag: "CAPACITAÇÃO",
-    title: "Treinamentos e Capacitações Ambientais",
-    summary:
-      "Programas de educação e capacitação técnica para equipes, da legislação às emergências.",
+    badge: "CAPACITAÇÃO",
+    title: "Treinamentos e Capacitações",
+    description: "Programas de educação ambiental e capacitação técnica para equipes de todos os setores.",
     services: [
-      { title: "Legislação Ambiental", desc: "Capacitação sobre normas do IAT e legislação aplicável por setor." },
-      { title: "Gerenciamento de Resíduos Sólidos", desc: "Treinamento certificado em PGRS (Lei nº 12.305/2010)." },
-      { title: "Atendimento a Emergências", desc: "Capacitação para resposta rápida a incidentes ambientais." },
-      { title: "Capacitações Setoriais", desc: "Programas específicos para indústria, agronegócio e construção." },
+      { title: "Legislação Ambiental", description: "Capacitação sobre normas do IAT e legislação aplicável por setor." },
+      { title: "Gerenciamento de Resíduos Sólidos", description: "Treinamento certificado em PGRS (Lei nº 12.305/2010)." },
+      { title: "Atendimento a Emergências Ambientais", description: "Capacitação para resposta rápida a incidentes ambientais." },
+      { title: "Capacitações Setoriais", description: "Programas específicos para indústria, agronegócio e construção." },
     ],
+    mainDeliverables: ["Legislação e normas IAT", "PGRS certificado", "Emergências e setorial"],
   },
   {
     id: "management",
-    color: "blue",
+    color: "prisma-blue" as const,
     accentHex: "#0077C2",
     icon: ClipboardList,
-    tag: "GESTÃO CONTÍNUA",
+    badge: "GESTÃO CONTÍNUA",
     title: "Gestão Ambiental Contínua",
-    summary:
-      "Manutenção da conformidade pós-licença: renovações, declarações e suporte permanente.",
+    description: "Manutenção da conformidade pós-licença: renovações, declarações e suporte permanente.",
     services: [
-      { title: "Gestão de Requisitos Legais", desc: "Sistema de gestão de obrigações ambientais e controle de prazos." },
-      { title: "Renovação de Licenças (LO)", desc: "Acompanhamento e renovação com antecedência mínima de 120 dias." },
-      { title: "Renovação de Outorgas", desc: "Controle de vencimentos e renovação no SIGARH." },
-      { title: "Declarações Anuais e SGA IR", desc: "Inventários e relatórios obrigatórios aos órgãos ambientais." },
-      { title: "Suporte Técnico Contínuo", desc: "Assessoria permanente para questões ambientais do dia a dia." },
+      { title: "Gestão de Requisitos Legais", description: "Sistema de gestão de obrigações ambientais e controle de prazos." },
+      { title: "Renovação de Licenças (LO)", description: "Acompanhamento e renovação com antecedência mínima de 120 dias." },
+      { title: "Renovação de Outorgas", description: "Controle de vencimentos e renovação no SIGARH." },
+      { title: "Relatórios e Declarações — SGA IR", description: "Inventários e relatórios obrigatórios aos órgãos ambientais." },
+      { title: "Suporte Técnico Contínuo", description: "Assessoria permanente para questões ambientais do dia a dia." },
     ],
+    mainDeliverables: ["Renovação de LO e outorgas", "SGA IR declarações", "Suporte permanente"],
   },
   {
     id: "esg",
-    color: "teal",
-    accentHex: "#4DA1A9",
+    color: "prisma-green" as const,
+    accentHex: "#3B7D59",
     icon: Globe2,
-    tag: "ESG",
+    badge: "ESG",
     title: "Consultoria ESG",
-    summary:
-      "Critérios ambientais, sociais e de governança para competitividade e sustentabilidade corporativa.",
+    description: "Critérios ambientais, sociais e de governança para competitividade e sustentabilidade corporativa.",
     services: [
-      { title: "Diagnóstico e Estratégia ESG", desc: "Avaliação completa e desenvolvimento de estratégias customizadas." },
-      { title: "Relatórios de Sustentabilidade", desc: "Elaboração conforme GRI, SASB, TCFD e outros frameworks." },
-      { title: "Análise de Riscos ESG", desc: "Identificação de riscos e oportunidades ambientais e de governança." },
-      { title: "Engajamento com Stakeholders", desc: "Comunicação com investidores, comunidades e colaboradores." },
-      { title: "Políticas Corporativas ESG", desc: "Desenvolvimento de políticas e indicadores de desempenho." },
+      { title: "Diagnóstico e Estratégia ESG", description: "Avaliação completa e desenvolvimento de estratégias customizadas." },
+      { title: "Relatórios de Sustentabilidade", description: "Elaboração conforme GRI, SASB, TCFD e outros frameworks." },
+      { title: "Análise de Riscos ESG", description: "Identificação de riscos e oportunidades ambientais e de governança." },
+      { title: "Engajamento com Stakeholders", description: "Comunicação com investidores, comunidades e colaboradores." },
+      { title: "Políticas Corporativas ESG", description: "Desenvolvimento de políticas e indicadores de desempenho." },
     ],
+    mainDeliverables: ["Diagnóstico e estratégia", "Relatórios GRI / SASB / TCFD", "Políticas e indicadores"],
   },
   {
     id: "climate",
-    color: "green",
-    accentHex: "#3B7D59",
+    color: "prisma-blue" as const,
+    accentHex: "#1A759F",
     icon: Wind,
-    tag: "CLIMA",
+    badge: "CLIMA",
     title: "Mudanças Climáticas e Descarbonização",
-    summary:
-      "Gestão de riscos climáticos, inventários de GEE, planos de descarbonização e créditos de carbono.",
+    description: "Gestão de riscos climáticos, inventários de GEE, planos de descarbonização e créditos de carbono.",
     services: [
-      { title: "Inventários de GEE", desc: "Inventários corporativos conforme ISO 14064 com verificação terceirizada." },
-      { title: "Planos de Descarbonização", desc: "Estratégias de redução e roadmap para neutralidade carbônica." },
-      { title: "Análise de Vulnerabilidade Climática", desc: "Riscos físicos e de transição para adaptação empresarial." },
-      { title: "Projetos de Crédito de Carbono", desc: "Desenvolvimento desde a concepção até a comercialização." },
-      { title: "Economia Circular", desc: "Implementação de estratégias e modelos de negócio sustentáveis." },
+      { title: "Inventários de GEE", description: "Inventários corporativos conforme ISO 14064 com verificação terceirizada." },
+      { title: "Planos de Descarbonização", description: "Estratégias de redução e roadmap para neutralidade carbônica." },
+      { title: "Análise de Vulnerabilidade Climática", description: "Riscos físicos e de transição para adaptação empresarial." },
+      { title: "Projetos de Crédito de Carbono", description: "Desenvolvimento desde a concepção até a comercialização." },
+      { title: "Economia Circular", description: "Implementação de estratégias e modelos de negócio sustentáveis." },
     ],
+    mainDeliverables: ["Inventários GEE ISO 14064", "Descarbonização e créditos", "Economia circular"],
   },
 ];
 
-// Paleta de cores por tipo
-const COLOR_MAP: Record<string, { bg: string; border: string; badge: string; dot: string; check: string }> = {
-  green:  { bg: "bg-[#2A6F47]/8",  border: "border-[#2A6F47]/20",  badge: "bg-[#2A6F47]/10 text-[#2A6F47]",  dot: "bg-[#2A6F47]",  check: "text-[#2A6F47]" },
-  blue:   { bg: "bg-[#0077C2]/8",  border: "border-[#0077C2]/20",  badge: "bg-[#0077C2]/10 text-[#0077C2]",  dot: "bg-[#0077C2]",  check: "text-[#0077C2]" },
-  orange: { bg: "bg-[#E07A5F]/8",  border: "border-[#E07A5F]/20",  badge: "bg-[#E07A5F]/10 text-[#E07A5F]",  dot: "bg-[#E07A5F]",  check: "text-[#E07A5F]" },
-  teal:   { bg: "bg-[#00A3AD]/8",  border: "border-[#00A3AD]/20",  badge: "bg-[#00A3AD]/10 text-[#00A3AD]",  dot: "bg-[#00A3AD]",  check: "text-[#00A3AD]" },
-};
-
-// ── Componente de card de categoria ─────────────────────────────────────────
-function CategoryCard({ cat, index }: { cat: (typeof ALL_CATEGORIES)[0]; index: number }) {
+// ── Card individual — mesmo padrão visual do ServiceGroupCard da home ─────────
+function ServiceCard({
+  cat,
+  index,
+}: {
+  cat: (typeof ALL_CATEGORIES)[0];
+  index: number;
+}) {
   const [open, setOpen] = useState(false);
-  const c = COLOR_MAP[cat.color] ?? COLOR_MAP.green;
   const Icon = cat.icon;
+
+  const isGreen = cat.color === "prisma-green";
+  const isBlue = cat.color === "prisma-blue";
+  // prisma-yellow for the rest
+
+  const accentText = isGreen
+    ? "text-prisma-green"
+    : isBlue
+    ? "text-prisma-blue"
+    : "text-prisma-yellow";
+
+  const accentBorder = isGreen
+    ? "hover:border-prisma-green/50 hover:to-prisma-green/15"
+    : isBlue
+    ? "hover:border-prisma-blue/50 hover:to-prisma-blue/15"
+    : "hover:border-prisma-yellow/50 hover:to-prisma-yellow/15";
+
+  const accentBg = isGreen
+    ? "from-prisma-green/5 via-prisma-green/10 to-prisma-green/20"
+    : isBlue
+    ? "from-prisma-blue/5 via-prisma-blue/10 to-prisma-blue/20"
+    : "from-prisma-yellow/5 via-prisma-yellow/10 to-prisma-yellow/20";
+
+  const accentIconBg = isGreen
+    ? "from-prisma-green/20 to-emerald-300/30 group-hover:from-prisma-green/40 group-hover:to-emerald-300/50"
+    : isBlue
+    ? "from-prisma-blue/20 to-blue-300/30 group-hover:from-prisma-blue/40 group-hover:to-blue-300/50"
+    : "from-prisma-yellow/20 to-yellow-300/30 group-hover:from-prisma-yellow/40 group-hover:to-yellow-300/50";
+
+  const accentBadge = isGreen
+    ? "bg-gradient-to-r from-prisma-green/20 to-emerald-300/30 text-prisma-green group-hover:from-prisma-green/40"
+    : isBlue
+    ? "bg-gradient-to-r from-prisma-blue/20 to-blue-300/30 text-prisma-blue group-hover:from-prisma-blue/40"
+    : "bg-gradient-to-r from-prisma-yellow/20 to-yellow-300/30 text-prisma-yellow group-hover:from-prisma-yellow/40";
+
+  const accentTopBar = isGreen
+    ? "from-prisma-green to-emerald-400"
+    : isBlue
+    ? "from-prisma-blue to-blue-400"
+    : "from-prisma-yellow to-yellow-400";
+
+  const accentButtonOutline = isGreen
+    ? "border-prisma-green/30 text-prisma-green hover:bg-prisma-green hover:text-white"
+    : isBlue
+    ? "border-prisma-blue/30 text-prisma-blue hover:bg-prisma-blue hover:text-white"
+    : "border-prisma-yellow/30 text-prisma-yellow hover:bg-prisma-yellow hover:text-white";
+
+  const accentButtonFill = isGreen
+    ? "bg-prisma-green hover:bg-prisma-green/90"
+    : isBlue
+    ? "bg-prisma-blue hover:bg-prisma-blue/90"
+    : "bg-prisma-yellow hover:bg-prisma-yellow/90 text-gray-900";
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-      className={`rounded-2xl border ${c.border} bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden`}
     >
-      {/* Header clicável */}
-      <button
-        className="w-full text-left p-6 flex items-start gap-4 group"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
+      <Card
+        className={`group relative overflow-hidden transition-all duration-300 bg-gradient-to-br from-white via-white to-prisma-green/5 border-2 border-prisma-gray-light/30 ${accentBorder} h-full flex flex-col hover:shadow-xl hover:-translate-y-2 shadow-md`}
       >
-        {/* Ícone */}
+        {/* Gradiente de fundo no hover */}
         <div
-          className={`flex-shrink-0 w-12 h-12 rounded-xl ${c.bg} flex items-center justify-center transition-transform duration-300 group-hover:scale-105`}
-        >
-          <Icon className="h-6 w-6" style={{ color: cat.accentHex }} />
-        </div>
+          className={`absolute inset-0 bg-gradient-to-br ${accentBg} opacity-0 group-hover:opacity-100 transition-all duration-700`}
+        />
 
-        {/* Texto */}
-        <div className="flex-1 min-w-0">
-          <span className={`inline-block text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full mb-2 ${c.badge}`}>
-            {cat.tag}
-          </span>
-          <h3 className="text-base font-bold text-gray-900 leading-snug font-sora mb-1">
-            {cat.title}
-          </h3>
-          <p className="text-sm text-gray-500 font-inter leading-relaxed line-clamp-2">
-            {cat.summary}
-          </p>
-        </div>
+        {/* Linha de acento no topo — cresce no hover */}
+        <div
+          className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${accentTopBar} opacity-60 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100`}
+        />
 
-        {/* Contador + chevron */}
-        <div className="flex-shrink-0 flex flex-col items-end gap-2 ml-2">
-          <span className={`text-xs font-semibold px-2 py-1 rounded-full ${c.badge}`}>
-            {cat.services.length} serviços
-          </span>
-          <ChevronDown
-            className={`h-4 w-4 text-gray-400 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-          />
-        </div>
-      </button>
+        <CardHeader className="text-center pb-2 relative z-10 pt-8">
+          {/* Ícone 96×96 — mesmo padrão da home */}
+          <div className="relative mb-5 mx-auto w-24 h-24">
+            <div
+              className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${accentIconBg} transition-all duration-500 group-hover:rotate-12 group-hover:scale-110`}
+            />
+            <div className="relative w-full h-full flex items-center justify-center bg-white/90 rounded-2xl group-hover:bg-white transition-all duration-500 group-hover:-rotate-6 shadow-lg group-hover:shadow-2xl">
+              <Icon
+                className={`h-10 w-10 ${accentText} group-hover:scale-125 transition-all duration-500`}
+              />
+            </div>
+          </div>
 
-      {/* Lista de serviços expansível */}
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
+          {/* Badge */}
+          <div className="mb-3">
+            <span
+              className={`inline-block px-4 py-1.5 text-xs font-bold rounded-full ${accentBadge} group-hover:scale-105 transition-all duration-300 uppercase tracking-widest shadow-sm`}
+            >
+              {cat.badge}
+            </span>
+          </div>
+
+          {/* Título */}
+          <CardTitle
+            className={`text-lg font-bold leading-snug mb-2 ${accentText} transition-colors duration-300`}
+            style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            <div className={`border-t ${c.border} mx-6`} />
-            <div className="p-6 pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {cat.services.map((svc, i) => (
-                <div key={i} className="flex items-start gap-2.5 group/item">
-                  <CheckCircle2
-                    className={`h-4 w-4 mt-0.5 flex-shrink-0 ${c.check}`}
+            {cat.title}
+          </CardTitle>
+
+          {/* Descrição */}
+          <p
+            className="text-sm text-prisma-gray-text/75 leading-relaxed"
+            style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+          >
+            {cat.description}
+          </p>
+        </CardHeader>
+
+        <CardContent className="px-6 pb-4 flex-grow relative z-10 flex flex-col">
+          {/* Principais Entregas */}
+          <div className="mb-4">
+            <h4
+              className="text-sm font-bold text-prisma-gray-text mb-3 uppercase tracking-wide"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Principais Entregas
+            </h4>
+            <ul className="space-y-2">
+              {cat.mainDeliverables.map((d, i) => (
+                <li key={i} className="flex items-center gap-2.5">
+                  <CheckCircle
+                    className={`h-4 w-4 flex-shrink-0 ${accentText}`}
                   />
-                  <div>
-                    <p className="text-sm font-semibold text-gray-800 font-sora leading-snug">
-                      {svc.title}
-                    </p>
-                    <p className="text-xs text-gray-500 font-inter leading-relaxed mt-0.5">
-                      {svc.desc}
-                    </p>
-                  </div>
-                </div>
+                  <span
+                    className="text-sm text-prisma-gray-text/90"
+                    style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+                  >
+                    {d}
+                  </span>
+                </li>
               ))}
-            </div>
-            {/* Botões de ação */}
-            <div className="px-6 pb-5 flex gap-3">
-              <Button
-                asChild
-                size="sm"
-                className="flex-1 rounded-xl text-white font-semibold transition-all hover:scale-[1.02]"
-                style={{ backgroundColor: cat.accentHex }}
+            </ul>
+          </div>
+
+          {/* Serviços expansíveis */}
+          <div className="border-t border-prisma-gray-light/40 pt-3">
+            <button
+              className={`flex items-center justify-between w-full text-sm font-semibold ${accentText} hover:opacity-80 transition-opacity`}
+              onClick={() => setOpen((v) => !v)}
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              <span>Ver todos os {cat.services.length} serviços</span>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            <AnimatePresence initial={false}>
+              {open && (
+                <motion.div
+                  key="svc-list"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.28, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-3 space-y-2">
+                    {cat.services.map((svc, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-2 p-2.5 rounded-lg hover:bg-prisma-gray-light/30 transition-colors group/svc"
+                      >
+                        <ExternalLink
+                          className={`h-3.5 w-3.5 mt-0.5 flex-shrink-0 ${accentText} opacity-60 group-hover/svc:opacity-100`}
+                        />
+                        <div>
+                          <p
+                            className="text-sm font-semibold text-prisma-gray-text leading-snug"
+                            style={{ fontFamily: "'Outfit', sans-serif" }}
+                          >
+                            {svc.title}
+                          </p>
+                          <p
+                            className="text-xs text-prisma-gray-text/65 leading-relaxed mt-0.5"
+                            style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+                          >
+                            {svc.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </CardContent>
+
+        {/* Footer com botões — mesmo padrão da home */}
+        <div className="mt-auto p-5 pt-3 border-t border-prisma-gray-light/40 bg-gradient-to-r from-prisma-gray-light/10 to-prisma-gray-light/20 group-hover:from-prisma-gray-light/20 group-hover:to-prisma-gray-light/30 transition-all duration-300 relative z-10">
+          <div className="flex gap-2.5">
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className={`flex-1 ${accentButtonOutline} transition-all duration-300 font-semibold`}
+              style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+            >
+              <Link
+                to={`/services/${cat.id}`}
+                className="flex items-center justify-center gap-1.5"
               >
-                <Link to="/request-quote" className="flex items-center justify-center gap-2">
-                  Solicitar orçamento
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="sm"
-                className="rounded-xl border-gray-200 text-gray-600 hover:bg-gray-50"
-              >
-                <Link to={`/services/${cat.id}`} className="flex items-center gap-1.5">
-                  Ver detalhes
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                Explorar
+                <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+
+            <Button
+              asChild
+              size="sm"
+              className={`flex-1 ${accentButtonFill} text-white transition-all duration-300 font-semibold shadow-md hover:shadow-lg`}
+              style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+            >
+              <Link to="/request-quote">Orçamento</Link>
+            </Button>
+          </div>
+        </div>
+      </Card>
     </motion.div>
   );
 }
 
-// ── Página principal ─────────────────────────────────────────────────────────
+// ── Página de Serviços ────────────────────────────────────────────────────────
 const ServicesPage = () => {
-  const [expandAll, setExpandAll] = useState(false);
-
   return (
     <PageWrapper>
-      {/* ── Hero da página ── */}
-      <div className="relative bg-brand-dark text-brand-cream overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1600&h=600"
-          alt="Rio e floresta preservada"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-brand-dark/60" />
+      {/* Banner idêntico ao original, com a foto da floresta */}
+      <PageBanner
+        title="Nossos Serviços"
+        description="Licenciamento ambiental, autorizações florestais, outorgas, estudos técnicos, monitoramento e gestão de conformidade — soluções especializadas para conformidade legal no Paraná."
+        icon={<Leaf />}
+        iconColor="green"
+        image="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600"
+      />
 
-        <div className="container relative z-10 py-20 md:py-28">
+      {/* Introdução e contagem */}
+      <section className="container pt-14 pb-4">
+        <div className="text-center max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase bg-brand-accent/15 text-brand-accent border border-brand-accent/30 mb-6">
-              <Leaf className="h-3 w-3" />
-              Consultoria Ambiental · IAT-PR · 2025/2026
-            </span>
-            <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] mb-6">
-              Todos os nossos{" "}
-              <span className="text-brand-accent">serviços</span>
-            </h1>
-            <p className="font-inter text-lg text-brand-cream/75 leading-relaxed max-w-2xl mb-8">
-              10 frentes de atuação, {ALL_CATEGORIES.reduce((acc, c) => acc + c.services.length, 0)} serviços especializados.
-              Clique em qualquer área para ver a lista completa — ou solicite um orçamento direto.
+            <h2
+              className="text-2xl md:text-3xl font-bold text-prisma-gray-text mb-3"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              10 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
+            </h2>
+            <p
+              className="text-prisma-gray-text/70 leading-relaxed mb-6"
+              style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+            >
+              Clique em <strong>Explorar</strong> para ver detalhes de cada área ou em{" "}
+              <strong>Ver todos os serviços</strong> para expandir a lista completa dentro do card.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="rounded-2xl bg-brand-accent hover:bg-brand-accent/90 text-white font-semibold px-7">
-                <Link to="/request-quote" className="flex items-center gap-2">
-                  Solicitar orçamento <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-2xl border-brand-cream/25 bg-brand-cream/5 text-brand-cream hover:bg-brand-cream/15 px-7">
-                <Link to="/contact" className="flex items-center gap-2">
-                  <MessageCircle className="h-5 w-5" /> Falar com especialista
-                </Link>
-              </Button>
-            </div>
+            <div className="h-1 w-20 bg-prisma-green rounded-full mx-auto" />
           </motion.div>
         </div>
+      </section>
 
-        {/* Barra de stats */}
-        <div className="relative z-10 border-t border-brand-cream/10">
-          <div className="container py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { n: "10", label: "Áreas de atuação" },
-                { n: `${ALL_CATEGORIES.reduce((acc, c) => acc + c.services.length, 0)}+`, label: "Serviços disponíveis" },
-                { n: "300+", label: "Processos aprovados" },
-                { n: "15+", label: "Anos de experiência" },
-              ].map((s) => (
-                <div key={s.n} className="text-center">
-                  <div className="font-sora text-2xl font-bold text-brand-accent">{s.n}</div>
-                  <div className="text-xs text-brand-cream/60 font-inter mt-0.5">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Grid de categorias ── */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container">
-          {/* Cabeçalho da seção */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 font-sora mb-2">
-                Nossas áreas de atuação
-              </h2>
-              <p className="text-gray-500 font-inter text-sm">
-                Clique em cada área para expandir a lista de serviços
-              </p>
-            </div>
-            <button
-              onClick={() => setExpandAll((v) => !v)}
-              className="text-sm font-semibold text-brand-accent hover:text-brand-accent/80 underline underline-offset-4 transition-colors self-start md:self-auto"
-            >
-              {expandAll ? "Recolher todas" : "Expandir todas"}
-            </button>
-          </div>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {ALL_CATEGORIES.map((cat, i) => (
-              <CategoryCardControlled key={cat.id} cat={cat} index={i} forceOpen={expandAll} />
-            ))}
-          </div>
+      {/* Grid de cards */}
+      <section className="container py-10 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
+          {ALL_CATEGORIES.map((cat, i) => (
+            <ServiceCard key={cat.id} cat={cat} index={i} />
+          ))}
         </div>
       </section>
 
-      {/* ── Bloco de diferenciais ── */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 font-sora mb-3">
-              Por que escolher a SOLARI?
-            </h2>
-            <p className="text-gray-500 font-inter max-w-xl mx-auto">
-              Mais de 15 anos conduzindo processos junto ao IAT-PR com metodologia rigorosa e acompanhamento completo.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                icon: "🎯",
-                title: "Especialização profunda",
-                desc: "Toda a equipe atua exclusivamente na área ambiental — licenciamento, outorgas, estudos e conformidade.",
-              },
-              {
-                icon: "⚡",
-                title: "Processo ágil e transparente",
-                desc: "Acompanhamento em tempo real de cada etapa do processo junto ao IAT, com comunicação proativa.",
-              },
-              {
-                icon: "🛡️",
-                title: "Segurança jurídica total",
-                desc: "Documentação técnica rigorosa e atualizada conforme as INs do IAT vigentes em 2025/2026.",
-              },
-            ].map((d) => (
-              <div key={d.title} className="text-center p-6 rounded-2xl bg-gray-50 border border-gray-100">
-                <div className="text-4xl mb-4">{d.icon}</div>
-                <h3 className="font-bold text-gray-900 font-sora mb-2">{d.title}</h3>
-                <p className="text-sm text-gray-500 font-inter leading-relaxed">{d.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA final ── */}
+      {/* CTA final */}
       <CTASection />
     </PageWrapper>
   );
 };
-
-// Versão controlada externamente (para "expandir todas")
-function CategoryCardControlled({
-  cat,
-  index,
-  forceOpen,
-}: {
-  cat: (typeof ALL_CATEGORIES)[0];
-  index: number;
-  forceOpen: boolean;
-}) {
-  const [localOpen, setLocalOpen] = useState(false);
-  const open = forceOpen || localOpen;
-  const c = COLOR_MAP[cat.color] ?? COLOR_MAP.green;
-  const Icon = cat.icon;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-      className={`rounded-2xl border ${c.border} bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden`}
-    >
-      {/* Header clicável */}
-      <button
-        className="w-full text-left p-6 flex items-start gap-4 group"
-        onClick={() => setLocalOpen((v) => !v)}
-        aria-expanded={open}
-      >
-        <div className={`flex-shrink-0 w-12 h-12 rounded-xl ${c.bg} flex items-center justify-center transition-transform duration-300 group-hover:scale-105`}>
-          <Icon className="h-6 w-6" style={{ color: cat.accentHex }} />
-        </div>
-        <div className="flex-1 min-w-0">
-          <span className={`inline-block text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full mb-2 ${c.badge}`}>
-            {cat.tag}
-          </span>
-          <h3 className="text-base font-bold text-gray-900 leading-snug font-sora mb-1">{cat.title}</h3>
-          <p className="text-sm text-gray-500 font-inter leading-relaxed line-clamp-2">{cat.summary}</p>
-        </div>
-        <div className="flex-shrink-0 flex flex-col items-end gap-2 ml-2">
-          <span className={`text-xs font-semibold px-2 py-1 rounded-full ${c.badge}`}>
-            {cat.services.length} serviços
-          </span>
-          <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
-        </div>
-      </button>
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className={`border-t ${c.border} mx-6`} />
-            <div className="p-6 pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {cat.services.map((svc, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <CheckCircle2 className={`h-4 w-4 mt-0.5 flex-shrink-0 ${c.check}`} />
-                  <div>
-                    <p className="text-sm font-semibold text-gray-800 font-sora leading-snug">{svc.title}</p>
-                    <p className="text-xs text-gray-500 font-inter leading-relaxed mt-0.5">{svc.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="px-6 pb-5 flex gap-3">
-              <Button
-                asChild
-                size="sm"
-                className="flex-1 rounded-xl text-white font-semibold transition-all hover:scale-[1.02]"
-                style={{ backgroundColor: cat.accentHex }}
-              >
-                <Link to="/request-quote" className="flex items-center justify-center gap-2">
-                  Solicitar orçamento <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="sm" className="rounded-xl border-gray-200 text-gray-600 hover:bg-gray-50">
-                <Link to={`/services/${cat.id}`} className="flex items-center gap-1.5">
-                  Ver detalhes
-                </Link>
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-}
 
 export default ServicesPage;

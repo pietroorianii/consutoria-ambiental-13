@@ -100,12 +100,14 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     line-height: 1.7;
     letter-spacing: 0;
     font-weight: 400;
     overflow-x: hidden;
-    /* Subtle grain texture overlay */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   html {
@@ -133,34 +135,37 @@
     }
   }
 
+  /* ── Tipografia global padronizada: Outfit para títulos, DM Sans para corpo ── */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
-    font-family: 'Outfit', sans-serif;
-    letter-spacing: 0;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    -webkit-font-smoothing: antialiased;
   }
 
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
-    line-height: 1.2;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl;
-    line-height: 1.3;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl;
-    line-height: 1.3;
-  }
-
-  h4 {
-    @apply text-xl md:text-2xl;
-    line-height: 1.4;
-  }
+  h1 { font-size: clamp(2rem, 5vw, 3.75rem); }
+  h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+  h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
+  h4 { font-size: clamp(1rem, 2vw, 1.35rem); }
 
   p {
     @apply leading-7;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  /* Anula qualquer uso de Poppins ou Montserrat que não está carregado */
+  [style*="Poppins"], [style*="Montserrat"] {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+  }
+
+  /* Classes utilitárias de fonte explícitas */
+  .font-sora, .font-outfit, .font-display, .font-montserrat, .font-poppins {
+    font-family: 'Outfit', system-ui, sans-serif !important;
+  }
+
+  .font-inter, .font-dm-sans, .font-body {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
   }
 }
 
