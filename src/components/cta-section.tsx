@@ -21,21 +21,19 @@ export function CTASection() {
             </div>
 
             <h2 className="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-brand-cream mb-6">
-              Pronto para transformar sua{" "}
-              <span className="text-brand-accent">gestão ambiental?</span>
+              Pronto para regularizar sua <span className="text-brand-accent">empresa?</span>
             </h2>
 
             <div className="h-1 w-24 bg-brand-accent/60 rounded-full mx-auto mb-8" />
 
             <p className="font-inter max-w-2xl mx-auto mb-10 text-brand-cream/85 text-lg leading-relaxed">
-              Entre em contato com nossa equipe e descubra como podemos ajudar sua empresa
-              a atingir a conformidade ambiental com soluções personalizadas.
+              Fale com um especialista hoje. Diagnóstico inicial sem custo.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button asChild size="lg" className="bg-brand-accent hover:bg-brand-accent/90 text-white rounded-2xl px-8 py-6 shadow-lg shadow-brand-accent/20 transition-shadow hover:shadow-xl">
                 <Link to="/request-quote" className="flex items-center gap-3 text-base font-medium">
-                  Solicitar Orçamento
+                  Solicitar diagnóstico gratuito
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>

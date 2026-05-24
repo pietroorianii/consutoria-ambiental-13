@@ -27,56 +27,56 @@ const services: ShowcaseService[] = [
   {
     icon: Scale,
     title: "Licenciamento Ambiental",
-    description: "DLAM, LAC, LAS, LP, LI e LO com segurança jurídica e agilidade técnica.",
+    description: "Da dispensa (DLAM) ao licenciamento completo (LP, LI, LO). Enquadramos sua atividade na modalidade certa.",
     tag: "Licenciamento",
     href: "/service/licensing",
   },
   {
     icon: FileCheck,
     title: "Autorizações AA e AF",
-    description: "Supressão de vegetação, manejo florestal e autorizações específicas.",
+    description: "Autorização para corte, supressão de vegetação e intervenção em APP. Processo junto ao IAT.",
     tag: "Autorizações",
     href: "/service/authorizations",
   },
   {
     icon: Droplets,
     title: "Outorga de Recursos Hídricos",
-    description: "Captação, lançamento e regularização hídrica via SIGARH.",
+    description: "Direito legal de uso da água. Captação superficial, poço artesiano e lançamento de efluentes via SIGARH.",
     tag: "Recursos Hídricos",
     href: "/service/water_grants",
   },
   {
     icon: FlaskConical,
     title: "Estudos Ambientais",
-    description: "EIA/RIMA, RAS, MCE, PBA e PACUERA com profundidade técnica.",
+    description: "EIA/RIMA, RAS e MCE elaborados por equipe técnica habilitada com ART.",
     tag: "Estudos Técnicos",
     href: "/service/technical_studies",
   },
   {
     icon: Recycle,
     title: "Planos de Gestão",
-    description: "PGRS, PGRSS, PCA, PRAD e PRF prontos para auditoria.",
+    description: "PGRS, PGRSS e PRAD elaborados conforme a Lei 12.305/2010. Prontos para fiscalização.",
     tag: "Gestão",
     href: "/service/management",
   },
   {
     icon: Wind,
     title: "Emissões Atmosféricas",
-    description: "Plano de automonitoramento atmosférico e gestão via SGADEA.",
+    description: "Monitoramento de emissões e gestão de condicionantes via SGADEA do IAT.",
     tag: "Monitoramento",
     href: "/service/air_emissions",
   },
   {
     icon: ClipboardCheck,
     title: "Gestão de Conformidade",
-    description: "Relatórios SGA IR, renovações e acompanhamento de condicionantes.",
+    description: "Acompanhamos todas as condicionantes da sua licença. Sem multa por vencimento.",
     tag: "Conformidade",
     href: "/service/compliance",
   },
   {
     icon: RefreshCw,
     title: "Regularização Ambiental",
-    description: "LASR, LIR, LOR e Termos de Ajustamento de Conduta (TAC).",
+    description: "Empresa irregular? Regularizamos via LASR, LIR, LOR ou TAC antes que vire autuação.",
     tag: "Regularização",
     href: "/service/regularization",
   },
@@ -111,7 +111,7 @@ export function ServicesShowcase() {
           >
             <Sparkles className="h-4 w-4 text-brand-accent" />
             <span className="font-inter text-xs font-medium uppercase tracking-[0.18em] text-brand-primary">
-              Carta de Serviços
+              O que fazemos
             </span>
           </motion.div>
 
@@ -122,9 +122,9 @@ export function ServicesShowcase() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="mt-6 font-sora text-3xl font-bold leading-tight text-brand-primary md:text-5xl"
           >
-            Tudo o que sua operação precisa para{" "}
-            <span className="bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-primary bg-clip-text text-transparent">
-              estar em conformidade
+            Serviços ambientais para sua empresa{" "}
+            <span className="bg-gradient-to-r from-brand-accent via-brand-primary to-brand-primary bg-clip-text text-transparent">
+              operar sem risco
             </span>
             .
           </motion.h2>
@@ -136,7 +136,7 @@ export function ServicesShowcase() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-5 font-inter text-base leading-relaxed text-brand-primary/75 md:text-lg"
           >
-            Clique em qualquer serviço para ver etapas, prazos, base legal e documentos.
+            Clique para ver prazos, documentos e base legal de cada serviço.
           </motion.p>
         </div>
 
@@ -157,7 +157,7 @@ export function ServicesShowcase() {
                   className="group relative flex h-full min-h-[300px] flex-col overflow-hidden rounded-2xl border border-brand-primary/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-accent/40 hover:shadow-xl"
                 >
                   {/* Top accent bar */}
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
 
                   {/* Glow on hover */}
                   <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-accent/0 blur-3xl transition-all duration-500 group-hover:bg-brand-accent/20" />
@@ -195,7 +195,7 @@ export function ServicesShowcase() {
             to="/services"
             className="group inline-flex items-center gap-2 rounded-2xl bg-brand-primary px-7 py-3.5 font-inter text-sm font-semibold text-brand-cream shadow-lg transition-all hover:scale-[1.02] hover:bg-brand-primary/90"
           >
-            Ver carta de serviços completa
+            Ver todos os serviços
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
           <Link

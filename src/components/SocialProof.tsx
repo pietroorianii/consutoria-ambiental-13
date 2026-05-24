@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Building2, Award, Briefcase, Layers } from 'lucide-react';
 
 const metrics = [
-  { value: 300, suffix: '+', label: 'Processos conduzidos', icon: Briefcase },
-  { value: 100, suffix: '+', label: 'Clientes atendidos', icon: Building2 },
-  { value: 5, suffix: '+', label: 'Anos de atuação', icon: Award },
-  { value: 10, suffix: '', label: 'Segmentos atendidos', icon: Layers },
+  { value: 5, suffix: '+', label: 'anos no mercado', icon: Award },
+  { value: 300, suffix: '+', label: 'licenças emitidas no PR', icon: Briefcase },
+  { value: 100, suffix: '%', label: 'taxa de aprovação', icon: Building2 },
+  { value: 10, suffix: '', label: 'segmentos atendidos', icon: Layers },
 ];
 
 function useCountUp(target: number, start: boolean, duration = 1400) {
@@ -65,10 +65,10 @@ export function SocialProof() {
       <div className="container relative z-10">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-cream/15 bg-brand-cream/5 text-xs font-inter uppercase tracking-widest text-brand-cream/80 mb-4">
-            Nossos Números
+            Em números
           </div>
           <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-cream">
-            Confiança construída em <span className="text-brand-accent">resultados</span>
+            Resultados que falam por <span className="text-brand-accent">si</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

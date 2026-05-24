@@ -30,8 +30,9 @@ const FAQPage = () => {
   return (
     <PageWrapper>
       <PageBanner
-        title="Perguntas Frequentes"
-        description="Encontre respostas para as dúvidas mais comuns sobre consultoria ambiental e nossos serviços"
+      <PageBanner
+        title="Dúvidas frequentes"
+        description="As perguntas que a maioria dos clientes faz antes de contratar."
         image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000&h=400"
         icon={<HelpCircle />}
       />
@@ -63,7 +64,7 @@ const FAQPage = () => {
           <div className="relative">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Busque por palavras-chave nas perguntas e respostas..."
+              placeholder="Buscar dúvida..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -76,7 +77,7 @@ const FAQPage = () => {
               variant={selectedCategory === null ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory(null)}
-              className="bg-brand-accent hover:bg-brand-accent/90"
+              className={selectedCategory === null ? "bg-brand-accent text-white border-brand-accent" : "border-brand-accent/30 text-brand-accent hover:bg-brand-accent/10"}
             >
               Todas as Categorias
             </Button>
@@ -86,7 +87,7 @@ const FAQPage = () => {
                 variant={selectedCategory === category.id ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category.id)}
-                className="bg-brand-accent hover:bg-brand-accent/90"
+                className={selectedCategory === category.id ? "bg-brand-accent text-white border-brand-accent" : "border-brand-accent/30 text-brand-accent hover:bg-brand-accent/10"}
               >
                 {category.title}
               </Button>

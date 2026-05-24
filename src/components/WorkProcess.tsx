@@ -2,10 +2,10 @@ import React from 'react';
 import { Search, ClipboardList, Wrench, Award } from 'lucide-react';
 
 const steps = [
-  { icon: Search, title: 'Diagnóstico Inicial', desc: 'Análise técnica detalhada do contexto ambiental e regulatório do seu negócio.' },
-  { icon: ClipboardList, title: 'Planejamento Estratégico', desc: 'Roteiro personalizado com cronograma, entregáveis e responsabilidades claras.' },
-  { icon: Wrench, title: 'Execução Técnica', desc: 'Implementação rigorosa por especialistas, com comunicação contínua e transparente.' },
-  { icon: Award, title: 'Entrega e Conformidade', desc: 'Documentação aprovada, conformidade legal e suporte pós-entrega garantidos.' },
+  { icon: Search, title: 'Diagnóstico gratuito', desc: 'Analisamos sua atividade e indicamos a modalidade de licença correta.' },
+  { icon: ClipboardList, title: 'Elaboração técnica', desc: 'Preparamos toda a documentação exigida pelo IAT — com ART incluída.' },
+  { icon: Wrench, title: 'Protocolo no IAT', desc: 'Enviamos tudo pelo SGA do IAT e acompanhamos semanalmente.' },
+  { icon: Award, title: 'Licença em mãos', desc: 'Você recebe a licença com orientações claras sobre as condicionantes.' },
 ];
 
 export function WorkProcess() {
@@ -13,15 +13,11 @@ export function WorkProcess() {
     <section className="container py-20 md:py-28 relative">
       <div className="text-center mb-16 max-w-2xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-inter uppercase tracking-widest mb-5">
-          Como Trabalhamos
+          Como funciona o atendimento
         </div>
         <h2 className="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark leading-tight">
-          Método claro do diagnóstico à{' '}
-          <span className="text-brand-accent">conformidade</span>.
+          Simples e direto, do primeiro contato até a <span className="text-brand-accent">licença em mãos</span>.
         </h2>
-        <p className="font-inter text-lg text-brand-dark/70 mt-5 leading-relaxed">
-          Quatro etapas integradas que garantem previsibilidade técnica e segurança regulatória.
-        </p>
       </div>
 
       <div className="relative">

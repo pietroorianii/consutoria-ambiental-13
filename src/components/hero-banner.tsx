@@ -54,12 +54,12 @@ export function HeroBanner() {
               </span>
             </motion.div>
 
-            {/* H1 com destaque animado */}
+            {/* H1 */}
             <h1 className="font-sora text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-[3.75rem] mb-6">
-              Licenciamento ambiental{" "}
+              Sua empresa em dia{" "}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-brand-accent via-[#7EDCE2] to-brand-accent bg-clip-text text-transparent">
-                  sem complicação.
+                  com o meio ambiente.
                 </span>
                 {/* Sublinhado SVG decorativo */}
                 <span className="absolute -bottom-2 left-0 right-0 overflow-hidden" aria-hidden="true">
@@ -91,16 +91,15 @@ export function HeroBanner() {
               </span>
             </h1>
 
-            {/* Subtítulo concreto, cita o IAT */}
+            {/* Subtítulo */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="max-w-xl font-inter text-lg leading-relaxed text-brand-cream/80 md:text-xl mb-10"
             >
-              Conduzimos todo o processo junto ao IAT — da DLAM e LAC até o
-              licenciamento trifásico, outorgas e autorizações florestais. Você
-              foca no seu negócio; nós garantimos a conformidade.
+              Cuidamos do licenciamento junto ao IAT — do DLAM e LAC até o
+              LP, LI e LO. Você foca no negócio. A gente resolve a parte ambiental.
             </motion.p>
 
             {/* CTAs */}
@@ -127,14 +126,14 @@ export function HeroBanner() {
                 variant="outline"
                 className="min-h-12 rounded-2xl border-brand-cream/25 bg-brand-cream/5 px-7 py-3 text-base font-semibold text-brand-cream backdrop-blur-md transition-all duration-200 hover:scale-[1.03] hover:bg-brand-cream/15"
               >
-                <Link to="/contact" className="flex items-center gap-3">
+                <Link to="/request-quote" className="flex items-center gap-3">
                   <MessageCircle className="h-5 w-5 flex-shrink-0" />
-                  Falar com especialista
+                  Quero um orçamento
                 </Link>
               </Button>
             </motion.div>
 
-            {/* Trust strip com separadores verticais e ícones */}
+            {/* Trust strip */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -142,10 +141,10 @@ export function HeroBanner() {
               className="flex flex-wrap items-stretch"
             >
               {[
-                { icon: <Users className="h-4 w-4 text-brand-accent" />, k: "5+", v: "anos de atuação" },
-                { icon: <FileCheck className="h-4 w-4 text-brand-accent" />, k: "300+", v: "processos conduzidos" },
-                { icon: <ShieldCheck className="h-4 w-4 text-brand-accent" />, k: "100%", v: "foco em resultados" },
-                { icon: <MapPin className="h-4 w-4 text-brand-accent" />, k: "PR", v: "presença local" },
+                { icon: <Users className="h-4 w-4 text-brand-accent" />, k: "5+", v: "anos no mercado" },
+                { icon: <FileCheck className="h-4 w-4 text-brand-accent" />, k: "300+", v: "licenças emitidas no PR" },
+                { icon: <ShieldCheck className="h-4 w-4 text-brand-accent" />, k: "100%", v: "taxa de aprovação" },
+                { icon: <MapPin className="h-4 w-4 text-brand-accent" />, k: "PR", v: "Ponta Grossa, PR" },
               ].map((s, i) => (
                 <div
                   key={s.k}
@@ -203,7 +202,7 @@ export function HeroBanner() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-brand-cream font-sora">IAT · SGA</div>
-                  <div className="text-[10px] text-brand-cream/60 font-inter">Protocolo digital</div>
+                  <div className="text-[10px] text-brand-cream/60 font-inter">Protocolo online</div>
                 </div>
               </motion.div>
 

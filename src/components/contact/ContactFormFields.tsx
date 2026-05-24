@@ -28,7 +28,7 @@ export function ContactFormFields({ form }: ContactFormFieldsProps) {
               <FormControl>
                 <Input 
                   placeholder="Seu nome completo"
-                  className="border-eco-green/30 focus:border-eco-green"
+                  className="border-brand-accent/30 focus:border-brand-accent"
                   {...field}
                 />
               </FormControl>
@@ -47,7 +47,7 @@ export function ContactFormFields({ form }: ContactFormFieldsProps) {
                 <Input 
                   type="email"
                   placeholder="seu@email.com"
-                  className="border-eco-green/30 focus:border-eco-green"
+                  className="border-brand-accent/30 focus:border-brand-accent"
                   {...field}
                 />
               </FormControl>
@@ -67,7 +67,7 @@ export function ContactFormFields({ form }: ContactFormFieldsProps) {
               <FormControl>
                 <Input 
                   placeholder="(00) 00000-0000"
-                  className="border-eco-green/30 focus:border-eco-green"
+                  className="border-brand-accent/30 focus:border-brand-accent"
                   {...field}
                 />
               </FormControl>
@@ -85,7 +85,7 @@ export function ContactFormFields({ form }: ContactFormFieldsProps) {
               <FormControl>
                 <Input 
                   placeholder="Nome da empresa"
-                  className="border-eco-green/30 focus:border-eco-green"
+                  className="border-brand-accent/30 focus:border-brand-accent"
                   {...field}
                 />
               </FormControl>
@@ -104,7 +104,7 @@ export function ContactFormFields({ form }: ContactFormFieldsProps) {
             <FormControl>
               <Input 
                 placeholder="Assunto da sua mensagem"
-                className="border-eco-green/30 focus:border-eco-green"
+                className="border-brand-accent/30 focus:border-brand-accent"
                 {...field}
               />
             </FormControl>
@@ -123,7 +123,7 @@ export function ContactFormFields({ form }: ContactFormFieldsProps) {
               <Textarea 
                 placeholder="Descreva sua solicitação ou dúvida detalhadamente"
                 rows={5}
-                className="border-eco-green/30 focus:border-eco-green"
+                className="border-brand-accent/30 focus:border-brand-accent"
                 {...field}
               />
             </FormControl>

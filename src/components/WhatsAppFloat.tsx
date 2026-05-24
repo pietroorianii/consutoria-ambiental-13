@@ -14,7 +14,7 @@ export function WhatsAppFloat() {
       aria-label="Fale conosco no WhatsApp"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="fixed bottom-5 right-5 z-40 flex items-center gap-3 rounded-full bg-brand-accent px-4 py-3 text-white shadow-2xl shadow-brand-accent/30 transition-all hover:bg-brand-accent/90"
+      className="fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-2xl shadow-[#25D366]/30 transition-all hover:bg-[#20bd5a]"
     >
       <MessageCircle className="h-6 w-6" />
       <span
@@ -22,7 +22,7 @@ export function WhatsAppFloat() {
           open ? 'max-w-[160px] opacity-100' : 'max-w-0 opacity-0'
         }`}
       >
-        Fale conosco
+        Falar pelo WhatsApp
       </span>
     </a>
   );

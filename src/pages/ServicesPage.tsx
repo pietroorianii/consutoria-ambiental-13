@@ -27,7 +27,7 @@ import {
 const ALL_CATEGORIES = [
   {
     id: "licensing",
-    color: "prisma-green" as const,
+    color: "brand-accent" as const,
     accentHex: "#2A6F47",
     icon: Leaf,
     badge: "LICENCIAMENTO",
@@ -45,7 +45,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "water_resources",
-    color: "prisma-blue" as const,
+    color: "brand-primary" as const,
     accentHex: "#0077C2",
     icon: Droplet,
     badge: "RECURSOS HÍDRICOS",
@@ -63,7 +63,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "degraded_areas",
-    color: "prisma-yellow" as const,
+    color: "brand-primary" as const,
     accentHex: "#C17F00",
     icon: TreePine,
     badge: "PASSIVOS AMBIENTAIS",
@@ -79,7 +79,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "monitoring",
-    color: "prisma-blue" as const,
+    color: "brand-primary" as const,
     accentHex: "#1A759F",
     icon: Beaker,
     badge: "MONITORAMENTO",
@@ -96,7 +96,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "reports",
-    color: "prisma-green" as const,
+    color: "brand-accent" as const,
     accentHex: "#2A6F47",
     icon: FileText,
     badge: "ESTUDOS TÉCNICOS",
@@ -114,7 +114,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "consulting",
-    color: "prisma-blue" as const,
+    color: "brand-primary" as const,
     accentHex: "#0077C2",
     icon: Users,
     badge: "CONSULTORIA",
@@ -132,7 +132,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "training",
-    color: "prisma-green" as const,
+    color: "brand-accent" as const,
     accentHex: "#2A6F47",
     icon: GraduationCap,
     badge: "CAPACITAÇÃO",
@@ -148,7 +148,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "management",
-    color: "prisma-blue" as const,
+    color: "brand-primary" as const,
     accentHex: "#0077C2",
     icon: ClipboardList,
     badge: "GESTÃO CONTÍNUA",
@@ -165,7 +165,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "esg",
-    color: "prisma-green" as const,
+    color: "brand-accent" as const,
     accentHex: "#3B7D59",
     icon: Globe2,
     badge: "ESG",
@@ -182,7 +182,7 @@ const ALL_CATEGORIES = [
   },
   {
     id: "climate",
-    color: "prisma-blue" as const,
+    color: "brand-primary" as const,
     accentHex: "#1A759F",
     icon: Wind,
     badge: "CLIMA",
@@ -210,57 +210,57 @@ function ServiceCard({
   const [open, setOpen] = useState(false);
   const Icon = cat.icon;
 
-  const isGreen = cat.color === "prisma-green";
-  const isBlue = cat.color === "prisma-blue";
-  // prisma-yellow for the rest
+  const isGreen = cat.color === "brand-accent";
+  const isBlue = cat.color === "brand-primary";
+  // brand-primary for the rest
 
   const accentText = isGreen
     ? "text-prisma-green"
     : isBlue
     ? "text-prisma-blue"
-    : "text-prisma-yellow";
+    : "text-brand-primary";
 
   const accentBorder = isGreen
     ? "hover:border-prisma-green/50 hover:to-prisma-green/15"
     : isBlue
     ? "hover:border-prisma-blue/50 hover:to-prisma-blue/15"
-    : "hover:border-prisma-yellow/50 hover:to-prisma-yellow/15";
+    : "hover:border-brand-primary/50 hover:to-brand-primary/15";
 
   const accentBg = isGreen
     ? "from-prisma-green/5 via-prisma-green/10 to-prisma-green/20"
     : isBlue
     ? "from-prisma-blue/5 via-prisma-blue/10 to-prisma-blue/20"
-    : "from-prisma-yellow/5 via-prisma-yellow/10 to-prisma-yellow/20";
+    : "from-brand-primary/5 via-brand-primary/10 to-brand-primary/20";
 
   const accentIconBg = isGreen
     ? "from-prisma-green/20 to-emerald-300/30 group-hover:from-prisma-green/40 group-hover:to-emerald-300/50"
     : isBlue
     ? "from-prisma-blue/20 to-blue-300/30 group-hover:from-prisma-blue/40 group-hover:to-blue-300/50"
-    : "from-prisma-yellow/20 to-yellow-300/30 group-hover:from-prisma-yellow/40 group-hover:to-yellow-300/50";
+    : "from-brand-primary/20 to-yellow-300/30 group-hover:from-brand-primary/40 group-hover:to-yellow-300/50";
 
   const accentBadge = isGreen
     ? "bg-gradient-to-r from-prisma-green/20 to-emerald-300/30 text-prisma-green group-hover:from-prisma-green/40"
     : isBlue
     ? "bg-gradient-to-r from-prisma-blue/20 to-blue-300/30 text-prisma-blue group-hover:from-prisma-blue/40"
-    : "bg-gradient-to-r from-prisma-yellow/20 to-yellow-300/30 text-prisma-yellow group-hover:from-prisma-yellow/40";
+    : "bg-gradient-to-r from-brand-primary/20 to-yellow-300/30 text-brand-primary group-hover:from-brand-primary/40";
 
   const accentTopBar = isGreen
     ? "from-prisma-green to-emerald-400"
     : isBlue
     ? "from-prisma-blue to-blue-400"
-    : "from-prisma-yellow to-yellow-400";
+    : "from-brand-primary to-yellow-400";
 
   const accentButtonOutline = isGreen
     ? "border-prisma-green/30 text-prisma-green hover:bg-prisma-green hover:text-white"
     : isBlue
     ? "border-prisma-blue/30 text-prisma-blue hover:bg-prisma-blue hover:text-white"
-    : "border-prisma-yellow/30 text-prisma-yellow hover:bg-prisma-yellow hover:text-white";
+    : "border-brand-primary/30 text-brand-primary hover:bg-brand-primary hover:text-white";
 
   const accentButtonFill = isGreen
     ? "bg-prisma-green hover:bg-prisma-green/90"
     : isBlue
     ? "bg-prisma-blue hover:bg-prisma-blue/90"
-    : "bg-prisma-yellow hover:bg-prisma-yellow/90 text-gray-900";
+    : "bg-brand-primary hover:bg-brand-primary/90 text-gray-900";
 
   return (
     <motion.div
@@ -270,7 +270,7 @@ function ServiceCard({
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
     >
       <Card
-        className={`group relative overflow-hidden transition-all duration-300 bg-gradient-to-br from-white via-white to-prisma-green/5 border-2 border-prisma-gray-light/30 ${accentBorder} h-full flex flex-col hover:shadow-xl hover:-translate-y-2 shadow-md`}
+        className={`group relative overflow-hidden transition-all duration-300 bg-gradient-to-br from-white via-white to-prisma-green/5 border-2 border-brand-primary/30 ${accentBorder} h-full flex flex-col hover:shadow-xl hover:-translate-y-2 shadow-md`}
       >
         {/* Gradiente de fundo no hover */}
         <div
@@ -306,16 +306,14 @@ function ServiceCard({
 
           {/* Título */}
           <CardTitle
-            className={`text-lg font-bold leading-snug mb-2 ${accentText} transition-colors duration-300`}
-            style={{ fontFamily: "'Outfit', sans-serif" }}
+            className="font-sora text-lg font-bold leading-snug mb-2 transition-colors duration-300"
           >
             {cat.title}
           </CardTitle>
 
           {/* Descrição */}
           <p
-            className="text-sm text-prisma-gray-text/75 leading-relaxed"
-            style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+            className="font-inter text-sm text-brand-primary/75 leading-relaxed"
           >
             {cat.description}
           </p>
@@ -325,8 +323,7 @@ function ServiceCard({
           {/* Principais Entregas */}
           <div className="mb-4">
             <h4
-              className="text-sm font-bold text-prisma-gray-text mb-3 uppercase tracking-wide"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
+              className="font-sora text-sm font-bold text-brand-primary mb-3 uppercase tracking-wide"
             >
               Principais Entregas
             </h4>
@@ -337,8 +334,7 @@ function ServiceCard({
                     className={`h-4 w-4 flex-shrink-0 ${accentText}`}
                   />
                   <span
-                    className="text-sm text-prisma-gray-text/90"
-                    style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+                    className="font-inter text-sm text-brand-primary/90"
                   >
                     {d}
                   </span>
@@ -348,11 +344,9 @@ function ServiceCard({
           </div>
 
           {/* Serviços expansíveis */}
-          <div className="border-t border-prisma-gray-light/40 pt-3">
+          <div className="border-t border-brand-primary/40 pt-3">
             <button
-              className={`flex items-center justify-between w-full text-sm font-semibold ${accentText} hover:opacity-80 transition-opacity`}
-              onClick={() => setOpen((v) => !v)}
-              style={{ fontFamily: "'Outfit', sans-serif" }}
+              className={`font-sora flex items-center justify-between w-full text-sm font-semibold ${accentText} hover:opacity-80 transition-opacity`}
             >
               <span>Ver todos os {cat.services.length} serviços</span>
               <ChevronDown
@@ -374,21 +368,19 @@ function ServiceCard({
                     {cat.services.map((svc, i) => (
                       <div
                         key={i}
-                        className="flex items-start gap-2 p-2.5 rounded-lg hover:bg-prisma-gray-light/30 transition-colors group/svc"
+                        className="flex items-start gap-2 p-2.5 rounded-lg hover:bg-brand-primary/30 transition-colors group/svc"
                       >
                         <ExternalLink
                           className={`h-3.5 w-3.5 mt-0.5 flex-shrink-0 ${accentText} opacity-60 group-hover/svc:opacity-100`}
                         />
                         <div>
                           <p
-                            className="text-sm font-semibold text-prisma-gray-text leading-snug"
-                            style={{ fontFamily: "'Outfit', sans-serif" }}
+                            className="font-sora text-sm font-semibold text-brand-primary leading-snug"
                           >
                             {svc.title}
                           </p>
                           <p
-                            className="text-xs text-prisma-gray-text/65 leading-relaxed mt-0.5"
-                            style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+                            className="font-inter text-xs text-brand-primary/65 leading-relaxed mt-0.5"
                           >
                             {svc.description}
                           </p>
@@ -403,14 +395,13 @@ function ServiceCard({
         </CardContent>
 
         {/* Footer com botões — mesmo padrão da home */}
-        <div className="mt-auto p-5 pt-3 border-t border-prisma-gray-light/40 bg-gradient-to-r from-prisma-gray-light/10 to-prisma-gray-light/20 group-hover:from-prisma-gray-light/20 group-hover:to-prisma-gray-light/30 transition-all duration-300 relative z-10">
+        <div className="mt-auto p-5 pt-3 border-t border-brand-primary/40 bg-gradient-to-r from-brand-primary/10 to-brand-primary/20 group-hover:from-brand-primary/20 group-hover:to-brand-primary/30 transition-all duration-300 relative z-10">
           <div className="flex gap-2.5">
             <Button
               asChild
               variant="outline"
               size="sm"
-              className={`flex-1 ${accentButtonOutline} transition-all duration-300 font-semibold`}
-              style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+              className={`font-inter flex-1 ${accentButtonOutline} transition-all duration-300 font-semibold`}
             >
               <Link
                 to={`/services/${cat.id}`}
@@ -424,8 +415,7 @@ function ServiceCard({
             <Button
               asChild
               size="sm"
-              className={`flex-1 ${accentButtonFill} text-white transition-all duration-300 font-semibold shadow-md hover:shadow-lg`}
-              style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
+              className={`font-inter flex-1 ${accentButtonFill} text-white transition-all duration-300 font-semibold shadow-md hover:shadow-lg`}
             >
               <Link to="/request-quote">Orçamento</Link>
             </Button>
@@ -440,10 +430,9 @@ function ServiceCard({
 const ServicesPage = () => {
   return (
     <PageWrapper>
-      {/* Banner idêntico ao original, com a foto da floresta */}
       <PageBanner
-        title="Nossos Serviços"
-        description="Licenciamento ambiental, autorizações florestais, outorgas, estudos técnicos, monitoramento e gestão de conformidade — soluções especializadas para conformidade legal no Paraná."
+        title="Todos os serviços"
+        description="Licenciamento, outorgas, estudos e gestão ambiental — tudo que sua empresa precisa para operar dentro da lei."
         icon={<Leaf />}
         iconColor="green"
         image="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600"
@@ -464,13 +453,13 @@ const ServicesPage = () => {
               10 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
             </h2>
             <p
-              className="text-prisma-gray-text/70 leading-relaxed mb-6"
+              className="text-brand-primary/70 leading-relaxed mb-6"
               style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
             >
               Clique em <strong>Explorar</strong> para ver detalhes de cada área ou em{" "}
               <strong>Ver todos os serviços</strong> para expandir a lista completa dentro do card.
             </p>
-            <div className="h-1 w-20 bg-prisma-green rounded-full mx-auto" />
+            <div className="h-1 w-20 bg-brand-accent rounded-full mx-auto" />
           </motion.div>
         </div>
       </section>

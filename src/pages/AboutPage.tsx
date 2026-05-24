@@ -54,8 +54,8 @@ const AboutPage = () => {
       
       {/* Cabeçalho da página padronizado com PageBanner */}
       <PageBanner
-        title="Sobre a Solari Soluções Ambientais"
-        description="Conectando desenvolvimento e sustentabilidade com expertise e inovação."
+        title="Quem somos"
+        description="Consultoria ambiental especializada em Ponta Grossa, PR."
         icon={<Users />}
         iconColor="teal"
         image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800"
@@ -63,8 +63,6 @@ const AboutPage = () => {
       
       {/* Seção de Introdução da Empresa */}
       <section className="py-20 md:py-28 bg-background relative">
-        {/* Textura de folhas no fundo */}
-        <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-brand-primary/5 -z-10"></div>
         
         <div className="container">
@@ -131,22 +129,19 @@ const AboutPage = () => {
       </section>
       
       {/* Seção da Equipe */}
-      <section id="team" className="py-20 md:py-28 bg-muted/50 relative">
-        {/* Textura de folhas no fundo */}
-        <div className="absolute inset-0 leaf-pattern opacity-15 -z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/5 to-brand-primary/5 -z-10"></div>
+      <section id="team" className="py-20 md:py-28 bg-brand-cream/30 relative">
         
         <div className="container">
           <div className="text-center mb-16 scroll-trigger">
             <div className="inline-block px-4 py-2 bg-brand-primary/10 text-brand-primary font-medium text-sm uppercase tracking-wider rounded-full mb-6">
               Nossa Equipe
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6">
-              Especialistas Dedicados ao Seu Sucesso
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6 font-sora">
+              Nossa equipe técnica
             </h2>
             <div className="h-1 w-20 bg-brand-accent rounded-full mx-auto mb-8"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Conheça os profissionais que transformam desafios ambientais em oportunidades de crescimento sustentável para sua empresa.
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-inter">
+              Engenheiros registrados no CREA com experiência prática em licenciamento e gestão ambiental no Paraná.
             </p>
           </div>
           
