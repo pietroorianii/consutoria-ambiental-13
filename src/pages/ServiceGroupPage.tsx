@@ -52,6 +52,8 @@ const ServiceGroupPage = () => {
         description={group.description}
         icon={group.icon}
         variant="services"
+        backUrl="/services"
+        backText="Voltar aos Serviços"
       />
 
       {/* Principais Entregas */}

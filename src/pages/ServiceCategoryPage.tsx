@@ -22,7 +22,7 @@ const ServiceCategoryPage = () => {
     return <CategoryNotFound />;
   }
   return <PageWrapper>
-      <ServiceBanner categoryData={categoryData} />
+      <ServiceBanner categoryData={categoryData} backUrl="/services" backText="Voltar aos Serviços" />
       
       {/* Introdução à Categoria */}
       <div className="relative py-16 bg-gradient-to-br from-eco-green/3 to-eco-blue/2">

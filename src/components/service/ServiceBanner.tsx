@@ -1,5 +1,8 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface ServiceBannerProps {
   categoryData: {
@@ -8,9 +11,11 @@ interface ServiceBannerProps {
     icon: React.ReactNode;
     image?: string;
   };
+  backUrl?: string;
+  backText?: string;
 }
 
-export function ServiceBanner({ categoryData }: ServiceBannerProps) {
+export function ServiceBanner({ categoryData, backUrl, backText }: ServiceBannerProps) {
   return (
     <div className="bg-gradient-to-r from-eco-green to-eco-blue py-24 relative overflow-hidden">
       {/* Background Image */}
@@ -36,6 +41,16 @@ export function ServiceBanner({ categoryData }: ServiceBannerProps) {
 
       {/* Content */}
       <div className="container relative z-10">
+        {backUrl && (
+          <div className="flex items-center gap-4 mb-6 justify-start">
+            <Button asChild variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm text-sm">
+              <Link to={backUrl} className="flex items-center gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                {backText || "Voltar"}
+              </Link>
+            </Button>
+          </div>
+        )}
         <div className="flex flex-col items-center gap-6 text-center">
           {/* Icon */}
           <div className="p-5 rounded-full bg-white/20 backdrop-blur-sm animate-float border border-white/30 shadow-glass">

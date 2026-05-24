@@ -416,6 +416,8 @@ const ServicesPage = () => {
         description="Licenciamento, outorgas, estudos e gestão ambiental — tudo que sua empresa precisa para operar dentro da lei."
         icon={<Leaf />}
         variant="services"
+        backUrl="/"
+        backText="Voltar ao Início"
       />
 
       {/* Introdução e contagem */}

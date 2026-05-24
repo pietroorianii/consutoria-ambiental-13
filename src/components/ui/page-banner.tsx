@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type PageBannerVariant = 
   | "about"
@@ -16,6 +19,8 @@ interface PageBannerProps {
   icon: React.ReactNode;
   variant?: PageBannerVariant;
   iconColor?: string;
+  backUrl?: string;
+  backText?: string;
 }
 
 function BannerGraphic({ variant }: { variant: PageBannerVariant }) {
@@ -266,6 +271,8 @@ export function PageBanner({
   icon,
   variant = "default",
   iconColor,
+  backUrl,
+  backText,
 }: PageBannerProps) {
   return (
     <div className="relative overflow-hidden bg-brand-dark py-16">
@@ -280,6 +287,16 @@ export function PageBanner({
 
       {/* Conteúdo centralizado */}
       <div className="container relative z-10">
+        {backUrl && (
+          <div className="flex items-center gap-4 mb-6 justify-start">
+            <Button asChild variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm text-sm">
+              <Link to={backUrl} className="flex items-center gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                {backText || "Voltar"}
+              </Link>
+            </Button>
+          </div>
+        )}
         <div className="flex flex-col items-center gap-5 text-center">
 
           {/* Ícone */}
