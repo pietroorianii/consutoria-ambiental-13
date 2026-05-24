@@ -4,7 +4,6 @@ import { ServicesShowcase } from "@/components/ServicesShowcase";
 import { SegmentCards } from "@/components/SegmentCards";
 import { WorkProcess } from "@/components/WorkProcess";
 import { SocialProof } from "@/components/SocialProof";
-import { Testimonials } from "@/components/testimonials";
 import { CTASection } from "@/components/cta-section";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { PageWrapper } from "@/components/ui/page-wrapper";
@@ -26,7 +25,6 @@ const Index = () => {
       <CompanyIntro />
       <WorkProcess />
       <SocialProof />
-      <Testimonials />
       <CTASection />
       <WhatsAppFloat />
     </PageWrapper>
