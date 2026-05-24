@@ -18,6 +18,7 @@ import {
   Users,
   GraduationCap,
   ClipboardList,
+  Shield,
   ChevronDown,
 } from "lucide-react";
 
@@ -160,6 +161,22 @@ const ALL_CATEGORIES = [
       { title: "Suporte Técnico Contínuo", description: "Assessoria permanente para questões ambientais do dia a dia." },
     ],
     mainDeliverables: ["Renovação de LO e outorgas", "SGA IR declarações", "Suporte permanente"],
+  },
+  {
+    id: "ibama",
+    color: "brand-primary" as const,
+    accentHex: "#0077C2",
+    icon: Shield,
+    badge: "IBAMA",
+    title: "Cadastro e Obrigações IBAMA",
+    description: "Inscrição e manutenção do CTF/APP, declaração anual RAPP e controle da TCFA. Conformidade federal garantida.",
+    services: [
+      { title: "CTF/APP — Cadastro Técnico Federal", description: "Inscrição de pessoas físicas e jurídicas no cadastro obrigatório do IBAMA." },
+      { title: "Certificado de Regularidade (CR)", description: "Emissão e renovação anual do CR necessário para operações e licitações." },
+      { title: "RAPP — Declaração Anual", description: "Elaboração e envio do Relatório de Atividades Potencialmente Poluidoras (prazo: 31 de março)." },
+      { title: "Acompanhamento da TCFA", description: "Controle e pagamento trimestral da Taxa de Controle e Fiscalização Ambiental." },
+    ],
+    mainDeliverables: ["Inscrição e manutenção CTF/APP", "RAPP anual entregue no prazo", "Certificado de Regularidade ativo"],
   },
 ];
 
@@ -413,7 +430,7 @@ const ServicesPage = () => {
               className="text-2xl md:text-3xl font-bold text-prisma-gray-text mb-3"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              8 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
+              9 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
             </h2>
             <p
               className="text-brand-primary/70 leading-relaxed mb-6"

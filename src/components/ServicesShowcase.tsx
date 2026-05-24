@@ -12,6 +12,7 @@ import {
   Wind,
   ClipboardCheck,
   RefreshCw,
+  Shield,
   type LucideIcon,
 } from "lucide-react";
 
@@ -79,6 +80,13 @@ const services: ShowcaseService[] = [
     description: "Empresa irregular? Regularizamos via LASR, LIR, LOR ou TAC antes que vire autuação.",
     tag: "Regularização",
     href: "/service/regularization",
+  },
+  {
+    icon: Shield,
+    title: "Cadastro IBAMA (CTF)",
+    description: "Inscrição no CTF/APP, emissão do Certificado de Regularidade e declaração anual RAPP. Sem multa TCFA.",
+    tag: "IBAMA",
+    href: "/services/ibama",
   },
 ];
 
