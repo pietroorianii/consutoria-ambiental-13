@@ -57,8 +57,7 @@ const AboutPage = () => {
         title="Quem somos"
         description="Consultoria ambiental especializada em Ponta Grossa, PR."
         icon={<Users />}
-        iconColor="teal"
-        image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1920&h=800"
+        variant="about"
       />
       
       {/* Seção de Introdução da Empresa */}

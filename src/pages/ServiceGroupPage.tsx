@@ -51,8 +51,7 @@ const ServiceGroupPage = () => {
         title={group.title}
         description={group.description}
         icon={group.icon}
-        iconColor={iconColor as "green" | "blue" | "yellow"}
-        image="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=1200&h=600"
+        variant="services"
       />
 
       {/* Principais Entregas */}

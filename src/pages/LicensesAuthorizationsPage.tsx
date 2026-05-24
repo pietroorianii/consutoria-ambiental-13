@@ -104,11 +104,10 @@ const LicensesAuthorizationsPage = () => {
   return (
     <PageWrapper>
       <PageBanner 
-        title="Licenças e Autorizações Ambientais" 
-        description="Conheça todas as modalidades de licenciamento ambiental do Paraná conforme Decreto Estadual nº 9.541/2025" 
-        icon={<ShieldCheck />}
-        iconColor="green"
-        image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200&h=600" 
+        title="Licenças e Autorizações"
+        description="Todas as modalidades do IAT — do DLAM ao licenciamento trifásico LP/LI/LO."
+        icon={<FileCheck />}
+        variant="licenses"
       />
       
       <div className="container py-16">

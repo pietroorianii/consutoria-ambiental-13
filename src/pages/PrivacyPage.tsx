@@ -15,10 +15,9 @@ const PrivacyPage = () => {
 
       <PageBanner
         title="Política de Privacidade"
-        description="Como coletamos, utilizamos e protegemos seus dados pessoais — em conformidade com a Lei Geral de Proteção de Dados (LGPD)."
+        description="Como coletamos, utilizamos e protegemos seus dados pessoais - em conformidade com a Lei Geral de Proteção de Dados (LGPD)."
         icon={<Shield />}
-        iconColor="green"
-        image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200&h=400"
+        variant="default"
       />
 
       <section className="container py-16 max-w-4xl mx-auto">

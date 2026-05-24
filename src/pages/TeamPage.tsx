@@ -61,11 +61,11 @@ const teamMembers = [
 const TeamPage = () => {
   return (
     <PageWrapper>
-      <PageBanner 
-        title="Nossa Equipe"
-        description="Conheça os profissionais por trás da Eco Consultoria. Uma equipe multidisciplinar comprometida com a excelência e a sustentabilidade."
-        icon={<Users className="h-12 w-12 text-eco-green" />}
-        image="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1200&h=600"
+      <PageBanner
+        title="Nossa equipe"
+        description="Engenheiros com experiência prática em licenciamento e gestão ambiental no Paraná."
+        icon={<Users />}
+        variant="team"
       />
       
       <section className="py-16 px-4">

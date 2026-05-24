@@ -97,9 +97,7 @@ function getDetailedCategoryDescription(categoryId: string): string {
     reports: "Transformamos requisitos técnicos complexos em documentos claros e eficazes. Nossos planos e relatórios não apenas atendem às exigências legais, mas servem como ferramentas estratégicas para a gestão ambiental da sua empresa.",
     consulting: "Oferecemos assessoria estratégica baseada em décadas de experiência no setor. Nossa consultoria vai além do cumprimento legal, ajudando sua empresa a transformar desafios ambientais em vantagens competitivas sustentáveis.",
     training: "Capacitamos suas equipes com conhecimento prático e aplicável. Nossos treinamentos são desenvolvidos especificamente para as necessidades do seu setor, garantindo que sua equipe esteja sempre preparada para os desafios ambientais.",
-    management: "Cuidamos da gestão ambiental contínua da sua empresa, mantendo-a sempre em conformidade. Nossa abordagem sistemática garante que você nunca perca prazos importantes e mantenha todas as suas obrigações em dia.",
-    esg: "Ajudamos sua empresa a se posicionar como líder em sustentabilidade. Nossa consultoria ESG conecta práticas ambientais responsáveis com objetivos de negócio, abrindo portas para novos mercados e oportunidades de investimento.",
-    climate: "Preparamos sua empresa para o futuro com estratégias inteligentes de descarbonização. Nossa abordagem combina redução de impactos ambientais com oportunidades de negócio em economia verde e mercados de carbono."
+    management: "Cuidamos da gestão ambiental contínua da sua empresa, mantendo-a sempre em conformidade. Nossa abordagem sistemática garante que você nunca perca prazos importantes e mantenha todas as suas obrigações em dia."
   };
   return descriptions[categoryId] || "Nossa expertise nesta área garante soluções eficazes e conformidade total com a legislação ambiental vigente.";
 }

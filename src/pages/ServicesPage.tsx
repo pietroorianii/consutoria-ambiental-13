@@ -18,8 +18,6 @@ import {
   Users,
   GraduationCap,
   ClipboardList,
-  Globe2,
-  Wind,
   ChevronDown,
 } from "lucide-react";
 
@@ -162,40 +160,6 @@ const ALL_CATEGORIES = [
       { title: "Suporte Técnico Contínuo", description: "Assessoria permanente para questões ambientais do dia a dia." },
     ],
     mainDeliverables: ["Renovação de LO e outorgas", "SGA IR declarações", "Suporte permanente"],
-  },
-  {
-    id: "esg",
-    color: "brand-accent" as const,
-    accentHex: "#3B7D59",
-    icon: Globe2,
-    badge: "ESG",
-    title: "Consultoria ESG",
-    description: "Critérios ambientais, sociais e de governança para competitividade e sustentabilidade corporativa.",
-    services: [
-      { title: "Diagnóstico e Estratégia ESG", description: "Avaliação completa e desenvolvimento de estratégias customizadas." },
-      { title: "Relatórios de Sustentabilidade", description: "Elaboração conforme GRI, SASB, TCFD e outros frameworks." },
-      { title: "Análise de Riscos ESG", description: "Identificação de riscos e oportunidades ambientais e de governança." },
-      { title: "Engajamento com Stakeholders", description: "Comunicação com investidores, comunidades e colaboradores." },
-      { title: "Políticas Corporativas ESG", description: "Desenvolvimento de políticas e indicadores de desempenho." },
-    ],
-    mainDeliverables: ["Diagnóstico e estratégia", "Relatórios GRI / SASB / TCFD", "Políticas e indicadores"],
-  },
-  {
-    id: "climate",
-    color: "brand-primary" as const,
-    accentHex: "#1A759F",
-    icon: Wind,
-    badge: "CLIMA",
-    title: "Mudanças Climáticas e Descarbonização",
-    description: "Gestão de riscos climáticos, inventários de GEE, planos de descarbonização e créditos de carbono.",
-    services: [
-      { title: "Inventários de GEE", description: "Inventários corporativos conforme ISO 14064 com verificação terceirizada." },
-      { title: "Planos de Descarbonização", description: "Estratégias de redução e roadmap para neutralidade carbônica." },
-      { title: "Análise de Vulnerabilidade Climática", description: "Riscos físicos e de transição para adaptação empresarial." },
-      { title: "Projetos de Crédito de Carbono", description: "Desenvolvimento desde a concepção até a comercialização." },
-      { title: "Economia Circular", description: "Implementação de estratégias e modelos de negócio sustentáveis." },
-    ],
-    mainDeliverables: ["Inventários GEE ISO 14064", "Descarbonização e créditos", "Economia circular"],
   },
 ];
 
@@ -434,8 +398,7 @@ const ServicesPage = () => {
         title="Todos os serviços"
         description="Licenciamento, outorgas, estudos e gestão ambiental — tudo que sua empresa precisa para operar dentro da lei."
         icon={<Leaf />}
-        iconColor="green"
-        image="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&q=80&w=1200&h=600"
+        variant="services"
       />
 
       {/* Introdução e contagem */}
@@ -450,7 +413,7 @@ const ServicesPage = () => {
               className="text-2xl md:text-3xl font-bold text-prisma-gray-text mb-3"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              10 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
+              8 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
             </h2>
             <p
               className="text-brand-primary/70 leading-relaxed mb-6"

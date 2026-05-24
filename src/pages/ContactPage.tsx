@@ -20,8 +20,7 @@ const ContactPage = () => {
         title="Fale com a gente"
         description="Atendemos por WhatsApp, e-mail ou formulário. Resposta em até 1 dia útil."
         icon={<MessageSquare />}
-        iconColor="blue"
-        image="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200&h=600"
+        variant="contact"
       />
       
       {/* Contact Section */}

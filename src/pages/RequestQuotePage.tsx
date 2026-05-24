@@ -44,8 +44,7 @@ const RequestQuotePage = () => {
         title="Solicitar orçamento"
         description="Preencha o formulário. Retornamos em até 1 dia útil com uma proposta personalizada."
         icon={<Leaf />}
-        iconColor="green"
-        image="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1200&h=600"
+        variant="quote"
       />
       
       <div className="container mx-auto -mt-8 px-4 md:px-6 pb-16 relative z-10">

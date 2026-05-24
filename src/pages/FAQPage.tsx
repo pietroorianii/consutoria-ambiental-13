@@ -33,8 +33,8 @@ const FAQPage = () => {
       <PageBanner
         title="Dúvidas frequentes"
         description="As perguntas que a maioria dos clientes faz antes de contratar."
-        image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000&h=400"
         icon={<HelpCircle />}
+        variant="faq"
       />
 
       {/* Grupo 5 — FAQ Schema JSON-LD para SEO */}
