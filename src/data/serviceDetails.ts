@@ -13,8 +13,6 @@ import { reportsServices } from './services/reportsServices';
 import { consultingServices } from './services/consultingServices';
 import { trainingServices } from './services/trainingServices';
 import { managementServices } from './services/managementServices';
-import { esgServices } from './services/esgServices';
-import { climateServices } from './services/climateServices';
 import { waterResourcesServices } from './services/waterResourcesServices';
 import { degradedAreasServices } from './services/degradedAreasServices';
 
@@ -51,8 +49,6 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   consulting: consultingServices,
   training: trainingServices,
   management: managementServices,
-  esg: esgServices,
-  climate: climateServices,
   water_resources: waterResourcesServices,
   degraded_areas: degradedAreasServices,
 };

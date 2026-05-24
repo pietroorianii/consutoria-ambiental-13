@@ -30,7 +30,6 @@ const FAQPage = () => {
   return (
     <PageWrapper>
       <PageBanner
-      <PageBanner
         title="Dúvidas frequentes"
         description="As perguntas que a maioria dos clientes faz antes de contratar."
         icon={<HelpCircle />}
