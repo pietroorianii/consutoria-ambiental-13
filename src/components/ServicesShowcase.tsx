@@ -86,7 +86,7 @@ const services: ShowcaseService[] = [
     title: "Cadastro IBAMA (CTF)",
     description: "Inscrição no CTF/APP, emissão do Certificado de Regularidade e declaração anual RAPP. Sem multa TCFA.",
     tag: "IBAMA",
-    href: "/services/ibama",
+    href: "/service/ibama",
   },
 ];
 

@@ -15,6 +15,7 @@ import { trainingServices } from './services/trainingServices';
 import { managementServices } from './services/managementServices';
 import { waterResourcesServices } from './services/waterResourcesServices';
 import { degradedAreasServices } from './services/degradedAreasServices';
+import { ibamaService } from './services/ibamaService';
 
 // Importar sub-serviços de licenciamento
 import { lpService } from './services/licensing/lpService';
@@ -51,4 +52,5 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   management: managementServices,
   water_resources: waterResourcesServices,
   degraded_areas: degradedAreasServices,
+  ibama: ibamaService,
 };

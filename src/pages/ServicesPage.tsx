@@ -385,7 +385,7 @@ function ServiceCard({
               className={`font-inter flex-1 ${accentButtonOutline} transition-all duration-300 font-semibold`}
             >
               <Link
-                to={`/services/${cat.id}`}
+                to={cat.id === "ibama" ? `/service/${cat.id}` : `/services/${cat.id}`}
                 className="flex items-center justify-center gap-1.5"
               >
                 Explorar
