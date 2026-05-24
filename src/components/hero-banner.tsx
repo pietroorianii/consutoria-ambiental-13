@@ -56,10 +56,10 @@ export function HeroBanner() {
 
             {/* H1 */}
             <h1 className="font-sora text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-[3.75rem] mb-6">
-              Sua empresa em dia{" "}
+              Licenciamento ambiental{" "}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-brand-accent via-[#7EDCE2] to-brand-accent bg-clip-text text-transparent">
-                  com o meio ambiente.
+                  sem dor de cabeça.
                 </span>
                 {/* Sublinhado SVG decorativo */}
                 <span className="absolute -bottom-2 left-0 right-0 overflow-hidden" aria-hidden="true">
@@ -98,8 +98,7 @@ export function HeroBanner() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="max-w-xl font-inter text-lg leading-relaxed text-brand-cream/80 md:text-xl mb-10"
             >
-              Cuidamos do licenciamento junto ao IAT — do DLAM e LAC até o
-              LP, LI e LO. Você foca no negócio. A gente resolve a parte ambiental.
+              Resolvemos toda a burocracia no IAT. Da dispensa à licença final, cuidamos da papelada para você focar apenas no seu negócio.
             </motion.p>
 
             {/* CTAs */}
