@@ -18,8 +18,6 @@ const categoryToServiceMap: Record<string, string> = {
   consulting: "consulting",
   training: "training",
   management: "management",
-  esg: "esg",
-  climate: "climate",
   water_resources: "water_resources",
   degraded_areas: "degraded_areas"
 };

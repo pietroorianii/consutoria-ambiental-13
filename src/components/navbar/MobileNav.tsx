@@ -1,15 +1,29 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
+const navItems = [
+  { to: "/", label: "Início", exact: true },
+  { to: "/about", label: "Sobre Nós", exact: false },
+  { to: "/services", label: "Serviços", exact: false },
+  { to: "/faq", label: "Perguntas Frequentes", exact: false },
+  { to: "/contact", label: "Contato", exact: false },
+];
+
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const isActive = (to: string, exact: boolean) => {
+    if (exact) return location.pathname === to;
+    return location.pathname.startsWith(to);
   };
 
   return (
@@ -24,50 +38,29 @@ export function MobileNav() {
           <SheetHeader>
             <SheetTitle className="text-left font-sora text-brand-primary">Menu de Navegação</SheetTitle>
           </SheetHeader>
-          <div className="mt-6 space-y-4">
-            <Link
-              to="/"
-              onClick={closeMenu}
-              className="block rounded-md px-4 py-2 text-base font-medium text-foreground transition-colors hover:bg-brand-primary/10 hover:text-brand-primary"
-            >
-              Início
-            </Link>
-
-            {/* About */}
-            <Link
-              to="/about"
-              onClick={closeMenu}
-              className="block rounded-md px-4 py-2 text-base font-medium text-foreground transition-colors hover:bg-brand-primary/10 hover:text-brand-primary"
-            >
-              Sobre Nós
-            </Link>
-            
-            {/* Services */}
-            <Link
-              to="/services"
-              onClick={closeMenu}
-              className="block rounded-md px-4 py-2 text-base font-medium text-foreground transition-colors hover:bg-brand-primary/10 hover:text-brand-primary"
-            >
-              Serviços
-            </Link>
-
-            {/* FAQ */}
-            <Link
-              to="/faq"
-              onClick={closeMenu}
-              className="block rounded-md px-4 py-2 text-base font-medium text-foreground transition-colors hover:bg-brand-primary/10 hover:text-brand-primary"
-            >
-              Perguntas Frequentes
-            </Link>
-
-            {/* Contact */}
-            <Link
-              to="/contact"
-              onClick={closeMenu}
-              className="block rounded-md px-4 py-2 text-base font-medium text-foreground transition-colors hover:bg-brand-primary/10 hover:text-brand-primary"
-            >
-              Contato
-            </Link>
+          <div className="mt-6 space-y-2">
+            {navItems.map((item) => {
+              const active = isActive(item.to, item.exact);
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={closeMenu}
+                  className={`
+                    flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors
+                    ${active
+                      ? "bg-brand-primary/10 text-brand-primary font-semibold"
+                      : "text-foreground hover:bg-brand-primary/8 hover:text-brand-primary"
+                    }
+                  `}
+                >
+                  {item.label}
+                  {active && (
+                    <span className="h-2 w-2 rounded-full bg-brand-accent flex-shrink-0" />
+                  )}
+                </Link>
+              );
+            })}
 
             {/* CTA Button */}
             <div className="pt-4 border-t border-border">

@@ -95,10 +95,10 @@ export function CompanyIntro() {
               </div>
               <div>
                 <div className="font-sora text-2xl font-bold text-brand-dark">
-                  15+
+                  5+
                 </div>
                 <div className="text-xs font-inter text-brand-dark/60 leading-tight">
-                  Anos de experiência
+                  Anos no mercado
                 </div>
               </div>
             </div>

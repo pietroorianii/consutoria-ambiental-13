@@ -6,125 +6,164 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-prisma-gray-light relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-prisma-gray-light via-white to-prisma-gray-light opacity-50"></div>
-      
-      <div className="container py-12 md:py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* About */}
-          <div>
-            <h3 className="text-2xl font-extrabold mb-4 flex items-center gap-2"
-                style={{ fontFamily: "'Playfair Display', 'Poppins', serif" }}>
-              <Leaf className="h-5 w-5 text-eco-green" />
-              <span className="text-yellow-700">Solari</span>{' '}
-              <span className="text-eco-green">Soluções Ambientais</span>
-            </h3>
-            <p className="text-prisma-gray-text/80 mb-4 leading-relaxed" style={{
-              fontFamily: "'Montserrat', sans-serif"
-            }}>
-              Consultoria ambiental especializada para empresas que buscam excelência em sustentabilidade e conformidade legal.
+    <footer className="bg-brand-dark relative overflow-hidden">
+      {/* Glow decorativo */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-primary/20 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-brand-accent/10 blur-3xl pointer-events-none" />
+
+      {/* Linha decorativa de topo */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-accent/40 to-transparent" />
+
+      <div className="container py-14 md:py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+          {/* Marca */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-2 mb-5">
+              <div className="p-2 rounded-xl bg-brand-accent/15 border border-brand-accent/20">
+                <Leaf className="h-5 w-5 text-brand-accent" />
+              </div>
+              <span className="font-sora text-lg font-bold text-brand-cream">
+                Solari<span className="text-brand-accent"> Ambiental</span>
+              </span>
+            </div>
+            <p className="font-inter text-sm text-brand-cream/65 leading-relaxed mb-5">
+              Consultoria ambiental especializada em licenciamento, outorgas e gestão de conformidade no Paraná.
             </p>
+            {/* Social icons */}
+            <div className="flex gap-3">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook — Solari Ambiental"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-brand-cream/10 bg-brand-cream/5 text-brand-cream/60 transition-all hover:border-brand-accent/40 hover:bg-brand-accent/10 hover:text-brand-accent"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram — @solariambiental"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-brand-cream/10 bg-brand-cream/5 text-brand-cream/60 transition-all hover:border-brand-accent/40 hover:bg-brand-accent/10 hover:text-brand-accent"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn — Solari Soluções Ambientais"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-brand-cream/10 bg-brand-cream/5 text-brand-cream/60 transition-all hover:border-brand-accent/40 hover:bg-brand-accent/10 hover:text-brand-accent"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Links */}
+          {/* Links Rápidos */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
-              fontFamily: "'Poppins', sans-serif"
-            }}>Links Rápidos</h3>
-            <ul className="space-y-2" style={{
-              fontFamily: "'Montserrat', sans-serif"
-            }}>
-              <li>
-                <Link to="/" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
-                  Sobre Nós
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
-                  Serviços
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
-                  Perguntas Frequentes
-                </Link>
-              </li>
-              <li>
-                <Link to="/request-quote" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
-                  Solicitar Orçamento
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-prisma-gray-text/70 hover:text-eco-green transition-colors link-hover">
-                  Contato
-                </Link>
-              </li>
+            <h3 className="font-sora text-sm font-semibold uppercase tracking-widest text-brand-cream/50 mb-5">
+              Links Rápidos
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { to: "/", label: "Início" },
+                { to: "/about", label: "Sobre Nós" },
+                { to: "/services", label: "Serviços" },
+                { to: "/faq", label: "Perguntas Frequentes" },
+                { to: "/request-quote", label: "Solicitar Orçamento" },
+                { to: "/contact", label: "Contato" },
+                { to: "/privacidade", label: "Política de Privacidade" },
+              ].map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="font-inter text-sm text-brand-cream/65 transition-colors hover:text-brand-accent"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Serviços */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
-              fontFamily: "'Poppins', sans-serif"
-            }}>Contato</h3>
-            <ul className="space-y-3" style={{
-              fontFamily: "'Montserrat', sans-serif"
-            }}>
-              <li className="flex items-start gap-2 text-prisma-gray-text/80">
-                <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5 text-eco-green" />
-                <span>Av. Rio Branco, 1500<br />Centro, Rio de Janeiro - RJ<br />CEP: 20040-002</span>
-              </li>
-              <li className="flex items-center gap-2 text-prisma-gray-text/80">
-                <Phone className="h-5 w-5 flex-shrink-0 text-eco-green" />
-                <span>(14) 99713-3722</span>
-              </li>
-              <li className="flex items-center gap-2 text-prisma-gray-text/80">
-                <Mail className="h-5 w-5 flex-shrink-0 text-eco-green" />
-                <span>contato@solariambiental.com.br</span>
-              </li>
+            <h3 className="font-sora text-sm font-semibold uppercase tracking-widest text-brand-cream/50 mb-5">
+              Serviços
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { to: "/services/licensing", label: "Licenciamento Ambiental" },
+                { to: "/services/water_resources", label: "Outorga de Recursos Hídricos" },
+                { to: "/services/monitoring", label: "Monitoramento Ambiental" },
+                { to: "/services/reports", label: "Estudos e Documentos" },
+                { to: "/services/consulting", label: "Consultoria Especializada" },
+                { to: "/service/ibama", label: "Cadastro IBAMA (CTF)" },
+              ].map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="font-inter text-sm text-brand-cream/65 transition-colors hover:text-brand-accent"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Social Media */}
+          {/* Contato */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-prisma-gray-text" style={{
-              fontFamily: "'Poppins', sans-serif"
-            }}>Redes Sociais</h3>
-            <ul className="space-y-3" style={{
-              fontFamily: "'Montserrat', sans-serif"
-            }}>
-              <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-eco-green transition-colors">
-                  <Facebook className="h-5 w-5 text-eco-green" />
-                  <span>Solari Brasil</span>
+            <h3 className="font-sora text-sm font-semibold uppercase tracking-widest text-brand-cream/50 mb-5">
+              Contato
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <div className="mt-0.5 flex-shrink-0 p-1.5 rounded-lg bg-brand-accent/10">
+                  <MapPin className="h-4 w-4 text-brand-accent" />
+                </div>
+                <span className="font-inter text-sm text-brand-cream/65 leading-relaxed">
+                  Rua Sete de Setembro, 1322<br />
+                  Centro — Ponta Grossa, PR<br />
+                  CEP: 84010-350
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="flex-shrink-0 p-1.5 rounded-lg bg-brand-accent/10">
+                  <Phone className="h-4 w-4 text-brand-accent" />
+                </div>
+                <a
+                  href="tel:+5542999999999"
+                  className="font-inter text-sm text-brand-cream/65 transition-colors hover:text-brand-accent"
+                >
+                  (42) 99999-9999
                 </a>
               </li>
-              <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-eco-green transition-colors">
-                  <Instagram className="h-5 w-5 text-eco-green" />
-                  <span>@solariambiental</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-prisma-gray-text/80 hover:text-eco-green transition-colors">
-                  <Linkedin className="h-5 w-5 text-eco-green" />
-                  <span>Solari Soluções Ambientais</span>
+              <li className="flex items-center gap-3">
+                <div className="flex-shrink-0 p-1.5 rounded-lg bg-brand-accent/10">
+                  <Mail className="h-4 w-4 text-brand-accent" />
+                </div>
+                <a
+                  href="mailto:contato@solariambiental.com.br"
+                  className="font-inter text-sm text-brand-cream/65 transition-colors hover:text-brand-accent"
+                >
+                  contato@solariambiental.com.br
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-prisma-gray-light/60 mt-8 pt-8 text-center text-prisma-gray-text/60">
-          <p style={{
-            fontFamily: "'Montserrat', sans-serif"
-          }}>
-            &copy; {currentYear} Solari Soluções Ambientais. Todos os direitos reservados.
+        {/* Rodapé inferior */}
+        <div className="mt-12 border-t border-brand-cream/8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="font-inter text-xs text-brand-cream/40">
+            © {currentYear} Solari Soluções Ambientais. Todos os direitos reservados.
+          </p>
+          <p className="font-inter text-xs text-brand-cream/30">
+            Consultoria Ambiental · Ponta Grossa, PR
           </p>
         </div>
       </div>

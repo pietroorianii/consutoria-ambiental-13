@@ -1,75 +1,56 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { 
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
+const navItems = [
+  { to: "/", label: "Início", exact: true },
+  { to: "/about", label: "Sobre Nós", exact: false },
+  { to: "/services", label: "Serviços", exact: false },
+  { to: "/faq", label: "FAQ", exact: false },
+  { to: "/contact", label: "Contato", exact: false },
+];
+
 export function DesktopNav() {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const navLinkClass = "group inline-flex h-10 items-center justify-center rounded-full bg-transparent px-3 py-2 text-sm font-medium text-brand-dark transition-colors hover:bg-brand-primary/10 hover:text-brand-primary focus:bg-brand-primary/10 focus:text-brand-primary focus:outline-none lg:px-4";
+  const location = useLocation();
+
+  const isActive = (to: string, exact: boolean) => {
+    if (exact) return location.pathname === to;
+    return location.pathname.startsWith(to);
+  };
 
   return (
     <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 xl:flex">
       <div className="min-w-0">
         <NavigationMenu>
           <NavigationMenuList className="gap-1">
-            <NavigationMenuItem>
-              <Link 
-                to="/" 
-                className={navLinkClass}
-                onMouseEnter={() => setHoveredItem("home")}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                Início
-              </Link>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <Link 
-                to="/about" 
-                className={navLinkClass}
-                onMouseEnter={() => setHoveredItem("about")}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                Sobre Nós
-              </Link>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <Link 
-                to="/services" 
-                className={navLinkClass}
-                onMouseEnter={() => setHoveredItem("services")}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                Serviços
-              </Link>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <Link 
-                to="/faq" 
-                className={navLinkClass}
-                onMouseEnter={() => setHoveredItem("faq")}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                FAQ
-              </Link>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <Link 
-                to="/contact" 
-                className={navLinkClass}
-                onMouseEnter={() => setHoveredItem("contact")}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                Contato
-              </Link>
-            </NavigationMenuItem>
+            {navItems.map((item) => {
+              const active = isActive(item.to, item.exact);
+              return (
+                <NavigationMenuItem key={item.to}>
+                  <Link
+                    to={item.to}
+                    className={`
+                      group inline-flex h-10 items-center justify-center rounded-full px-3 py-2 text-sm font-medium transition-colors
+                      focus:outline-none lg:px-4
+                      ${active
+                        ? "bg-brand-primary/12 text-brand-primary font-semibold"
+                        : "bg-transparent text-brand-dark hover:bg-brand-primary/8 hover:text-brand-primary"
+                      }
+                    `}
+                  >
+                    {item.label}
+                    {active && (
+                      <span className="ml-1.5 h-1.5 w-1.5 rounded-full bg-brand-accent inline-block" />
+                    )}
+                  </Link>
+                </NavigationMenuItem>
+              );
+            })}
           </NavigationMenuList>
         </NavigationMenu>
       </div>

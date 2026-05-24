@@ -6,6 +6,7 @@ import { TeamMemberCard } from "@/components/about/TeamMemberCard";
 import { Users } from "lucide-react";
 import { PageBanner } from "@/components/ui/page-banner";
 import { MetaTags } from "@/components/layout/MetaTags";
+import { motion } from "framer-motion";
 
 // Team members data
 const teamMembers = [{
@@ -51,21 +52,32 @@ const AboutPage = () => {
         
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="scroll-trigger animate-slide-left">
-              <div className="inline-block px-4 py-2 bg-brand-accent/10 text-brand-accent font-medium text-sm uppercase tracking-wider rounded-full mb-6">
+            <motion.div
+              initial={{ opacity: 0, x: -28 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="inline-block px-4 py-2 bg-brand-accent/10 text-brand-accent font-inter font-medium text-sm uppercase tracking-wider rounded-full mb-6">
                 Nossa História
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+              <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-dark mb-6">
                 Consultoria Ambiental Especializada no Paraná
               </h2>
               <div className="h-1 w-20 bg-brand-accent rounded-full mb-8"></div>
-              <p className="text-muted-foreground text-lg mb-6">A Solari Soluções Ambientais nasceu da paixão pela natureza e do compromisso com o desenvolvimento sustentável. Nossa missão é oferecer consultoria ambiental de excelência, auxiliando empresas a prosperar em harmonia com o meio ambiente.</p>
-              <p className="text-muted-foreground text-lg">
+              <p className="font-inter text-brand-dark/70 text-lg mb-6 leading-relaxed">A Solari Soluções Ambientais nasceu da paixão pela natureza e do compromisso com o desenvolvimento sustentável. Nossa missão é oferecer consultoria ambiental de excelência, auxiliando empresas a prosperar em harmonia com o meio ambiente.</p>
+              <p className="font-inter text-brand-dark/65 text-base leading-relaxed">
                 Com uma equipe multidisciplinar e experiente, combinamos conhecimento técnico com uma abordagem personalizada para cada cliente, garantindo soluções eficazes e em conformidade com as mais recentes legislações ambientais.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="relative scroll-trigger animate-slide-right flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="relative flex items-center justify-center"
+            >
               {/* Logo da empresa */}
               <div className="relative p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-brand-accent/20 hover:border-brand-accent/40 transition-all duration-300">
                 <img 
@@ -78,7 +90,7 @@ const AboutPage = () => {
               {/* Elementos decorativos */}
               <div className="absolute -z-10 top-1/4 right-1/4 w-32 h-32 bg-brand-accent/10 rounded-full blur-xl"></div>
               <div className="absolute -z-10 bottom-1/4 left-1/4 w-40 h-40 bg-brand-primary/10 rounded-full blur-xl"></div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -89,15 +101,15 @@ const AboutPage = () => {
       <section id="team" className="py-20 md:py-28 bg-brand-cream/30 relative">
         
         <div className="container">
-          <div className="text-center mb-16 scroll-trigger">
-            <div className="inline-block px-4 py-2 bg-brand-primary/10 text-brand-primary font-medium text-sm uppercase tracking-wider rounded-full mb-6">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-brand-primary/10 text-brand-primary font-inter font-medium text-sm uppercase tracking-wider rounded-full mb-6">
               Nossa Equipe
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6 font-sora">
+            <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-dark mb-6">
               Nossa equipe técnica
             </h2>
             <div className="h-1 w-20 bg-brand-accent rounded-full mx-auto mb-8"></div>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-inter">
+            <p className="font-inter text-brand-dark/65 max-w-2xl mx-auto text-lg">
               Engenheiros registrados no CREA com experiência prática em licenciamento e gestão ambiental no Paraná.
             </p>
           </div>
