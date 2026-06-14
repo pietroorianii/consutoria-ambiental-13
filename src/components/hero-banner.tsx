@@ -137,17 +137,17 @@ export function HeroBanner() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className="flex flex-wrap items-stretch"
+              className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4 sm:divide-x sm:divide-brand-cream/15 w-full max-w-2xl"
             >
               {[
                 { icon: <Users className="h-4 w-4 text-brand-accent" />, k: "5+", v: "anos no mercado" },
-                { icon: <FileCheck className="h-4 w-4 text-brand-accent" />, k: "300+", v: "licenças emitidas no PR" },
+                { icon: <FileCheck className="h-4 w-4 text-brand-accent" />, k: "300+", v: "licenças no PR" },
                 { icon: <ShieldCheck className="h-4 w-4 text-brand-accent" />, k: "100%", v: "taxa de aprovação" },
-                { icon: <MapPin className="h-4 w-4 text-brand-accent" />, k: "PR", v: "Ponta Grossa, PR" },
-              ].map((s, i) => (
+                { icon: <MapPin className="h-4 w-4 text-brand-accent" />, k: "PR", v: "Ponta Grossa" },
+              ].map((s) => (
                 <div
                   key={s.k}
-                  className={`flex items-center gap-3 ${i > 0 ? "pl-5 border-l border-brand-cream/15" : ""} ${i < 3 ? "pr-5" : ""} py-1`}
+                  className="flex items-center gap-3 sm:px-5 sm:first:pl-0 sm:last:pr-0"
                 >
                   <div className="flex-shrink-0 p-1.5 rounded-lg bg-brand-accent/10">
                     {s.icon}
