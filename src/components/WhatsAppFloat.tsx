@@ -3,9 +3,9 @@ import { MessageCircle } from 'lucide-react';
 
 export function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
-  // TODO: substituir pelo número real (formato internacional, somente dígitos)
-  const phone = '5514997133722';
-  const message = encodeURIComponent('Olá, gostaria de saber mais sobre os serviços da Solari.');
+  // ⚠️ SUBSTITUIR pelo número real da Solari: formato 5542XXXXXXXXX (DDD 42 — Ponta Grossa)
+  const phone = '5542999998000'; // ← trocar pelo número real
+  const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços da Solari Soluções Ambientais.');
   return (
     <a
       href={`https://wa.me/${phone}?text=${message}`}
