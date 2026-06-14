@@ -238,10 +238,10 @@ function ServiceCard({
     : "border-brand-primary/30 text-brand-primary hover:bg-brand-primary hover:text-white";
 
   const accentButtonFill = isGreen
-    ? "bg-prisma-green hover:bg-prisma-green/90"
+    ? "bg-prisma-green hover:bg-prisma-green/90 text-white"
     : isBlue
-    ? "bg-prisma-blue hover:bg-prisma-blue/90"
-    : "bg-brand-primary hover:bg-brand-primary/90 text-gray-900";
+    ? "bg-prisma-blue hover:bg-prisma-blue/90 text-white"
+    : "bg-brand-primary hover:bg-brand-primary/90 text-white";
 
   return (
     <motion.div
@@ -327,9 +327,12 @@ function ServiceCard({
           {/* Serviços expansíveis */}
           <div className="border-t border-brand-primary/40 pt-3">
             <button
+              type="button"
+              onClick={() => setOpen((o) => !o)}
+              aria-expanded={open}
               className={`font-sora flex items-center justify-between w-full text-sm font-semibold ${accentText} hover:opacity-80 transition-opacity`}
             >
-              <span>Ver todos os {cat.services.length} serviços</span>
+              <span>{open ? "Ocultar serviços" : `Ver todos os ${cat.services.length} serviços`}</span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
               />
@@ -396,7 +399,7 @@ function ServiceCard({
             <Button
               asChild
               size="sm"
-              className={`font-inter flex-1 ${accentButtonFill} text-white transition-all duration-300 font-semibold shadow-md hover:shadow-lg`}
+              className={`font-inter flex-1 ${accentButtonFill} transition-all duration-300 font-semibold shadow-md hover:shadow-lg`}
             >
               <Link to="/request-quote">Orçamento</Link>
             </Button>
@@ -428,16 +431,10 @@ const ServicesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2
-              className="text-2xl md:text-3xl font-bold text-prisma-gray-text mb-3"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
+            <h2 className="font-sora text-2xl md:text-3xl font-bold text-brand-primary mb-3">
               9 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
             </h2>
-            <p
-              className="text-brand-primary/70 leading-relaxed mb-6"
-              style={{ fontFamily: "'DM Sans', system-ui, sans-serif" }}
-            >
+            <p className="font-inter text-brand-primary/70 leading-relaxed mb-6">
               Clique em <strong>Explorar</strong> para ver detalhes de cada área ou em{" "}
               <strong>Ver todos os serviços</strong> para expandir a lista completa dentro do card.
             </p>

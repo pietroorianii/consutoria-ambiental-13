@@ -36,9 +36,9 @@ export function CompanyIntro() {
           </p>
 
           <p className="font-inter text-base text-brand-dark/65 leading-relaxed">
-            Nossa equipe de profissionais qualificados atua em todo o
-            território nacional, oferecendo soluções personalizadas para cada
-            cliente, com excelência técnica e inovação em todos os projetos.
+            Nossa equipe técnica atua em todo o Paraná, com foco em Ponta Grossa
+            e região, oferecendo soluções personalizadas para cada cliente com
+            excelência técnica e responsabilidade ambiental.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

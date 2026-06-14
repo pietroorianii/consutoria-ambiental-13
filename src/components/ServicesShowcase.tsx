@@ -131,10 +131,7 @@ export function ServicesShowcase() {
             className="mt-6 font-sora text-3xl font-bold leading-tight text-brand-primary md:text-5xl"
           >
             Serviços ambientais para sua empresa{" "}
-            <span className="bg-gradient-to-r from-brand-accent via-brand-primary to-brand-primary bg-clip-text text-transparent">
-              operar sem risco
-            </span>
-            .
+            <span className="text-brand-accent">operar sem risco</span>.
           </motion.h2>
 
           <motion.p
@@ -144,12 +141,12 @@ export function ServicesShowcase() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-5 font-inter text-base leading-relaxed text-brand-primary/75 md:text-lg"
           >
-            Clique para ver prazos, documentos e base legal de cada serviço.
+            Clique em qualquer serviço para ver prazos, documentos e base legal.
           </motion.p>
         </div>
 
-        {/* Uniform Grid — same size cards */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Uniform Grid — 3 columns × 3 rows = sem cards órfãos */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
@@ -162,7 +159,7 @@ export function ServicesShowcase() {
               >
                 <Link
                   to={service.href}
-                  className="group relative flex h-full min-h-[300px] flex-col overflow-hidden rounded-2xl border border-brand-primary/10 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-accent/40 hover:shadow-xl"
+                  className="group relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-brand-primary/10 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-accent/40 hover:shadow-xl"
                 >
                   {/* Top accent bar */}
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
