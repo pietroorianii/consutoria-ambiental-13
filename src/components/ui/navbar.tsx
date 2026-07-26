@@ -15,7 +15,7 @@ export function Navbar() {
               alt="Solari Soluções Ambientais" 
               className="h-10 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105 md:h-11"
             />
-            <span className="hidden max-w-[58vw] truncate font-sora text-base font-extrabold leading-none text-brand-primary sm:block md:text-lg xl:max-w-none xl:text-xl">
+            <span className="hidden max-w-[58vw] truncate bg-gradient-to-r from-yellow-400 via-lime-500 to-brand-secondary bg-clip-text font-sora text-base font-extrabold leading-none text-transparent sm:block md:text-lg xl:max-w-none xl:text-xl">
               SOLARI SOLUÇÕES AMBIENTAIS
             </span>
           </Link>
