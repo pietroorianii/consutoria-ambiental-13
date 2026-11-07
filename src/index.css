@@ -464,3 +464,7 @@
   opacity: 0.3;
   transition: 0s;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
