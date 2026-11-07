@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import { useRef } from 'react';
 import { Search, ClipboardList, Wrench, Award } from 'lucide-react';
 
 const steps = [
@@ -10,6 +11,9 @@ const steps = [
 ];
 
 export function WorkProcess() {
+  const lineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: lineRef, offset: ['start 85%', 'start 35%'] });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 90, damping: 25 });
   return (
     <section className="container py-20 md:py-28 relative">
       <div className="text-center mb-16 max-w-2xl mx-auto">
@@ -35,7 +39,8 @@ export function WorkProcess() {
 
       <div className="relative">
         {/* Connector line (desktop only) */}
-        <div className="hidden md:block absolute top-10 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-primary/30 to-transparent" />
+        <div ref={lineRef} className="hidden md:block absolute top-10 left-0 right-0 h-px bg-brand-primary/10" />
+        <motion.div style={{ scaleX }} className="hidden md:block absolute top-10 left-0 right-0 h-0.5 origin-left bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary" />
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
           {steps.map((s, i) => {

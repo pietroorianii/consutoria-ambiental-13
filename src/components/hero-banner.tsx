@@ -1,236 +1,153 @@
-import { Button } from "@/components/ui/button";
+import { useRef, MouseEvent } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  MessageCircle,
-  MapPin,
-  ShieldCheck,
-  FileCheck,
-  Users,
-  Leaf,
-} from "lucide-react";
+import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
+import { ArrowRight, MessageCircle, MapPin, ShieldCheck, FileCheck, Users, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ServiceSearch } from "@/components/ServiceSearch";
+import landscape from "@/assets/illustrations/landscape.jpg";
 
 export function HeroBanner() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "25%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "40%"]);
+  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const sx = useSpring(mx, { stiffness: 50, damping: 20 });
+  const sy = useSpring(my, { stiffness: 50, damping: 20 });
+
+  const onMove = (e: MouseEvent) => {
+    if (reduce) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    mx.set(((e.clientX - r.left) / r.width - 0.5) * -24);
+    my.set(((e.clientY - r.top) / r.height - 0.5) * -14);
+  };
+
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] overflow-hidden bg-brand-dark text-brand-cream lg:min-h-[90vh]">
-      {/* ── Fundo full-bleed visível atrás do layout inteiro ── */}
-      <img
-        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920&h=1280"
-        alt="Floresta nativa preservada ao amanhecer"
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+    <section
+      ref={ref}
+      onMouseMove={onMove}
+      className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-brand-dark text-brand-cream"
+    >
+      <motion.div style={{ y: bgY }} className="absolute inset-[-4%]">
+        <motion.img
+          src={landscape}
+          alt="Ilustração de paisagem paranaense com araucárias e rio"
+          width={1920}
+          height={1088}
+          fetchPriority="high"
+          style={{ x: sx, y: sy, scale: 1.08 }}
+          className="h-full w-full object-cover"
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/75 via-brand-dark/60 to-brand-dark/90" />
 
-      {/* Overlay direcional: escuro na esq (legibilidade), transparente à dir */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/97 via-brand-dark/80 to-brand-dark/20" />
-      {/* Detalhe de brilho esverdeado no topo esquerdo */}
-      <div className="absolute -top-32 -left-20 w-[32rem] h-[32rem] rounded-full bg-brand-primary/30 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-brand-dark to-transparent pointer-events-none" />
+      <motion.div style={{ y: contentY, opacity: fade }} className="container relative z-10 py-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto mb-7 inline-flex items-center gap-2 rounded-full border border-brand-cream/20 bg-brand-dark/40 px-4 py-2 backdrop-blur-md"
+        >
+          <MapPin className="h-3.5 w-3.5 text-brand-accent" />
+          <span className="font-sora text-xs font-medium uppercase tracking-wider text-brand-cream/90 md:text-sm">
+            Consultoria Ambiental · Ponta Grossa, PR
+          </span>
+        </motion.div>
 
-      {/* ── Layout principal: grid 55/45 ── */}
-      <div className="container relative z-10 flex items-center py-16 md:py-20 lg:py-0 min-h-[inherit]">
-        <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 xl:gap-20 w-full items-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mx-auto max-w-4xl font-sora text-4xl font-bold leading-[1.1] sm:text-5xl lg:text-6xl"
+        >
+          Licenciamento ambiental{" "}
+          <span className="relative inline-block text-brand-accent">
+            sem dor de cabeça.
+            <svg viewBox="0 0 300 14" className="absolute -bottom-3 left-0 h-3.5 w-full" preserveAspectRatio="none" aria-hidden>
+              <motion.path
+                d="M3 10 C 60 2, 120 13, 170 7 S 260 3, 297 9"
+                className="stroke-brand-cream/70"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ delay: 0.9, duration: 1, ease: "easeInOut" }}
+              />
+            </svg>
+          </span>
+        </motion.h1>
 
-          {/* ── COLUNA ESQUERDA: conteúdo ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -32 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex flex-col items-start text-left"
-          >
-            {/* Badge de localidade e especialidade */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="mx-auto mt-8 max-w-2xl font-inter text-lg leading-relaxed text-brand-cream/85 md:text-xl"
+        >
+          Cuidamos de licenças, estudos e regularização junto ao IAT — do primeiro diagnóstico à licença emitida.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.6 }}
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+        >
+          <Button asChild size="lg" className="group min-h-12 rounded-2xl bg-brand-accent px-7 text-base font-semibold text-white shadow-lg shadow-brand-accent/25 hover:bg-brand-accent/90">
+            <Link to="/services" className="flex items-center gap-3">
+              Conhecer os serviços
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="min-h-12 rounded-2xl border-brand-cream/30 bg-brand-cream/5 px-7 text-base font-semibold text-brand-cream backdrop-blur-md hover:bg-brand-cream/15 hover:text-brand-cream">
+            <Link to="/request-quote" className="flex items-center gap-3">
+              <MessageCircle className="h-5 w-5" />
+              Pedir orçamento
+            </Link>
+          </Button>
+        </motion.div>
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mx-auto mt-10 max-w-2xl">
+          <ServiceSearch />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.75 }}
+          className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4"
+        >
+          {[
+            { icon: Users, k: "5+", v: "anos no mercado" },
+            { icon: FileCheck, k: "300+", v: "licenças no PR" },
+            { icon: ShieldCheck, k: "100%", v: "aprovação" },
+            { icon: MapPin, k: "PR", v: "atuação estadual" },
+          ].map(({ icon: Icon, k, v }) => (
             <motion.div
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-brand-accent/30 bg-brand-accent/10 backdrop-blur-md"
+              key={v}
+              whileHover={{ y: -4 }}
+              className="rounded-2xl border border-brand-cream/10 bg-brand-dark/40 px-4 py-3 backdrop-blur-md transition-colors hover:border-brand-accent/40"
             >
-              <MapPin className="h-3.5 w-3.5 text-brand-accent flex-shrink-0" />
-              <span className="text-xs md:text-sm font-medium tracking-wider uppercase text-brand-cream/90 font-sora">
-                Consultoria Ambiental · Ponta Grossa, PR
-              </span>
+              <Icon className="mx-auto mb-1 h-4 w-4 text-brand-accent" />
+              <div className="font-sora text-xl font-bold">{k}</div>
+              <div className="font-inter text-xs text-brand-cream/65">{v}</div>
             </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
 
-            {/* H1 */}
-            <h1 className="font-sora text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-[3.75rem] mb-6">
-              Licenciamento ambiental{" "}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-brand-accent via-[#7EDCE2] to-brand-accent bg-clip-text text-transparent">
-                  sem dor de cabeça.
-                </span>
-                {/* Sublinhado SVG decorativo */}
-                <span className="absolute -bottom-2 left-0 right-0 overflow-hidden" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 300 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-full h-3"
-                    preserveAspectRatio="none"
-                  >
-                    <motion.path
-                      d="M2 9 C50 3, 100 11, 150 6 S250 2, 298 7"
-                      stroke="url(#underlineGrad)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      fill="none"
-                      initial={{ pathLength: 0, opacity: 0 }}
-                      animate={{ pathLength: 1, opacity: 1 }}
-                      transition={{ delay: 0.8, duration: 0.9, ease: "easeOut" }}
-                    />
-                    <defs>
-                      <linearGradient id="underlineGrad" x1="0" y1="0" x2="300" y2="0">
-                        <stop offset="0%" stopColor="#00A3AD" stopOpacity="0.8" />
-                        <stop offset="100%" stopColor="#7EDCE2" stopOpacity="0.4" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-              </span>
-            </h1>
-
-            {/* Subtítulo */}
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="max-w-xl font-inter text-lg leading-relaxed text-brand-cream/80 md:text-xl mb-10"
-            >
-              Resolvemos toda a burocracia no IAT. Da dispensa à licença final, cuidamos da papelada para você focar apenas no seu negócio.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="flex flex-col gap-4 sm:flex-row mb-12"
-            >
-              <Button
-                asChild
-                size="lg"
-                className="group min-h-12 rounded-2xl bg-brand-accent px-7 py-3 text-base font-semibold text-white shadow-lg shadow-brand-accent/25 transition-all duration-200 hover:scale-[1.03] hover:bg-brand-accent/90 hover:shadow-brand-accent/40"
-              >
-                <Link to="/services" className="flex items-center gap-3">
-                  Ver todos os serviços
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="min-h-12 rounded-2xl border-brand-cream/25 bg-brand-cream/5 px-7 py-3 text-base font-semibold text-brand-cream backdrop-blur-md transition-all duration-200 hover:scale-[1.03] hover:bg-brand-cream/15"
-              >
-                <Link to="/request-quote" className="flex items-center gap-3">
-                  <MessageCircle className="h-5 w-5 flex-shrink-0" />
-                  Quero um orçamento
-                </Link>
-              </Button>
-            </motion.div>
-
-            {/* Trust strip */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.7 }}
-              className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4 sm:divide-x sm:divide-brand-cream/15 w-full max-w-2xl"
-            >
-              {[
-                { icon: <Users className="h-4 w-4 text-brand-accent" />, k: "5+", v: "anos no mercado" },
-                { icon: <FileCheck className="h-4 w-4 text-brand-accent" />, k: "300+", v: "licenças no PR" },
-                { icon: <ShieldCheck className="h-4 w-4 text-brand-accent" />, k: "100%", v: "taxa de aprovação" },
-                { icon: <MapPin className="h-4 w-4 text-brand-accent" />, k: "PR", v: "Ponta Grossa" },
-              ].map((s) => (
-                <div
-                  key={s.k}
-                  className="flex items-center gap-3 sm:px-5 sm:first:pl-0 sm:last:pr-0"
-                >
-                  <div className="flex-shrink-0 p-1.5 rounded-lg bg-brand-accent/10">
-                    {s.icon}
-                  </div>
-                  <div>
-                    <div className="font-sora text-xl font-bold text-brand-cream leading-tight">
-                      {s.k}
-                    </div>
-                    <div className="text-xs text-brand-cream/60 font-inter leading-tight mt-0.5">
-                      {s.v}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* ── COLUNA DIREITA: visual (oculto no mobile) ── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94, x: 24 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-            className="hidden lg:flex items-center justify-center relative"
-          >
-            {/* Foto com moldura */}
-            <div className="relative w-full max-w-[480px]">
-              {/* Anel decorativo atrás da foto */}
-              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand-accent/20 via-brand-primary/10 to-transparent blur-xl" />
-              <div className="absolute -inset-1 rounded-[2rem] border border-brand-accent/20" />
-
-              {/* Foto principal com moldura arredondada */}
-              <div className="relative overflow-hidden rounded-[1.75rem] shadow-2xl shadow-brand-dark/60">
-                <img
-                  src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=800&h=960"
-                  alt="Floresta preservada no Paraná"
-                  className="w-full h-[480px] object-cover"
-                />
-                {/* Overlay sutil na base da foto */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 via-transparent to-transparent" />
-              </div>
-
-              {/* Card flutuante 1 — canto superior esquerdo */}
-              <motion.div
-                initial={{ opacity: 0, y: -12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute -top-4 -left-6 flex items-center gap-3 px-4 py-3 rounded-2xl bg-brand-dark/80 backdrop-blur-md border border-brand-cream/10 shadow-xl"
-              >
-                <div className="p-2 rounded-xl bg-brand-accent/20">
-                  <FileCheck className="h-5 w-5 text-brand-accent" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-brand-cream font-sora">IAT · SGA</div>
-                  <div className="text-[10px] text-brand-cream/60 font-inter">Protocolo online</div>
-                </div>
-              </motion.div>
-
-              {/* Card flutuante 2 — canto inferior direito */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1, duration: 0.5 }}
-                className="absolute -bottom-4 -right-6 flex items-center gap-3 px-4 py-3 rounded-2xl bg-brand-dark/80 backdrop-blur-md border border-brand-cream/10 shadow-xl"
-              >
-                <div className="p-2 rounded-xl bg-brand-primary/30">
-                  <Leaf className="h-5 w-5 text-brand-accent" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-brand-cream font-sora">300+ processos</div>
-                  <div className="text-[10px] text-brand-cream/60 font-inter">conduzidos no PR</div>
-                </div>
-              </motion.div>
-
-              {/* Ponto de brilho decorativo */}
-              <div className="absolute top-1/3 -right-10 w-20 h-20 rounded-full bg-brand-accent/15 blur-2xl pointer-events-none" />
-            </div>
-          </motion.div>
-
-        </div>
-      </div>
-
-      {/* Linha de separação sutil na base */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-cream/10 to-transparent" />
+      <motion.div
+        aria-hidden
+        animate={reduce ? undefined : { y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-brand-cream/60"
+      >
+        <ChevronDown className="h-6 w-6" />
+      </motion.div>
     </section>
   );
 }

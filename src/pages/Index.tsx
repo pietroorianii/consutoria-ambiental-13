@@ -8,6 +8,8 @@ import { CTASection } from "@/components/cta-section";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { MetaTags } from "@/components/layout/MetaTags";
+import { ScrollProgress } from "@/components/fx/ScrollProgress";
+import { OrganicDivider } from "@/components/fx/OrganicDivider";
 
 const Index = () => {
   return (
@@ -19,7 +21,11 @@ const Index = () => {
         companyName="Solari Soluções Ambientais"
       />
 
+      <ScrollProgress />
       <HeroBanner />
+      <div className="bg-brand-dark">
+        <OrganicDivider fill="fill-brand-cream" />
+      </div>
       <ServicesShowcase />
       <SegmentCards />
       <CompanyIntro />
