@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { TiltCard } from "@/components/fx/TiltCard";
 import {
   Sparkles,
   ArrowUpRight,
@@ -156,10 +157,12 @@ export function ServicesShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: Math.min(i * 0.04, 0.25) }}
+                className="h-full"
               >
+                <TiltCard>
                 <Link
                   to={service.href}
-                  className="group relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-brand-primary/10 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-accent/40 hover:shadow-xl"
+                  className="group relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-brand-primary/10 bg-card p-7 shadow-sm transition-all duration-300 hover:border-brand-accent/40 hover:shadow-xl"
                 >
                   {/* Top accent bar */}
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
@@ -189,6 +192,7 @@ export function ServicesShowcase() {
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </div>
                 </Link>
+                </TiltCard>
               </motion.div>
             );
           })}
