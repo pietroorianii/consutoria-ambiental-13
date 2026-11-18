@@ -1,3 +1,4 @@
+import { MetaTags } from "@/components/layout/MetaTags";
 import React, { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowRight, CheckCircle, Target, Users } from "lucide-react";
@@ -47,6 +48,7 @@ const ServiceGroupPage = () => {
 
   return (
     <PageWrapper>
+      <MetaTags title={`${group.title} | Axis Soluções Ambientais`} description={group.description} />
       <PageBanner
         title={group.title}
         description={group.description}
@@ -136,9 +138,9 @@ const ServiceGroupPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: Target, title: "Expertise Comprovada", desc: "Anos de experiência e centenas de projetos bem-sucedidos." },
+              { icon: Target, title: "Enquadramento antes de tudo", desc: "Definimos modalidade e estudos antes de gastar com documentação." },
               { icon: Users, title: "Equipe Especializada", desc: "Profissionais atualizados com a legislação ambiental vigente." },
-              { icon: CheckCircle, title: "Resultados Garantidos", desc: "Acompanhamento completo do início à entrega final." },
+              { icon: CheckCircle, title: "Acompanhamento até o fim", desc: "Respondemos às pendências do órgão até a decisão final." },
             ].map((item, i) => (
               <Card key={i} className="border-eco-green/20 bg-white/95">
                 <CardContent className="p-6 text-center">

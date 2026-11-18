@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { MessageCircle } from 'lucide-react';
+import { whatsappUrl } from '@/config/company';
 
 export function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
-  // ⚠️ SUBSTITUIR pelo número real da Axis: formato 5542XXXXXXXXX (DDD 42 — Ponta Grossa)
-  const phone = '5542999998000'; // ← trocar pelo número real
-  const message = encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços da Axis Soluções Ambientais.');
   return (
     <a
-      href={`https://wa.me/${phone}?text=${message}`}
+      href={whatsappUrl()}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco no WhatsApp"

@@ -1,9 +1,9 @@
+import { MetaTags } from "@/components/layout/MetaTags";
 
 import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { Button } from "@/components/ui/button";
-import { CTASection } from "@/components/cta-section";
 import { serviceDetails } from "@/data/serviceDetails";
 import { ServiceDetailHero } from "@/components/service/ServiceDetailHero";
 import { ServiceOverview } from "@/components/service/ServiceOverview";
@@ -36,6 +36,7 @@ const ServiceDetailPage = () => {
 
   return (
     <PageWrapper>
+      <MetaTags title={`${service.title} | Axis Soluções Ambientais`} description={service.description} />
       {/* Hero Banner */}
       <ServiceDetailHero service={service} />
 
@@ -60,7 +61,6 @@ const ServiceDetailPage = () => {
       {/* Bottom CTA Section */}
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-br from-eco-green/5 via-eco-blue/3 to-eco-earth/10"></div>
-        <CTASection />
       </div>
     </PageWrapper>
   );

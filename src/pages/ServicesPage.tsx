@@ -1,3 +1,4 @@
+import { MetaTags } from "@/components/layout/MetaTags";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -169,7 +170,7 @@ const ALL_CATEGORIES = [
     icon: Shield,
     badge: "IBAMA",
     title: "Cadastro e Obrigações IBAMA",
-    description: "Inscrição e manutenção do CTF/APP, declaração anual RAPP e controle da TCFA. Conformidade federal garantida.",
+    description: "Inscrição e manutenção do CTF/APP, declaração anual RAPP e controle da TCFA. Mantenha sua regularidade federal em dia.",
     services: [
       { title: "CTF/APP — Cadastro Técnico Federal", description: "Inscrição de pessoas físicas e jurídicas no cadastro obrigatório do IBAMA." },
       { title: "Certificado de Regularidade (CR)", description: "Emissão e renovação anual do CR necessário para operações e licitações." },
@@ -191,57 +192,15 @@ function ServiceCard({
   const [open, setOpen] = useState(false);
   const Icon = cat.icon;
 
-  const isGreen = cat.color === "brand-accent";
-  const isBlue = cat.color === "brand-primary";
-  // brand-primary for the rest
-
-  const accentText = isGreen
-    ? "text-prisma-green"
-    : isBlue
-    ? "text-prisma-blue"
-    : "text-brand-primary";
-
-  const accentBorder = isGreen
-    ? "hover:border-prisma-green/50 hover:to-prisma-green/15"
-    : isBlue
-    ? "hover:border-prisma-blue/50 hover:to-prisma-blue/15"
-    : "hover:border-brand-primary/50 hover:to-brand-primary/15";
-
-  const accentBg = isGreen
-    ? "from-prisma-green/5 via-prisma-green/10 to-prisma-green/20"
-    : isBlue
-    ? "from-prisma-blue/5 via-prisma-blue/10 to-prisma-blue/20"
-    : "from-brand-primary/5 via-brand-primary/10 to-brand-primary/20";
-
-  const accentIconBg = isGreen
-    ? "from-prisma-green/20 to-emerald-300/30 group-hover:from-prisma-green/40 group-hover:to-emerald-300/50"
-    : isBlue
-    ? "from-prisma-blue/20 to-blue-300/30 group-hover:from-prisma-blue/40 group-hover:to-blue-300/50"
-    : "from-brand-primary/20 to-yellow-300/30 group-hover:from-brand-primary/40 group-hover:to-yellow-300/50";
-
-  const accentBadge = isGreen
-    ? "bg-gradient-to-r from-prisma-green/20 to-emerald-300/30 text-prisma-green group-hover:from-prisma-green/40"
-    : isBlue
-    ? "bg-gradient-to-r from-prisma-blue/20 to-blue-300/30 text-prisma-blue group-hover:from-prisma-blue/40"
-    : "bg-gradient-to-r from-brand-primary/20 to-yellow-300/30 text-brand-primary group-hover:from-brand-primary/40";
-
-  const accentTopBar = isGreen
-    ? "from-prisma-green to-emerald-400"
-    : isBlue
-    ? "from-prisma-blue to-blue-400"
-    : "from-brand-primary to-yellow-400";
-
-  const accentButtonOutline = isGreen
-    ? "border-prisma-green/30 text-prisma-green hover:bg-prisma-green hover:text-white"
-    : isBlue
-    ? "border-prisma-blue/30 text-prisma-blue hover:bg-prisma-blue hover:text-white"
-    : "border-brand-primary/30 text-brand-primary hover:bg-brand-primary hover:text-white";
-
-  const accentButtonFill = isGreen
-    ? "bg-prisma-green hover:bg-prisma-green/90 text-white"
-    : isBlue
-    ? "bg-prisma-blue hover:bg-prisma-blue/90 text-white"
-    : "bg-brand-primary hover:bg-brand-primary/90 text-white";
+  // AXIS: mesma linguagem visual para todas as áreas (antes alternava verde/azul/amarelo).
+  const accentText = "text-brand-accent";
+  const accentBorder = "hover:border-brand-accent/40";
+  const accentBg = "from-white via-white to-brand-cream";
+  const accentIconBg = "from-brand-accent/10 to-brand-accent/15 group-hover:from-brand-accent/15 group-hover:to-brand-accent/25";
+  const accentBadge = "bg-brand-accent/10 text-brand-accent";
+  const accentTopBar = "from-brand-lime to-brand-accent";
+  const accentButtonOutline = "border-brand-dark/20 bg-white text-brand-dark hover:border-brand-accent hover:text-brand-accent";
+  const accentButtonFill = "bg-brand-dark hover:bg-brand-primary text-white";
 
   return (
     <motion.div
@@ -379,7 +338,7 @@ function ServiceCard({
         </CardContent>
 
         {/* Footer com botões — mesmo padrão da home */}
-        <div className="mt-auto p-5 pt-3 border-t border-brand-primary/40 bg-gradient-to-r from-brand-primary/10 to-brand-primary/20 group-hover:from-brand-primary/20 group-hover:to-brand-primary/30 transition-all duration-300 relative z-10">
+        <div className="mt-auto p-5 pt-3 border-t border-brand-dark/10 bg-brand-cream/60 transition-all duration-300 relative z-10">
           <div className="flex gap-2.5">
             <Button
               asChild
@@ -414,14 +373,13 @@ function ServiceCard({
 const ServicesPage = () => {
   return (
     <PageWrapper>
+      <MetaTags title="Serviços de consultoria ambiental no Paraná | Axis Soluções Ambientais" description="Licenciamento, outorgas, estudos técnicos, resíduos, monitoramento, ESG, treinamentos e cadastro IBAMA para empresas no Paraná." />
       <PageBanner
         title="Todos os serviços"
         description="Licenciamento, outorgas, estudos e gestão ambiental — tudo que sua empresa precisa para operar dentro da lei."
         icon={<Leaf />}
         variant="services"
-        backUrl="/"
-        backText="Voltar ao Início"
-      />
+              />
 
       {/* Introdução e contagem */}
       <section className="container pt-14 pb-4">
@@ -432,7 +390,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-sora text-2xl md:text-3xl font-bold text-brand-primary mb-3">
-              9 áreas de atuação · {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços especializados
+              {ALL_CATEGORIES.length} áreas de atuação, {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços
             </h2>
             <p className="font-inter text-brand-primary/70 leading-relaxed mb-6">
               Clique em <strong>Explorar</strong> para ver detalhes de cada área ou em{" "}

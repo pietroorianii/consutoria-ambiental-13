@@ -7,7 +7,7 @@ export const lasService: ServiceDetailData = {
   title: "Licença Ambiental Simplificada (LAS)",
   description: "Agilidade e Conformidade com a Licença Ambiental Simplificada (LAS)",
   icon: Leaf,
-  image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A Licença Ambiental Simplificada (LAS) é a solução ideal para empreendimentos de pequeno a médio porte e baixo potencial poluidor. Emitida em uma única etapa, a LAS autoriza a localização, a instalação e a operação da atividade, tornando o processo muito mais rápido e eficiente. Cuidamos de todo o processo para você.",
   benefits: [
     "Processo unificado em uma única etapa",
@@ -50,6 +50,7 @@ export const lasService: ServiceDetailData = {
   ],
   timeline: "O prazo máximo para análise da LAS é de 60 dias corridos, conforme estabelecido pela legislação estadual.",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
     "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "Instruções Normativas setoriais do IAT vigentes",

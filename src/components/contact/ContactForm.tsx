@@ -1,52 +1,42 @@
-
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useContactForm } from "@/hooks/use-contact-form";
 import { ContactFormFields } from "./ContactFormFields";
 import { Loader2 } from "lucide-react";
+import { LGPD_NOTICE } from "@/lib/spam-guard";
 
 export function ContactForm() {
-  const { form, isSubmitting, handleSubmit } = useContactForm();
+  const { form, isSubmitting, handleSubmit, honeypotProps } = useContactForm();
 
   return (
-    <div className="bg-background rounded-lg border border-border/50 p-8 shadow-sm transform transition-all duration-500 hover:shadow-lg">
-      <h2 className="text-2xl font-bold mb-6 relative">
-        Envie uma mensagem
-        <span className="block h-1 w-16 bg-brand-accent mt-2 transform origin-left transition-all duration-300 group-hover:w-full"></span>
-      </h2>
-      
+    <div>
+      <h2 className="font-display text-2xl font-semibold text-brand-dark">Envie uma mensagem</h2>
+      <span className="axis-rule mt-4" />
+
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="relative mt-8 space-y-6" noValidate>
+          <input {...honeypotProps} />
           <fieldset disabled={isSubmitting} className="space-y-6">
             <ContactFormFields form={form} />
           </fieldset>
-          
-          {/* ── Bloco de consentimento LGPD ── */}
-          <div className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-4 border border-border">
-            <p className="font-semibold text-foreground mb-1">Proteção de dados — LGPD</p>
-            <p className="leading-relaxed">
-              Ao enviar este formulário, você autoriza a Axis Soluções Ambientais a
-              armazenar e utilizar seus dados para fins de atendimento comercial,
-              conforme a Lei nº 13.709/2018 (LGPD). Seus dados não serão
-              compartilhados com terceiros.{" "}
-              <a href="/privacidade" className="underline text-primary hover:text-primary/80 transition-colors">
-                Política de Privacidade
-              </a>
-            </p>
-          </div>
 
-          <Button 
-            type="submit" 
-            className="w-full bg-brand-accent hover:bg-brand-accent/90 text-white transition-all duration-300 transform hover:scale-[1.01]"
+          <p className="rounded-xl bg-brand-cream p-4 text-xs leading-relaxed text-brand-dark/65">
+            {LGPD_NOTICE}{" "}
+            <a href="/privacidade" className="font-medium text-brand-accent underline">Política de Privacidade</a>
+          </p>
+
+          <Button
+            type="submit"
+            className="h-12 w-full rounded-full bg-brand-dark text-base font-semibold text-white hover:bg-brand-primary"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5" />
+                <Loader2 className="-ml-1 mr-3 h-5 w-5 animate-spin" />
                 Enviando...
               </>
             ) : (
-              "Enviar Mensagem"
+              "Enviar mensagem"
             )}
           </Button>
         </form>

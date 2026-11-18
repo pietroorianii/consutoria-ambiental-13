@@ -10,13 +10,10 @@ export const ServiceBenefits = ({ benefits }: ServiceBenefitsProps) => {
   return (
     <section className="max-w-5xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
-          Benefícios para o Seu Negócio
+        <h2 className="font-display text-3xl md:text-[2.4rem] font-semibold tracking-tight text-brand-dark">
+          O que sua empresa ganha
         </h2>
-        <p className="text-base text-eco-green-dark font-medium">
-          Como a Axis Soluções Ambientais transforma seus desafios em oportunidades
-        </p>
-        <div className="h-1 w-16 bg-eco-green rounded-full mx-auto mt-4" />
+        <span className="axis-rule mx-auto mt-4" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

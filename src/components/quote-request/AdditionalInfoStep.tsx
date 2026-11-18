@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Upload } from "lucide-react";
+import { LGPD_NOTICE } from "@/lib/spam-guard";
 import { FormValues } from "@/types/quote-request";
 
 interface AdditionalInfoStepProps {
@@ -69,63 +70,21 @@ export const AdditionalInfoStep: React.FC<AdditionalInfoStepProps> = ({
         )}
       />
       
-      <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">
-            Anexos (opcional)
-          </label>
-          <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-            <input
-              type="file"
-              multiple
-              id="file-upload"
-              className="hidden"
-              onChange={handleFileChange}
-            />
-            <label
-              htmlFor="file-upload"
-              className="flex flex-col items-center justify-center cursor-pointer"
-            >
-              <Upload className="h-10 w-10 text-gray-400 mb-2" />
-              <span className="text-sm text-gray-500">
-                Arraste arquivos ou clique para selecionar
-              </span>
-              <span className="text-xs text-gray-400 mt-1">
-                (PDF, DOC, JPG, PNG - Max 10MB)
-              </span>
-            </label>
-          </div>
-          
-          {selectedFiles.length > 0 && (
-            <div className="mt-4 space-y-2">
-              <p className="text-sm font-medium">Arquivos anexados:</p>
-              <ul className="text-sm">
-                {selectedFiles.map((file, index) => (
-                  <li key={index} className="flex justify-between items-center py-1">
-                    <span>{file.name}</span>
-                    <button
-                      type="button"
-                      onClick={() => removeFile(index)}
-                      className="text-red-500 text-xs"
-                    >
-                      Remover
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+      {/* Anexos: o envio de arquivos pelo formulário não estava ligado a nenhum armazenamento
+          (os arquivos eram descartados). Até haver um bucket no Supabase, orientamos o envio direto. */}
+      <div className="flex gap-3 rounded-xl border border-brand-dark/10 bg-brand-cream p-4 text-sm text-brand-dark/75">
+        <Upload className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
+        <p>
+          Tem licença anterior, notificação ou planta do imóvel? Envie depois pelo WhatsApp ou por e-mail, citando seu nome.
+          Assim que recebermos o pedido, entramos em contato para combinar os documentos.
+        </p>
       </div>
-      
+
       {/* ── Bloco de consentimento LGPD ── */}
       <div className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-4 border border-border">
         <p className="font-semibold text-foreground mb-1">Proteção de dados — LGPD</p>
         <p className="leading-relaxed">
-          Ao enviar este formulário, você autoriza a Axis Soluções Ambientais a
-          armazenar e utilizar seus dados para fins de atendimento comercial,
-          conforme a Lei nº 13.709/2018 (LGPD). Seus dados não serão
-          compartilhados com terceiros.{" "}
+          {LGPD_NOTICE}{" "}
           <a href="/privacidade" className="underline text-primary hover:text-primary/80 transition-colors">
             Política de Privacidade
           </a>

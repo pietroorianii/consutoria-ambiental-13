@@ -8,7 +8,7 @@ import fs from "fs";
 
 // Helper: check for accidental symlink inside src (can cause too many watchers)
 const srcPath = path.resolve(__dirname, "./src");
-let extraFilesToIgnore: string[] = [];
+const extraFilesToIgnore: string[] = [];
 try {
   const files = fs.readdirSync(srcPath);
   files.forEach(name => {

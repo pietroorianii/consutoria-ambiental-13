@@ -7,7 +7,7 @@ export const loService: ServiceDetailData = {
   title: "Licença de Operação (LO)",
   description: "A LO autoriza o início das atividades, após verificar o cumprimento das exigências da LI.",
   icon: Leaf,
-  image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A Licença de Operação (LO) é a terceira e última fase do licenciamento ambiental trifásico, que autoriza o início das atividades operacionais do empreendimento. Esta licença confirma que todas as obras foram executadas conforme aprovado na LI e que os sistemas de controle ambiental estão funcionando adequadamente.",
   benefits: [
     "Autorização para início das operações",
@@ -47,6 +47,7 @@ export const loService: ServiceDetailData = {
   ],
   timeline: "O prazo para análise da LO varia de 2 a 3 meses, incluindo vistoria técnica para verificação das instalações e sistemas de controle.",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
     "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "Lei Federal nº 6.938/1981",

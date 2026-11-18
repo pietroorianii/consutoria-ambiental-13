@@ -7,7 +7,7 @@ export const managementServices: ServiceDetailData = {
   title: "Gestão Ambiental Contínua",
   description: "Gerenciamento permanente de conformidade ambiental no Paraná: renovações, condicionantes IAT, declarações anuais e atualização regulatória contínua.",
   icon: ClipboardList,
-  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A gestão ambiental contínua mantém sua empresa permanentemente em conformidade com a legislação ambiental, sem que você precise acompanhar cada prazo ou mudança regulatória. No Paraná, as Instruções Normativas do IAT são publicadas com frequência — em 2025/2026 já foram mais de 10 INs com mudanças relevantes nos procedimentos de licenciamento, outorga e gestão de resíduos. Nosso serviço inclui: controle ativo de prazos de licenças e condicionantes; renovações protocoladas com antecedência mínima de 120 dias; gestão das declarações anuais obrigatórias (RAPP, CAR, SNCR, MTR); e monitoramento contínuo das publicações do IAT, SEMA e órgãos federais para manter seu sistema de gestão sempre atualizado.",
   benefits: [
     "Conformidade Permanente: sua empresa nunca opera com licença vencida ou condicionante em atraso",
@@ -20,7 +20,7 @@ export const managementServices: ServiceDetailData = {
   steps: [
     {
       title: "Diagnóstico Completo de Conformidade",
-      description: "Levantamento de todas as licenças, autorizações, outorgas, condicionantes e declarações anuais da empresa, com verificação de conformidade contra a Resolução CEMA 105/2019 e INs vigentes",
+      description: "Levantamento de todas as licenças, autorizações, outorgas, condicionantes e declarações anuais da empresa, com verificação de conformidade contra a Lei Estadual 22.252/2024, o Decreto 9.541/2025 e as INs vigentes",
       duration: "1 a 2 semanas"
     },
     {
@@ -44,7 +44,7 @@ export const managementServices: ServiceDetailData = {
   ],
   timeline: "Diagnóstico inicial: 1 a 2 semanas. Implantação do sistema: 2 a 3 semanas. Operação contínua: mensal. Renovações de LO: protocolo com 120 dias de antecedência do vencimento.",
   legalBasis: [
-    "Resolução CEMA nº 105/2019 — Base para gestão de conformidade no licenciamento estadual PR",
+    "Decreto Estadual nº 9.541/2025 — Base para gestão de conformidade no licenciamento estadual PR",
     "IN IAT 11/2026 — Nova classificação Baixo Risco (pode alterar obrigações de empresas já licenciadas)",
     "IN IAT 09/2026 — Integração outorga-licença (simplifica renovações simultâneas)",
     "IN IAT 63/2025 — Hidrometria obrigatória para outorgas em renovação",

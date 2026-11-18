@@ -7,9 +7,11 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { FormValues, formSchema } from "@/types/quote-request";
 import { getErrorMessage } from "@/utils/error-handler";
+import { useSpamGuard } from "@/lib/spam-guard";
 
 export const useQuoteRequest = () => {
   const { toast } = useToast();
+  const { isLikelyBot, honeypotProps } = useSpamGuard();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -109,6 +111,12 @@ export const useQuoteRequest = () => {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+
+    if (isLikelyBot()) {
+      setShowSuccess(true);
+      setIsSubmitting(false);
+      return;
+    }
     
     try {
       // Preparar anexos de arquivo
@@ -141,7 +149,7 @@ export const useQuoteRequest = () => {
           notification_details: data.notificationDetails || null,
           estimated_budget: data.estimatedBudget || null,
           observations: data.observations || null,
-          file_attachments: fileAttachments,
+          file_attachments: fileAttachments.length ? fileAttachments : null,
           terms_accepted: data.termsAccepted,
           created_at: new Date().toISOString()
         });
@@ -235,6 +243,7 @@ export const useQuoteRequest = () => {
     removeFile,
     onSubmit,
     nextStep,
-    prevStep
+    prevStep,
+    honeypotProps
   };
 };

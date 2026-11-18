@@ -8,8 +8,7 @@ export const ibamaService: ServiceDetailData = {
   description:
     "Inscrição no CTF/APP, emissão e renovação do Certificado de Regularidade, declaração anual RAPP e controle da TCFA. Conformidade federal sem burocracia.",
   icon: Shield,
-  image:
-    "https://images.unsplash.com/photo-1588421357574-87938a86fa28?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs:
     "O Cadastro Técnico Federal de Atividades Potencialmente Poluidoras ou Utilizadoras de Recursos Ambientais (CTF/APP) é obrigatório para toda pessoa física ou jurídica que exerça atividades sujeitas à fiscalização do IBAMA, listadas no Anexo VIII da Lei Federal nº 6.938/1981. A inscrição é feita no Sistema CTF do IBAMA e deve ser mantida atualizada. Com o CTF ativo, a empresa precisa emitir anualmente o Certificado de Regularidade (CR), que comprova adimplência com a Taxa de Controle e Fiscalização Ambiental (TCFA) — cobrada trimestralmente — e com a entrega do Relatório de Atividades Potencialmente Poluidoras e Utilizadoras de Recursos Naturais (RAPP), que deve ser enviado até 31 de março de cada ano. O CR é exigido em licitações públicas, contratos com órgãos federais e renovações de licenças ambientais. A ausência do CTF, do CR ou do RAPP pode gerar autuação, embargo e multas que variam de R$ 500 a R$ 10.000.000 (Lei 9.605/1998).",
   benefits: [

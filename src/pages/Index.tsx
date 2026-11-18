@@ -5,9 +5,10 @@ import { SegmentCards } from "@/components/SegmentCards";
 import { WorkProcess } from "@/components/WorkProcess";
 import { SocialProof } from "@/components/SocialProof";
 import { CTASection } from "@/components/cta-section";
+import { LegalRadar } from "@/components/LegalRadar";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { PageWrapper } from "@/components/ui/page-wrapper";
-import { MetaTags } from "@/components/layout/MetaTags";
+import { MetaTags, organizationJsonLd } from "@/components/layout/MetaTags";
 import { ScrollProgress } from "@/components/fx/ScrollProgress";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         description="Garanta a conformidade legal do seu negócio com nossa assessoria completa em licenciamento, gestão de resíduos e estudos de impacto ambiental."
         keywords="consultoria ambiental Paraná, licenciamento IAT, gestão resíduos, conformidade ambiental, Axis Soluções Ambientais"
         companyName="Axis Soluções Ambientais"
+        jsonLd={organizationJsonLd()}
       />
 
       <ScrollProgress />
@@ -27,6 +29,7 @@ const Index = () => {
       <CompanyIntro />
       <SocialProof />
       <WorkProcess />
+      <LegalRadar />
       <CTASection />
       <WhatsAppFloat />
     </PageWrapper>

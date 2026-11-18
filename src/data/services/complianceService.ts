@@ -7,7 +7,7 @@ export const complianceService: ServiceDetailData = {
   title: "Gestão de Conformidade Ambiental",
   description: "Manutenção da conformidade legal após a licença: renovações, relatórios periódicos via SGA IR, regularização ambiental e gestão de TAC.",
   icon: RefreshCw,
-  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "Após obter a licença ou outorga, surgem obrigações contínuas que, se descumpridas, geram embargo imediato, multas progressivas e cassação do ato administrativo — o que paralisa a operação. O SGA IR (Sistema de Gestão — Informes e Relatórios) é o sistema do IAT para envio de relatórios periódicos de condicionantes de licença, diferente do SGA de licenciamento. A LO tem prazo de validade e precisa ser renovada com protocolo de pelo menos 120 dias de antecedência para manter a atividade legalizada ininterruptamente. Empreendimentos em situação irregular podem se regularizar via LASR (Licença Ambiental Simplificada de Regularização), LIR (Licença de Instalação de Regularização) e LOR (Licença de Operação de Regularização). O Programa de Regularização Ambiental — PRA, instituído pela Lei Estadual nº 18.295/2014 e regulamentado pelo Decreto Estadual nº 11.515/2018 — organiza e facilita esse processo de adequação. Este serviço é a base de receita recorrente e previsível de uma consultoria ambiental — o cliente paga enquanto opera.",
   benefits: [
     "Zero risco de embargo ou cassação de licença por descumprimento de condicionantes",
@@ -55,6 +55,7 @@ export const complianceService: ServiceDetailData = {
   ],
   timeline: "Renovação de LO: protocolar 120 dias antes do vencimento; relatórios SGA IR: conforme periodicidade das condicionantes (mensal, trimestral, semestral ou anual); regularização via LASR/LIR/LOR: 2 a 6 meses conforme modalidade e cronograma negociado.",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 e Decreto Estadual nº 9.541/2025",
     "Lei Estadual nº 18.295/2014 — institui o Programa de Regularização Ambiental (PRA) no Paraná",
     "Decreto Estadual nº 11.515/2018 — regulamenta o PRA no Paraná",

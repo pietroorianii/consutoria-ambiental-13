@@ -7,7 +7,7 @@ export const authorizationsService: ServiceDetailData = {
   title: "Autorizações Ambientais e Florestais",
   description: "Autorização Ambiental (AA) e Autorização Florestal (AF) para supressão de vegetação, corte de árvores, manejo florestal, reposição florestal (SERFLOR) e intervenções em APP — via SGA do IAT.",
   icon: TreePine,
-  image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "As Autorizações Ambientais (AA) e Florestais (AF) são atos administrativos emitidos pelo IAT para atividades específicas que não se enquadram no fluxo regular de licença ambiental. A AA cobre atividades como movimentação de solo acima dos limites de dispensa, intervenções em emergências ambientais e ligações elétricas em áreas protegidas. A AF regula supressão de vegetação nativa, manejo florestal sustentável, corte de árvores isoladas e retirada de espécies exóticas. A Câmara Técnica Florestal — instituída pela IN 10/2025 — emite parecer técnico obrigatório nos processos de licenciamento que envolvam supressão de vegetação nativa, adicionando uma etapa ao fluxo. A IN 05/2026 é a norma vigente para supressão geral de vegetação nativa (revogou a IN 48/2025). O SERFLOR — regulamentado pelo Decreto 1.940/1996 — controla a obrigação de reposição florestal associada a qualquer supressão com exigência de compensação.",
   benefits: [
     "Conformidade legal para intervenções em vegetação nativa e exótica",
@@ -51,6 +51,7 @@ export const authorizationsService: ServiceDetailData = {
   ],
   timeline: "Variável conforme tipo: corte de árvore isolada (15–30 dias); supressão de vegetação sem Câmara Técnica (30–60 dias); supressão vinculada ao licenciamento com Câmara Técnica Florestal (30–90 dias); parcelamento rural (30–60 dias).",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 e Decreto Estadual nº 9.541/2025",
     "IN IAT nº 05/2026 — supressão de vegetação nativa (vigente — revogou IN 48/2025)",
     "IN IAT nº 04/2026 — corte de árvore isolada (vigente — revogou IN 42/2025)",

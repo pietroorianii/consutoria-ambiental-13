@@ -3,20 +3,22 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
-import AboutPage from "./pages/AboutPage";
-import ServicesPage from "./pages/ServicesPage";
-import ContactPage from "./pages/ContactPage";
-import RequestQuotePage from "./pages/RequestQuotePage";
-import ServiceCategoryPage from "./pages/ServiceCategoryPage";
-import ServiceGroupPage from "./pages/ServiceGroupPage";
-import ServiceDetailPage from "./pages/ServiceDetailPage";
-import LicensesAuthorizationsPage from "./pages/LicensesAuthorizationsPage";
-import FAQPage from "./pages/FAQPage";
-import TeamPage from "./pages/TeamPage";
-import PrivacyPage from "./pages/PrivacyPage";
-import NotFound from "./pages/NotFound";
-import BrandKitPage from "./pages/BrandKitPage";
+// Páginas internas carregadas sob demanda: a home abre mais rápido.
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const RequestQuotePage = lazy(() => import("./pages/RequestQuotePage"));
+const ServiceCategoryPage = lazy(() => import("./pages/ServiceCategoryPage"));
+const ServiceGroupPage = lazy(() => import("./pages/ServiceGroupPage"));
+const ServiceDetailPage = lazy(() => import("./pages/ServiceDetailPage"));
+const LicensesAuthorizationsPage = lazy(() => import("./pages/LicensesAuthorizationsPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
+const TeamPage = lazy(() => import("./pages/TeamPage"));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const BrandKitPage = lazy(() => import("./pages/BrandKitPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +31,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <BrowserRouter>
+        <Suspense fallback={<div className="min-h-screen bg-brand-dark" aria-busy="true" />}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
@@ -45,6 +48,7 @@ const App = () => (
           <Route path="/marca" element={<BrandKitPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

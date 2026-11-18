@@ -26,6 +26,7 @@ const RequestQuotePage = () => {
     selectedFiles,
     handleFileChange,
     removeFile,
+    honeypotProps,
     onSubmit,
     nextStep,
     prevStep
@@ -60,6 +61,7 @@ const RequestQuotePage = () => {
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 space-y-6 relative" noValidate>
+              <input {...honeypotProps} />
               
               
               {/* Etapa 1: Dados do Solicitante */}

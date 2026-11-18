@@ -17,16 +17,14 @@ export const ServiceProcess = ({ steps }: ServiceProcessProps) => {
   return (
     <section className="max-w-6xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 font-primary text-gray-900">
-          Nosso Processo Simplificado: Passo a Passo
+        <h2 className="font-display text-3xl md:text-[2.4rem] font-semibold tracking-tight text-brand-dark">
+          Como funciona, etapa por etapa
         </h2>
-        <p className="text-lg text-eco-green-dark font-medium">
-          Transparência e eficiência em cada etapa
-        </p>
+        <span className="axis-rule mx-auto mt-4" />
       </div>
       
       <div className="relative">
-        <div className="absolute left-1/2 transform -translate-x-0.5 top-8 bottom-8 w-1 bg-gradient-to-b from-eco-green via-eco-blue to-eco-green rounded-full hidden lg:block"></div>
+        <div className="absolute left-1/2 transform -translate-x-0.5 top-8 bottom-8 w-1 bg-gradient-to-b from-brand-lime via-brand-accent to-brand-water rounded-full hidden lg:block"></div>
         
         <div className="space-y-12">
           {steps.map((step, index) => (
@@ -40,7 +38,7 @@ export const ServiceProcess = ({ steps }: ServiceProcessProps) => {
                 <Card className="border-eco-green/20 hover:border-eco-green/40 transition-all duration-300 hover:shadow-lg bg-white">
                   <CardContent className="p-6">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-                      <h3 className="font-semibold text-xl text-gray-900 font-secondary">{step.title}</h3>
+                      <h3 className="font-display font-semibold text-lg text-brand-dark">{step.title}</h3>
                       <div className="flex items-center gap-2 text-sm bg-eco-blue/10 text-eco-blue px-3 py-1 rounded-full whitespace-nowrap">
                         <Clock className="h-4 w-4" />
                         {step.duration}

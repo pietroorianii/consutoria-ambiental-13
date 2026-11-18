@@ -7,10 +7,10 @@ export const reportsServices: ServiceDetailData = {
   title: "Estudos e Relatórios Ambientais",
   description: "Elaboração de EIA/RIMA, RAS, RAP, PGRS, PGRSS e demais estudos exigidos pelo IAT e legislação ambiental vigente no Paraná.",
   icon: FileText,
-  image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "Os estudos e relatórios ambientais são documentos técnicos obrigatórios exigidos pelo IAT no processo de licenciamento. A Resolução CEMA 105/2019 define o estudo adequado para cada porte e tipo de atividade: desde o Relatório Ambiental Simplificado (RAS) para atividades de médio impacto, até o Estudo de Impacto Ambiental (EIA/RIMA) para empreendimentos de maior significância. Os Planos de Gerenciamento de Resíduos (PGRS e PGRSS) são regulamentados pela Lei Federal 12.305/2010, com rastreabilidade obrigatória via sistema MTR.",
+  image: "",
+  whatIs: "Os estudos e relatórios ambientais são documentos técnicos obrigatórios exigidos pelo IAT no processo de licenciamento. O Decreto Estadual 9.541/2025 e as INs setoriais do IAT definem o estudo adequado para cada porte e tipo de atividade: desde o Relatório Ambiental Simplificado (RAS) para atividades de médio impacto, até o Estudo de Impacto Ambiental (EIA/RIMA) para empreendimentos de maior significância. Os Planos de Gerenciamento de Resíduos (PGRS e PGRSS) são regulamentados pela Lei Federal 12.305/2010, com rastreabilidade obrigatória via sistema MTR.",
   benefits: [
-    "Estudos elaborados conforme as exigências específicas da Resolução CEMA 105/2019 e INs do IAT",
+    "Estudos elaborados conforme o Decreto Estadual 9.541/2025 e as INs setoriais do IAT",
     "Documentação completa que reduz pedidos de complementação e acelera o licenciamento",
     "PGRS com rastreabilidade via MTR, em conformidade com o Decreto Federal 10.936/2022",
     "EIA/RIMA e RAS como base técnica para decisões estratégicas de projeto e investimento",
@@ -20,7 +20,7 @@ export const reportsServices: ServiceDetailData = {
   steps: [
     {
       title: "Escopo e Termo de Referência",
-      description: "Definição do estudo exigido conforme a Resolução CEMA 105/2019 e obtenção do Termo de Referência (TR) junto ao IAT, quando necessário",
+      description: "Definição do estudo exigido conforme o Decreto Estadual 9.541/2025 e a IN setorial aplicável, e obtenção do Termo de Referência (TR) junto ao IAT, quando necessário",
       duration: "1 a 2 semanas"
     },
     {
@@ -51,7 +51,7 @@ export const reportsServices: ServiceDetailData = {
   ],
   timeline: "RAS/RAP: 4 a 8 semanas de elaboração + análise IAT (30 a 90 dias). EIA/RIMA: 3 a 8 meses de elaboração + análise IAT (4 a 12 meses). PGRS/PGRSS: 2 a 4 semanas.",
   legalBasis: [
-    "Resolução CEMA nº 105/2019 — Define estudos exigíveis por tipo e porte de atividade no PR",
+    "Decreto Estadual nº 9.541/2025 — Define estudos exigíveis por tipo e porte de atividade no PR",
     "Resolução CONAMA nº 01/1986 — Avaliação de Impacto Ambiental e EIA/RIMA",
     "Resolução CONAMA nº 237/1997 — Procedimentos de licenciamento e estudos ambientais",
     "Lei Federal nº 12.305/2010 — Política Nacional de Resíduos Sólidos (PGRS obrigatório)",

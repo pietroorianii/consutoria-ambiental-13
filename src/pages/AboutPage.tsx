@@ -15,9 +15,10 @@ const teamMembers = [
     id: 1,
     name: "Pietro Bife Oriani",
     role: "Sócio-Fundador | Engenheiro Químico",
-    image: "/lovable-uploads/pietro-bife-oriani.jpg",
-    bio: "Engenheiro Químico com experiência direta no IAT — Instituto Água e Terra do Paraná. Participou de mais de 100 processos de licenciamento ambiental, com domínio técnico de todas as etapas do SGA/IAT. Fundou a Axis com o objetivo de desburocratizar o licenciamento para empresas paranaenses.",
-    specialties: ["Licenciamento Ambiental", "Processos no IAT/SGA", "Outorga de Recursos Hídricos"],
+    image: "", // PENDENTE: enviar foto profissional para public/lovable-uploads/ e colocar o caminho aqui
+    registro: "CREA-PR", // PENDENTE: incluir o número do registro
+    bio: "Engenheiro Químico registrado no CREA-PR, com vivência em indústria de processo e controle ambiental industrial. Fundou a Axis para tornar o licenciamento ambiental mais claro e previsível para empresas paranaenses.",
+    specialties: ["Licenciamento ambiental", "Controle ambiental industrial", "Outorga de recursos hídricos"],
   },
 ];
 
@@ -26,14 +27,14 @@ const AboutPage = () => {
     <PageWrapper>
       <MetaTags
         title="Sobre a Axis Soluções Ambientais | Consultoria Ambiental Especializada"
-        description="Conheça a equipe da Axis Soluções Ambientais — especialistas em licenciamento ambiental no IAT com mais de 100 processos conduzidos no Paraná."
+        description="Conheça a Axis Soluções Ambientais: engenharia, gestão e inovação ambiental para empresas de Ponta Grossa e de todo o Paraná."
         keywords="consultoria ambiental paraná, engenheiro ambiental Ponta Grossa, licenciamento IAT, Pietro Bife Oriani, Axis"
       />
 
       {/* Banner */}
       <PageBanner
         title="Quem somos"
-        description="Consultoria ambiental especializada em Ponta Grossa, PR."
+        description="Engenharia, gestão e inovação ambiental, com base em Ponta Grossa e atuação em todo o Paraná."
         icon={<Users />}
         variant="about"
       />
@@ -50,17 +51,14 @@ const AboutPage = () => {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7 }}
             >
-              <div className="inline-block px-4 py-2 bg-brand-accent/10 text-brand-accent font-inter font-medium text-sm uppercase tracking-wider rounded-full mb-6">
-                Nossa História
-              </div>
               <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-dark mb-6">
                 Consultoria Ambiental Especializada no Paraná
               </h2>
               <div className="h-1 w-20 bg-brand-accent rounded-full mb-8"></div>
               <p className="font-inter text-brand-dark/70 text-lg mb-6 leading-relaxed">
-                A Axis Soluções Ambientais foi fundada por profissionais com experiência real
-                dentro do IAT — Instituto Água e Terra do Paraná. Sabemos como o processo funciona
-                por dentro, o que nos permite entregar resultados mais rápidos e seguros.
+                A Axis Soluções Ambientais nasceu em Ponta Grossa para resolver um problema comum:
+                empresas que querem cumprir a lei ambiental, mas se perdem entre normas, sistemas e
+                prazos do IAT. Unimos engenharia e gestão para transformar exigência legal em um plano claro.
               </p>
               <p className="font-inter text-brand-dark/65 text-base leading-relaxed">
                 Nosso foco é Ponta Grossa e região. Atendemos empresas que precisam regularizar
@@ -105,16 +103,12 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-block px-4 py-2 bg-brand-primary/10 text-brand-primary font-inter font-medium text-sm uppercase tracking-wider rounded-full mb-6">
-              Nossa Equipe
-            </div>
             <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-dark mb-6">
               Quem cuida do seu processo
             </h2>
             <div className="h-1 w-20 bg-brand-accent rounded-full mx-auto mb-8"></div>
             <p className="font-inter text-brand-dark/65 max-w-2xl mx-auto text-lg">
-              Profissionais com experiência prática em licenciamento ambiental no Paraná —
-              incluindo atuação dentro do próprio IAT.
+              Quem assina e acompanha cada etapa do seu processo, do diagnóstico à licença.
             </p>
           </motion.div>
 

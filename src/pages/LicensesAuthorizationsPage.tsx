@@ -1,3 +1,4 @@
+import { MetaTags } from "@/components/layout/MetaTags";
 
 import React from "react";
 import { PageWrapper } from "@/components/ui/page-wrapper";
@@ -103,6 +104,7 @@ const licensesData = [
 const LicensesAuthorizationsPage = () => {
   return (
     <PageWrapper>
+      <MetaTags title="Modalidades de licença ambiental no Paraná (DLAM, LAC, LAS, LP/LI/LO) | Axis" description="Entenda qual licença o IAT exige para a sua atividade: dispensa, adesão e compromisso, simplificada, trifásica, regularização e autorizações." />
       <PageBanner 
         title="Licenças e Autorizações"
         description="Todas as modalidades do IAT — do DLAM ao licenciamento trifásico LP/LI/LO."

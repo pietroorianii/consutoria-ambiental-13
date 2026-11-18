@@ -7,7 +7,7 @@ export const airEmissionsService: ServiceDetailData = {
   title: "Controle de Emissões Atmosféricas",
   description: "Plano de automonitoramento, cadastro de fontes fixas e declarações periódicas de emissões — via SGADEA (Sistema de Gestão de Declaração de Emissões Atmosféricas do IAT).",
   icon: Wind,
-  image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "O SGADEA é o sistema do IAT para gestão de declarações de emissões atmosféricas. Empresas com fontes fixas de emissão — chaminés, caldeiras, fornos industriais, dutos de exaustão — são obrigadas a cadastrar suas fontes, elaborar o Plano de Automonitoramento Atmosférico e enviar declarações periódicas de resultados analíticos. Este não é um serviço pontual: trata-se de uma obrigação contínua decorrente das condicionantes da Licença de Operação (LO), que persiste enquanto o empreendimento operar. A base técnica nacional é a Resolução CONAMA 491/2018, que definiu novos padrões de qualidade do ar substituindo a CONAMA 03/1990. O IAT incorporou esses padrões às condicionantes de LO para empreendimentos industriais, de mineração, energia e saneamento — qualquer descumprimento gera auto de infração automático.",
   benefits: [
     "Cumprimento de condicionantes de Licença de Operação (LO) relacionadas a emissões atmosféricas",
@@ -59,6 +59,6 @@ export const airEmissionsService: ServiceDetailData = {
     "SGADEA é obrigatório para qualquer empreendimento com LO que tenha condicionante de monitoramento de emissões — verifique sua LO agora",
     "Use apenas laboratórios com acreditação INMETRO (NBR ISO/IEC 17025) para análises de emissão atmosférica — resultado de laboratório não acreditado não é aceito pelo IAT",
     "Atraso em declaração no SGADEA gera auto de infração automático — mantenha o calendário de obrigações atualizado mês a mês",
-    "Este serviço gera receita recorrente garantida: o cliente paga todo ano enquanto o empreendimento tiver LO com essa condicionante"
+    "O automonitoramento é uma obrigação contínua: enquanto a LO tiver essa condicionante, as declarações precisam ser entregues em todos os ciclos"
   ]
 };
