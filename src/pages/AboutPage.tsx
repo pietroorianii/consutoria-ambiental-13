@@ -15,9 +15,9 @@ const teamMembers = [
     id: 1,
     name: "Pietro Bife Oriani",
     role: "Sócio-Fundador | Engenheiro Químico",
-    image: "", // PENDENTE: enviar foto profissional para public/lovable-uploads/ e colocar o caminho aqui
-    registro: "CREA-PR", // PENDENTE: incluir o número do registro
-    bio: "Engenheiro Químico registrado no CREA-PR, com vivência em indústria de processo e controle ambiental industrial. Fundou a Axis para tornar o licenciamento ambiental mais claro e previsível para empresas paranaenses.",
+    image: "/lovable-uploads/pietro-bife-oriani.webp",
+    registro: "CREA-PR nº PR-241997/D",
+    bio: "Engenheiro Químico com vivência em indústria de processo e controle ambiental industrial. Fundou a Axis para tornar o licenciamento ambiental mais claro e previsível para empresas paranaenses.",
     specialties: ["Licenciamento ambiental", "Controle ambiental industrial", "Outorga de recursos hídricos"],
   },
 ];

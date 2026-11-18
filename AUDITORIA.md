@@ -29,7 +29,7 @@ Status: ✅ corrigido neste pacote · ⏳ depende do Pietro (informação ou ace
 | 2.1 | 🔴 | **Nota interna de estratégia aparecia para o cliente** na página de Emissões Atmosféricas: *"Este serviço gera receita recorrente garantida: o cliente paga todo ano…"*. Em Outorga, também: *"…é diferencial competitivo para a consultoria"*. | ✅ Removidas e reescritas com foco no cliente. |
 | 2.2 | 🔴 | **Afirmações não comprováveis:** "experiência direta no IAT", "mais de 100 processos", "fundada por profissionais com experiência real dentro do IAT", "décadas de experiência", "centenas de projetos", "Resultados Garantidos", "Equipe certificada". Isso é risco de propaganda enganosa (CDC, art. 37) e de questionamento ético no CREA. | ✅ Trocadas por diferenciais verificáveis (ART, enquadramento prévio, acompanhamento até a decisão). ⏳ Se algum número for real e comprovável, me envie que eu recoloco. |
 | 2.3 | 🟠 | **Dados de contato contraditórios:** 3 telefones diferentes (rodapé, Contato, WhatsApp), e-mails diferentes, horários diferentes. | ✅ Fonte única em `src/config/company.ts`. ⏳ Preencher os dados reais (todos marcados PENDENTE). |
-| 2.4 | 🟠 | Página Sobre com a foto da equipe quebrada (arquivo inexistente). | ✅ Mostra as iniciais enquanto não há foto. ⏳ Enviar uma foto profissional. |
+| 2.4 | 🟠 | Página Sobre com a foto da equipe quebrada (arquivo inexistente). | ✅ Foto e registro CREA-PR (PR-241997/D) incluídos. |
 | 2.5 | 🟡 | Texto de preenchimento repetido em todos os cards de serviço ("Nossos especialistas fornecem consultoria personalizada…"). | ✅ Removido. |
 | 2.6 | 🟡 | Visão "referência nacional" incoerente com o foco em Ponta Grossa/PR. | ✅ Missão, visão e valores reescritos, alinhados ao manifesto Inovar/Preservar/Transformar. |
 | 2.7 | ⚪ | Depoimentos fictícios em componente não usado (`testimonials.tsx`). Risco se fossem reativados. | ✅ Arquivo removido. |
@@ -81,9 +81,8 @@ Status: ✅ corrigido neste pacote · ⏳ depende do Pietro (informação ou ace
 2. **Preencher `src/config/company.ts`**: telefone, WhatsApp, e-mail, CNPJ, endereço, redes. Todo o site atualiza de uma vez.
 3. **Rodar o SQL de RLS** no Supabase correto e configurar `WEBHOOK_SECRET`, `RESEND_API_KEY` e `NOTIFY_EMAIL` na Edge Function.
 4. **Confirmar as INs 09/2026, 05/2026 e 02/2026** (item 3.5).
-5. **Enviar uma foto profissional** e o número do CREA-PR para a página Sobre.
-6. Definir o domínio e pesquisar o nome "Axis" no INPI.
-7. Revisar o Radar normativo uma vez por mês.
+5. Definir o domínio e pesquisar o nome "Axis" no INPI.
+6. Revisar o Radar normativo uma vez por mês.
 
 ## Próximos passos sugeridos (não feitos)
 

@@ -18,12 +18,12 @@ interface TeamMemberProps {
 export function TeamMemberCard({ member }: TeamMemberProps) {
   return (
     <div className="overflow-hidden rounded-2xl border border-brand-dark/10 bg-white transition-shadow duration-300 hover:shadow-lg group">
-      <div className="relative overflow-hidden h-72">
+      <div className="relative overflow-hidden h-80">
         {member.image ? (
         <OptimizedImage
           src={member.image}
           alt={`Foto de ${member.name}`}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover object-[center_15%] group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
