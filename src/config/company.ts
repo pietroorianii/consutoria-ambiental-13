@@ -11,9 +11,9 @@ export const company = {
   domain: "https://axisambiental.com.br", // PENDENTE: domínio definitivo
   email: "contato@axisambiental.com.br", // PENDENTE
   privacyEmail: "privacidade@axisambiental.com.br", // PENDENTE
-  phoneDisplay: "(42) 99999-9999", // PENDENTE
-  phoneE164: "+5542999999999", // PENDENTE
-  whatsapp: "5542999999999", // PENDENTE (só números, com 55 + DDD)
+  phoneDisplay: "(14) 99713-3722",
+  phoneE164: "+5514997133722",
+  whatsapp: "5514997133722", // só números, com 55 + DDD
   whatsappMessage: "Olá! Vim pelo site da Axis e gostaria de falar sobre um serviço ambiental.",
   address: {
     street: "Rua Sete de Setembro, 1322", // PENDENTE: confirmar endereço
