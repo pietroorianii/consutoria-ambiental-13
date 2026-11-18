@@ -19,6 +19,7 @@ const TeamPage = lazy(() => import("./pages/TeamPage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const BrandKitPage = lazy(() => import("./pages/BrandKitPage"));
+const DiagnosticPage = lazy(() => import("./pages/DiagnosticPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/request-quote" element={<RequestQuotePage />} />
           <Route path="/privacidade" element={<PrivacyPage />} />
           <Route path="/marca" element={<BrandKitPage />} />
+          <Route path="/diagnostico" element={<DiagnosticPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Suspense>

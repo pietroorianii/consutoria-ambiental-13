@@ -22,6 +22,40 @@ try {
   // ignore, just a safety net
 }
 
+
+// ── Prévias estáticas por rota ─────────────────────────────────────────────
+// Gera dist/<rota>/index.html com título, descrição e canonical próprios.
+// O site continua sendo o mesmo SPA; isso só melhora prévias no WhatsApp/LinkedIn
+// e o primeiro rastreamento do Google. Rotas: seo/routes.json
+function staticRouteMeta() {
+  return {
+    name: "axis-static-route-meta",
+    apply: "build" as const,
+    closeBundle() {
+      try {
+        const cfg = JSON.parse(fs.readFileSync(path.resolve(__dirname, "seo/routes.json"), "utf8"));
+        const dist = path.resolve(__dirname, "dist");
+        const base = fs.readFileSync(path.join(dist, "index.html"), "utf8");
+        const esc = (t: string) => t.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+        for (const [route, [title, desc]] of Object.entries(cfg.routes as Record<string, [string, string]>)) {
+          const url = `${cfg.domain}${route}`;
+          const html = base
+            .replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`)
+            .replace(/(<meta name="description" content=")[^"]*(")/, `$1${esc(desc)}$2`)
+            .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${esc(title)}$2`)
+            .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${esc(desc)}$2`)
+            .replace("</head>", `  <link rel="canonical" href="${url}" />\n    <meta property="og:url" content="${url}" />\n  </head>`);
+          const dir = path.join(dist, route);
+          fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, "index.html"), html);
+        }
+      } catch (e) {
+        console.warn("[axis-static-route-meta] ignorado:", e);
+      }
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const isDev = mode === 'development';
   const isAnalyze = mode === 'analyze';
@@ -29,6 +63,7 @@ export default defineConfig(({ mode }) => {
   // Only push the plugin if it should be active, avoiding any accidental undefineds
   const plugins = [
     react(),
+    staticRouteMeta(),
     isDev ? componentTagger() : null,
     isAnalyze ? visualizer({
       open: true,

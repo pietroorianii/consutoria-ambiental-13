@@ -47,7 +47,10 @@ export function MobileNav() {
                 </Link>
               );
             })}
-            <Link to="/request-quote" onClick={() => setIsOpen(false)} className="axis-btn-solid mt-8 justify-center">
+            <Link to="/diagnostico" onClick={() => setIsOpen(false)} className="axis-btn-solid mt-8 justify-center">
+              Diagnóstico grátis
+            </Link>
+            <Link to="/request-quote" onClick={() => setIsOpen(false)} className="axis-btn-ghost mt-3 justify-center">
               Solicitar orçamento
             </Link>
           </nav>

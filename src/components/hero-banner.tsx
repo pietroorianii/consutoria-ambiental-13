@@ -70,8 +70,8 @@ export function HeroBanner() {
           </motion.p>
 
           <motion.div {...rise(0.45)} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link to="/request-quote" className="axis-btn-solid group justify-center whitespace-nowrap px-7 py-3.5 text-base">
-              Solicitar diagnóstico gratuito
+            <Link to="/diagnostico" className="axis-btn-solid group justify-center whitespace-nowrap px-7 py-3.5 text-base">
+              Descobrir qual licença preciso
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link to="/services" className="axis-btn-ghost justify-center whitespace-nowrap px-7 py-3.5 text-base">

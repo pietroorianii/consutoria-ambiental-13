@@ -7,11 +7,13 @@ import { supabase } from "@/integrations/supabase/client";
 import { contactSchema, ContactFormData } from "@/types/contact-form";
 import { getErrorMessage } from "@/utils/error-handler";
 import { useSpamGuard } from "@/lib/spam-guard";
+import { whatsappUrl } from "@/config/company";
 
 export const useContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { isLikelyBot, honeypotProps } = useSpamGuard();
+  const [fallbackUrl, setFallbackUrl] = useState<string | null>(null);
   
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -60,8 +62,10 @@ export const useContactForm = () => {
       });
       
       form.reset();
+      setFallbackUrl(null);
     } catch (error) {
       console.error("Error submitting contact form:", error);
+      setFallbackUrl(whatsappUrl(`Mensagem pelo site (o formulário falhou):\nNome: ${data.name}\nTelefone: ${data.phone || "-"}\nAssunto: ${data.subject}\n${data.message}`));
       
       const errorMessage = getErrorMessage(error);
       
@@ -80,6 +84,7 @@ export const useContactForm = () => {
     form,
     isSubmitting,
     handleSubmit,
-    honeypotProps
+    honeypotProps,
+    fallbackUrl
   };
 };

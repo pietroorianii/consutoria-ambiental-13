@@ -5,6 +5,7 @@ import { company } from "@/config/company";
 
 const quickLinks = [
   { to: "/", label: "Início" },
+  { to: "/diagnostico", label: "Diagnóstico gratuito" },
   { to: "/about", label: "Sobre a Axis" },
   { to: "/services", label: "Serviços" },
   { to: "/faq", label: "Dúvidas frequentes" },
@@ -50,6 +51,7 @@ export function Footer() {
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-brand-silver/70">
               Engenharia, gestão e inovação ambiental para empresas de Ponta Grossa, dos Campos Gerais e de todo o Paraná.
             </p>
+            <p className="mt-3 text-xs text-brand-silver/50">Responsável técnico: {company.crea}</p>
             <div className="mt-6 flex gap-2">
               {social.map(({ href, label, Icon }) => (
                 <a
@@ -105,7 +107,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
+        <p className="mt-12 text-xs leading-relaxed text-brand-silver/45">
+          Consultoria ambiental em {company.cities.join(", ")} e demais municípios do Paraná.
+        </p>
+
+        <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
           <p className="text-xs text-brand-silver/50">© {year} Axis Soluções Ambientais. Todos os direitos reservados.</p>
           <p className="font-display text-xs font-medium tracking-[0.25em] text-brand-silver/50">
             INOVAR. PRESERVAR. <span className="text-brand-lime">TRANSFORMAR.</span>

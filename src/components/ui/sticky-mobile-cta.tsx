@@ -1,10 +1,12 @@
 import { MessageCircle } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { whatsappUrl } from "@/config/company";
 
+/** Barra fixa no celular: WhatsApp direto (o canal que mais converte em serviço local). */
 export function StickyMobileCTA() {
-  const location = useLocation();
-  const hidden = location.pathname.startsWith("/contact");
+  const { pathname } = useLocation();
+  const hidden = pathname.startsWith("/contact") || pathname.startsWith("/request-quote");
 
   return (
     <AnimatePresence>
@@ -14,16 +16,17 @@ export function StickyMobileCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ type: "spring", stiffness: 280, damping: 28 }}
-          className="md:hidden fixed bottom-4 inset-x-4 z-50"
+          className="fixed inset-x-4 bottom-4 z-50 md:hidden"
         >
-          <Link
-            to="/contact"
-            className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-brand-accent text-white font-sora font-semibold shadow-2xl shadow-brand-accent/30 backdrop-blur-md active:scale-[0.98] transition-transform"
-            aria-label="Fale com um especialista"
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] py-4 font-display font-semibold text-white shadow-2xl shadow-black/25 transition-transform active:scale-[0.98]"
           >
             <MessageCircle className="h-5 w-5" />
-            Fale com um especialista
-          </Link>
+            Falar com um engenheiro no WhatsApp
+          </a>
         </motion.div>
       )}
     </AnimatePresence>

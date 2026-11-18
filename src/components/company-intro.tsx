@@ -5,7 +5,7 @@ import { AxisALine } from "@/components/brand/AxisLogo";
 import { SectionHeading } from "@/components/brand/SectionHeading";
 
 const proofs = [
-  { icon: BadgeCheck, title: "Responsável técnico habilitado", text: "Engenharia com registro no conselho de classe e vivência em processos do IAT." },
+  { icon: BadgeCheck, title: "Responsável técnico habilitado", text: "Engenheiro químico com registro ativo no CREA-PR (PR-241997/D)." },
   { icon: FileSignature, title: "ART em todo projeto", text: "Cada estudo e plano sai assinado, com responsabilidade técnica formal." },
   { icon: MapPinned, title: "Presença regional", text: "Base em Ponta Grossa, atendimento nos Campos Gerais e em todo o Paraná." },
 ];

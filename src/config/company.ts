@@ -29,6 +29,9 @@ export const company = {
   linkedin: "", // PENDENTE
   facebook: "", // PENDENTE
   serviceArea: ["Ponta Grossa", "Campos Gerais", "Paraná"],
+  // Cidades citadas no rodapé e nos dados estruturados (SEO local)
+  cities: ["Ponta Grossa", "Castro", "Carambeí", "Palmeira", "Telêmaco Borba", "Tibagi", "Arapoti", "Piraí do Sul", "Jaguariaíva", "Irati"],
+  crea: "CREA-PR nº PR-241997/D",
 } as const;
 
 export const whatsappUrl = (message: string = company.whatsappMessage) =>

@@ -6,7 +6,7 @@ import { WorkProcess } from "@/components/WorkProcess";
 import { SocialProof } from "@/components/SocialProof";
 import { CTASection } from "@/components/cta-section";
 import { LegalRadar } from "@/components/LegalRadar";
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { ToolsSection } from "@/components/ToolsSection";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { MetaTags, organizationJsonLd } from "@/components/layout/MetaTags";
 import { ScrollProgress } from "@/components/fx/ScrollProgress";
@@ -25,13 +25,13 @@ const Index = () => {
       <ScrollProgress />
       <HeroBanner />
       <ServicesShowcase />
+      <ToolsSection />
       <SegmentCards />
       <CompanyIntro />
       <SocialProof />
       <WorkProcess />
       <LegalRadar />
       <CTASection />
-      <WhatsAppFloat />
     </PageWrapper>
   );
 };
