@@ -41,8 +41,8 @@ export function DesktopNav() {
           );
         })}
       </ul>
-      <Link to="/request-quote" className="axis-btn-solid py-2.5 text-sm">
-        Solicitar orçamento
+      <Link to="/diagnostico" className="axis-btn-solid py-2.5 text-sm">
+        Diagnóstico grátis
       </Link>
     </nav>
   );

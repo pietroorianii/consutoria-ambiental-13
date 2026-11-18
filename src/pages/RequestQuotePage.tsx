@@ -27,6 +27,7 @@ const RequestQuotePage = () => {
     handleFileChange,
     removeFile,
     honeypotProps,
+    fallbackUrl,
     onSubmit,
     nextStep,
     prevStep
@@ -86,7 +87,17 @@ const RequestQuotePage = () => {
                 />
               )}
 
-              <div className="flex justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+              {fallbackUrl && (
+                <div role="alert" className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-brand-dark">
+                  <p className="font-semibold">Não conseguimos registrar o pedido pelo formulário agora.</p>
+                  <p className="mt-1 text-brand-dark/70">Seus dados já estão na mensagem: é só enviar pelo WhatsApp e respondemos por lá.</p>
+                  <a href={fallbackUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full bg-brand-dark px-5 py-2.5 font-semibold text-white">
+                    Enviar pedido pelo WhatsApp
+                  </a>
+                </div>
+              )}
+
+              <div className="flex justify-between pt-4 border-t border-brand-dark/10">
                 {currentStep > 1 ? (
                   <Button 
                     type="button" 
@@ -105,7 +116,7 @@ const RequestQuotePage = () => {
                   <Button 
                     type="button" 
                     onClick={nextStep}
-                    className="bg-brand-accent hover:bg-brand-accent/90 flex items-center gap-2 shimmer-button"
+                    className="rounded-full bg-brand-dark px-6 hover:bg-brand-primary flex items-center gap-2"
                     aria-label="Avançar para próxima etapa"
                   >
                     <span>Próximo</span>
@@ -113,11 +124,11 @@ const RequestQuotePage = () => {
                 ) : (
                   <Button 
                     type="submit" 
-                    className="bg-brand-accent hover:bg-brand-accent/90 flex items-center gap-2 shimmer-button"
+                    className="rounded-full bg-brand-dark px-6 hover:bg-brand-primary flex items-center gap-2"
                     disabled={isSubmitting}
                     aria-label="Enviar solicitação de orçamento"
                   >
-                    {isSubmitting ? "Enviando..." : "Enviar Solicitação"}
+                    {isSubmitting ? "Enviando..." : "Enviar pedido"}
                   </Button>
                 )}
               </div>

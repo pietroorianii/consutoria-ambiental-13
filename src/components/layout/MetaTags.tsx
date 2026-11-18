@@ -79,7 +79,7 @@ export const organizationJsonLd = () => ({
     addressCountry: "BR",
   },
   geo: { "@type": "GeoCoordinates", latitude: company.geo.lat, longitude: company.geo.lng },
-  areaServed: company.serviceArea.map((name) => ({ "@type": "Place", name })),
+  areaServed: [...company.cities, "Paraná"].map((name) => ({ "@type": "Place", name })),
   openingHours: "Mo-Fr 08:00-18:00",
   knowsAbout: ["Licenciamento ambiental", "Outorga de recursos hídricos", "PGRS", "ESG", "IAT Paraná"],
 });

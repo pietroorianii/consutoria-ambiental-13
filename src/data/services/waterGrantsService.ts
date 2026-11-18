@@ -46,7 +46,7 @@ export const waterGrantsService: ServiceDetailData = {
   ],
   documents: [
     "Captação Subterrânea (IN 09/2026 — processo integrado com licenciamento): requerimento SIGARH, CPF/CNPJ, dominialidade do imóvel, ART, laudo de teste de bombeamento, análise físico-química da água (laboratório credenciado), croqui georreferenciado de localização do poço, outorga de perfuração quando aplicável",
-    "Captação Superficial — irrigação, criação de animais, aquicultura (IN 51/2025 para aquicultura): requerimento SIGARH, CPF/CNPJ, dominialidade, ART, estudo de disponibilidade hídrica com balanço da bacia hidrográfica, mapa da área irrigada ou criação, declaração de uso insignificante quando aplicável",
+    "Captação Superficial — irrigação, criação de animais, aquicultura (IN 27/2026 para aquicultura e maricultura): requerimento SIGARH, CPF/CNPJ, dominialidade, ART, estudo de disponibilidade hídrica com balanço da bacia hidrográfica, mapa da área irrigada ou criação, declaração de uso insignificante quando aplicável",
     "Lançamento de Efluentes: requerimento SIGARH, CPF/CNPJ, ART, Declaração de Carga Poluidora (DCP), caracterização analítica do efluente, croqui georreferenciado do ponto de lançamento, licença ambiental vigente (LO) com condicionante de efluente",
     "Outorga de Barragem: requerimento SIGARH, projeto executivo da barragem assinado, ART, estudo de disponibilidade hídrica, planta da bacia de contribuição, dominialidade, declaração de embargos"
   ],
@@ -57,7 +57,7 @@ export const waterGrantsService: ServiceDetailData = {
     "Decreto Estadual nº 2.314/2000 — sistema de outorgas de recursos hídricos no Paraná",
     "IN IAT nº 09/2026 — integração entre licenciamento ambiental e outorga para captação subterrânea",
     "IN IAT nº 63/2025 — equipamentos medidores de vazão e volume para outorgas e declarações de uso insignificante",
-    "IN IAT nº 51/2025 — outorga vinculada ao licenciamento de aquicultura e maricultura",
+    "IN IAT nº 27/2026 — licenciamento e outorga de aquicultura e maricultura",
     "Decreto Estadual nº 9.541/2025",
     "Resoluções da ANA (Agência Nacional de Águas) aplicáveis à bacia"
   ],

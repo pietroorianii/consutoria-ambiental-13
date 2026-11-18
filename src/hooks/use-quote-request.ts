@@ -8,6 +8,15 @@ import { supabase } from "@/integrations/supabase/client";
 import { FormValues, formSchema } from "@/types/quote-request";
 import { getErrorMessage } from "@/utils/error-handler";
 import { useSpamGuard } from "@/lib/spam-guard";
+import { whatsappUrl } from "@/config/company";
+
+const readDiagnostic = () => {
+  try {
+    return sessionStorage.getItem("axis-diagnostico") ?? "";
+  } catch {
+    return "";
+  }
+};
 
 export const useQuoteRequest = () => {
   const { toast } = useToast();
@@ -15,6 +24,7 @@ export const useQuoteRequest = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [fallbackUrl, setFallbackUrl] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   
@@ -30,7 +40,7 @@ export const useQuoteRequest = () => {
       segment: "",
       location: "",
       size: "",
-      description: "",
+      description: readDiagnostic(),
       service: "",
       serviceDetails: "",
       deadline: "",
@@ -157,6 +167,8 @@ export const useQuoteRequest = () => {
       if (error) throw error;
       
       setShowSuccess(true);
+      setFallbackUrl(null);
+      try { sessionStorage.removeItem("axis-diagnostico"); } catch { /* ignore */ }
       
       // Reset form após sucesso
       form.reset();
@@ -165,6 +177,12 @@ export const useQuoteRequest = () => {
       
     } catch (error) {
       console.error("Error submitting quote request:", error);
+      // Plano B: nunca perder o lead. Monta a mensagem e oferece envio pelo WhatsApp.
+      setFallbackUrl(
+        whatsappUrl(
+          `Pedido de orçamento pelo site (o formulário falhou):\nNome: ${data.fullName}\nEmpresa: ${data.company || "-"}\nTelefone: ${data.phone}\nE-mail: ${data.email}\nServiço: ${data.service}\nLocal: ${data.location}\nDescrição: ${data.description}`,
+        ),
+      );
       
       const errorMessage = getErrorMessage(error);
       
@@ -244,6 +262,7 @@ export const useQuoteRequest = () => {
     onSubmit,
     nextStep,
     prevStep,
-    honeypotProps
+    honeypotProps,
+    fallbackUrl
   };
 };

@@ -6,7 +6,7 @@ import { Loader2 } from "lucide-react";
 import { LGPD_NOTICE } from "@/lib/spam-guard";
 
 export function ContactForm() {
-  const { form, isSubmitting, handleSubmit, honeypotProps } = useContactForm();
+  const { form, isSubmitting, handleSubmit, honeypotProps, fallbackUrl } = useContactForm();
 
   return (
     <div>
@@ -24,6 +24,16 @@ export function ContactForm() {
             {LGPD_NOTICE}{" "}
             <a href="/privacidade" className="font-medium text-brand-accent underline">Política de Privacidade</a>
           </p>
+
+          {fallbackUrl && (
+            <div role="alert" className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-brand-dark">
+              <p className="font-semibold">Não conseguimos enviar pelo formulário agora.</p>
+              <p className="mt-1 text-brand-dark/70">Sua mensagem já está pronta: é só enviar pelo WhatsApp.</p>
+              <a href={fallbackUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex rounded-full bg-brand-dark px-5 py-2.5 font-semibold text-white">
+                Enviar pelo WhatsApp
+              </a>
+            </div>
+          )}
 
           <Button
             type="submit"
