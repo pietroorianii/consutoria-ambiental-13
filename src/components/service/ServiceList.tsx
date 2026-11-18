@@ -39,13 +39,10 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
     <section className="container py-16">
       {/* Category introduction */}
       <div className="text-center mb-12 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-4 text-gray-900 font-primary">
-          Serviços Especializados
+        <h2 className="font-display text-3xl font-semibold text-brand-dark">
+          Escolha o serviço
         </h2>
-        <p className="text-gray-600 font-body leading-relaxed">
-          Cada serviço é desenvolvido com foco na sua necessidade específica, 
-          garantindo soluções eficazes e conformidade total.
-        </p>
+        <span className="axis-rule mx-auto mt-4" />
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -62,7 +59,7 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
           return (
             <Card 
               key={index}
-              className={`group ${theme.border} transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-xl hover:-translate-y-2 h-full flex flex-col`}
+              className={`group ${theme.border} transition-all duration-300 bg-white/95 backdrop-blur-sm hover:shadow-lg h-full flex flex-col rounded-2xl`}
             >
               <CardHeader className="text-center pb-4">
                 <div className="flex items-center gap-3 mb-3 justify-center">
@@ -79,15 +76,7 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
               </CardHeader>
               
               <CardContent className="flex-grow px-6 pb-0">
-                <div className={`${theme.checkBg} rounded-lg p-4 mb-4`}>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className={`h-5 w-5 ${theme.checkIcon} mt-0.5 flex-shrink-0`} />
-                    <p className="text-gray-600 text-sm font-body">
-                      Nossos especialistas fornecem consultoria personalizada e acompanhamento 
-                      completo para atender às necessidades específicas do seu negócio.
-                    </p>
-                  </div>
-                </div>
+
               </CardContent>
               
               <CardContent className="flex justify-between items-center pt-4 pb-6 mt-auto border-t border-gray-100 bg-gray-50/60 gap-4">
@@ -127,7 +116,7 @@ export const ServiceList = ({ services, categoryId }: ServiceListProps) => {
       {/* Seção especial para licenciamento trifásico */}
       {categoryId === "licensing" && (
         <div className="mt-12 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-eco-green/10 to-eco-blue/10 rounded-lg p-8 border border-eco-green/20">
+          <div className="rounded-2xl bg-white p-8 border border-brand-dark/10">
             <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
               Licenciamento Trifásico Detalhado
             </h3>

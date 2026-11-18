@@ -1,5 +1,6 @@
 
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { TexturedBackground } from "@/components/ui/textured-background";
@@ -14,10 +15,16 @@ export function PageWrapper({ children }: PageWrapperProps) {
   // Ativar o efeito de animação ao rolar
   useScrollAnimation();
 
-  // Voltar ao topo da página quando o componente for montado
+  const { hash } = useLocation();
+  // Topo da página ao entrar; se houver âncora (#radar, #team), rola até ela.
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const t = window.setTimeout(() => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: "smooth" }), 120);
+    return () => window.clearTimeout(t);
+  }, [hash]);
 
   return (
     <div className="min-h-screen flex flex-col bg-background relative">

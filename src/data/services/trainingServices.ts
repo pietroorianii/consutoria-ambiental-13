@@ -7,8 +7,8 @@ export const trainingServices: ServiceDetailData = {
   title: "Treinamentos e Capacitações Ambientais",
   description: "Programas de capacitação técnica em legislação ambiental, gerenciamento de resíduos, emergências ambientais e PGRS, com base nas normas IAT, CONAMA e NRs vigentes.",
   icon: GraduationCap,
-  image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "Os treinamentos e capacitações ambientais desenvolvidos pela Axis habilitam profissionais e equipes para o correto cumprimento da legislação ambiental, com foco em aplicação prática. Nossos programas abordam as Instruções Normativas do IAT mais recentes, incluindo as modalidades de licenciamento da Resolução CEMA 105/2019, o sistema MTR de rastreabilidade de resíduos (Decreto Federal 10.936/2022), a nova classificação de atividades de Baixo Risco (IN IAT 11/2026), e as exigências de monitoramento do IAT. Os treinamentos são elaborados por especialistas com registro profissional (CREA/CRBio/CRQ), com emissão de certificado e ART quando exigível pela condicionante da licença.",
+  image: "",
+  whatIs: "Os treinamentos e capacitações ambientais desenvolvidos pela Axis habilitam profissionais e equipes para o correto cumprimento da legislação ambiental, com foco em aplicação prática. Nossos programas abordam as Instruções Normativas do IAT mais recentes, incluindo as modalidades de licenciamento da Lei Estadual 22.252/2024 e do Decreto 9.541/2025, as mudanças da Lei Federal 15.190/2025, o sistema MTR de rastreabilidade de resíduos (Decreto Federal 10.936/2022), a nova classificação de atividades de Baixo Risco (IN IAT 11/2026), e as exigências de monitoramento do IAT. Os treinamentos são elaborados por especialistas com registro profissional (CREA/CRBio/CRQ), com emissão de certificado e ART quando exigível pela condicionante da licença.",
   benefits: [
     "Atualização Legal: conteúdo baseado nas INs mais recentes do IAT e normas federais vigentes em 2025/2026",
     "Aplicação Prática: exemplos reais do setor industrial, agropecuário, construção civil e serviços de saúde do Paraná",
@@ -44,7 +44,7 @@ export const trainingServices: ServiceDetailData = {
   ],
   timeline: "Treinamentos temáticos: 4 a 8 horas. Programas completos de capacitação em gestão ambiental: 16 a 40 horas. Cronograma anual de capacitações: definido conforme plano de treinamentos da empresa e condicionantes das licenças.",
   legalBasis: [
-    "Resolução CEMA nº 105/2019 — Condicionantes de capacitação exigidas no licenciamento estadual PR",
+    "Decreto Estadual nº 9.541/2025 — Condicionantes de capacitação exigidas no licenciamento estadual PR",
     "IN IAT 11/2026 — Nova classificação de Baixo Risco (conteúdo de enquadramento de atividades)",
     "Decreto Federal nº 10.936/2022 — Regulamenta PNRS e MTR (treinamento sobre rastreabilidade de resíduos)",
     "Lei Federal nº 12.305/2010 — PNRS e exigência de PGRS por geradores",

@@ -7,7 +7,7 @@ export const lacService: ServiceDetailData = {
   title: "Licença por Adesão e Compromisso (LAC)",
   description: "Licença por Adesão e Compromisso (LAC): A Via Rápida para a Regularização",
   icon: Leaf,
-  image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A Licença por Adesão e Compromisso (LAC) é a modalidade mais ágil de licenciamento, destinada a atividades de baixo impacto cujas regras ambientais são padronizadas. O processo é realizado online, onde o empreendedor, com o suporte de um responsável técnico, adere às condições e normas pré-estabelecidas pelo órgão ambiental. Nossa consultoria garante que seu projeto se enquadre e cumpra todos os requisitos.",
   benefits: [
     "Emissão imediata online",
@@ -50,6 +50,7 @@ export const lacService: ServiceDetailData = {
   ],
   timeline: "A LAC tem emissão imediata após o correto preenchimento e submissão de toda documentação no sistema online.",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
     "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "Instruções Normativas setoriais do IAT vigentes",

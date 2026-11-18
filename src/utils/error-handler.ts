@@ -1,8 +1,8 @@
 
-export const getErrorMessage = (error: any): string => {
+export const getErrorMessage = (error: unknown): string => {
   if (!error) return "Erro inesperado. Tente novamente.";
   
-  const message = error.message || error.toString();
+  const message = (error as { message?: string })?.message || String(error);
   
   // Erros específicos do Supabase
   if (message.includes('duplicate key')) {

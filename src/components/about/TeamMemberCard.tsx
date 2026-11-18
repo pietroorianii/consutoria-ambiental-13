@@ -17,8 +17,9 @@ interface TeamMemberProps {
 
 export function TeamMemberCard({ member }: TeamMemberProps) {
   return (
-    <div className="glass-card overflow-hidden hover-grow transition-all duration-500 scroll-trigger group">
+    <div className="overflow-hidden rounded-2xl border border-brand-dark/10 bg-white transition-shadow duration-300 hover:shadow-lg group">
       <div className="relative overflow-hidden h-72">
+        {member.image ? (
         <OptimizedImage
           src={member.image}
           alt={`Foto de ${member.name}`}
@@ -26,6 +27,13 @@ export function TeamMemberCard({ member }: TeamMemberProps) {
           loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
+        ) : (
+          <div className="axis-navy-surface grid h-full w-full place-items-center">
+            <span className="font-display text-6xl font-semibold text-brand-lime">
+              {member.name.split(" ").map((n) => n[0]).slice(0, 2).join("")}
+            </span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
           <div className="text-white">
             <h4 className="text-lg font-semibold mb-1">{member.name}</h4>
@@ -35,12 +43,12 @@ export function TeamMemberCard({ member }: TeamMemberProps) {
       </div>
       
       <div className="p-6">
-        <h4 className="text-xl font-semibold mb-1">{member.name}</h4>
+        <h4 className="font-display text-xl font-semibold text-brand-dark mb-1">{member.name}</h4>
         <p className="text-brand-accent font-medium mb-1">{member.role}</p>
 
         {/* Registro profissional — opcional */}
         {member.registro && (
-          <p className="text-xs text-muted-foreground font-mono mb-4">
+          <p className="text-xs font-medium text-brand-dark/50 mb-4">
             {member.registro}
           </p>
         )}

@@ -6,10 +6,10 @@ export const waterResourcesServices: ServiceDetailData = {
   title: "Outorga e Recursos Hídricos",
   description: "Obtenção e gestão de outorgas de uso da água no Paraná, conforme Lei Estadual 12.726/1999 e regulamentações do IAT.",
   icon: Droplet,
-  image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A Outorga de Direito de Uso de Recursos Hídricos é a autorização emitida pelo IAT para captar ou utilizar águas superficiais (rios, lagos e córregos) ou subterrâneas (poços artesianos). Regulamentada pela Lei Estadual 12.726/1999 e pelo Decreto Estadual 9.957/2014, é obrigatória para usos acima dos limites de insignificância definidos pelo IAT. Todo o processo é tramitado pelo SIGARH (Sistema Integrado de Gestão de Águas e Recursos Hídricos).",
   benefits: [
-    "Direito legal de uso da água garantido, evitando embargos e paralisações",
+    "Direito de uso da água regularizado, reduzindo o risco de embargos e paralisações",
     "Conformidade com as normas do IAT, Decreto 9.957/2014 e regulamentações da ANA",
     "Pré-requisito atendido para financiamentos agropecuários e industriais",
     "Estudos técnicos que identificam oportunidades de redução do consumo e custos",

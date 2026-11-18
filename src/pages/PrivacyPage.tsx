@@ -1,3 +1,4 @@
+import { company } from "@/config/company";
 import React from "react";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { PageBanner } from "@/components/ui/page-banner";
@@ -25,7 +26,7 @@ const PrivacyPage = () => {
 
           {/* Atualização */}
           <p className="text-sm text-muted-foreground">
-            Última atualização: maio de 2025
+            Última atualização: novembro de 2026
           </p>
 
           {/* 1. Introdução */}
@@ -34,7 +35,7 @@ const PrivacyPage = () => {
               1. Introdução
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              A <strong>Axis Soluções Ambientais</strong> (CNPJ: <span className="text-amber-600 font-medium">[INSERIR_CNPJ_REAL]</span>),
+              A <strong>{company.legalName}</strong>{company.cnpj ? ` (CNPJ ${company.cnpj})` : ""},
               localizada na Rua Sete de Setembro, 1322 — Centro, Ponta Grossa - PR, CEP 84010-350,
               está comprometida com a proteção e privacidade dos seus dados pessoais.
               Esta Política descreve como tratamos as informações coletadas em nosso site e
@@ -108,7 +109,7 @@ const PrivacyPage = () => {
             </p>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground mt-3">
               <li>Órgãos ambientais (IAT, IBAMA) quando necessário para a execução dos serviços</li>
-              <li>Prestadores de serviços tecnológicos sob contrato de confidencialidade</li>
+              <li>Prestadores de serviços tecnológicos que operam o site, sob dever de confidencialidade: Supabase (banco de dados dos formulários), Resend (envio de e-mails de aviso), Google (mapa incorporado e fontes) e a plataforma de hospedagem do site</li>
               <li>Autoridades públicas, mediante determinação judicial ou legal</li>
             </ul>
           </div>
@@ -157,11 +158,11 @@ const PrivacyPage = () => {
               O encarregado pelo tratamento de dados pessoais da Axis Soluções Ambientais é:
             </p>
             <ul className="mt-3 space-y-1 text-muted-foreground">
-              <li><strong>Nome:</strong> <span className="text-amber-600">[INSERIR_NOME_DPO]</span></li>
+              <li><strong>Nome:</strong> Pietro Bife Oriani</li>
               <li>
                 <strong>E-mail:</strong>{" "}
-                <a href="mailto:privacidade@axisambiental.com.br" className="text-primary underline hover:text-primary/80">
-                  privacidade@axisambiental.com.br
+                <a href={`mailto:${company.privacyEmail}`} className="text-primary underline hover:text-primary/80">
+                  {company.privacyEmail}
                 </a>
               </li>
               <li><strong>Telefone:</strong> (42) 3333-8000</li>

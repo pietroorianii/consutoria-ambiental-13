@@ -16,12 +16,10 @@ export const ServiceDetailsAccordion = ({ service }: ServiceDetailsAccordionProp
   return (
     <section className="max-w-5xl mx-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 font-primary text-gray-900">
-          O Que Você Precisa Saber
+        <h2 className="font-display text-3xl md:text-[2.4rem] font-semibold tracking-tight text-brand-dark">
+          Documentos, prazos e base legal
         </h2>
-        <p className="text-lg text-eco-green-dark font-medium">
-          Informações importantes para agilizar seu projeto
-        </p>
+        <span className="axis-rule mx-auto mt-4" />
       </div>
       
       <Accordion type="single" collapsible className="space-y-4">

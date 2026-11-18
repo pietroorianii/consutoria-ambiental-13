@@ -1,12 +1,14 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AxisLogoStacked, AxisALine } from "@/components/brand/AxisLogo";
+import { company } from "@/config/company";
 
 const quickLinks = [
   { to: "/", label: "Início" },
   { to: "/about", label: "Sobre a Axis" },
   { to: "/services", label: "Serviços" },
   { to: "/faq", label: "Dúvidas frequentes" },
+  { to: "/#radar", label: "Radar normativo" },
   { to: "/request-quote", label: "Solicitar orçamento" },
   { to: "/contact", label: "Contato" },
   { to: "/marca", label: "Identidade visual" },
@@ -22,11 +24,12 @@ const serviceLinks = [
   { to: "/service/ibama", label: "Cadastro IBAMA (CTF)" },
 ];
 
+// Só exibe redes que tenham link real configurado em src/config/company.ts
 const social = [
-  { href: "https://instagram.com/axisambiental", label: "Instagram da Axis", Icon: Instagram },
-  { href: "https://linkedin.com", label: "LinkedIn da Axis", Icon: Linkedin },
-  { href: "https://facebook.com", label: "Facebook da Axis", Icon: Facebook },
-];
+  { href: company.instagram, label: "Instagram da Axis", Icon: Instagram },
+  { href: company.linkedin, label: "LinkedIn da Axis", Icon: Linkedin },
+  { href: company.facebook, label: "Facebook da Axis", Icon: Facebook },
+].filter((s) => s.href);
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return <h3 className="mb-5 font-display text-base font-semibold text-white">{children}</h3>;
@@ -87,16 +90,16 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-lime" />
                 <span className="leading-relaxed text-brand-silver/70">
-                  Rua Sete de Setembro, 1322<br />Centro, Ponta Grossa (PR)<br />CEP 84010-350
+                  {company.address.street}<br />{company.address.district}, {company.address.city} ({company.address.state})<br />CEP {company.address.zip}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-brand-lime" />
-                <a href="tel:+5542999999999" className={linkCls}>(42) 99999-9999</a>
+                <a href={`tel:${company.phoneE164}`} className={linkCls}>{company.phoneDisplay}</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-brand-lime" />
-                <a href="mailto:contato@axisambiental.com.br" className={linkCls}>contato@axisambiental.com.br</a>
+                <a href={`mailto:${company.email}`} className={linkCls}>{company.email}</a>
               </li>
             </ul>
           </div>

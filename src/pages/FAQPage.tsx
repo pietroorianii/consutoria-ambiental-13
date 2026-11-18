@@ -1,3 +1,4 @@
+import { MetaTags } from "@/components/layout/MetaTags";
 
 import React, { useState } from "react";
 import { PageWrapper } from "@/components/ui/page-wrapper";
@@ -36,27 +37,17 @@ const FAQPage = () => {
         variant="faq"
       />
 
-      {/* Grupo 5 — FAQ Schema JSON-LD para SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.flatMap(cat =>
-              cat.items.map(item => ({
-                "@type": "Question",
-                "name": item.question,
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": item.answer
-                }
-              }))
-            )
-          })
+      <MetaTags
+        title="Dúvidas frequentes sobre licenciamento ambiental no Paraná | Axis"
+        description="Respostas diretas sobre licenças do IAT, outorga de água, autuações, custos e obrigações ambientais por setor."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqData.flatMap((cat) =>
+            cat.items.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })),
+          ),
         }}
       />
-      
       <div className="container py-16 space-y-12">
         {/* Search and Filter Section */}
         <div className="max-w-4xl mx-auto space-y-6">

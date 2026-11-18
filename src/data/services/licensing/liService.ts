@@ -7,7 +7,7 @@ export const liService: ServiceDetailData = {
   title: "Licença de Instalação (LI)",
   description: "A LI autoriza o início da construção e instalação do empreendimento conforme os projetos aprovados.",
   icon: Leaf,
-  image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A Licença de Instalação (LI) é a segunda fase do licenciamento ambiental trifásico, que autoriza o início da construção e instalação do empreendimento conforme os projetos aprovados na Licença Prévia. Esta etapa valida o cumprimento das condicionantes da LP e aprova os projetos executivos e programas ambientais.",
   benefits: [
     "Autorização para início das obras",
@@ -47,6 +47,7 @@ export const liService: ServiceDetailData = {
   ],
   timeline: "O prazo para análise da LI varia de 3 a 4 meses, dependendo da complexidade dos programas ambientais e do cumprimento das condicionantes da LP.",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
     "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "Lei Federal nº 6.938/1981",

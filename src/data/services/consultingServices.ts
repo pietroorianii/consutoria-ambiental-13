@@ -7,8 +7,8 @@ export const consultingServices: ServiceDetailData = {
   title: "Consultoria Ambiental Especializada",
   description: "Assessoria técnica em auditorias, defesas, perícias, SIG e adequações regulatórias, conforme legislação ambiental federal e estadual vigente no Paraná.",
   icon: Users,
-  image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "Nossa consultoria ambiental especializada oferece assessoria estratégica e técnica para empresas enfrentarem desafios ambientais complexos. Realizamos auditorias de conformidade com base na Resolução CEMA 105/2019, Decreto Estadual vigente e INs do IAT. Elaboramos defesas técnicas para autos de infração emitidos pelo IAT e IBAMA, assessoramos negociações de TAC e realizamos perícias ambientais para processos judiciais e administrativos. Também desenvolvemos mapeamentos e análises geoespaciais com SIG (Sistema de Informação Geográfica), fundamentais para caracterização ambiental e tomada de decisão estratégica.",
+  image: "",
+  whatIs: "Nossa consultoria ambiental especializada oferece assessoria estratégica e técnica para empresas enfrentarem desafios ambientais complexos. Realizamos auditorias de conformidade com base na Lei Federal 15.190/2025, na Lei Estadual 22.252/2024, no Decreto 9.541/2025 e nas INs do IAT. Elaboramos defesas técnicas para autos de infração emitidos pelo IAT e IBAMA, assessoramos negociações de TAC e realizamos perícias ambientais para processos judiciais e administrativos. Também desenvolvemos mapeamentos e análises geoespaciais com SIG (Sistema de Informação Geográfica), fundamentais para caracterização ambiental e tomada de decisão estratégica.",
   benefits: [
     "Auditoria Preventiva: identificação e correção de não conformidades antes de autuações fiscais do IAT",
     "Defesa Técnica: elaboração fundamentada em legislação atualizada, com redução ou cancelamento de multas",
@@ -40,11 +40,11 @@ export const consultingServices: ServiceDetailData = {
     }
   ],
   documents: [
-    "Relatório de Auditoria Ambiental de Conformidade (checklist baseado em Resolução CEMA 105/2019 e INs do IAT vigentes); Defesa Administrativa a Autos de Infração (IAT, IBAMA, SEMA) com fundamentação legal e técnica; Laudos de Perícia Ambiental para processos judiciais (assinados por perito habilitado com ART); Pareceres Técnicos Especializados sobre interpretação de normas, viabilidade ambiental e condicionantes; Relatórios de Due Diligence Ambiental para fusões, aquisições e financiamentos; Mapeamentos SIG (Georreferenciamento, APP, Reserva Legal, Zoneamento, Cobertura Vegetal) com memoriais descritivos; Plano de Adequação Regulatória com metas e prazos; Assessoria para TAC: proposta técnica, acompanhamento de negociação e monitoramento do cumprimento; Relatórios de Sistema de Gestão Ambiental (SGA — base para ISO 14001); Documentação de Certificação Ambiental (ISO 14001, PRFV, etc.)."
+    "Relatório de Auditoria Ambiental de Conformidade (checklist baseado na Lei Estadual 22.252/2024, no Decreto 9.541/2025 e nas INs do IAT vigentes); Defesa Administrativa a Autos de Infração (IAT, IBAMA, SEMA) com fundamentação legal e técnica; Laudos de Perícia Ambiental para processos judiciais (assinados por perito habilitado com ART); Pareceres Técnicos Especializados sobre interpretação de normas, viabilidade ambiental e condicionantes; Relatórios de Due Diligence Ambiental para fusões, aquisições e financiamentos; Mapeamentos SIG (Georreferenciamento, APP, Reserva Legal, Zoneamento, Cobertura Vegetal) com memoriais descritivos; Plano de Adequação Regulatória com metas e prazos; Assessoria para TAC: proposta técnica, acompanhamento de negociação e monitoramento do cumprimento; Relatórios de Sistema de Gestão Ambiental (SGA — base para ISO 14001); Documentação de Certificação Ambiental (ISO 14001, PRFV, etc.)."
   ],
   timeline: "Pareceres técnicos: 1 a 2 semanas. Auditorias: 2 a 4 semanas. Defesas administrativas: 5 a 15 dias úteis (conforme prazo legal). Perícias: 30 a 90 dias. Due Diligence: 4 a 8 semanas. Implementação de SGA/ISO 14001: 6 a 18 meses.",
   legalBasis: [
-    "Resolução CEMA nº 105/2019 — Base de conformidade para auditorias de licenciamento estadual",
+    "Decreto Estadual nº 9.541/2025 — Base de conformidade para auditorias de licenciamento estadual",
     "IN IAT 11/2026 — Classificação de atividades de Baixo Risco (impacta diagnósticos de enquadramento)",
     "IN IAT 65/2025 — Critérios atualizados para licenciamento industrial",
     "IN IAT 60/2025 — Licenciamento de atividades de ensino e pesquisa",

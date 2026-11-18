@@ -6,10 +6,12 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { contactSchema, ContactFormData } from "@/types/contact-form";
 import { getErrorMessage } from "@/utils/error-handler";
+import { useSpamGuard } from "@/lib/spam-guard";
 
 export const useContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { isLikelyBot, honeypotProps } = useSpamGuard();
   
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -26,6 +28,13 @@ export const useContactForm = () => {
 
   const handleSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
+
+    if (isLikelyBot()) {
+      // Robô detectado: simula sucesso e não grava nada.
+      form.reset();
+      setIsSubmitting(false);
+      return;
+    }
     
     try {
       const { error } = await supabase
@@ -36,7 +45,7 @@ export const useContactForm = () => {
           phone: data.phone || null,
           company: data.company || null,
           subject: data.subject,
-          message: data.message,
+          message: data.message.trim(),
           created_at: new Date().toISOString()
         });
       
@@ -45,8 +54,8 @@ export const useContactForm = () => {
       }
       
       toast({
-        title: "Mensagem enviada com sucesso!",
-        description: "Recebemos sua mensagem e entraremos em contato em breve.",
+        title: "Mensagem enviada",
+        description: "Recebemos sua mensagem. Respondemos em até 1 dia útil.",
         duration: 5000,
       });
       
@@ -70,6 +79,7 @@ export const useContactForm = () => {
   return {
     form,
     isSubmitting,
-    handleSubmit
+    handleSubmit,
+    honeypotProps
   };
 };

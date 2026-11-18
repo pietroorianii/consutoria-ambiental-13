@@ -7,7 +7,7 @@ export const licensingServices: ServiceDetailData = {
   title: "Licenciamento Ambiental",
   description: "Todas as modalidades do novo marco regulatório do Paraná: DILA, DLAM, LAC, LAS e licenciamento trifásico LP/LI/LO — conforme Lei Estadual nº 22.252/2024 e Decreto Estadual nº 9.541/2025, com INs do IAT vigentes por setor.",
   icon: Leaf,
-  image: "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "O novo marco regulatório do licenciamento ambiental no Paraná foi consolidado pela Lei Estadual nº 22.252/2024 e regulamentado pelo Decreto Estadual nº 9.541/2025. Todas as normas setoriais foram migradas para Instruções Normativas (INs) do IAT — Instituto Água e Terra — que definem, para cada atividade econômica, qual modalidade é exigida e quais documentos devem ser apresentados. O protocolo é feito exclusivamente no SGA do IAT (sga.iat.pr.gov.br). As modalidades vão da dispensa automática (DILA — Declaração de Inexigibilidade) até o licenciamento trifásico LP/LI/LO para grandes empreendimentos. A IN 11/2026 classificou atividades de baixo risco com simplificação do ato administrativo. Novos setores como energia solar (IN 20/2025), energia eólica (IN 22/2025) e biodigestores (IN 24/2025) já possuem INs próprias e específicas.",
   benefits: [
     "Segurança jurídica para instalação e operação do empreendimento",
@@ -51,6 +51,7 @@ export const licensingServices: ServiceDetailData = {
   ],
   timeline: "DILA: imediata (automática); DLAM: 1 a 15 dias; LAC: emissão imediata; LAS: até 60 dias; LP/LI/LO: 4 a 6 meses por fase. Prazos contados a partir do protocolo completo no SGA do IAT.",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
     "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "IN IAT nº 65/2025 — empreendimentos industriais",

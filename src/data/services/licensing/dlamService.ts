@@ -7,7 +7,7 @@ export const dlamService: ServiceDetailData = {
   title: "Declaração de Licenciamento Municipal (DLAM)",
   description: "DLAM: Regularização Simplificada para Atividades de Impacto Local",
   icon: Leaf,
-  image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A Declaração de Licenciamento Ambiental Municipal (DLAM) é aplicável a atividades de baixo impacto ambiental, cuja competência para licenciar foi delegada ao município. Cada prefeitura define seu próprio procedimento, que geralmente é mais simples e rápido que o estadual. Auxiliamos na verificação da competência e na instrução completa do processo junto ao órgão municipal.",
   benefits: [
     "Procedimento municipal simplificado",

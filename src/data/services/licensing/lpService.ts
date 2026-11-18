@@ -7,7 +7,7 @@ export const lpService: ServiceDetailData = {
   title: "Licença Prévia (LP)",
   description: "A LP aprova a concepção e localização do projeto, atestando sua viabilidade ambiental.",
   icon: Leaf,
-  image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=1000&h=600",
+  image: "",
   whatIs: "A Licença Prévia (LP) é a primeira fase do licenciamento ambiental trifásico, responsável por aprovar a concepção e localização do projeto, atestando sua viabilidade ambiental. Esta licença é fundamental para validar a escolha do local e as características básicas do empreendimento antes de qualquer investimento maior.",
   benefits: [
     "Validação da viabilidade ambiental do projeto",
@@ -50,6 +50,7 @@ export const lpService: ServiceDetailData = {
   ],
   timeline: "O prazo para análise da LP varia de 4 a 6 meses, dependendo da complexidade do projeto e dos estudos ambientais exigidos.",
   legalBasis: [
+    "Lei Federal nº 15.190/2025 — Lei Geral do Licenciamento Ambiental (em vigor desde 04/02/2026)",
     "Lei Estadual nº 22.252/2024 — normas gerais de licenciamento no Paraná",
     "Decreto Estadual nº 9.541/2025 — regulamentação da Lei 22.252/2024",
     "Lei Federal nº 6.938/1981",
