@@ -8,9 +8,9 @@ const PrivacyPage = () => {
   return (
     <PageWrapper>
       <MetaTags
-        title="Política de Privacidade — Solari Soluções Ambientais"
-        description="Saiba como a Solari Soluções Ambientais coleta, utiliza e protege seus dados pessoais, em conformidade com a Lei nº 13.709/2018 (LGPD)."
-        keywords="política de privacidade, LGPD, proteção de dados, Solari Soluções Ambientais"
+        title="Política de Privacidade — Axis Soluções Ambientais"
+        description="Saiba como a Axis Soluções Ambientais coleta, utiliza e protege seus dados pessoais, em conformidade com a Lei nº 13.709/2018 (LGPD)."
+        keywords="política de privacidade, LGPD, proteção de dados, Axis Soluções Ambientais"
       />
 
       <PageBanner
@@ -34,7 +34,7 @@ const PrivacyPage = () => {
               1. Introdução
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              A <strong>Solari Soluções Ambientais</strong> (CNPJ: <span className="text-amber-600 font-medium">[INSERIR_CNPJ_REAL]</span>),
+              A <strong>Axis Soluções Ambientais</strong> (CNPJ: <span className="text-amber-600 font-medium">[INSERIR_CNPJ_REAL]</span>),
               localizada na Rua Sete de Setembro, 1322 — Centro, Ponta Grossa - PR, CEP 84010-350,
               está comprometida com a proteção e privacidade dos seus dados pessoais.
               Esta Política descreve como tratamos as informações coletadas em nosso site e
@@ -154,14 +154,14 @@ const PrivacyPage = () => {
               8. Encarregado de Dados (DPO)
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              O encarregado pelo tratamento de dados pessoais da Solari Soluções Ambientais é:
+              O encarregado pelo tratamento de dados pessoais da Axis Soluções Ambientais é:
             </p>
             <ul className="mt-3 space-y-1 text-muted-foreground">
               <li><strong>Nome:</strong> <span className="text-amber-600">[INSERIR_NOME_DPO]</span></li>
               <li>
                 <strong>E-mail:</strong>{" "}
-                <a href="mailto:privacidade@solari.com.br" className="text-primary underline hover:text-primary/80">
-                  privacidade@solari.com.br
+                <a href="mailto:privacidade@axisambiental.com.br" className="text-primary underline hover:text-primary/80">
+                  privacidade@axisambiental.com.br
                 </a>
               </li>
               <li><strong>Telefone:</strong> (42) 3333-8000</li>

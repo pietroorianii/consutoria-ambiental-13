@@ -19,13 +19,15 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				outfit: ['Outfit', 'sans-serif'],
-				'dm-sans': ['DM Sans', 'system-ui', 'sans-serif'],
-				sora: ['Outfit', 'sans-serif'],        // alias para retrocompatibilidade
-				inter: ['DM Sans', 'system-ui', 'sans-serif'], // alias para retrocompatibilidade
-				display: ['Outfit', 'sans-serif'],
-				montserrat: ['Outfit', 'sans-serif'],
-				poppins: ['Outfit', 'sans-serif'],
+				// AXIS: Montserrat (títulos) + Inter (texto)
+				display: ['Montserrat', 'system-ui', 'sans-serif'],
+				body: ['Inter', 'system-ui', 'sans-serif'],
+				montserrat: ['Montserrat', 'system-ui', 'sans-serif'],
+				inter: ['Inter', 'system-ui', 'sans-serif'],
+				sora: ['Montserrat', 'system-ui', 'sans-serif'],    // alias legado
+				outfit: ['Montserrat', 'system-ui', 'sans-serif'],  // alias legado
+				'dm-sans': ['Inter', 'system-ui', 'sans-serif'],   // alias legado
+				poppins: ['Montserrat', 'system-ui', 'sans-serif'], // alias legado
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -71,58 +73,31 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Solari brand tokens (HSL-backed)
+				// AXIS brand tokens (HSL-backed) — ver BRAND_KIT.md
 				brand: {
-					dark: 'hsl(var(--brand-dark))',      // #14261C
-					primary: 'hsl(var(--brand-primary))',// #2D5A27
-					accent: 'hsl(var(--brand-accent))',  // #00A3AD
-					cream: 'hsl(var(--brand-cream))',    // #F4F1EA
+					dark: 'hsl(var(--brand-dark) / <alpha-value>)',       // #0A2433 Navy
+					primary: 'hsl(var(--brand-primary) / <alpha-value>)', // #0E4A4F Petrol
+					accent: 'hsl(var(--brand-accent) / <alpha-value>)',   // #377A25 Verde
+					cream: 'hsl(var(--brand-cream) / <alpha-value>)',     // #F2F5F4 Névoa
+					lime: 'hsl(var(--brand-lime) / <alpha-value>)',       // #94C13A Lime
+					water: 'hsl(var(--brand-water) / <alpha-value>)',     // #3FA1BA Água
+					abyss: 'hsl(var(--brand-abyss) / <alpha-value>)',     // #061821 Abismo
+					silver: 'hsl(var(--brand-silver) / <alpha-value>)',   // #D5DDE0 Prata
 				},
-                // Cores da PRISMA
+                // Paletas legadas (PRISMA / eco) remapeadas para a identidade AXIS,
+                // para que páginas antigas herdem as cores novas sem reescrita.
                 prisma: {
-                    green: {
-                        DEFAULT: '#2A6F47', // Verde Primário (PRISMA)
-                        light: '#4A8F67',
-                        dark: '#1A4F37',
-                    },
-                    blue: {
-                        DEFAULT: '#0077C2', // Azul Secundário (SOLUÇÕES)
-                        light: '#2597E2',
-                        dark: '#0057A2',
-                    },
-                    yellow: {
-                        DEFAULT: '#FDB813', // Amarelo/Dourado de Destaque
-                        light: '#FDC843',
-                        dark: '#DA9803',
-                    },
-                    gray: {
-                        text: '#333333', // Cinza escuro para texto
-                        light: '#F8F9FA', // Fundo cinza claro
-                    }
+                    green: { DEFAULT: '#377A25', light: '#5AAE32', dark: '#0E4A4F' },
+                    blue: { DEFAULT: '#3FA1BA', light: '#6FBDD0', dark: '#0E4A4F' },
+                    yellow: { DEFAULT: '#94C13A', light: '#B3D46E', dark: '#6E9A22' },
+                    gray: { text: '#0A2433', light: '#F2F5F4' },
                 },
-                // Refined eco colors palette for 2025 design
                 eco: {
-                    green: {
-                        light: '#8EB69B', // Softer sage green
-                        DEFAULT: '#3B7D59', // Rich moss green
-                        dark: '#2B5B41', // Deep forest green
-                    },
-                    blue: {
-                        light: '#A8DADC', // Soft water blue
-                        DEFAULT: '#1A759F', // Lake blue
-                        dark: '#184E77', // Deep ocean blue
-                    },
-                    earth: {
-                        light: '#E9E6E1', // Cream/paper
-                        DEFAULT: '#C8B8A9', // Soft sand
-                        dark: '#8A7968', // Warm brown
-                    },
-                    accent: {
-                        yellow: '#D9B44A', // Mustard yellow
-                        orange: '#E07A5F', // Terracotta
-                        teal: '#4DA1A9', // Teal accent
-                    }
-                }
+                    green: { light: '#B3D46E', DEFAULT: '#377A25', dark: '#0E4A4F' },
+                    blue: { light: '#A9D6E2', DEFAULT: '#3FA1BA', dark: '#0A2433' },
+                    earth: { light: '#F2F5F4', DEFAULT: '#D5DDE0', dark: '#5E7480' },
+                    accent: { yellow: '#94C13A', orange: '#5AAE32', teal: '#3FA1BA' },
+                },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -201,7 +176,7 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%)',
-                'organic-pattern': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233b7d59' fill-opacity='0.08' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z'%3E%3C/path%3E%3C/svg%3E\")",
+                'organic-pattern': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23377A25' fill-opacity='0.08' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z'%3E%3C/path%3E%3C/svg%3E\")",
 			},
             boxShadow: {
                 'glass': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02)',

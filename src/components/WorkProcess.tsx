@@ -1,74 +1,45 @@
-import React from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
-import { useRef } from 'react';
-import { Search, ClipboardList, Wrench, Award } from 'lucide-react';
+import { useRef } from "react";
+import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
+import { SectionHeading } from "@/components/brand/SectionHeading";
 
 const steps = [
-  { icon: Search, title: 'Diagnóstico gratuito', desc: 'Analisamos sua atividade e indicamos a modalidade de licença correta.' },
-  { icon: ClipboardList, title: 'Elaboração técnica', desc: 'Preparamos toda a documentação exigida pelo IAT — com ART incluída.' },
-  { icon: Wrench, title: 'Protocolo no IAT', desc: 'Enviamos tudo pelo SGA do IAT e acompanhamos semanalmente.' },
-  { icon: Award, title: 'Licença em mãos', desc: 'Você recebe a licença com orientações claras sobre as condicionantes.' },
+  { title: "Diagnóstico gratuito", desc: "Analisamos a atividade, o porte e a localização para indicar a modalidade de licença correta." },
+  { title: "Elaboração técnica", desc: "Preparamos estudos, plantas e formulários exigidos pelo IAT, com ART do responsável técnico." },
+  { title: "Protocolo e acompanhamento", desc: "Protocolamos no SGA do IAT e respondemos às pendências do órgão até a decisão." },
+  { title: "Licença e condicionantes", desc: "Você recebe a licença com um calendário claro do que precisa ser cumprido e quando." },
 ];
 
 export function WorkProcess() {
   const lineRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: lineRef, offset: ['start 85%', 'start 35%'] });
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: lineRef, offset: ["start 85%", "start 40%"] });
   const scaleX = useSpring(scrollYProgress, { stiffness: 90, damping: 25 });
+
   return (
-    <section className="container py-20 md:py-28 relative">
-      <div className="text-center mb-16 max-w-2xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-xs font-inter uppercase tracking-widest mb-5"
-        >
-          Como funciona o atendimento
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.05 }}
-          className="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark leading-tight"
-        >
-          Simples e direto, do primeiro contato até a <span className="text-brand-accent">licença em mãos</span>.
-        </motion.h2>
-      </div>
+    <section className="bg-brand-cream py-20 md:py-28">
+      <div className="container">
+        <SectionHeading
+          title="Como conduzimos o seu processo."
+          intro="Quatro etapas, um ponto de contato. Você sabe o que está acontecendo em cada uma delas."
+        />
 
-      <div className="relative">
-        {/* Connector line (desktop only) */}
-        <div ref={lineRef} className="hidden md:block absolute top-10 left-0 right-0 h-px bg-brand-primary/10" />
-        <motion.div style={{ scaleX }} className="hidden md:block absolute top-10 left-0 right-0 h-0.5 origin-left bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary" />
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative">
-          {steps.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <motion.div
-                key={s.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative text-center md:text-left"
-              >
-                <div className="flex justify-center md:justify-start mb-5">
-                  <div className="relative">
-                    <div className="h-20 w-20 rounded-2xl bg-brand-cream border border-brand-primary/15 shadow-soft grid place-items-center">
-                      <Icon className="h-9 w-9 text-brand-primary" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-brand-accent text-white text-xs font-sora font-bold grid place-items-center shadow-md">
-                      {i + 1}
-                    </div>
-                  </div>
-                </div>
-                <h3 className="font-sora text-lg font-bold text-brand-dark mb-2">{s.title}</h3>
-                <p className="font-inter text-sm text-brand-dark/70 leading-relaxed">{s.desc}</p>
-              </motion.div>
-            );
-          })}
+        <div className="relative mt-14">
+          <div ref={lineRef} className="absolute left-0 right-0 top-5 hidden h-px bg-brand-dark/10 md:block" />
+          <motion.div
+            style={{ scaleX: reduce ? 1 : scaleX }}
+            className="absolute left-0 right-0 top-5 hidden h-[2px] origin-left bg-gradient-to-r from-brand-accent via-brand-lime to-brand-water md:block"
+          />
+          <ol className="relative grid gap-10 md:grid-cols-4 md:gap-8">
+            {steps.map((s, i) => (
+              <li key={s.title}>
+                <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full bg-brand-dark font-display text-sm font-semibold text-brand-lime ring-8 ring-brand-cream">
+                  {i + 1}
+                </span>
+                <h3 className="mt-6 font-display text-lg font-semibold text-brand-dark">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-brand-dark/65">{s.desc}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>

@@ -27,7 +27,7 @@ const ALL_CATEGORIES = [
   {
     id: "licensing",
     color: "brand-accent" as const,
-    accentHex: "#2A6F47",
+    accentHex: "#377A25",
     icon: Leaf,
     badge: "LICENCIAMENTO",
     title: "Licenciamento e Autorizações Ambientais",
@@ -45,7 +45,7 @@ const ALL_CATEGORIES = [
   {
     id: "water_resources",
     color: "brand-primary" as const,
-    accentHex: "#0077C2",
+    accentHex: "#3FA1BA",
     icon: Droplet,
     badge: "RECURSOS HÍDRICOS",
     title: "Outorga e Recursos Hídricos",
@@ -63,7 +63,7 @@ const ALL_CATEGORIES = [
   {
     id: "degraded_areas",
     color: "brand-primary" as const,
-    accentHex: "#C17F00",
+    accentHex: "#6E9A22",
     icon: TreePine,
     badge: "PASSIVOS AMBIENTAIS",
     title: "Recuperação de Áreas e Passivos",
@@ -79,7 +79,7 @@ const ALL_CATEGORIES = [
   {
     id: "monitoring",
     color: "brand-primary" as const,
-    accentHex: "#1A759F",
+    accentHex: "#0E4A4F",
     icon: Beaker,
     badge: "MONITORAMENTO",
     title: "Monitoramento e Análises Ambientais",
@@ -96,7 +96,7 @@ const ALL_CATEGORIES = [
   {
     id: "reports",
     color: "brand-accent" as const,
-    accentHex: "#2A6F47",
+    accentHex: "#377A25",
     icon: FileText,
     badge: "ESTUDOS TÉCNICOS",
     title: "Estudos e Documentos Técnicos",
@@ -114,7 +114,7 @@ const ALL_CATEGORIES = [
   {
     id: "consulting",
     color: "brand-primary" as const,
-    accentHex: "#0077C2",
+    accentHex: "#3FA1BA",
     icon: Users,
     badge: "CONSULTORIA",
     title: "Consultoria Ambiental Especializada",
@@ -132,7 +132,7 @@ const ALL_CATEGORIES = [
   {
     id: "training",
     color: "brand-accent" as const,
-    accentHex: "#2A6F47",
+    accentHex: "#377A25",
     icon: GraduationCap,
     badge: "CAPACITAÇÃO",
     title: "Treinamentos e Capacitações",
@@ -148,7 +148,7 @@ const ALL_CATEGORIES = [
   {
     id: "management",
     color: "brand-primary" as const,
-    accentHex: "#0077C2",
+    accentHex: "#3FA1BA",
     icon: ClipboardList,
     badge: "GESTÃO CONTÍNUA",
     title: "Gestão Ambiental Contínua",
@@ -165,7 +165,7 @@ const ALL_CATEGORIES = [
   {
     id: "ibama",
     color: "brand-primary" as const,
-    accentHex: "#0077C2",
+    accentHex: "#3FA1BA",
     icon: Shield,
     badge: "IBAMA",
     title: "Cadastro e Obrigações IBAMA",

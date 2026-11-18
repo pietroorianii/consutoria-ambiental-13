@@ -10,9 +10,9 @@ const ContactPage = () => {
   return (
     <PageWrapper>
       <MetaTags 
-        title="Contato - Solari Soluções Ambientais"
+        title="Contato - Axis Soluções Ambientais"
         description="Entre em contato com nossa equipe para solicitar um orçamento ou esclarecer dúvidas sobre nossos serviços de consultoria ambiental."
-        keywords="contato solari, consultoria ambiental contato, orçamento ambiental, Solari Soluções Ambientais"
+        keywords="contato axis, consultoria ambiental contato, orçamento ambiental, Axis Soluções Ambientais"
       />
       
       {/* Page Header */}
@@ -52,7 +52,7 @@ const ContactPage = () => {
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade" 
               title="Mapa de localização - Rua Sete de Setembro 1322, Centro, Ponta Grossa"
-              aria-label="Localização da Solari Soluções Ambientais no mapa"
+              aria-label="Localização da Axis Soluções Ambientais no mapa"
             />
           </div>
         </div>

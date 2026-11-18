@@ -1,218 +1,153 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { TiltCard } from "@/components/fx/TiltCard";
-import {
-  Sparkles,
-  ArrowUpRight,
-  Scale,
-  FileCheck,
-  Droplets,
-  FlaskConical,
-  Recycle,
-  Wind,
-  ClipboardCheck,
-  RefreshCw,
-  Shield,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowUpRight, Leaf, ShieldCheck, Sprout, Droplet, Recycle, Settings2, type LucideIcon } from "lucide-react";
+import { axisImages } from "@/components/brand/assets";
+import { SectionHeading } from "@/components/brand/SectionHeading";
+import { cn } from "@/lib/utils";
 
-interface ShowcaseService {
+interface Pillar {
   icon: LucideIcon;
   title: string;
   description: string;
-  tag: string;
+  image: string;
+  alt: string;
   href: string;
+  rule?: "lime" | "water";
 }
 
-const services: ShowcaseService[] = [
+const pillars: Pillar[] = [
   {
-    icon: Scale,
+    icon: Leaf,
     title: "Licenciamento Ambiental",
-    description: "Da dispensa (DLAM) ao licenciamento completo (LP, LI, LO). Enquadramos sua atividade na modalidade certa.",
-    tag: "Licenciamento",
+    description: "Da dispensa (DLAM) à LP, LI e LO. Enquadramos a atividade na modalidade certa e protocolamos no SGA do IAT.",
+    image: axisImages.industry,
+    alt: "Planta industrial iluminada ao entardecer",
     href: "/services/licensing",
   },
   {
-    icon: FileCheck,
-    title: "Autorizações AA e AF",
-    description: "Autorização para corte, supressão de vegetação e intervenção em APP. Processo junto ao IAT.",
-    tag: "Autorizações",
-    href: "/services/licensing",
-  },
-  {
-    icon: Droplets,
-    title: "Outorga de Recursos Hídricos",
-    description: "Direito legal de uso da água. Captação superficial, poço artesiano e lançamento de efluentes via SIGARH.",
-    tag: "Recursos Hídricos",
-    href: "/services/water_resources",
-  },
-  {
-    icon: FlaskConical,
-    title: "Estudos Ambientais",
-    description: "EIA/RIMA, RAS e MCE elaborados por equipe técnica habilitada com ART.",
-    tag: "Estudos Técnicos",
-    href: "/services/reports",
-  },
-  {
-    icon: Recycle,
-    title: "Planos de Gestão",
-    description: "PGRS, PGRSS e PRAD elaborados conforme a Lei 12.305/2010. Prontos para fiscalização.",
-    tag: "Gestão",
-    href: "/services/reports",
-  },
-  {
-    icon: Wind,
-    title: "Emissões Atmosféricas",
-    description: "Monitoramento de emissões e gestão de condicionantes via SGADEA do IAT.",
-    tag: "Monitoramento",
-    href: "/services/monitoring",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Gestão de Conformidade",
-    description: "Acompanhamos todas as condicionantes da sua licença. Sem multa por vencimento.",
-    tag: "Conformidade",
+    icon: ShieldCheck,
+    title: "Auditorias e Conformidade",
+    description: "Controle de condicionantes, renovações e relatórios periódicos para a licença nunca vencer sem aviso.",
+    image: axisImages.auditClipboard,
+    alt: "Prancheta com checklist de conformidade ao lado de uma muda",
     href: "/services/management",
   },
   {
-    icon: RefreshCw,
-    title: "Regularização Ambiental",
-    description: "Empresa irregular? Regularizamos via LASR, LIR, LOR ou TAC antes que vire autuação.",
-    tag: "Regularização",
-    href: "/services/licensing",
+    icon: Sprout,
+    title: "ESG e Sustentabilidade",
+    description: "Diagnóstico, indicadores e relatórios ESG para atender clientes, bancos e cadeias de fornecimento.",
+    image: axisImages.esgHands,
+    alt: "Mãos segurando uma muda em solo fértil",
+    href: "/services/esg",
   },
   {
-    icon: Shield,
-    title: "Cadastro IBAMA (CTF)",
-    description: "Inscrição no CTF/APP, emissão do Certificado de Regularidade e declaração anual RAPP. Sem multa TCFA.",
-    tag: "IBAMA",
-    href: "/service/ibama",
+    icon: Droplet,
+    title: "Recursos Hídricos e Efluentes",
+    description: "Outorga de captação e lançamento via SIGARH, poços, barragens e monitoramento de efluentes.",
+    image: axisImages.waterTreatment,
+    alt: "Decantador de estação de tratamento de efluentes",
+    href: "/services/water_resources",
+    rule: "water",
+  },
+  {
+    icon: Recycle,
+    title: "Gestão de Resíduos Sólidos",
+    description: "PGRS, PGRSS e PGRCC conforme a Lei 12.305/2010, com rotina de MTR e destinação comprovada.",
+    image: axisImages.wasteBales,
+    alt: "Fardos de material reciclável em pátio industrial",
+    href: "/services/reports",
+  },
+  {
+    icon: Settings2,
+    title: "Soluções para a Indústria",
+    description: "EIA/RIMA, RAS, PCA, PRAD e emissões atmosféricas (SGADEA): estudos técnicos sob medida, com ART.",
+    image: axisImages.engineeringHelmet,
+    alt: "Capacete de engenharia Axis sobre plantas técnicas",
+    href: "/services/consulting",
   },
 ];
 
-export function ServicesShowcase() {
+const alsoDo = [
+  { label: "Autorizações ambientais e florestais", href: "/service/authorizations" },
+  { label: "Emissões atmosféricas (SGADEA)", href: "/service/air_emissions" },
+  { label: "Cadastro IBAMA (CTF/APP)", href: "/service/ibama" },
+  { label: "Recuperação de áreas degradadas", href: "/services/degraded_areas" },
+  { label: "Treinamentos ambientais", href: "/services/training" },
+  { label: "Regularização e TAC", href: "/service/compliance" },
+];
+
+function PillarTile({ p }: { p: Pillar }) {
+  const Icon = p.icon;
   return (
-    <section className="relative overflow-hidden bg-brand-cream py-20 md:py-24">
-      {/* Decorative background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-brand-accent/10 blur-3xl" />
-        <div className="absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-brand-primary/10 blur-3xl" />
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, hsl(20 14% 18% / 0.5) 1px, transparent 0)",
-            backgroundSize: "28px 28px",
-          }}
+    <Link
+      to={p.href}
+      className="group relative grid min-h-[15rem] overflow-hidden rounded-[1.25rem] bg-brand-dark text-white shadow-[0_24px_50px_-28px_rgba(6,24,33,0.7)] sm:grid-cols-[0.95fr_1fr]"
+    >
+      <div className="relative h-48 overflow-hidden sm:h-auto">
+        <img
+          src={p.image}
+          alt={p.alt}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
         />
+        {/* curva verde que separa foto e painel, como nas peças */}
+        <svg viewBox="0 0 100 400" preserveAspectRatio="none" aria-hidden className="absolute inset-y-0 right-0 hidden h-full w-16 sm:block">
+          <path d="M100 0 L100 400 L0 400 C40 300 70 160 100 0Z" className="fill-brand-dark" />
+          <path d="M100 0 C70 160 40 300 0 400" fill="none" className="stroke-brand-lime/70" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+        </svg>
       </div>
 
-      <div className="container relative z-10">
-        {/* Header */}
-        <div className="mx-auto mb-14 max-w-3xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-brand-primary/15 bg-white/70 px-4 py-2 backdrop-blur"
-          >
-            <Sparkles className="h-4 w-4 text-brand-accent" />
-            <span className="font-inter text-xs font-medium uppercase tracking-[0.18em] text-brand-primary">
-              O que fazemos
-            </span>
-          </motion.div>
+      <div className="relative flex flex-col justify-center gap-3 p-7 sm:pl-4">
+        <Icon className={cn("h-8 w-8", p.rule === "water" ? "text-brand-water" : "text-brand-lime")} strokeWidth={1.6} />
+        <h3 className="font-display text-xl font-semibold leading-tight md:text-[1.4rem]">{p.title}</h3>
+        <span className={p.rule === "water" ? "axis-rule-water" : "axis-rule"} />
+        <p className="text-sm leading-relaxed text-brand-silver/80">{p.description}</p>
+        <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-lime">
+          Ver serviço
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </span>
+      </div>
+    </Link>
+  );
+}
 
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-6 font-sora text-3xl font-bold leading-tight text-brand-primary md:text-5xl"
-          >
-            Serviços ambientais para sua empresa{" "}
-            <span className="text-brand-accent">operar sem risco</span>.
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-5 font-inter text-base leading-relaxed text-brand-primary/75 md:text-lg"
-          >
-            Clique em qualquer serviço para ver prazos, documentos e base legal.
-          </motion.p>
-        </div>
-
-        {/* Uniform Grid — 3 columns × 3 rows = sem cards órfãos */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-            return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.45, delay: Math.min(i * 0.04, 0.25) }}
-                className="h-full"
-              >
-                <TiltCard>
-                <Link
-                  to={service.href}
-                  className="group relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-brand-primary/10 bg-card p-7 shadow-sm transition-all duration-300 hover:border-brand-accent/40 hover:shadow-xl"
-                >
-                  {/* Top accent bar */}
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-
-                  {/* Glow on hover */}
-                  <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-accent/0 blur-3xl transition-all duration-500 group-hover:bg-brand-accent/20" />
-
-                  <div className="relative flex items-start justify-between gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/8 text-brand-primary transition-all duration-300 group-hover:bg-brand-accent group-hover:text-white">
-                      <Icon className="h-6 w-6" strokeWidth={1.75} />
-                    </div>
-                    <span className="rounded-full bg-brand-primary/5 px-2.5 py-1 font-inter text-[10px] font-semibold uppercase tracking-wider text-brand-primary/70">
-                      {service.tag}
-                    </span>
-                  </div>
-
-                  <h3 className="relative mt-5 font-sora text-lg font-bold leading-snug text-brand-primary">
-                    {service.title}
-                  </h3>
-
-                  <p className="relative mt-2 font-inter text-sm leading-relaxed text-brand-primary/70 line-clamp-3">
-                    {service.description}
-                  </p>
-
-                  <div className="relative mt-auto flex items-center gap-1.5 pt-5 font-inter text-sm font-semibold text-brand-accent">
-                    <span>Saiba mais</span>
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </div>
-                </Link>
-                </TiltCard>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Footer CTA */}
-        <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
+export function ServicesShowcase() {
+  return (
+    <section className="relative bg-brand-cream py-20 md:py-28">
+      <div className="container">
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <SectionHeading
+            title="Consultoria técnica em meio ambiente e sustentabilidade para o seu negócio."
+            intro="Seis frentes de atuação, um único time responsável. Clique em cada uma para ver prazos, documentos e base legal."
+          />
           <Link
             to="/services"
-            className="group inline-flex items-center gap-2 rounded-2xl bg-brand-primary px-7 py-3.5 font-inter text-sm font-semibold text-brand-cream shadow-lg transition-all hover:scale-[1.02] hover:bg-brand-primary/90"
+            className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-brand-dark/15 bg-white px-6 py-3 text-sm font-semibold text-brand-dark transition-colors hover:border-brand-accent hover:text-brand-accent lg:self-auto"
           >
             Ver todos os serviços
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <Link
-            to="/request-quote"
-            className="inline-flex items-center gap-2 rounded-2xl border border-brand-primary/20 bg-white px-7 py-3.5 font-inter text-sm font-semibold text-brand-primary transition-all hover:scale-[1.02] hover:border-brand-accent hover:text-brand-accent"
-          >
-            Solicitar orçamento
-          </Link>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {pillars.map((p) => (
+            <PillarTile key={p.title} p={p} />
+          ))}
+        </div>
+
+        <div className="mt-12 rounded-[1.25rem] border border-brand-dark/10 bg-white p-6 md:p-8">
+          <p className="font-display text-lg font-semibold text-brand-dark">Também cuidamos de</p>
+          <ul className="mt-4 flex flex-wrap gap-2.5">
+            {alsoDo.map((s) => (
+              <li key={s.label}>
+                <Link
+                  to={s.href}
+                  className="inline-flex rounded-full border border-brand-dark/12 px-4 py-2 text-sm text-brand-dark/80 transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-white"
+                >
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

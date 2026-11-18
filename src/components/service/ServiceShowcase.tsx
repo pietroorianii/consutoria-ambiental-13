@@ -97,7 +97,7 @@ export const ServiceShowcase = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-primary text-gray-900">
             Soluções Ambientais Completas para Sua Empresa
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed font-body">Na SOLARI SOLUÇÕES AMBIENTAIS, oferecemos consultoria especializada que transforma desafios ambientais em oportunidades de crescimento sustentável. Nossa abordagem integrada garante conformidade legal, redução de riscos e fortalecimento da sua imagem corporativa no mercado.</p>
+          <p className="text-lg text-gray-600 leading-relaxed font-body">Na AXIS SOLUÇÕES AMBIENTAIS, oferecemos consultoria especializada que transforma desafios ambientais em oportunidades de crescimento sustentável. Nossa abordagem integrada garante conformidade legal, redução de riscos e fortalecimento da sua imagem corporativa no mercado.</p>
           <div className="h-1 w-24 bg-eco-green rounded-full mx-auto mt-6"></div>
         </div>
 
