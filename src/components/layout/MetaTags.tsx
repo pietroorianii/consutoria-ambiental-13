@@ -11,12 +11,12 @@ interface MetaTagsProps {
 }
 
 export const MetaTags: React.FC<MetaTagsProps> = ({
-  title = "Solari Soluções Ambientais | Consultoria Ambiental Especializada",
+  title = "Axis Soluções Ambientais | Consultoria Ambiental Especializada",
   description = "Consultoria e assessoria completa para licenciamento, gestão de resíduos e conformidade com a legislação ambiental.",
-  keywords = "consultoria ambiental, licenciamento ambiental, sustentabilidade, gestão de resíduos, IAT, Paraná, Solari Soluções Ambientais",
-  image = "/lovable-uploads/027bd48a-0820-4102-841d-43d98185f223.png",
-  url = "https://solariambiental.com.br",
-  companyName = "Solari Soluções Ambientais"
+  keywords = "consultoria ambiental, licenciamento ambiental, sustentabilidade, gestão de resíduos, IAT, Paraná, Axis Soluções Ambientais",
+  image = "/og-axis.jpg",
+  url = "https://axisambiental.com.br",
+  companyName = "Axis Soluções Ambientais"
 }) => {
   return (
     <Helmet>

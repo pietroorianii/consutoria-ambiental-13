@@ -1,79 +1,46 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Building2, Award, Briefcase, Layers } from 'lucide-react';
+import { axisLogo, axisImages } from "@/components/brand/assets";
 
-const metrics = [
-  { value: 5, suffix: '+', label: 'anos no mercado', icon: Award },
-  { value: 300, suffix: '+', label: 'licenças emitidas no PR', icon: Briefcase },
-  { value: 100, suffix: '%', label: 'taxa de aprovação', icon: Building2 },
-  { value: 10, suffix: '', label: 'segmentos atendidos', icon: Layers },
+const values = [
+  { verb: "Inovar.", text: "Ferramentas digitais, dados e processos enxutos para licenciar com menos retrabalho." },
+  { verb: "Preservar.", text: "Cada condicionante cumprida é um rio, um solo e uma floresta que continuam saudáveis." },
+  { verb: "Transformar.", text: "Exigência legal vira vantagem competitiva: acesso a crédito, clientes e novos mercados." },
 ];
 
-function useCountUp(target: number, start: boolean, duration = 1400) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const t0 = performance.now();
-    let raf = 0;
-    const step = (t: number) => {
-      const p = Math.min(1, (t - t0) / duration);
-      setValue(Math.round(target * (1 - Math.pow(1 - p, 3))));
-      if (p < 1) raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [target, start, duration]);
-  return value;
-}
-
-function MetricCard({ m, inView }: { m: typeof metrics[0]; inView: boolean }) {
-  const v = useCountUp(m.value, inView);
-  const Icon = m.icon;
-  return (
-    <div className="text-center group">
-      <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-brand-accent/15 grid place-items-center group-hover:bg-brand-accent/25 transition-colors">
-        <Icon className="h-7 w-7 text-brand-accent" />
-      </div>
-      <div className="font-sora text-4xl md:text-5xl font-bold text-brand-cream tabular-nums">
-        {v}{m.suffix}
-      </div>
-      <div className="font-inter text-sm text-brand-cream/70 mt-2 uppercase tracking-wider">
-        {m.label}
-      </div>
-    </div>
-  );
-}
-
+/** Faixa de manifesto da marca: Inovar. Preservar. Transformar. */
 export function SocialProof() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setInView(true)),
-      { threshold: 0.3 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
   return (
-    <section ref={ref} className="relative bg-brand-dark text-brand-cream py-20 md:py-24 overflow-hidden">
-      <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-brand-primary/30 blur-3xl" />
-      <div className="absolute -bottom-32 -right-20 w-[24rem] h-[24rem] rounded-full bg-brand-accent/20 blur-3xl" />
-      <div className="container relative z-10">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-cream/15 bg-brand-cream/5 text-xs font-inter uppercase tracking-widest text-brand-cream/80 mb-4">
-            Em números
-          </div>
-          <h2 className="font-sora text-3xl md:text-4xl font-bold text-brand-cream">
-            Resultados que falam por <span className="text-brand-accent">si</span>
-          </h2>
+    <section className="axis-navy-surface relative overflow-hidden py-20 text-white md:py-28">
+      <img
+        src={axisImages.earth}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        style={{ maskImage: "radial-gradient(closest-side, black 55%, transparent 100%)", WebkitMaskImage: "radial-gradient(closest-side, black 55%, transparent 100%)" }}
+        className="pointer-events-none absolute -right-24 top-1/2 hidden w-[38rem] -translate-y-1/2 opacity-30 lg:block"
+      />
+      <div className="container relative grid items-center gap-14 lg:grid-cols-[auto_1fr] lg:gap-20">
+        <div className="flex items-center gap-8 lg:flex-col lg:items-start">
+          <img src={axisLogo.symbolWhite} alt="" aria-hidden className="w-24 md:w-36" />
+          <span className="hidden h-24 w-px bg-white/20 sm:block lg:h-px lg:w-36" aria-hidden />
+          <p className="max-w-[12rem] font-display text-sm leading-relaxed text-brand-silver/70">
+            O que guia cada projeto da Axis.
+          </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {metrics.map((m) => <MetricCard key={m.label} m={m} inView={inView} />)}
-        </div>
+
+        <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
+          {values.map((v, i) => (
+            <li key={v.verb} className="border-t border-white/15 pt-6">
+              <p
+                className={`font-display text-3xl font-semibold tracking-[0.04em] md:text-[2.1rem] ${
+                  i === values.length - 1 ? "text-brand-lime" : "text-white"
+                }`}
+              >
+                {v.verb}
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-brand-silver/75">{v.text}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

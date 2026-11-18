@@ -40,6 +40,7 @@ export function ServiceSearch() {
           className="peer h-full w-full outline-none text-brand-dark pr-2 font-inter bg-transparent text-base"
           type="text"
           id="search"
+          aria-label="Buscar serviço ambiental"
           placeholder="Qual serviço ambiental você procura?"
           value={query}
           onChange={(e) => {

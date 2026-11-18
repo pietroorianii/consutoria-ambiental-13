@@ -8,7 +8,7 @@ export const degradedAreasServices: ServiceDetailData = {
   description: "Soluções completas para GAC, PRAD e TAC no Paraná, conforme Resolução CONAMA 420/2009, Código Florestal e Portaria IAT 190/2024.",
   icon: TreePine,
   image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000&h=600",
-  whatIs: "Na SOLARI, atuamos em três frentes de recuperação ambiental: GAC (Gerenciamento de Áreas Contaminadas) — identificação, avaliação e remediação de solo e água contaminados, conforme Resolução CONAMA 420/2009; PRAD (Plano de Recuperação de Áreas Degradadas) — projeto técnico para restaurar áreas com vegetação suprimida, erosão ou atividade de mineração, exigido pelo Código Florestal e pelo Programa de Regularização Ambiental (PRA) do IAT; e TAC (Termo de Ajustamento de Conduta) — negociação técnica e jurídica junto ao IAT ou Ministério Público para regularização de passivos com metas e prazos acordados.",
+  whatIs: "Na Axis, atuamos em três frentes de recuperação ambiental: GAC (Gerenciamento de Áreas Contaminadas) — identificação, avaliação e remediação de solo e água contaminados, conforme Resolução CONAMA 420/2009; PRAD (Plano de Recuperação de Áreas Degradadas) — projeto técnico para restaurar áreas com vegetação suprimida, erosão ou atividade de mineração, exigido pelo Código Florestal e pelo Programa de Regularização Ambiental (PRA) do IAT; e TAC (Termo de Ajustamento de Conduta) — negociação técnica e jurídica junto ao IAT ou Ministério Público para regularização de passivos com metas e prazos acordados.",
   benefits: [
     "Resolução definitiva de passivos ambientais com segurança técnica e jurídica",
     "PRAD aprovado pelo IAT como pré-requisito para novos licenciamentos",

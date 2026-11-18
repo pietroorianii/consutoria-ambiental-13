@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Axis Soluções Ambientais — Site institucional
 
 ## Project info
 
@@ -84,8 +84,8 @@ Configure as seguintes variáveis no painel do Supabase em
 | Variável | Descrição | Exemplo |
 |---|---|---|
 | `RESEND_API_KEY` | Chave da API do Resend (resend.com) | `re_XXXXXXXXXXXX` |
-| `NOTIFY_EMAIL` | E-mail que receberá as notificações | `contato@solari.com.br` |
-| `FROM_EMAIL` | E-mail remetente (deve ser verificado no Resend) | `noreply@solari.com.br` |
+| `NOTIFY_EMAIL` | E-mail que receberá as notificações | `contato@axisambiental.com.br` |
+| `FROM_EMAIL` | E-mail remetente (deve ser verificado no Resend) | `noreply@axisambiental.com.br` |
 | `WEBHOOK_SECRET` | Segredo compartilhado com o webhook (opcional mas recomendado) | `sua_senha_segura_aqui` |
 
 ### Deploy da Edge Function

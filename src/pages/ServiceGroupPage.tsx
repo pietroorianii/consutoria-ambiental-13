@@ -131,7 +131,7 @@ const ServiceGroupPage = () => {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 font-primary text-gray-900">
-              Por que escolher a Solari?
+              Por que escolher a Axis?
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">

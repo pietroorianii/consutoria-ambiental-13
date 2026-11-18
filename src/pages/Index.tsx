@@ -9,28 +9,24 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { MetaTags } from "@/components/layout/MetaTags";
 import { ScrollProgress } from "@/components/fx/ScrollProgress";
-import { OrganicDivider } from "@/components/fx/OrganicDivider";
 
 const Index = () => {
   return (
     <PageWrapper>
       <MetaTags 
-        title="Solari Soluções Ambientais | Consultoria no Paraná"
+        title="Axis Soluções Ambientais | Consultoria Ambiental em Ponta Grossa e no Paraná"
         description="Garanta a conformidade legal do seu negócio com nossa assessoria completa em licenciamento, gestão de resíduos e estudos de impacto ambiental."
-        keywords="consultoria ambiental Paraná, licenciamento IAT, gestão resíduos, conformidade ambiental, Solari Soluções Ambientais"
-        companyName="Solari Soluções Ambientais"
+        keywords="consultoria ambiental Paraná, licenciamento IAT, gestão resíduos, conformidade ambiental, Axis Soluções Ambientais"
+        companyName="Axis Soluções Ambientais"
       />
 
       <ScrollProgress />
       <HeroBanner />
-      <div className="bg-brand-dark">
-        <OrganicDivider fill="fill-brand-cream" />
-      </div>
       <ServicesShowcase />
       <SegmentCards />
       <CompanyIntro />
-      <WorkProcess />
       <SocialProof />
+      <WorkProcess />
       <CTASection />
       <WhatsAppFloat />
     </PageWrapper>

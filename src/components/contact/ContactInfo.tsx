@@ -53,17 +53,17 @@ export function ContactInfo() {
               </h3>
               <p className="text-muted-foreground font-inter">
                 <a
-                  href="mailto:contato@solari.com.br"
+                  href="mailto:contato@axisambiental.com.br"
                   className="hover:text-brand-accent transition-colors"
                 >
-                  contato@solari.com.br
+                  contato@axisambiental.com.br
                 </a>
                 <br />
                 <a
-                  href="mailto:comercial@solari.com.br"
+                  href="mailto:comercial@axisambiental.com.br"
                   className="hover:text-brand-accent transition-colors"
                 >
-                  comercial@solari.com.br
+                  comercial@axisambiental.com.br
                 </a>
               </p>
             </div>

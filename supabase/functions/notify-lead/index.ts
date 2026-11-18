@@ -59,8 +59,8 @@ serve(async (req: Request): Promise<Response> => {
   const createdAt = String(record.created_at ?? new Date().toISOString());
 
   const subject = isQuote
-    ? `[SOLARI] Novo pedido de orçamento — ${name}`
-    : `[SOLARI] Nova mensagem de contato — ${name}`;
+    ? `[AXIS] Novo pedido de orçamento — ${name}`
+    : `[AXIS] Nova mensagem de contato — ${name}`;
 
   const htmlBody = `
     <h2 style="color:#2A6F47;font-family:sans-serif;">
@@ -84,8 +84,8 @@ serve(async (req: Request): Promise<Response> => {
   // Envia via Resend API
   // ---------------------------------------------------------------------------
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
-  const notifyEmail = Deno.env.get("NOTIFY_EMAIL") ?? "contato@solari.com.br";
-  const fromEmail = Deno.env.get("FROM_EMAIL") ?? "noreply@solari.com.br";
+  const notifyEmail = Deno.env.get("NOTIFY_EMAIL") ?? "contato@axisambiental.com.br";
+  const fromEmail = Deno.env.get("FROM_EMAIL") ?? "noreply@axisambiental.com.br";
 
   if (!resendApiKey) {
     console.error("RESEND_API_KEY não configurada");
@@ -99,7 +99,7 @@ serve(async (req: Request): Promise<Response> => {
       Authorization: `Bearer ${resendApiKey}`,
     },
     body: JSON.stringify({
-      from: `Solari Site <${fromEmail}>`,
+      from: `Axis Site <${fromEmail}>`,
       to: [notifyEmail],
       subject,
       html: htmlBody,

@@ -14,7 +14,7 @@ export const ServiceBenefits = ({ benefits }: ServiceBenefitsProps) => {
           Benefícios para o Seu Negócio
         </h2>
         <p className="text-base text-eco-green-dark font-medium">
-          Como a SOLARI Soluções Ambientais transforma seus desafios em oportunidades
+          Como a Axis Soluções Ambientais transforma seus desafios em oportunidades
         </p>
         <div className="h-1 w-16 bg-eco-green rounded-full mx-auto mt-4" />
       </div>

@@ -1,3 +1,4 @@
+import { axisLogo } from "@/components/brand/assets";
 
 import { PageWrapper } from "@/components/ui/page-wrapper";
 import { CTASection } from "@/components/cta-section";
@@ -8,14 +9,14 @@ import { PageBanner } from "@/components/ui/page-banner";
 import { MetaTags } from "@/components/layout/MetaTags";
 import { motion } from "framer-motion";
 
-// ── Equipe real da Solari Soluções Ambientais ──
+// ── Equipe real da Axis Soluções Ambientais ──
 const teamMembers = [
   {
     id: 1,
     name: "Pietro Bife Oriani",
     role: "Sócio-Fundador | Engenheiro Químico",
     image: "/lovable-uploads/pietro-bife-oriani.jpg",
-    bio: "Engenheiro Químico com experiência direta no IAT — Instituto Água e Terra do Paraná. Participou de mais de 100 processos de licenciamento ambiental, com domínio técnico de todas as etapas do SGA/IAT. Fundou a Solari com o objetivo de desburocratizar o licenciamento para empresas paranaenses.",
+    bio: "Engenheiro Químico com experiência direta no IAT — Instituto Água e Terra do Paraná. Participou de mais de 100 processos de licenciamento ambiental, com domínio técnico de todas as etapas do SGA/IAT. Fundou a Axis com o objetivo de desburocratizar o licenciamento para empresas paranaenses.",
     specialties: ["Licenciamento Ambiental", "Processos no IAT/SGA", "Outorga de Recursos Hídricos"],
   },
 ];
@@ -24,9 +25,9 @@ const AboutPage = () => {
   return (
     <PageWrapper>
       <MetaTags
-        title="Sobre a Solari Soluções Ambientais | Consultoria Ambiental Especializada"
-        description="Conheça a equipe da Solari Soluções Ambientais — especialistas em licenciamento ambiental no IAT com mais de 100 processos conduzidos no Paraná."
-        keywords="consultoria ambiental paraná, engenheiro ambiental Ponta Grossa, licenciamento IAT, Pietro Bife Oriani, Solari"
+        title="Sobre a Axis Soluções Ambientais | Consultoria Ambiental Especializada"
+        description="Conheça a equipe da Axis Soluções Ambientais — especialistas em licenciamento ambiental no IAT com mais de 100 processos conduzidos no Paraná."
+        keywords="consultoria ambiental paraná, engenheiro ambiental Ponta Grossa, licenciamento IAT, Pietro Bife Oriani, Axis"
       />
 
       {/* Banner */}
@@ -57,7 +58,7 @@ const AboutPage = () => {
               </h2>
               <div className="h-1 w-20 bg-brand-accent rounded-full mb-8"></div>
               <p className="font-inter text-brand-dark/70 text-lg mb-6 leading-relaxed">
-                A Solari Soluções Ambientais foi fundada por profissionais com experiência real
+                A Axis Soluções Ambientais foi fundada por profissionais com experiência real
                 dentro do IAT — Instituto Água e Terra do Paraná. Sabemos como o processo funciona
                 por dentro, o que nos permite entregar resultados mais rápidos e seguros.
               </p>
@@ -78,8 +79,8 @@ const AboutPage = () => {
               {/* Logo da empresa */}
               <div className="relative p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-brand-accent/20 hover:border-brand-accent/40 transition-all duration-300">
                 <img
-                  src="/lovable-uploads/d411c434-c49d-4917-ae05-49dc59580547.png"
-                  alt="Solari Soluções Ambientais Logo"
+                  src={axisLogo.fullColor}
+                  alt="Axis Soluções Ambientais"
                   className="max-w-full h-auto max-h-72 object-contain"
                 />
               </div>
@@ -143,7 +144,7 @@ const AboutPage = () => {
             className="mt-12 text-center"
           >
             <p className="font-inter text-sm text-brand-dark/40 max-w-lg mx-auto">
-              A Solari é uma empresa em crescimento. Prezamos pela transparência — 
+              A Axis é uma empresa em crescimento. Prezamos pela transparência — 
               exibimos apenas os profissionais reais que atuam nos seus processos.
             </p>
           </motion.div>

@@ -122,7 +122,7 @@ export const AdditionalInfoStep: React.FC<AdditionalInfoStepProps> = ({
       <div className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-4 border border-border">
         <p className="font-semibold text-foreground mb-1">Proteção de dados — LGPD</p>
         <p className="leading-relaxed">
-          Ao enviar este formulário, você autoriza a Solari Soluções Ambientais a
+          Ao enviar este formulário, você autoriza a Axis Soluções Ambientais a
           armazenar e utilizar seus dados para fins de atendimento comercial,
           conforme a Lei nº 13.709/2018 (LGPD). Seus dados não serão
           compartilhados com terceiros.{" "}

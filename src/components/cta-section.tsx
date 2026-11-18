@@ -1,52 +1,39 @@
-
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Sprout } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { axisImages } from "@/components/brand/assets";
 
 export function CTASection() {
   return (
-    <section className="container py-20 md:py-28 relative z-10">
-      <div className="rounded-3xl overflow-hidden relative bg-gradient-to-br from-brand-dark via-brand-primary to-brand-dark">
-        {/* Glow accents */}
-        <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-brand-accent/25 blur-3xl" />
-        <div className="absolute -bottom-32 -right-20 w-[24rem] h-[24rem] rounded-full bg-brand-primary/40 blur-3xl" />
-
-        {/* Content */}
-        <div className="relative z-10 p-12 sm:p-16 md:p-20 text-center">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex justify-center mb-8">
-              <div className="p-5 rounded-2xl bg-brand-cream/10 backdrop-blur-sm border border-brand-cream/20">
-                <Sprout className="text-brand-cream" size={32} />
-              </div>
-            </div>
-
-            <h2 className="font-sora text-3xl md:text-4xl lg:text-5xl font-bold text-brand-cream mb-6">
-              Pronto para regularizar sua <span className="text-brand-accent">empresa?</span>
+    <section className="bg-brand-cream pb-24 md:pb-32">
+      <div className="container">
+        <div className="relative grid overflow-hidden rounded-[1.75rem] bg-brand-dark text-white lg:grid-cols-[1.1fr_1fr]">
+          <div className="relative z-10 p-9 sm:p-14 lg:p-16">
+            <h2 className="font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-5xl">
+              Vamos colocar sua empresa <span className="font-semibold text-brand-lime">em dia com o meio ambiente?</span>
             </h2>
-
-            <div className="h-1 w-24 bg-brand-accent/60 rounded-full mx-auto mb-8" />
-
-            <p className="font-inter max-w-2xl mx-auto mb-10 text-brand-cream/85 text-lg leading-relaxed">
-              Fale com um especialista hoje. Diagnóstico inicial sem custo.
+            <span className="axis-rule mt-6" />
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-brand-silver/80">
+              Conte o que sua empresa faz e onde opera. Em até um dia útil você recebe a análise inicial, sem custo.
             </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild size="lg" className="bg-brand-accent hover:bg-brand-accent/90 text-white rounded-2xl px-8 py-6 shadow-lg shadow-brand-accent/20 transition-shadow hover:shadow-xl">
-                <Link to="/request-quote" className="flex items-center gap-3 text-base font-medium">
-                  Solicitar diagnóstico gratuito
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </Link>
-              </Button>
-
-              <Button asChild size="lg" variant="outline" className="rounded-2xl px-8 py-6 border-brand-cream/30 bg-brand-cream/5 text-brand-cream hover:bg-brand-cream hover:text-brand-dark backdrop-blur-md">
-                <Link to="/services" className="text-base font-medium">
-                  Conhecer Serviços
-                </Link>
-              </Button>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link to="/request-quote" className="axis-btn-solid group justify-center px-7 py-3.5 text-base">
+                Solicitar diagnóstico gratuito
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link to="/contact" className="axis-btn-ghost justify-center px-7 py-3.5 text-base">
+                <MessageCircle className="h-5 w-5" />
+                Falar com a equipe
+              </Link>
             </div>
+          </div>
+          <div className="relative min-h-[16rem]">
+            <img
+              src={axisImages.seedling}
+              alt="Muda brotando em solo fértil"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-transparent to-transparent lg:bg-gradient-to-r" />
           </div>
         </div>
       </div>
