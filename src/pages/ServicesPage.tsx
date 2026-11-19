@@ -64,9 +64,9 @@ const ServicesPage = () => {
       />
 
       {/* Filtro por necessidade */}
-      <section className="sticky top-[4.5rem] z-30 border-b border-brand-dark/10 bg-white/90 backdrop-blur-xl">
-        <div className="container flex items-center gap-3 overflow-x-auto py-3 [scrollbar-width:none]">
-          <span className="shrink-0 font-display text-sm font-semibold text-brand-dark">O que você precisa resolver?</span>
+      <section className="relative z-30 border-b border-brand-dark/10 bg-white/90 backdrop-blur-xl lg:sticky lg:top-[4.5rem]">
+        <div className="container grid grid-cols-2 gap-2 py-4 md:grid-cols-4 md:gap-3 xl:grid-cols-8">
+          <span className="col-span-full mb-1 font-display text-sm font-semibold text-brand-dark">O que você precisa resolver?</span>
           {needs.map((n) => (
             <button
               key={n.id}
@@ -74,7 +74,7 @@ const ServicesPage = () => {
               aria-pressed={need === n.id}
               onClick={() => setNeed(need === n.id ? null : n.id)}
               className={cn(
-                "shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+                "flex min-h-10 w-full items-center justify-center rounded-full border px-3 py-2 text-center text-sm font-medium leading-tight transition-colors",
                 need === n.id ? "border-brand-dark bg-brand-dark text-white" : "border-brand-dark/15 text-brand-dark/75 hover:border-brand-accent hover:text-brand-accent",
               )}
             >
@@ -82,7 +82,7 @@ const ServicesPage = () => {
             </button>
           ))}
           {need && (
-            <button type="button" onClick={() => setNeed(null)} className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-brand-dark/55 hover:text-brand-dark">
+            <button type="button" onClick={() => setNeed(null)} className="col-span-full inline-flex items-center justify-center gap-1 py-1 text-sm font-medium text-brand-dark/55 hover:text-brand-dark">
               <X className="h-4 w-4" /> Limpar
             </button>
           )}
