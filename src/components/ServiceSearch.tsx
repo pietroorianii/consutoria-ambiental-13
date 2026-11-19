@@ -31,7 +31,7 @@ export function ServiceSearch() {
   };
 
   return (
-    <div ref={wrapperRef} className="relative w-full max-w-lg mt-8 z-50">
+    <div ref={wrapperRef} className="relative mt-8 w-full z-50">
       <div className="relative flex items-center w-full h-14 rounded-2xl bg-white shadow-xl overflow-hidden focus-within:ring-2 focus-within:ring-brand-accent transition-all">
         <div className="grid place-items-center h-full w-12 text-brand-primary">
           <Search className="h-5 w-5" />

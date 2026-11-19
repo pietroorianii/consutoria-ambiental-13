@@ -69,17 +69,17 @@ export function HeroBanner() {
             emitida, com ART e responsável técnico em cada etapa.
           </motion.p>
 
-          <motion.div {...rise(0.45)} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link to="/diagnostico" className="axis-btn-solid group justify-center whitespace-nowrap px-7 py-3.5 text-base">
+          <motion.div {...rise(0.45)} className="mt-9 flex w-full flex-col gap-3 sm:flex-row">
+            <Link to="/diagnostico" className="axis-btn-solid group justify-center whitespace-nowrap px-7 py-3.5 text-base sm:flex-1">
               Descobrir qual licença preciso
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/services" className="axis-btn-ghost justify-center whitespace-nowrap px-7 py-3.5 text-base">
+            <Link to="/services" className="axis-btn-ghost justify-center whitespace-nowrap px-7 py-3.5 text-base sm:flex-1">
               Conheça nossas soluções
             </Link>
           </motion.div>
 
-          <motion.div {...rise(0.55)} className="max-w-lg">
+          <motion.div {...rise(0.55)} className="w-full">
             <ServiceSearch />
           </motion.div>
         </div>
