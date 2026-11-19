@@ -1,417 +1,153 @@
-import { MetaTags } from "@/components/layout/MetaTags";
-import React, { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { CTASection } from "@/components/cta-section";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, ArrowUpRight, Check, X } from "lucide-react";
 import { PageWrapper } from "@/components/ui/page-wrapper";
-import { PageBanner } from "@/components/ui/page-banner";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ArrowRight,
-  CheckCircle,
-  ExternalLink,
-  Leaf,
-  Droplet,
-  TreePine,
-  Beaker,
-  FileText,
-  Users,
-  GraduationCap,
-  ClipboardList,
-  Shield,
-  ChevronDown,
-} from "lucide-react";
+import { MetaTags } from "@/components/layout/MetaTags";
+import { AxisPageHero } from "@/components/brand/AxisPageHero";
+import { SectionHeading } from "@/components/brand/SectionHeading";
+import { axisImages } from "@/components/brand/assets";
+import { catalog, families, needs, type Need, type ServiceFamily, type CatalogService } from "@/data/serviceCatalog";
+import { ModalityStrip } from "@/components/service/ModalityExplorer";
+import { cn } from "@/lib/utils";
 
-// ── Dados de todas as categorias ─────────────────────────────────────────────
-const ALL_CATEGORIES = [
-  {
-    id: "licensing",
-    color: "brand-accent" as const,
-    accentHex: "#377A25",
-    icon: Leaf,
-    badge: "LICENCIAMENTO",
-    title: "Licenciamento e Autorizações Ambientais",
-    description: "Todas as modalidades conforme a nova regulamentação do IAT-PR — da dispensa ao licenciamento trifásico.",
-    services: [
-      { title: "DLAM — Declaração de Dispensa", description: "Para atividades de baixo impacto (1–15 dias via SGA do IAT)." },
-      { title: "LAC — Licença por Adesão e Compromisso", description: "Emissão eletrônica imediata para atividades padronizáveis." },
-      { title: "LAS — Licença Ambiental Simplificada", description: "Processo unificado LP+LI+LO para pequeno porte (até 60 dias)." },
-      { title: "LP / LI / LO — Licenciamento Trifásico", description: "Processo completo para empreendimentos de maior complexidade." },
-      { title: "Regularização — LASR / LIR / LOR", description: "Adequação de empreendimentos em situação irregular (PRA)." },
-      { title: "Autorizações Ambientais (AA) e Florestais (AF)", description: "Intervenções específicas em vegetação nativa e APP." },
-    ],
-    mainDeliverables: ["DLAM / LAC / LAS completos", "LP / LI / LO trifásico", "LASR, LIR, LOR regularização"],
-  },
-  {
-    id: "water_resources",
-    color: "brand-primary" as const,
-    accentHex: "#3FA1BA",
-    icon: Droplet,
-    badge: "RECURSOS HÍDRICOS",
-    title: "Outorga e Recursos Hídricos",
-    description: "Direito legal de uso de águas superficiais e subterrâneas — captação e lançamento de efluentes no Paraná.",
-    services: [
-      { title: "Outorga de Captação Superficial", description: "Irrigação, criação de animais e aquicultura em rios e lagos." },
-      { title: "Outorga de Captação Subterrânea", description: "Poços artesianos com ART, testes e análise físico-química." },
-      { title: "Outorga de Lançamento de Efluentes", description: "Lançamento de efluentes tratados com Declaração de Carga Poluidora." },
-      { title: "Outorga de Barragem", description: "Barramento de cursos d'água com projeto executivo e estudo hídrico." },
-      { title: "Estudos de Disponibilidade Hídrica", description: "Análises técnicas para fundamentar pedidos de outorga." },
-      { title: "Monitoramento de Qualidade e Vazão", description: "Atendimento de condicionantes de outorga vigentes." },
-    ],
-    mainDeliverables: ["Outorgas superficiais e subterrâneas", "Outorgas de efluentes e barragens", "Estudos hídricos e monitoramento"],
-  },
-  {
-    id: "degraded_areas",
-    color: "brand-primary" as const,
-    accentHex: "#6E9A22",
-    icon: TreePine,
-    badge: "PASSIVOS AMBIENTAIS",
-    title: "Recuperação de Áreas e Passivos",
-    description: "Da investigação à remediação completa de áreas degradadas e passivos ambientais.",
-    services: [
-      { title: "GAC — Investigação e Remediação", description: "Ciclo completo da avaliação preliminar ao monitoramento pós-remediação." },
-      { title: "PRAD — Projeto de Recuperação de Áreas Degradadas", description: "Projetos técnicos para restaurar ecossistemas e atender à lei." },
-      { title: "TAC — Assessoria para Ajuste de Conduta", description: "Suporte técnico em negociação e cumprimento de acordos ambientais." },
-      { title: "Auditoria de Passivos Ambientais", description: "Diagnóstico completo para M&A, fusões e due diligence." },
-    ],
-    mainDeliverables: ["GAC e remediação completa", "PRAD elaboração e execução", "Assessoria TAC e auditoria"],
-  },
-  {
-    id: "monitoring",
-    color: "brand-primary" as const,
-    accentHex: "#0E4A4F",
-    icon: Beaker,
-    badge: "MONITORAMENTO",
-    title: "Monitoramento e Análises Ambientais",
-    description: "Monitoramento contínuo e análises técnicas para conformidade e atendimento às condicionantes de licença.",
-    services: [
-      { title: "Monitoramento de Emissões Atmosféricas", description: "Controle de poluentes conforme condicionantes e SGADEA do IAT." },
-      { title: "Monitoramento de Efluentes Líquidos", description: "Análise e controle de qualidade de efluentes industriais e sanitários." },
-      { title: "Monitoramento da Qualidade da Água", description: "Acompanhamento de águas superficiais e subterrâneas." },
-      { title: "Gestão de Análises Laboratoriais", description: "Coordenação de coletas com laboratórios credenciados INMETRO." },
-      { title: "Acompanhamento de Condicionantes", description: "Gestão sistemática do cumprimento de todas as condicionantes." },
-    ],
-    mainDeliverables: ["Emissões atmosféricas e SGADEA", "Efluentes líquidos e água", "Laboratórios credenciados"],
-  },
-  {
-    id: "reports",
-    color: "brand-accent" as const,
-    accentHex: "#377A25",
-    icon: FileText,
-    badge: "ESTUDOS TÉCNICOS",
-    title: "Estudos e Documentos Técnicos",
-    description: "Todos os instrumentos técnicos exigidos no licenciamento ambiental — do EIA ao PRAD.",
-    services: [
-      { title: "EIA / RIMA", description: "Estudo de Impacto Ambiental para empreendimentos de significativo impacto." },
-      { title: "RAP / RAS — Relatórios Ambientais", description: "Relatórios prévios e simplificados conforme modalidade de licença." },
-      { title: "MCE — Memorial de Caracterização", description: "Documento técnico detalhado exigido em LAC, LAS e LP." },
-      { title: "PGRS / PGRSS / PGRCC", description: "Planos de gerenciamento de resíduos sólidos por setor." },
-      { title: "PCA / PRAD / PRF", description: "Controle ambiental, recuperação de áreas e resgate da flora." },
-      { title: "Plano de Automonitoramento", description: "Efluentes, resíduos e parâmetros de condicionantes de LO." },
-    ],
-    mainDeliverables: ["EIA / RIMA / RAS / MCE", "PGRS / PGRSS / PGRCC", "PCA / PRAD / PRF"],
-  },
-  {
-    id: "consulting",
-    color: "brand-primary" as const,
-    accentHex: "#3FA1BA",
-    icon: Users,
-    badge: "CONSULTORIA",
-    title: "Consultoria Ambiental Especializada",
-    description: "Assessoria técnica estratégica, auditorias, defesas administrativas e adequações regulatórias.",
-    services: [
-      { title: "Auditorias Ambientais", description: "Conformidade legal, desempenho ambiental e due diligence." },
-      { title: "Defesas e Recursos Ambientais", description: "Elaboração de defesas para autos de infração e recursos administrativos." },
-      { title: "Assessoria para TAC", description: "Suporte técnico em Termos de Ajuste de Conduta ambiental." },
-      { title: "Perícia Ambiental", description: "Avaliação técnica para processos judiciais e administrativos." },
-      { title: "Geotecnologias (SIG)", description: "Mapeamento e análise ambiental com Sistemas de Informação Geográfica." },
-      { title: "Certificações — ISO 14001", description: "Assessoria para certificações de gestão ambiental." },
-    ],
-    mainDeliverables: ["Auditorias e defesas", "Perícia e assessoria TAC", "SIG e certificações ISO"],
-  },
-  {
-    id: "training",
-    color: "brand-accent" as const,
-    accentHex: "#377A25",
-    icon: GraduationCap,
-    badge: "CAPACITAÇÃO",
-    title: "Treinamentos e Capacitações",
-    description: "Programas de educação ambiental e capacitação técnica para equipes de todos os setores.",
-    services: [
-      { title: "Legislação Ambiental", description: "Capacitação sobre normas do IAT e legislação aplicável por setor." },
-      { title: "Gerenciamento de Resíduos Sólidos", description: "Treinamento certificado em PGRS (Lei nº 12.305/2010)." },
-      { title: "Atendimento a Emergências Ambientais", description: "Capacitação para resposta rápida a incidentes ambientais." },
-      { title: "Capacitações Setoriais", description: "Programas específicos para indústria, agronegócio e construção." },
-    ],
-    mainDeliverables: ["Legislação e normas IAT", "PGRS certificado", "Emergências e setorial"],
-  },
-  {
-    id: "management",
-    color: "brand-primary" as const,
-    accentHex: "#3FA1BA",
-    icon: ClipboardList,
-    badge: "GESTÃO CONTÍNUA",
-    title: "Gestão Ambiental Contínua",
-    description: "Manutenção da conformidade pós-licença: renovações, declarações e suporte permanente.",
-    services: [
-      { title: "Gestão de Requisitos Legais", description: "Sistema de gestão de obrigações ambientais e controle de prazos." },
-      { title: "Renovação de Licenças (LO)", description: "Acompanhamento e renovação com antecedência mínima de 120 dias." },
-      { title: "Renovação de Outorgas", description: "Controle de vencimentos e renovação no SIGARH." },
-      { title: "Relatórios e Declarações — SGA IR", description: "Inventários e relatórios obrigatórios aos órgãos ambientais." },
-      { title: "Suporte Técnico Contínuo", description: "Assessoria permanente para questões ambientais do dia a dia." },
-    ],
-    mainDeliverables: ["Renovação de LO e outorgas", "SGA IR declarações", "Suporte permanente"],
-  },
-  {
-    id: "ibama",
-    color: "brand-primary" as const,
-    accentHex: "#3FA1BA",
-    icon: Shield,
-    badge: "IBAMA",
-    title: "Cadastro e Obrigações IBAMA",
-    description: "Inscrição e manutenção do CTF/APP, declaração anual RAPP e controle da TCFA. Mantenha sua regularidade federal em dia.",
-    services: [
-      { title: "CTF/APP — Cadastro Técnico Federal", description: "Inscrição de pessoas físicas e jurídicas no cadastro obrigatório do IBAMA." },
-      { title: "Certificado de Regularidade (CR)", description: "Emissão e renovação anual do CR necessário para operações e licitações." },
-      { title: "RAPP — Declaração Anual", description: "Elaboração e envio do Relatório de Atividades Potencialmente Poluidoras (prazo: 31 de março)." },
-      { title: "Acompanhamento da TCFA", description: "Controle e pagamento trimestral da Taxa de Controle e Fiscalização Ambiental." },
-    ],
-    mainDeliverables: ["Inscrição e manutenção CTF/APP", "RAPP anual entregue no prazo", "Certificado de Regularidade ativo"],
-  },
-];
-
-// ── Card individual — mesmo padrão visual do ServiceGroupCard da home ─────────
-function ServiceCard({
-  cat,
-  index,
-}: {
-  cat: (typeof ALL_CATEGORIES)[0];
-  index: number;
-}) {
-  const [open, setOpen] = useState(false);
-  const Icon = cat.icon;
-
-  // AXIS: mesma linguagem visual para todas as áreas (antes alternava verde/azul/amarelo).
-  const accentText = "text-brand-accent";
-  const accentBorder = "hover:border-brand-accent/40";
-  const accentBg = "from-white via-white to-brand-cream";
-  const accentIconBg = "from-brand-accent/10 to-brand-accent/15 group-hover:from-brand-accent/15 group-hover:to-brand-accent/25";
-  const accentBadge = "bg-brand-accent/10 text-brand-accent";
-  const accentTopBar = "from-brand-lime to-brand-accent";
-  const accentButtonOutline = "border-brand-dark/20 bg-white text-brand-dark hover:border-brand-accent hover:text-brand-accent";
-  const accentButtonFill = "bg-brand-dark hover:bg-brand-primary text-white";
-
+function ServiceCard({ s, dim }: { s: CatalogService; dim: boolean }) {
+  const Icon = s.icon;
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
+    <Link
+      to={`/service/${s.id}`}
+      className={cn(
+        "group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-brand-dark/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-30px_rgba(6,24,33,0.5)]",
+        dim && "opacity-40 saturate-50 hover:opacity-100 hover:saturate-100",
+      )}
     >
-      <Card
-        className={`group relative overflow-hidden transition-all duration-300 bg-gradient-to-br from-white via-white to-prisma-green/5 border-2 border-brand-primary/30 ${accentBorder} h-full flex flex-col hover:shadow-xl hover:-translate-y-2 shadow-md`}
-      >
-        {/* Gradiente de fundo no hover */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${accentBg} opacity-0 group-hover:opacity-100 transition-all duration-700`}
-        />
-
-        {/* Linha de acento no topo — cresce no hover */}
-        <div
-          className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${accentTopBar} opacity-60 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100`}
-        />
-
-        <CardHeader className="text-center pb-2 relative z-10 pt-8">
-          {/* Ícone 96×96 — mesmo padrão da home */}
-          <div className="relative mb-5 mx-auto w-24 h-24">
-            <div
-              className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${accentIconBg} transition-all duration-500 group-hover:rotate-12 group-hover:scale-110`}
-            />
-            <div className="relative w-full h-full flex items-center justify-center bg-white/90 rounded-2xl group-hover:bg-white transition-all duration-500 group-hover:-rotate-6 shadow-lg group-hover:shadow-2xl">
-              <Icon
-                className={`h-10 w-10 ${accentText} group-hover:scale-125 transition-all duration-500`}
-              />
-            </div>
-          </div>
-
-          {/* Badge */}
-          <div className="mb-3">
-            <span
-              className={`inline-block px-4 py-1.5 text-xs font-bold rounded-full ${accentBadge} group-hover:scale-105 transition-all duration-300 uppercase tracking-widest shadow-sm`}
-            >
-              {cat.badge}
-            </span>
-          </div>
-
-          {/* Título */}
-          <CardTitle
-            className="font-sora text-lg font-bold leading-snug mb-2 transition-colors duration-300"
-          >
-            {cat.title}
-          </CardTitle>
-
-          {/* Descrição */}
-          <p
-            className="font-inter text-sm text-brand-primary/75 leading-relaxed"
-          >
-            {cat.description}
-          </p>
-        </CardHeader>
-
-        <CardContent className="px-6 pb-4 flex-grow relative z-10 flex flex-col">
-          {/* Principais Entregas */}
-          <div className="mb-4">
-            <h4
-              className="font-sora text-sm font-bold text-brand-primary mb-3 uppercase tracking-wide"
-            >
-              Principais Entregas
-            </h4>
-            <ul className="space-y-2">
-              {cat.mainDeliverables.map((d, i) => (
-                <li key={i} className="flex items-center gap-2.5">
-                  <CheckCircle
-                    className={`h-4 w-4 flex-shrink-0 ${accentText}`}
-                  />
-                  <span
-                    className="font-inter text-sm text-brand-primary/90"
-                  >
-                    {d}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Serviços expansíveis */}
-          <div className="border-t border-brand-primary/40 pt-3">
-            <button
-              type="button"
-              onClick={() => setOpen((o) => !o)}
-              aria-expanded={open}
-              className={`font-sora flex items-center justify-between w-full text-sm font-semibold ${accentText} hover:opacity-80 transition-opacity`}
-            >
-              <span>{open ? "Ocultar serviços" : `Ver todos os ${cat.services.length} serviços`}</span>
-              <ChevronDown
-                className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-              />
-            </button>
-
-            <AnimatePresence initial={false}>
-              {open && (
-                <motion.div
-                  key="svc-list"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.28, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <div className="pt-3 space-y-2">
-                    {cat.services.map((svc, i) => (
-                      <div
-                        key={i}
-                        className="flex items-start gap-2 p-2.5 rounded-lg hover:bg-brand-primary/30 transition-colors group/svc"
-                      >
-                        <ExternalLink
-                          className={`h-3.5 w-3.5 mt-0.5 flex-shrink-0 ${accentText} opacity-60 group-hover/svc:opacity-100`}
-                        />
-                        <div>
-                          <p
-                            className="font-sora text-sm font-semibold text-brand-primary leading-snug"
-                          >
-                            {svc.title}
-                          </p>
-                          <p
-                            className="font-inter text-xs text-brand-primary/65 leading-relaxed mt-0.5"
-                          >
-                            {svc.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </CardContent>
-
-        {/* Footer com botões — mesmo padrão da home */}
-        <div className="mt-auto p-5 pt-3 border-t border-brand-dark/10 bg-brand-cream/60 transition-all duration-300 relative z-10">
-          <div className="flex gap-2.5">
-            <Button
-              asChild
-              variant="outline"
-              size="sm"
-              className={`font-inter flex-1 ${accentButtonOutline} transition-all duration-300 font-semibold`}
-            >
-              <Link
-                to={cat.id === "ibama" ? `/service/${cat.id}` : `/services/${cat.id}`}
-                className="flex items-center justify-center gap-1.5"
-              >
-                Explorar
-                <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-
-            <Button
-              asChild
-              size="sm"
-              className={`font-inter flex-1 ${accentButtonFill} transition-all duration-300 font-semibold shadow-md hover:shadow-lg`}
-            >
-              <Link to="/request-quote">Orçamento</Link>
-            </Button>
-          </div>
-        </div>
-      </Card>
-    </motion.div>
+      <div className="relative h-44 overflow-hidden">
+        <img src={s.image} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-brand-dark/10 to-transparent" />
+        <span className={cn("absolute bottom-4 left-5 grid h-11 w-11 place-items-center rounded-full bg-white/95", s.water ? "text-brand-primary" : "text-brand-accent")}>
+          <Icon className="h-5 w-5" strokeWidth={1.75} />
+        </span>
+      </div>
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="font-display text-xl font-semibold leading-snug text-brand-dark">{s.title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-brand-dark/65">{s.short}</p>
+        <ul className="mt-4 space-y-1.5">
+          {s.deliverables.map((d) => (
+            <li key={d} className="flex items-start gap-2 text-sm text-brand-dark/75">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" /> {d}
+            </li>
+          ))}
+        </ul>
+        <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-brand-accent">
+          Ver como funciona <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </span>
+      </div>
+    </Link>
   );
 }
 
-// ── Página de Serviços ────────────────────────────────────────────────────────
 const ServicesPage = () => {
+  const [need, setNeed] = useState<Need | null>(null);
+  const reduce = useReducedMotion();
+  const matches = useMemo(() => new Set(catalog.filter((s) => !need || s.needs.includes(need)).map((s) => s.id)), [need]);
+
   return (
     <PageWrapper>
-      <MetaTags title="Serviços de consultoria ambiental no Paraná | Axis Soluções Ambientais" description="Licenciamento, outorgas, estudos técnicos, resíduos, monitoramento, ESG, treinamentos e cadastro IBAMA para empresas no Paraná." />
-      <PageBanner
-        title="Todos os serviços"
-        description="Licenciamento, outorgas, estudos e gestão ambiental — tudo que sua empresa precisa para operar dentro da lei."
-        icon={<Leaf />}
-        variant="services"
-              />
+      <MetaTags
+        title="Serviços de consultoria ambiental no Paraná | Axis Soluções Ambientais"
+        description="Licenciamento, autorizações florestais, outorga, cadastro IBAMA, estudos técnicos, monitoramento, áreas contaminadas, conformidade, auditorias, ESG e treinamentos."
+      />
+      <AxisPageHero
+        title={<>Tudo o que sua empresa precisa para <span className="font-semibold text-brand-lime">operar dentro da lei.</span></>}
+        description="Dez serviços, um único responsável técnico. Diga o que você precisa resolver e mostramos por onde começar."
+        image={axisImages.heroValley}
+      />
 
-      {/* Introdução e contagem */}
-      <section className="container pt-14 pb-4">
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="font-sora text-2xl md:text-3xl font-bold text-brand-primary mb-3">
-              {ALL_CATEGORIES.length} áreas de atuação, {ALL_CATEGORIES.reduce((a, c) => a + c.services.length, 0)} serviços
-            </h2>
-            <p className="font-inter text-brand-primary/70 leading-relaxed mb-6">
-              Clique em <strong>Explorar</strong> para ver detalhes de cada área ou em{" "}
-              <strong>Ver todos os serviços</strong> para expandir a lista completa dentro do card.
-            </p>
-            <div className="h-1 w-20 bg-brand-accent rounded-full mx-auto" />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Grid de cards */}
-      <section className="container py-10 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
-          {ALL_CATEGORIES.map((cat, i) => (
-            <ServiceCard key={cat.id} cat={cat} index={i} />
+      {/* Filtro por necessidade */}
+      <section className="sticky top-[4.5rem] z-30 border-b border-brand-dark/10 bg-white/90 backdrop-blur-xl">
+        <div className="container flex items-center gap-3 overflow-x-auto py-3 [scrollbar-width:none]">
+          <span className="shrink-0 font-display text-sm font-semibold text-brand-dark">O que você precisa resolver?</span>
+          {needs.map((n) => (
+            <button
+              key={n.id}
+              type="button"
+              aria-pressed={need === n.id}
+              onClick={() => setNeed(need === n.id ? null : n.id)}
+              className={cn(
+                "shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+                need === n.id ? "border-brand-dark bg-brand-dark text-white" : "border-brand-dark/15 text-brand-dark/75 hover:border-brand-accent hover:text-brand-accent",
+              )}
+            >
+              {n.label}
+            </button>
           ))}
+          {need && (
+            <button type="button" onClick={() => setNeed(null)} className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-brand-dark/55 hover:text-brand-dark">
+              <X className="h-4 w-4" /> Limpar
+            </button>
+          )}
         </div>
       </section>
 
-      {/* CTA final */}
-      <CTASection />
+      <AnimatePresence>
+        {need && (
+          <motion.div
+            initial={reduce ? false : { opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="bg-brand-cream"
+          >
+            <p className="container pt-6 text-sm text-brand-dark/70">
+              <span className="font-semibold text-brand-dark">{matches.size} serviços</span> resolvem isso. Os demais ficam esmaecidos.
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="bg-brand-cream pb-8">
+        {(Object.keys(families) as ServiceFamily[]).map((fam) => (
+          <section key={fam} className="container pt-14">
+            <div className="flex flex-col justify-between gap-2 md:flex-row md:items-end">
+              <div>
+                <h2 className="font-display text-2xl font-semibold text-brand-dark md:text-3xl">{families[fam].title}</h2>
+                <span className="axis-rule mt-3" />
+              </div>
+              <p className="max-w-md text-sm text-brand-dark/60">{families[fam].intro}</p>
+            </div>
+            <div className={cn("mt-8 grid gap-5 sm:grid-cols-2", catalog.filter((s) => s.family === fam).length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3")}>
+              {catalog.filter((s) => s.family === fam).map((s) => (
+                <ServiceCard key={s.id} s={s} dim={!!need && !matches.has(s.id)} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      {/* Modalidades em uma linha */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="container">
+          <SectionHeading
+            title="Qual licença? Depende do porte e do impacto."
+            intro="As modalidades do licenciamento no Paraná, da mais simples à mais completa. Prazos contados a partir do protocolo completo no IAT."
+          />
+          <ModalityStrip className="mt-10" />
+        </div>
+      </section>
+
+      {/* CTA diagnóstico */}
+      <section className="bg-brand-cream pb-24 pt-4">
+        <div className="container">
+          <div className="axis-navy-surface flex flex-col items-start justify-between gap-6 rounded-[1.5rem] p-8 text-white md:flex-row md:items-center md:p-12">
+            <div>
+              <h2 className="font-display text-2xl font-medium md:text-3xl">Ainda em dúvida sobre por onde começar?</h2>
+              <p className="mt-2 text-brand-silver/80">Responda 5 perguntas e veja o caminho provável para a sua atividade.</p>
+            </div>
+            <Link to="/diagnostico" className="axis-btn-solid group shrink-0 px-7 py-3.5 text-base">
+              Fazer o diagnóstico gratuito <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </PageWrapper>
   );
 };

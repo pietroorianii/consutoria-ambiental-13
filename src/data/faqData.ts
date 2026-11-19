@@ -24,7 +24,7 @@ export const faqData: FAQCategory[] = [
         answer: "Todo novo empreendimento com potencial de impacto ambiental precisa de uma licença. O primeiro passo é o Licenciamento Ambiental, que pode variar desde uma simples Dispensa (DLAM) até um processo trifásico (LP/LI/LO). Nossa equipe realiza o enquadramento correto e cuida de todo o processo para você, desde a análise de viabilidade até a obtenção da licença final.",
         relatedLink: {
           text: "Saiba mais sobre Licenciamento",
-          href: "/services/licensing"
+          href: "/service/licensing"
         }
       },
       {
@@ -32,7 +32,7 @@ export const faqData: FAQCategory[] = [
         answer: "Sim, o uso de recursos hídricos superficiais ou subterrâneos exige uma Outorga de Direito de Uso, emitida pelo IAT no Paraná. Dependendo do volume, pode ser necessário apenas uma Declaração de Uso Insignificante (emissão automática) ou uma Outorga formal. Elaboramos os estudos necessários e conduzimos todo o processo para garantir seu direito de uso da água.",
         relatedLink: {
           text: "Ver detalhes sobre Outorga",
-          href: "/service/water_resources"
+          href: "/service/water_grants"
         }
       },
       {
@@ -106,7 +106,7 @@ export const faqData: FAQCategory[] = [
         answer: "Resíduos perigosos exigem **PGRS específico**, **Cadastro Técnico Federal (IBAMA)**, **Licenciamento adequado**, **CADRI** (Certificado de Aprovação para Destinação de Resíduos), transporte por empresas credenciadas e **Inventário Nacional de Resíduos Sólidos**. A gestão inadequada pode resultar em crime ambiental.",
         relatedLink: {
           text: "Saiba mais sobre PGRS",
-          href: "/services/reports"
+          href: "/service/technical_studies"
         }
       }
     ]

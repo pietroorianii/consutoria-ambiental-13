@@ -90,7 +90,7 @@ Natureza preservada convivendo com operação industrial real. Luz de nascer do 
 
 No código: `import { axisImages } from "@/components/brand/assets"`.
 
-> ⚠️ As fotos foram recortadas das artes (resolução de origem baixa, ampliadas 2×). Funcionam bem com sobreposição navy, mas para banners em tela cheia e materiais impressos vale gerar ou comprar versões em alta resolução.
+> Desde nov/2026 as fotos do site vêm do Unsplash em alta resolução (licença gratuita para uso comercial, sem atribuição obrigatória). Os IDs ficam em `unsplashIds` (`src/components/brand/assets.ts`). Não use imagens do Google ou do Pinterest: em geral têm direito autoral.
 
 ## 7. Voz e mensagens
 

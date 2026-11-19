@@ -17,11 +17,11 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { to: "/services/licensing", label: "Licenciamento ambiental" },
-  { to: "/services/water_resources", label: "Recursos hídricos e efluentes" },
-  { to: "/services/reports", label: "Estudos e planos técnicos" },
-  { to: "/services/esg", label: "ESG e sustentabilidade" },
-  { to: "/services/management", label: "Gestão de conformidade" },
+  { to: "/service/licensing", label: "Licenciamento ambiental" },
+  { to: "/service/water_grants", label: "Outorga e recursos hídricos" },
+  { to: "/service/technical_studies", label: "Estudos e planos técnicos" },
+  { to: "/service/authorizations", label: "Autorizações florestais" },
+  { to: "/service/compliance", label: "Conformidade e renovação" },
   { to: "/service/ibama", label: "Cadastro IBAMA (CTF)" },
 ];
 

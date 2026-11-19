@@ -2,25 +2,85 @@
   "_comment": "Títulos e descrições por rota usados para gerar HTML estático no build (prévias no WhatsApp/LinkedIn e indexação mais rápida). Mantenha alinhado ao MetaTags de cada página.",
   "domain": "https://axisambiental.com.br",
   "routes": {
-    "/about": ["Sobre a Axis Soluções Ambientais | Consultoria ambiental em Ponta Grossa", "Engenharia, gestão e inovação ambiental para empresas de Ponta Grossa e de todo o Paraná."],
-    "/services": ["Serviços de consultoria ambiental no Paraná | Axis Soluções Ambientais", "Licenciamento, outorgas, estudos técnicos, resíduos, monitoramento, ESG, treinamentos e cadastro IBAMA para empresas no Paraná."],
-    "/diagnostico": ["Qual licença ambiental eu preciso? Diagnóstico gratuito | Axis", "Responda 5 perguntas e descubra o caminho provável de licenciamento no Paraná: DLAM, LAC, LAS, LP/LI/LO, regularização, outorga e autorização florestal."],
-    "/licenses-authorizations": ["Modalidades de licença ambiental no Paraná (DLAM, LAC, LAS, LP/LI/LO) | Axis", "Entenda qual licença o IAT exige para a sua atividade: dispensa, adesão e compromisso, simplificada, trifásica, regularização e autorizações."],
-    "/faq": ["Dúvidas frequentes sobre licenciamento ambiental no Paraná | Axis", "Respostas diretas sobre licenças do IAT, outorga de água, autuações, custos e obrigações ambientais por setor."],
-    "/contact": ["Contato | Axis Soluções Ambientais", "Fale com a Axis por WhatsApp, telefone ou formulário. Resposta em até 1 dia útil."],
-    "/request-quote": ["Solicitar orçamento | Axis Soluções Ambientais", "Conte sua atividade e localização e receba uma proposta de consultoria ambiental em até 1 dia útil."],
-    "/marca": ["Identidade visual | Axis Soluções Ambientais", "Brand kit da Axis Soluções Ambientais: logo, cores, tipografia, grafismos, fotografia e voz da marca."],
-    "/privacidade": ["Política de Privacidade | Axis Soluções Ambientais", "Como a Axis coleta, usa e protege seus dados pessoais, conforme a LGPD (Lei nº 13.709/2018)."],
-    "/services/licensing": ["Licenciamento e autorizações ambientais no Paraná | Axis", "DLAM, LAC, LAS, LP/LI/LO, regularização e autorizações no SGA do IAT, conforme a Lei 22.252/2024 e o Decreto 9.541/2025."],
-    "/services/water_resources": ["Recursos hídricos e outorga no Paraná | Axis", "Outorga de captação e lançamento via SIGARH, poços, barragens e monitoramento de efluentes."],
-    "/services/reports": ["Estudos e planos ambientais (EIA/RIMA, RAS, PGRS) | Axis", "Estudos técnicos e planos de gestão exigidos no licenciamento, com ART do responsável técnico."],
-    "/services/esg": ["ESG e sustentabilidade empresarial | Axis", "Diagnóstico, indicadores e relatórios ESG para atender clientes, bancos e cadeias de fornecimento."],
-    "/services/management": ["Gestão de conformidade ambiental | Axis", "Condicionantes, renovações e relatórios periódicos para a licença nunca vencer sem aviso."],
-    "/service/licensing": ["Licenciamento ambiental no Paraná | Axis Soluções Ambientais", "Todas as modalidades do marco regulatório do Paraná: DILA, DLAM, LAC, LAS e LP/LI/LO."],
-    "/service/water_grants": ["Outorga de recursos hídricos (SIGARH) | Axis", "Captação superficial e subterrânea, lançamento de efluentes e barragens, incluindo o processo integrado de poços (IN IAT 09/2026)."],
-    "/service/authorizations": ["Autorizações ambientais e florestais no Paraná | Axis", "Supressão de vegetação, corte de árvores, manejo e intervenção em APP, conforme as INs do IAT vigentes."],
-    "/service/dlam": ["DLAM: dispensa de licenciamento ambiental no Paraná | Axis", "Verificamos se sua atividade tem dispensa (DLAM) ou é inexigível (DILA) e cuidamos do protocolo no IAT."],
-    "/service/lo": ["Licença de Operação (LO) e renovação | Axis", "Obtenção e renovação da LO com protocolo 120 dias antes do vencimento e gestão de condicionantes."],
-    "/service/ibama": ["Cadastro Técnico Federal IBAMA (CTF/APP) | Axis", "Inscrição no CTF/APP, Certificado de Regularidade, RAPP anual e controle da TCFA."]
+    "/about": [
+      "Sobre a Axis Soluções Ambientais | Consultoria ambiental em Ponta Grossa",
+      "Engenharia, gestão e inovação ambiental para empresas de Ponta Grossa e de todo o Paraná."
+    ],
+    "/services": [
+      "Serviços de consultoria ambiental no Paraná | Axis Soluções Ambientais",
+      "Licenciamento, autorizações florestais, outorga, cadastro IBAMA, estudos técnicos, monitoramento, áreas contaminadas, conformidade, auditorias, ESG e treinamentos."
+    ],
+    "/diagnostico": [
+      "Qual licença ambiental eu preciso? Diagnóstico gratuito | Axis",
+      "Responda 5 perguntas e descubra o caminho provável de licenciamento no Paraná: DLAM, LAC, LAS, LP/LI/LO, regularização, outorga e autorização florestal."
+    ],
+    "/faq": [
+      "Dúvidas frequentes sobre licenciamento ambiental no Paraná | Axis",
+      "Respostas diretas sobre licenças do IAT, outorga de água, autuações, custos e obrigações ambientais por setor."
+    ],
+    "/contact": [
+      "Contato | Axis Soluções Ambientais",
+      "Fale com a Axis por WhatsApp, telefone ou formulário. Resposta em até 1 dia útil."
+    ],
+    "/request-quote": [
+      "Solicitar orçamento | Axis Soluções Ambientais",
+      "Conte sua atividade e localização e receba uma proposta de consultoria ambiental em até 1 dia útil."
+    ],
+    "/marca": [
+      "Identidade visual | Axis Soluções Ambientais",
+      "Brand kit da Axis Soluções Ambientais: logo, cores, tipografia, grafismos, fotografia e voz da marca."
+    ],
+    "/privacidade": [
+      "Política de Privacidade | Axis Soluções Ambientais",
+      "Como a Axis coleta, usa e protege seus dados pessoais, conforme a LGPD (Lei nº 13.709/2018)."
+    ],
+    "/service/licensing": [
+      "Licenciamento ambiental no Paraná | Axis Soluções Ambientais",
+      "Todas as modalidades do marco regulatório do Paraná: DILA, DLAM, LAC, LAS e LP/LI/LO."
+    ],
+    "/service/water_grants": [
+      "Outorga de recursos hídricos (SIGARH) | Axis",
+      "Captação superficial e subterrânea, lançamento de efluentes e barragens, incluindo o processo integrado de poços (IN IAT 09/2026)."
+    ],
+    "/service/authorizations": [
+      "Autorizações ambientais e florestais no Paraná | Axis",
+      "Supressão de vegetação, corte de árvores, manejo e intervenção em APP, conforme as INs do IAT vigentes."
+    ],
+    "/service/dlam": [
+      "DLAM: dispensa de licenciamento ambiental no Paraná | Axis",
+      "Verificamos se sua atividade tem dispensa (DLAM) ou é inexigível (DILA) e cuidamos do protocolo no IAT."
+    ],
+    "/service/lo": [
+      "Licença de Operação (LO) e renovação | Axis",
+      "Obtenção e renovação da LO com protocolo 120 dias antes do vencimento e gestão de condicionantes."
+    ],
+    "/service/ibama": [
+      "Cadastro Técnico Federal IBAMA (CTF/APP) | Axis",
+      "Inscrição no CTF/APP, Certificado de Regularidade, RAPP anual e controle da TCFA."
+    ],
+    "/service/technical_studies": [
+      "Estudos e planos técnicos (EIA/RIMA, RAS, PGRS) | Axis",
+      "EIA/RIMA, RAS, PCA, PBA, PGRS, PGRSS e PRAD, com ART do responsável técnico."
+    ],
+    "/service/air_emissions": [
+      "Emissões atmosféricas e monitoramento (SGADEA) | Axis",
+      "Automonitoramento de chaminés, efluentes e águas, com declarações periódicas no SGADEA do IAT."
+    ],
+    "/service/degraded_areas": [
+      "Áreas degradadas e contaminadas (PRAD, GAC) | Axis",
+      "Diagnóstico, PRAD, gerenciamento de áreas contaminadas e recuperação de passivos ambientais."
+    ],
+    "/service/compliance": [
+      "Conformidade ambiental e renovação de licença | Axis",
+      "Condicionantes, relatórios no SGA IR, renovação da LO 120 dias antes, regularização e TAC."
+    ],
+    "/service/consulting": [
+      "Auditorias, perícias e ESG | Axis Soluções Ambientais",
+      "Auditoria de conformidade, defesa técnica de autos de infração, perícias, SIG e indicadores ESG."
+    ],
+    "/service/training": [
+      "Treinamentos ambientais para empresas | Axis",
+      "Capacitação em legislação ambiental, resíduos, emergências e rotinas exigidas pela licença."
+    ]
   }
 }

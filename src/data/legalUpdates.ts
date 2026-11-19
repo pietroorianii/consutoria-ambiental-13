@@ -105,7 +105,7 @@ export const legalUpdates: LegalUpdate[] = [
     who: "Pequenas e médias empresas de comércio, serviços e indústria leve.",
     source: "https://www.legisweb.com.br/legislacao/?id=495347",
     sourceLabel: "Legisweb",
-    serviceHref: "/services/licensing",
+    serviceHref: "/service/licensing",
   },
   {
     id: "lei-15190-2025",
@@ -116,7 +116,7 @@ export const legalUpdates: LegalUpdate[] = [
     who: "Todo empreendimento sujeito a licenciamento ambiental.",
     source: "https://www.congressoemfoco.com.br/noticia/116123/lei-geral-do-licenciamento-ambiental-entra-em-vigor-nesta-quarta",
     sourceLabel: "Congresso em Foco",
-    serviceHref: "/services/licensing",
+    serviceHref: "/service/licensing",
   },
   {
     id: "in-iat-07-2026",

@@ -30,7 +30,7 @@ export const ServiceDetailHero = ({ service }: ServiceDetailHeroProps) => {
         title={service.title}
         description={service.description}
         image={axisImageFor(service.id)}
-        backUrl={isLicensingChild ? "/services/licensing" : "/services"}
+        backUrl={isLicensingChild ? "/service/licensing" : "/services"}
         backText={isLicensingChild ? "Licenciamento ambiental" : "Todos os serviços"}
       >
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
