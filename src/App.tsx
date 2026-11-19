@@ -2,7 +2,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { CategoryRedirect } from "./components/service/LegacyRedirects";
 import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
 // Páginas internas carregadas sob demanda: a home abre mais rápido.
@@ -10,10 +11,7 @@ const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const RequestQuotePage = lazy(() => import("./pages/RequestQuotePage"));
-const ServiceCategoryPage = lazy(() => import("./pages/ServiceCategoryPage"));
-const ServiceGroupPage = lazy(() => import("./pages/ServiceGroupPage"));
 const ServiceDetailPage = lazy(() => import("./pages/ServiceDetailPage"));
-const LicensesAuthorizationsPage = lazy(() => import("./pages/LicensesAuthorizationsPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const TeamPage = lazy(() => import("./pages/TeamPage"));
 const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
@@ -37,10 +35,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/group/:groupId" element={<ServiceGroupPage />} />
-          <Route path="/services/:categoryId" element={<ServiceCategoryPage />} />
+          <Route path="/services/group/:groupId" element={<Navigate to="/services" replace />} />
+          <Route path="/services/:categoryId" element={<CategoryRedirect />} />
           <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
-          <Route path="/licenses-authorizations" element={<LicensesAuthorizationsPage />} />
+          <Route path="/licenses-authorizations" element={<Navigate to="/service/licensing#modalidades" replace />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact" element={<ContactPage />} />

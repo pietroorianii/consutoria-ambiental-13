@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
-  const isActive = (to: string, exact: boolean) => (exact ? pathname === to : pathname.startsWith(to));
+  const isActive = (to: string, exact: boolean) => (exact ? pathname === to : pathname.startsWith(to === "/services" ? "/service" : to));
 
   return (
     <div className="flex shrink-0 items-center xl:hidden">

@@ -5,14 +5,13 @@ export const navItems = [
   { to: "/", label: "Início", exact: true },
   { to: "/about", label: "Sobre", exact: false },
   { to: "/services", label: "Serviços", exact: false },
-  { to: "/licenses-authorizations", label: "Licenças", exact: false },
   { to: "/faq", label: "Dúvidas", exact: false },
   { to: "/contact", label: "Contato", exact: false },
 ];
 
 export function DesktopNav() {
   const { pathname } = useLocation();
-  const isActive = (to: string, exact: boolean) => (exact ? pathname === to : pathname.startsWith(to));
+  const isActive = (to: string, exact: boolean) => (exact ? pathname === to : pathname.startsWith(to === "/services" ? "/service" : to));
 
   return (
     <nav aria-label="Principal" className="hidden flex-1 items-center justify-end gap-8 xl:flex">

@@ -106,7 +106,7 @@ export function diagnose(a: Answers): DiagnosticResult {
       urgency = "baixa";
       headline = "Foco: manter a licença válida e as condicionantes em dia";
       summary = "A renovação deve ser protocolada com antecedência mínima de 120 dias do vencimento para a licença seguir válida até a decisão do órgão.";
-      items.push({ title: "Gestão de condicionantes e renovação", why: "Calendário de obrigações, relatórios no SGA IR e protocolo de renovação no prazo.", href: "/services/management" });
+      items.push({ title: "Gestão de condicionantes e renovação", why: "Calendário de obrigações, relatórios no SGA IR e protocolo de renovação no prazo.", href: "/service/compliance" });
       break;
     default:
       if (a.sector === "agro" && a.size === "pequeno") {
@@ -121,15 +121,15 @@ export function diagnose(a: Answers): DiagnosticResult {
       } else {
         headline = "Caminho provável: licença simplificada (LAC ou LAS) ou dispensa";
         summary = "Atividades de pequeno e médio impacto costumam se enquadrar em modalidades simplificadas, mais rápidas e baratas.";
-        items.push({ title: "Enquadramento na modalidade certa", why: "DLAM, LAC ou LAS: definimos a modalidade antes de gastar com documentação.", href: "/licenses-authorizations" });
+        items.push({ title: "Enquadramento na modalidade certa", why: "DLAM, LAC ou LAS: definimos a modalidade antes de gastar com documentação.", href: "/service/licensing#modalidades" });
       }
   }
 
   if (a.water === "sim") items.push({ title: "Outorga de recursos hídricos", why: "Captação ou lançamento acima da insignificância exige outorga (SIGARH). Para poços, a IN IAT 09/2026 integra licença e outorga.", href: "/service/water_grants" });
   if (a.water === "nao_sei") items.push({ title: "Verificação de uso de água", why: "Confirmamos se há captação ou lançamento que exija outorga.", href: "/service/water_grants" });
   if (a.vegetation === "sim") items.push({ title: "Autorização florestal e compensação", why: "Supressão exige autorização (IN IAT 05/2026) e pode gerar compensação (IN IAT 19/2026).", href: "/service/authorizations" });
-  if (a.sector === "saude") items.push({ title: "PGRSS", why: "Serviços de saúde precisam de Plano de Gerenciamento de Resíduos de Serviços de Saúde.", href: "/services/reports" });
-  if (a.sector === "construcao") items.push({ title: "PGRCC e licença de obra", why: "Obras exigem plano de resíduos da construção civil e, conforme o porte, licença própria.", href: "/services/reports" });
+  if (a.sector === "saude") items.push({ title: "PGRSS", why: "Serviços de saúde precisam de Plano de Gerenciamento de Resíduos de Serviços de Saúde.", href: "/service/technical_studies" });
+  if (a.sector === "construcao") items.push({ title: "PGRCC e licença de obra", why: "Obras exigem plano de resíduos da construção civil e, conforme o porte, licença própria.", href: "/service/technical_studies" });
   if (a.sector === "industria") items.push({ title: "PGRS e controle de emissões", why: "Indústrias costumam ter PGRS, MTR e automonitoramento de emissões como condicionantes.", href: "/service/air_emissions" });
 
   if (urgency === "media" && (a.vegetation === "sim" || a.size === "grande")) urgency = "alta";

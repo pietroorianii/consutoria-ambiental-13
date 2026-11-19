@@ -5,7 +5,7 @@ import { axisImages } from "@/components/brand/assets";
 
 const shortcuts = [
   { to: "/services", label: "Ver serviços" },
-  { to: "/licenses-authorizations", label: "Modalidades de licença" },
+  { to: "/service/licensing#modalidades", label: "Modalidades de licença" },
   { to: "/faq", label: "Dúvidas frequentes" },
   { to: "/contact", label: "Falar com a equipe" },
 ];

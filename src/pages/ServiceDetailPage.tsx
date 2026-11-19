@@ -1,67 +1,54 @@
+import { useMemo } from "react";
+import { Navigate, useParams } from "react-router-dom";
 import { MetaTags } from "@/components/layout/MetaTags";
-
-import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react";
 import { PageWrapper } from "@/components/ui/page-wrapper";
-import { Button } from "@/components/ui/button";
 import { serviceDetails } from "@/data/serviceDetails";
+import { legacyServiceRedirects } from "@/data/serviceCatalog";
 import { ServiceDetailHero } from "@/components/service/ServiceDetailHero";
-import { ServiceOverview } from "@/components/service/ServiceOverview";
-import { ServiceBenefits } from "@/components/service/ServiceBenefits";
-import { ServiceProcess } from "@/components/service/ServiceProcess";
-import { ServiceDetailsAccordion } from "@/components/service/ServiceDetailsAccordion";
-import { ServiceDetailCTA } from "@/components/service/ServiceDetailCTA";
+import { SectionNav, Overview, Steps, Documents, LegalAndTime, Tips, RelatedAndCta } from "@/components/service/ServiceDetailSections";
+import { ModalityStrip } from "@/components/service/ModalityExplorer";
+import NotFound from "./NotFound";
 
 const ServiceDetailPage = () => {
-  const { serviceId } = useParams<{ serviceId: string }>();
-  const service = serviceId ? serviceDetails[serviceId] : null;
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [serviceId]);
+  const { serviceId = "" } = useParams<{ serviceId: string }>();
+  const service = serviceDetails[serviceId];
 
-  if (!service) {
-    return (
-      <PageWrapper>
-        <div className="container py-16 text-center">
-          <h1 className="text-3xl font-bold mb-4">Serviço não encontrado</h1>
-          <p className="text-muted-foreground mb-8">O serviço solicitado não existe ou foi removido.</p>
-          <Button asChild>
-            <Link to="/services">Voltar aos Serviços</Link>
-          </Button>
-        </div>
-      </PageWrapper>
-    );
-  }
+  const nav = useMemo(() => {
+    if (!service) return [];
+    return [
+      { id: "visao-geral", label: "Visão geral" },
+      ...(serviceId === "licensing" ? [{ id: "modalidades", label: "Modalidades" }] : []),
+      ...(service.steps.length ? [{ id: "etapas", label: "Etapas" }] : []),
+      ...(service.documents.length ? [{ id: "documentos", label: "Documentos" }] : []),
+      { id: "base-legal", label: "Prazos e base legal" },
+      ...(service.tips.length ? [{ id: "dicas", label: "Dicas" }] : []),
+    ];
+  }, [service, serviceId]);
+
+  // Endereços antigos/duplicados apontam para o serviço oficial.
+  if (legacyServiceRedirects[serviceId]) return <Navigate to={`/service/${legacyServiceRedirects[serviceId]}`} replace />;
+  if (!service) return <NotFound />;
 
   return (
     <PageWrapper>
-      <MetaTags title={`${service.title} | Axis Soluções Ambientais`} description={service.description} />
-      {/* Hero Banner */}
+      <MetaTags title={`${service.title} no Paraná | Axis Soluções Ambientais`} description={service.description} />
       <ServiceDetailHero service={service} />
-
-      {/* Main Content */}
-      <div className="container py-20 space-y-20">
-        {/* Service Overview */}
-        <ServiceOverview service={service} />
-
-        {/* Service Benefits */}
-        <ServiceBenefits benefits={service.benefits} />
-
-        {/* Service Process */}
-        <ServiceProcess steps={service.steps} />
-
-        {/* Service Details Accordion */}
-        <ServiceDetailsAccordion service={service} />
-
-        {/* Final CTA */}
-        <ServiceDetailCTA serviceTitle={service.title} />
-      </div>
-
-      {/* Bottom CTA Section */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-eco-green/5 via-eco-blue/3 to-eco-earth/10"></div>
-      </div>
+      <SectionNav items={nav} />
+      <Overview s={service} />
+      {serviceId === "licensing" && (
+        <section id="modalidades" className="scroll-mt-32 bg-white pb-16 md:pb-20">
+          <div className="container">
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-brand-dark md:text-[2.1rem]">Modalidades: qual se aplica a você</h2>
+            <span className="axis-rule mt-4" />
+            <ModalityStrip className="mt-8" />
+          </div>
+        </section>
+      )}
+      <Steps s={service} />
+      <Documents s={service} />
+      <LegalAndTime s={service} />
+      <Tips s={service} />
+      <RelatedAndCta s={service} />
     </PageWrapper>
   );
 };
